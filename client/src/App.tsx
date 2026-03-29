@@ -16,6 +16,7 @@ import SindromeMetabolica from "./pages/SindromeMetabolica";
 import ProcedimentosAndrologicos from "./pages/ProcedimentosAndrologicos";
 import DisfuncaoEretil from "./pages/DisfuncaoEretil";
 import PrimeiraConsulta from "./pages/PrimeiraConsulta";
+import GuiaGoogleBusiness from "./pages/GuiaGoogleBusiness";
 
 
 function Router() {
@@ -33,6 +34,7 @@ function Router() {
       <Route path={"/educativo/procedimentos-andrologicos"} component={ProcedimentosAndrologicos} />
       <Route path={"/educativo/disfuncao-eretil"} component={DisfuncaoEretil} />
       <Route path={"/primeira-consulta"} component={PrimeiraConsulta} />
+      <Route path={"/guia-google-business"} component={GuiaGoogleBusiness} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

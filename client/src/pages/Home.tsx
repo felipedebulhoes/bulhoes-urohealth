@@ -1,19 +1,23 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import DoctoraliaBadge from "@/components/DoctoraliaBadge";
 import AboutSection from "@/components/AboutSection";
+import StatsCounter from "@/components/StatsCounter";
 import EducationSection from "@/components/EducationSection";
+import MediaSection from "@/components/MediaSection";
 import SpecialtiesSection from "@/components/SpecialtiesSection";
-import ServicesSection from "@/components/ServicesSection";
+import EducationalPreviewSection from "@/components/EducationalPreviewSection";
+import SymptomChecker from "@/components/SymptomChecker";
 import VideosSection from "@/components/VideosSection";
+import ServicesSection from "@/components/ServicesSection";
 import InsuranceSection from "@/components/InsuranceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import DoctoraliaBadge from "@/components/DoctoraliaBadge";
 import LocationSection from "@/components/LocationSection";
-import InstagramSection from "@/components/InstagramSection";
-import BlogPreviewSection from "@/components/BlogPreviewSection";
-import EducationalPreviewSection from "@/components/EducationalPreviewSection";
 import FAQSection from "@/components/FAQSection";
 import QuickContactForm from "@/components/QuickContactForm";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
+import NewsletterSection from "@/components/NewsletterSection";
+import InstagramSection from "@/components/InstagramSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -25,19 +29,23 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <DoctoraliaBadge />
         <AboutSection />
+        <StatsCounter />
         <EducationSection />
+        <MediaSection />
         <SpecialtiesSection />
         <EducationalPreviewSection />
+        <SymptomChecker />
         <VideosSection />
         <ServicesSection />
         <InsuranceSection />
         <TestimonialsSection />
-        <DoctoraliaBadge />
         <LocationSection />
         <FAQSection />
         <QuickContactForm />
         <BlogPreviewSection />
+        <NewsletterSection />
         <InstagramSection />
         <ContactSection />
       </main>

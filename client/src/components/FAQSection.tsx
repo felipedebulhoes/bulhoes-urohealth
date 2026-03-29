@@ -1,6 +1,6 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
- * Component: FAQ Section — Perguntas Frequentes dos Pacientes
+ * Component: FAQ Section — Perguntas Frequentes expandida sobre Saúde Masculina e Urologia
  */
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,7 +12,7 @@ const faqs = [
     questions: [
       {
         q: "Quando devo procurar um urologista?",
-        a: "Todo homem a partir dos 40 anos (ou 35 anos com histórico familiar de câncer de próstata) deve fazer acompanhamento urológico anual. Além disso, procure um urologista se apresentar: dificuldade para urinar, sangue na urina, dor lombar intensa, disfunção erétil, infertilidade, dor testicular ou qualquer alteração genital.",
+        a: "Todo homem a partir dos 40 anos (ou 35 anos com histórico familiar de câncer de próstata) deve fazer acompanhamento urológico anual. Porém, o ideal é que o acompanhamento comece desde a adolescência — assim como as mulheres fazem com o ginecologista. Procure um urologista se apresentar: dificuldade para urinar, sangue na urina, dor lombar intensa, disfunção erétil, infertilidade, dor testicular ou qualquer alteração genital.",
       },
       {
         q: "Como é a primeira consulta urológica?",
@@ -25,6 +25,10 @@ const faqs = [
       {
         q: "Preciso de algum preparo para a consulta?",
         a: "Não é necessário preparo especial. Traga exames anteriores (sangue, imagem, biópsias), lista de medicamentos em uso e, se possível, um resumo dos seus sintomas. Para exames específicos como urodinâmica ou ultrassom, orientações de preparo serão fornecidas previamente.",
+      },
+      {
+        q: "O urologista trata apenas homens?",
+        a: "Não. Embora seja conhecido como o 'médico do homem', o urologista também trata mulheres em questões do trato urinário, como infecções urinárias de repetição, incontinência urinária e cálculos renais. Porém, a maior parte da demanda envolve saúde masculina.",
       },
     ],
   },
@@ -43,6 +47,10 @@ const faqs = [
         q: "Vocês emitem nota fiscal / recibo para reembolso?",
         a: "Sim. Emitimos recibo detalhado com todos os dados necessários para solicitar reembolso junto ao seu plano de saúde, quando aplicável.",
       },
+      {
+        q: "O convênio cobre cirurgias?",
+        a: "Sim, a maioria dos convênios cobre procedimentos cirúrgicos urológicos quando há indicação médica. Alguns convênios como Go Care e SulAmérica cobrem apenas cirurgias no Campinas Day Hospital. Verificamos a cobertura antes de qualquer procedimento.",
+      },
     ],
   },
   {
@@ -55,6 +63,10 @@ const faqs = [
       {
         q: "A teleconsulta substitui a consulta presencial?",
         a: "A teleconsulta é excelente para avaliação inicial, retornos e orientações, mas não substitui completamente a consulta presencial quando há necessidade de exame físico. O médico indicará se uma consulta presencial é necessária.",
+      },
+      {
+        q: "Posso receber receita médica pela teleconsulta?",
+        a: "Sim. Receitas e atestados podem ser emitidos digitalmente com assinatura eletrônica válida, conforme regulamentação do CFM. Você recebe os documentos por e-mail ou WhatsApp.",
       },
     ],
   },
@@ -72,6 +84,98 @@ const faqs = [
       {
         q: "O que é cirurgia minimamente invasiva?",
         a: "São técnicas cirúrgicas que utilizam pequenas incisões (0,5-1cm) ou acessos naturais (uretra) em vez de grandes cortes. Incluem endoscopia, laparoscopia e cirurgia robótica. Benefícios: menos dor, menor sangramento, recuperação mais rápida e menor tempo de internação.",
+      },
+      {
+        q: "A vasectomia é reversível?",
+        a: "Tecnicamente, a reversão (vasovasostomia) é possível, mas não é garantida. A vasectomia deve ser considerada um método definitivo de contracepção. Antes do procedimento, discutimos todas as opções e implicações. A taxa de sucesso da reversão diminui com o tempo após a vasectomia.",
+      },
+      {
+        q: "A postectomia (circuncisão) dói muito?",
+        a: "O procedimento é feito sob anestesia, então não há dor durante a cirurgia. No pós-operatório, pode haver desconforto leve a moderado nos primeiros dias, controlado com analgésicos. A recuperação completa leva cerca de 30 dias.",
+      },
+    ],
+  },
+  {
+    category: "Saúde da Próstata",
+    questions: [
+      {
+        q: "Qual a diferença entre HPB e câncer de próstata?",
+        a: "A Hiperplasia Prostática Benigna (HPB) é o crescimento benigno da próstata, muito comum após os 50 anos, que causa sintomas urinários. O câncer de próstata é um tumor maligno que pode ou não coexistir com a HPB. São condições diferentes, mas ambas precisam de acompanhamento urológico regular.",
+      },
+      {
+        q: "O PSA alto sempre significa câncer?",
+        a: "Não. O PSA (Antígeno Prostático Específico) pode estar elevado por diversas causas: HPB, prostatite (inflamação), infecção urinária, atividade sexual recente ou até andar de bicicleta. Um PSA alterado indica necessidade de investigação, não necessariamente câncer.",
+      },
+      {
+        q: "Quais são os tratamentos modernos para a próstata aumentada?",
+        a: "Existem diversas opções: tratamento medicamentoso (alfa-bloqueadores, inibidores da 5-alfa-redutase), RTU (monopolar e bipolar), enucleação a laser (HoLEP, ThuLEP), GreenLight, terapias minimamente invasivas (Rezum, UroLift) e prostatectomia robótica para próstatas muito grandes. A escolha depende do tamanho da próstata e dos sintomas.",
+      },
+      {
+        q: "A partir de que idade devo fazer o exame de próstata?",
+        a: "A Sociedade Brasileira de Urologia recomenda avaliação a partir dos 50 anos para a população geral, e a partir dos 45 anos para homens negros ou com histórico familiar de câncer de próstata. A avaliação inclui PSA e toque retal.",
+      },
+    ],
+  },
+  {
+    category: "Saúde Sexual",
+    questions: [
+      {
+        q: "A disfunção erétil tem cura?",
+        a: "Na maioria dos casos, a disfunção erétil pode ser tratada com sucesso. O tratamento depende da causa: pode incluir mudanças no estilo de vida, medicamentos orais (sildenafila, tadalafila), terapia por ondas de choque, injeção intracavernosa ou, em casos refratários, prótese peniana. O primeiro passo é uma avaliação completa para identificar a causa.",
+      },
+      {
+        q: "A testosterona baixa pode causar problemas sexuais?",
+        a: "Sim. O hipogonadismo (testosterona baixa) pode causar diminuição da libido, disfunção erétil, fadiga, perda de massa muscular e alterações de humor. A reposição de testosterona, quando indicada, pode melhorar significativamente a qualidade de vida e a função sexual.",
+      },
+      {
+        q: "O que é ejaculação precoce e como tratar?",
+        a: "É a ejaculação que ocorre antes do desejado, causando insatisfação. Pode ser tratada com técnicas comportamentais, medicamentos (dapoxetina, antidepressivos em doses baixas) e, em alguns casos, tratamento tópico com anestésicos. A abordagem é individualizada e pode envolver acompanhamento multidisciplinar.",
+      },
+      {
+        q: "Homens jovens podem ter disfunção erétil?",
+        a: "Sim. Embora seja mais comum após os 40 anos, homens jovens também podem apresentar disfunção erétil. Em jovens, as causas mais frequentes são psicológicas (ansiedade, estresse), uso de substâncias, sedentarismo e, menos frequentemente, causas hormonais ou vasculares. A avaliação médica é importante para identificar e tratar a causa.",
+      },
+    ],
+  },
+  {
+    category: "Cálculos Renais",
+    questions: [
+      {
+        q: "Pedra no rim sempre precisa de cirurgia?",
+        a: "Não. Cálculos pequenos (até 6mm) podem ser eliminados espontaneamente com hidratação e medicamentos. Cálculos maiores ou que causam obstrução geralmente necessitam de tratamento: litotripsia extracorpórea (LECO), ureterorrenolitotripsia a laser (flexível ou semirrígida) ou nefrolitotripsia percutânea, dependendo do tamanho e localização.",
+      },
+      {
+        q: "Como prevenir pedra nos rins?",
+        a: "As principais medidas são: ingerir pelo menos 2,5-3 litros de água por dia, reduzir o consumo de sal e proteína animal, manter peso adequado, e evitar alimentos ricos em oxalato em excesso (espinafre, chocolate, beterraba). Uma análise metabólica pode identificar fatores de risco específicos para orientar a prevenção individualizada.",
+      },
+      {
+        q: "O que é o cateter duplo J e por que é necessário?",
+        a: "O cateter duplo J é um tubo fino colocado dentro do ureter (canal entre rim e bexiga) para manter a drenagem urinária após cirurgias de cálculos ou em casos de obstrução. Pode causar desconforto, urgência urinária e sangue na urina — sintomas esperados e temporários. É removido ambulatorialmente após 2-4 semanas.",
+      },
+      {
+        q: "Cólica renal é uma emergência?",
+        a: "A cólica renal é uma dor intensa que requer atendimento médico urgente para controle da dor e avaliação. Embora nem sempre seja uma emergência cirúrgica, pode indicar obstrução urinária que, se não tratada, pode comprometer a função renal. Procure atendimento médico imediatamente.",
+      },
+    ],
+  },
+  {
+    category: "Estilo de Vida",
+    questions: [
+      {
+        q: "Exercício físico ajuda na saúde urológica?",
+        a: "Sim, significativamente. Exercícios aeróbicos e de resistência (musculação) ajudam a manter níveis adequados de testosterona, previnem síndrome metabólica, melhoram a função erétil e reduzem o risco de HPB sintomática. A recomendação é pelo menos 150 minutos de atividade moderada por semana.",
+      },
+      {
+        q: "A obesidade afeta a saúde urológica?",
+        a: "Sim. A obesidade está associada a: níveis mais baixos de testosterona, maior risco de disfunção erétil, aumento do risco de cálculos renais, piora dos sintomas de HPB e maior risco de câncer de próstata agressivo. O controle do peso é fundamental para a saúde urológica.",
+      },
+      {
+        q: "Andar de bicicleta faz mal à próstata?",
+        a: "O ciclismo prolongado pode causar compressão do períneo, levando a dormência genital temporária e, raramente, disfunção erétil transitória. Não causa câncer de próstata. Usar selim adequado com canal central e fazer pausas regulares minimiza os riscos. Pode elevar temporariamente o PSA.",
+      },
+      {
+        q: "Suplementos de testosterona são seguros?",
+        a: "A reposição de testosterona só deve ser feita sob indicação e acompanhamento médico, após confirmação laboratorial de deficiência hormonal. O uso sem indicação pode causar efeitos adversos graves: infertilidade, policitemia, problemas hepáticos e cardiovasculares. Nunca use testosterona sem prescrição médica.",
       },
     ],
   },
@@ -136,7 +240,7 @@ export default function FAQSection() {
             Tire Suas Dúvidas
           </h2>
           <p className="text-sm text-[#0A2540]/50 max-w-lg mx-auto">
-            Respostas para as perguntas mais comuns dos nossos pacientes. Se sua dúvida não está aqui, entre em contato.
+            Respostas para as perguntas mais comuns sobre saúde masculina, urologia, procedimentos e convênios.
           </p>
         </motion.div>
 

@@ -6,8 +6,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-// Real photo — Dr. Felipe at UroOnco congress with colleagues
-const CONGRESS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/uroonco-congress_907ca9a3.jpeg";
+// Real photo — Dr. Felipe at JPU 2025 congress (solo, full body, great quality)
+const CONGRESS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/jpu-congress_3e9e2a0a.jpeg";
 
 const timeline = [
   {
@@ -89,12 +89,12 @@ export default function EducationSection() {
             <div className="rounded-xl overflow-hidden shadow-xl shadow-[#0A2540]/8">
               <img
                 src={CONGRESS_IMG}
-                alt="Dr. Felipe com colegas no Congresso UroOnco 2025"
+                alt="Dr. Felipe no Congresso JPU 2025"
                 className="w-full h-auto object-cover aspect-[4/3]"
               />
             </div>
             <div className="absolute -bottom-3 left-4 bg-[#0A2540] text-white rounded-lg px-4 py-2 shadow-lg">
-              <p className="text-xs font-semibold">UroOnco 2025 — São Paulo</p>
+              <p className="text-xs font-semibold">JPU 2025 — Congresso de Urologia</p>
             </div>
           </motion.div>
         </div>

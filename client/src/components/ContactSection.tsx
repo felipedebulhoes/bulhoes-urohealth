@@ -1,11 +1,11 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
- * Contact: CTA section + social links + contact info
+ * Contact: CTA section + social links + teleconsulta + 3 locais
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { CalendarCheck, Instagram, MessageCircle, ExternalLink } from "lucide-react";
+import { CalendarCheck, Instagram, MessageCircle, ExternalLink, Monitor, MapPin } from "lucide-react";
 
 export default function ContactSection() {
   const ref = useRef(null);
@@ -40,15 +40,38 @@ export default function ContactSection() {
             Cuide da sua saúde com quem entende
           </h2>
 
-          <p className="text-white/60 font-sans text-base lg:text-lg mb-10 max-w-lg mx-auto">
-            Agende sua consulta presencial na Av. Paulista ou por teleconsulta.
-            Atendimento humanizado com excelência técnica.
+          <p className="text-white/60 font-sans text-base lg:text-lg mb-6 max-w-lg mx-auto">
+            Atendimento presencial em São Paulo e Campinas, ou por teleconsulta.
+            Humanizado, com excelência técnica.
           </p>
+
+          {/* Locais resumidos */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+            <div className="flex items-center gap-2 text-white/40">
+              <MapPin className="w-3.5 h-3.5 text-[#5EEAD4]" />
+              <span className="text-xs font-sans">Campinas Day Hospital</span>
+            </div>
+            <div className="w-px h-3 bg-white/15" />
+            <div className="flex items-center gap-2 text-white/40">
+              <MapPin className="w-3.5 h-3.5 text-[#5EEAD4]" />
+              <span className="text-xs font-sans">Clinovi Paulista</span>
+            </div>
+            <div className="w-px h-3 bg-white/15" />
+            <div className="flex items-center gap-2 text-white/40">
+              <MapPin className="w-3.5 h-3.5 text-[#5EEAD4]" />
+              <span className="text-xs font-sans">Clinovi Moema</span>
+            </div>
+            <div className="w-px h-3 bg-white/15" />
+            <div className="flex items-center gap-2 text-white/40">
+              <Monitor className="w-3.5 h-3.5 text-[#5EEAD4]" />
+              <span className="text-xs font-sans">Teleconsulta</span>
+            </div>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
-              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/sao-paulo"
+              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -84,7 +107,7 @@ export default function ContactSection() {
               <span className="text-sm font-sans">@drfelipebulhoes</span>
             </a>
             <a
-              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/sao-paulo"
+              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-white/50 hover:text-[#5EEAD4] transition-colors"

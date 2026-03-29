@@ -8,8 +8,8 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Stethoscope, Globe, BookOpen } from "lucide-react";
 
-// Real photo — Dr. Felipe at UroOnco 2025 congress, full body, formal
-const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/uroonco-solo_21686f63.jpeg";
+// Real photo — Dr. Felipe at I Jornada IDOR Urologia (academic event with colleagues)
+const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/jornada-idor_e2b3f5a6.jpeg";
 
 const credentials = [
   {
@@ -71,14 +71,14 @@ export default function AboutSection() {
             <div className="rounded-lg overflow-hidden shadow-2xl shadow-[#0A2540]/10">
               <img
                 src={ABOUT_IMG}
-                alt="Dr. Felipe de Bulhões no Congresso UroOnco 2025"
-                className="w-full h-auto object-cover object-top aspect-[3/4]"
+                alt="Dr. Felipe de Bulhões na I Jornada IDOR de Urologia"
+                className="w-full h-auto object-cover object-center aspect-[4/3]"
               />
             </div>
             {/* Floating badge */}
             <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-[#0A2540] text-white rounded-lg p-5 shadow-xl">
-              <p className="text-3xl font-bold font-sans">9+</p>
-              <p className="text-xs text-white/70 font-sans mt-1">Anos de<br />Formação Médica</p>
+              <p className="text-3xl font-bold font-sans">IDOR</p>
+              <p className="text-xs text-white/70 font-sans mt-1">Instituto D'Or<br />São Paulo</p>
             </div>
           </motion.div>
 

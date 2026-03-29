@@ -8,8 +8,8 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, MapPin, CreditCard } from "lucide-react";
 
-// Real photo — Dr. Felipe lecturing at Universo Masculino event
-const LECTURE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/universo-masculino-palestra_08fa4700.jpeg";
+// Real photo — Dr. Felipe at UroOnco 2025 congress (solo, professional)
+const LECTURE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/uroonco-solo_8e3b6b5c.jpeg";
 
 const services = [
   { name: "Primeira Consulta Urologia", price: "R$ 800", highlight: true },
@@ -45,7 +45,7 @@ export default function ServicesSection() {
             <div className="rounded-lg overflow-hidden shadow-2xl shadow-[#0A2540]/10 mb-8">
               <img
                 src={LECTURE_IMG}
-                alt="Dr. Felipe palestrando no evento Universo Masculino"
+                alt="Dr. Felipe no Congresso UroOnco 2025"
                 className="w-full h-auto object-cover aspect-[4/3]"
               />
             </div>

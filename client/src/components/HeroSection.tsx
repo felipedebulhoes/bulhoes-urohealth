@@ -57,8 +57,8 @@ export default function HeroSection() {
             <p className="text-base text-white/70 leading-relaxed mb-8 max-w-lg">
               Especialista em cirurgia minimamente invasiva, robótica e endourologia.
               Formado pelo <strong className="text-white/90">Instituto D'Or de Ensino e Pesquisa</strong>,
-              com atuação em São Paulo e Campinas. Cuidado integral da saúde do homem
-              com excelência técnica e acolhimento.
+              com atuação em São Paulo e Campinas. Atendimento presencial e por teleconsulta.
+              Cuidado integral da saúde do homem com excelência técnica e acolhimento.
             </p>
           </motion.div>
 

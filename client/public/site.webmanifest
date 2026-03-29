@@ -1,0 +1,20 @@
+{
+  "name": "Dr. Felipe de Bulhões - Urologista",
+  "short_name": "Dr. Bulhões",
+  "icons": [
+    {
+      "src": "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/android-chrome-192x192_dd595dcc.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/android-chrome-512x512_0be977db.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0A2A3C",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}

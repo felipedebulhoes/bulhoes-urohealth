@@ -180,6 +180,72 @@ const faqs = [
       },
     ],
   },
+  {
+    category: "Cirurgia Robótica",
+    questions: [
+      {
+        q: "O que é cirurgia robótica urológica?",
+        a: "A cirurgia robótica é uma evolução da laparoscopia em que o cirurgião opera por meio de um console com visão 3D em alta definição e braços articulados com amplitude de movimento superior à mão humana. O sistema filtra tremores naturais e permite movimentos de extrema precisão em espaços reduzidos. Na urologia, é utilizada principalmente em prostatectomia radical, nefrectomia parcial, pieloplastia e cistectomia radical (EAU Guidelines 2024; Campbell-Walsh-Wein, 13ª ed.).",
+      },
+      {
+        q: "O robô opera sozinho?",
+        a: "Não. O robô é um instrumento — quem opera é o cirurgião. O sistema robótico (como o Da Vinci) traduz os movimentos do cirurgião em movimentos precisos dentro do corpo do paciente. Cada decisão cirúrgica é tomada pelo médico em tempo real. O robô não possui inteligência artificial nem autonomia para realizar qualquer etapa do procedimento.",
+      },
+      {
+        q: "Quais as vantagens da cirurgia robótica sobre a cirurgia aberta?",
+        a: "As principais vantagens incluem: visão 3D ampliada em até 10 vezes, maior precisão na dissecção e preservação de estruturas nobres (nervos e vasos), menor sangramento intraoperatório, incisões de apenas 8-12mm (versus 10-15cm na cirurgia aberta), menor dor pós-operatória, internação mais curta (1-2 dias versus 3-5 dias) e retorno mais rápido às atividades. Na prostatectomia radical, estudos demonstram melhor preservação da continência urinária e da função erétil (Ficarra et al., Eur Urol, 2012).",
+      },
+      {
+        q: "Quais procedimentos urológicos podem ser feitos por robótica?",
+        a: "Os principais são: prostatectomia radical (câncer de próstata), nefrectomia parcial (retirada parcial do rim para tumores renais), pieloplastia (correção de obstrução da junção ureteropélvica), cistectomia radical (câncer de bexiga), reimplante ureteral e cirurgias reconstrutivas do trato urinário. A indicação depende de cada caso e é discutida individualmente na consulta.",
+      },
+      {
+        q: "A cirurgia robótica é segura?",
+        a: "Sim. A cirurgia robótica é considerada segura e está consolidada mundialmente há mais de 20 anos. Estudos com grandes séries de casos demonstram taxas de complicações iguais ou menores que a cirurgia aberta convencional. Como em qualquer procedimento cirúrgico, existem riscos, que são discutidos detalhadamente antes da cirurgia. A experiência do cirurgião é um fator determinante nos resultados (EAU Guidelines 2024).",
+      },
+      {
+        q: "Como é a recuperação após cirurgia robótica?",
+        a: "A recuperação é significativamente mais rápida que na cirurgia aberta. Em geral, o paciente recebe alta em 1-2 dias, retorna a atividades leves em 7-10 dias e a atividades físicas em 4-6 semanas. As incisões pequenas (8-12mm) cicatrizam rapidamente e causam menos dor. Orientações específicas são fornecidas conforme o tipo de procedimento realizado.",
+      },
+      {
+        q: "A cirurgia robótica é coberta pelo convênio?",
+        a: "A cobertura varia conforme o plano de saúde e a indicação cirúrgica. Alguns convênios já cobrem procedimentos robóticos, especialmente a prostatectomia radical. Verificamos a cobertura junto ao seu convênio antes de qualquer procedimento e orientamos sobre as opções disponíveis.",
+      },
+    ],
+  },
+  {
+    category: "Saúde do Homem",
+    questions: [
+      {
+        q: "O urologista é o médico do homem?",
+        a: "Sim. Assim como a mulher tem o ginecologista como médico de referência ao longo da vida, o urologista desempenha esse papel para o homem. Além de tratar doenças do trato urinário e genital, o urologista cuida da saúde sexual, hormonal, reprodutiva e metabólica masculina. O ideal é que o acompanhamento comece na adolescência — e não apenas após os 40 anos.",
+      },
+      {
+        q: "A partir de que idade o homem deve ir ao urologista?",
+        a: "O acompanhamento urológico pode e deve começar na adolescência, para avaliação de varicocele, fimose, criptorquidia e orientação sobre saúde sexual. Na fase adulta jovem (20-40 anos), o urologista avalia fertilidade, ISTs, saúde hormonal e prevenção. A partir dos 40-45 anos, inicia-se o rastreamento de câncer de próstata e HPB. Não existe idade mínima para procurar um urologista.",
+      },
+      {
+        q: "O que o urologista avalia além da próstata?",
+        a: "O urologista avalia e trata: cálculos renais, infecções urinárias, incontinência urinária, disfunção erétil, ejaculação precoce, infertilidade masculina, hipogonadismo (testosterona baixa), varicocele, fimose, ISTs (HPV, herpes), tumores renais e de bexiga, além de realizar check-up metabólico e hormonal completo. A próstata é apenas uma parte da atuação do urologista.",
+      },
+      {
+        q: "O que é o check-up urológico masculino?",
+        a: "O check-up urológico inclui: anamnese detalhada (sintomas, histórico familiar, hábitos), exame físico (incluindo toque retal quando indicado), exames laboratoriais (PSA, testosterona total e livre, hemograma, perfil lipídico, glicemia, função renal, urina) e exames de imagem quando necessário (ultrassom de vias urinárias e próstata). A periodicidade e os exames são individualizados conforme a idade e fatores de risco.",
+      },
+      {
+        q: "Quais sinais de alerta o homem não deve ignorar?",
+        a: "Procure um urologista se apresentar: sangue na urina ou no esperma, dificuldade ou dor para urinar, jato urinário fraco ou interrompido, dor lombar intensa e súbita, nódulo ou dor testicular, disfunção erétil persistente, diminuição da libido, cansaço inexplicável, perda de massa muscular ou ganho de peso abdominal sem causa aparente. Muitas dessas condições têm tratamento eficaz quando diagnosticadas precocemente.",
+      },
+      {
+        q: "A saúde mental afeta a saúde urológica?",
+        a: "Sim, significativamente. Ansiedade e depressão estão diretamente relacionadas a disfunção erétil, ejaculação precoce e sintomas urinários baixos. O estresse crônico pode reduzir os níveis de testosterona e piorar a qualidade de vida sexual. A abordagem urológica moderna considera a saúde mental como parte integral do tratamento, e o encaminhamento para acompanhamento psicológico ou psiquiátrico é feito quando necessário.",
+      },
+      {
+        q: "Como a alimentação influencia a saúde urológica?",
+        a: "A alimentação tem impacto direto: dietas ricas em frutas, vegetais, peixes e azeite (padrão mediterrâneo) estão associadas a menor risco de câncer de próstata e melhor função erétil. O excesso de sal aumenta o risco de cálculos renais. Alimentos ultraprocessados e excesso de açúcar contribuem para síndrome metabólica, que afeta testosterona e função sexual. A hidratação adequada (2,5-3L/dia) é fundamental para a prevenção de cálculos renais.",
+      },
+    ],
+  },
 ];
 
 function FAQItem({ q, a }: { q: string; a: string }) {

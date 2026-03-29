@@ -38,17 +38,11 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-md bg-[#0A2540] flex items-center justify-center">
-            <span className="text-white font-serif text-lg leading-none">B</span>
-          </div>
-          <div className="flex flex-col">
-            <span className={`text-sm font-semibold tracking-tight leading-tight transition-colors ${scrolled ? "text-[#0A2540]" : "text-white"}`}>
-              Dr. Felipe de Bulhões
-            </span>
-            <span className={`text-[10px] uppercase tracking-[0.2em] font-medium transition-colors ${scrolled ? "text-[#0D9488]" : "text-teal-300"}`}>
-              Urologia & Cirurgia
-            </span>
-          </div>
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/logo_min8_d351a844.webp"
+            alt="Dr. Felipe de Bulhões - Urologista"
+            className={`h-10 lg:h-12 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
+          />
         </a>
 
         {/* Desktop Nav */}

@@ -1,13 +1,15 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
- * About: Split layout with image and text, credentials badges
+ * About: Split layout with REAL photo and text, credentials badges
+ * Uses real Instagram photo from UroOnco 2025 congress
  */
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Stethoscope, Globe, BookOpen } from "lucide-react";
 
-const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/consultation-U7kNYyeXEvXJfiSXJ6fKQ4.webp";
+// Real photo — Dr. Felipe at UroOnco 2025 congress, full body, formal
+const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/uroonco-solo_21686f63.jpeg";
 
 const credentials = [
   {
@@ -23,7 +25,7 @@ const credentials = [
   {
     icon: Globe,
     title: "Afiliações Internacionais",
-    desc: "Membro da SBU (Sociedade Brasileira de Urologia), AUA (American Urological Association) e EAU (European Association of Urology)",
+    desc: "Membro da SBU, AUA (International Resident in Training) e EAU (Junior International Member)",
   },
   {
     icon: BookOpen,
@@ -59,7 +61,7 @@ export default function AboutSection() {
 
         {/* Content grid */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Image */}
+          {/* Image — real photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -69,8 +71,8 @@ export default function AboutSection() {
             <div className="rounded-lg overflow-hidden shadow-2xl shadow-[#0A2540]/10">
               <img
                 src={ABOUT_IMG}
-                alt="Dr. Felipe em consulta"
-                className="w-full h-auto object-cover aspect-[4/3]"
+                alt="Dr. Felipe de Bulhões no Congresso UroOnco 2025"
+                className="w-full h-auto object-cover object-top aspect-[3/4]"
               />
             </div>
             {/* Floating badge */}

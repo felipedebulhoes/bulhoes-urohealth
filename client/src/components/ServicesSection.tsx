@@ -1,13 +1,15 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Services: Clean list with pricing, CTA to Doctoralia
+ * Uses real Instagram photo from Universo Masculino lecture
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, MapPin, CreditCard } from "lucide-react";
 
-const SURGERY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/about-section-NZVvDH47e3KoraUTvHxJJG.webp";
+// Real photo — Dr. Felipe lecturing at Universo Masculino event
+const LECTURE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/universo-masculino-palestra_08fa4700.jpeg";
 
 const services = [
   { name: "Primeira Consulta Urologia", price: "R$ 800", highlight: true },
@@ -22,7 +24,7 @@ const services = [
 
 const features = [
   { icon: Monitor, text: "Teleconsulta disponível" },
-  { icon: MapPin, text: "Av. Paulista, São Paulo" },
+  { icon: MapPin, text: "São Paulo & Campinas" },
   { icon: CreditCard, text: "12 convênios aceitos" },
 ];
 
@@ -42,8 +44,8 @@ export default function ServicesSection() {
           >
             <div className="rounded-lg overflow-hidden shadow-2xl shadow-[#0A2540]/10 mb-8">
               <img
-                src={SURGERY_IMG}
-                alt="Centro cirúrgico com tecnologia robótica"
+                src={LECTURE_IMG}
+                alt="Dr. Felipe palestrando no evento Universo Masculino"
                 className="w-full h-auto object-cover aspect-[4/3]"
               />
             </div>
@@ -79,7 +81,7 @@ export default function ServicesSection() {
               Consultas e Procedimentos
             </h2>
             <p className="text-[#0A2540]/60 font-sans mb-8 text-base">
-              Atendimento presencial na Av. Paulista e teleconsulta. Mais de 30 procedimentos disponíveis.
+              Atendimento presencial em São Paulo e Campinas, além de teleconsulta. Mais de 30 procedimentos disponíveis.
             </p>
 
             {/* Services list */}
@@ -109,7 +111,7 @@ export default function ServicesSection() {
             </p>
 
             <a
-              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/sao-paulo"
+              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
               target="_blank"
               rel="noopener noreferrer"
             >

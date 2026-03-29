@@ -6,8 +6,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, Clock, Phone, CreditCard, Monitor, Building2 } from "lucide-react";
 
-const CLINIC_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinic-exterior-58EAVMraf237hEoTBseP8k.webp";
-
 const insurances = [
   "Bradesco Saúde",
   "Sul América Saúde",
@@ -126,14 +124,7 @@ export default function LocationSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-3 space-y-5"
           >
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={CLINIC_IMG}
-                alt="Clínica na Avenida Paulista"
-                className="w-full h-64 lg:h-72 object-cover"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg border border-[#0A2540]/8 h-72 lg:h-80">
+            <div className="rounded-lg overflow-hidden shadow-lg border border-[#0A2540]/8 h-[400px] lg:h-[500px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976!2d-46.6558!3d-23.5645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c0776a!2sAv.%20Paulista%2C%201048%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1711000000000!5m2!1spt-BR!2sbr"
                 width="100%"

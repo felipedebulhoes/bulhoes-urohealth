@@ -15,8 +15,6 @@ import {
   Pill,
 } from "lucide-react";
 
-const SERVICES_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/services-bg-exzYrPhm6JKJP7hWyhfgCa.webp";
-
 const specialties = [
   {
     icon: Shield,
@@ -67,10 +65,11 @@ export default function SpecialtiesSection() {
   return (
     <section id="especialidades" className="relative py-20 lg:py-28 overflow-hidden" ref={ref}>
       {/* Background */}
-      <div className="absolute inset-0">
-        <img src={SERVICES_BG} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#0A2540]/95" />
-      </div>
+      <div className="absolute inset-0 bg-[#0A2540]" />
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+        backgroundSize: '40px 40px'
+      }} />
 
       <div className="container relative z-10">
         {/* Section header */}

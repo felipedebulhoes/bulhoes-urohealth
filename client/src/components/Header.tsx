@@ -66,7 +66,7 @@ export default function Header() {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="https://wa.me/5511981120000"
+            href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
             target="_blank"
             rel="noopener noreferrer"
           >

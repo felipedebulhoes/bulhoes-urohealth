@@ -81,7 +81,7 @@ export default function ContactSection() {
               </Button>
             </a>
             <a
-              href="https://wa.me/5511981120000"
+              href="https://wa.me/5511981124455"
               target="_blank"
               rel="noopener noreferrer"
             >

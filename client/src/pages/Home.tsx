@@ -8,6 +8,7 @@ import InsuranceSection from "@/components/InsuranceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import LocationSection from "@/components/LocationSection";
 import InstagramSection from "@/components/InstagramSection";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -25,6 +26,7 @@ export default function Home() {
         <InsuranceSection />
         <TestimonialsSection />
         <LocationSection />
+        <BlogPreviewSection />
         <InstagramSection />
         <ContactSection />
       </main>

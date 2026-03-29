@@ -15,6 +15,7 @@ const navLinks = [
   { label: "Convênios", href: "#convenios" },
   { label: "Depoimentos", href: "#depoimentos" },
   { label: "Consultórios", href: "#consultorios" },
+  { label: "Blog", href: "/blog" },
   { label: "Contato", href: "#contato" },
 ];
 

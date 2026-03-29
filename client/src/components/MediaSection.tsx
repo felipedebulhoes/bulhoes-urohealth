@@ -51,14 +51,6 @@ const events: Event[] = [
     description: "Participação na jornada acadêmica do Instituto D'Or, referência em ensino e pesquisa médica no Brasil.",
   },
   {
-    year: "2024",
-    title: "Título de Especialista em Urologia",
-    organization: "Sociedade Brasileira de Urologia (SBU)",
-    location: "Brasil",
-    type: "formacao",
-    description: "Aprovação no Título de Especialista em Urologia (TiSBU), certificação máxima da especialidade no Brasil.",
-  },
-  {
     year: "2022",
     title: "Título de Especialista em Cirurgia Geral — TCBC",
     organization: "Colégio Brasileiro de Cirurgiões (CBC)",

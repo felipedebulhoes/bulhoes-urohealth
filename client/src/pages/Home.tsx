@@ -10,6 +10,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import LocationSection from "@/components/LocationSection";
 import InstagramSection from "@/components/InstagramSection";
 import BlogPreviewSection from "@/components/BlogPreviewSection";
+import EducationalPreviewSection from "@/components/EducationalPreviewSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -23,6 +24,7 @@ export default function Home() {
         <AboutSection />
         <EducationSection />
         <SpecialtiesSection />
+        <EducationalPreviewSection />
         <VideosSection />
         <ServicesSection />
         <InsuranceSection />

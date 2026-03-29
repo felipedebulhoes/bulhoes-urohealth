@@ -1,34 +1,68 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Header: Fixed top nav with transparency, clean typography, teal accent CTA
+ * Includes dropdown for educational pages
  */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 
-const navLinks = [
+const mainNavLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Sobre", href: "#sobre" },
   { label: "Especialidades", href: "#especialidades" },
-  { label: "Vídeos", href: "#videos" },
-  { label: "Serviços", href: "#servicos" },
   { label: "Convênios", href: "#convenios" },
-  { label: "Depoimentos", href: "#depoimentos" },
   { label: "Consultórios", href: "#consultorios" },
   { label: "Blog", href: "/blog" },
   { label: "Contato", href: "#contato" },
 ];
 
+const educationalLinks = [
+  { label: "Tratamentos para HPB", href: "/educativo/tratamentos-hpb" },
+  { label: "Cirurgias Minimamente Invasivas", href: "/educativo/cirurgias-minimamente-invasivas" },
+  { label: "Cálculos Renais", href: "/educativo/calculos-renais" },
+  { label: "Disfunção Erétil", href: "/educativo/disfuncao-eretil" },
+  { label: "Hipogonadismo e Testosterona", href: "/educativo/hipogonadismo" },
+  { label: "Síndrome Metabólica", href: "/educativo/sindrome-metabolica" },
+  { label: "Procedimentos Urológicos", href: "/educativo/procedimentos-andrologicos" },
+  { label: "Orientações Pós-Operatórias", href: "/educativo/orientacoes-pos-operatorias" },
+];
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [eduOpen, setEduOpen] = useState(false);
+  const [mobileEduOpen, setMobileEduOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setEduOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const isHomePage = window.location.pathname === "/";
+
+  const handleNavClick = (href: string) => {
+    setMobileOpen(false);
+    if (href.startsWith("#")) {
+      if (!isHomePage) {
+        window.location.href = "/" + href;
+      }
+    }
+  };
 
   return (
     <header
@@ -40,7 +74,7 @@ export default function Header() {
     >
       <div className="container flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
-        <a href="#inicio" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group">
           <img
             src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/logo_min8_d351a844.webp"
             alt="Dr. Felipe de Bulhões - Urologista"
@@ -49,12 +83,69 @@ export default function Header() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
+        <nav className="hidden lg:flex items-center gap-0.5">
+          {mainNavLinks.slice(0, 3).map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`px-3 py-2 text-sm font-medium transition-colors rounded-md hover:bg-white/10 ${
+              onClick={() => handleNavClick(link.href)}
+              className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 ${
+                scrolled
+                  ? "text-[#0A2540]/70 hover:text-[#0A2540] hover:bg-[#0A2540]/5"
+                  : "text-white/80 hover:text-white"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+
+          {/* Educativo Dropdown */}
+          <div ref={dropdownRef} className="relative">
+            <button
+              onClick={() => setEduOpen(!eduOpen)}
+              onMouseEnter={() => setEduOpen(true)}
+              className={`flex items-center gap-1 px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 ${
+                scrolled
+                  ? "text-[#0A2540]/70 hover:text-[#0A2540] hover:bg-[#0A2540]/5"
+                  : "text-white/80 hover:text-white"
+              }`}
+            >
+              Educativo
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${eduOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {eduOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.15 }}
+                  onMouseLeave={() => setEduOpen(false)}
+                  className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-xl border border-[#0A2540]/8 overflow-hidden py-2"
+                >
+                  {educationalLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setEduOpen(false)}
+                    >
+                      <div className="px-4 py-2.5 text-sm text-[#0A2540]/70 hover:bg-[#0D9488]/5 hover:text-[#0D9488] transition-colors cursor-pointer">
+                        {link.label}
+                      </div>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {mainNavLinks.slice(3).map((link) => (
+            <a
+              key={link.href}
+              href={link.href.startsWith("/") ? link.href : link.href}
+              onClick={() => handleNavClick(link.href)}
+              className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 ${
                 scrolled
                   ? "text-[#0A2540]/70 hover:text-[#0A2540] hover:bg-[#0A2540]/5"
                   : "text-white/80 hover:text-white"
@@ -101,19 +192,62 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white border-b border-border overflow-hidden"
           >
-            <nav className="container py-4 flex flex-col gap-1">
-              {navLinks.map((link) => (
+            <nav className="container py-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
+              {mainNavLinks.slice(0, 3).map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => handleNavClick(link.href)}
                   className="px-4 py-3 text-[#0A2540] font-medium text-sm rounded-md hover:bg-[#0A2540]/5 transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
+
+              {/* Mobile Educativo accordion */}
+              <button
+                onClick={() => setMobileEduOpen(!mobileEduOpen)}
+                className="flex items-center justify-between px-4 py-3 text-[#0A2540] font-medium text-sm rounded-md hover:bg-[#0A2540]/5 transition-colors"
+              >
+                Conteúdo Educativo
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileEduOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {mobileEduOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    {educationalLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => { setMobileOpen(false); setMobileEduOpen(false); }}
+                      >
+                        <div className="px-8 py-2.5 text-[#0A2540]/60 text-sm hover:text-[#0D9488] transition-colors cursor-pointer">
+                          {link.label}
+                        </div>
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {mainNavLinks.slice(3).map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href.startsWith("/") ? link.href : link.href}
+                  onClick={() => handleNavClick(link.href)}
+                  className="px-4 py-3 text-[#0A2540] font-medium text-sm rounded-md hover:bg-[#0A2540]/5 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+
               <a
-                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/sao-paulo"
+                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2"

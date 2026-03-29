@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import EducationSection from "@/components/EducationSection";
 import SpecialtiesSection from "@/components/SpecialtiesSection";
 import ServicesSection from "@/components/ServicesSection";
+import InsuranceSection from "@/components/InsuranceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import LocationSection from "@/components/LocationSection";
 import InstagramSection from "@/components/InstagramSection";
@@ -21,6 +22,7 @@ export default function Home() {
         <EducationSection />
         <SpecialtiesSection />
         <ServicesSection />
+        <InsuranceSection />
         <TestimonialsSection />
         <LocationSection />
         <InstagramSection />

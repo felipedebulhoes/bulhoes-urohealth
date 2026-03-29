@@ -15,6 +15,7 @@ import Hipogonadismo from "./pages/Hipogonadismo";
 import SindromeMetabolica from "./pages/SindromeMetabolica";
 import ProcedimentosAndrologicos from "./pages/ProcedimentosAndrologicos";
 import DisfuncaoEretil from "./pages/DisfuncaoEretil";
+import PrimeiraConsulta from "./pages/PrimeiraConsulta";
 
 
 function Router() {
@@ -31,6 +32,7 @@ function Router() {
       <Route path={"/educativo/sindrome-metabolica"} component={SindromeMetabolica} />
       <Route path={"/educativo/procedimentos-andrologicos"} component={ProcedimentosAndrologicos} />
       <Route path={"/educativo/disfuncao-eretil"} component={DisfuncaoEretil} />
+      <Route path={"/primeira-consulta"} component={PrimeiraConsulta} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

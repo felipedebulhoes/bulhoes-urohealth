@@ -1,7 +1,8 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
- * Shared layout for educational pages with header, hero, and footer
+ * Shared layout for educational pages with header, hero, footer, and SEO meta tags
  */
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Phone } from "lucide-react";
@@ -13,6 +14,8 @@ interface EducationalLayoutProps {
   subtitle: string;
   description: string;
   accentColor?: string;
+  metaTitle?: string;
+  metaDescription?: string;
   children: React.ReactNode;
 }
 
@@ -21,8 +24,28 @@ export default function EducationalLayout({
   subtitle,
   description,
   accentColor = "#0D9488",
+  metaTitle,
+  metaDescription,
   children,
 }: EducationalLayoutProps) {
+  useEffect(() => {
+    const pageTitle = metaTitle || `${title} | Dr. Felipe de Bulhões - Urologista`;
+    document.title = pageTitle;
+
+    const metaDesc = metaDescription || description;
+    let metaTag = document.querySelector('meta[name="description"]');
+    if (!metaTag) {
+      metaTag = document.createElement("meta");
+      metaTag.setAttribute("name", "description");
+      document.head.appendChild(metaTag);
+    }
+    metaTag.setAttribute("content", metaDesc);
+
+    return () => {
+      document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";
+    };
+  }, [title, description, metaTitle, metaDescription]);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}

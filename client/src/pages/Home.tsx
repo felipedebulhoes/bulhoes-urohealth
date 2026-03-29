@@ -7,13 +7,17 @@ import ServicesSection from "@/components/ServicesSection";
 import VideosSection from "@/components/VideosSection";
 import InsuranceSection from "@/components/InsuranceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import DoctoraliaBadge from "@/components/DoctoraliaBadge";
 import LocationSection from "@/components/LocationSection";
 import InstagramSection from "@/components/InstagramSection";
 import BlogPreviewSection from "@/components/BlogPreviewSection";
 import EducationalPreviewSection from "@/components/EducationalPreviewSection";
+import FAQSection from "@/components/FAQSection";
+import QuickContactForm from "@/components/QuickContactForm";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScheduleBanner from "@/components/ScheduleBanner";
 
 export default function Home() {
   return (
@@ -29,13 +33,17 @@ export default function Home() {
         <ServicesSection />
         <InsuranceSection />
         <TestimonialsSection />
+        <DoctoraliaBadge />
         <LocationSection />
+        <FAQSection />
+        <QuickContactForm />
         <BlogPreviewSection />
         <InstagramSection />
         <ContactSection />
       </main>
       <Footer />
       <WhatsAppButton />
+      <ScheduleBanner />
     </div>
   );
 }

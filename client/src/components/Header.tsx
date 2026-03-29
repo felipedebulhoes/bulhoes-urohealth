@@ -19,6 +19,11 @@ const mainNavLinks = [
   { label: "Contato", href: "#contato" },
 ];
 
+const quickLinks = [
+  { label: "Primeira Consulta", href: "/primeira-consulta" },
+  { label: "Vídeos", href: "#videos" },
+];
+
 const educationalLinks = [
   { label: "Tratamentos para HPB", href: "/educativo/tratamentos-hpb" },
   { label: "Cirurgias Minimamente Invasivas", href: "/educativo/cirurgias-minimamente-invasivas" },
@@ -140,6 +145,33 @@ export default function Header() {
             </AnimatePresence>
           </div>
 
+          {quickLinks.map((link) => (
+            link.href.startsWith("/") ? (
+              <Link key={link.href} href={link.href}>
+                <span className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 cursor-pointer ${
+                  scrolled
+                    ? "text-[#0D9488] hover:text-[#0B7C72] hover:bg-[#0D9488]/5"
+                    : "text-[#5EEAD4] hover:text-white"
+                }`}>
+                  {link.label}
+                </span>
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => handleNavClick(link.href)}
+                className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 ${
+                  scrolled
+                    ? "text-[#0A2540]/70 hover:text-[#0A2540] hover:bg-[#0A2540]/5"
+                    : "text-white/80 hover:text-white"
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          ))}
+
           {mainNavLinks.slice(3).map((link) => (
             <a
               key={link.href}
@@ -234,6 +266,12 @@ export default function Header() {
                   </motion.div>
                 )}
               </AnimatePresence>
+
+              <Link href="/primeira-consulta" onClick={() => setMobileOpen(false)}>
+                <div className="px-4 py-3 text-[#0D9488] font-semibold text-sm rounded-md hover:bg-[#0D9488]/5 transition-colors cursor-pointer">
+                  Primeira Consulta
+                </div>
+              </Link>
 
               {mainNavLinks.slice(3).map((link) => (
                 <a

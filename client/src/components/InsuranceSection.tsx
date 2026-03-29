@@ -8,18 +8,19 @@ import { useRef } from "react";
 import { ShieldCheck, Building2, Monitor, Info } from "lucide-react";
 
 const mainInsurers = [
-  { name: "Allianz Saúde", category: "premium" },
-  { name: "Amil", category: "premium" },
-  { name: "Ampla Saúde", category: "standard" },
-  { name: "Bradesco Saúde", category: "premium" },
-  { name: "NotreDame Intermédica", category: "premium" },
-  { name: "Mediservice", category: "standard" },
-  { name: "Omint", category: "premium" },
-  { name: "Porto Med", category: "standard" },
-  { name: "Porto Seguro Saúde", category: "premium" },
-  { name: "SulAmérica Saúde", category: "premium" },
-  { name: "Unimed", category: "premium" },
-  { name: "New Saúde Leader", category: "standard" },
+  { name: "Allianz", category: "premium", note: "" },
+  { name: "Amil", category: "premium", note: "" },
+  { name: "Assefaz", category: "standard", note: "" },
+  { name: "Bradesco", category: "premium", note: "" },
+  { name: "Cassi", category: "standard", note: "" },
+  { name: "Gama", category: "standard", note: "" },
+  { name: "Go Care", category: "standard", note: "Cirurgias" },
+  { name: "Holambra", category: "standard", note: "" },
+  { name: "Medservice", category: "standard", note: "" },
+  { name: "Porto Seguro", category: "premium", note: "" },
+  { name: "Skill / Omint", category: "premium", note: "" },
+  { name: "SulAmérica", category: "premium", note: "Cirurgias" },
+  { name: "Unimed", category: "premium", note: "Cooperados" },
 ];
 
 const highlights = [
@@ -127,9 +128,14 @@ export default function InsuranceSection() {
                       : "text-[#0A2540]/40"
                   }`} />
                 </div>
-                <span className="text-sm font-medium text-[#0A2540]/80 group-hover:text-[#0A2540] transition-colors">
-                  {insurer.name}
-                </span>
+                <div>
+                  <span className="text-sm font-medium text-[#0A2540]/80 group-hover:text-[#0A2540] transition-colors">
+                    {insurer.name}
+                  </span>
+                  {insurer.note && (
+                    <span className="block text-[10px] text-[#0D9488]/70 mt-0.5">{insurer.note}</span>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -144,9 +150,9 @@ export default function InsuranceSection() {
         >
           <Info className="w-4 h-4 text-[#0D9488] mt-0.5 shrink-0" />
           <p className="text-xs text-[#0A2540]/50 leading-relaxed">
-            A cobertura pode variar conforme o plano contratado. Recomendamos confirmar a cobertura diretamente
-            com sua operadora ou entrar em contato conosco antes de agendar. Dados de credenciamento baseados
-            em registros da ANS (atualizado em fev/2026).
+            A cobertura pode variar conforme o plano contratado. Alguns convênios cobrem apenas procedimentos cirúrgicos.
+            Recomendamos confirmar a cobertura diretamente com sua operadora ou entrar em contato conosco antes de agendar.
+            Fonte: Campinas Day Hospital (2026).
           </p>
         </motion.div>
       </div>

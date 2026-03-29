@@ -20,7 +20,7 @@ import NewsletterSection from "@/components/NewsletterSection";
 import InstagramSection from "@/components/InstagramSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 import ScheduleBanner from "@/components/ScheduleBanner";
 
 export default function Home() {
@@ -50,7 +50,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppWidget />
       <ScheduleBanner />
     </div>
   );

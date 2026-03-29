@@ -1,0 +1,283 @@
+/*
+ * Design: Clinical Precision — Swiss Medical Design
+ * Página: Sobre o Dr. Felipe de Bulhões — Provider Page otimizada para SEO
+ */
+import { motion } from "framer-motion";
+import {
+  GraduationCap,
+  Award,
+  MapPin,
+  Phone,
+  Star,
+  Stethoscope,
+  BookOpen,
+  Users,
+  ChevronRight,
+  Calendar,
+  Video,
+} from "lucide-react";
+import { Link } from "wouter";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.5 },
+  }),
+};
+
+const LOGO_URL = "https://cdn.manus.space/webdev/bulhoes-urohealth/logo_min8.webp";
+const PORTRAIT_URL = "https://cdn.manus.space/webdev/bulhoes-urohealth/felipe-portrait.jpeg";
+const UROONCO_URL = "https://cdn.manus.space/webdev/bulhoes-urohealth/uroonco-solo.jpeg";
+const JPU_URL = "https://cdn.manus.space/webdev/bulhoes-urohealth/jpu-congress.jpeg";
+
+export default function SobreDrFelipe() {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-[#0A2540] via-[#0F3460] to-[#0A2540] text-white pt-28 pb-20">
+        <div className="container max-w-6xl">
+          <div className="grid lg:grid-cols-5 gap-12 items-center">
+            <motion.div
+              className="lg:col-span-3"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <Stethoscope className="w-5 h-5 text-[#0D9488]" />
+                <span className="text-[#0D9488] text-sm font-medium tracking-wider uppercase">Urologista | CRM-SP 218.357 | RQE 110.850</span>
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-serif font-bold mb-6 leading-tight">
+                Dr. Felipe de Bulhões Ojeda
+              </h1>
+              <p className="text-lg text-white/80 leading-relaxed mb-6">
+                Urologista formado pelo <strong className="text-white">Instituto D'Or de Ensino e Pesquisa (IDOR)</strong> em São Paulo, com título de especialista pela Sociedade Brasileira de Urologia (SBU) e Cirurgião Geral com título de especialista pelo Colégio Brasileiro de Cirurgiões (CBC). Atua em cirurgias minimamente invasivas, endourologia, uro-oncologia, andrologia e urodinâmica.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#0D9488] hover:bg-[#0B8276] text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                >
+                  <Calendar className="w-4 h-4" />
+                  Agendar Consulta
+                </a>
+                <a
+                  href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de agendar uma consulta."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-white/30 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                >
+                  <Phone className="w-4 h-4" />
+                  WhatsApp
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className="lg:col-span-2 flex justify-center"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="relative">
+                <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
+                  <img
+                    src={PORTRAIT_URL}
+                    alt="Dr. Felipe de Bulhões Ojeda - Urologista"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-3 shadow-lg flex items-center gap-2">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="text-sm font-bold text-[#0A2540]">5.0</span>
+                  <span className="text-xs text-[#64748B]">Doctoralia</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Formação */}
+      <section className="py-16 bg-white">
+        <div className="container max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Formação Acadêmica</h2>
+            <div className="space-y-6">
+              {[
+                { year: "2023-2025", title: "Residência em Urologia", inst: "Instituto D'Or de Ensino e Pesquisa (IDOR)", city: "São Paulo, SP", detail: "Formação em centro de referência com alto volume cirúrgico em cirurgia robótica, endourologia e uro-oncologia." },
+                { year: "2021-2023", title: "Residência em Cirurgia Geral", inst: "Hospital Municipal Dr. Mário Gatti / Hospital de Clínicas da UNICAMP", city: "Campinas, SP", detail: "Formação cirúrgica completa com título de especialista pelo Colégio Brasileiro de Cirurgiões (TCBC)." },
+                { year: "2015-2020", title: "Graduação em Medicina", inst: "Pontifícia Universidade Católica de Campinas (PUC-Campinas)", city: "Campinas, SP", detail: "Graduação com participação ativa em ligas acadêmicas e iniciação científica." },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-6 items-start">
+                  <div className="text-right min-w-[100px] shrink-0">
+                    <span className="text-sm font-bold text-[#0D9488]">{item.year}</span>
+                  </div>
+                  <div className="w-px bg-[#0D9488]/30 relative shrink-0">
+                    <div className="absolute top-1 -left-1.5 w-3 h-3 bg-[#0D9488] rounded-full" />
+                  </div>
+                  <div className="pb-6">
+                    <h4 className="font-bold text-[#0A2540] mb-1">{item.title}</h4>
+                    <p className="text-sm text-[#0D9488] font-medium mb-1">{item.inst}</p>
+                    <p className="text-xs text-[#64748B] mb-2">{item.city}</p>
+                    <p className="text-sm text-[#334155] leading-relaxed">{item.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Títulos e Certificações */}
+      <section className="py-16 bg-gray-50">
+        <div className="container max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Títulos e Certificações</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { icon: Award, title: "Título de Especialista em Urologia (TiSBU)", org: "Sociedade Brasileira de Urologia — SBU", year: "2025" },
+                { icon: Award, title: "Título de Especialista em Cirurgia Geral (TCBC)", org: "Colégio Brasileiro de Cirurgiões — CBC", year: "2023" },
+                { icon: GraduationCap, title: "Residência em Urologia — IDOR", org: "Instituto D'Or de Ensino e Pesquisa", year: "2023-2025" },
+                { icon: GraduationCap, title: "Residência em Cirurgia Geral", org: "Hospital Mário Gatti / HC UNICAMP", year: "2021-2023" },
+                { icon: BookOpen, title: "Membro da SBU", org: "Sociedade Brasileira de Urologia", year: "2023" },
+                { icon: BookOpen, title: "Membro do CBC", org: "Colégio Brasileiro de Cirurgiões", year: "2023" },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm flex gap-4 items-start">
+                  <div className="w-10 h-10 bg-[#0D9488]/10 rounded-lg flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 text-[#0D9488]" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#0A2540] text-sm mb-1">{item.title}</h4>
+                    <p className="text-xs text-[#64748B]">{item.org}</p>
+                    <p className="text-xs text-[#0D9488] font-medium mt-1">{item.year}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Áreas de Atuação */}
+      <section className="py-16 bg-white">
+        <div className="container max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Áreas de Atuação</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                "Cirurgias Minimamente Invasivas",
+                "Endourologia (Cálculos Renais)",
+                "Uro-Oncologia",
+                "Hiperplasia Prostática (HPB)",
+                "Andrologia e Saúde Sexual",
+                "Urodinâmica",
+                "Cirurgia Robótica",
+                "Disfunção Erétil",
+                "Saúde do Homem",
+              ].map((area, i) => (
+                <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-100 flex items-center gap-3">
+                  <ChevronRight className="w-4 h-4 text-[#0D9488] shrink-0" />
+                  <span className="text-sm font-medium text-[#0A2540]">{area}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Congressos */}
+      <section className="py-16 bg-gray-50">
+        <div className="container max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Participação em Congressos</h2>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                <img src={UROONCO_URL} alt="Dr. Felipe no UroOnco 2025" className="w-full h-48 object-cover" />
+                <div className="p-4 bg-white">
+                  <h4 className="font-bold text-[#0A2540] mb-1">UroOnco 2025</h4>
+                  <p className="text-sm text-[#64748B]">Congresso de Uro-Oncologia — São Paulo</p>
+                </div>
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                <img src={JPU_URL} alt="Dr. Felipe no JPU 2025" className="w-full h-48 object-cover" />
+                <div className="p-4 bg-white">
+                  <h4 className="font-bold text-[#0A2540] mb-1">JPU 2025</h4>
+                  <p className="text-sm text-[#64748B]">Jornada Paulista de Urologia — SBU-SP</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Locais de Atendimento */}
+      <section className="py-16 bg-white">
+        <div className="container max-w-4xl">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Locais de Atendimento</h2>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                { name: "Campinas Day Hospital", address: "R. Angela Signori Grigol, 299 — Campinas/SP", type: "Convênios e Particular", color: "bg-blue-50 border-blue-100" },
+                { name: "Clinovi Paulista", address: "Av. Paulista — São Paulo/SP", type: "Particular", color: "bg-teal-50 border-teal-100" },
+                { name: "Clinovi Moema", address: "Moema — São Paulo/SP", type: "Particular", color: "bg-green-50 border-green-100" },
+              ].map((loc, i) => (
+                <div key={i} className={`rounded-xl p-5 border ${loc.color}`}>
+                  <MapPin className="w-5 h-5 text-[#0D9488] mb-3" />
+                  <h4 className="font-bold text-[#0A2540] mb-1 text-sm">{loc.name}</h4>
+                  <p className="text-xs text-[#64748B] mb-2">{loc.address}</p>
+                  <span className="text-xs bg-white px-2 py-1 rounded border font-medium text-[#0D9488]">{loc.type}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 bg-indigo-50 border border-indigo-100 rounded-xl p-5 flex items-center gap-4">
+              <Video className="w-8 h-8 text-indigo-500 shrink-0" />
+              <div>
+                <h4 className="font-bold text-[#0A2540] mb-1">Teleconsulta</h4>
+                <p className="text-sm text-[#334155]">Atendimento online para todo o Brasil. Agende pelo Doctoralia ou WhatsApp.</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-[#0A2540]">
+        <div className="container max-w-4xl text-center">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+            <img src={LOGO_URL} alt="Dr. Felipe de Bulhões" className="h-14 mx-auto mb-6 brightness-0 invert" />
+            <h2 className="text-2xl lg:text-3xl text-white font-serif mb-4">Agende Sua Consulta</h2>
+            <p className="text-white/70 mb-8 max-w-xl mx-auto">
+              Cuide da sua saúde com um urologista especializado. Atendimento presencial em Campinas e São Paulo, ou teleconsulta para todo o Brasil.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#0D9488] hover:bg-[#0B8276] text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              >
+                Agendar pelo Doctoralia
+              </a>
+              <a
+                href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de agendar uma consulta."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              >
+                WhatsApp (11) 98112-4455
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}

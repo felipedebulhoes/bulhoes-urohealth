@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HelpCircle, ChevronDown, MessageCircle } from "lucide-react";
+import FAQSchema from "@/components/FAQSchema";
 
 const faqs = [
   {
@@ -220,8 +221,14 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function FAQSection() {
   const [activeCategory, setActiveCategory] = useState("Consulta");
 
+  // Flatten all FAQs for Schema markup
+  const allFaqItems = faqs.flatMap((cat) =>
+    cat.questions.map((q) => ({ question: q.q, answer: q.a }))
+  );
+
   return (
     <section id="faq" className="py-16 lg:py-24">
+      <FAQSchema faqs={allFaqItems} />
       <div className="container max-w-4xl">
         {/* Header */}
         <motion.div

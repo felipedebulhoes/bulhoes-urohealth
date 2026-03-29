@@ -11,7 +11,7 @@ import { Link } from "wouter";
 
 const mainNavLinks = [
   { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
+  { label: "Sobre", href: "/sobre" },
   { label: "Especialidades", href: "#especialidades" },
   { label: "Convênios", href: "#convenios" },
   { label: "Consultórios", href: "#consultorios" },
@@ -28,9 +28,13 @@ const educationalLinks = [
   { label: "Tratamentos para HPB", href: "/educativo/tratamentos-hpb" },
   { label: "Cirurgias Minimamente Invasivas", href: "/educativo/cirurgias-minimamente-invasivas" },
   { label: "Cálculos Renais", href: "/educativo/calculos-renais" },
+  { label: "Câncer de Próstata", href: "/educativo/cancer-prostata" },
+  { label: "Exame de Próstata", href: "/educativo/exame-prostata" },
   { label: "Disfunção Erétil", href: "/educativo/disfuncao-eretil" },
   { label: "Hipogonadismo e Testosterona", href: "/educativo/hipogonadismo" },
   { label: "Síndrome Metabólica", href: "/educativo/sindrome-metabolica" },
+  { label: "Infecção Urinária no Homem", href: "/educativo/infeccao-urinaria" },
+  { label: "Urodinâmica", href: "/educativo/urodinamica" },
   { label: "Procedimentos Urológicos", href: "/educativo/procedimentos-andrologicos" },
   { label: "Orientações Pós-Operatórias", href: "/educativo/orientacoes-pos-operatorias" },
 ];

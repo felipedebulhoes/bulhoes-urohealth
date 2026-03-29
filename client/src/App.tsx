@@ -17,6 +17,12 @@ import ProcedimentosAndrologicos from "./pages/ProcedimentosAndrologicos";
 import DisfuncaoEretil from "./pages/DisfuncaoEretil";
 import PrimeiraConsulta from "./pages/PrimeiraConsulta";
 import GuiaGoogleBusiness from "./pages/GuiaGoogleBusiness";
+import ExameProstata from "./pages/ExameProstata";
+import Urodinamica from "./pages/Urodinamica";
+import InfeccaoUrinaria from "./pages/InfeccaoUrinaria";
+import CancerProstata from "./pages/CancerProstata";
+import SobreDrFelipe from "./pages/SobreDrFelipe";
+import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema } from "./pages/LocationPages";
 
 
 function Router() {
@@ -33,6 +39,14 @@ function Router() {
       <Route path={"/educativo/sindrome-metabolica"} component={SindromeMetabolica} />
       <Route path={"/educativo/procedimentos-andrologicos"} component={ProcedimentosAndrologicos} />
       <Route path={"/educativo/disfuncao-eretil"} component={DisfuncaoEretil} />
+      <Route path={"/educativo/exame-prostata"} component={ExameProstata} />
+      <Route path={"/educativo/urodinamica"} component={Urodinamica} />
+      <Route path={"/educativo/infeccao-urinaria"} component={InfeccaoUrinaria} />
+      <Route path={"/educativo/cancer-prostata"} component={CancerProstata} />
+      <Route path={"/sobre"} component={SobreDrFelipe} />
+      <Route path={"/local/campinas-day-hospital"} component={CampinasDayHospital} />
+      <Route path={"/local/clinovi-paulista"} component={ClinoviPaulista} />
+      <Route path={"/local/clinovi-moema"} component={ClinoviMoema} />
       <Route path={"/primeira-consulta"} component={PrimeiraConsulta} />
       <Route path={"/guia-google-business"} component={GuiaGoogleBusiness} />
       <Route path={"/404"} component={NotFound} />

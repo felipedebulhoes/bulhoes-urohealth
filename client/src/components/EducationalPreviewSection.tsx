@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
   BookOpen, ArrowRight, Activity, Scissors, Zap,
-  Heart, Dumbbell, Shield, Pill, Stethoscope
+  Heart, Dumbbell, Shield, Pill, Stethoscope,
+  Search, Microscope, Thermometer, Waves
 } from "lucide-react";
 
 const educationalPages = [
@@ -32,6 +33,20 @@ const educationalPages = [
     color: "bg-amber-50 text-amber-600",
   },
   {
+    title: "Câncer de Próstata",
+    description: "Diagnóstico, estadiamento e opções de tratamento — do rastreamento à cirurgia robótica.",
+    href: "/educativo/cancer-prostata",
+    icon: <Microscope className="w-5 h-5" />,
+    color: "bg-rose-50 text-rose-600",
+  },
+  {
+    title: "Exame de Próstata",
+    description: "Tudo o que você precisa saber: como é, quando fazer e por que não ter medo.",
+    href: "/educativo/exame-prostata",
+    icon: <Search className="w-5 h-5" />,
+    color: "bg-indigo-50 text-indigo-600",
+  },
+  {
     title: "Disfunção Erétil",
     description: "Causas, diagnóstico e opções de tratamento em decisão compartilhada.",
     href: "/educativo/disfuncao-eretil",
@@ -51,6 +66,20 @@ const educationalPages = [
     href: "/educativo/sindrome-metabolica",
     icon: <Dumbbell className="w-5 h-5" />,
     color: "bg-orange-50 text-orange-600",
+  },
+  {
+    title: "Infecção Urinária no Homem",
+    description: "Causas, tratamento e quando procurar o urologista.",
+    href: "/educativo/infeccao-urinaria",
+    icon: <Thermometer className="w-5 h-5" />,
+    color: "bg-yellow-50 text-yellow-600",
+  },
+  {
+    title: "Urodinâmica",
+    description: "O que é o exame, como funciona e quando é indicado.",
+    href: "/educativo/urodinamica",
+    icon: <Waves className="w-5 h-5" />,
+    color: "bg-sky-50 text-sky-600",
   },
   {
     title: "Procedimentos Urológicos",
@@ -101,7 +130,7 @@ export default function EducationalPreviewSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
+              transition={{ delay: i * 0.04 }}
             >
               <Link href={page.href}>
                 <div className="group bg-white rounded-xl border border-[#0A2540]/6 p-5 h-full hover:border-[#0D9488]/30 hover:shadow-md transition-all duration-300 cursor-pointer">

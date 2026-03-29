@@ -87,7 +87,7 @@ export default function Header() {
           <img
             src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/logo_min8_d351a844.webp"
             alt="Dr. Felipe de Bulhões - Urologista"
-            className={`h-16 lg:h-20 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`} style={{width: '261px'}}
+            className={`h-16 lg:h-20 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`} style={{width: '250px', height: '153px'}}
           />
         </a>
 

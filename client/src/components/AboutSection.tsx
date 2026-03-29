@@ -25,7 +25,7 @@ const credentials = [
   {
     icon: Globe,
     title: "Afiliações Internacionais",
-    desc: "Membro da SBU, AUA (International Resident in Training) e EAU (Junior International Member)",
+    desc: "Membro da SBU, AUA e EAU",
   },
   {
     icon: BookOpen,
@@ -72,7 +72,7 @@ export default function AboutSection() {
               <img
                 src={ABOUT_IMG}
                 alt="Dr. Felipe de Bulhões na I Jornada IDOR de Urologia"
-                className="w-full h-auto object-cover object-center aspect-[4/3]"
+                className="w-full h-auto object-cover object-center aspect-[4/3]" style={{width: '724px', height: '644px'}}
               />
             </div>
             {/* Floating badge */}

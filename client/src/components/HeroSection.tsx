@@ -40,7 +40,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-10 bg-[#0D9488]" />
               <span className="text-[#5EEAD4] text-xs font-semibold uppercase tracking-[0.2em]">
-                CRM-SP 202291 · RQE 108485
+                CRM-SP 202291 · RQE 146538 / RQE 114019
               </span>
             </div>
 

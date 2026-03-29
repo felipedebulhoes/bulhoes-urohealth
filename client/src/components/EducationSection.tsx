@@ -44,8 +44,8 @@ const certifications = [
   "Título de Especialista em Cirurgia Geral — AMB/CBC",
   "Membro Titular do Colégio Brasileiro de Cirurgiões (TCBC)",
   "Membro da Sociedade Brasileira de Urologia (SBU)",
-  "Membro da American Urological Association (AUA) — International Resident in Training",
-  "Membro da European Association of Urology (EAU) — Junior International Member",
+  "Membro da American Urological Association (AUA)",
+  "Membro da European Association of Urology (EAU)",
   "ATLS — Advanced Trauma Life Support",
   "ACLS — Advanced Cardiovascular Life Support",
 ];

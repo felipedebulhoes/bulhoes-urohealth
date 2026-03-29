@@ -32,10 +32,10 @@ const stats: Stat[] = [
   },
   {
     icon: Award,
-    value: 2,
+    value: 1,
     suffix: "",
-    label: "Títulos de Especialista",
-    description: "TiSBU e TCBC",
+    label: "Título de Especialista",
+    description: "TCBC",
   },
   {
     icon: Star,

@@ -120,7 +120,7 @@ export default function Footer() {
               &copy; {currentYear} Dr. Felipe de Bulhões Ojeda. Todos os direitos reservados.
             </p>
             <p className="text-xs text-white/30 font-sans">
-              CRM-SP 202291 | RQE 108485 | TCBC
+              CRM-SP 202291 | RQE 146538 / RQE 114019 | TCBC
             </p>
           </div>
         </div>

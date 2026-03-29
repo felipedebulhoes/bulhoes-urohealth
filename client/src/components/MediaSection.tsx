@@ -171,15 +171,11 @@ export default function MediaSection() {
           <div className="flex items-center justify-center gap-6 flex-wrap">
             <div className="flex items-center gap-2 text-sm text-[#0A2540] font-medium">
               <Award className="w-5 h-5 text-[#0D9488]" />
-              TiSBU — Título de Especialista em Urologia
-            </div>
-            <div className="flex items-center gap-2 text-sm text-[#0A2540] font-medium">
-              <Award className="w-5 h-5 text-[#0D9488]" />
               TCBC — Colégio Brasileiro de Cirurgiões
             </div>
             <div className="flex items-center gap-2 text-sm text-[#0A2540] font-medium">
               <Calendar className="w-5 h-5 text-[#0D9488]" />
-              CRM-SP 218.298
+              CRM-SP 202.291
             </div>
           </div>
         </motion.div>

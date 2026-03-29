@@ -19,7 +19,7 @@ const defaultAuthor = {
   name: "Dr. Felipe de Bulhões",
   credentials: "CRM-SP 202291 | Urologista | TCBC",
   avatar:
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/instagram_profile_4b4b4c4b.jpg",
+    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/instagram_profile_bc867e99.jpg",
 };
 
 export const blogPosts: BlogPost[] = [

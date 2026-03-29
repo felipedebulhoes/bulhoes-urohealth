@@ -9,7 +9,7 @@ import { useRef } from "react";
 import { GraduationCap, Stethoscope, Globe, BookOpen } from "lucide-react";
 
 // Real photo — Dr. Felipe at I Jornada IDOR Urologia (academic event with colleagues)
-const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/jornada-idor_e2b3f5a6.jpeg";
+const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/jornada-idor_cd58a6fe.jpeg";
 
 const credentials = [
   {

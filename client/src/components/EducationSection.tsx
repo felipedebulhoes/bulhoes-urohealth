@@ -7,7 +7,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 // Real photo — Dr. Felipe at JPU 2025 congress (solo, full body, great quality)
-const CONGRESS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/jpu-congress_3e9e2a0a.jpeg";
+const CONGRESS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/jpu-congress_61ecfbf9.jpeg";
 
 const timeline = [
   {

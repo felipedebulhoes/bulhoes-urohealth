@@ -36,13 +36,13 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container flex items-center justify-between h-16 lg:h-20">
+      <div className="container flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2 group">
           <img
             src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/logo_min8_d351a844.webp"
             alt="Dr. Felipe de Bulhões - Urologista"
-            className={`h-12 lg:h-16 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
+            className={`h-16 lg:h-20 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
           />
         </a>
 

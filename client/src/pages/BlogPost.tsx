@@ -6,7 +6,7 @@ import { useParams, Link, useLocation } from "wouter";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { getPostBySlug } from "@/lib/blogData";
-import { Calendar, Clock, ArrowLeft, User, Share2 } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, User, Share2, CalendarCheck, MessageCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Streamdown } from "streamdown";
 
@@ -162,39 +162,80 @@ export default function BlogPost() {
               <Streamdown>{post.content}</Streamdown>
             </motion.div>
 
-            {/* CTA */}
+            {/* CTA — Agendamento Doctoralia */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-12 bg-gradient-to-br from-[#0A2540] to-[#0F3460] rounded-xl p-8 lg:p-10 text-center"
+              className="mt-14 relative overflow-hidden rounded-2xl"
             >
-              <h3 className="text-xl lg:text-2xl text-white mb-3 font-serif">
-                Cuide da sua saúde urológica
-              </h3>
-              <p className="text-white/60 text-sm mb-6 max-w-lg mx-auto">
-                Agende uma consulta preventiva com o Dr. Felipe de Bulhões.
-                Atendimento presencial em São Paulo e Campinas, ou por teleconsulta.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a
-                  href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white px-6 h-11">
-                    Agendar Consulta
-                  </Button>
-                </a>
-                <a
-                  href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20li%20o%20artigo%20no%20blog%20e%20gostaria%20de%20agendar%20uma%20consulta."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="outline" className="text-white border-white/20 hover:bg-white/10 bg-transparent px-6 h-11">
-                    WhatsApp
-                  </Button>
-                </a>
+              {/* Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0A2540] via-[#0F3460] to-[#0A2540]" />
+              <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+
+              <div className="relative p-8 lg:p-12">
+                {/* Top accent */}
+                <div className="flex items-center justify-center gap-2 mb-6">
+                  <div className="h-px w-8 bg-[#0D9488]" />
+                  <span className="text-[#5EEAD4] text-xs font-semibold uppercase tracking-[0.2em]">Agende sua consulta</span>
+                  <div className="h-px w-8 bg-[#0D9488]" />
+                </div>
+
+                <h3 className="text-2xl lg:text-3xl text-white text-center mb-3 font-serif">
+                  Tem dúvidas? Converse com um especialista.
+                </h3>
+                <p className="text-white/50 text-center text-sm lg:text-base mb-8 max-w-xl mx-auto leading-relaxed">
+                  Agende uma consulta com o Dr. Felipe de Bulhões pelo Doctoralia.
+                  Atendimento presencial em São Paulo e Campinas, ou por teleconsulta.
+                </p>
+
+                {/* Trust badges */}
+                <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6 mb-8">
+                  <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5">
+                    <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    <span className="text-white text-sm font-medium">Nota 5.0</span>
+                    <span className="text-white/40 text-xs">Doctoralia</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5">
+                    <CalendarCheck className="w-4 h-4 text-[#5EEAD4]" />
+                    <span className="text-white text-sm font-medium">Agenda online</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5">
+                    <MessageCircle className="w-4 h-4 text-[#5EEAD4]" />
+                    <span className="text-white text-sm font-medium">Teleconsulta</span>
+                  </div>
+                </div>
+
+                {/* Buttons */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <a
+                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto"
+                  >
+                    <Button className="w-full sm:w-auto bg-[#0D9488] hover:bg-[#0B7C72] text-white px-8 h-12 text-base font-semibold shadow-lg shadow-[#0D9488]/20 transition-all hover:shadow-xl hover:shadow-[#0D9488]/30 hover:-translate-y-0.5">
+                      <CalendarCheck className="w-5 h-5 mr-2" />
+                      Agendar pelo Doctoralia
+                    </Button>
+                  </a>
+                  <a
+                    href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20li%20o%20artigo%20no%20blog%20e%20gostaria%20de%20agendar%20uma%20consulta."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto"
+                  >
+                    <Button variant="outline" className="w-full sm:w-auto text-white border-white/20 hover:bg-white/10 bg-transparent px-8 h-12 text-base transition-all hover:-translate-y-0.5">
+                      <MessageCircle className="w-5 h-5 mr-2" />
+                      WhatsApp
+                    </Button>
+                  </a>
+                </div>
+
+                {/* Bottom note */}
+                <p className="text-white/30 text-xs text-center mt-6">
+                  CRM-SP 202291 · RQE 146538 / RQE 114019
+                </p>
               </div>
             </motion.div>
 

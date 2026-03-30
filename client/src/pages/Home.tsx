@@ -19,6 +19,7 @@ import BlogPreviewSection from "@/components/BlogPreviewSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import InstagramSection from "@/components/InstagramSection";
 import ContactSection from "@/components/ContactSection";
+import DoctoraliaWidget from "@/components/DoctoraliaWidget";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import ScheduleBanner from "@/components/ScheduleBanner";
@@ -48,6 +49,7 @@ export default function Home() {
         <NewsletterSection />
         <InstagramSection />
         <ContactSection />
+        <DoctoraliaWidget />
       </main>
       <Footer />
       <WhatsAppWidget />

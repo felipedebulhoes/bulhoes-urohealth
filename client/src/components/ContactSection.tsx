@@ -71,13 +71,15 @@ export default function ContactSection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
-              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#agendamento"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               <Button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white h-13 px-8 text-base font-semibold rounded-md shadow-lg shadow-teal-900/30">
                 <CalendarCheck className="w-5 h-5 mr-2" />
-                Agendar pela Doctoralia
+                Agendar Consulta
               </Button>
             </a>
             <a

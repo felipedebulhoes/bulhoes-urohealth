@@ -58,9 +58,11 @@ export default function ScheduleBanner() {
                 </p>
                 <div className="flex gap-2">
                   <a
-                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#agendamento"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
+                    }}
                     className="flex-1 text-center bg-[#0D9488] hover:bg-[#0B7C72] text-white text-xs font-semibold py-2 px-3 rounded-lg transition-colors"
                   >
                     Agendar Agora

@@ -195,9 +195,11 @@ export default function Header() {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#agendamento"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             <Button
               className="bg-[#0D9488] hover:bg-[#0B7C72] text-white rounded-md px-5 h-10 text-sm font-semibold shadow-md"
@@ -289,9 +291,14 @@ export default function Header() {
               ))}
 
               <a
-                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#agendamento"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileOpen(false);
+                  setTimeout(() => {
+                    document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
+                  }, 300);
+                }}
                 className="mt-2"
               >
                 <Button className="w-full bg-[#0D9488] hover:bg-[#0B7C72] text-white">

@@ -11,22 +11,22 @@ const CONGRESS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a
 
 const timeline = [
   {
-    period: "2023 – 2025",
-    title: "Residência em Urologia",
+    period: "2023 – 2026",
+    title: "Urologia",
     institution: "Instituto D'Or de Ensino e Pesquisa (IDOR)",
     location: "São Paulo, SP",
     highlight: true,
   },
   {
-    period: "2024",
+    period: "2021",
     title: "Pesquisa Clínica (PPCR)",
     institution: "Harvard T.H. Chan School of Public Health",
     location: "EUA (Online)",
     highlight: false,
   },
   {
-    period: "2020 – 2023",
-    title: "Residência em Cirurgia Geral",
+    period: "2019 – 2021",
+    title: "Cirurgia Geral",
     institution: "Faculdade de Medicina do ABC (FMABC)",
     location: "Santo André, SP",
     highlight: false,

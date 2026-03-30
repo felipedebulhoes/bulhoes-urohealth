@@ -51,7 +51,7 @@ const events: Event[] = [
     description: "Participação na jornada acadêmica do Instituto D'Or, referência em ensino e pesquisa médica no Brasil.",
   },
   {
-    year: "2022",
+    year: "2023",
     title: "Título de Especialista em Cirurgia Geral — TCBC",
     organization: "Colégio Brasileiro de Cirurgiões (CBC)",
     location: "Brasil",

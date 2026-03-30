@@ -114,9 +114,9 @@ export default function SobreDrFelipe() {
             <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Formação Acadêmica</h2>
             <div className="space-y-6">
               {[
-                { year: "2023–2025", title: "Residência em Urologia", inst: "Instituto D'Or de Ensino e Pesquisa (IDOR)", city: "São Paulo, SP", detail: "Formação em centro de referência com alto volume cirúrgico em cirurgia robótica, endourologia e uro-oncologia." },
-                { year: "2024", title: "Pesquisa Clínica (PPCR)", inst: "Harvard T.H. Chan School of Public Health", city: "EUA (Online)", detail: "Curso de pesquisa clínica pela Harvard School of Public Health." },
-                { year: "2020–2023", title: "Residência em Cirurgia Geral", inst: "Faculdade de Medicina do ABC (FMABC)", city: "Santo André, SP", detail: "Formação cirúrgica completa com título de especialista pelo Colégio Brasileiro de Cirurgiões (TCBC) — AMB/CBC." },
+                { year: "2023–2026", title: "Urologia", inst: "Instituto D'Or de Ensino e Pesquisa (IDOR)", city: "São Paulo, SP", detail: "Formação em centro de referência com alto volume cirúrgico em cirurgia robótica, endourologia e uro-oncologia." },
+                { year: "2021", title: "Pesquisa Clínica (PPCR)", inst: "Harvard T.H. Chan School of Public Health", city: "EUA (Online)", detail: "Curso de pesquisa clínica pela Harvard School of Public Health." },
+                { year: "2019–2021", title: "Cirurgia Geral", inst: "Faculdade de Medicina do ABC (FMABC)", city: "Santo André, SP", detail: "Formação cirúrgica completa com título de especialista pelo Colégio Brasileiro de Cirurgiões (TCBC) — AMB/CBC." },
                 { year: "2011–2017", title: "Graduação em Medicina", inst: "Universidade Federal Fluminense (UFF)", city: "Niterói, RJ", detail: "Graduação com participação ativa em ligas acadêmicas e iniciação científica." },
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 items-start">
@@ -147,8 +147,8 @@ export default function SobreDrFelipe() {
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { icon: Award, title: "Título de Especialista em Cirurgia Geral (TCBC)", org: "Colégio Brasileiro de Cirurgiões — AMB/CBC", year: "2023" },
-                { icon: GraduationCap, title: "Residência em Urologia — IDOR", org: "Instituto D'Or de Ensino e Pesquisa", year: "2023–2025" },
-                { icon: GraduationCap, title: "Residência em Cirurgia Geral — FMABC", org: "Faculdade de Medicina do ABC", year: "2020–2023" },
+                { icon: GraduationCap, title: "Urologia — IDOR", org: "Instituto D'Or de Ensino e Pesquisa", year: "2023–2026" },
+                { icon: GraduationCap, title: "Cirurgia Geral — FMABC", org: "Faculdade de Medicina do ABC", year: "2019–2021" },
                 { icon: BookOpen, title: "Membro da SBU", org: "Sociedade Brasileira de Urologia", year: "" },
                 { icon: BookOpen, title: "Membro da AUA", org: "American Urological Association", year: "" },
                 { icon: BookOpen, title: "Membro da EAU", org: "European Association of Urology", year: "" },

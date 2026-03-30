@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import {
   BookOpen, ArrowRight, Activity, Scissors, Zap,
   Heart, Dumbbell, Shield, Pill, Stethoscope,
-  Search, Microscope, Thermometer, Waves
+  Search, Microscope, Thermometer, Waves, Syringe
 } from "lucide-react";
 
 const educationalPages = [
@@ -45,6 +45,13 @@ const educationalPages = [
     href: "/educativo/exame-prostata",
     icon: <Search className="w-5 h-5" />,
     color: "bg-indigo-50 text-indigo-600",
+  },
+  {
+    title: "Biópsia de Próstata",
+    description: "Indicações, preparo, como é feita, pós-biópsia e complicações — guia completo.",
+    href: "/educativo/biopsia-prostata",
+    icon: <Syringe className="w-5 h-5" />,
+    color: "bg-fuchsia-50 text-fuchsia-600",
   },
   {
     title: "Disfunção Erétil",

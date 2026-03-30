@@ -11,3 +11,14 @@
 - [x] Corrigir logo no Header (remover style inline duplicado)
 - [x] Registrar rota /admin/files no App.tsx
 - [x] Salvar checkpoint final
+- [x] Acessar Google Search Console e adicionar propriedade bulhoesurohealth.com
+- [x] Verificar propriedade do domínio
+- [x] Submeter sitemap.xml para indexação
+- [x] Solicitar indexação das páginas principais (erro temporário do Google - tentar novamente em alguns dias)
+- [x] Preparar guia de acompanhamento para o usuário
+- [x] Pesquisar palavra-chave "urologista Campinas" e concorrência
+- [x] Redigir artigo de blog otimizado para SEO local
+- [x] Integrar artigo como página no site
+- [x] Criar página educativa sobre biópsia de próstata
+- [x] Integrar página de biópsia ao site (rota + navegação)
+- [x] Verificar funcionamento e salvar checkpoint

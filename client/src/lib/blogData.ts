@@ -604,6 +604,167 @@ Se você tem indicação cirúrgica urológica, converse com seu urologista sobr
 10. Campbell-Walsh-Wein Urology, 13th Edition — Chapters on Minimally Invasive and Robotic Surgery.
 `,
   },
+  {
+    id: "4",
+    slug: "urologista-campinas-quando-procurar",
+    title: "Urologista em Campinas: Quando Procurar e Como Escolher o Melhor Especialista",
+    excerpt:
+      "Saiba quando procurar um urologista em Campinas, quais condições são tratadas, como funciona a primeira consulta e por que o acompanhamento regular é essencial para a saúde masculina.",
+    coverImage:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-urologista-campinas-cover_ba932b43.jpg",
+    category: "Saúde Masculina",
+    date: "30 de Março de 2026",
+    readTime: "9 min de leitura",
+    author: defaultAuthor,
+    content: `
+## Por que procurar um urologista em Campinas?
+
+Campinas é a terceira maior cidade do estado de São Paulo, com uma população estimada de **1,2 milhão de habitantes** e uma região metropolitana que ultrapassa 3 milhões de pessoas. Apesar de contar com uma rede de saúde robusta, muitos homens da região ainda negligenciam o acompanhamento urológico preventivo. Segundo dados da **Sociedade Brasileira de Urologia (SBU)**, quase **metade dos homens acima de 40 anos só procura o médico quando já apresenta sintomas** — um comportamento que pode retardar diagnósticos importantes.
+
+O urologista é o médico especialista no sistema urinário (rins, ureteres, bexiga e uretra) de homens e mulheres, e também no sistema reprodutor masculino (próstata, testículos, pênis). Para o homem, o urologista funciona como um médico de referência ao longo de toda a vida — assim como o ginecologista é para a mulher.
+
+---
+
+## Quando procurar um urologista?
+
+A consulta urológica é indicada em diversas situações, não apenas quando há sintomas. Veja os principais motivos para agendar uma avaliação:
+
+### Rastreamento e prevenção
+
+- **A partir dos 50 anos** (ou 45 anos com fatores de risco): rastreamento de câncer de próstata com PSA e toque retal, conforme recomendação da **EAU Guidelines 2025** e da **SBU**
+- **Histórico familiar** de câncer de próstata, renal ou de bexiga
+- **Homens negros**: maior incidência de câncer de próstata (1,7x maior segundo o INCA)
+- **Portadores de mutações BRCA2**: rastreamento a partir dos 40 anos (EAU 2025)
+
+### Sintomas urinários
+
+- Jato urinário fraco ou interrompido
+- Necessidade de urinar com frequência, especialmente à noite (noctúria)
+- Urgência urinária ou incontinência
+- Dor ou ardência ao urinar
+- Sangue na urina (hematúria) — **sempre requer investigação urgente**
+- Dificuldade para iniciar a micção
+
+### Dor e desconforto
+
+- Dor lombar intensa (possível cólica renal)
+- Dor testicular — especialmente em jovens, pode indicar torção testicular (emergência)
+- Dor pélvica crônica
+- Dor durante a relação sexual
+
+### Saúde sexual e reprodutiva
+
+- Disfunção erétil
+- Ejaculação precoce
+- Infertilidade masculina
+- Curvatura peniana (Doença de Peyronie)
+- Orientação sobre vasectomia
+
+---
+
+## Quais condições o urologista trata?
+
+O campo de atuação do urologista é amplo e abrange diversas condições:
+
+### Próstata
+- **Hiperplasia Prostática Benigna (HPB)**: aumento benigno da próstata que afeta mais de 50% dos homens acima de 60 anos, causando sintomas urinários obstrutivos
+- **Câncer de próstata**: o tumor mais frequente entre homens no Brasil, com mais de 71 mil novos casos/ano (INCA 2023-2025)
+- **Prostatite**: inflamação da próstata, que pode ser aguda ou crônica
+
+### Rins e vias urinárias
+- **Cálculos renais (pedras nos rins)**: afetam 10-12% da população brasileira
+- **Infecções urinárias**: mais comuns em mulheres, mas também relevantes em homens
+- **Tumores renais e de bexiga**
+- **Cistos renais**
+
+### Saúde sexual masculina
+- **Disfunção erétil**: pode ser um marcador precoce de doenças cardiovasculares
+- **Hipogonadismo**: deficiência de testosterona
+- **Infertilidade masculina**: responsável por 40-50% dos casos de infertilidade do casal
+- **Varicocele**: presente em até 15% dos adolescentes
+
+---
+
+## Como é a primeira consulta com o urologista?
+
+A consulta urológica é mais simples do que muitos imaginam. Veja o que esperar:
+
+1. **Anamnese detalhada**: o médico fará perguntas sobre seu histórico de saúde, sintomas, medicamentos em uso, hábitos de vida e histórico familiar
+2. **Exame físico**: inclui avaliação abdominal, genital e, quando indicado, o exame digital retal (toque retal) — que dura apenas 10-15 segundos
+3. **Solicitação de exames**: conforme a necessidade, podem ser solicitados PSA, ultrassonografia, exames de urina, entre outros
+4. **Orientação e plano de tratamento**: discussão dos achados e definição de conduta
+
+> **Dica importante:** Leve seus exames anteriores (sangue, imagem, laudos) para a consulta. Isso permite uma avaliação mais completa e evita repetições desnecessárias.
+
+---
+
+## Atendimento urológico em Campinas: Campinas Day Hospital
+
+O **Campinas Day Hospital** é um centro cirúrgico moderno localizado no **Jardim Chapadão**, em Campinas, equipado com tecnologia de ponta para consultas, exames e procedimentos urológicos. O atendimento é realizado por convênios e particular.
+
+**Endereço:** R. Angela Signori Grigol, 299 — Jardim Chapadão, Campinas/SP — CEP 13070-585
+
+**Horário:** Sexta-feira, 8h às 12h
+
+**Convênios aceitos:** Allianz, Amil, Assefaz, Bradesco, Cassi, Gama, Go Care, Holambra, Medservice, Porto Seguro, Skill/Omint, SulAmérica, Unimed
+
+**Serviços disponíveis:**
+- Consultas urológicas
+- Urodinâmica
+- Biópsia de próstata
+- Cirurgias minimamente invasivas
+- Procedimentos ambulatoriais
+
+O Campinas Day Hospital oferece estacionamento próprio gratuito e estrutura completa para procedimentos ambulatoriais e cirurgias de curta permanência.
+
+---
+
+## Como escolher um bom urologista?
+
+Alguns critérios importantes para escolher seu urologista:
+
+- **Formação e titulação**: verifique se o médico possui título de especialista em urologia (TiSBU) e registro no CRM
+- **Atualização científica**: profissionais que seguem as diretrizes internacionais (EAU, AUA, SBU) oferecem tratamentos baseados nas melhores evidências
+- **Experiência**: especialmente para procedimentos cirúrgicos, a experiência do cirurgião impacta diretamente nos resultados
+- **Humanização**: um bom urologista escuta, explica e respeita as preocupações do paciente
+- **Avaliações de pacientes**: plataformas como Doctoralia e Google permitem verificar a experiência de outros pacientes
+
+---
+
+## Sobre o Dr. Felipe de Bulhões
+
+O **Dr. Felipe de Bulhões** é urologista formado pelo **Instituto D'Or de Ensino e Pesquisa** em São Paulo, com atuação em São Paulo e Campinas. Cirurgião geral com título de TCBC (Titular do Colégio Brasileiro de Cirurgiões), atua com foco em:
+
+- Urodinâmica e distúrbios miccionais
+- Cirurgias minimamente invasivas
+- Saúde prostática e rastreamento de câncer
+- Cálculos renais
+- Saúde sexual masculina
+
+Seu atendimento é baseado nas diretrizes mais atualizadas das principais sociedades urológicas do mundo (EAU, AUA e SBU), com compromisso com a medicina baseada em evidências e o atendimento humanizado.
+
+**CRM-SP 202291 | RQE 109018**
+
+---
+
+## Agende sua consulta
+
+Se você mora em Campinas ou região e precisa de acompanhamento urológico, não espere os sintomas aparecerem. A prevenção é sempre o melhor caminho.
+
+**Agende pelo Doctoralia** ou entre em contato pelo WhatsApp: **(11) 98112-4455**.
+
+---
+
+### Referências
+
+1. EAU Guidelines on Prostate Cancer — European Association of Urology, 2025.
+2. AUA/ASTRO/SUO Guideline on Clinically Localized Prostate Cancer, 2024.
+3. Sociedade Brasileira de Urologia (SBU) — Pesquisa sobre saúde masculina, Novembro Azul 2025.
+4. INCA — Estimativa 2023-2025: Incidência de Câncer no Brasil. Instituto Nacional de Câncer.
+5. Campbell-Walsh-Wein Urology, 13th Edition. Elsevier, 2024.
+6. IBGE — Tábua de Mortalidade 2023.
+`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

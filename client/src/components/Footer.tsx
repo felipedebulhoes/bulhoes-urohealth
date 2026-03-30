@@ -107,7 +107,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-white/50">
                 <Mail className="w-4 h-4 text-[#0D9488]" />
-                <span className="text-xs font-sans">contato@bulhoesurohealth.com</span>
+                <span className="text-xs font-sans">drfelipebulhoes@bulhoesurohealth.com</span>
               </div>
             </div>
           </div>

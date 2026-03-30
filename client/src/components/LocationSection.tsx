@@ -1,10 +1,11 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
- * Location: 3 clinics + teleconsulta, with real photos of each location
+ * Location: 3 clinics + teleconsulta + interactive Google Map with all markers
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, Clock, Phone, CreditCard, Monitor, Building2, ShieldCheck } from "lucide-react";
+import InteractiveMap from "@/components/InteractiveMap";
 
 const CAMPINAS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/campinas-day-hospital_47df2b14.jpg";
 const CLINOVI_PAULISTA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-paulista_42fff2fa.jpg";
@@ -22,7 +23,6 @@ const locations = [
     phone: "(19) 2127-2900",
     hours: "Seg a Sex, horários disponíveis online",
     highlight: "Centro Urológico Avançado",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.0!2d-47.0588!3d-22.8977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8f5f5f5f5f5%3A0x1234567890abcdef!2sAv.%20Benjamin%20Constant%2C%201991%20-%20Cambu%C3%AD%2C%20Campinas%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1711000000000!5m2!1spt-BR!2sbr",
     insurances: ["Bradesco Saúde", "Sul América", "Allianz", "Cassi", "GAMA Saúde", "e outros"],
   },
   {
@@ -36,7 +36,6 @@ const locations = [
     phone: "(11) 3170-1313",
     hours: "Seg a Sex, horários disponíveis online",
     highlight: "Cobertura de alto padrão",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976!2d-46.6558!3d-23.5645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c0776a!2sAv.%20Paulista%2C%201048%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1711000000000!5m2!1spt-BR!2sbr",
     insurances: null,
   },
   {
@@ -50,7 +49,6 @@ const locations = [
     phone: "",
     hours: "Seg a Sex, horários disponíveis online",
     highlight: "Próximo ao metrô Moema",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.5!2d-46.6600!3d-23.6000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2b2b2b2b%3A0xabcdef1234567890!2sAv.%20Ibirapuera%2C%201835%20-%20Moema%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1711000000000!5m2!1spt-BR!2sbr",
     insurances: null,
   },
 ];
@@ -185,9 +183,11 @@ export default function LocationSection() {
             <p className="text-xs text-white/40 font-sans mt-1">A partir de</p>
           </div>
           <a
-            href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#agendamento"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="shrink-0"
           >
             <button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white rounded-lg px-6 py-3 text-sm font-semibold transition-colors">
@@ -196,23 +196,20 @@ export default function LocationSection() {
           </a>
         </motion.div>
 
-        {/* Map */}
+        {/* Interactive Google Map */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-8 rounded-xl overflow-hidden shadow-lg border border-[#0A2540]/8 h-72 lg:h-80"
+          className="mt-10"
         >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976!2d-46.6558!3d-23.5645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c0776a!2sAv.%20Paulista%2C%201048%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1711000000000!5m2!1spt-BR!2sbr"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Localização do consultório na Av. Paulista"
-          />
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-[#0D9488]" />
+            <span className="text-[#0D9488] text-xs font-semibold uppercase tracking-[0.15em]">
+              Mapa Interativo
+            </span>
+          </div>
+          <InteractiveMap />
         </motion.div>
       </div>
     </section>

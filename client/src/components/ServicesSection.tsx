@@ -46,7 +46,7 @@ export default function ServicesSection() {
               <img
                 src={LECTURE_IMG}
                 alt="Dr. Felipe no Congresso UroOnco 2025"
-                className="w-full h-auto object-cover aspect-[4/3]"
+                className="w-full h-auto object-cover aspect-[4/3]" style={{width: '739px', height: '685px'}}
               />
             </div>
 

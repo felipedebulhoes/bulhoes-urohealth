@@ -23,9 +23,10 @@ import InfeccaoUrinaria from "./pages/InfeccaoUrinaria";
 import CancerProstata from "./pages/CancerProstata";
 import SobreDrFelipe from "./pages/SobreDrFelipe";
 import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema } from "./pages/LocationPages";
-
+import AdminFiles from "./pages/AdminFiles";
 
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -49,6 +50,7 @@ function Router() {
       <Route path={"/local/clinovi-moema"} component={ClinoviMoema} />
       <Route path={"/primeira-consulta"} component={PrimeiraConsulta} />
       <Route path={"/guia-google-business"} component={GuiaGoogleBusiness} />
+      <Route path={"/admin/files"} component={AdminFiles} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

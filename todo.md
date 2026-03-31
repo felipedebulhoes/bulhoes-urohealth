@@ -32,3 +32,7 @@
 - [x] Redigir artigo de blog sobre "vasectomia Campinas" para SEO local
 - [x] Integrar artigo de blog ao site
 - [x] Verificar funcionamento e salvar checkpoint
+- [x] Pesquisar informações sobre cirurgia robótica em urologia nas guidelines EAU/AUA
+- [x] Redigir página educativa completa sobre cirurgia robótica
+- [x] Integrar página de cirurgia robótica ao site (rota + navegação)
+- [x] Verificar funcionamento e salvar checkpoint

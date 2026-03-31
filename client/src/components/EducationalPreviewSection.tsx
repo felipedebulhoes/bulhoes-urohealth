@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import {
   BookOpen, ArrowRight, Activity, Scissors, Zap, Flame,
   Heart, Dumbbell, Shield, Pill, Stethoscope,
-  Search, Microscope, Thermometer, Waves, Syringe
+  Search, Microscope, Thermometer, Waves, Syringe, Cpu
 } from "lucide-react";
 
 const educationalPages = [
@@ -59,6 +59,13 @@ const educationalPages = [
     href: "/educativo/biopsia-prostata",
     icon: <Syringe className="w-5 h-5" />,
     color: "bg-fuchsia-50 text-fuchsia-600",
+  },
+  {
+    title: "Cirurgia Robótica",
+    description: "Guia completo: como funciona, indicações, vantagens, procedimentos e recuperação.",
+    href: "/educativo/cirurgia-robotica",
+    icon: <Cpu className="w-5 h-5" />,
+    color: "bg-indigo-50 text-indigo-600",
   },
   {
     title: "Disfunção Erétil",

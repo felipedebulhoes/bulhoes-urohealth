@@ -21,6 +21,7 @@ import {
   CalendarCheck,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { trackLeadGenerated, trackChatOpen } from "@/lib/analytics";
 import { Streamdown } from "streamdown";
 
 type ChatMessage = {
@@ -109,6 +110,12 @@ export default function AIChatWidget() {
       if (result.success) {
         setView("lead-success");
         setLeadSubmitted(true);
+        trackLeadGenerated({
+          name: formData.name,
+          phone: formData.phone,
+          reason: formData.reason,
+          location: formData.preferredLocation,
+        });
       }
     },
   });
@@ -608,6 +615,7 @@ export default function AIChatWidget() {
       {/* FAB Button */}
       <motion.button
         onClick={() => {
+          if (!isOpen) trackChatOpen();
           setIsOpen(!isOpen);
           setShowBubble(false);
         }}

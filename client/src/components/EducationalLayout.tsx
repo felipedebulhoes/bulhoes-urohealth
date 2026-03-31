@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "./WhatsAppButton";
+import { trackEducationalPageView } from "@/lib/analytics";
 
 interface EducationalLayoutProps {
   title: string;
@@ -40,6 +41,8 @@ export default function EducationalLayout({
       document.head.appendChild(metaTag);
     }
     metaTag.setAttribute("content", metaDesc);
+
+    trackEducationalPageView(title, window.location.pathname);
 
     return () => {
       document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";

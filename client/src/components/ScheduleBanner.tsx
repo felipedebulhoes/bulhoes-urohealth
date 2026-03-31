@@ -5,6 +5,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, X } from "lucide-react";
+import { trackWhatsAppClick, trackCtaClick } from "@/lib/analytics";
 
 export default function ScheduleBanner() {
   const [visible, setVisible] = useState(false);
@@ -61,6 +62,7 @@ export default function ScheduleBanner() {
                     href="#agendamento"
                     onClick={(e) => {
                       e.preventDefault();
+                      trackCtaClick("agendar_agora", "schedule_banner");
                       document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
                     }}
                     className="flex-1 text-center bg-[#0D9488] hover:bg-[#0B7C72] text-white text-xs font-semibold py-2 px-3 rounded-lg transition-colors"
@@ -71,6 +73,7 @@ export default function ScheduleBanner() {
                     href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta."
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick("schedule_banner")}
                     className="flex-1 text-center bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-semibold py-2 px-3 rounded-lg transition-colors"
                   >
                     WhatsApp

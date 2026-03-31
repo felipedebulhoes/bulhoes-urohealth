@@ -6,6 +6,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { CalendarCheck, Shield, Clock, Star } from "lucide-react";
+import { trackDoctoraliaClick } from "@/lib/analytics";
 
 const DOCTORALIA_PROFILE = "felipe-de-bulhoes-ojeda-2";
 const WIDGET_SCRIPT_ID = "zl-widget-s";
@@ -128,6 +129,7 @@ export default function DoctoraliaWidget() {
               className="zl-url"
               href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
               rel="nofollow"
+              onClick={() => trackDoctoraliaClick("doctoralia_widget")}
               data-zlw-doctor={DOCTORALIA_PROFILE}
               data-zlw-type="big_with_calendar"
               data-zlw-opinion="false"

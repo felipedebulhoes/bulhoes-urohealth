@@ -3,6 +3,7 @@
  * WhatsApp Chat Widget — Mais proeminente e com mensagem de boas-vindas
  */
 import { useState, useEffect } from "react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Clock } from "lucide-react";
 
@@ -25,6 +26,7 @@ export default function WhatsAppWidget() {
   }, []);
 
   const sendMessage = (msg: string) => {
+    trackWhatsAppClick("whatsapp_widget");
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,
       "_blank"

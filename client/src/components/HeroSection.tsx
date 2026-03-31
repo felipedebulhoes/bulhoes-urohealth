@@ -6,6 +6,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { CalendarCheck, Award, ShieldCheck, Users } from "lucide-react";
+import { trackCtaClick } from "@/lib/analytics";
 
 // Real photo from Instagram — professional portrait with blazer
 const HERO_PORTRAIT = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/felipe-portrait_0e0693e4.jpeg";
@@ -72,6 +73,7 @@ export default function HeroSection() {
               href="#agendamento"
               onClick={(e) => {
                 e.preventDefault();
+                trackCtaClick("agendar_consulta", "hero_section");
                 document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
               }}
             >

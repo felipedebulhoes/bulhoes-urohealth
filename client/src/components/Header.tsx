@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
+import { trackCtaClick } from "@/lib/analytics";
 
 const mainNavLinks = [
   { label: "Início", href: "#inicio" },
@@ -206,6 +207,7 @@ export default function Header() {
             href="#agendamento"
             onClick={(e) => {
               e.preventDefault();
+              trackCtaClick("agendar_consulta", "header_desktop");
               document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
             }}
           >
@@ -302,6 +304,7 @@ export default function Header() {
                 href="#agendamento"
                 onClick={(e) => {
                   e.preventDefault();
+                  trackCtaClick("agendar_consulta", "header_mobile");
                   setMobileOpen(false);
                   setTimeout(() => {
                     document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });

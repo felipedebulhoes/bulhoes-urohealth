@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { CalendarCheck, Instagram, MessageCircle, ExternalLink, Monitor, MapPin } from "lucide-react";
+import { trackWhatsAppClick, trackDoctoraliaClick, trackCtaClick } from "@/lib/analytics";
 
 export default function ContactSection() {
   const ref = useRef(null);
@@ -86,6 +87,7 @@ export default function ContactSection() {
               href="https://wa.me/5511981124455"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("contact_section")}
             >
               <Button
                 variant="outline"
@@ -113,6 +115,7 @@ export default function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-white/50 hover:text-[#5EEAD4] transition-colors"
+              onClick={() => trackDoctoraliaClick("contact_section")}
             >
               <ExternalLink className="w-4 h-4" />
               <span className="text-sm font-sans">Doctoralia</span>

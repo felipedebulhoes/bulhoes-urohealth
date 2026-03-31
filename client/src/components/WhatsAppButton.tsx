@@ -4,6 +4,7 @@
  */
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function WhatsAppButton() {
   return (
@@ -11,6 +12,7 @@ export default function WhatsAppButton() {
       href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Felipe%20de%20Bulh%C3%B5es."
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick("educational_page")}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, type: "spring", stiffness: 200 }}

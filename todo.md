@@ -83,3 +83,7 @@
 - [x] Integrar página de infertilidade masculina ao site (rota + navegação)
 - [x] Verificar funcionamento, testes e salvar checkpoint (31 testes passando, página de infertilidade OK)
 - [x] Corrigir estilos duplicados na imagem UroOnco da página Sobre (visual editor merge)
+- [x] Verificar/criar propriedade GA4 para bulhoesurohealth.com (G-PJHFGVQPS6)
+- [x] Adicionar tag gtag.js ao site (client/index.html)
+- [x] Implementar rastreamento de eventos de conversão (leads do chat, cliques em WhatsApp/Doctoralia, CTAs de agendamento, páginas educativas)
+- [x] Testar integração e salvar checkpoint (42 testes passando, 11 novos testes de analytics)

@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import {
   BookOpen, ArrowRight, Activity, Scissors, Zap, Flame,
   Heart, Dumbbell, Shield, Pill, Stethoscope,
-  Search, Microscope, Thermometer, Waves, Syringe, Cpu, Target, Crosshair
+  Search, Microscope, Thermometer, Waves, Syringe, Cpu, Target, Crosshair, Droplets
 } from "lucide-react";
 
 const educationalPages = [
@@ -115,6 +115,13 @@ const educationalPages = [
     href: "/educativo/urodinamica",
     icon: <Waves className="w-5 h-5" />,
     color: "bg-sky-50 text-sky-600",
+  },
+  {
+    title: "Incontinência Urinária",
+    description: "Tipos, classificação, exercícios de Kegel, sling masculino e esfíncter artificial.",
+    href: "/educativo/incontinencia-urinaria",
+    icon: <Droplets className="w-5 h-5" />,
+    color: "bg-teal-50 text-teal-600",
   },
   {
     title: "Vasectomia",

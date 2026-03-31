@@ -27,9 +27,11 @@ import LitotripsieLaser from "./pages/LitotripsieLaser";
 import CirurgiaRobotica from "./pages/CirurgiaRobotica";
 import CancerBexiga from "./pages/CancerBexiga";
 import TratamentoCancerProstata from "./pages/TratamentoCancerProstata";
+import IncontinenciaUrinaria from "./pages/IncontinenciaUrinaria";
 import SobreDrFelipe from "./pages/SobreDrFelipe";
 import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema } from "./pages/LocationPages";
 import AdminFiles from "./pages/AdminFiles";
+import AdminLeads from "./pages/AdminLeads";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -56,6 +58,7 @@ function Router() {
       <Route path={"/educativo/cirurgia-robotica"} component={CirurgiaRobotica} />
       <Route path={"/educativo/cancer-bexiga"} component={CancerBexiga} />
       <Route path={"/educativo/tratamento-cancer-prostata"} component={TratamentoCancerProstata} />
+      <Route path={"/educativo/incontinencia-urinaria"} component={IncontinenciaUrinaria} />
       <Route path={"/sobre"} component={SobreDrFelipe} />
       <Route path={"/local/campinas-day-hospital"} component={CampinasDayHospital} />
       <Route path={"/local/clinovi-paulista"} component={ClinoviPaulista} />
@@ -63,6 +66,7 @@ function Router() {
       <Route path={"/primeira-consulta"} component={PrimeiraConsulta} />
       <Route path={"/guia-google-business"} component={GuiaGoogleBusiness} />
       <Route path={"/admin/files"} component={AdminFiles} />
+      <Route path={"/admin/leads"} component={AdminLeads} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

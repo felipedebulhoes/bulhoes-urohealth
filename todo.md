@@ -65,3 +65,12 @@
 - [x] Escrever testes vitest para o fluxo de leads (19 testes, todos passando)
 - [x] Verificar funcionamento e salvar checkpoint
 - [x] Corrigir endereço do Campinas Day Hospital para Av. Benjamin Constant, 1991 - Cambuí, Campinas/SP em todos os locais do site (13 arquivos corrigidos)
+- [x] Pesquisar informações sobre Disfunção Erétil nas guidelines EAU/AUA (página já existia com EAU 2025 + AUA 2024)
+- [x] Criar página educativa completa sobre Disfunção Erétil (já existia - 25KB, completa)
+- [x] Integrar página de Disfunção Erétil ao site (já integrada em rotas e navegação)
+- [x] Pesquisar informações sobre Incontinência Urinária nas guidelines EAU/AUA
+- [x] Criar página educativa completa sobre Incontinência Urinária
+- [x] Integrar página de Incontinência Urinária ao site (rota + navegação)
+- [x] Verificar página de Câncer de Bexiga (já existia - 43KB, completa, integrada)
+- [x] Criar painel admin de leads (página visual para gerenciar leads captados pelo chat)
+- [x] Verificar funcionamento, testes e salvar checkpoint para publicação (27 testes, todos passando)

@@ -37,3 +37,13 @@
 - [x] Integrar página de cirurgia robótica ao site (rota + navegação)
 - [x] Verificar funcionamento e salvar checkpoint
 - [x] Ajustar tamanho do logo no Header (190x128px via visual editor)
+- [x] Pesquisar informações sobre câncer de bexiga nas guidelines EAU/AUA
+- [x] Redigir página educativa completa sobre câncer de bexiga
+- [x] Integrar página de câncer de bexiga ao site (rota + navegação)
+- [x] Redigir artigo de blog sobre "cirurgia robótica urologia Campinas"
+- [x] Integrar artigo de blog ao site
+- [x] Verificar funcionamento e salvar checkpoint
+- [x] Pesquisar informações sobre HPB e técnicas cirúrgicas nas guidelines EAU/AUA
+- [x] Atualizar página TratamentosHPB com 7 novas técnicas: BipolEP, DiLEP, TUIP, TUVis, TPLA, iTIND, PAE
+- [x] Página HPB já existia — atualizada com técnicas faltantes e referências EAU 2026
+- [x] Atualizar página de Litotripsia a Laser com bainha de aspiração navegável (FANS-UAS/ClearPetra) + 2 novas referências

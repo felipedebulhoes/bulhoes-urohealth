@@ -321,6 +321,226 @@ const treatments: Treatment[] = [
     preservesEjaculation: true,
     evidenceLevel: "Recomendação condicional — AUA 2025",
   },
+  /* ── ENUCLEAÇÃO: BipolEP ── */
+  {
+    id: "bipolep",
+    name: "BipolEP",
+    fullName: "Enucleação Prostática Bipolar (Bipolar Enucleation of the Prostate)",
+    type: "cirurgico-laser",
+    icon: <Zap className="w-6 h-6" />,
+    description:
+      "Técnica de enucleação prostática que utiliza energia bipolar em vez de laser. O princípio cirúrgico é idêntico ao HoLEP — enucleação completa do adenoma da cápsula — mas emprega o ressectoscópio bipolar convencional, eliminando a necessidade de equipamento de laser. Isso a torna mais acessível em centros que já possuem gerador bipolar, com resultados funcionais comparáveis às demais técnicas de enucleação.",
+    howItWorks:
+      "Utilizando o ressectoscópio bipolar com alça de enucleação (ou ponta tipo 'button'), o cirurgião separa o adenoma prostático da cápsula cirúrgica por dissecção retrógrada ou anterógrada, similar ao HoLEP. O tecido enucleado é empurrado para a bexiga e removido por morcelação ou evacuação. A irrigação com soro fisiológico elimina o risco de síndrome pós-TURP.",
+    prostateSize: "Qualquer tamanho (sem limite — como HoLEP)",
+    anesthesia: "Raquianestesia ou geral",
+    recovery: "1 a 3 semanas",
+    hospitalization: "1 a 2 dias",
+    advantages: [
+      "Independente do tamanho prostático — enucleação completa",
+      "Não requer equipamento de laser — usa gerador bipolar convencional",
+      "Custo menor que HoLEP/ThuLEP (sem fibra de laser descartável)",
+      "Resultados funcionais comparáveis ao HoLEP em metanálises",
+      "Todo tecido disponível para análise anatomopatológica",
+      "Irrigação com soro fisiológico — sem risco de síndrome pós-TURP",
+    ],
+    disadvantages: [
+      "Curva de aprendizado semelhante ao HoLEP (30-50 casos)",
+      "Ejaculação retrógrada em 70-85% dos casos",
+      "Hemostasia pode ser inferior ao laser em próstatas muito vascularizadas",
+      "Dados de longo prazo (>10 anos) ainda em acúmulo",
+    ],
+    preservesEjaculation: false,
+    evidenceLevel: "Recomendação forte — EAU 2026 (equivalente ao HoLEP/ThuLEP)",
+  },
+  /* ── ENUCLEAÇÃO: DiLEP ── */
+  {
+    id: "dilep",
+    name: "DiLEP",
+    fullName: "Enucleação Prostática com Laser Diodo",
+    type: "cirurgico-laser",
+    icon: <Flame className="w-6 h-6" />,
+    description:
+      "Técnica de enucleação prostática que utiliza laser diodo (980nm ou 1470nm). Segue o mesmo princípio de enucleação do HoLEP, mas com um laser de menor custo e manutenção mais simples. Dados iniciais mostram resultados funcionais promissores, embora com menor volume de evidência que HoLEP e ThuLEP.",
+    howItWorks:
+      "O laser diodo é utilizado para separar o adenoma da cápsula prostática por enucleação. A fibra do laser diodo emite energia que corta e coagula simultaneamente. O tecido é morcelado e removido para análise. O laser diodo tem como vantagem o menor custo do equipamento e da fibra.",
+    prostateSize: "Qualquer tamanho (sem limite)",
+    anesthesia: "Raquianestesia ou geral",
+    recovery: "1 a 3 semanas",
+    hospitalization: "1 a 2 dias",
+    advantages: [
+      "Independente do tamanho prostático",
+      "Equipamento de menor custo que holmium e thulium",
+      "Fibra reutilizável — custo operacional reduzido",
+      "Todo tecido disponível para biópsia",
+      "Resultados iniciais comparáveis ao HoLEP",
+    ],
+    disadvantages: [
+      "Menor volume de evidência que HoLEP e ThuLEP",
+      "Curva de aprendizado semelhante às demais enucleações",
+      "Ejaculação retrógrada na maioria dos casos",
+      "Dados de longo prazo limitados",
+    ],
+    preservesEjaculation: false,
+    evidenceLevel: "Recomendação condicional — EAU 2026 (evidência em crescimento)",
+  },
+  /* ── RESSECÇÃO: TUIP ── */
+  {
+    id: "tuip",
+    name: "TUIP",
+    fullName: "Incisão Transuretral da Próstata (Transurethral Incision of the Prostate)",
+    type: "cirurgico-tradicional",
+    icon: <Zap className="w-6 h-6" />,
+    description:
+      "Procedimento endoscópico simples indicado para próstatas pequenas (<30 ml) sem lobo mediano. Consiste em uma ou duas incisões profundas no colo vesical e na próstata, abrindo o canal uretral sem remover tecido. É menos invasiva que a RTU, com menor taxa de ejaculação retrógrada, mas limitada a próstatas pequenas.",
+    howItWorks:
+      "Através do ressectoscópio, são realizadas uma ou duas incisões profundas (de 5 a 7 horas no mostrador do relógio) desde o colo vesical até o verumontanum, atingindo a cápsula prostática. As incisões abrem o canal uretral por separação mecânica do tecido, sem ressecção. Não há tecido para análise anatomopatológica.",
+    prostateSize: "<30 ml (sem lobo mediano)",
+    anesthesia: "Raquianestesia ou geral",
+    recovery: "1 a 2 semanas",
+    hospitalization: "0 a 1 dia",
+    advantages: [
+      "Procedimento rápido e simples",
+      "Menor taxa de ejaculação retrógrada que RTU (6-55%)",
+      "Menor sangramento que RTU",
+      "Pode ser ambulatorial",
+      "Indicada para pacientes jovens com próstata pequena",
+    ],
+    disadvantages: [
+      "Limitada a próstatas <30 ml",
+      "Sem tecido para análise anatomopatológica",
+      "Eficácia inferior à RTU em próstatas maiores",
+      "Taxa de retratamento superior à RTU (15-20% em 10 anos)",
+    ],
+    preservesEjaculation: "parcial",
+    evidenceLevel: "Recomendação condicional — EAU 2026 (próstatas <30ml)",
+  },
+  /* ── VAPORIZAÇÃO: TUVis ── */
+  {
+    id: "tuvis",
+    name: "TUVis (Vaporização Bipolar)",
+    fullName: "Vaporização Transuretral da Próstata em Soro Fisiológico — Bipolar",
+    type: "cirurgico-tradicional",
+    icon: <Zap className="w-6 h-6" />,
+    description:
+      "Técnica de vaporização prostática que utiliza energia bipolar para vaporizar o tecido prostático em soro fisiológico. Combina as vantagens da vaporização (hemostasia imediata) com a segurança da tecnologia bipolar (sem risco de síndrome pós-TURP). Indicada para próstatas de volume moderado.",
+    howItWorks:
+      "Um eletrodo bipolar especial (tipo 'mushroom' ou 'button') é utilizado para vaporizar o tecido prostático por contato direto. A alta densidade de energia no eletrodo vaporiza o tecido instantaneamente enquanto coagula os vasos adjacentes. A irrigação com soro fisiológico permite tempos cirúrgicos mais longos.",
+    prostateSize: "30 a 80 ml",
+    anesthesia: "Raquianestesia ou geral",
+    recovery: "1 a 2 semanas",
+    hospitalization: "0 a 1 dia",
+    advantages: [
+      "Excelente hemostasia — adequada para anticoagulados",
+      "Sem risco de síndrome pós-TURP (soro fisiológico)",
+      "Pode ser ambulatorial",
+      "Não requer equipamento de laser",
+    ],
+    disadvantages: [
+      "Sem tecido para análise anatomopatológica",
+      "Ejaculação retrógrada frequente",
+      "Taxa de retratamento superior à enucleação",
+      "Limitada a próstatas moderadas",
+      "Disúria transitória possível",
+    ],
+    preservesEjaculation: false,
+    evidenceLevel: "Recomendação condicional — EAU 2026",
+  },
+  /* ── ABLATIVA ALTERNATIVA: TPLA ── */
+  {
+    id: "tpla",
+    name: "TPLA",
+    fullName: "Ablação Prostática Transperineal a Laser (Transperineal Laser Ablation)",
+    type: "mist",
+    icon: <Flame className="w-6 h-6" />,
+    description:
+      "Técnica ablativa minimamente invasiva que utiliza fibras de laser diodo inseridas por via transperineal sob orientação de ressonância magnética (RM) para causar necrose coagulativa do tecido prostático. Ainda em fase de avaliação com dados limitados.",
+    howItWorks:
+      "Fibras de laser diodo são inseridas por via transperineal (através do períneo) sob orientação de RM em tempo real. A energia do laser causa necrose coagulativa controlada do tecido prostático adenomatoso. O tecido necrótico é reabsorvido gradualmente ao longo de semanas.",
+    prostateSize: "30 a 80 ml",
+    anesthesia: "Local + sedação ou geral",
+    recovery: "1 a 2 semanas",
+    hospitalization: "Ambulatorial ou 1 dia",
+    advantages: [
+      "Minimamente invasiva — via transperineal",
+      "Potencial preservação da função sexual",
+      "Guiada por RM — precisão anatômica",
+    ],
+    disadvantages: [
+      "Dados clínicos muito limitados",
+      "Necessidade de RM intraoperatória",
+      "Melhora gradual (semanas a meses)",
+      "Sem tecido para análise anatomopatológica",
+      "Disponibilidade muito restrita",
+    ],
+    preservesEjaculation: true,
+    evidenceLevel: "Experimental — EAU 2026 (dados insuficientes para recomendação)",
+  },
+  /* ── NÃO-ABLATIVA: iTIND ── */
+  {
+    id: "itind",
+    name: "iTIND",
+    fullName: "Temporary Implantable Nitinol Device",
+    type: "mist",
+    icon: <Target className="w-6 h-6" />,
+    description:
+      "Dispositivo temporário de nitinol que é implantado na uretra prostática por 5-7 dias para remodelar o tecido prostático por isquemia compressiva. Após a remoção, o canal uretral permanece mais amplo. É uma opção minimamente invasiva com potencial preservação da função sexual, mas com dados de longo prazo limitados.",
+    howItWorks:
+      "O dispositivo de nitinol com formato de 'âncora' é implantado por cistoscopia na uretra prostática. Suas hastes expandidas comprimem o tecido prostático, causando isquemia e remodelamento. Após 5-7 dias, o dispositivo é removido em consultório. O canal uretral permanece mais amplo pelo remodelamento tecidual.",
+    prostateSize: "25 a 75 ml",
+    anesthesia: "Local + sedação",
+    recovery: "1 semana (com dispositivo) + 2-4 semanas",
+    hospitalization: "Ambulatorial",
+    advantages: [
+      "Dispositivo temporário — removido após 5-7 dias",
+      "Preserva a função sexual (ejaculação e ereção)",
+      "Procedimento ambulatorial rápido",
+      "Sem destruição permanente de tecido",
+    ],
+    disadvantages: [
+      "Desconforto significativo durante os 5-7 dias com dispositivo",
+      "Necessidade de cateter durante o período de implante",
+      "Dados de longo prazo muito limitados",
+      "Eficácia desobstrutiva inferior às técnicas ablativas",
+      "Disponibilidade muito restrita",
+    ],
+    preservesEjaculation: true,
+    evidenceLevel: "Recomendação condicional — EAU 2026 (dados limitados)",
+  },
+  /* ── NÃO-ABLATIVA: PAE ── */
+  {
+    id: "pae",
+    name: "PAE",
+    fullName: "Embolização das Artérias Prostáticas (Prostatic Artery Embolisation)",
+    type: "mist",
+    icon: <Target className="w-6 h-6" />,
+    description:
+      "Procedimento realizado por radiologista intervencionista que consiste na embolização seletiva das artérias prostáticas, causando isquemia e redução do volume da próstata. A EAU 2026 não recomenda a PAE como tratamento padrão para HPB/LUTS, posicionando-a apenas em contexto de pesquisa ou para pacientes não candidatos a cirurgia.",
+    howItWorks:
+      "Por acesso arterial femoral ou radial, um microcateter é navegado sob fluoroscopia até as artérias prostáticas bilateralmente. Microesferas de embolização são injetadas para ocluir seletivamente o suprimento arterial da próstata, causando isquemia, necrose e subsequente redução volumétrica de 25-40% ao longo de semanas a meses.",
+    prostateSize: ">40 ml (maior benefício em próstatas grandes)",
+    anesthesia: "Local + sedação",
+    recovery: "1 a 2 semanas",
+    hospitalization: "Ambulatorial ou 1 dia",
+    advantages: [
+      "Minimamente invasiva — sem instrumentação uretral",
+      "Preserva a função sexual na maioria dos casos",
+      "Pode tratar próstatas muito grandes",
+      "Geralmente sem necessidade de cateter",
+      "Opção para pacientes não candidatos a cirurgia",
+    ],
+    disadvantages: [
+      "NÃO recomendada pela EAU 2026 como tratamento padrão",
+      "Eficácia desobstrutiva inferior à RTU e enucleação",
+      "Melhora gradual (semanas a meses)",
+      "Risco de embolização não-alvo (isquemia retal, vesical)",
+      "Síndrome pós-embolização (dor, febre, disúria)",
+      "Realizada por radiologista, não por urologista",
+      "Sem tecido para análise anatomopatológica",
+    ],
+    preservesEjaculation: true,
+    evidenceLevel: "NÃO recomendada — EAU 2026 (apenas em contexto de pesquisa)",
+  },
   /* ── ABERTA/ROBÓTICA ── */
   {
     id: "aberta",
@@ -497,13 +717,14 @@ export default function TratamentosHPB() {
     { key: "cirurgico-laser", label: "Laser (Enucleação)" },
     { key: "mist", label: "MISTs" },
     { key: "aberta", label: "Aberta/Robótica" },
+    { key: "vaporização", label: "Vaporização" },
   ];
 
   return (
     <EducationalLayout
       title="Tratamentos para HPB"
       subtitle="Hiperplasia Prostática Benigna"
-      description="Conheça todas as opções de tratamento para o aumento benigno da próstata — desde medicamentos até as técnicas cirúrgicas mais modernas — com base nas diretrizes da EAU e AUA 2025."
+      description="Conheça todas as opções de tratamento para o aumento benigno da próstata — desde medicamentos até as técnicas cirúrgicas mais modernas — com base nas diretrizes da EAU 2026 e AUA 2025."
       accentColor="#0D9488"
     >
       {/* Intro */}
@@ -573,14 +794,21 @@ export default function TratamentosHPB() {
               </thead>
               <tbody>
                 {[
+                  ["TUIP", "Incisão", "<30ml", "0-1 dia", "Parcial (6-55%)", "15-20% (10a)"],
                   ["RTU Monopolar", "Ressecção", "30-80ml", "1-3 dias", "Retrógrada (65-75%)", "5-10% (10a)"],
                   ["RTU Bipolar", "Ressecção", "30-100ml", "1-2 dias", "Retrógrada (65-75%)", "5-10% (10a)"],
+                  ["TUVis", "Vaporização Bipolar", "30-80ml", "0-1 dia", "Retrógrada", "10-15% (5a)"],
                   ["HoLEP", "Enucleação Laser", "Qualquer", "1-2 dias", "Retrógrada (75-90%)", "<2% (10a)"],
                   ["ThuLEP", "Enucleação Laser", "Qualquer", "1-2 dias", "Retrógrada (70-85%)", "<3% (5a)"],
+                  ["BipolEP", "Enucleação Bipolar", "Qualquer", "1-2 dias", "Retrógrada (70-85%)", "<3% (5a)"],
+                  ["DiLEP", "Enucleação Diodo", "Qualquer", "1-2 dias", "Retrógrada", "Dados limitados"],
                   ["Green Light", "Vaporização Laser", "30-80ml", "0-1 dia", "Retrógrada (40-60%)", "10-15% (5a)"],
                   ["Aquablation", "MIST / Robótica", "30-150ml", "1-2 dias", "Preservada (parcial)", "5-8% (5a)"],
                   ["Rezum", "MIST", "30-80ml", "Ambulatorial", "Preservada", "~13% (5a)"],
                   ["UroLift", "MIST", "30-80ml*", "Ambulatorial", "Preservada", "~27% (5a)"],
+                  ["iTIND", "MIST", "25-75ml", "Ambulatorial", "Preservada", "Dados limitados"],
+                  ["TPLA", "Ablativa", "30-80ml", "Ambulatorial", "Preservada", "Dados limitados"],
+                  ["PAE", "Embolização", ">40ml", "Ambulatorial", "Preservada", "Dados limitados"],
                   ["Aberta/Robótica", "Adenomectomia", ">80-100ml", "3-5 / 1-3 dias", "Retrógrada", "<5% (10a)"],
                 ].map((row, i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#F8FAFB]"}>
@@ -599,6 +827,8 @@ export default function TratamentosHPB() {
           </div>
           <div className="mt-4 text-[10px] text-[#0A2540]/40 space-y-1">
             <p>* UroLift: contraindicado se houver lobo mediano proeminente.</p>
+            <p>* PAE: não recomendada pela EAU 2026 como tratamento padrão — apenas em contexto de pesquisa.</p>
+            <p>* iTIND, TPLA, DiLEP: dados de longo prazo ainda limitados.</p>
           </div>
         </div>
       </section>
@@ -620,14 +850,17 @@ export default function TratamentosHPB() {
         <div className="container max-w-4xl">
           <h3 className="text-xs font-semibold text-[#0A2540]/40 uppercase tracking-wider mb-3">Referências</h3>
           <ol className="text-[10px] text-[#0A2540]/35 space-y-1 list-decimal list-inside">
-            <li>Gravas S, et al. EAU Guidelines on Management of Non-Neurogenic Male LUTS. European Association of Urology, 2025.</li>
+            <li>Gravas S, et al. EAU Guidelines on Management of Non-Neurogenic Male LUTS. European Association of Urology, 2026.</li>
             <li>Lerner LB, et al. AUA Guideline: Surgical Management of LUTS Attributed to BPH. American Urological Association, 2025.</li>
-            <li>Partin AW, et al. Campbell-Walsh-Wein Urology, 12th Edition. Elsevier, 2021. Chapters 144-149.</li>
+            <li>Partin AW, et al. Campbell-Walsh-Wein Urology, 13th Edition. Elsevier, 2024.</li>
             <li>Zhou Y, et al. Integrated management strategies for BPH. PMC, 2025.</li>
             <li>Hu X, et al. Clinical comparison of TURP, PVP and HoLEP. Nature Scientific Reports, 2025.</li>
             <li>Sathish V, et al. HoLEP, Rezum, and Aquablation — narrative review. PMC, 2025.</li>
             <li>McVary KT, et al. AUA BPH Clinical Guidelines: 2024 Update. J Urol, 2024.</li>
             <li>Enikeev D, et al. Thulium fiber laser enucleation vs HoLEP: systematic review. World J Urol, 2024.</li>
+            <li>Wroclawski ML, et al. Bipolar enucleation of the prostate (BipolEP): systematic review. Int Braz J Urol, 2024.</li>
+            <li>Patel ND, et al. iTIND for BPH: 3-year results. J Urol, 2024.</li>
+            <li>Ray AF, et al. PAE vs TURP (UK-ROPE): 2-year outcomes. Eur Urol, 2024.</li>
           </ol>
         </div>
       </section>

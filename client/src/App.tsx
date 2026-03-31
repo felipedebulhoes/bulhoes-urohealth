@@ -25,6 +25,7 @@ import BiopsiaProstata from "./pages/BiopsiaProstata";
 import Vasectomia from "./pages/Vasectomia";
 import LitotripsieLaser from "./pages/LitotripsieLaser";
 import CirurgiaRobotica from "./pages/CirurgiaRobotica";
+import CancerBexiga from "./pages/CancerBexiga";
 import SobreDrFelipe from "./pages/SobreDrFelipe";
 import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema } from "./pages/LocationPages";
 import AdminFiles from "./pages/AdminFiles";
@@ -52,6 +53,7 @@ function Router() {
       <Route path={"/educativo/vasectomia"} component={Vasectomia} />
       <Route path={"/educativo/litotripsia-laser"} component={LitotripsieLaser} />
       <Route path={"/educativo/cirurgia-robotica"} component={CirurgiaRobotica} />
+      <Route path={"/educativo/cancer-bexiga"} component={CancerBexiga} />
       <Route path={"/sobre"} component={SobreDrFelipe} />
       <Route path={"/local/campinas-day-hospital"} component={CampinasDayHospital} />
       <Route path={"/local/clinovi-paulista"} component={ClinoviPaulista} />

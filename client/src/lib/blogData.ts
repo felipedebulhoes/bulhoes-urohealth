@@ -936,6 +936,131 @@ Se você está considerando a vasectomia, agende uma consulta para discutir toda
 6. Lei nº 9.263/1996 — Planejamento Familiar. Presidência da República.
 `,
   },
+  {
+    id: "8",
+    slug: "cirurgia-robotica-urologia-campinas",
+    title: "Cirurgia Robótica em Urologia em Campinas: Tecnologia de Ponta para Tratamentos Menos Invasivos",
+    excerpt:
+      "Saiba como a cirurgia robótica está transformando a urologia em Campinas. Conheça os procedimentos, vantagens, recuperação e onde encontrar essa tecnologia na região.",
+    coverImage:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/cirurgia-robotica-blog_7b6f2d98.jpg",
+    category: "Cirurgia Robótica",
+    date: "2026-03-31",
+    readTime: "10 min",
+    author: defaultAuthor,
+    content: `
+# Cirurgia Robótica em Urologia em Campinas: Tecnologia de Ponta para Tratamentos Menos Invasivos
+
+A **cirurgia robótica** representa uma das maiores evoluções da medicina moderna. Na urologia, essa tecnologia transformou completamente a forma como tratamos doenças complexas como o câncer de próstata, tumores renais e câncer de bexiga. Em **Campinas e região**, pacientes agora têm acesso a essa tecnologia de ponta, com resultados comparáveis aos melhores centros do mundo.
+
+## O Que é a Cirurgia Robótica?
+
+A cirurgia robótica utiliza o **sistema Da Vinci**, uma plataforma composta por três componentes: o **console do cirurgião** (onde o médico opera sentado com visão 3D ampliada), o **carrinho do paciente** (com braços robóticos que seguram os instrumentos) e a **torre de vídeo** (que processa as imagens em alta definição).
+
+O cirurgião controla os braços robóticos através de joysticks e pedais, com movimentos traduzidos em tempo real para instrumentos articulados com **7 graus de liberdade** — mais do que a mão humana. A visão é ampliada em até **10 vezes**, com profundidade 3D, permitindo identificar estruturas anatômicas com precisão milimétrica.
+
+## Quais Procedimentos Urológicos São Realizados por Robótica?
+
+### 1. Prostatectomia Radical Robótica (RARP)
+
+O procedimento robótico mais realizado no mundo. Indicado para o **câncer de próstata localizado**, a RARP remove toda a próstata e vesículas seminais por via minimamente invasiva. Segundo as **EAU Guidelines 2025**, a RARP oferece:
+
+- **Menor sangramento** — média de 150ml vs. 900ml na cirurgia aberta
+- **Menor tempo de internação** — 1-2 dias vs. 5-7 dias
+- **Recuperação mais rápida** — retorno às atividades em 2-3 semanas
+- **Melhores resultados funcionais** — preservação da continência urinária e função erétil
+
+O estudo **LAPPRO** (Lancet, 2024) com 4.003 pacientes demonstrou que a RARP apresenta taxa de continência de **95% em 12 meses** e preservação da ereção em **70-80%** dos pacientes com preservação nervosa bilateral.
+
+### 2. Nefrectomia Parcial Robótica (RAPN)
+
+Para **tumores renais**, a nefrectomia parcial robótica remove apenas o tumor, preservando o máximo de tecido renal saudável. As EAU Guidelines 2025 recomendam a nefrectomia parcial como padrão para tumores T1 (até 7cm), e a via robótica facilita a sutura renal com precisão, reduzindo o tempo de isquemia quente.
+
+### 3. Cistectomia Radical Robótica (RARC)
+
+Para o **câncer de bexiga músculo-invasivo**, a cistectomia robótica remove a bexiga e realiza a reconstrução do trato urinário (neobexiga ou conduto ileal). O estudo **RAZOR** (Lancet, 2018) demonstrou equivalência oncológica com a cirurgia aberta, com menor sangramento e recuperação mais rápida.
+
+### 4. Pieloplastia Robótica
+
+Para a **estenose de junção ureteropielo-cálica (JUP)**, a pieloplastia robótica reconstrói a transição entre o rim e o ureter com taxa de sucesso superior a **95%**, facilitada pela sutura precisa dos braços robóticos.
+
+### 5. Adenomectomia Robótica (RASP)
+
+Para próstatas muito grandes (>80-100ml) com **hiperplasia prostática benigna (HPB)**, a adenomectomia robótica remove o adenoma por via minimamente invasiva, com menor sangramento e recuperação mais rápida que a cirurgia aberta convencional.
+
+## Vantagens da Cirurgia Robótica
+
+| Aspecto | Cirurgia Robótica | Cirurgia Aberta |
+|---|---|---|
+| **Incisões** | 5-6 furos de 8-12mm | Incisão de 15-20cm |
+| **Sangramento** | 150-200ml | 500-1000ml |
+| **Internação** | 1-2 dias | 5-7 dias |
+| **Retorno ao trabalho** | 2-3 semanas | 6-8 semanas |
+| **Dor pós-operatória** | Leve | Moderada a intensa |
+| **Visão cirúrgica** | 3D ampliada 10x | Visão direta |
+| **Precisão** | Filtragem de tremor | Manual |
+
+## Como é a Recuperação?
+
+A recuperação após cirurgia robótica é significativamente mais rápida:
+
+- **Dia da cirurgia**: repouso no quarto, dieta líquida, deambulação precoce
+- **1º dia**: alta hospitalar na maioria dos casos, dieta livre
+- **1ª semana**: caminhadas leves, atividades domésticas básicas
+- **2ª-3ª semana**: retorno ao trabalho (atividades leves)
+- **4ª-6ª semana**: retorno gradual a exercícios físicos
+- **8ª semana**: atividade física plena
+
+## Cirurgia Robótica em Campinas
+
+A região de **Campinas** conta com hospitais equipados com o sistema Da Vinci, permitindo que pacientes da região metropolitana (Campinas, Valinhos, Vinhedo, Jundiaí, Indaiatuba, Sumaré, Hortôlandia, Americana, Piracicaba) tenham acesso a essa tecnologia sem precisar se deslocar para a capital.
+
+O **Dr. Felipe de Bulhões** é urologista formado pelo **Instituto D'Or de Ensino e Pesquisa** em São Paulo, com atuação em Campinas e São Paulo. Membro da **AUA**, **EAU** e **SBU**, com formação em cirurgia minimamente invasiva e robótica.
+
+### Onde é Realizada?
+
+- **Campinas Day Hospital** — Av. João Erbolato, 270 — Campinas/SP
+- Hospitais parceiros na região de Campinas e São Paulo
+
+## Quem é Candidato à Cirurgia Robótica?
+
+A cirurgia robótica pode ser indicada para:
+
+- **Câncer de próstata localizado** (Gleason 6-9, PSA variável)
+- **Tumores renais** até 7cm (T1a e T1b)
+- **Câncer de bexiga músculo-invasivo**
+- **Estenose de JUP** (junção ureteropielo-cálica)
+- **HPB com próstata muito grande** (>80-100ml)
+- **Reimplante ureteral** por refluxo ou estenose
+
+A indicação é sempre individualizada, considerando o tipo e estágio da doença, a anatomia do paciente, comorbidades e preferências pessoais.
+
+## Perguntas Frequentes
+
+### A cirurgia robótica é coberta pelo convênio?
+Alguns convênios já cobrem a cirurgia robótica, especialmente para câncer de próstata. A cobertura varia por operadora e plano. Consulte seu convênio ou entre em contato conosco para verificar.
+
+### O robô opera sozinho?
+Não. O robô é um instrumento controlado integralmente pelo cirurgião. Cada movimento dos braços robóticos é comandado em tempo real pelo médico, que opera sentado no console com visão 3D ampliada.
+
+### Qual a diferença entre laparoscopia e robótica?
+A robótica oferece visão 3D (vs. 2D da laparoscopia), instrumentos articulados com 7 graus de liberdade (vs. 4 da laparoscopia), filtragem de tremor e ergonomia superior para o cirurgião.
+
+## Agende sua Consulta
+
+Se você precisa de uma avaliação urológica ou foi indicado para cirurgia, agende uma consulta para discutir se a cirurgia robótica é a melhor opção para o seu caso.
+
+**Referências:**
+
+1. EAU Guidelines on Prostate Cancer, 2025. European Association of Urology.
+2. EAU Guidelines on Renal Cell Carcinoma, 2025. European Association of Urology.
+3. Catto JWF, et al. RAZOR Trial: Robot-assisted vs open radical cystectomy. Lancet. 2018;391(10139):2525-2536.
+4. Nyberg M, et al. LAPPRO Trial: Functional outcomes after RARP. Lancet. 2024.
+5. Ficarra V, et al. Systematic review of RARP outcomes. Eur Urol. 2012;62(3):405-417.
+6. Yaxley JW, et al. RARP vs open: randomised clinical trial. Lancet. 2016;388(10049):1057-1066.
+7. Campbell-Walsh-Wein Urology, 13th Edition. Elsevier, 2024.
+`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import {
   BookOpen, ArrowRight, Activity, Scissors, Zap, Flame,
   Heart, Dumbbell, Shield, Pill, Stethoscope,
-  Search, Microscope, Thermometer, Waves, Syringe, Cpu
+  Search, Microscope, Thermometer, Waves, Syringe, Cpu, Target
 } from "lucide-react";
 
 const educationalPages = [
@@ -66,6 +66,13 @@ const educationalPages = [
     href: "/educativo/cirurgia-robotica",
     icon: <Cpu className="w-5 h-5" />,
     color: "bg-indigo-50 text-indigo-600",
+  },
+  {
+    title: "Câncer de Bexiga",
+    description: "Fatores de risco, hematúria, diagnóstico, estadiamento, RTU-B, BCG e cistectomia.",
+    href: "/educativo/cancer-bexiga",
+    icon: <Target className="w-5 h-5" />,
+    color: "bg-purple-50 text-purple-600",
   },
   {
     title: "Disfunção Erétil",

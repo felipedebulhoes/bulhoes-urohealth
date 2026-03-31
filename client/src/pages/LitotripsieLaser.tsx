@@ -149,7 +149,7 @@ export default function LitotripsieLaser() {
                 {
                   step: "2",
                   title: "Bainha de acesso ureteral (UAS)",
-                  desc: "Em muitos casos, uma bainha de acesso ureteral é posicionada para facilitar a passagem do ureteroscópio, melhorar a visibilidade, reduzir a pressão intrarrenal e permitir múltiplas entradas e saídas do instrumento.",
+                  desc: "Em muitos casos, uma bainha de acesso ureteral é posicionada para facilitar a passagem do ureteroscopio, melhorar a visibilidade, reduzir a pressão intrarrenal e permitir múltiplas entradas e saídas do instrumento. Uma evolução recente é a FANS-UAS (Flexible and Navigable Suction Ureteral Access Sheath), como a ClearPetra, que combina acesso ureteral com aspiração contínua e ponta navegável. Meta-análises de 2025 (Liu et al., BMC Urology; Alnadhari et al., BMC Urology) demonstram que a FANS-UAS oferece maior stone-free rate, menor taxa de complicações, redução da pressão intrarrenal (menor risco de sepse) e aspiração automática de fragmentos durante o dusting — potencialmente permitindo tratar cálculos maiores (>2cm) por via retrógrada em sessão única.",
                   icon: Shield,
                 },
                 {
@@ -755,6 +755,8 @@ export default function LitotripsieLaser() {
                 <li>8. Campbell-Walsh-Wein Urology, 13th Edition — Chapter on Ureteroscopy and Intracorporeal Lithotripsy. Elsevier, 2024.</li>
                 <li>9. Türk C, et al. EAU Guidelines on Interventional Treatment for Urolithiasis. Eur Urol. 2016;69(3):475-482.</li>
                 <li>10. Sociedade Brasileira de Urologia (SBU) — Diretrizes sobre Litíase Urinária, 2023.</li>
+                <li>11. Liu Z, et al. Efficacy and safety of flexible and navigable suction ureteral access sheath in retrograde intrarenal surgery: a systematic review and meta-analysis. BMC Urology. 2025;25:45.</li>
+                <li>12. Alnadhari I, et al. ClearPetra suction ureteral access sheath versus conventional UAS during flexible ureteroscopy: a meta-analysis. BMC Urology. 2025;25:12.</li>
               </ol>
             </div>
           </motion.div>

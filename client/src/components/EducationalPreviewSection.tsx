@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import {
   BookOpen, ArrowRight, Activity, Scissors, Zap, Flame,
   Heart, Dumbbell, Shield, Pill, Stethoscope,
-  Search, Microscope, Thermometer, Waves, Syringe, Cpu, Target
+  Search, Microscope, Thermometer, Waves, Syringe, Cpu, Target, Crosshair
 } from "lucide-react";
 
 const educationalPages = [
@@ -45,6 +45,13 @@ const educationalPages = [
     href: "/educativo/cancer-prostata",
     icon: <Microscope className="w-5 h-5" />,
     color: "bg-rose-50 text-rose-600",
+  },
+  {
+    title: "Tratamento do Câncer de Próstata",
+    description: "Vigilância ativa, cirurgia robótica (RARP), radioterapia e hormonioterapia por grupo de risco.",
+    href: "/educativo/tratamento-cancer-prostata",
+    icon: <Crosshair className="w-5 h-5" />,
+    color: "bg-red-50 text-red-600",
   },
   {
     title: "Exame de Próstata",

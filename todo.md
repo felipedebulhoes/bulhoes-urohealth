@@ -47,3 +47,11 @@
 - [x] Atualizar página TratamentosHPB com 7 novas técnicas: BipolEP, DiLEP, TUIP, TUVis, TPLA, iTIND, PAE
 - [x] Página HPB já existia — atualizada com técnicas faltantes e referências EAU 2026
 - [x] Atualizar página de Litotripsia a Laser com bainha de aspiração navegável (FANS-UAS/ClearPetra) + 2 novas referências
+- [x] Pesquisar informações sobre tratamento do câncer de próstata nas guidelines EAU 2025
+- [x] Redigir página educativa completa sobre tratamento do câncer de próstata (RARP, radioterapia, vigilância ativa)
+- [x] Integrar página ao site (rota + navegação + seção educativa)
+- [x] Verificar funcionamento e salvar checkpoint
+- [x] Criar backend tRPC procedure para chat AI (usando invokeLLM)
+- [x] Criar widget de chat embutido no frontend (componente flutuante)
+- [x] Configurar system prompt do assistente virtual urológico
+- [x] Integrar widget ao layout principal do site (Home.tsx)

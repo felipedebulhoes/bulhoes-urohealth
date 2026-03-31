@@ -22,6 +22,7 @@ import ContactSection from "@/components/ContactSection";
 import DoctoraliaWidget from "@/components/DoctoraliaWidget";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import AIChatWidget from "@/components/AIChatWidget";
 import ScheduleBanner from "@/components/ScheduleBanner";
 
 export default function Home() {
@@ -53,6 +54,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppWidget />
+      <AIChatWidget />
       <ScheduleBanner />
     </div>
   );

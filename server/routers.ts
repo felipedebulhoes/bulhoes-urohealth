@@ -3,6 +3,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { fileStorageRouter } from "./routers/fileStorage";
+import { aiChatRouter } from "./routers/aiChat";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -19,6 +20,7 @@ export const appRouter = router({
   }),
 
   files: fileStorageRouter,
+  ai: aiChatRouter,
 });
 
 export type AppRouter = typeof appRouter;

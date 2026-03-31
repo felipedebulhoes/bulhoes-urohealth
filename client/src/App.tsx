@@ -28,6 +28,7 @@ import CirurgiaRobotica from "./pages/CirurgiaRobotica";
 import CancerBexiga from "./pages/CancerBexiga";
 import TratamentoCancerProstata from "./pages/TratamentoCancerProstata";
 import IncontinenciaUrinaria from "./pages/IncontinenciaUrinaria";
+import InfertilidadeMasculina from "./pages/InfertilidadeMasculina";
 import SobreDrFelipe from "./pages/SobreDrFelipe";
 import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema } from "./pages/LocationPages";
 import AdminFiles from "./pages/AdminFiles";
@@ -59,6 +60,7 @@ function Router() {
       <Route path={"/educativo/cancer-bexiga"} component={CancerBexiga} />
       <Route path={"/educativo/tratamento-cancer-prostata"} component={TratamentoCancerProstata} />
       <Route path={"/educativo/incontinencia-urinaria"} component={IncontinenciaUrinaria} />
+      <Route path={"/educativo/infertilidade-masculina"} component={InfertilidadeMasculina} />
       <Route path={"/sobre"} component={SobreDrFelipe} />
       <Route path={"/local/campinas-day-hospital"} component={CampinasDayHospital} />
       <Route path={"/local/clinovi-paulista"} component={ClinoviPaulista} />

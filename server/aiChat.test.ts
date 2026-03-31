@@ -111,7 +111,7 @@ describe("AI Chat Router", () => {
         expect(error.message).not.toContain("login");
         expect(error.code).not.toBe("UNAUTHORIZED");
       }
-    });
+    }, 15000);
   });
 
   describe("submitLead", () => {

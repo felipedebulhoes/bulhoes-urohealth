@@ -3,6 +3,7 @@ import { router, publicProcedure, protectedProcedure } from "../_core/trpc";
 import { invokeLLM, type Message } from "../_core/llm";
 import { notifyOwner } from "../_core/notification";
 import { insertLead, listLeads, updateLeadStatus } from "../db";
+import { sendLeadNotificationEmail } from "../email";
 import { TRPCError } from "@trpc/server";
 
 const SYSTEM_PROMPT = `Você é o assistente virtual do consultório do Dr. Felipe de Bulhões, urologista formado pelo Instituto D'Or de Ensino e Pesquisa, com CRM-SP 218.298 e RQE 108.766. Atende em Campinas (Campinas Day Hospital e Clinovi Paulista) e São Paulo (Clinovi Moema).
@@ -128,10 +129,21 @@ export const aiChatRouter = router({
           ? locationMap[input.preferredLocation] || input.preferredLocation
           : "Não informado";
 
+        // Send Manus platform notification
         await notifyOwner({
           title: `Novo Lead via Chat AI: ${input.name}`,
           content: `Um paciente demonstrou interesse em agendar consulta pelo assistente virtual.\n\nNome: ${input.name}\nTelefone: ${input.phone}${input.email ? `\nEmail: ${input.email}` : ""}\nMotivo: ${input.reason || "Não informado"}\nLocal preferido: ${locationLabel}\n\nAcesse o painel de leads no site para mais detalhes.`,
         });
+
+        // Send email notification (non-blocking, won't fail the lead submission)
+        sendLeadNotificationEmail({
+          name: input.name,
+          phone: input.phone,
+          email: input.email || undefined,
+          reason: input.reason || undefined,
+          preferredLocation: input.preferredLocation || undefined,
+          chatHistory: input.chatHistory || undefined,
+        }).catch((err) => console.error("[Email] Background send failed:", err));
 
         return {
           success: true,

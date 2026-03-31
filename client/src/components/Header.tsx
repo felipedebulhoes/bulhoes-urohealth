@@ -36,6 +36,14 @@ const educationalLinks = [
   { label: "Infecção Urinária no Homem", href: "/educativo/infeccao-urinaria" },
   { label: "Urodinâmica", href: "/educativo/urodinamica" },
   { label: "Procedimentos Urológicos", href: "/educativo/procedimentos-andrologicos" },
+  { label: "Biópsia de Próstata", href: "/educativo/biopsia-prostata" },
+  { label: "Vasectomia", href: "/educativo/vasectomia" },
+  { label: "Litotripsia a Laser", href: "/educativo/litotripsia-laser" },
+  { label: "Cirurgia Robótica", href: "/educativo/cirurgia-robotica" },
+  { label: "Câncer de Bexiga", href: "/educativo/cancer-bexiga" },
+  { label: "Tratamento do Câncer de Próstata", href: "/educativo/tratamento-cancer-prostata" },
+  { label: "Incontinência Urinária", href: "/educativo/incontinencia-urinaria" },
+  { label: "Infertilidade Masculina", href: "/educativo/infertilidade-masculina" },
   { label: "Orientações Pós-Operatórias", href: "/educativo/orientacoes-pos-operatorias" },
 ];
 

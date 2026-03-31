@@ -131,6 +131,13 @@ const educationalPages = [
     color: "bg-lime-50 text-lime-600",
   },
   {
+    title: "Infertilidade Masculina",
+    description: "Espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida.",
+    href: "/educativo/infertilidade-masculina",
+    icon: <Heart className="w-5 h-5" />,
+    color: "bg-pink-50 text-pink-600",
+  },
+  {
     title: "Procedimentos Urológicos",
     description: "Postectomia, varicocele e HPV — o que esperar.",
     href: "/educativo/procedimentos-andrologicos",

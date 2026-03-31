@@ -36,3 +36,4 @@
 - [x] Redigir página educativa completa sobre cirurgia robótica
 - [x] Integrar página de cirurgia robótica ao site (rota + navegação)
 - [x] Verificar funcionamento e salvar checkpoint
+- [x] Ajustar tamanho do logo no Header (190x128px via visual editor)

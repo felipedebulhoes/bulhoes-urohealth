@@ -204,8 +204,8 @@ export default function SobreDrFelipe() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Participação em Congressos</h2>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
-                <img src={UROONCO_URL} alt="Dr. Felipe no UroOnco 2025" className="w-full h-48 object-cover" />
+              <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{marginTop: '-5px', marginRight: '-5px', marginLeft: '6px', width: '367px', height: '409px'}}>
+                <img src={UROONCO_URL} alt="Dr. Felipe no UroOnco 2025" className="w-full h-48 object-cover" style={{paddingRight: '70px', marginTop: '2px', marginLeft: '39px', width: '379px', height: '333px'}} />
                 <div className="p-4 bg-white">
                   <h4 className="font-bold text-[#0A2540] mb-1">UroOnco 2025</h4>
                   <p className="text-sm text-[#64748B]">Congresso de Uro-Oncologia — São Paulo</p>

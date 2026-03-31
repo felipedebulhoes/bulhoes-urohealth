@@ -74,3 +74,12 @@
 - [x] Verificar página de Câncer de Bexiga (já existia - 43KB, completa, integrada)
 - [x] Criar painel admin de leads (página visual para gerenciar leads captados pelo chat)
 - [x] Verificar funcionamento, testes e salvar checkpoint para publicação (27 testes, todos passando)
+- [ ] Pesquisar informações sobre incontinência pós-prostatectomia (AUA/EAU)
+- [ ] Redigir artigo de blog sobre "incontinência urinária pós-prostatectomia"
+- [ ] Integrar artigo ao blog do site
+- [ ] Adicionar notificações por email para novos leads captados pelo chat
+- [ ] Pesquisar informações sobre infertilidade masculina nas guidelines EAU/AUA
+- [ ] Criar página educativa completa sobre infertilidade masculina
+- [ ] Integrar página de infertilidade masculina ao site (rota + navegação)
+- [ ] Verificar funcionamento, testes e salvar checkpoint
+- [x] Corrigir estilos duplicados na imagem UroOnco da página Sobre (visual editor merge)

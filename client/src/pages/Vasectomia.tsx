@@ -653,11 +653,11 @@ export default function Vasectomia() {
                 <div>
                   <h3 className="text-lg font-bold mb-2">Campinas Day Hospital</h3>
                   <p className="text-white/80 text-sm leading-relaxed mb-3">
-                    Centro cirúrgico moderno no Jardim Chapadão, em Campinas, com estrutura completa para procedimentos ambulatoriais. A vasectomia é realizada com técnica no-scalpel, sob anestesia local, com alta no mesmo dia.
+                    Centro cirúrgico moderno no Cambuí, em Campinas, com estrutura completa para procedimentos ambulatoriais. A vasectomia é realizada com técnica no-scalpel, sob anestesia local, com alta no mesmo dia.
                   </p>
                   <div className="flex items-center gap-2 text-sm text-white/70 mb-2">
                     <MapPin className="w-4 h-4" />
-                    R. Angela Signori Grigol, 299 — Jardim Chapadão, Campinas/SP
+                    Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
                   </div>
                   <div className="flex items-center gap-2 text-sm text-white/70 mb-4">
                     <Phone className="w-4 h-4" />

@@ -53,3 +53,34 @@ export const files = mysqlTable("files", {
 
 export type FileRecord = typeof files.$inferSelect;
 export type InsertFile = typeof files.$inferInsert;
+
+/**
+ * Leads table for patient contact collection via AI chat widget.
+ * Captures interested patients' contact info for follow-up.
+ */
+export const leads = mysqlTable("leads", {
+  id: int("id").autoincrement().primaryKey(),
+  /** Patient's full name */
+  name: varchar("name", { length: 256 }).notNull(),
+  /** Patient's phone number (WhatsApp preferred) */
+  phone: varchar("phone", { length: 32 }).notNull(),
+  /** Patient's email (optional) */
+  email: varchar("email", { length: 320 }),
+  /** Reason for consultation / main complaint */
+  reason: text("reason"),
+  /** Preferred location: campinas, sp-paulista, sp-moema */
+  preferredLocation: varchar("preferredLocation", { length: 64 }),
+  /** Source of the lead: ai-chat, website, etc. */
+  source: varchar("source", { length: 64 }).default("ai-chat").notNull(),
+  /** Status: new, contacted, scheduled, completed */
+  status: mysqlEnum("status", ["new", "contacted", "scheduled", "completed"]).default("new").notNull(),
+  /** Optional notes from admin follow-up */
+  notes: text("notes"),
+  /** Conversation history from the chat (JSON) */
+  chatHistory: text("chatHistory"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Lead = typeof leads.$inferSelect;
+export type InsertLead = typeof leads.$inferInsert;

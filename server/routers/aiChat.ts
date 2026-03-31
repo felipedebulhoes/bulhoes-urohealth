@@ -1,6 +1,9 @@
 import { z } from "zod";
-import { router, publicProcedure } from "../_core/trpc";
+import { router, publicProcedure, protectedProcedure } from "../_core/trpc";
 import { invokeLLM, type Message } from "../_core/llm";
+import { notifyOwner } from "../_core/notification";
+import { insertLead, listLeads, updateLeadStatus } from "../db";
+import { TRPCError } from "@trpc/server";
 
 const SYSTEM_PROMPT = `Você é o assistente virtual do consultório do Dr. Felipe de Bulhões, urologista formado pelo Instituto D'Or de Ensino e Pesquisa, com CRM-SP 218.298 e RQE 108.766. Atende em Campinas (Campinas Day Hospital e Clinovi Paulista) e São Paulo (Clinovi Moema).
 
@@ -13,6 +16,7 @@ REGRAS IMPORTANTES:
 6. Seja breve e objetivo nas respostas (máximo 3-4 parágrafos).
 7. Nunca invente informações. Se não souber algo, diga que o paciente deve consultar o médico.
 8. Não discuta valores de consulta, convênios específicos ou informações financeiras detalhadas.
+9. COLETA DE CONTATO: Quando o paciente demonstrar interesse em agendar consulta, pergunte se gostaria de deixar o nome e telefone para que a secretária entre em contato. Se o paciente fornecer dados de contato na conversa, responda normalmente confirmando que os dados serão encaminhados.
 
 ÁREAS DE ATUAÇÃO DO DR. FELIPE:
 - Cirurgia Robótica (prostatectomia, nefrectomia parcial, cistectomia, pieloplastia)
@@ -28,7 +32,7 @@ REGRAS IMPORTANTES:
 - Procedimentos Andrológicos (postectomia, varicocele)
 
 LOCAIS DE ATENDIMENTO:
-- Campinas Day Hospital: Rua Engenheiro Carlos Stevenson, 160, Campinas/SP
+- Campinas Day Hospital: Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
 - Clinovi Paulista: Av. Paulista, 807, 17° andar, São Paulo/SP
 - Clinovi Moema: Av. Lavandisca, 741, 4° andar, São Paulo/SP
 
@@ -38,7 +42,7 @@ AGENDAMENTO:
 
 Quando o paciente perguntar sobre um procedimento específico, você pode mencionar que há conteúdo educativo detalhado no site (bulhoesurohealth.com) na seção Educativo.`;
 
-const MAX_MESSAGES = 20; // Limit conversation history to prevent token overflow
+const MAX_MESSAGES = 20;
 
 export const aiChatRouter = router({
   /**
@@ -57,10 +61,9 @@ export const aiChatRouter = router({
       })
     )
     .mutation(async ({ input }) => {
-      // Build the full message array with system prompt
       const llmMessages: Message[] = [
         { role: "system", content: SYSTEM_PROMPT },
-        ...input.messages.slice(-MAX_MESSAGES), // Keep only recent messages
+        ...input.messages.slice(-MAX_MESSAGES),
       ];
 
       try {
@@ -86,5 +89,98 @@ export const aiChatRouter = router({
             "Desculpe, estou com dificuldades técnicas no momento. Para falar diretamente com a equipe do Dr. Felipe, entre em contato pelo WhatsApp: (11) 98112-4455.",
         };
       }
+    }),
+
+  /**
+   * Submit a lead (patient contact info) collected via chat.
+   * Public procedure — no auth required.
+   */
+  submitLead: publicProcedure
+    .input(
+      z.object({
+        name: z.string().min(2).max(256),
+        phone: z.string().min(8).max(32),
+        email: z.string().email().optional().or(z.literal("")),
+        reason: z.string().max(1000).optional(),
+        preferredLocation: z.string().max(64).optional(),
+        chatHistory: z.string().optional(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      try {
+        const lead = await insertLead({
+          name: input.name,
+          phone: input.phone,
+          email: input.email || undefined,
+          reason: input.reason || undefined,
+          preferredLocation: input.preferredLocation || undefined,
+          source: "ai-chat",
+          chatHistory: input.chatHistory || undefined,
+        });
+
+        // Notify the owner about the new lead
+        const locationMap: Record<string, string> = {
+          campinas: "Campinas Day Hospital",
+          "sp-paulista": "Clinovi Paulista (Av. Paulista)",
+          "sp-moema": "Clinovi Moema",
+        };
+        const locationLabel = input.preferredLocation
+          ? locationMap[input.preferredLocation] || input.preferredLocation
+          : "Não informado";
+
+        await notifyOwner({
+          title: `Novo Lead via Chat AI: ${input.name}`,
+          content: `Um paciente demonstrou interesse em agendar consulta pelo assistente virtual.\n\nNome: ${input.name}\nTelefone: ${input.phone}${input.email ? `\nEmail: ${input.email}` : ""}\nMotivo: ${input.reason || "Não informado"}\nLocal preferido: ${locationLabel}\n\nAcesse o painel de leads no site para mais detalhes.`,
+        });
+
+        return {
+          success: true,
+          message: "Dados recebidos com sucesso! A equipe entrará em contato em breve.",
+        };
+      } catch (error) {
+        console.error("[AI Chat] Lead submission error:", error);
+        return {
+          success: false,
+          message: "Houve um problema ao salvar seus dados. Por favor, entre em contato pelo WhatsApp: (11) 98112-4455.",
+        };
+      }
+    }),
+
+  /**
+   * List all leads (admin only).
+   */
+  listLeads: protectedProcedure
+    .input(
+      z.object({
+        status: z.enum(["new", "contacted", "scheduled", "completed"]).optional(),
+      }).optional()
+    )
+    .query(async ({ ctx, input }) => {
+      if (ctx.user.role !== "admin") {
+        throw new TRPCError({ code: "FORBIDDEN", message: "Acesso restrito a administradores." });
+      }
+      return listLeads(input ? { status: input.status } : undefined);
+    }),
+
+  /**
+   * Update lead status (admin only).
+   */
+  updateLeadStatus: protectedProcedure
+    .input(
+      z.object({
+        id: z.number(),
+        status: z.enum(["new", "contacted", "scheduled", "completed"]),
+        notes: z.string().max(2000).optional(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      if (ctx.user.role !== "admin") {
+        throw new TRPCError({ code: "FORBIDDEN", message: "Acesso restrito a administradores." });
+      }
+      const success = await updateLeadStatus(input.id, input.status, input.notes);
+      if (!success) {
+        throw new TRPCError({ code: "NOT_FOUND", message: "Lead não encontrado." });
+      }
+      return { success: true };
     }),
 });

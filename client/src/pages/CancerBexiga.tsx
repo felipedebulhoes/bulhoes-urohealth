@@ -635,7 +635,7 @@ export default function CancerBexiga() {
                 Campinas Day Hospital
               </h4>
               <p className="text-sm text-gray-600">
-                R. Eng. Carlos Stevenson, 160 — Barão Geraldo, Campinas/SP<br />
+                Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP<br />
                 Procedimentos cirúrgicos e RTU-B<br />
                 <strong>Aceita planos de saúde</strong>
               </p>

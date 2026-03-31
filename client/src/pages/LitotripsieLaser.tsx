@@ -638,7 +638,7 @@ export default function LitotripsieLaser() {
                 </div>
 
                 <p className="text-white/70 leading-relaxed mb-6">
-                  A litotripsia a laser é realizada no <strong className="text-white">Campinas Day Hospital</strong>, um centro cirúrgico moderno localizado no Jardim Chapadão em Campinas, equipado com <strong className="text-white">ureteroscópios flexíveis de última geração e laser de alta potência</strong>. A estrutura permite a realização do procedimento de forma ambulatorial (day clinic), com alta no mesmo dia na maioria dos casos.
+                  A litotripsia a laser é realizada no <strong className="text-white">Campinas Day Hospital</strong>, um centro cirúrgico moderno localizado no Cambuí em Campinas, equipado com <strong className="text-white">ureteroscópios flexíveis de última geração e laser de alta potência</strong>. A estrutura permite a realização do procedimento de forma ambulatorial (day clinic), com alta no mesmo dia na maioria dos casos.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -647,7 +647,7 @@ export default function LitotripsieLaser() {
                       <MapPin className="w-4 h-4 text-[#60A5FA]" />
                       <span className="text-white text-sm font-medium">Endereço</span>
                     </div>
-                    <p className="text-white/60 text-sm">R. Angela Signori Grigol, 299 — Jardim Chapadão, Campinas/SP — CEP 13070-585</p>
+                    <p className="text-white/60 text-sm">Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">

@@ -527,7 +527,7 @@ export default function BiopsiaProstata() {
                 </div>
 
                 <p className="text-white/70 leading-relaxed mb-6">
-                  A biópsia de próstata é realizada no <strong className="text-white">Campinas Day Hospital</strong>, um centro cirúrgico moderno localizado no Jardim Chapadão em Campinas, equipado com tecnologia de ponta para procedimentos urológicos. A estrutura permite a realização do procedimento de forma ambulatorial (day clinic), com alta no mesmo dia.
+                  A biópsia de próstata é realizada no <strong className="text-white">Campinas Day Hospital</strong>, um centro cirúrgico moderno localizado no Cambuí em Campinas, equipado com tecnologia de ponta para procedimentos urológicos. A estrutura permite a realização do procedimento de forma ambulatorial (day clinic), com alta no mesmo dia.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -536,7 +536,7 @@ export default function BiopsiaProstata() {
                       <MapPin className="w-4 h-4 text-[#5EEAD4]" />
                       <span className="text-white text-sm font-medium">Endereço</span>
                     </div>
-                    <p className="text-white/60 text-sm">R. Angela Signori Grigol, 299 — Jardim Chapadão, Campinas/SP — CEP 13070-585</p>
+                    <p className="text-white/60 text-sm">Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">

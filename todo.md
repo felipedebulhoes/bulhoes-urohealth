@@ -55,3 +55,13 @@
 - [x] Criar widget de chat embutido no frontend (componente flutuante)
 - [x] Configurar system prompt do assistente virtual urológico
 - [x] Integrar widget ao layout principal do site (Home.tsx)
+- [x] Criar tabela de leads no banco de dados (schema)s
+- [x] Criar helpers de DB para inserir e listar leads
+- [x] Atualizar router AI para detectar intenção de agendamento e salvar lead
+- [x] Criar procedure para listar leads (admin)
+- [x] Adicionar notificação ao proprietário quando novo lead é captado
+- [x] Atualizar widget frontend com formulário de coleta de contato
+- [x] Criar procedure admin para listar e atualizar leads (listLeads, updateLeadStatus)
+- [x] Escrever testes vitest para o fluxo de leads (19 testes, todos passando)
+- [x] Verificar funcionamento e salvar checkpoint
+- [x] Corrigir endereço do Campinas Day Hospital para Av. Benjamin Constant, 1991 - Cambuí, Campinas/SP em todos os locais do site (13 arquivos corrigidos)

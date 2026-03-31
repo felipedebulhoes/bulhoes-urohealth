@@ -1,6 +1,6 @@
 import { and, desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, InsertFile, FileRecord, users, files } from "../drizzle/schema";
+import { InsertUser, InsertFile, FileRecord, InsertLead, Lead, users, files, leads } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -125,5 +125,45 @@ export async function deleteFile(id: number): Promise<boolean> {
   const db = await getDb();
   if (!db) return false;
   const result = await db.delete(files).where(eq(files.id, id));
+  return (result[0] as any).affectedRows > 0;
+}
+
+// ── Lead helpers ──
+
+export async function insertLead(lead: InsertLead): Promise<Lead | undefined> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot insert lead: database not available");
+    return undefined;
+  }
+  const result = await db.insert(leads).values(lead);
+  const insertId = (result[0] as any).insertId;
+  if (!insertId) return undefined;
+  const rows = await db.select().from(leads).where(eq(leads.id, insertId)).limit(1);
+  return rows[0];
+}
+
+export async function listLeads(opts?: { status?: string }): Promise<Lead[]> {
+  const db = await getDb();
+  if (!db) return [];
+  if (opts?.status) {
+    return db.select().from(leads).where(eq(leads.status, opts.status as any)).orderBy(desc(leads.createdAt));
+  }
+  return db.select().from(leads).orderBy(desc(leads.createdAt));
+}
+
+export async function getLeadById(id: number): Promise<Lead | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+  const rows = await db.select().from(leads).where(eq(leads.id, id)).limit(1);
+  return rows[0];
+}
+
+export async function updateLeadStatus(id: number, status: string, notes?: string): Promise<boolean> {
+  const db = await getDb();
+  if (!db) return false;
+  const updateSet: Record<string, unknown> = { status };
+  if (notes !== undefined) updateSet.notes = notes;
+  const result = await db.update(leads).set(updateSet).where(eq(leads.id, id));
   return (result[0] as any).affectedRows > 0;
 }

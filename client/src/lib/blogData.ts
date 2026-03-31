@@ -700,9 +700,9 @@ A consulta urológica é mais simples do que muitos imaginam. Veja o que esperar
 
 ## Atendimento urológico em Campinas: Campinas Day Hospital
 
-O **Campinas Day Hospital** é um centro cirúrgico moderno localizado no **Jardim Chapadão**, em Campinas, equipado com tecnologia de ponta para consultas, exames e procedimentos urológicos. O atendimento é realizado por convênios e particular.
+O **Campinas Day Hospital** é um centro cirúrgico moderno localizado no **Cambuí**, em Campinas, equipado com tecnologia de ponta para consultas, exames e procedimentos urológicos. O atendimento é realizado por convênios e particular.
 
-**Endereço:** R. Angela Signori Grigol, 299 — Jardim Chapadão, Campinas/SP — CEP 13070-585
+**Endereço:** Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
 
 **Horário:** Sexta-feira, 8h às 12h
 
@@ -902,10 +902,10 @@ A vasectomia é um procedimento muito seguro, com taxa geral de complicações d
 
 ## Onde Realizar Vasectomia em Campinas
 
-O **Dr. Felipe de Bulhões** realiza vasectomias no **Campinas Day Hospital**, um centro cirúrgico moderno localizado no Jardim Chapadão, equipado para procedimentos ambulatoriais com segurança e conforto.
+O **Dr. Felipe de Bulhões** realiza vasectomias no **Campinas Day Hospital**, um centro cirúrgico moderno localizado no Cambuí, equipado para procedimentos ambulatoriais com segurança e conforto.
 
 **Campinas Day Hospital**
-- 📍 R. Angela Signori Grigol, 299 — Jardim Chapadão, Campinas/SP
+- 📍 Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
 - 📞 (11) 98112-4455
 - 🏥 Convênios: Allianz, Amil, Bradesco, Cassi, Porto Seguro, SulAmérica, Unimed e outros
 - ⏰ Sexta-feira: 8h às 12h
@@ -1019,7 +1019,7 @@ O **Dr. Felipe de Bulhões** é urologista formado pelo **Instituto D'Or de Ensi
 
 ### Onde é Realizada?
 
-- **Campinas Day Hospital** — Av. João Erbolato, 270 — Campinas/SP
+- **Campinas Day Hospital** — Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
 - Hospitais parceiros na região de Campinas e São Paulo
 
 ## Quem é Candidato à Cirurgia Robótica?

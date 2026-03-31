@@ -22,3 +22,7 @@
 - [x] Criar página educativa sobre biópsia de próstata
 - [x] Integrar página de biópsia ao site (rota + navegação)
 - [x] Verificar funcionamento e salvar checkpoint
+- [x] Pesquisar informações sobre vasectomia nas guidelines AUA/EAU
+- [x] Redigir página educativa completa sobre vasectomia
+- [x] Integrar página de vasectomia ao site (rota + navegação)
+- [x] Verificar funcionamento e salvar checkpoint

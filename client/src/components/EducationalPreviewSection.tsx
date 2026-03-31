@@ -89,10 +89,17 @@ const educationalPages = [
     color: "bg-sky-50 text-sky-600",
   },
   {
-    title: "Procedimentos Urológicos",
-    description: "Postectomia, vasectomia, varicocele e HPV — o que esperar.",
-    href: "/educativo/procedimentos-andrologicos",
+    title: "Vasectomia",
+    description: "Guia completo: preparo, técnica no-scalpel, pós-operatório, espermograma e reversão.",
+    href: "/educativo/vasectomia",
     icon: <Shield className="w-5 h-5" />,
+    color: "bg-lime-50 text-lime-600",
+  },
+  {
+    title: "Procedimentos Urológicos",
+    description: "Postectomia, varicocele e HPV — o que esperar.",
+    href: "/educativo/procedimentos-andrologicos",
+    icon: <Stethoscope className="w-5 h-5" />,
     color: "bg-cyan-50 text-cyan-600",
   },
   {

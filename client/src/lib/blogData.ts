@@ -765,6 +765,177 @@ Se você mora em Campinas ou região e precisa de acompanhamento urológico, nã
 6. IBGE — Tábua de Mortalidade 2023.
 `,
   },
+  {
+    id: "7",
+    slug: "vasectomia-campinas-guia-completo",
+    title: "Vasectomia em Campinas: Guia Completo sobre o Procedimento, Recuperação e Onde Realizar",
+    excerpt:
+      "Tudo sobre vasectomia em Campinas: como é feita, técnica no-scalpel, preparo, recuperação, mitos e verdades. Procedimento realizado no Campinas Day Hospital pelo Dr. Felipe de Bulhões.",
+    coverImage:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/vasectomia-blog-cover_a51a156f.png",
+    category: "Procedimentos",
+    date: "2026-03-28",
+    readTime: "12 min",
+    author: defaultAuthor,
+    content: `
+# Vasectomia em Campinas: Guia Completo sobre o Procedimento
+
+A **vasectomia** é o método contraceptivo definitivo masculino mais eficaz e seguro disponível atualmente. Segundo o **AUA Vasectomy Guideline 2026**, a taxa de falha é inferior a 1% quando realizada corretamente e confirmada pelo espermograma de controle. Se você está considerando realizar uma vasectomia em Campinas, este guia traz todas as informações que você precisa saber.
+
+---
+
+## O que é a Vasectomia?
+
+A vasectomia é um procedimento cirúrgico ambulatorial no qual os **ductos deferentes** — canais que transportam os espermatozoides dos testículos até o líquido seminal — são seccionados e ocluídos. Após o procedimento, o ejaculado não contém mais espermatozoides, tornando o homem estéril.
+
+**Pontos importantes:**
+- A vasectomia **não altera** a produção de testosterona, a libido ou a função erétil
+- O volume do ejaculado permanece praticamente o mesmo (os espermatozoides representam apenas 2-5% do volume)
+- O procedimento **não é castração** — os testículos continuam funcionando normalmente
+- A eficácia contraceptiva só é confirmada após o **espermograma de controle** (PVSA)
+
+---
+
+## Técnica No-Scalpel (NSV): O Padrão-Ouro
+
+A técnica **No-Scalpel Vasectomy (NSV)**, ou vasectomia sem bisturi, é o padrão atual recomendado pelo AUA Guideline 2026. Diferente da técnica convencional, a NSV utiliza instrumentos especiais (pinça de anel e pinça de dissecção pontiaguda) para acessar os ductos deferentes através de uma pequena punção na pele escrotal, sem necessidade de incisão com bisturi.
+
+### Vantagens da NSV sobre a técnica convencional:
+
+| Característica | NSV (Sem Bisturi) | Convencional |
+|---|---|---|
+| Incisão | Punção mínima | Incisão com bisturi |
+| Sangramento | Significativamente menor | Maior |
+| Hematoma | Menor incidência | Maior incidência |
+| Infecção | Menor risco | Maior risco |
+| Dor pós-operatória | Menor | Maior |
+| Tempo de recuperação | Mais rápido | Mais lento |
+
+*Fonte: AUA Vasectomy Guideline 2026 — Recomendação condicional*
+
+---
+
+## Como é Realizada a Vasectomia?
+
+O procedimento é realizado em centro cirúrgico ambulatorial (day clinic), sob **anestesia local**, com duração de aproximadamente **20 a 30 minutos**. O passo a passo:
+
+1. **Anestesia local** — Aplicação de anestésico na pele e no cordão espermático
+2. **Acesso ao ducto deferente** — Através de punção mínima na linha média do escroto (NSV)
+3. **Isolamento e secção** — O ducto deferente é isolado, seccionado e um segmento é removido
+4. **Oclusão** — As extremidades são ocluídas (cauterização, ligadura ou clipes)
+5. **Interposição fascial** — Uma camada de tecido é interposta entre as extremidades para reduzir o risco de recanalização
+6. **Fechamento** — A punção é tão pequena que geralmente não necessita de pontos
+
+> **Recomendação AUA 2026:** A combinação de **cauterização intraluminal + interposição fascial** é a técnica com menor taxa de falha (< 1%).
+
+---
+
+## Preparo para a Vasectomia
+
+### Antes do procedimento:
+- **Consulta pré-operatória** — Discussão detalhada sobre irreversibilidade, alternativas e expectativas
+- **Exames** — Hemograma e coagulograma (quando indicados)
+- **Tricotomia** — Aparar os pelos da região escrotal na véspera
+- **Roupas** — Levar cueca de sustentação (sunga justa) para usar após o procedimento
+- **Acompanhante** — Ter alguém para dirigir na volta para casa
+
+### Medicamentos:
+- **Não suspender** medicamentos de uso contínuo sem orientação
+- **Anticoagulantes** — Discutir com o urologista e o cardiologista sobre a necessidade de suspensão
+- **Anti-inflamatórios** — Podem ser prescritos para uso no pós-operatório
+
+---
+
+## Pós-Operatório e Recuperação
+
+### Primeiras 48 horas:
+- **Repouso** — Evitar atividades físicas. Aplicar gelo local (20 min a cada 2 horas)
+- **Cueca de sustentação** — Usar continuamente por 7 dias para suporte escrotal
+- **Dor** — Desconforto leve a moderado, controlado com analgésicos e anti-inflamatórios
+- **Inchaço** — Edema leve é esperado e resolve em poucos dias
+
+### Primeira semana:
+- **Retorno ao trabalho** — Atividades leves em 2-3 dias; trabalho braçal em 7 dias
+- **Exercícios** — Evitar atividades físicas intensas por 7-14 dias
+- **Relações sexuais** — Aguardar pelo menos 7 dias. **ATENÇÃO:** A vasectomia NÃO é eficaz imediatamente!
+
+### Espermograma de controle (PVSA):
+- Realizar **8 a 16 semanas** após a vasectomia (ou após 20 ejaculações)
+- A vasectomia só é considerada eficaz quando o espermograma confirma **azoospermia** (ausência de espermatozoides)
+- Até a confirmação, **usar outro método contraceptivo**
+
+> **Dado importante (AUA 2026):** Cerca de 20% dos homens NÃO realizam o espermograma de controle, colocando-se em risco de gravidez indesejada. O PVSA é **obrigatório**.
+
+---
+
+## Mitos e Verdades sobre a Vasectomia
+
+### ❌ MITO: "A vasectomia causa impotência"
+**VERDADE:** A vasectomia não afeta a função erétil, a libido ou a produção de testosterona. Múltiplos estudos de alta qualidade confirmam que não há associação entre vasectomia e disfunção erétil. *(Nível de evidência: Grau A)*
+
+### ❌ MITO: "A vasectomia aumenta o risco de câncer de próstata"
+**VERDADE:** Estudos recentes de alta qualidade, incluindo grandes coortes prospectivas, NÃO demonstraram associação causal entre vasectomia e câncer de próstata. O AUA 2026 recomenda que os médicos informem aos pacientes que a associação não é comprovada. *(Nível de evidência: Grau B)*
+
+### ❌ MITO: "A vasectomia causa doença cardiovascular"
+**VERDADE:** Não há evidência de associação entre vasectomia e doença cardiovascular. *(Nível de evidência: Grau B)*
+
+### ✅ VERDADE: "A vasectomia pode ser revertida"
+**VERDADE:** A vasovasostomia (reversão da vasectomia) é tecnicamente possível, com taxas de permeabilidade de 75-97% quando realizada em até 3 anos. Porém, a taxa de gravidez é menor (30-75%) e diminui com o tempo. A vasectomia deve ser considerada **permanente**.
+
+### ✅ VERDADE: "É mais segura que a laqueadura"
+**VERDADE:** A vasectomia é mais simples, mais rápida, mais barata e tem menos complicações que a laqueadura tubária feminina. É realizada sob anestesia local (vs. geral na laqueadura).
+
+---
+
+## Complicações Possíveis
+
+A vasectomia é um procedimento muito seguro, com taxa geral de complicações de **1-6%**:
+
+- **Hematoma** — 1-6% (a maioria resolve espontaneamente)
+- **Infecção do sítio cirúrgico** — 0.2-1.5%
+- **Dor crônica escrotal (PVPS)** — 1-2% (dor significativa que persiste > 3 meses)
+- **Granuloma espermático** — Nódulo no local da secção, geralmente assintomático
+- **Recanalização espontânea** — < 1% (falha tardia do procedimento)
+- **Epididimite congestiva** — Rara, tratamento conservador
+
+---
+
+## Onde Realizar Vasectomia em Campinas
+
+O **Dr. Felipe de Bulhões** realiza vasectomias no **Campinas Day Hospital**, um centro cirúrgico moderno localizado no Jardim Chapadão, equipado para procedimentos ambulatoriais com segurança e conforto.
+
+**Campinas Day Hospital**
+- 📍 R. Angela Signori Grigol, 299 — Jardim Chapadão, Campinas/SP
+- 📞 (11) 98112-4455
+- 🏥 Convênios: Allianz, Amil, Bradesco, Cassi, Porto Seguro, SulAmérica, Unimed e outros
+- ⏰ Sexta-feira: 8h às 12h
+
+[Agendar consulta pelo Doctoralia](https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas)
+
+---
+
+## Quando Procurar um Urologista para Vasectomia?
+
+A vasectomia é indicada para homens que têm **certeza de que não desejam mais ter filhos**. A legislação brasileira (Lei nº 9.263/1996 — Planejamento Familiar) estabelece que:
+
+- O homem deve ter **pelo menos 25 anos** OU **dois filhos vivos**
+- Deve haver um **prazo mínimo de 60 dias** entre a manifestação da vontade e o procedimento
+- O **consentimento informado** deve ser assinado
+
+Se você está considerando a vasectomia, agende uma consulta para discutir todas as opções, esclarecer dúvidas e planejar o procedimento com segurança.
+
+---
+
+### Referências
+
+1. AUA Vasectomy Guideline, 2026. American Urological Association.
+2. EAU Guidelines on Male Contraception, 2025. European Association of Urology.
+3. Sharlip ID, et al. Vasectomy: AUA Guideline. J Urol. 2012;188(6 Suppl):2482-2491.
+4. Cook LA, et al. Scalpel versus no-scalpel incision for vasectomy. Cochrane Database Syst Rev. 2014;3:CD004112.
+5. Sociedade Brasileira de Urologia (SBU) — Diretrizes sobre Vasectomia, 2023.
+6. Lei nº 9.263/1996 — Planejamento Familiar. Presidência da República.
+`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

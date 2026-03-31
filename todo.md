@@ -26,3 +26,9 @@
 - [x] Redigir página educativa completa sobre vasectomia
 - [x] Integrar página de vasectomia ao site (rota + navegação)
 - [x] Verificar funcionamento e salvar checkpoint
+- [x] Pesquisar informações sobre litotripsia a laser nas guidelines EAU/AUA
+- [x] Redigir página educativa sobre litotripsia a laser
+- [x] Integrar página de litotripsia ao site (rota + navegação)
+- [x] Redigir artigo de blog sobre "vasectomia Campinas" para SEO local
+- [x] Integrar artigo de blog ao site
+- [x] Verificar funcionamento e salvar checkpoint

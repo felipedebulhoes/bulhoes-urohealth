@@ -5,7 +5,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
-  BookOpen, ArrowRight, Activity, Scissors, Zap,
+  BookOpen, ArrowRight, Activity, Scissors, Zap, Flame,
   Heart, Dumbbell, Shield, Pill, Stethoscope,
   Search, Microscope, Thermometer, Waves, Syringe
 } from "lucide-react";
@@ -31,6 +31,13 @@ const educationalPages = [
     href: "/educativo/calculos-renais",
     icon: <Zap className="w-5 h-5" />,
     color: "bg-amber-50 text-amber-600",
+  },
+  {
+    title: "Litotripsia a Laser",
+    description: "Como funciona, indicações, tipos de laser, preparo e recuperação — guia completo.",
+    href: "/educativo/litotripsia-laser",
+    icon: <Flame className="w-5 h-5" />,
+    color: "bg-blue-50 text-blue-600",
   },
   {
     title: "Câncer de Próstata",

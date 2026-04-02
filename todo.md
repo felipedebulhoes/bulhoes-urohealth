@@ -93,3 +93,20 @@
 - [x] Criar página educativa completa sobre Doença de Peyronie
 - [x] Integrar página de Peyronie ao site (rota + navegação + seção educativa)
 - [x] Verificar funcionamento, testes e salvar checkpoint (42 testes passando, página de Peyronie OK, sem erros TS)
+- [ ] Verificar status de indexação do site bulhoesurohealth.com no Google
+- [ ] Verificar propagação DNS do Resend e solicitar nova verificação
+- [ ] Pesquisar e redigir artigo de blog SEO local "urologista São Paulo" (Clinovi Paulista e Moema)
+- [ ] Integrar artigo de blog ao site
+- [ ] Pesquisar informações sobre Varicocele nas guidelines EAU/AUA
+- [ ] Criar página educativa completa sobre Varicocele
+- [ ] Integrar página de Varicocele ao site (rota + navegação + seção educativa)
+- [ ] Verificar funcionamento, testes e salvar checkpoint
+- [x] Verificar dados do domínio drfelipebulhoesurologia.com.br no email
+- [x] Configurar redirecionamento 301 do domínio .com.br para bulhoesurohealth.com
+- [x] Atualizar sitemap.xml com novas páginas (37 URLs, +13 páginas adicionadas)
+- [x] Resubmeter sitemap ao Google Search Console
+- [x] Redigir artigo de blog sobre PSA e rastreamento de câncer de próstata (AUA 2026)
+- [x] Redigir artigo de blog sobre HPB e tratamentos modernos (EAU 2025/AUA 2023)
+- [x] Integrar novos artigos ao site
+- [x] Atualizar sitemap.xml com novos artigos (39 URLs total)
+- [x] Verificar funcionamento, testes e salvar checkpoint (42 testes passando, artigos PSA e HPB OK)

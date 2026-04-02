@@ -1276,6 +1276,411 @@ Sim, de forma gradual. Caminhadas leves são recomendadas desde a primeira seman
 9. Campbell-Walsh-Wein Urology, 13th Edition — Chapter on Urinary Incontinence. Elsevier, 2024.
 `,
   },
+  {
+    id: "10",
+    slug: "psa-rastreamento-cancer-prostata-2026",
+    title: "PSA e Rastreamento do Câncer de Próstata: O Que Mudou em 2026",
+    excerpt:
+      "A AUA/SUO atualizou suas diretrizes de rastreamento do câncer de próstata em 2026. Entenda as novas recomendações sobre PSA, quando iniciar o rastreamento, o papel da ressonância magnética e os biomarcadores disponíveis.",
+    coverImage:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-psa-rastreamento-prostata-agLu4YHQhYamRq3TyanvEp.webp",
+    category: "Prevenção",
+    date: "1 de Abril de 2026",
+    readTime: "14 min de leitura",
+    author: defaultAuthor,
+    content: `
+# PSA e Rastreamento do Câncer de Próstata: O Que Mudou em 2026
+
+O **câncer de próstata** continua sendo o tumor maligno mais frequente entre homens no Brasil — excluindo o câncer de pele não melanoma. O Instituto Nacional de Câncer (INCA) estima **mais de 71 mil novos casos por ano** no triênio 2023-2025, e em 2023 foram registrados **17.093 óbitos** pela doença. Nos Estados Unidos, as estatísticas de 2026 mostram tendência semelhante de alta incidência.
+
+A boa notícia é que, quando detectado precocemente, o câncer de próstata apresenta **taxas de cura superiores a 90%**. Por isso, o rastreamento adequado — baseado no exame de **PSA (Antígeno Prostático Específico)** — é uma das ferramentas mais poderosas da urologia preventiva.
+
+Em fevereiro de 2026, a **American Urological Association (AUA)** e a **Society of Urologic Oncology (SUO)** publicaram uma atualização importante de suas diretrizes de detecção precoce do câncer de próstata. Este artigo resume as principais mudanças e o que elas significam para você.
+
+---
+
+## O que é o PSA?
+
+O **PSA (Prostate-Specific Antigen)** é uma proteína produzida exclusivamente pela próstata. Seu nível no sangue pode estar elevado em diversas condições:
+
+| Condição | PSA pode estar elevado? |
+|---|---|
+| **Câncer de próstata** | Sim — principal indicação de investigação |
+| **Hiperplasia prostática benigna (HPB)** | Sim — aumento benigno da próstata eleva o PSA |
+| **Prostatite (infecção/inflamação)** | Sim — pode causar elevações transitórias |
+| **Manipulação prostática recente** | Sim — toque retal, biópsia, ejaculação recente |
+| **Uso de finasterida/dutasterida** | Reduz o PSA em ~50% — necessário multiplicar por 2 |
+
+Por isso, o PSA isolado **não é diagnóstico de câncer** — ele é uma ferramenta de rastreamento que, quando alterada, indica a necessidade de investigação adicional.
+
+---
+
+## Quando iniciar o rastreamento? As novas recomendações AUA/SUO 2026
+
+A atualização de 2026 da AUA/SUO reforça a abordagem de **rastreamento estratificado por risco**, com as seguintes recomendações principais:
+
+### Idade para iniciar
+
+| Grupo de Risco | Idade para Iniciar | Intervalo de Rastreamento |
+|---|---|---|
+| **Risco médio** | 45-50 anos | A cada 2-4 anos (se PSA < 1 ng/mL) |
+| **Risco aumentado** (negros, história familiar) | 40-45 anos | Individualizado |
+| **Alto risco** (BRCA1/BRCA2) | 40 anos | A cada 2 anos |
+
+### PSA basal como guia
+
+Um conceito fundamental reforçado pela guideline é o **PSA basal** (baseline PSA). Homens que realizam o primeiro PSA entre 45-50 anos e apresentam **PSA < 1 ng/mL** têm risco muito baixo de desenvolver câncer de próstata clinicamente significativo nas próximas décadas. Para esses pacientes, o intervalo de rastreamento pode ser estendido para **cada 4 anos**.
+
+Por outro lado, homens com **PSA basal > 1,5-3 ng/mL** na mesma faixa etária merecem acompanhamento mais frequente e podem se beneficiar de ferramentas adicionais.
+
+### Quando parar o rastreamento?
+
+A AUA/SUO 2026 recomenda que o rastreamento seja **individualizado após os 70 anos**, levando em consideração a expectativa de vida e as comorbidades do paciente. Homens com expectativa de vida inferior a 10-15 anos provavelmente não se beneficiam do rastreamento.
+
+---
+
+## O papel da ressonância magnética (RM) multiparamétrica
+
+Uma das mudanças mais significativas nos últimos anos — e reforçada pela AUA/SUO 2026 — é o papel crescente da **ressonância magnética multiparamétrica da próstata (RMmp)** antes da biópsia.
+
+Estudos como o **PRECISION Trial** e o **MRI-FIRST** demonstraram que a RM antes da biópsia:
+
+- **Aumenta a detecção** de cânceres clinicamente significativos (Gleason ≥ 7)
+- **Reduz a detecção** de cânceres indolentes (Gleason 6) — evitando biópsias e tratamentos desnecessários
+- **Permite biópsia dirigida** (targeted biopsy) para lesões suspeitas classificadas como PI-RADS ≥ 3
+
+A guideline AUA/SUO 2026 atualizou a **força da evidência** para o uso de RM em pacientes virgens de biópsia (biopsy-naïve), reconhecendo que a evidência é agora mais robusta.
+
+### Classificação PI-RADS
+
+| PI-RADS | Significado | Conduta Sugerida |
+|---|---|---|
+| 1-2 | Muito baixa/baixa probabilidade de câncer significativo | Acompanhamento com PSA |
+| 3 | Probabilidade intermediária | Discussão individualizada — biópsia pode ser considerada |
+| 4-5 | Alta/muito alta probabilidade | Biópsia dirigida + sistemática recomendada |
+
+---
+
+## Biomarcadores: além do PSA
+
+A AUA/SUO 2026 também atualizou suas recomendações sobre **biomarcadores** que podem auxiliar na decisão de biópsia, especialmente em cenários de PSA na "zona cinzenta" (4-10 ng/mL):
+
+| Biomarcador | Tipo | Utilidade Principal |
+|---|---|---|
+| **PSA livre / PSA total** | Sangue | Diferencia HPB de câncer (PSA livre < 15% sugere câncer) |
+| **PHI (Prostate Health Index)** | Sangue | Combina PSA total, livre e [-2]proPSA — melhor acurácia |
+| **4Kscore** | Sangue | Prediz risco de câncer agressivo |
+| **PCA3** | Urina | Específico para câncer de próstata — útil em re-biópsia |
+| **SelectMDx** | Urina | Prediz risco de Gleason ≥ 7 na biópsia |
+| **ExoDx (EPI)** | Urina | Exossomos urinários — prediz câncer de alto grau |
+| **ConfirmMDx** | Tecido | Epigenética em biópsia negativa — prediz câncer oculto |
+
+Esses biomarcadores **não substituem o PSA**, mas podem ajudar a **refinar a indicação de biópsia** e reduzir procedimentos desnecessários.
+
+---
+
+## Biópsia de próstata: o que mudou?
+
+A guideline AUA/SUO 2026 também trouxe atualizações sobre a **técnica de biópsia**:
+
+### Via transperineal vs. transretal
+
+A **biópsia transperineal** (pela pele do períneo) vem ganhando espaço sobre a via transretal tradicional, com vantagens importantes:
+
+- **Menor risco de infecção** — não atravessa o reto, eliminando o risco de sepse por bactérias intestinais
+- **Melhor amostragem** da zona anterior da próstata
+- **Pode ser realizada com anestesia local** em consultório
+
+A AUA/SUO 2026 reconhece a via transperineal como uma alternativa segura e eficaz, com tendência crescente de adoção.
+
+### Biópsia dirigida + sistemática
+
+Para pacientes com RM positiva (PI-RADS ≥ 3), a recomendação é realizar **biópsia dirigida à lesão + biópsia sistemática** (12 fragmentos). Essa combinação maximiza a detecção de cânceres significativos.
+
+### ASAP (Atypical Small Acinar Proliferation)
+
+A guideline revisou as recomendações para pacientes com resultado de **ASAP** na biópsia — uma condição que indica células atípicas, mas sem critérios suficientes para diagnóstico de câncer. A recomendação atualizada é de **re-biópsia dirigida**, preferencialmente com RM prévia.
+
+---
+
+## Comparação entre as principais guidelines internacionais
+
+| Aspecto | AUA/SUO 2026 | EAU 2025 | SBU (Brasil) |
+|---|---|---|---|
+| **Idade para iniciar** | 45-50 anos (risco médio) | 50 anos (ou 45 se risco elevado) | 50 anos (ou 45 se negro/história familiar) |
+| **Intervalo** | 2-4 anos (baseado no PSA) | 2 anos (se PSA > 1 ng/mL aos 40-50) | Anual |
+| **RM antes da biópsia** | Recomendada (evidência atualizada) | Fortemente recomendada | Recomendada |
+| **Via de biópsia** | Transperineal ganhando espaço | Transperineal preferida | Transretal ainda predominante |
+| **Biomarcadores** | Atualizados (PHI, 4K, PCA3, SelectMDx) | Mencionados como adjuntos | Limitados na prática |
+
+---
+
+## O que isso significa para você?
+
+Se você é homem e tem **45 anos ou mais** (ou 40 anos com fatores de risco), converse com seu urologista sobre o rastreamento do câncer de próstata. Os pontos-chave são:
+
+1. **O PSA é uma ferramenta valiosa** quando usado de forma inteligente e estratificada por risco
+2. **O rastreamento salva vidas** — o estudo ERSPC demonstrou redução de 20% na mortalidade por câncer de próstata com rastreamento baseado em PSA
+3. **A ressonância magnética** antes da biópsia é cada vez mais importante para evitar procedimentos desnecessários
+4. **Novos biomarcadores** podem ajudar a refinar a decisão de biópsia em casos duvidosos
+5. **A decisão deve ser compartilhada** entre médico e paciente, considerando riscos e benefícios individuais
+
+---
+
+## Quando procurar o urologista?
+
+Além do rastreamento de rotina, procure avaliação urológica se apresentar:
+
+- Dificuldade para urinar ou jato urinário fraco
+- Necessidade de urinar com frequência, especialmente à noite
+- Sangue na urina ou no sêmen
+- Dor na região pélvica ou lombar persistente
+- Disfunção erétil de início recente
+
+---
+
+### Referências
+
+1. Lin DW, Carlsson S, Filson CP, et al. Updates to Early Detection of Prostate Cancer: AUA/SUO Guideline (2026). J Urol. 2026.
+2. Siegel RL, et al. Cancer statistics, 2026. CA Cancer J Clin. 2026;76(1):e70043.
+3. Hugosson J, et al. ERSPC: A 16-yr follow-up of the European randomized study of screening for prostate cancer. Eur Urol. 2019;76(1):43-51.
+4. Kasivisvanathan V, et al. MRI-Targeted or Standard Biopsy for Prostate-Cancer Diagnosis (PRECISION Trial). N Engl J Med. 2018;378(19):1767-1777.
+5. EAU Guidelines on Prostate Cancer — European Association of Urology, 2025.
+6. Instituto Nacional de Câncer (INCA). Estimativa 2023-2025: Incidência de Câncer no Brasil.
+7. Cooperberg MR. Updates to Early Detection of Prostate Cancer: AUA/SUO Guideline (2026): Sound Science, Soft Power. J Urol. 2026.
+8. Campbell-Walsh-Wein Urology, 13th Edition — Chapter on Prostate Cancer. Elsevier, 2024.
+`,
+  },
+  {
+    id: "11",
+    slug: "hiperplasia-prostatica-benigna-tratamentos-modernos",
+    title: "Hiperplasia Prostática Benigna (HPB): Dos Medicamentos às Técnicas Cirúrgicas Mais Modernas",
+    excerpt:
+      "A HPB afeta mais de 50% dos homens acima de 60 anos. Conheça todas as opções de tratamento disponíveis em 2026 — desde medicamentos até as técnicas cirúrgicas minimamente invasivas mais recentes, como enucleação a laser e iTIND.",
+    coverImage:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-hpb-tratamento-moderno-mQ7cu73ouQGoVjsg6ysiRu.webp",
+    category: "Tratamentos",
+    date: "1 de Abril de 2026",
+    readTime: "16 min de leitura",
+    author: defaultAuthor,
+    content: `
+# Hiperplasia Prostática Benigna (HPB): Dos Medicamentos às Técnicas Cirúrgicas Mais Modernas
+
+A **Hiperplasia Prostática Benigna (HPB)** é o crescimento não-canceroso da próstata que ocorre naturalmente com o envelhecimento. Estima-se que **mais de 50% dos homens acima de 60 anos** e até **90% dos homens acima de 80 anos** apresentem algum grau de HPB. Quando esse crescimento causa obstrução ao fluxo urinário, surgem os chamados **Sintomas do Trato Urinário Inferior (LUTS)**, que podem impactar significativamente a qualidade de vida.
+
+Este artigo apresenta um panorama completo e atualizado das opções de tratamento para HPB — desde medidas comportamentais e medicamentos até as técnicas cirúrgicas mais modernas disponíveis em 2026, baseado nas **EAU Guidelines 2025** e na **AUA Guideline Amendment 2023**.
+
+---
+
+## Sintomas da HPB: quando tratar?
+
+Os sintomas da HPB são divididos em dois grupos:
+
+| Tipo | Sintomas | Mecanismo |
+|---|---|---|
+| **Obstrutivos (esvaziamento)** | Jato fraco, hesitação, gotejamento terminal, sensação de esvaziamento incompleto | Compressão mecânica da uretra pela próstata |
+| **Irritativos (armazenamento)** | Urgência, frequência, noctúria, incontinência de urgência | Hiperatividade do detrusor secundária à obstrução |
+
+A gravidade dos sintomas é avaliada pelo **IPSS (International Prostate Symptom Score)**, um questionário validado com pontuação de 0 a 35:
+
+| IPSS | Classificação | Conduta Inicial |
+|---|---|---|
+| 0-7 | Sintomas leves | Observação vigilante + medidas comportamentais |
+| 8-19 | Sintomas moderados | Tratamento medicamentoso |
+| 20-35 | Sintomas graves | Considerar tratamento cirúrgico |
+
+---
+
+## Tratamento medicamentoso
+
+O tratamento medicamentoso é a primeira linha para a maioria dos pacientes com sintomas moderados. As principais classes são:
+
+### Alfa-bloqueadores
+
+São os medicamentos de **primeira linha** para alívio rápido dos sintomas. Relaxam a musculatura lisa da próstata e do colo vesical.
+
+| Medicamento | Dose | Particularidades |
+|---|---|---|
+| **Tansulosina** | 0,4 mg/dia | Mais seletivo, menos hipotensão |
+| **Doxazosina** | 2-8 mg/dia | Também trata hipertensão |
+| **Alfuzosina** | 10 mg/dia | Boa tolerabilidade |
+| **Silodosina** | 8 mg/dia | Mais seletivo, pode causar ejaculação retrógrada |
+
+**Início de ação:** dias a semanas. **Efeitos colaterais:** tontura, hipotensão postural, ejaculação retrógrada (especialmente silodosina e tansulosina).
+
+### Inibidores da 5-alfa-redutase (5-ARI)
+
+Reduzem o volume prostático em 20-30% ao longo de 6-12 meses, bloqueando a conversão de testosterona em di-hidrotestosterona (DHT).
+
+| Medicamento | Dose | Particularidades |
+|---|---|---|
+| **Finasterida** | 5 mg/dia | Inibe 5-AR tipo 2 |
+| **Dutasterida** | 0,5 mg/dia | Inibe 5-AR tipos 1 e 2 (dual) |
+
+**Indicação principal:** próstatas > 30-40 mL. **Efeitos colaterais:** disfunção erétil (3-5%), redução da libido, ginecomastia. **Importante:** reduzem o PSA em ~50% — necessário multiplicar por 2 para interpretação correta.
+
+### Terapia combinada
+
+A combinação de alfa-bloqueador + 5-ARI (ex: tansulosina + dutasterida) é recomendada para pacientes com **próstatas grandes (> 40 mL) e sintomas moderados a graves**. O estudo **CombAT** demonstrou superioridade da terapia combinada sobre monoterapia na redução de progressão e necessidade de cirurgia.
+
+### Inibidores da fosfodiesterase-5 (iPDE5)
+
+A **tadalafila 5 mg/dia** é aprovada para tratamento de LUTS/HPB, especialmente em pacientes com **disfunção erétil concomitante**. Atua relaxando a musculatura lisa da próstata, bexiga e vasos pélvicos.
+
+### Anticolinérgicos e Beta-3 agonistas
+
+Para pacientes com **sintomas de armazenamento predominantes** (urgência, frequência), podem ser adicionados:
+
+- **Anticolinérgicos** (oxibutinina, solifenacina, darifenacina) — com cautela em pacientes com resíduo pós-miccional elevado
+- **Mirabegron** (beta-3 agonista) — alternativa com menos efeitos anticolinérgicos
+
+---
+
+## Quando a cirurgia é indicada?
+
+O tratamento cirúrgico é indicado quando:
+
+- Falha do tratamento medicamentoso
+- Sintomas graves com impacto na qualidade de vida
+- Complicações da HPB: retenção urinária recorrente, infecções urinárias de repetição, cálculos vesicais, hematúria recorrente, insuficiência renal obstrutiva, divertículos vesicais
+
+---
+
+## Técnicas cirúrgicas: das clássicas às mais modernas
+
+### RTU-P (Ressecção Transuretral da Próstata)
+
+A **RTU-P** é o procedimento de referência ("padrão-ouro" histórico) para próstatas de **30-80 mL**. Utiliza uma alça elétrica para ressecar o tecido prostático obstrutivo.
+
+- **Vantagens:** amplamente disponível, resultados bem estabelecidos
+- **Desvantagens:** risco de síndrome de RTU (com irrigação monopolar), sangramento, ejaculação retrógrada (~65%)
+- **Tempo de internação:** 1-3 dias
+
+### Enucleação endoscópica (EEP)
+
+A **enucleação endoscópica da próstata** é hoje considerada o **procedimento de referência para próstatas de qualquer tamanho** pelas EAU Guidelines 2025. Consiste em separar os lobos adenomatosos da cápsula prostática (como "descascar uma laranja") e depois morcelar o tecido na bexiga.
+
+| Técnica | Fonte de Energia | Particularidades |
+|---|---|---|
+| **HoLEP** (Holmium Laser) | Laser Holmium:YAG | Mais estudada, padrão-ouro da enucleação |
+| **ThuLEP** (Thulium Laser) | Laser Thulium | Corte contínuo, hemostasia excelente |
+| **BipolEP** (Bipolar) | Energia bipolar | Usa equipamento de RTU bipolar, mais acessível |
+| **DiLEP** (Diode Laser) | Laser diodo | Alternativa emergente |
+
+**Vantagens da enucleação:** aplicável a qualquer volume prostático (inclusive > 100 mL), menor sangramento que RTU-P, menor tempo de cateter, resultados duráveis a longo prazo.
+
+**Desvantagem:** curva de aprendizado mais longa (~30-50 casos para HoLEP).
+
+### Vaporização a laser (PVP - GreenLight)
+
+Utiliza laser de alta potência (532 nm) para vaporizar o tecido prostático. Indicada especialmente para pacientes em uso de anticoagulantes, pois apresenta excelente hemostasia.
+
+- **Vantagens:** baixo sangramento, pode ser ambulatorial
+- **Desvantagens:** não fornece tecido para análise histológica, possível necessidade de retratamento
+
+### TUIP (Incisão Transuretral da Próstata)
+
+Indicada para **próstatas pequenas (< 30 mL)** com obstrução predominante no colo vesical. Consiste em uma ou duas incisões no colo vesical, sem remoção de tecido.
+
+- **Vantagens:** procedimento rápido, menor risco de ejaculação retrógrada (~18%)
+- **Desvantagens:** limitada a próstatas pequenas
+
+### Prostatectomia simples (aberta, laparoscópica ou robótica)
+
+Indicada para **próstatas muito grandes (> 80-100 mL)**. A via robótica (RASP) vem ganhando espaço, com menor sangramento e recuperação mais rápida que a via aberta.
+
+---
+
+## Técnicas minimamente invasivas emergentes
+
+Nos últimos anos, surgiram diversas técnicas minimamente invasivas que buscam tratar a HPB com **menor impacto na função sexual** (preservação da ejaculação):
+
+### UroLift (Prostatic Urethral Lift - PUL)
+
+Implantes que afastam os lobos prostáticos laterais, abrindo a uretra sem remover tecido.
+
+- **Indicação:** próstatas 30-80 mL, sem lobo mediano proeminente
+- **Vantagens:** preserva ejaculação (~100%), pode ser ambulatorial
+- **Desvantagens:** resultados menos duráveis (taxa de retratamento ~13% em 5 anos), não indicada para lobo mediano
+
+### Rezum (Water Vapor Thermal Therapy)
+
+Injeção de vapor d'água no tecido prostático, causando necrose por coagulação e redução do volume.
+
+- **Indicação:** próstatas 30-80 mL, inclusive com lobo mediano
+- **Vantagens:** preserva ejaculação (~95%), procedimento rápido (~10 min)
+- **Desvantagens:** sintomas irritativos temporários, necessidade de cateter por ~3-7 dias
+
+### iTIND (Temporary Implantable Nitinol Device)
+
+Dispositivo de nitinol implantado temporariamente (5 dias) que remodela o colo vesical e a uretra prostática.
+
+- **Indicação:** próstatas < 75 mL
+- **Vantagens:** preserva ejaculação, sem necessidade de cateter prolongado
+- **Desvantagens:** dados de longo prazo ainda limitados
+
+### Aquablation (Robotic Waterjet Ablation)
+
+Utiliza jato de água de alta pressão guiado por ultrassom robótico para remover tecido prostático.
+
+- **Indicação:** próstatas 30-150 mL
+- **Vantagens:** independente do operador (guiada por robô), preserva ejaculação em taxas superiores à RTU-P
+- **Desvantagens:** disponibilidade limitada, risco de sangramento pós-operatório
+
+### PAE (Embolização das Artérias Prostáticas)
+
+Procedimento realizado por radiologista intervencionista. Consiste na embolização seletiva das artérias prostáticas, causando isquemia e redução do volume.
+
+- **Indicação:** pacientes com alto risco cirúrgico, próstatas muito grandes
+- **Vantagens:** minimamente invasivo, sem anestesia geral
+- **Desvantagens:** resultados inferiores às técnicas cirúrgicas endoscópicas, não recomendada como primeira linha pelas EAU Guidelines
+
+---
+
+## Como escolher o melhor tratamento?
+
+A escolha do tratamento depende de vários fatores:
+
+| Fator | Influência na Decisão |
+|---|---|
+| **Volume prostático** | Próstatas pequenas (< 30 mL): TUIP ou medicamentos. Médias (30-80 mL): RTU-P, enucleação, PVP, técnicas minimamente invasivas. Grandes (> 80 mL): enucleação ou prostatectomia simples |
+| **Presença de lobo mediano** | Exclui UroLift; favorece enucleação, RTU-P, Rezum, Aquablation |
+| **Preservação da ejaculação** | Prioridade: UroLift, Rezum, iTIND, Aquablation |
+| **Uso de anticoagulantes** | Favorece PVP (GreenLight) ou enucleação a laser |
+| **Comorbidades** | Pacientes de alto risco: PAE ou técnicas ambulatoriais |
+| **Expectativa de durabilidade** | Enucleação > RTU-P > técnicas minimamente invasivas |
+
+---
+
+## Quando procurar o urologista?
+
+Procure avaliação urológica se apresentar:
+
+- Jato urinário fraco ou intermitente
+- Necessidade de fazer força para urinar
+- Acordar mais de 2 vezes à noite para urinar
+- Sensação de esvaziamento incompleto da bexiga
+- Urgência urinária ou perda involuntária de urina
+- Sangue na urina
+
+O diagnóstico precoce permite iniciar o tratamento adequado e **prevenir complicações** como retenção urinária aguda, infecções e insuficiência renal.
+
+---
+
+### Referências
+
+1. EAU Guidelines on Management of Non-Neurogenic Male Lower Urinary Tract Symptoms (LUTS), incl. Benign Prostatic Obstruction (BPO) — European Association of Urology, 2025.
+2. Sandhu JS, et al. Management of Lower Urinary Tract Symptoms Attributed to Benign Prostatic Hyperplasia (BPH): AUA Guideline Amendment 2023. J Urol. 2024.
+3. Roehrborn CG, et al. The effects of combination therapy with dutasteride and tamsulosin on clinical outcomes in men with symptomatic BPH: 4-year results from the CombAT study. Eur Urol. 2010;57(1):123-131.
+4. Gilling PJ, et al. Long-term results of a randomized trial comparing holmium laser enucleation of the prostate and transurethral resection of the prostate. J Urol. 2012;187(5):1651-1655.
+5. Roehrborn CG, et al. Aquablation for BPH in large prostates (80-150 cc): 3-year results from the WATER II trial. BJU Int. 2021.
+6. McVary KT, et al. Rezum water vapor thermal therapy for LUTS/BPH: 5-year results. Urology. 2021.
+7. Eure G, et al. Prostatic urethral lift (UroLift): 5-year results of the L.I.F.T. study. Can J Urol. 2019.
+8. Bakhsh A, et al. Phosphodiesterase inhibitors for the management of lower urinary tract symptoms: a systematic review. Prostate Cancer Prostatic Dis. 2026.
+9. Savin Z, et al. Lasers for Benign Prostatic Obstruction: And the Winner Is... Eur Urol. 2025.
+10. Campbell-Walsh-Wein Urology, 13th Edition — Chapter on Benign Prostatic Hyperplasia. Elsevier, 2024.
+`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

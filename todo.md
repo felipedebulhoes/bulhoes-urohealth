@@ -87,3 +87,9 @@
 - [x] Adicionar tag gtag.js ao site (client/index.html)
 - [x] Implementar rastreamento de eventos de conversão (leads do chat, cliques em WhatsApp/Doctoralia, CTAs de agendamento, páginas educativas)
 - [x] Testar integração e salvar checkpoint (42 testes passando, 11 novos testes de analytics)
+- [x] Configurar eventos de conversão no GA4 (generate_lead, contact_whatsapp, cta_click, contact_doctoralia) - via GA4 Admin API
+- [x] Verificar domínio bulhoesurohealth.com no Resend - 4 registros DNS adicionados no Squarespace (DKIM, MX sa-east-1, SPF, DMARC), aguardando propagação DNS (até 48h)
+- [x] Pesquisar informações sobre Doença de Peyronie nas guidelines EAU/AUA
+- [x] Criar página educativa completa sobre Doença de Peyronie
+- [x] Integrar página de Peyronie ao site (rota + navegação + seção educativa)
+- [x] Verificar funcionamento, testes e salvar checkpoint (42 testes passando, página de Peyronie OK, sem erros TS)

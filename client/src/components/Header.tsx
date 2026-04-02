@@ -45,6 +45,7 @@ const educationalLinks = [
   { label: "Tratamento do Câncer de Próstata", href: "/educativo/tratamento-cancer-prostata" },
   { label: "Incontinência Urinária", href: "/educativo/incontinencia-urinaria" },
   { label: "Infertilidade Masculina", href: "/educativo/infertilidade-masculina" },
+  { label: "Doença de Peyronie", href: "/educativo/doenca-peyronie" },
   { label: "Orientações Pós-Operatórias", href: "/educativo/orientacoes-pos-operatorias" },
 ];
 

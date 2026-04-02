@@ -138,6 +138,13 @@ const educationalPages = [
     color: "bg-pink-50 text-pink-600",
   },
   {
+    title: "Doença de Peyronie",
+    description: "Curvatura peniana adquirida: fases, diagnóstico, Xiaflex, plicatura, enxerto e prótese peniana.",
+    href: "/educativo/doenca-peyronie",
+    icon: <Activity className="w-5 h-5" />,
+    color: "bg-violet-50 text-violet-600",
+  },
+  {
     title: "Procedimentos Urológicos",
     description: "Postectomia, varicocele e HPV — o que esperar.",
     href: "/educativo/procedimentos-andrologicos",

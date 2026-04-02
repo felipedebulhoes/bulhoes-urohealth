@@ -13,7 +13,7 @@ const LECTURE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5
 
 const services = [
   { name: "Primeira Consulta Urologia", price: "R$ 800", highlight: true },
-  { name: "Teleconsulta em Urologia", price: "R$ 650", highlight: false },
+  { name: "Teleconsulta em Urologia", price: "R$ 800", highlight: false },
   { name: "Consulta Cirurgia Geral", price: "R$ 800", highlight: false },
   { name: "Check-up Masculino + Bioimpedância", price: "Sob consulta", highlight: true },
   { name: "Vasectomia", price: "Sob consulta", highlight: false },

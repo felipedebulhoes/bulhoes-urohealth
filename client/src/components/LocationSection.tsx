@@ -179,7 +179,7 @@ export default function LocationSection() {
             </p>
           </div>
           <div className="text-center md:text-right shrink-0">
-            <p className="text-2xl font-bold text-[#5EEAD4] font-sans">R$ 650</p>
+            <p className="text-2xl font-bold text-[#5EEAD4] font-sans">R$ 800</p>
             <p className="text-xs text-white/40 font-sans mt-1">A partir de</p>
           </div>
           <a

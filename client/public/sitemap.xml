@@ -249,4 +249,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Educativo: Varicocele -->
+  <url>
+    <loc>https://bulhoesurohealth.com/educativo/varicocele</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog: Urologista São Paulo -->
+  <url>
+    <loc>https://bulhoesurohealth.com/blog/urologista-sao-paulo-paulista-moema</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

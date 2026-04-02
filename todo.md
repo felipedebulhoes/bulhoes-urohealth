@@ -94,13 +94,13 @@
 - [x] Integrar página de Peyronie ao site (rota + navegação + seção educativa)
 - [x] Verificar funcionamento, testes e salvar checkpoint (42 testes passando, página de Peyronie OK, sem erros TS)
 - [ ] Verificar status de indexação do site bulhoesurohealth.com no Google
-- [ ] Verificar propagação DNS do Resend e solicitar nova verificação
+- [x] Verificar propagação DNS do Resend - todos os registros propagados (DKIM, SPF, MX)
 - [ ] Pesquisar e redigir artigo de blog SEO local "urologista São Paulo" (Clinovi Paulista e Moema)
 - [ ] Integrar artigo de blog ao site
-- [ ] Pesquisar informações sobre Varicocele nas guidelines EAU/AUA
-- [ ] Criar página educativa completa sobre Varicocele
-- [ ] Integrar página de Varicocele ao site (rota + navegação + seção educativa)
-- [ ] Verificar funcionamento, testes e salvar checkpoint
+- [x] Pesquisar informações sobre Varicocele nas guidelines EAU/AUA
+- [x] Criar página educativa completa sobre Varicocele
+- [x] Integrar página de Varicocele ao site (rota + navegação + seção educativa)
+- [x] Verificar funcionamento, testes e salvar checkpoint (42 testes passando)
 - [x] Verificar dados do domínio drfelipebulhoesurologia.com.br no email
 - [x] Configurar redirecionamento 301 do domínio .com.br para bulhoesurohealth.com
 - [x] Atualizar sitemap.xml com novas páginas (37 URLs, +13 páginas adicionadas)
@@ -110,3 +110,12 @@
 - [x] Integrar novos artigos ao site
 - [x] Atualizar sitemap.xml com novos artigos (39 URLs total)
 - [x] Verificar funcionamento, testes e salvar checkpoint (42 testes passando, artigos PSA e HPB OK)
+- [x] Pesquisar informações para artigo SEO local "Urologista São Paulo" (Clinovi Paulista e Moema)
+- [x] Redigir artigo de blog SEO local "Urologista São Paulo"
+- [x] Integrar artigo ao site
+- [x] Pesquisar informações sobre Varicocele nas guidelines EAU/AUA
+- [x] Criar página educativa completa sobre Varicocele
+- [x] Integrar página de Varicocele ao site (rota + navegação + seção educativa)
+- [x] Verificar propagação DNS do Resend - todos os registros propagados (DKIM, SPF, MX)
+- [x] Atualizar sitemap com novas páginas (41 URLs total)
+- [x] Verificar funcionamento, testes e salvar checkpoint (42 testes passando)

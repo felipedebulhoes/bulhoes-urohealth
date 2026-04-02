@@ -1681,8 +1681,173 @@ O diagnóstico precoce permite iniciar o tratamento adequado e **prevenir compli
 10. Campbell-Walsh-Wein Urology, 13th Edition — Chapter on Benign Prostatic Hyperplasia. Elsevier, 2024.
 `,
   },
-];
+  {
+    id: "12",
+    slug: "urologista-sao-paulo-paulista-moema",
+    title: "Urologista em S\u00e3o Paulo: Atendimento Especializado na Paulista e Moema",
+    excerpt:
+      "Procurando um urologista em S\u00e3o Paulo? Dr. Felipe de Bulh\u00f5es atende na Av. Paulista e em Moema com foco em cirurgia rob\u00f3tica, endourologia e sa\u00fade masculina. Saiba como funciona a consulta e quando procurar.",
+    coverImage:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-urologista-sao-paulo-7LHFJjdMynXArAzkHbTUti.webp",
+    category: "Sa\u00fade Masculina",
+    date: "1 de Abril de 2026",
+    readTime: "10 min de leitura",
+    author: defaultAuthor,
+    content: `
+## Por que procurar um urologista em S\u00e3o Paulo?
 
+S\u00e3o Paulo \u00e9 o maior polo m\u00e9dico da Am\u00e9rica Latina, concentrando alguns dos melhores hospitais e profissionais do pa\u00eds. No entanto, a oferta abundante de m\u00e9dicos pode tornar dif\u00edcil a escolha do especialista certo. Quando se trata de urologia, \u00e9 fundamental buscar um profissional com **forma\u00e7\u00e3o s\u00f3lida, atualiza\u00e7\u00e3o cient\u00edfica constante e experi\u00eancia em t\u00e9cnicas modernas**.
+
+A urologia \u00e9 a especialidade m\u00e9dica que cuida do sistema urin\u00e1rio de homens e mulheres (rins, ureteres, bexiga e uretra) e do sistema reprodutor masculino. Al\u00e9m disso, o urologista \u00e9 considerado o **m\u00e9dico do homem** \u2014 respons\u00e1vel pelo acompanhamento da sa\u00fade masculina em todas as fases da vida, desde a adolesc\u00eancia at\u00e9 a terceira idade.
+
+---
+
+## Dr. Felipe de Bulh\u00f5es: forma\u00e7\u00e3o e atua\u00e7\u00e3o
+
+O **Dr. Felipe de Bulh\u00f5es** (CRM-SP 202291 | RQE 146538 / RQE 114019) \u00e9 urologista formado pelo **Instituto D\u2019Or de Ensino e Pesquisa** em S\u00e3o Paulo, um dos centros de forma\u00e7\u00e3o mais reconhecidos do pa\u00eds. \u00c9 tamb\u00e9m **Cirurgi\u00e3o Geral com T\u00edtulo de Especialista pelo Col\u00e9gio Brasileiro de Cirurgi\u00f5es (TCBC)**, membro da **American Urological Association (AUA)**, da **European Association of Urology (EAU)** e da **Sociedade Brasileira de Urologia (SBU)**.
+
+Sua pr\u00e1tica cl\u00ednica combina **atendimento humanizado** com **medicina baseada em evid\u00eancias**, utilizando as diretrizes mais atualizadas das principais sociedades internacionais de urologia. Suas \u00e1reas de atua\u00e7\u00e3o incluem:
+
+- **Cirurgia rob\u00f3tica urol\u00f3gica** (prostatectomia, nefrectomia parcial, pieloplastia)
+- **Endourologia e litotripsia a laser** (tratamento de c\u00e1lculos renais)
+- **Uro-oncologia** (c\u00e2ncer de pr\u00f3stata, rim, bexiga e test\u00edculo)
+- **Sa\u00fade masculina** (disfun\u00e7\u00e3o er\u00e9til, infertilidade, reposi\u00e7\u00e3o hormonal)
+- **Urodin\u00e2mica** (avalia\u00e7\u00e3o funcional da bexiga e uretra)
+- **Hiperplasia prost\u00e1tica benigna** (tratamento cl\u00ednico e cir\u00fargico)
+- **Vasectomia** e **circuncis\u00e3o**
+
+---
+
+## Onde atende em S\u00e3o Paulo
+
+O Dr. Felipe de Bulh\u00f5es realiza atendimento particular em duas localiza\u00e7\u00f5es estrat\u00e9gicas na capital paulista, ambas na **Clinovi Consult\u00f3rios com Servi\u00e7os** \u2014 uma rede de consult\u00f3rios m\u00e9dicos de alto padr\u00e3o projetada para oferecer a melhor experi\u00eancia ao paciente.
+
+### Clinovi Paulista
+
+| Informa\u00e7\u00e3o | Detalhes |
+|---|---|
+| **Endere\u00e7o** | Av. Paulista, 1048, 18\u00ba andar \u2014 Bela Vista, S\u00e3o Paulo/SP |
+| **Estrutura** | 760 m\u00b2, 26 consult\u00f3rios multidisciplinares |
+| **Acesso** | Pr\u00f3ximo \u00e0s esta\u00e7\u00f5es Trianon-MASP e Brigadeiro do Metr\u00f4 |
+| **Estacionamento** | Dispon\u00edvel no edif\u00edcio |
+| **Modalidade** | Atendimento particular |
+
+Localizada no cora\u00e7\u00e3o da Avenida Paulista, a unidade oferece uma **vista panor\u00e2mica da cidade** a partir do 18\u00ba andar, em um ambiente sofisticado e acolhedor. A regi\u00e3o \u00e9 uma das mais bem servidas de transporte p\u00fablico de S\u00e3o Paulo, facilitando o acesso de pacientes de toda a cidade e regi\u00e3o metropolitana.
+
+### Clinovi Moema
+
+| Informa\u00e7\u00e3o | Detalhes |
+|---|---|
+| **Endere\u00e7o** | Av. Ibirapuera, 1835, 2\u00ba andar \u2014 Moema, S\u00e3o Paulo/SP |
+| **Estrutura** | 1.040 m\u00b2, 34 consult\u00f3rios modernos e equipados |
+| **Acesso** | A poucos passos do Metr\u00f4 Moema (Linha 5-Lil\u00e1s) |
+| **Proximidade** | Pr\u00f3ximo ao Hospital S\u00e3o Luiz Itaim e Hospital Santa Paula |
+| **Modalidade** | Atendimento particular |
+
+A unidade de Moema est\u00e1 em uma das regi\u00f5es mais valorizadas da Zona Sul de S\u00e3o Paulo, com f\u00e1cil acesso \u00e0s principais vias da cidade (Av. Ibirapuera, Av. dos Bandeirantes, Marginal Pinheiros). A proximidade com hospitais de refer\u00eancia \u00e9 uma vantagem adicional para pacientes que necessitam de procedimentos cir\u00fargicos.
+
+---
+
+## Tamb\u00e9m atende em Campinas
+
+Al\u00e9m de S\u00e3o Paulo, o Dr. Felipe de Bulh\u00f5es realiza atendimento e cirurgias no **Campinas Day Hospital**, onde aceita diversos **planos de sa\u00fade**. Essa dupla atua\u00e7\u00e3o permite atender pacientes de toda a regi\u00e3o metropolitana de Campinas e do interior paulista.
+
+| Local | Endere\u00e7o | Modalidade |
+|---|---|---|
+| Clinovi Paulista | Av. Paulista, 1048, 18\u00ba andar | Particular |
+| Clinovi Moema | Av. Ibirapuera, 1835, 2\u00ba andar | Particular |
+| Campinas Day Hospital | Campinas/SP | Particular + Conv\u00eanios |
+
+---
+
+## Como funciona a primeira consulta urol\u00f3gica
+
+A primeira consulta com o urologista \u00e9 um momento importante e n\u00e3o h\u00e1 motivo para apreens\u00e3o. O atendimento \u00e9 conduzido com **total respeito, sigilo e acolhimento**. Veja o que esperar:
+
+### 1. Anamnese detalhada
+O m\u00e9dico far\u00e1 perguntas sobre seu hist\u00f3rico de sa\u00fade, sintomas atuais, medicamentos em uso, cirurgias anteriores e hist\u00f3rico familiar. \u00c9 importante ser honesto e completo nas respostas.
+
+### 2. Exame f\u00edsico
+O exame f\u00edsico urol\u00f3gico pode incluir palpa\u00e7\u00e3o abdominal, avalia\u00e7\u00e3o da genit\u00e1lia externa e, quando indicado, o toque retal para avalia\u00e7\u00e3o da pr\u00f3stata. O toque retal \u00e9 r\u00e1pido (dura cerca de 10 segundos), indolor na maioria dos casos e continua sendo um exame fundamental para a detec\u00e7\u00e3o precoce de altera\u00e7\u00f5es prost\u00e1ticas.
+
+### 3. Solicita\u00e7\u00e3o de exames
+Conforme a necessidade, podem ser solicitados exames complementares como PSA, ultrassonografia, urofluxometria, espermograma, entre outros.
+
+### 4. Orienta\u00e7\u00f5es e plano terap\u00eautico
+Ao final da consulta, o m\u00e9dico explicar\u00e1 os achados, discutir\u00e1 as op\u00e7\u00f5es de tratamento e definir\u00e1 um plano personalizado para o seu caso.
+
+---
+
+## Quando procurar um urologista?
+
+A Sociedade Brasileira de Urologia (SBU) recomenda que **todo homem a partir dos 40 anos** fa\u00e7a acompanhamento urol\u00f3gico anual. Para homens com **fatores de risco** (hist\u00f3rico familiar de c\u00e2ncer de pr\u00f3stata, ra\u00e7a negra), esse acompanhamento deve come\u00e7ar aos **35 anos**.
+
+Al\u00e9m do acompanhamento preventivo, procure um urologista se apresentar:
+
+- **Dificuldade para urinar** (jato fraco, hesita\u00e7\u00e3o, gotejamento)
+- **Aumento da frequ\u00eancia urin\u00e1ria** (especialmente \u00e0 noite)
+- **Sangue na urina ou no s\u00eamen**
+- **Dor lombar intensa** (c\u00f3lica renal)
+- **Disfun\u00e7\u00e3o er\u00e9til** ou problemas de libido
+- **Dor ou n\u00f3dulo nos test\u00edculos**
+- **Infertilidade** ou desejo de vasectomia
+- **Infec\u00e7\u00f5es urin\u00e1rias de repeti\u00e7\u00e3o**
+- **Incontin\u00eancia urin\u00e1ria**
+
+---
+
+## Principais condi\u00e7\u00f5es tratadas
+
+O urologista trata uma ampla gama de condi\u00e7\u00f5es. As mais comuns no consult\u00f3rio incluem:
+
+| Condi\u00e7\u00e3o | Faixa Et\u00e1ria Mais Comum | Abordagem |
+|---|---|---|
+| C\u00e2ncer de pr\u00f3stata | > 50 anos | Rastreamento com PSA + toque retal, bi\u00f3psia, cirurgia rob\u00f3tica |
+| Hiperplasia prost\u00e1tica benigna (HPB) | > 50 anos | Medicamentos, laser, enuclea\u00e7\u00e3o, cirurgia rob\u00f3tica |
+| C\u00e1lculos renais (pedra no rim) | 20-60 anos | Litotripsia a laser, ureteroscopia flex\u00edvel |
+| Varicocele | 15-35 anos | Microcirurgia ou cirurgia laparosc\u00f3pica |
+| Disfun\u00e7\u00e3o er\u00e9til | > 40 anos | Investiga\u00e7\u00e3o hormonal, medicamentos, pr\u00f3tese peniana |
+| Infertilidade masculina | 25-45 anos | Espermograma, avalia\u00e7\u00e3o hormonal, microcirurgia |
+| C\u00e2ncer de rim | > 50 anos | Nefrectomia parcial rob\u00f3tica |
+| C\u00e2ncer de bexiga | > 60 anos | RTU de bexiga, cistectomia |
+| Incontin\u00eancia urin\u00e1ria | Vari\u00e1vel | Urodin\u00e2mica, fisioterapia, sling masculino |
+| Fimose | Crian\u00e7as e adultos | Circuncis\u00e3o |
+
+---
+
+## Diferenciais do atendimento
+
+### Medicina baseada em evid\u00eancias
+Todas as condutas seguem as **diretrizes mais atualizadas** da EAU (European Association of Urology), AUA (American Urological Association) e SBU (Sociedade Brasileira de Urologia). Isso garante que voc\u00ea receba o tratamento com o maior n\u00edvel de evid\u00eancia cient\u00edfica dispon\u00edvel.
+
+### Tecnologia de ponta
+O Dr. Felipe de Bulh\u00f5es \u00e9 habilitado em **cirurgia rob\u00f3tica** (plataforma Da Vinci), **litotripsia a laser** e **urodin\u00e2mica**, oferecendo as t\u00e9cnicas mais modernas e menos invasivas dispon\u00edveis.
+
+### Atendimento humanizado
+Cada paciente \u00e9 \u00fanico. A consulta \u00e9 conduzida com tempo adequado para ouvir, examinar e explicar, garantindo que todas as d\u00favidas sejam esclarecidas antes de qualquer decis\u00e3o terap\u00eautica.
+
+### Teleconsulta dispon\u00edvel
+Para retornos e orienta\u00e7\u00f5es, o Dr. Felipe oferece **teleconsulta**, facilitando o acompanhamento de pacientes que residem em outras cidades ou t\u00eam dificuldade de deslocamento.
+
+---
+
+## Como agendar sua consulta
+
+O agendamento pode ser feito de forma r\u00e1pida e pr\u00e1tica:
+
+- **Doctoralia**: agende online diretamente pelo perfil do Dr. Felipe de Bulh\u00f5es
+- **WhatsApp**: (11) 98112-4455 \u2014 envie uma mensagem para agendar ou tirar d\u00favidas
+- **Site**: utilize o bot\u00e3o \u201cAgendar Consulta\u201d em qualquer p\u00e1gina deste site
+
+N\u00e3o espere os sintomas aparecerem. A preven\u00e7\u00e3o \u00e9 sempre o melhor caminho para a sa\u00fade urol\u00f3gica.
+
+---
+
+### Palavras-chave relacionadas
+Urologista S\u00e3o Paulo, urologista Paulista, urologista Moema, urologista Zona Sul SP, consulta urol\u00f3gica particular S\u00e3o Paulo, m\u00e9dico urologista SP, cirurgia rob\u00f3tica urologia S\u00e3o Paulo, urologista perto de mim, melhor urologista S\u00e3o Paulo, urologista Avenida Paulista.
+`,
+  },
+];
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
 }

@@ -35,4 +35,13 @@ export const educationalPages: EducationalPage[] = [
     icon: "heart-pulse",
     color: "#DC2626",
   },
+  {
+    slug: "varicocele",
+    title: "Varicocele",
+    subtitle: "Causas, Diagnóstico e Tratamento",
+    description:
+      "Entenda o que é varicocele, como é diagnosticada, quando o tratamento é indicado e quais são as técnicas cirúrgicas disponíveis.",
+    icon: "activity",
+    color: "#0D9488",
+  },
 ];

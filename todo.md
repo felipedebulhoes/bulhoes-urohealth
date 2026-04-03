@@ -126,3 +126,7 @@
 - [ ] Vincular felipebulhoes.com.br ao projeto Manus (conectar domínio externo)
 - [ ] Vincular drfelipebulhoesurologia.com.br ao projeto Manus (conectar domínio externo)
 - [x] Atualizar valor da teleconsulta de R$ 650 para R$ 800 no site (ServicesSection + LocationSection)
+- [x] Corrigir canonical duplicado (manter apenas felipebulhoes.com)
+- [x] Atualizar sitemap.xml para usar felipebulhoes.com como domínio base
+- [x] Adicionar Schema.org (Physician) com dados estruturados JSON-LD (enriquecido com hasCredential, memberOf, alumniOf, knowsAbout, availableService)
+- [ ] Configurar Google Search Console para felipebulhoes.com e submeter sitemap

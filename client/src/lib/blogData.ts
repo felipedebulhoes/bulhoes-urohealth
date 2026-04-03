@@ -916,11 +916,12 @@ O **Dr. Felipe de Bulhões** realiza vasectomias no **Campinas Day Hospital**, u
 
 ## Quando Procurar um Urologista para Vasectomia?
 
-A vasectomia é indicada para homens que têm **certeza de que não desejam mais ter filhos**. A legislação brasileira (Lei nº 9.263/1996 — Planejamento Familiar) estabelece que:
+A vasectomia é indicada para homens que têm **certeza de que não desejam mais ter filhos**. A legislação brasileira atualizada (Lei nº 14.443/2022, que alterou a Lei nº 9.263/1996) estabelece que:
 
-- O homem deve ter **pelo menos 25 anos** OU **dois filhos vivos**
+- O homem deve ter **pelo menos 21 anos** OU **dois filhos vivos**
 - Deve haver um **prazo mínimo de 60 dias** entre a manifestação da vontade e o procedimento
-- O **consentimento informado** deve ser assinado
+- **Não é necessário consentimento do cônjuge** (o §5º do art. 10 da Lei 9.263/1996 foi revogado)
+- O **consentimento informado** deve ser assinado pelo paciente
 
 Se você está considerando a vasectomia, agende uma consulta para discutir todas as opções, esclarecer dúvidas e planejar o procedimento com segurança.
 
@@ -933,7 +934,7 @@ Se você está considerando a vasectomia, agende uma consulta para discutir toda
 3. Sharlip ID, et al. Vasectomy: AUA Guideline. J Urol. 2012;188(6 Suppl):2482-2491.
 4. Cook LA, et al. Scalpel versus no-scalpel incision for vasectomy. Cochrane Database Syst Rev. 2014;3:CD004112.
 5. Sociedade Brasileira de Urologia (SBU) — Diretrizes sobre Vasectomia, 2023.
-6. Lei nº 9.263/1996 — Planejamento Familiar. Presidência da República.
+6. Lei nº 14.443/2022 — Altera a Lei de Planejamento Familiar (Lei 9.263/1996). Diário Oficial da União, 2022.
 `,
   },
   {

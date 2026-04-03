@@ -120,13 +120,19 @@
 - [x] Atualizar sitemap com novas páginas (41 URLs total)
 - [x] Verificar funcionamento, testes e salvar checkpoint (42 testes passando)
 - [x] Registrar felipebulhoes.com.br no Registro.br (registrado, aguardando confirmação de pagamento)
-- [ ] Configurar redirecionamento 301 felipebulhoes.com.br → bulhoesurohealth.com (após pagamento)
+- [x] Configurar DNS felipebulhoes.com.br → Manus (registros A configurados no Registro.br)
 - [x] Registrar felipebulhoes.com pelo Manus (US$ 13,06/ano)
 - [x] felipebulhoes.com vinculado ao projeto (Manus gerencia DNS automaticamente)
-- [ ] Vincular felipebulhoes.com.br ao projeto Manus (conectar domínio externo)
-- [ ] Vincular drfelipebulhoesurologia.com.br ao projeto Manus (conectar domínio externo)
+- [x] Vincular felipebulhoes.com.br ao projeto Manus (conectar domínio externo)
+- [x] Vincular drfelipebulhoesurologia.com.br ao projeto Manus (conectar domínio externo)
 - [x] Atualizar valor da teleconsulta de R$ 650 para R$ 800 no site (ServicesSection + LocationSection)
 - [x] Corrigir canonical duplicado (manter apenas felipebulhoes.com)
 - [x] Atualizar sitemap.xml para usar felipebulhoes.com como domínio base
 - [x] Adicionar Schema.org (Physician) com dados estruturados JSON-LD (enriquecido com hasCredential, memberOf, alumniOf, knowsAbout, availableService)
-- [ ] Configurar Google Search Console para felipebulhoes.com e submeter sitemap
+- [x] Configurar Google Search Console para felipebulhoes.com e submeter sitemap (verificado via GA, sitemap enviado — aguardando publicação)
+- [x] Atualizar link do site no Google Meu Negócio para felipebulhoes.com (Moema e Paulista atualizados)
+- [x] Verificar site drfelipebulhoes.com (é da Doctoralia, não Wix) — manter ativo como canal complementar
+- [ ] Criar perfil Google Meu Negócio para Campinas Day Hospital (Av. Benjamin Constant, 1991 - Cambuí)
+- [x] Corrigir legislação vasectomia: ProcedimentosAndrologicos.tsx (>25 anos → ≥21 anos, Lei 14.443/2022, sem consentimento cônjuge)
+- [x] Corrigir legislação vasectomia: blogData.ts (25 anos → 21 anos, Lei 9.263 → Lei 14.443/2022, sem consentimento cônjuge)
+- [x] Verificar Vasectomia.tsx (já estava correto: 21 anos, Lei 14.443/2022, sem consentimento cônjuge)

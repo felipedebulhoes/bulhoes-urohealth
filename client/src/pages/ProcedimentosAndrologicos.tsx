@@ -97,7 +97,7 @@ const procedures: Procedure[] = [
       "Homens com prole constituída que desejam contracepção definitiva",
       "Casais que optam por contracepção permanente masculina",
       "Contraindicação a outros métodos contraceptivos na parceira",
-      "Requisito legal no Brasil: >25 anos OU ≥2 filhos vivos (Lei 14.443/2022)",
+      "Requisito legal no Brasil: ≥21 anos OU ≥2 filhos vivos, com prazo de reflexão de 60 dias. Não é necessário consentimento do cônjuge (Lei 14.443/2022)",
     ],
     howItWorks: "Através de uma pequena incisão (1-2cm) na bolsa escrotal (ou técnica 'no-scalpel' com punção), os ductos deferentes são identificados, seccionados e suas extremidades são cauterizadas e/ou ligadas. A técnica 'no-scalpel' (sem bisturi) utiliza uma pinça especial para acessar o deferente por uma pequena punção, reduzindo sangramento e complicações. O procedimento dura 15-30 minutos.",
     anesthesia: "Local (mais comum) — injeção de anestésico na bolsa escrotal",

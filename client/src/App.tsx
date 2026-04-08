@@ -32,6 +32,7 @@ import IncontinenciaUrinaria from "./pages/IncontinenciaUrinaria";
 import InfertilidadeMasculina from "./pages/InfertilidadeMasculina";
 import DoencaPeyronie from "./pages/DoencaPeyronie";
 import Varicocele from "./pages/Varicocele";
+import HiperplasiaProstática from "./pages/HiperplasiaProstática";
 import SobreDrFelipe from "./pages/SobreDrFelipe";
 import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema } from "./pages/LocationPages";
 import AdminFiles from "./pages/AdminFiles";
@@ -67,6 +68,7 @@ function Router() {
       <Route path={"/educativo/infertilidade-masculina"} component={InfertilidadeMasculina} />
       <Route path={"/educativo/doenca-peyronie"} component={DoencaPeyronie} />
       <Route path={"/educativo/varicocele"} component={Varicocele} />
+      <Route path={"/educativo/hiperplasia-prostatica"} component={HiperplasiaProstática} />
       <Route path={"/sobre"} component={SobreDrFelipe} />
       <Route path={"/local/campinas-day-hospital"} component={CampinasDayHospital} />
       <Route path={"/local/clinovi-paulista"} component={ClinoviPaulista} />

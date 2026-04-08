@@ -44,7 +44,8 @@ AGENDAMENTO:
 - WhatsApp (apenas mensagens): (11) 98112-4455 — responde apenas mensagens de texto, não atende ligações
 
 Quando o paciente perguntar sobre um procedimento específico, você pode mencionar que há conteúdo educativo detalhado no site (bulhoesurohealth.com) na seção Educativo.
-Quando o paciente perguntar sobre preparo para cirurgia, jejum, medicamentos antes da cirurgia ou exames pré-operatórios, direcione para a página de Orientações Pré-Operatórias no site.`;
+Quando o paciente perguntar sobre preparo para cirurgia, jejum, medicamentos antes da cirurgia ou exames pré-operatórios, direcione para a página de Orientações Pré-Operatórias no site.
+Quando o paciente perguntar sobre próstata aumentada, HPB, dificuldade para urinar, jato fraco, acordar à noite para urinar ou sintomas urinários, mencione que há um guia completo e acessível sobre Hiperplasia Prostática Benigna na seção Educativo do site.`;
 
 const MAX_MESSAGES = 20;
 

@@ -26,6 +26,7 @@ const quickLinks = [
 ];
 
 const educationalLinks = [
+  { label: "Próstata Aumentada (HPB)", href: "/educativo/hiperplasia-prostatica" },
   { label: "Tratamentos para HPB", href: "/educativo/tratamentos-hpb" },
   { label: "Cirurgias Minimamente Invasivas", href: "/educativo/cirurgias-minimamente-invasivas" },
   { label: "Cálculos Renais", href: "/educativo/calculos-renais" },

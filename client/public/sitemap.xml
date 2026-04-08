@@ -263,4 +263,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- Educativo: Orientações Pré-Operatórias -->
+  <url>
+    <loc>https://felipebulhoes.com/educativo/orientacoes-pre-operatorias</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Educativo: Hiperplasia Prostática Benigna (HPB) - Guia para o Paciente -->
+  <url>
+    <loc>https://felipebulhoes.com/educativo/hiperplasia-prostatica</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

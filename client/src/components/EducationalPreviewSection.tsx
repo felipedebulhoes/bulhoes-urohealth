@@ -12,6 +12,13 @@ import {
 
 const educationalPages = [
   {
+    title: "Próstata Aumentada (HPB)",
+    description: "O que é, sintomas, diagnóstico e tratamento da hiperplasia prostática benigna — guia acessível para o paciente.",
+    href: "/educativo/hiperplasia-prostatica",
+    icon: <Heart className="w-5 h-5" />,
+    color: "bg-teal-50 text-teal-600",
+  },
+  {
     title: "Tratamentos para HPB",
     description: "RTU, HoLEP, ThuLEP, Rezum e outras opções para hiperplasia prostática benigna.",
     href: "/educativo/tratamentos-hpb",

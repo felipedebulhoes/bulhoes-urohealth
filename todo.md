@@ -141,4 +141,9 @@
 - [x] Pesquisar guidelines de orientações pré-operatórias em urologia (EAU, AUA, ERAS)
 - [x] Criar página educativa completa de Orientações Pré-Operatórias
 - [x] Integrar página ao site (rota + navegação + seção educativa)
-- [ ] Verificar funcionamento, salvar checkpoint
+- [x] Verificar funcionamento, salvar checkpoint
+- [x] Criar página educativa sobre HPB para leigos (conteúdo acessível, linguagem simples)
+- [x] Integrar página HPB leigos ao site (rota + navegação)
+- [x] Atualizar sitemap.xml com novas páginas (orientações pré-operatórias + HPB leigos) — 43 URLs total
+- [x] Resubmeter sitemap ao Google Search Console (ping depreciado; reindexado automaticamente após publicação)
+- [ ] Verificar funcionamento, salvar checkpoint e publicar

@@ -15,6 +15,7 @@ import {
   Star,
   Video,
   Building2,
+  CreditCard,
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -46,6 +47,7 @@ interface LocationData {
   metaTitle: string;
   metaDescription: string;
   insurances?: string[];
+  payment?: string[];
   accentColor: string;
 }
 
@@ -82,9 +84,10 @@ const locations: Record<string, LocationData> = {
     hours: ["Segunda a Sábado", "Horários variáveis — consulte a agenda no Doctoralia"],
     services: ["Consultas", "Teleconsulta", "Procedimentos ambulatoriais", "Acompanhamento pós-operatório"],
     parking: "Estacionamentos conveniados na região",
-    description: "A Clinovi Paulista está localizada na icônica Avenida Paulista, no coração de São Paulo. Oferece atendimento particular em ambiente moderno e acolhedor, com fácil acesso por metrô e transporte público. Ideal para consultas, acompanhamento e procedimentos ambulatoriais.",
+    description: "A Clinovi Paulista está localizada na icônica Avenida Paulista, no coração de São Paulo. Oferece atendimento particular em ambiente moderno e acolhedor, com fácil acesso por metrô e transporte público. Ideal para consultas, acompanhamento e procedimentos ambulatoriais. Pagamento no local via PIX, cartão de crédito ou débito.",
     metaTitle: "Urologista na Av. Paulista — Clinovi | Dr. Felipe de Bulhões",
     metaDescription: "Urologista na Av. Paulista em São Paulo. Atendimento particular na Clinovi. Consultas, teleconsulta e procedimentos ambulatoriais.",
+    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
     accentColor: "#0D9488",
   },
   "clinovi-moema": {
@@ -100,9 +103,10 @@ const locations: Record<string, LocationData> = {
     hours: ["Segunda a Sábado", "Horários variáveis — consulte a agenda no Doctoralia"],
     services: ["Consultas", "Teleconsulta", "Procedimentos ambulatoriais", "Acompanhamento pós-operatório"],
     parking: "Estacionamentos conveniados na região",
-    description: "A Clinovi Moema está localizada em um dos bairros mais nobres de São Paulo, com fácil acesso pelo Aeroporto de Congonhas e estações de metrô. Oferece atendimento particular em ambiente sofisticado e confortável, ideal para pacientes que buscam privacidade e conveniência.",
+    description: "A Clinovi Moema está localizada em um dos bairros mais nobres de São Paulo, com fácil acesso pelo Aeroporto de Congonhas e estações de metrô. Oferece atendimento particular em ambiente sofisticado e confortável, ideal para pacientes que buscam privacidade e conveniência. Pagamento no local via PIX, cartão de crédito ou débito.",
     metaTitle: "Urologista em Moema — Clinovi | Dr. Felipe de Bulhões",
     metaDescription: "Urologista em Moema, São Paulo. Atendimento particular na Clinovi. Consultas, teleconsulta e procedimentos ambulatoriais.",
+    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
     accentColor: "#7C3AED",
   },
 };
@@ -246,6 +250,16 @@ function LocationPage({ slug }: { slug: string }) {
                       <p className="text-xs text-[#64748B]">{loc.typeLabel}</p>
                     </div>
                   </div>
+
+                  {loc.payment && (
+                    <div className="flex items-start gap-3">
+                      <CreditCard className="w-5 h-5 text-[#0D9488] mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-sm font-semibold text-[#0A2540] mb-1">Formas de Pagamento</p>
+                        <p className="text-xs text-[#64748B]">{loc.payment.join(", ")}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <a

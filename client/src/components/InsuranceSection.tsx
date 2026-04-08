@@ -5,7 +5,7 @@
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ShieldCheck, Building2, Monitor, Info } from "lucide-react";
+import { ShieldCheck, Building2, Monitor, Info, CreditCard } from "lucide-react";
 
 const mainInsurers = [
   { name: "Allianz", category: "premium", note: "" },
@@ -35,9 +35,9 @@ const highlights = [
     desc: "Atendimento online disponível para todo o Brasil",
   },
   {
-    icon: ShieldCheck,
+    icon: CreditCard,
     title: "Particular",
-    desc: "Clinovi Paulista e Clinovi Moema — atendimento particular",
+    desc: "Clinovi Paulista e Clinovi Moema — pagamento via PIX, cartão de crédito ou débito no local",
   },
 ];
 
@@ -75,7 +75,8 @@ export default function InsuranceSection() {
             <p className="text-base text-[#0A2540]/60 leading-relaxed">
               Atendo por diversos convênios no <strong className="text-[#0A2540]/80">Campinas Day Hospital</strong>.
               Nas unidades <strong className="text-[#0A2540]/80">Clinovi Paulista</strong> e{" "}
-              <strong className="text-[#0A2540]/80">Clinovi Moema</strong>, o atendimento é exclusivamente particular.
+              <strong className="text-[#0A2540]/80">Clinovi Moema</strong>, o atendimento é exclusivamente particular,
+              com pagamento via PIX, cartão de crédito ou débito no local antes da consulta.
               Teleconsulta disponível para todo o Brasil.
             </p>
           </motion.div>

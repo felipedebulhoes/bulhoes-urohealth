@@ -4,7 +4,7 @@
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Clock, Phone, CreditCard, Monitor, Building2, ShieldCheck } from "lucide-react";
+import { MapPin, Clock, Phone, CreditCard, Monitor, Building2, ShieldCheck, Wallet } from "lucide-react";
 import InteractiveMap from "@/components/InteractiveMap";
 
 const CAMPINAS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/campinas-day-hospital_47df2b14.jpg";
@@ -37,6 +37,7 @@ const locations = [
     hours: "Seg a Sáb — consulte horários no Doctoralia",
     highlight: "Cobertura de alto padrão",
     insurances: null,
+    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
   {
     name: "Clinovi Moema",
@@ -50,6 +51,7 @@ const locations = [
     hours: "Seg a Sáb — consulte horários no Doctoralia",
     highlight: "Próximo ao metrô Moema",
     insurances: null,
+    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
 ];
 
@@ -136,6 +138,26 @@ export default function LocationSection() {
                     <span className="text-xs text-[#0D9488] font-semibold font-sans">{loc.highlight}</span>
                   </div>
                 </div>
+
+                {/* Payment methods (Clinovi) */}
+                {loc.payment && (
+                  <div className="mt-4 pt-4 border-t border-[#0A2540]/6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <CreditCard className="w-3.5 h-3.5 text-[#0D9488]" />
+                      <span className="text-[10px] uppercase tracking-wider text-[#0A2540]/40 font-semibold">Formas de pagamento</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {loc.payment.map((method: string) => (
+                        <span
+                          key={method}
+                          className="text-[10px] font-medium text-[#0A2540]/50 bg-white rounded px-2 py-1 border border-[#0A2540]/6 font-sans"
+                        >
+                          {method}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Insurances */}
                 {loc.insurances && (

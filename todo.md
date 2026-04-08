@@ -136,3 +136,4 @@
 - [x] Corrigir legislação vasectomia: ProcedimentosAndrologicos.tsx (>25 anos → ≥21 anos, Lei 14.443/2022, sem consentimento cônjuge)
 - [x] Corrigir legislação vasectomia: blogData.ts (25 anos → 21 anos, Lei 9.263 → Lei 14.443/2022, sem consentimento cônjuge)
 - [x] Verificar Vasectomia.tsx (já estava correto: 21 anos, Lei 14.443/2022, sem consentimento cônjuge)
+- [x] Adicionar informação de pagamento via PIX e cartão de crédito/débito nos atendimentos presenciais nas unidades Clinovi

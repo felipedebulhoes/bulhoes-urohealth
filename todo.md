@@ -137,3 +137,4 @@
 - [x] Corrigir legislação vasectomia: blogData.ts (25 anos → 21 anos, Lei 9.263 → Lei 14.443/2022, sem consentimento cônjuge)
 - [x] Verificar Vasectomia.tsx (já estava correto: 21 anos, Lei 14.443/2022, sem consentimento cônjuge)
 - [x] Adicionar informação de pagamento via PIX e cartão de crédito/débito nos atendimentos presenciais nas unidades Clinovi
+- [x] Esclarecer que WhatsApp (11) 98112-4455 é apenas para mensagens; agendamentos por telefone devem usar os números dos consultórios

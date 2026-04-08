@@ -9,7 +9,7 @@ import { trackWhatsAppClick } from "@/lib/analytics";
 export default function WhatsAppButton() {
   return (
     <motion.a
-      href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Felipe%20de%20Bulh%C3%B5es."
+      href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20com%20o%20Dr.%20Felipe%20de%20Bulh%C3%B5es."
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackWhatsAppClick("educational_page")}

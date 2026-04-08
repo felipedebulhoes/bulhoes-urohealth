@@ -708,7 +708,7 @@ export default function InfertilidadeMasculina() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/5511981124455?text=Olá, gostaria de agendar uma consulta para avaliação de fertilidade masculina."
+                href="https://wa.me/5511981124455?text=Olá, gostaria de tirar dúvidas sobre avaliação de fertilidade masculina."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white text-teal-700 px-8 py-3 rounded-lg font-semibold hover:bg-teal-50 transition-colors shadow-lg"

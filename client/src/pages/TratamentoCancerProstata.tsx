@@ -779,10 +779,10 @@ export default function TratamentoCancerProstata() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
-                <a href="https://wa.me/5519991876545" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white">
+                <a href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20tratamento%20de%20c%C3%A2ncer%20de%20pr%C3%B3stata." target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-[#25D366] hover:bg-[#20BD5A] text-white">
                     <Phone className="w-4 h-4 mr-2" />
-                    Agendar Consulta
+                    WhatsApp (mensagens)
                   </Button>
                 </a>
                 <Link href="/primeira-consulta">

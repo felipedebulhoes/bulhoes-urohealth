@@ -59,6 +59,10 @@ export default function Footer() {
                   Bela Vista, São Paulo - SP
                 </span>
               </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                <span className="text-xs font-sans">(11) 3382-1529</span>
+              </div>
             </div>
           </div>
 
@@ -75,6 +79,10 @@ export default function Footer() {
                   Av. Ibirapuera, 1835, 2° andar<br />
                   Moema, São Paulo - SP
                 </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                <span className="text-xs font-sans">(11) 3382-1529</span>
               </div>
             </div>
           </div>

@@ -61,13 +61,13 @@ export default function QuickContactForm() {
               Solicite um Contato
             </h2>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Preencha o formulário abaixo e entraremos em contato pelo WhatsApp para agendar sua consulta ou esclarecer suas dúvidas. Resposta em até 2 horas durante o horário comercial.
+              Preencha o formulário abaixo e enviaremos sua mensagem pelo WhatsApp. Para agendamento por telefone, ligue: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900. Resposta em até 2 horas.
             </p>
 
             <div className="space-y-4">
               {[
                 { icon: "🕐", text: "Resposta rápida — em até 2 horas" },
-                { icon: "📱", text: "Contato direto pelo WhatsApp" },
+                { icon: "📱", text: "WhatsApp apenas para mensagens" },
                 { icon: "🔒", text: "Seus dados são confidenciais" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">

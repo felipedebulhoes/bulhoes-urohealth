@@ -661,7 +661,8 @@ export default function CirurgiaRobotica() {
                       <Phone className="w-4 h-4 text-[#818CF8]" />
                       <span className="text-white text-sm font-medium">Contato</span>
                     </div>
-                    <p className="text-white/60 text-sm">(11) 98112-4455 — WhatsApp para agendamento e informações.</p>
+                    <p className="text-white/60 text-sm">WhatsApp (11) 98112-4455 — apenas mensagens</p>
+                    <p className="text-white/60 text-sm">Telefone: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900</p>
                   </div>
                 </div>
 

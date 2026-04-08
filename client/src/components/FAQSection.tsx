@@ -42,7 +42,7 @@ const faqs = [
       },
       {
         q: "Qual o valor da consulta particular?",
-        a: "Os valores de consulta particular variam conforme o local de atendimento. Nas unidades Clinovi (Paulista e Moema), aceitamos pagamento via PIX, cartão de crédito ou débito, realizado no local antes da consulta. Entre em contato pelo WhatsApp (11) 98112-4455 para informações atualizadas sobre valores.",
+        a: "Os valores de consulta particular variam conforme o local de atendimento. Nas unidades Clinovi (Paulista e Moema), aceitamos pagamento via PIX, cartão de crédito ou débito, realizado no local antes da consulta. Para informações sobre valores, envie uma mensagem pelo WhatsApp (11) 98112-4455 ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
       },
       {
         q: "Vocês emitem nota fiscal / recibo para reembolso?",

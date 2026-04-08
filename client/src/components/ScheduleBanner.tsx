@@ -55,7 +55,7 @@ export default function ScheduleBanner() {
                   Agende sua consulta online
                 </p>
                 <p className="text-xs text-[#0A2540]/40 mb-3">
-                  Atendimento presencial e teleconsulta. Resposta em até 2h.
+                  Agende pelo Doctoralia ou ligue: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.
                 </p>
                 <div className="flex gap-2">
                   <a
@@ -70,7 +70,7 @@ export default function ScheduleBanner() {
                     Agendar Agora
                   </a>
                   <a
-                    href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta."
+                    href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20um%20tratamento."
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackWhatsAppClick("schedule_banner")}

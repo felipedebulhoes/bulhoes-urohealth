@@ -59,7 +59,7 @@ const locations: Record<string, LocationData> = {
     city: "Campinas, SP",
     type: "convenio",
     typeLabel: "Convênios e Particular",
-    phone: "(11) 98112-4455",
+    phone: "(19) 2127-2900",
     mapUrl: "https://maps.google.com/?q=Campinas+Day+Hospital",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.5!2d-47.06!3d-22.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDUzJzI0LjAiUyA0N8KwMDMnMzYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1",
     hours: ["Sexta-feira: 8h às 12h"],
@@ -272,13 +272,13 @@ function LocationPage({ slug }: { slug: string }) {
                   Agendar Consulta
                 </a>
                 <a
-                  href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de agendar uma consulta."
+                  href="https://wa.me/5511981124455?text=Olá%2C%20gostaria%20de%20tirar%20dúvidas%20sobre%20um%20tratamento."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full border border-[#0D9488] text-[#0D9488] hover:bg-[#0D9488]/5 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+                  className="w-full border border-[#25D366] text-[#25D366] hover:bg-[#25D366]/5 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
                 >
                   <Phone className="w-4 h-4" />
-                  WhatsApp
+                  WhatsApp (mensagens)
                 </a>
               </div>
             </div>

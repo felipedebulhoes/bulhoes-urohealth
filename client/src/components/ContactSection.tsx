@@ -41,9 +41,13 @@ export default function ContactSection() {
             Cuide da sua saúde com quem entende
           </h2>
 
-          <p className="text-white/60 font-sans text-base lg:text-lg mb-6 max-w-lg mx-auto">
+          <p className="text-white/60 font-sans text-base lg:text-lg mb-4 max-w-lg mx-auto">
             Atendimento presencial em São Paulo e Campinas, ou por teleconsulta.
             Humanizado, com excelência técnica.
+          </p>
+          <p className="text-white/40 font-sans text-sm mb-6 max-w-lg mx-auto">
+            Agende por telefone: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900<br />
+            WhatsApp (11) 98112-4455 — apenas mensagens
           </p>
 
           {/* Locais resumidos */}

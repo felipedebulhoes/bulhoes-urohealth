@@ -68,7 +68,7 @@ export default function SobreDrFelipe() {
                   Agendar Consulta
                 </a>
                 <a
-                  href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de agendar uma consulta."
+                  href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de tirar dúvidas."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border border-white/30 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
@@ -275,12 +275,12 @@ export default function SobreDrFelipe() {
                 Agendar pelo Doctoralia
               </Link>
               <a
-                href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de agendar uma consulta."
+                href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de tirar dúvidas."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
               >
-                WhatsApp (11) 98112-4455
+                WhatsApp (11) 98112-4455 — apenas mensagens
               </a>
             </div>
           </motion.div>

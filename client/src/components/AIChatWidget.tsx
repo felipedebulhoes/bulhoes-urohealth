@@ -99,7 +99,7 @@ export default function AIChatWidget() {
         {
           role: "assistant",
           content:
-            "Desculpe, estou com dificuldades técnicas. Para falar diretamente com a equipe, entre em contato pelo WhatsApp: (11) 98112-4455.",
+            "Desculpe, estou com dificuldades técnicas. Envie uma mensagem pelo WhatsApp: (11) 98112-4455, ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
         },
       ]);
     },

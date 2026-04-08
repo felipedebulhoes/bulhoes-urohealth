@@ -661,7 +661,7 @@ export default function Vasectomia() {
                   </div>
                   <div className="flex items-center gap-2 text-sm text-white/70 mb-4">
                     <Phone className="w-4 h-4" />
-                    (11) 98112-4455
+                    WhatsApp (11) 98112-4455 — apenas mensagens | Tel: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900
                   </div>
                   <Link href="/local/campinas-day-hospital">
                     <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">

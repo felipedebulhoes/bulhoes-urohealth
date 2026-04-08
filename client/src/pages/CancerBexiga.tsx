@@ -666,7 +666,7 @@ export default function CancerBexiga() {
             <a href="https://wa.me/5511981124455" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50">
                 <Phone className="w-4 h-4 mr-2" />
-                WhatsApp: (11) 98112-4455
+                WhatsApp: (11) 98112-4455 — apenas mensagens | Tel: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900
               </Button>
             </a>
           </div>

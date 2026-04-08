@@ -10,10 +10,10 @@ import { MessageCircle, X, Send, Clock } from "lucide-react";
 const WHATSAPP_NUMBER = "5511981124455";
 
 const quickMessages = [
-  "Gostaria de agendar uma consulta",
   "Tenho dúvidas sobre um procedimento",
   "Quero saber sobre teleconsulta",
   "Informações sobre convênios",
+  "Quero informações sobre valores",
 ];
 
 export default function WhatsAppWidget() {
@@ -69,7 +69,7 @@ export default function WhatsAppWidget() {
             <div className="bg-[#ECE5DD] p-4 min-h-[120px]">
               <div className="bg-white rounded-lg p-3 shadow-sm max-w-[85%] relative">
                 <p className="text-sm text-[#334155] leading-relaxed">
-                  Olá! Sou o Dr. Felipe de Bulhões, urologista. Como posso ajudá-lo(a)?
+                  Olá! Sou o Dr. Felipe de Bulhões, urologista. Envie sua mensagem por aqui. Para agendamento por telefone, ligue: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.
                 </p>
                 <div className="flex items-center justify-end gap-1 mt-1">
                   <span className="text-[10px] text-[#64748B]">agora</span>
@@ -98,7 +98,7 @@ export default function WhatsAppWidget() {
             {/* Response time */}
             <div className="px-4 pb-3 flex items-center gap-2 text-xs text-[#64748B]">
               <Clock className="w-3 h-3" />
-              Tempo médio de resposta: 2 horas
+              Apenas mensagens — resposta em até 2h
             </div>
           </motion.div>
         )}

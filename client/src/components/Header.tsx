@@ -46,6 +46,7 @@ const educationalLinks = [
   { label: "Incontinência Urinária", href: "/educativo/incontinencia-urinaria" },
   { label: "Infertilidade Masculina", href: "/educativo/infertilidade-masculina" },
   { label: "Doença de Peyronie", href: "/educativo/doenca-peyronie" },
+  { label: "Orientações Pré-Operatórias", href: "/educativo/orientacoes-pre-operatorias" },
   { label: "Orientações Pós-Operatórias", href: "/educativo/orientacoes-pos-operatorias" },
 ];
 

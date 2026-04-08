@@ -138,3 +138,7 @@
 - [x] Verificar Vasectomia.tsx (já estava correto: 21 anos, Lei 14.443/2022, sem consentimento cônjuge)
 - [x] Adicionar informação de pagamento via PIX e cartão de crédito/débito nos atendimentos presenciais nas unidades Clinovi
 - [x] Esclarecer que WhatsApp (11) 98112-4455 é apenas para mensagens; agendamentos por telefone devem usar os números dos consultórios
+- [x] Pesquisar guidelines de orientações pré-operatórias em urologia (EAU, AUA, ERAS)
+- [x] Criar página educativa completa de Orientações Pré-Operatórias
+- [x] Integrar página ao site (rota + navegação + seção educativa)
+- [ ] Verificar funcionamento, salvar checkpoint

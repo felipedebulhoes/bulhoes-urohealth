@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import {
   BookOpen, ArrowRight, Activity, Scissors, Zap, Flame,
   Heart, Dumbbell, Shield, Pill, Stethoscope,
-  Search, Microscope, Thermometer, Waves, Syringe, Cpu, Target, Crosshair, Droplets
+  Search, Microscope, Thermometer, Waves, Syringe, Cpu, Target, Crosshair, Droplets, ClipboardCheck
 } from "lucide-react";
 
 const educationalPages = [
@@ -150,6 +150,13 @@ const educationalPages = [
     href: "/educativo/procedimentos-andrologicos",
     icon: <Stethoscope className="w-5 h-5" />,
     color: "bg-cyan-50 text-cyan-600",
+  },
+  {
+    title: "Orientações Pré-Operatórias",
+    description: "Preparo para cirurgia: jejum, medicamentos, exames e checklist completo.",
+    href: "/educativo/orientacoes-pre-operatorias",
+    icon: <ClipboardCheck className="w-5 h-5" />,
+    color: "bg-amber-50 text-amber-600",
   },
   {
     title: "Orientações Pós-Operatórias",

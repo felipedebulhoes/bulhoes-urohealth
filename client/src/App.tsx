@@ -10,6 +10,7 @@ import BlogPost from "./pages/BlogPost";
 import TratamentosHPB from "./pages/TratamentosHPB";
 import CirurgiasMinimamenteInvasivas from "./pages/CirurgiasMinimamenteInvasivas";
 import OrientacoesPosOperatorias from "./pages/OrientacoesPosOperatorias";
+import OrientacoesPreOperatorias from "./pages/OrientacoesPreOperatorias";
 import CalculosRenais from "./pages/CalculosRenais";
 import Hipogonadismo from "./pages/Hipogonadismo";
 import SindromeMetabolica from "./pages/SindromeMetabolica";
@@ -46,6 +47,7 @@ function Router() {
       <Route path={"/educativo/tratamentos-hpb"} component={TratamentosHPB} />
       <Route path={"/educativo/cirurgias-minimamente-invasivas"} component={CirurgiasMinimamenteInvasivas} />
       <Route path={"/educativo/orientacoes-pos-operatorias"} component={OrientacoesPosOperatorias} />
+      <Route path={"/educativo/orientacoes-pre-operatorias"} component={OrientacoesPreOperatorias} />
       <Route path={"/educativo/calculos-renais"} component={CalculosRenais} />
       <Route path={"/educativo/hipogonadismo"} component={Hipogonadismo} />
       <Route path={"/educativo/sindrome-metabolica"} component={SindromeMetabolica} />

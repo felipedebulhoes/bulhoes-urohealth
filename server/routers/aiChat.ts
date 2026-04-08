@@ -43,7 +43,8 @@ AGENDAMENTO:
 - Telefone Campinas Day Hospital: (19) 2127-2900
 - WhatsApp (apenas mensagens): (11) 98112-4455 — responde apenas mensagens de texto, não atende ligações
 
-Quando o paciente perguntar sobre um procedimento específico, você pode mencionar que há conteúdo educativo detalhado no site (bulhoesurohealth.com) na seção Educativo.`;
+Quando o paciente perguntar sobre um procedimento específico, você pode mencionar que há conteúdo educativo detalhado no site (bulhoesurohealth.com) na seção Educativo.
+Quando o paciente perguntar sobre preparo para cirurgia, jejum, medicamentos antes da cirurgia ou exames pré-operatórios, direcione para a página de Orientações Pré-Operatórias no site.`;
 
 const MAX_MESSAGES = 20;
 

@@ -83,6 +83,10 @@ const faqs = [
         a: "Varia conforme o procedimento. Cirurgias minimamente invasivas (endoscópicas, laparoscópicas, robóticas) têm recuperação mais rápida — em geral 3-7 dias para atividades leves. Consulte a página de Orientações Pós-Operatórias para detalhes específicos de cada cirurgia.",
       },
       {
+        q: "Como devo me preparar para a cirurgia?",
+        a: "O preparo inclui jejum (8h para sólidos, 2h para líquidos claros), ajuste de medicamentos (suspender anticoagulantes, anti-inflamatórios e fitoterápicos), exames pré-operatórios e banho com clorexidina. Consulte a página de Orientações Pré-Operatórias para o guia completo com checklist e orientações específicas por procedimento.",
+      },
+      {
         q: "O que é cirurgia minimamente invasiva?",
         a: "São técnicas cirúrgicas que utilizam pequenas incisões (0,5-1cm) ou acessos naturais (uretra) em vez de grandes cortes. Incluem endoscopia, laparoscopia e cirurgia robótica. Benefícios: menos dor, menor sangramento, recuperação mais rápida e menor tempo de internação.",
       },

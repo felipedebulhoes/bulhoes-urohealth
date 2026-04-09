@@ -799,7 +799,7 @@ export default function OrientacoesPreOperatorias() {
                     <Phone className="w-4 h-4 text-blue-400" />
                     <div>
                       <p className="text-sm font-medium">Telefone (agendamento)</p>
-                      <p className="text-xs text-white/50">Clinovi: (11) 3382-1529 | Campinas: (19) 2127-2900</p>
+                      <p className="text-xs text-white/50">Clinovi: (11) 3382-1529 | Campinas: (19) 2127-2900 | WhatsApp Campinas: (19) 99855-9890</p>
                     </div>
                   </div>
                 </div>

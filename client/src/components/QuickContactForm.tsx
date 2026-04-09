@@ -61,7 +61,7 @@ export default function QuickContactForm() {
               Solicite um Contato
             </h2>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Preencha o formulário abaixo e enviaremos sua mensagem pelo WhatsApp. Para agendamento por telefone, ligue: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900. Resposta em até 2 horas.
+              Preencha o formulário abaixo e enviaremos sua mensagem pelo WhatsApp. Para agendamento por telefone, ligue: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900. WhatsApp Campinas: (19) 99855-9890. Resposta em até 2 horas.
             </p>
 
             <div className="space-y-4">

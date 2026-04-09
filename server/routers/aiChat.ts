@@ -13,7 +13,7 @@ REGRAS IMPORTANTES:
 2. Sempre oriente o paciente a agendar uma consulta presencial para avaliação individualizada.
 3. Responda em português brasileiro, de forma clara, empática e acessível.
 4. Use linguagem leiga, evitando jargões médicos quando possível. Quando usar termos técnicos, explique-os.
-5. Para agendar consulta, oriente o paciente a agendar pelo Doctoralia ou ligar para o consultório: Clinovi (11) 3382-1529 ou Campinas Day Hospital (19) 2127-2900. O WhatsApp (11) 98112-4455 é apenas para mensagens de texto (não atende ligações).
+5. Para agendar consulta, oriente o paciente a agendar pelo Doctoralia ou ligar para o consultório: Clinovi (11) 3382-1529 ou Campinas Day Hospital (19) 2127-2900. O WhatsApp (11) 98112-4455 é para mensagens sobre São Paulo. Para Campinas, o WhatsApp é (19) 99855-9890.
 6. Seja breve e objetivo nas respostas (máximo 3-4 parágrafos).
 7. Nunca invente informações. Se não souber algo, diga que o paciente deve consultar o médico.
 8. Quando perguntarem sobre formas de pagamento, informe que nas unidades Clinovi (Paulista e Moema) o pagamento é realizado no local antes da consulta, via PIX, cartão de crédito ou débito. Não discuta valores específicos de consulta.
@@ -41,6 +41,7 @@ AGENDAMENTO:
 - Doctoralia (online): https://www.doctoralia.com.br/felipe-de-bulhoes/urologista/campinas
 - Telefone Clinovi (Paulista e Moema): (11) 3382-1529
 - Telefone Campinas Day Hospital: (19) 2127-2900
+- WhatsApp Campinas Day Hospital: (19) 99855-9890
 - WhatsApp (apenas mensagens): (11) 98112-4455 — responde apenas mensagens de texto, não atende ligações
 
 Quando o paciente perguntar sobre um procedimento específico, você pode mencionar que há conteúdo educativo detalhado no site (bulhoesurohealth.com) na seção Educativo.
@@ -91,7 +92,7 @@ export const aiChatRouter = router({
         return {
           role: "assistant" as const,
           content:
-            "Desculpe, estou com dificuldades técnicas no momento. Para falar diretamente com a equipe do Dr. Felipe, envie uma mensagem pelo WhatsApp: (11) 98112-4455, ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
+            "Desculpe, estou com dificuldades técnicas no momento. Para falar diretamente com a equipe do Dr. Felipe, envie uma mensagem pelo WhatsApp: (11) 98112-4455, ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900. WhatsApp Campinas: (19) 99855-9890.",
         };
       }
     }),
@@ -157,7 +158,7 @@ export const aiChatRouter = router({
         console.error("[AI Chat] Lead submission error:", error);
         return {
           success: false,
-          message: "Houve um problema ao salvar seus dados. Por favor, envie uma mensagem pelo WhatsApp: (11) 98112-4455, ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
+          message: "Houve um problema ao salvar seus dados. Por favor, envie uma mensagem pelo WhatsApp: (11) 98112-4455 (SP) ou (19) 99855-9890 (Campinas), ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
         };
       }
     }),

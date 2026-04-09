@@ -42,6 +42,10 @@ export default function Footer() {
                 <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
                 <span className="text-xs font-sans">(19) 2127-2900</span>
               </div>
+              <a href="https://wa.me/5519998559890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/60 hover:text-[#25D366] transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
+                <span className="text-xs font-sans">WhatsApp: (19) 99855-9890</span>
+              </a>
             </div>
           </div>
 

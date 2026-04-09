@@ -669,7 +669,7 @@ export default function LitotripsieLaser() {
                       <span className="text-white text-sm font-medium">Contato</span>
                     </div>
                     <p className="text-white/60 text-sm">WhatsApp (11) 98112-4455 — apenas mensagens</p>
-                    <p className="text-white/60 text-sm">Telefone: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900</p>
+                    <p className="text-white/60 text-sm">Telefone: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900 | WhatsApp Campinas: (19) 99855-9890</p>
                   </div>
                 </div>
 

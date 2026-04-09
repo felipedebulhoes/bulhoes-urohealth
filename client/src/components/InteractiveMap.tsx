@@ -13,6 +13,7 @@ interface ClinicLocation {
   address: string;
   neighborhood: string;
   phone: string;
+  whatsapp?: string;
   hours: string;
   type: string;
   lat: number;
@@ -28,6 +29,7 @@ const clinics: ClinicLocation[] = [
     address: "Av. Benjamin Constant, 1991",
     neighborhood: "Cambuí, Campinas - SP",
     phone: "(19) 2127-2900",
+    whatsapp: "(19) 99855-9890",
     hours: "Sextas, 8h–12h",
     type: "Convênios & Particular",
     lat: -22.8977,

@@ -147,3 +147,4 @@
 - [x] Atualizar sitemap.xml com novas páginas (orientações pré-operatórias + HPB leigos) — 43 URLs total
 - [x] Resubmeter sitemap ao Google Search Console (ping depreciado; reindexado automaticamente após publicação)
 - [ ] Verificar funcionamento, salvar checkpoint e publicar
+- [x] Adicionar WhatsApp (19) 99855-9890 para agendamento no Campinas Day Hospital em todos os locais do site

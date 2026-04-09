@@ -21,6 +21,7 @@ const locations = [
     neighborhood: "Cambuí, Campinas - SP",
     cep: "CEP 13025-005",
     phone: "(19) 2127-2900",
+    whatsapp: "(19) 99855-9890",
     hours: "Sextas, 8h às 12h",
     highlight: "Centro Urológico Avançado",
     insurances: ["Bradesco Saúde", "Sul América", "Allianz", "Cassi", "GAMA Saúde", "e outros"],
@@ -126,6 +127,13 @@ export default function LocationSection() {
                       <Phone className="w-4 h-4 text-[#0D9488] shrink-0" />
                       <span className="text-sm text-[#0A2540]/70 font-sans">{loc.phone}</span>
                     </div>
+                  )}
+
+                  {loc.whatsapp && (
+                    <a href={`https://wa.me/55${loc.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+                      <Phone className="w-4 h-4 text-[#25D366] shrink-0" />
+                      <span className="text-sm text-[#25D366] font-sans">WhatsApp: {loc.whatsapp}</span>
+                    </a>
                   )}
 
                   <div className="flex items-center gap-2.5">

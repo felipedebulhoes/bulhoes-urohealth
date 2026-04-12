@@ -162,3 +162,6 @@
 - [x] Criar página real /agendamento com widget Doctoralia integrado
 - [x] Remover redirecionamentos 301 para hash fragments e registrar novas rotas no App.tsx
 - [x] Testar e publicar correções de Soft 404 v2 (57 testes passando)
+- [x] Atualizar sitemap.xml com URLs /consultorios, /contato e /agendamento
+- [x] Atualizar links do Header para apontar para rotas reais (/consultorios, /contato e /agendamento)
+- [ ] Resolicitar indexação no GSC para /consultorios, /contato e /agendamento

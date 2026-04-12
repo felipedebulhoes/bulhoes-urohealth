@@ -15,9 +15,9 @@ const mainNavLinks = [
   { label: "Sobre", href: "/sobre" },
   { label: "Especialidades", href: "#especialidades" },
   { label: "Convênios", href: "#convenios" },
-  { label: "Consultórios", href: "#consultorios" },
+  { label: "Consultórios", href: "/consultorios" },
   { label: "Blog", href: "/blog" },
-  { label: "Contato", href: "#contato" },
+  { label: "Contato", href: "/contato" },
 ];
 
 const quickLinks = [
@@ -206,13 +206,9 @@ export default function Header() {
 
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <a
-            href="#agendamento"
-            onClick={(e) => {
-              e.preventDefault();
-              trackCtaClick("agendar_consulta", "header_desktop");
-              document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
-            }}
+          <Link
+            href="/agendamento"
+            onClick={() => trackCtaClick("agendar_consulta", "header_desktop")}
           >
             <Button
               className="bg-[#0D9488] hover:bg-[#0B7C72] text-white rounded-md px-5 h-10 text-sm font-semibold shadow-md"
@@ -220,7 +216,7 @@ export default function Header() {
               <Phone className="w-4 h-4 mr-2" />
               Agendar Consulta
             </Button>
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -303,15 +299,11 @@ export default function Header() {
                 </a>
               ))}
 
-              <a
-                href="#agendamento"
-                onClick={(e) => {
-                  e.preventDefault();
+              <Link
+                href="/agendamento"
+                onClick={() => {
                   trackCtaClick("agendar_consulta", "header_mobile");
                   setMobileOpen(false);
-                  setTimeout(() => {
-                    document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
-                  }, 300);
                 }}
                 className="mt-2"
               >
@@ -319,7 +311,7 @@ export default function Header() {
                   <Phone className="w-4 h-4 mr-2" />
                   Agendar Consulta
                 </Button>
-              </a>
+              </Link>
             </nav>
           </motion.div>
         )}

@@ -153,3 +153,7 @@
 - [x] Configurar Google Meu Negócio para o Campinas Day Hospital (guia passo a passo entregue)
 - [ ] Verificar funcionamento, salvar checkpoint e publicar
 - [x] Investigar e corrigir problemas de indexação no Google Search Console (tags canônicas, páginas não indexadas)
+- [x] Corrigir problemas de Soft 404 nas páginas /consultorios, /contato, /agendamento, /educativo/cancer-de-prostata
+- [x] Implementar redirecionamentos 301 no servidor para resolver Soft 404 do Googlebot (causa raiz: seções âncora, não rotas reais)
+- [x] Corrigir URL canônico incorreto na página /agendamento (redirecionamento 301 para /#agendamento)
+- [x] Testar correções (54 testes passando, 12 novos testes de redirecionamento)

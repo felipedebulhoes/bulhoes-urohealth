@@ -37,6 +37,7 @@ import SobreDrFelipe from "./pages/SobreDrFelipe";
 import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema } from "./pages/LocationPages";
 import AdminFiles from "./pages/AdminFiles";
 import AdminLeads from "./pages/AdminLeads";
+import CanonicalTag from "./components/CanonicalTag";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -92,6 +93,7 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
+          <CanonicalTag />
           <Router />
         </TooltipProvider>
       </ThemeProvider>

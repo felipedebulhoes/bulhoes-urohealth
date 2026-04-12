@@ -148,3 +148,8 @@
 - [x] Resubmeter sitemap ao Google Search Console (ping depreciado; reindexado automaticamente após publicação)
 - [ ] Verificar funcionamento, salvar checkpoint e publicar
 - [x] Adicionar WhatsApp (19) 99855-9890 para agendamento no Campinas Day Hospital em todos os locais do site
+- [x] Página educativa sobre Disfunção Erétil já existia (399 linhas, EAU 2025, AUA 2024, Campbell 13ª ed.) — verificada e completa
+- [x] Página DE já integrada ao site (rota, navegação, seção educativa, sitemap, AI chat)
+- [x] Configurar Google Meu Negócio para o Campinas Day Hospital (guia passo a passo entregue)
+- [ ] Verificar funcionamento, salvar checkpoint e publicar
+- [x] Investigar e corrigir problemas de indexação no Google Search Console (tags canônicas, páginas não indexadas)

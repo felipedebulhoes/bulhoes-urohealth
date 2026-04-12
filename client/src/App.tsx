@@ -37,6 +37,9 @@ import SobreDrFelipe from "./pages/SobreDrFelipe";
 import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema } from "./pages/LocationPages";
 import AdminFiles from "./pages/AdminFiles";
 import AdminLeads from "./pages/AdminLeads";
+import Consultorios from "./pages/Consultorios";
+import Contato from "./pages/Contato";
+import Agendamento from "./pages/Agendamento";
 import CanonicalTag from "./components/CanonicalTag";
 
 function Router() {
@@ -70,6 +73,9 @@ function Router() {
       <Route path={"/educativo/doenca-peyronie"} component={DoencaPeyronie} />
       <Route path={"/educativo/varicocele"} component={Varicocele} />
       <Route path={"/educativo/hiperplasia-prostatica"} component={HiperplasiaProstática} />
+      <Route path={"/consultorios"} component={Consultorios} />
+      <Route path={"/contato"} component={Contato} />
+      <Route path={"/agendamento"} component={Agendamento} />
       <Route path={"/sobre"} component={SobreDrFelipe} />
       <Route path={"/local/campinas-day-hospital"} component={CampinasDayHospital} />
       <Route path={"/local/clinovi-paulista"} component={ClinoviPaulista} />

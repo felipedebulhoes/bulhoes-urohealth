@@ -3,16 +3,28 @@ import { describe, expect, it } from "vitest";
 const BASE_URL = "http://localhost:3000";
 
 /**
- * Tests for SEO 301 redirects.
- * These verify that homepage anchor sections (which are not real routes)
- * return proper 301 redirects instead of serving the SPA shell (which causes Soft 404).
+ * Tests for SEO redirects and real pages.
+ * /consultorios, /contato, /agendamento are now real pages (200).
+ * Only remaining anchor sections (/inicio, /especialidades, /depoimentos) still redirect.
  */
-describe("SEO 301 Redirects", () => {
-  describe("Homepage anchor section redirects", () => {
+describe("SEO Redirects & Real Pages", () => {
+  describe("Real pages that previously caused Soft 404 now return 200", () => {
+    const realPages = [
+      "/consultorios",
+      "/contato",
+      "/agendamento",
+    ];
+
+    for (const route of realPages) {
+      it(`${route} returns 200 (real page, not redirect)`, async () => {
+        const res = await fetch(`${BASE_URL}${route}`, { redirect: "manual" });
+        expect(res.status).toBe(200);
+      });
+    }
+  });
+
+  describe("Remaining homepage anchor section redirects", () => {
     const anchorRedirects = [
-      { from: "/consultorios", to: "/#consultorios" },
-      { from: "/contato", to: "/#contato" },
-      { from: "/agendamento", to: "/#agendamento" },
       { from: "/inicio", to: "/#inicio" },
       { from: "/especialidades", to: "/#especialidades" },
       { from: "/depoimentos", to: "/#depoimentos" },
@@ -37,13 +49,16 @@ describe("SEO 301 Redirects", () => {
     });
   });
 
-  describe("Real routes still return 200", () => {
+  describe("Other real routes still return 200", () => {
     const validRoutes = [
       "/",
       "/sobre",
       "/educativo/cancer-prostata",
       "/educativo/hiperplasia-prostatica",
       "/blog",
+      "/local/campinas-day-hospital",
+      "/local/clinovi-paulista",
+      "/local/clinovi-moema",
     ];
 
     for (const route of validRoutes) {

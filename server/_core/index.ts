@@ -33,12 +33,9 @@ async function startServer() {
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
-  // SEO: 301 redirects for homepage anchor sections that Googlebot tries to access as standalone URLs
-  // These are NOT real routes — they are scroll-to sections on the homepage
+  // SEO: 301 redirects for homepage anchor sections that have no standalone page
+  // /consultorios, /contato, /agendamento now have real pages — no redirect needed
   const anchorRedirects: Record<string, string> = {
-    "/consultorios": "/#consultorios",
-    "/contato": "/#contato",
-    "/agendamento": "/#agendamento",
     "/inicio": "/#inicio",
     "/especialidades": "/#especialidades",
     "/depoimentos": "/#depoimentos",

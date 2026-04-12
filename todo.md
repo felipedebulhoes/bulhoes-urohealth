@@ -157,3 +157,8 @@
 - [x] Implementar redirecionamentos 301 no servidor para resolver Soft 404 do Googlebot (causa raiz: seções âncora, não rotas reais)
 - [x] Corrigir URL canônico incorreto na página /agendamento (redirecionamento 301 para /#agendamento)
 - [x] Testar correções (54 testes passando, 12 novos testes de redirecionamento)
+- [x] Criar página real /consultorios com conteúdo próprio (listagem dos 3 consultórios + teleconsulta)
+- [x] Criar página real /contato com conteúdo próprio (formulário + telefones + WhatsApp)
+- [x] Criar página real /agendamento com widget Doctoralia integrado
+- [x] Remover redirecionamentos 301 para hash fragments e registrar novas rotas no App.tsx
+- [x] Testar e publicar correções de Soft 404 v2 (57 testes passando)

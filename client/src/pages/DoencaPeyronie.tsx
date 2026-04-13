@@ -6,6 +6,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 import {
   AlertTriangle, Check, ChevronDown, ChevronUp, Stethoscope, Clock,
   ArrowRight, TrendingUp, Zap, Heart, Shield, Activity,
@@ -343,6 +344,8 @@ export default function DoencaPeyronie() {
       metaTitle="Doença de Peyronie: Curvatura Peniana — Tratamentos | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre Doença de Peyronie (curvatura peniana adquirida). Xiaflex, plicatura, enxerto, prótese peniana. EAU 2025 + AUA. Urologista em São Paulo e Campinas."
     >
+      <FAQSchema questions={faqs.map(item => ({ question: item.q, answer: item.a }))} />
+
       {/* Imagem Ilustrativa */}
       <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">

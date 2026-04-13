@@ -9,6 +9,7 @@ import { ArrowLeft, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "./WhatsAppButton";
 import { trackEducationalPageView } from "@/lib/analytics";
+import { MedicalPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 interface EducationalLayoutProps {
   title: string;
@@ -17,6 +18,7 @@ interface EducationalLayoutProps {
   accentColor?: string;
   metaTitle?: string;
   metaDescription?: string;
+  medicalCondition?: string;
   children: React.ReactNode;
 }
 
@@ -27,6 +29,7 @@ export default function EducationalLayout({
   accentColor = "#0D9488",
   metaTitle,
   metaDescription,
+  medicalCondition,
   children,
 }: EducationalLayoutProps) {
   useEffect(() => {
@@ -51,6 +54,21 @@ export default function EducationalLayout({
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Schema Markup for SEO */}
+      <MedicalPageSchema
+        title={metaTitle || title}
+        description={metaDescription || description}
+        path={typeof window !== "undefined" ? window.location.pathname : ""}
+        medicalCondition={medicalCondition || title}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Início", url: "/" },
+          { name: "Conteúdo Educativo", url: "/" },
+          { name: title, url: typeof window !== "undefined" ? window.location.pathname : "" },
+        ]}
+      />
+
       {/* Header */}
       <header className="bg-[#0A2540] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">

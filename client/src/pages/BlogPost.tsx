@@ -10,6 +10,7 @@ import { Calendar, Clock, ArrowLeft, User, Share2, CalendarCheck, MessageCircle,
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Streamdown } from "streamdown";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
@@ -17,7 +18,7 @@ export default function BlogPost() {
   const post = getPostBySlug(params.slug || "");
   const [copied, setCopied] = useState(false);
 
-  const articleUrl = typeof window !== "undefined" ? `https://bulhoesurohealth.com/blog/${params.slug}` : "";
+  const articleUrl = typeof window !== "undefined" ? `https://felipebulhoes.com/blog/${params.slug}` : "";
   const articleTitle = post?.title || "";
   const articleExcerpt = post?.excerpt || "";
 
@@ -75,8 +76,43 @@ export default function BlogPost() {
     }
   };
 
+  // Parse date string to ISO format for schema
+  const parseDate = (dateStr: string): string => {
+    const months: Record<string, string> = {
+      "Janeiro": "01", "Fevereiro": "02", "Março": "03", "Abril": "04",
+      "Maio": "05", "Junho": "06", "Julho": "07", "Agosto": "08",
+      "Setembro": "09", "Outubro": "10", "Novembro": "11", "Dezembro": "12",
+    };
+    const match = dateStr.match(/(\d+)\s+de\s+(\w+)\s+de\s+(\d{4})/);
+    if (match) {
+      const [, day, month, year] = match;
+      return `${year}-${months[month] || "01"}-${day.padStart(2, "0")}`;
+    }
+    return "2026-04-01";
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Schema Markup for SEO */}
+      <ArticleSchema
+        title={post.title}
+        description={post.excerpt}
+        slug={params.slug || ""}
+        datePublished={parseDate(post.date)}
+        coverImage={post.coverImage}
+        authorName={post.author.name}
+        authorCredentials={post.author.credentials}
+        readTime={post.readTime}
+        category={post.category}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Início", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: post.title, url: `/blog/${params.slug}` },
+        ]}
+      />
+
       {/* Header bar */}
       <header className="bg-[#0A2540] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">

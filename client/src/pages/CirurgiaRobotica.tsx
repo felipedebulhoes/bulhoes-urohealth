@@ -35,6 +35,7 @@ import {
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -44,6 +45,17 @@ const fadeUp = {
     transition: { delay: i * 0.08, duration: 0.5 },
   }),
 };
+
+const cirurgiaRoboticaFAQs = [
+  { question: "O robô opera sozinho?", answer: "Não. O robô é um instrumento controlado integralmente pelo cirurgião. Cada movimento dos braços robóticos é comandado em tempo real pelo médico, que opera sentado no console com visão 3D. O robô não toma decisões — ele amplifica a precisão e a destreza do cirurgião." },
+  { question: "A cirurgia robótica é mais segura que a cirurgia aberta?", answer: "Sim, as evidências mostram que a cirurgia robótica apresenta menores taxas de complicações, menor sangramento e recuperação mais rápida. Na prostatectomia radical, por exemplo, a taxa de complicações Clavien II é de 3,9% na robótica vs 17,5% na aberta (EAU 2025)." },
+  { question: "Qual o tempo de duração de uma cirurgia robótica?", answer: "Depende do procedimento. Uma prostatectomia radical robótica dura em média 2-3 horas. Uma nefrectomia parcial robótica, 2-4 horas. O tempo operatório é comparável ou ligeiramente maior que a cirurgia aberta, mas com benefícios significativos na recuperação." },
+  { question: "Quanto tempo de internação após cirurgia robótica?", answer: "Na maioria dos procedimentos, a internação é de 1-2 dias (vs 5-7 dias na cirurgia aberta). Em alguns casos selecionados, o paciente pode receber alta no mesmo dia." },
+  { question: "A cirurgia robótica deixa cicatriz?", answer: "As incisões são muito pequenas (8-12mm), resultando em cicatrizes mínimas que se tornam praticamente imperceptíveis com o tempo. Geralmente são 5-6 pequenas incisões no abdome." },
+  { question: "Meu convênio cobre cirurgia robótica?", answer: "Muitos convênios já cobrem a cirurgia robótica para procedimentos urológicos. A cobertura depende do plano e da operadora. Recomendamos entrar em contato conosco para verificar a cobertura do seu plano específico." },
+  { question: "Quando posso voltar a trabalhar após a cirurgia?", answer: "Para atividades sedentárias, o retorno geralmente ocorre em 2-3 semanas. Para atividades que exigem esforço físico, recomenda-se aguardar 4-6 semanas. Cada caso é individualizado conforme o tipo de cirurgia e a evolução do paciente." },
+  { question: "A cirurgia robótica é indicada para todos os casos?", answer: "Não. A indicação é individualizada, considerando o tipo de doença, a anatomia do paciente, cirurgias prévias e outros fatores. Em alguns casos, a cirurgia aberta ou laparoscópica convencional pode ser mais adequada. O urologista avaliará a melhor abordagem para cada situação." }
+];
 
 export default function CirurgiaRobotica() {
   return (
@@ -55,6 +67,8 @@ export default function CirurgiaRobotica() {
       metaTitle="Cirurgia Robótica em Urologia: Guia Completo | Dr. Felipe de Bulhões"
       metaDescription="Saiba tudo sobre cirurgia robótica em urologia: prostatectomia, nefrectomia parcial, cistectomia. Vantagens, recuperação e resultados. Baseado nas guidelines EAU 2025."
     >
+      <FAQSchema questions={cirurgiaRoboticaFAQs} />
+
       {/* Introdução */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">

@@ -6,6 +6,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 import {
   Activity, AlertTriangle, ArrowRight, Baby, Check, ChevronDown,
   ChevronUp, Clock, Dna, FlaskConical, Heart, Microscope, Pill,
@@ -265,6 +266,8 @@ export default function Varicocele() {
       metaTitle="Varicocele: Causas, Diagnóstico e Tratamento | Dr. Felipe de Bulhões"
       metaDescription="Tudo sobre varicocele: o que é, sintomas, classificação, diagnóstico e tratamento cirúrgico. Varicocelectomia microcirúrgica é o padrão-ouro. Baseado nas EAU Guidelines 2025."
     >
+      <FAQSchema questions={faqItems} />
+
       {/* O que é Varicocele */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">

@@ -35,6 +35,7 @@ import {
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -44,6 +45,17 @@ const fadeUp = {
     transition: { delay: i * 0.08, duration: 0.5 },
   }),
 };
+
+const tratamentoCancerProstataFAQs = [
+  { question: "Qual é o melhor tratamento para o câncer de próstata?", answer: "Não existe um tratamento único 'melhor'. A escolha depende do grupo de risco, expectativa de vida, preferências do paciente e efeitos colaterais aceitáveis. Para baixo risco, a vigilância ativa é o padrão. Para risco intermediário e alto, cirurgia robótica (RARP) e radioterapia são opções curativas equivalentes em termos de sobrevida." },
+  { question: "A cirurgia robótica é melhor que a cirurgia aberta?", answer: "A RARP oferece recuperação funcional mais rápida (continência e ereção), menor sangramento e menos complicações pós-operatórias. Em 10 anos, os resultados oncológicos são equivalentes. A meta-análise de 5 RCTs mostra OR 4,05 para recuperação erétil a favor da RARP (p = 0,003)." },
+  { question: "A vigilância ativa é segura?", answer: "Sim, para tumores de baixo risco. O estudo ProtecT (15 anos) mostrou sobrevida câncer-específica de 96,9% com monitoramento ativo. Porém, requer acompanhamento rigoroso com PSA, MRI e rebiópsias periódicas. Cerca de 1/3 dos pacientes eventualmente necessitam de tratamento curativo." },
+  { question: "A radioterapia causa impotência?", answer: "A disfunção erétil pode ocorrer após radioterapia, mas geralmente de forma mais gradual que após cirurgia. Cerca de 30–50% dos pacientes apresentam algum grau de disfunção erétil após 2–5 anos. A braquiterapia tende a ter menores taxas de DE que a EBRT." },
+  { question: "Quanto tempo dura o tratamento com radioterapia?", answer: "Depende do esquema: convencional (8 semanas), hipofracionamento moderado (4–6 semanas) ou SBRT/ultra-hipofracionamento (1–2 semanas, apenas 5–7 sessões). A SBRT é indicada para risco intermediário favorável." },
+  { question: "O que é hormonioterapia e quando é usada?", answer: "A terapia de deprivação androgênica (ADT) bloqueia a testosterona, que estimula o crescimento do tumor. É combinada com radioterapia: 4–6 meses para risco intermediário e 2–3 anos para alto risco. Não é usada isoladamente como tratamento curativo." },
+  { question: "Posso fazer tratamento focal (HIFU)?", answer: "As terapias focais (HIFU, crioterapia, PDT) são consideradas investigacionais pela EAU 2025 e devem ser realizadas apenas dentro de ensaios clínicos ou registros. Faltam dados comparativos de longo prazo (> 15 anos) para recomendação de rotina." },
+  { question: "Após a cirurgia, o PSA deve zerar?", answer: "Sim. Após prostatectomia radical, o PSA deve tornar-se indetectável (< 0,1 ng/mL). Qualquer elevação acima de 0,2 ng/mL em duas medidas consecutivas é considerada recorrência bioquímica e deve ser investigada." }
+];
 
 export default function TratamentoCancerProstata() {
   return (
@@ -55,6 +67,8 @@ export default function TratamentoCancerProstata() {
       metaTitle="Tratamento do Câncer de Próstata: Cirurgia Robótica, Radioterapia e Vigilância Ativa | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre tratamento do câncer de próstata: vigilância ativa, prostatectomia radical robótica (RARP), radioterapia (IMRT, braquiterapia), hormonioterapia e manejo por grupo de risco. Baseado nas EAU Guidelines 2025."
     >
+      <FAQSchema questions={tratamentoCancerProstataFAQs} />
+
       {/* Introdução */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">

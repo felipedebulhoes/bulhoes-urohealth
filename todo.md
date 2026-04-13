@@ -164,4 +164,11 @@
 - [x] Testar e publicar correções de Soft 404 v2 (57 testes passando)
 - [x] Atualizar sitemap.xml com URLs /consultorios, /contato e /agendamento
 - [x] Atualizar links do Header para apontar para rotas reais (/consultorios, /contato e /agendamento)
-- [ ] Resolicitar indexação no GSC para /consultorios, /contato e /agendamento
+- [x] Resolicitar indexação no GSC para /consultorios, /contato e /agendamento
+- [x] Reenviar sitemap atualizado no Google Search Console (12/abr/2026)
+- [ ] Redigir artigo de blog SEO local sobre "urologista São Paulo" focando Clinovi Paulista e Moema
+- [x] Adicionar schema JSON-LD de Physician/MedicalBusiness na homepage e página /sobre (já existia no index.html)
+- [x] Adicionar schema JSON-LD de MedicalClinic + BreadcrumbList nas páginas de localização (/local/*)
+- [x] Adicionar schema JSON-LD de Article/MedicalWebPage nos artigos do blog (ArticleSchema + BreadcrumbSchema em BlogPost.tsx)
+- [x] Adicionar schema JSON-LD de FAQPage em 11 páginas educativas com perguntas frequentes
+- [x] Adicionar schema JSON-LD de WebSite com SearchAction no index.html

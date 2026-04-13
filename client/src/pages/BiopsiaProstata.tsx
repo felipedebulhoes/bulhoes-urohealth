@@ -30,6 +30,7 @@ import {
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -39,6 +40,15 @@ const fadeUp = {
     transition: { delay: i * 0.08, duration: 0.5 },
   }),
 };
+
+const biopsiaProstataFAQs = [
+  { question: "A biópsia de próstata dói?", answer: "Com a anestesia adequada, o desconforto é mínimo. Na via transperineal sob anestesia local, o paciente sente uma leve pressão e, eventualmente, um desconforto passageiro durante a coleta dos fragmentos. Muitos pacientes relatam que o procedimento foi mais simples do que esperavam." },
+  { question: "Quanto tempo dura o procedimento?", answer: "O procedimento em si dura entre 15 e 30 minutos. Com o preparo e a recuperação, o paciente permanece no hospital por aproximadamente 2-4 horas no total." },
+  { question: "Posso dirigir após a biópsia?", answer: "Se o procedimento foi realizado sob sedação, o paciente não deve dirigir nas 24 horas seguintes. Sob anestesia local, pode dirigir após a alta, desde que se sinta confortável." },
+  { question: "Quando terei o resultado?", answer: "O laudo anatomopatológico geralmente fica pronto em 7 a 14 dias úteis. O resultado será discutido em consulta de retorno com o urologista." },
+  { question: "A biópsia pode disseminar o câncer?", answer: "Não há evidência científica de que a biópsia de próstata cause disseminação (metástase) do câncer. Este é um mito sem fundamento. A biópsia é segura e essencial para o diagnóstico." },
+  { question: "Preciso repetir a biópsia se o resultado for negativo?", answer: "Depende do contexto clínico. Se a suspeita persistir (PSA em ascensão, lesão na RM), uma nova biópsia pode ser indicada. A decisão é individualizada pelo urologista." }
+];
 
 export default function BiopsiaProstata() {
   return (
@@ -50,6 +60,8 @@ export default function BiopsiaProstata() {
       metaTitle="Biópsia de Próstata: Como é Feita, Preparo e Complicações | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre biópsia de próstata: indicações, preparo, técnicas (transperineal e transretal), pós-biópsia e complicações. Procedimento realizado no Campinas Day Hospital."
     >
+      <FAQSchema questions={biopsiaProstataFAQs} />
+
       {/* Introdução */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">

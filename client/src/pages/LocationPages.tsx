@@ -18,6 +18,7 @@ import {
   CreditCard,
 } from "lucide-react";
 import { Link } from "wouter";
+import { MedicalClinicSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -133,6 +134,26 @@ function LocationPage({ slug }: { slug: string }) {
 
   return (
     <div className="min-h-screen bg-white">
+      <MedicalClinicSchema
+        name={loc.fullName}
+        description={loc.description}
+        address={loc.address}
+        city={loc.city}
+        phone={loc.phone}
+        slug={slug}
+        type={loc.type}
+        insurances={loc.insurances}
+        services={loc.services}
+        hours={loc.hours}
+        paymentMethods={loc.payment}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Início", url: "/" },
+          { name: "Consultórios", url: "/consultorios" },
+          { name: loc.fullName, url: `/local/${slug}` },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#0A2540] via-[#0F3460] to-[#0A2540] text-white pt-28 pb-16">
         <div className="container max-w-4xl">

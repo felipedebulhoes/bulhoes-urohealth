@@ -6,6 +6,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 import {
   AlertCircle, CheckCircle2, HelpCircle, ArrowRight,
   Droplets, Moon, Clock, Activity, Pill, Zap,
@@ -195,7 +196,10 @@ export default function HiperplasiaProstática() {
       accentColor="#0D9488"
       metaTitle="Próstata Aumentada (HPB) — O Que É, Sintomas e Tratamento | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre Hiperplasia Prostática Benigna (HPB) para pacientes: o que é, sintomas, diagnóstico, medicamentos e cirurgias. Linguagem acessível, baseado em evidências (EAU 2025, AUA 2023)."
+      medicalCondition="Hiperplasia Prostática Benigna"
     >
+      <FAQSchema questions={perguntasFrequentes.map(p => ({ question: p.pergunta, answer: p.resposta }))} />
+
       {/* ─── Introdução ─── */}
       <section className="mb-12 md:mb-16">
         <motion.div

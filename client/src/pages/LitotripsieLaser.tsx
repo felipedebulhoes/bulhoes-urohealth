@@ -34,6 +34,7 @@ import {
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -43,6 +44,17 @@ const fadeUp = {
     transition: { delay: i * 0.08, duration: 0.5 },
   }),
 };
+
+const litotripsieLaserFAQs = [
+  { question: "A litotripsia a laser dói?", answer: "O procedimento é realizado sob anestesia (geral ou raquianestesia), portanto o paciente não sente dor durante a cirurgia. No pós-operatório, pode haver desconforto leve a moderado, controlado com analgésicos e anti-inflamatórios." },
+  { question: "Quanto tempo dura o procedimento?", answer: "A duração varia de 30 a 90 minutos, dependendo do tamanho, número e localização dos cálculos. Cálculos maiores ou em localizações difíceis podem exigir mais tempo." },
+  { question: "Preciso ficar internado?", answer: "Na maioria dos casos, o procedimento é ambulatorial (day clinic), com alta no mesmo dia. Em casos mais complexos ou com complicações, pode ser necessária internação de 1-2 dias." },
+  { question: "Quando posso voltar ao trabalho?", answer: "A maioria dos pacientes retorna às atividades leves em 2-3 dias. Atividades físicas intensas devem ser evitadas por 7-14 dias. O retorno ao trabalho depende do tipo de atividade profissional." },
+  { question: "O cálculo pode voltar depois do tratamento?", answer: "A litotripsia trata o cálculo existente, mas não previne a formação de novos cálculos. Cerca de 50% dos pacientes podem ter recorrência. A avaliação metabólica e medidas preventivas (hidratação, dieta, medicamentos) são fundamentais para reduzir o risco." },
+  { question: "Qual a diferença entre litotripsia a laser e LECO (ondas de choque)?", answer: "A LECO (litotripsia extracorpórea por ondas de choque) fragmenta o cálculo de fora do corpo, sem anestesia geral. A litotripsia a laser é realizada por via endoscópica, com visualização direta do cálculo. A laser tem maior taxa de sucesso em procedimento único, especialmente para cálculos maiores ou duros." },
+  { question: "Todos os tipos de cálculo podem ser tratados com laser?", answer: "Sim. O laser Holmium:YAG e o Thulium Fiber Laser são eficazes contra todos os tipos de cálculo urinário, incluindo os mais duros (oxalato de cálcio monoidratado, brushita e cistina). Esta é uma vantagem sobre a LECO, que tem menor eficácia em cálculos muito duros." },
+  { question: "O que é o cateter duplo J e quando é necessário?", answer: "O cateter duplo J é um tubo fino e flexível posicionado dentro do ureter para garantir a drenagem da urina. É utilizado quando há edema ureteral, fragmentos residuais, ou risco de obstrução. Nem todos os pacientes precisam de stent — em casos não complicados, pode ser dispensado." }
+];
 
 export default function LitotripsieLaser() {
   return (
@@ -54,6 +66,8 @@ export default function LitotripsieLaser() {
       metaTitle="Litotripsia a Laser: Como Funciona, Indicações e Recuperação | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre litotripsia a laser para pedra nos rins: como é feita, tipos de laser (Holmium e Thulium), preparo, pós-operatório e complicações. Procedimento realizado no Campinas Day Hospital."
     >
+      <FAQSchema questions={litotripsieLaserFAQs} />
+
       {/* Introdução */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">

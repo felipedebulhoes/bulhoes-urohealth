@@ -33,6 +33,7 @@ import {
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -42,6 +43,17 @@ const fadeUp = {
     transition: { delay: i * 0.08, duration: 0.5 },
   }),
 };
+
+const cancerBexigaFAQs = [
+  { question: "Sangue na urina sempre significa câncer de bexiga?", answer: "Não. A hematúria pode ter diversas causas, como infecção urinária, cálculos renais, hiperplasia prostática benigna ou trauma. Porém, toda hematúria macroscópica (sangue visível) deve ser investigada para descartar câncer, especialmente em pacientes acima de 40 anos ou com fatores de risco." },
+  { question: "O câncer de bexiga tem cura?", answer: "Sim, especialmente quando diagnosticado precocemente. Tumores não-músculo invasivos (75% dos casos) têm excelente prognóstico com tratamento adequado (RTU-B + BCG). Mesmo tumores músculo-invasivos podem ser curados com cistectomia radical e quimioterapia neoadjuvante." },
+  { question: "O que é BCG intravesical?", answer: "BCG (Bacillus Calmette-Guérin) é uma imunoterapia intravesical — uma solução contendo bactérias atenuadas é instilada diretamente na bexiga para estimular o sistema imunológico a combater as células tumorais. É o tratamento padrão-ouro para tumores de alto risco e CIS." },
+  { question: "É possível viver sem bexiga?", answer: "Sim. Após a cistectomia radical, existem opções de derivação urinária: neobexiga (bexiga reconstruída com intestino, permitindo micção pela uretra), conduto ileal (urostomia com bolsa coletora) ou derivação continente cutânea. A qualidade de vida pode ser muito boa com adaptação adequada." },
+  { question: "Quem fuma tem mais chance de ter câncer de bexiga?", answer: "Sim, significativamente. O tabagismo é responsável por aproximadamente 50% dos casos de câncer de bexiga. Fumantes de 20 cigarros/dia têm risco 3,27 vezes maior que não-fumantes. Parar de fumar é a medida preventiva mais importante." },
+  { question: "A cistoscopia dói?", answer: "A cistoscopia flexível é realizada com anestesia local (gel de lidocaína) e causa desconforto mínimo. A maioria dos pacientes tolera bem o procedimento, que dura poucos minutos. É fundamental para o diagnóstico e seguimento do câncer de bexiga." },
+  { question: "Qual a diferença entre NMIBC e MIBC?", answer: "NMIBC (não-músculo invasivo) é o tumor confinado à mucosa ou submucosa da bexiga — tratado com RTU-B e terapia intravesical. MIBC (músculo-invasivo) invade a camada muscular da bexiga — geralmente requer cistectomia radical com quimioterapia neoadjuvante ou radioterapia." },
+  { question: "A cirurgia robótica pode ser usada no câncer de bexiga?", answer: "Sim. A cistectomia radical robótica (RARC) é uma opção cada vez mais utilizada, com resultados oncológicos comparáveis à cirurgia aberta, menor sangramento e recuperação mais rápida. O Dr. Felipe de Bulhões pode orientar sobre a melhor abordagem para cada caso." }
+];
 
 export default function CancerBexiga() {
   return (
@@ -53,6 +65,8 @@ export default function CancerBexiga() {
       metaTitle="Câncer de Bexiga: Sintomas, Diagnóstico e Tratamento | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre câncer de bexiga: hematúria, cistoscopia, RTU-B, BCG intravesical, cistectomia radical e imunoterapia. Urologista em Campinas e São Paulo."
     >
+      <FAQSchema questions={cancerBexigaFAQs} />
+
       {/* O que é */}
       <motion.section
         variants={fadeUp}

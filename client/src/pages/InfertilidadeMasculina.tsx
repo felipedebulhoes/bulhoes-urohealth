@@ -6,6 +6,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 import {
   Baby, Microscope, Activity, Dumbbell, Wrench, AlertTriangle,
   Check, ChevronDown, ChevronUp, Stethoscope, Clock, Target,
@@ -291,6 +292,8 @@ export default function InfertilidadeMasculina() {
       metaTitle="Infertilidade Masculina: Causas e Tratamentos | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre infertilidade masculina: espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. EAU 2025 + AUA 2024. Urologista em Campinas e São Paulo."
     >
+      <FAQSchema questions={faqs.map(item => ({ question: item.q, answer: item.a }))} />
+
       {/* Imagem Ilustrativa */}
       <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">

@@ -35,6 +35,7 @@ import {
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import EducationalLayout from "@/components/EducationalLayout";
+import { FAQSchema } from "@/components/SchemaMarkup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -44,6 +45,17 @@ const fadeUp = {
     transition: { delay: i * 0.08, duration: 0.5 },
   }),
 };
+
+const vasectomiaFAQs = [
+  { question: "A vasectomia dói?", answer: "O procedimento é realizado sob anestesia local, portanto a dor durante a cirurgia é mínima — geralmente limitada à picada da anestesia. Após o procedimento, é normal sentir desconforto leve por 2-5 dias, controlado com paracetamol ou anti-inflamatórios." },
+  { question: "Quanto tempo depois da vasectomia posso ter relações sexuais?", answer: "Geralmente após 5-7 dias, ou quando se sentir confortável. É obrigatório usar outro método contraceptivo até o espermograma de controle confirmar a ausência de espermatozoides (mínimo 8 semanas após o procedimento)." },
+  { question: "A vasectomia afeta a ereção ou o prazer sexual?", answer: "Não. A vasectomia não interfere na produção de testosterona, na libido, na ereção nem no orgasmo. O volume do ejaculado permanece praticamente inalterado." },
+  { question: "A vasectomia é coberta pelo convênio?", answer: "Sim. A vasectomia está incluída no rol de procedimentos da ANS e é coberta pela maioria dos convênios médicos. Também é oferecida pelo SUS." },
+  { question: "Posso fazer vasectomia se não tenho filhos?", answer: "Sim, não há exigência legal de ter filhos. A Lei 14.443/2022 permite a vasectomia a partir dos 21 anos, independentemente do número de filhos, com prazo de reflexão de 60 dias." },
+  { question: "Preciso da autorização da esposa/parceira?", answer: "Segundo a Lei 14.443/2022, não é necessário consentimento do cônjuge para a realização da vasectomia. A decisão é individual do paciente." },
+  { question: "Quanto tempo leva para a vasectomia fazer efeito?", answer: "A vasectomia não é imediatamente eficaz. O espermograma de controle pode ser coletado a partir de 8 semanas. Até a confirmação, use outro método contraceptivo." },
+  { question: "A vasectomia pode falhar?", answer: "A taxa de falha é inferior a 1%. A recanalização espontânea é rara, mas possível. Por isso o espermograma de controle é obrigatório." },
+];
 
 export default function Vasectomia() {
   return (
@@ -55,6 +67,8 @@ export default function Vasectomia() {
       metaTitle="Vasectomia: Como é Feita, Preparo, Recuperação e Riscos | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre vasectomia: indicações, técnica no-scalpel, preparo, pós-operatório, espermograma de controle e reversão. Baseado no AUA Guideline 2026."
     >
+      <FAQSchema questions={vasectomiaFAQs} />
+
       {/* Introdução */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">

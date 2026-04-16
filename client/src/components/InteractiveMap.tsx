@@ -60,11 +60,37 @@ const clinics: ClinicLocation[] = [
     type: "Particular",
     lat: -23.6000,
     lng: -46.6600,
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Ibirapuera+1835+São+Paulo+SP",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Ibirapuera+1835+S%C3%A3o+Paulo+SP",
+  },
+  {
+    id: "pinheiros",
+    name: "Clinovi Pinheiros",
+    shortName: "Pinheiros",
+    address: "Av. Rebouças, 2636",
+    neighborhood: "Pinheiros, São Paulo - SP",
+    phone: "(11) 3382-1529",
+    hours: "Seg a Sáb",
+    type: "Particular",
+    lat: -23.5618,
+    lng: -46.6780,
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Rebou%C3%A7as+2636+S%C3%A3o+Paulo+SP",
+  },
+  {
+    id: "sbc",
+    name: "Clinovi SBC",
+    shortName: "SBC",
+    address: "Av. Pereira Barreto, 1479",
+    neighborhood: "São Bernardo do Campo - SP",
+    phone: "(11) 3382-1529",
+    hours: "Seg a Sáb",
+    type: "Particular",
+    lat: -23.6960,
+    lng: -46.5650,
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Pereira+Barreto+1479+S%C3%A3o+Bernardo+do+Campo+SP",
   },
 ];
 
-// Center point that shows all 3 locations (between Campinas and SP)
+// Center point that shows all 5 locations (between Campinas and SP/ABC)
 const DEFAULT_CENTER = { lat: -23.25, lng: -46.86 };
 const DEFAULT_ZOOM = 9;
 
@@ -241,7 +267,7 @@ export default function InteractiveMap() {
       </div>
 
       {/* Clinic cards below map */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         {clinics.map((clinic) => (
           <button
             key={clinic.id}

@@ -172,3 +172,5 @@
 - [x] Adicionar schema JSON-LD de Article/MedicalWebPage nos artigos do blog (ArticleSchema + BreadcrumbSchema em BlogPost.tsx)
 - [x] Adicionar schema JSON-LD de FAQPage em 11 páginas educativas com perguntas frequentes
 - [x] Adicionar schema JSON-LD de WebSite com SearchAction no index.html
+- [x] Adicionar Clinovi Pinheiros como local de atendimento no site (Av. Rebouças, 2636 — Pinheiros, SP)
+- [x] Adicionar Clinovi SBC como local de atendimento no site (Av. Pereira Barreto, 1479 — São Bernardo do Campo, SP)

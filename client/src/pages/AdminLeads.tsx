@@ -27,6 +27,8 @@ const LOCATION_MAP: Record<string, string> = {
   campinas: "Campinas Day Hospital",
   "sp-paulista": "Clinovi Paulista",
   "sp-moema": "Clinovi Moema",
+  "sp-pinheiros": "Clinovi Pinheiros",
+  "sp-sbc": "Clinovi SBC",
 };
 
 function formatDate(dateStr: string | Date): string {

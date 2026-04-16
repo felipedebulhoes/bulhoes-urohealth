@@ -27,6 +27,8 @@ const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5o
 const CAMPINAS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/campinas-day-hospital_47df2b14.jpg";
 const CLINOVI_PAULISTA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-paulista_42fff2fa.jpg";
 const CLINOVI_MOEMA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-moema_b149b069.jpg";
+const CLINOVI_PINHEIROS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp";
+const CLINOVI_SBC_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp";
 
 const locations = [
   {
@@ -80,6 +82,40 @@ const locations = [
     insurances: null,
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
+  {
+    name: "Clinovi Pinheiros",
+    slug: "clinovi-pinheiros",
+    type: "Apenas Particular",
+    typeColor: "text-amber-400 bg-amber-400/10",
+    image: CLINOVI_PINHEIROS_IMG,
+    address: "Av. Rebouças, 2636",
+    neighborhood: "Pinheiros, São Paulo - SP",
+    cep: "",
+    phone: "(11) 3382-1529",
+    whatsapp: null,
+    hours: "Seg a Sáb — consulte horários no Doctoralia",
+    highlight: "Espaço moderno no ComVem Rebouças",
+    description: "Localizada dentro do ComVem Rebouças, um espaço moderno e estratégico no bairro de Pinheiros. Infraestrutura de alto padrão com fácil acesso por transporte público.",
+    insurances: null,
+    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
+  },
+  {
+    name: "Clinovi SBC",
+    slug: "clinovi-sbc",
+    type: "Apenas Particular",
+    typeColor: "text-amber-400 bg-amber-400/10",
+    image: CLINOVI_SBC_IMG,
+    address: "Av. Pereira Barreto, 1479",
+    neighborhood: "São Bernardo do Campo - SP",
+    cep: "",
+    phone: "(11) 3382-1529",
+    whatsapp: null,
+    hours: "Seg a Sáb — consulte horários no Doctoralia",
+    highlight: "Edifício Helbor Trilogy",
+    description: "Localizada no Edifício Helbor Trilogy, em São Bernardo do Campo. Mais de 1.000m² de infraestrutura completa na divisão entre Santo André e São Caetano do Sul.",
+    insurances: null,
+    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
+  },
 ];
 
 export default function Consultorios() {
@@ -91,7 +127,7 @@ export default function Consultorios() {
       metaTag.setAttribute("name", "description");
       document.head.appendChild(metaTag);
     }
-    metaTag.setAttribute("content", "Conheça os consultórios do Dr. Felipe de Bulhões: Campinas Day Hospital (convênios e particular), Clinovi Paulista e Clinovi Moema (particular). Atendimento presencial e teleconsulta.");
+    metaTag.setAttribute("content", "Conheça os consultórios do Dr. Felipe de Bulhões: Campinas Day Hospital (convênios), Clinovi Paulista, Moema, Pinheiros e SBC (particular). Atendimento presencial e teleconsulta.");
     return () => {
       document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";
     };

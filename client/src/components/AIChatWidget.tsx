@@ -503,6 +503,8 @@ export default function AIChatWidget() {
                       <option value="campinas">Campinas Day Hospital (Convênios)</option>
                       <option value="sp-paulista">Clinovi Paulista (Particular)</option>
                       <option value="sp-moema">Clinovi Moema (Particular)</option>
+                      <option value="sp-pinheiros">Clinovi Pinheiros (Particular)</option>
+                      <option value="sp-sbc">Clinovi SBC (Particular)</option>
                     </select>
                   </div>
 

@@ -10,6 +10,8 @@ import InteractiveMap from "@/components/InteractiveMap";
 const CAMPINAS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/campinas-day-hospital_47df2b14.jpg";
 const CLINOVI_PAULISTA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-paulista_42fff2fa.jpg";
 const CLINOVI_MOEMA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-moema_b149b069.jpg";
+const CLINOVI_PINHEIROS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp";
+const CLINOVI_SBC_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp";
 
 const locations = [
   {
@@ -54,6 +56,34 @@ const locations = [
     insurances: null,
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
+  {
+    name: "Clinovi Pinheiros",
+    type: "Apenas Particular",
+    typeColor: "text-amber-400 bg-amber-400/10",
+    image: CLINOVI_PINHEIROS_IMG,
+    address: "Av. Rebouças, 2636",
+    neighborhood: "Pinheiros, São Paulo - SP",
+    cep: "",
+    phone: "(11) 3382-1529",
+    hours: "Seg a Sáb — consulte horários no Doctoralia",
+    highlight: "Espaço moderno no ComVem Rebouças",
+    insurances: null,
+    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
+  },
+  {
+    name: "Clinovi SBC",
+    type: "Apenas Particular",
+    typeColor: "text-amber-400 bg-amber-400/10",
+    image: CLINOVI_SBC_IMG,
+    address: "Av. Pereira Barreto, 1479",
+    neighborhood: "São Bernardo do Campo - SP",
+    cep: "",
+    phone: "(11) 3382-1529",
+    hours: "Seg a Sáb — consulte horários no Doctoralia",
+    highlight: "Edifício Helbor Trilogy",
+    insurances: null,
+    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
+  },
 ];
 
 export default function LocationSection() {
@@ -80,12 +110,12 @@ export default function LocationSection() {
             Consultórios e Atendimento
           </h2>
           <p className="text-[#0A2540]/50 font-sans mt-3 max-w-2xl text-base">
-            Atendimento presencial em 3 locais — Campinas e São Paulo — além de teleconsulta por vídeo.
+            Atendimento presencial em 5 locais — Campinas, São Paulo e ABC — além de teleconsulta por vídeo.
           </p>
         </motion.div>
 
         {/* Location cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6 mb-8">
           {locations.map((loc, i) => (
             <motion.div
               key={loc.name}

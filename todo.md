@@ -174,3 +174,6 @@
 - [x] Adicionar schema JSON-LD de WebSite com SearchAction no index.html
 - [x] Adicionar Clinovi Pinheiros como local de atendimento no site (Av. Rebouças, 2636 — Pinheiros, SP)
 - [x] Adicionar Clinovi SBC como local de atendimento no site (Av. Pereira Barreto, 1479 — São Bernardo do Campo, SP)
+- [x] Atualizar sitemap.xml com URLs /local/clinovi-pinheiros e /local/clinovi-sbc (45 URLs total)
+- [ ] Adicionar palavras-chave de SBC e Pinheiros no Google Ads
+- [x] Publicar site com novas unidades (deploy automático realizado)

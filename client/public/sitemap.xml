@@ -235,6 +235,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://felipebulhoes.com/local/clinovi-pinheiros</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://felipebulhoes.com/local/clinovi-sbc</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Blog: PSA e Rastreamento 2026 -->
   <url>
     <loc>https://felipebulhoes.com/blog/psa-rastreamento-cancer-prostata-2026</loc>

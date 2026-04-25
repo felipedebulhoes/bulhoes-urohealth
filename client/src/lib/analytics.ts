@@ -1,6 +1,8 @@
 /**
- * Google Analytics 4 — Event Tracking Utilities
- * ID de medição: G-PJHFGVQPS6
+ * Google Analytics 4 + Google Ads — Event Tracking Utilities
+ * GA4 ID: G-PJHFGVQPS6
+ * Google Ads ID: AW-18050357375
+ * Conversion Label: 1tRMCJ6z3ZscEP-wip9D
  *
  * Eventos de conversão rastreados:
  * - generate_lead: quando um lead é captado pelo chat
@@ -20,6 +22,11 @@ declare global {
   }
 }
 
+// Google Ads Conversion IDs
+const GOOGLE_ADS_CONVERSION_ID = "AW-18050357375";
+const GOOGLE_ADS_CONVERSION_LABEL = "1tRMCJ6z3ZscEP-wip9D";
+const GOOGLE_ADS_SEND_TO = `${GOOGLE_ADS_CONVERSION_ID}/${GOOGLE_ADS_CONVERSION_LABEL}`;
+
 /**
  * Envia um evento personalizado para o GA4
  */
@@ -33,7 +40,22 @@ export function trackEvent(
 }
 
 /**
+ * Dispara conversão no Google Ads
+ * Chamado automaticamente nos eventos de conversão principais
+ */
+export function trackGoogleAdsConversion(value: number = 100.0) {
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag("event", "conversion", {
+      send_to: GOOGLE_ADS_SEND_TO,
+      value: value,
+      currency: "BRL",
+    });
+  }
+}
+
+/**
  * Rastreia a captação de um lead pelo chat
+ * Dispara conversão no GA4 E no Google Ads
  */
 export function trackLeadGenerated(data: {
   name: string;
@@ -47,10 +69,13 @@ export function trackLeadGenerated(data: {
     lead_source: "ai_chat",
     preferred_location: data.location || "not_specified",
   });
+  // Dispara conversão no Google Ads (lead = conversão principal)
+  trackGoogleAdsConversion(100.0);
 }
 
 /**
  * Rastreia clique no WhatsApp
+ * Dispara conversão no Google Ads (contato = conversão)
  */
 export function trackWhatsAppClick(source: string) {
   trackEvent("contact_whatsapp", {
@@ -58,10 +83,12 @@ export function trackWhatsAppClick(source: string) {
     event_label: source,
     contact_method: "whatsapp",
   });
+  trackGoogleAdsConversion(50.0);
 }
 
 /**
  * Rastreia clique na Doctoralia
+ * Dispara conversão no Google Ads (agendamento = conversão)
  */
 export function trackDoctoraliaClick(source: string) {
   trackEvent("contact_doctoralia", {
@@ -69,10 +96,12 @@ export function trackDoctoraliaClick(source: string) {
     event_label: source,
     contact_method: "doctoralia",
   });
+  trackGoogleAdsConversion(80.0);
 }
 
 /**
  * Rastreia clique no telefone
+ * Dispara conversão no Google Ads (contato = conversão)
  */
 export function trackPhoneClick(source: string) {
   trackEvent("contact_phone", {
@@ -80,6 +109,7 @@ export function trackPhoneClick(source: string) {
     event_label: source,
     contact_method: "phone",
   });
+  trackGoogleAdsConversion(50.0);
 }
 
 /**
@@ -105,6 +135,7 @@ export function trackEducationalPageView(pageTitle: string, pagePath: string) {
 
 /**
  * Rastreia clique em CTA de agendamento
+ * Dispara conversão no Google Ads (CTA = intenção de conversão)
  */
 export function trackCtaClick(ctaType: string, source: string) {
   trackEvent("cta_click", {
@@ -112,4 +143,5 @@ export function trackCtaClick(ctaType: string, source: string) {
     event_label: ctaType,
     cta_source: source,
   });
+  trackGoogleAdsConversion(30.0);
 }

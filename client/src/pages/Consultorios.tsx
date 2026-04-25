@@ -170,7 +170,7 @@ export default function Consultorios() {
               Consultórios e Locais de Atendimento
             </h1>
             <p className="text-white/60 text-lg leading-relaxed">
-              Atendimento presencial em 3 locais — Campinas e São Paulo — além de teleconsulta por vídeo para todo o Brasil. Escolha o consultório mais conveniente para você.
+              Atendimento presencial em 5 locais — Campinas, São Paulo e ABC Paulista — além de teleconsulta por vídeo para todo o Brasil. Escolha o consultório mais conveniente para você.
             </p>
           </motion.div>
         </div>

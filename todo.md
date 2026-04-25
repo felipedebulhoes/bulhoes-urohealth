@@ -177,3 +177,12 @@
 - [x] Atualizar sitemap.xml com URLs /local/clinovi-pinheiros e /local/clinovi-sbc (45 URLs total)
 - [ ] Adicionar palavras-chave de SBC e Pinheiros no Google Ads
 - [x] Publicar site com novas unidades (deploy automático realizado)
+- [x] Criar anúncios específicos para Pinheiros e SBC no Google Ads (guia detalhado preparado)
+- [x] Configurar palavras-chave negativas no Google Ads (lista de 45+ negativas preparada)
+- [x] Preparar plano de monitoramento de performance (7 dias) — cronograma e métricas definidos
+- [ ] Criar perfil Google Meu Negócio para Clinovi Pinheiros
+- [ ] Criar perfil Google Meu Negócio para Clinovi SBC
+- [ ] Verificação completa do site (páginas principais e novas)
+- [ ] Verificação do Google Ads (status da campanha)
+- [x] Instalar tag de conversão do Google Ads no site (AW-18050357375 adicionado ao gtag config)
+- [x] Configurar eventos de conversão do Google Ads (generate_lead, contact_whatsapp, contact_doctoralia, contact_phone, cta_click)

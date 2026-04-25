@@ -256,6 +256,12 @@ export default function Agendamento() {
               <p className="text-xs text-[#64748B]">São Bernardo do Campo - SP</p>
               <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-400">Apenas Particular</span>
             </Link>
+            <Link href="/local/cemed-sao-luiz-campinas" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#0A2540]/6 hover:shadow-md transition-all block">
+              <MapPin className="w-5 h-5 text-[#0D9488] mb-2" />
+              <h3 className="font-bold text-[#0A2540] text-sm mb-1">CEMED São Luiz Campinas</h3>
+              <p className="text-xs text-[#64748B]">Centro, Campinas - SP</p>
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#5EEAD4]">Convênios & Particular</span>
+            </Link>
           </div>
           <div className="mt-4 bg-gradient-to-r from-[#0A2540] to-[#0D3B5C] rounded-xl p-5 flex items-center gap-4">
             <Monitor className="w-6 h-6 text-[#5EEAD4] shrink-0" />

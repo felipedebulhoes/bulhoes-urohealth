@@ -34,7 +34,7 @@ import DoencaPeyronie from "./pages/DoencaPeyronie";
 import Varicocele from "./pages/Varicocele";
 import HiperplasiaProstática from "./pages/HiperplasiaProstática";
 import SobreDrFelipe from "./pages/SobreDrFelipe";
-import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema, ClinoviPinheiros, ClinoviSBC } from "./pages/LocationPages";
+import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema, ClinoviPinheiros, ClinoviSBC, CemedSaoLuizCampinas } from "./pages/LocationPages";
 import AdminFiles from "./pages/AdminFiles";
 import AdminLeads from "./pages/AdminLeads";
 import Consultorios from "./pages/Consultorios";
@@ -82,6 +82,7 @@ function Router() {
       <Route path={"/local/clinovi-moema"} component={ClinoviMoema} />
       <Route path={"/local/clinovi-pinheiros"} component={ClinoviPinheiros} />
       <Route path={"/local/clinovi-sbc"} component={ClinoviSBC} />
+      <Route path={"/local/cemed-sao-luiz-campinas"} component={CemedSaoLuizCampinas} />
       <Route path={"/primeira-consulta"} component={PrimeiraConsulta} />
       <Route path={"/guia-google-business"} component={GuiaGoogleBusiness} />
       <Route path={"/admin/files"} component={AdminFiles} />

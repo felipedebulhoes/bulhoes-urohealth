@@ -133,6 +133,27 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* CEMED São Luiz Campinas */}
+          <div>
+            <h4 className="text-sm font-semibold text-white font-sans mb-3">CEMED São Luiz</h4>
+            <span className="inline-block text-[10px] uppercase tracking-wider text-[#5EEAD4] bg-[#5EEAD4]/10 px-2 py-0.5 rounded mb-3">
+              Convênios & Particular
+            </span>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#0D9488] mt-0.5 shrink-0" />
+                <span className="text-xs font-sans">
+                  Av. Andrade Neves, 863<br />
+                  Centro, Campinas - SP
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                <span className="text-xs font-sans">(19) 3014-3000</span>
+              </div>
+            </div>
+          </div>
+
           {/* Links & Teleconsulta */}
           <div>
             <h4 className="text-sm font-semibold text-white font-sans mb-3">Links</h4>

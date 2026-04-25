@@ -88,6 +88,19 @@ const clinics: ClinicLocation[] = [
     lng: -46.5650,
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Pereira+Barreto+1479+S%C3%A3o+Bernardo+do+Campo+SP",
   },
+  {
+    id: "cemed-campinas",
+    name: "CEMED São Luiz Campinas",
+    shortName: "CEMED",
+    address: "Av. Andrade Neves, 863",
+    neighborhood: "Centro, Campinas - SP",
+    phone: "(19) 3014-3000",
+    hours: "Sextas, 13h às 17h",
+    type: "Convênios & Particular",
+    lat: -22.9020,
+    lng: -47.0630,
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Andrade+Neves+863+Campinas+SP",
+  },
 ];
 
 // Center point that shows all 5 locations (between Campinas and SP/ABC)

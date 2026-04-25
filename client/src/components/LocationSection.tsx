@@ -84,6 +84,19 @@ const locations = [
     insurances: null,
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
+  {
+    name: "CEMED São Luiz Campinas",
+    type: "Convênios & Particular",
+    typeColor: "text-[#5EEAD4] bg-[#5EEAD4]/10",
+    image: CAMPINAS_IMG,
+    address: "Av. Andrade Neves, 863",
+    neighborhood: "Centro, Campinas - SP",
+    cep: "",
+    phone: "(19) 3014-3000",
+    hours: "Sextas, 13h às 17h",
+    highlight: "Hospital Rede D'Or — Acreditação JCI",
+    insurances: ["Bradesco", "SulAmérica", "Amil", "Porto Seguro", "Mediservice", "e outros"],
+  },
 ];
 
 export default function LocationSection() {

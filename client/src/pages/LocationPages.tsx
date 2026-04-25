@@ -51,6 +51,8 @@ interface LocationData {
   insurances?: string[];
   payment?: string[];
   accentColor: string;
+  bookingUrl?: string;
+  bookingLabel?: string;
 }
 
 const locations: Record<string, LocationData> = {
@@ -149,6 +151,27 @@ const locations: Record<string, LocationData> = {
     metaDescription: "Urologista em São Bernardo do Campo (ABC). Atendimento particular na Clinovi SBC. Consultas, teleconsulta e procedimentos ambulatoriais.",
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
     accentColor: "#DC2626",
+  },
+  "cemed-sao-luiz-campinas": {
+    name: "CEMED São Luiz Campinas",
+    fullName: "Centro Médico São Luiz Campinas",
+    address: "Av. Andrade Neves, 863 — Centro",
+    city: "Campinas, SP",
+    type: "convenio",
+    typeLabel: "Convênios e Particular",
+    phone: "(19) 3014-3000",
+    mapUrl: "https://maps.google.com/?q=Hospital+S%C3%A3o+Luiz+Campinas+Av+Andrade+Neves+863",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.3!2d-47.063!3d-22.902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8b4a2b4c5d7%3A0x1234567890abcdef!2sHospital+e+Maternidade+S%C3%A3o+Luiz+Campinas!5e0!3m2!1spt-BR!2sbr!4v1",
+    hours: ["Sexta-feira: 13h às 17h"],
+    services: ["Consultas", "Cirurgias", "Urodinâmica", "Exames", "Procedimentos ambulatoriais"],
+    parking: "Estacionamento próprio do hospital",
+    description: "O Centro Médico São Luiz Campinas (CEMED) faz parte do Hospital e Maternidade São Luiz Campinas, da Rede D'Or / Atlântica D'Or. Inaugurado em 2023, é um hospital geral de alta complexidade com acreditação internacional JCI. Localizado no Centro de Campinas, oferece atendimento por convênios e particular em infraestrutura hospitalar de alto padrão.",
+    metaTitle: "Urologista em Campinas — CEMED São Luiz | Dr. Felipe de Bulhões",
+    metaDescription: "Urologista em Campinas no Centro Médico São Luiz (Rede D'Or). Atendimento por convênios e particular. Consultas, cirurgias e exames urológicos.",
+    insurances: ["Bradesco", "SulAmérica", "Amil", "Porto Seguro", "Mediservice", "Allianz", "Cassi"],
+    accentColor: "#1D4ED8",
+    bookingUrl: "https://www.rededorsaoluiz.com.br/paciente/marcar-consulta",
+    bookingLabel: "Agendar pela Rede D'Or",
   },
 };
 
@@ -324,13 +347,13 @@ function LocationPage({ slug }: { slug: string }) {
                 </div>
 
                 <a
-                  href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+                  href={loc.bookingUrl || "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-[#0D9488] hover:bg-[#0B8276] text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 mb-3"
                 >
                   <Calendar className="w-4 h-4" />
-                  Agendar Consulta
+                  {loc.bookingLabel || "Agendar Consulta"}
                 </a>
                 <a
                   href={loc.whatsapp ? `https://wa.me/55${loc.whatsapp.replace(/[^0-9]/g, '')}?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20no%20${encodeURIComponent(loc.name)}.` : "https://wa.me/5511981124455?text=Olá%2C%20gostaria%20de%20tirar%20dúvidas%20sobre%20um%20tratamento."}
@@ -391,4 +414,8 @@ export function ClinoviPinheiros() {
 
 export function ClinoviSBC() {
   return <LocationPage slug="clinovi-sbc" />;
+}
+
+export function CemedSaoLuizCampinas() {
+  return <LocationPage slug="cemed-sao-luiz-campinas" />;
 }

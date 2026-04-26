@@ -38,7 +38,7 @@ const faqs = [
     questions: [
       {
         q: "Quais convênios são aceitos?",
-        a: "No Campinas Day Hospital, atendo pelos convênios: Allianz, Amil, Assefaz, Bradesco, Cassi, Gama, Go Care, Holambra, Medservice, Porto Seguro, Skill/Omint, SulAmérica e Unimed. Na Clinovi Paulista e Clinovi Moema, o atendimento é exclusivamente particular, com pagamento via PIX, cartão de crédito ou débito no local antes da consulta.",
+        a:"No Campinas Day Hospital e no Centro Médico São Luiz Campinas (Rede D'Or), atendo por convênios como Bradesco, Sul América, Amil, Allianz, Porto Seguro, Unimed, entre outros. No Campinas Day Hospital também aceito Assefaz, Cassi, Gama, Go Care, Holambra, Medservice e Skill/Omint. Nas unidades Clinovi (Paulista, Moema, Pinheiros e SBC), o atendimento é exclusivamente particular, com pagamento via PIX, cartão de crédito ou débito no local antes da consulta.",
       },
       {
         q: "Qual o valor da consulta particular?",

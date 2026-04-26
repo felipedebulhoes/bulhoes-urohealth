@@ -186,3 +186,7 @@
 - [ ] Verificação do Google Ads (status da campanha)
 - [x] Instalar tag de conversão do Google Ads no site (AW-18050357375 adicionado ao gtag config)
 - [x] Configurar eventos de conversão do Google Ads (generate_lead, contact_whatsapp, contact_doctoralia, contact_phone, cta_click)
+- [x] Adicionar Centro Médico Hospital São Luiz Campinas como novo local de atendimento (CEMED São Luiz, reconciliado com commit do GitHub)
+- [x] Criar página /local/cemed-sao-luiz-campinas com dados, mapa e Schema.org (slug do GitHub preservado)
+- [x] Atualizar componentes de locais (LocationSection, Footer, InteractiveMap, AIChatWidget, FAQ, InsuranceSection, WhatsApp, ScheduleBanner, QuickContactForm)
+- [x] Atualizar sitemap.xml com nova URL (já incluído pelo commit do GitHub)

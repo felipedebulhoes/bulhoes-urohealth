@@ -55,7 +55,7 @@ export default function ScheduleBanner() {
                   Agende sua consulta online
                 </p>
                 <p className="text-xs text-[#0A2540]/40 mb-3">
-                  Agende pelo Doctoralia ou ligue: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900. WhatsApp Campinas: (19) 99855-9890.
+                  Agende pelo Doctoralia ou ligue: Clinovi (11) 3382-1529 | Campinas Day Hospital (19) 2127-2900 | São Luiz Campinas (19) 3014-3000.
                 </p>
                 <div className="flex gap-2">
                   <a

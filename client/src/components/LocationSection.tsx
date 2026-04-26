@@ -12,6 +12,7 @@ const CLINOVI_PAULISTA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028
 const CLINOVI_MOEMA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-moema_b149b069.jpg";
 const CLINOVI_PINHEIROS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp";
 const CLINOVI_SBC_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp";
+const SAO_LUIZ_CAMPINAS_IMG = "/manus-storage/sao-luiz-campinas_d1e11d89.webp";
 
 const locations = [
   {
@@ -88,8 +89,8 @@ const locations = [
     name: "CEMED São Luiz Campinas",
     type: "Convênios & Particular",
     typeColor: "text-[#5EEAD4] bg-[#5EEAD4]/10",
-    image: CAMPINAS_IMG,
-    address: "Av. Andrade Neves, 863",
+    image: SAO_LUIZ_CAMPINAS_IMG,
+    address: "Av. Andrade Neves, 863, 4° andar",
     neighborhood: "Centro, Campinas - SP",
     cep: "",
     phone: "(19) 3014-3000",
@@ -123,7 +124,7 @@ export default function LocationSection() {
             Consultórios e Atendimento
           </h2>
           <p className="text-[#0A2540]/50 font-sans mt-3 max-w-2xl text-base">
-            Atendimento presencial em 5 locais — Campinas, São Paulo e ABC — além de teleconsulta por vídeo.
+            Atendimento presencial em 6 locais — Campinas, São Paulo e ABC — além de teleconsulta por vídeo.
           </p>
         </motion.div>
 

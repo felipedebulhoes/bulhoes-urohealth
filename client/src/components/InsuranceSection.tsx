@@ -73,9 +73,9 @@ export default function InsuranceSection() {
             className="flex items-end"
           >
             <p className="text-base text-[#0A2540]/60 leading-relaxed">
-              Atendo por diversos convênios no <strong className="text-[#0A2540]/80">Campinas Day Hospital</strong>.
-              Nas unidades <strong className="text-[#0A2540]/80">Clinovi Paulista</strong> e{" "}
-              <strong className="text-[#0A2540]/80">Clinovi Moema</strong>, o atendimento é exclusivamente particular,
+              Atendo por diversos convênios no <strong className="text-[#0A2540]/80">Campinas Day Hospital</strong> e no{" "}
+              <strong className="text-[#0A2540]/80">Centro Médico São Luiz Campinas (Rede D'Or)</strong>.
+              Nas unidades <strong className="text-[#0A2540]/80">Clinovi</strong> (Paulista, Moema, Pinheiros e SBC), o atendimento é exclusivamente particular,
               com pagamento via PIX, cartão de crédito ou débito no local antes da consulta.
               Teleconsulta disponível para todo o Brasil.
             </p>

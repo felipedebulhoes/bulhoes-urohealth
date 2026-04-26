@@ -132,8 +132,7 @@ const locations: Record<string, LocationData> = {
     metaDescription: "Urologista em Pinheiros, São Paulo. Atendimento particular na Clinovi. Consultas, teleconsulta e procedimentos ambulatoriais na Av. Rebouças.",
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
     accentColor: "#D97706",
-  },
-  "clinovi-sbc": {
+  },  "clinovi-sbc": {
     name: "Clinovi SBC",
     fullName: "Clinovi — São Bernardo do Campo",
     address: "Av. Pereira Barreto, 1479",
@@ -154,8 +153,8 @@ const locations: Record<string, LocationData> = {
   },
   "cemed-sao-luiz-campinas": {
     name: "CEMED São Luiz Campinas",
-    fullName: "Centro Médico São Luiz Campinas",
-    address: "Av. Andrade Neves, 863 — Centro",
+    fullName: "Centro Médico São Luiz Campinas — Rede D'Or",
+    address: "Av. Andrade Neves, 863, 4° andar — Centro",
     city: "Campinas, SP",
     type: "convenio",
     typeLabel: "Convênios e Particular",

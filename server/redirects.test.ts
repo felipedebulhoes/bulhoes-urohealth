@@ -49,6 +49,15 @@ describe("SEO Redirects & Real Pages", () => {
     });
   });
 
+  describe("Removed location page redirects", () => {
+    it("redirects /local/clinovi-campinas → /local/campinas-day-hospital with 301", async () => {
+      const res = await fetch(`${BASE_URL}/local/clinovi-campinas`, { redirect: "manual" });
+      expect(res.status).toBe(301);
+      const location = res.headers.get("location");
+      expect(location).toBe("/local/campinas-day-hospital");
+    });
+  });
+
   describe("Other real routes still return 200", () => {
     const validRoutes = [
       "/",

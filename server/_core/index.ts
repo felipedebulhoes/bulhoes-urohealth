@@ -33,6 +33,22 @@ async function startServer() {
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+  // SEO: 301 redirect — domain consolidation
+  // Redirect bulhoesurohealth.com → felipebulhoes.com (canonical domain)
+  app.use((req, res, next) => {
+    const host = req.hostname || req.headers.host || "";
+    if (host.includes("bulhoesurohealth.com")) {
+      const target = `https://felipebulhoes.com${req.originalUrl}`;
+      return res.redirect(301, target);
+    }
+    next();
+  });
+
+  // SEO: 301 redirect for removed/renamed location pages
+  app.get("/local/clinovi-campinas", (_req, res) => {
+    res.redirect(301, "/local/campinas-day-hospital");
+  });
+
   // SEO: 301 redirects for homepage anchor sections that have no standalone page
   // /consultorios, /contato, /agendamento now have real pages — no redirect needed
   const anchorRedirects: Record<string, string> = {

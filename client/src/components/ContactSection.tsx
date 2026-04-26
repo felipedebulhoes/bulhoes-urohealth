@@ -79,7 +79,7 @@ export default function ContactSection() {
             <div className="w-px h-3 bg-white/15" />
             <div className="flex items-center gap-2 text-white/40">
               <MapPin className="w-3.5 h-3.5 text-[#5EEAD4]" />
-              <span className="text-xs font-sans">CEMED São Luiz</span>
+              <span className="text-xs font-sans">CEMED - Rede D'Or</span>
             </div>
             <div className="w-px h-3 bg-white/15" />
             <div className="flex items-center gap-2 text-white/40">

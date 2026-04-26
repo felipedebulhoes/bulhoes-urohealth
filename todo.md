@@ -190,3 +190,4 @@
 - [x] Criar página /local/cemed-sao-luiz-campinas com dados, mapa e Schema.org (slug do GitHub preservado)
 - [x] Atualizar componentes de locais (LocationSection, Footer, InteractiveMap, AIChatWidget, FAQ, InsuranceSection, WhatsApp, ScheduleBanner, QuickContactForm)
 - [x] Atualizar sitemap.xml com nova URL (já incluído pelo commit do GitHub)
+- [x] Renomear local de "CEMED São Luiz Campinas" para "CEMED - Rede D'Or - São Luiz Campinas" em todos os componentes (8 arquivos atualizados)

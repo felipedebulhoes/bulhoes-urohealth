@@ -90,7 +90,7 @@ const clinics: ClinicLocation[] = [
   },
   {
     id: "cemed-campinas",
-    name: "CEMED São Luiz Campinas",
+    name: "CEMED - Rede D'Or - São Luiz Campinas",
     shortName: "CEMED",
     address: "Av. Andrade Neves, 863",
     neighborhood: "Centro, Campinas - SP",

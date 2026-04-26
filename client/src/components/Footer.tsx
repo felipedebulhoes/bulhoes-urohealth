@@ -133,9 +133,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* CEMED São Luiz Campinas */}
+          {/* CEMED - Rede D'Or - São Luiz Campinas */}
           <div>
-            <h4 className="text-sm font-semibold text-white font-sans mb-3">CEMED São Luiz</h4>
+            <h4 className="text-sm font-semibold text-white font-sans mb-3">CEMED - Rede D'Or</h4>
             <span className="inline-block text-[10px] uppercase tracking-wider text-[#5EEAD4] bg-[#5EEAD4]/10 px-2 py-0.5 rounded mb-3">
               Convênios & Particular
             </span>

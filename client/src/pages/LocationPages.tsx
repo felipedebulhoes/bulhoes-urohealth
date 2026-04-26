@@ -152,7 +152,7 @@ const locations: Record<string, LocationData> = {
     accentColor: "#DC2626",
   },
   "cemed-sao-luiz-campinas": {
-    name: "CEMED São Luiz Campinas",
+    name: "CEMED - Rede D'Or - São Luiz Campinas",
     fullName: "Centro Médico São Luiz Campinas — Rede D'Or",
     address: "Av. Andrade Neves, 863, 4° andar — Centro",
     city: "Campinas, SP",
@@ -165,7 +165,7 @@ const locations: Record<string, LocationData> = {
     services: ["Consultas", "Cirurgias", "Urodinâmica", "Exames", "Procedimentos ambulatoriais"],
     parking: "Estacionamento próprio do hospital",
     description: "O Centro Médico São Luiz Campinas (CEMED) faz parte do Hospital e Maternidade São Luiz Campinas, da Rede D'Or / Atlântica D'Or. Inaugurado em 2023, é um hospital geral de alta complexidade com acreditação internacional JCI. Localizado no Centro de Campinas, oferece atendimento por convênios e particular em infraestrutura hospitalar de alto padrão.",
-    metaTitle: "Urologista em Campinas — CEMED São Luiz | Dr. Felipe de Bulhões",
+    metaTitle: "Urologista em Campinas — CEMED Rede D'Or São Luiz | Dr. Felipe de Bulhões",
     metaDescription: "Urologista em Campinas no Centro Médico São Luiz (Rede D'Or). Atendimento por convênios e particular. Consultas, cirurgias e exames urológicos.",
     insurances: ["Bradesco", "SulAmérica", "Amil", "Porto Seguro", "Mediservice", "Allianz", "Cassi"],
     accentColor: "#1D4ED8",

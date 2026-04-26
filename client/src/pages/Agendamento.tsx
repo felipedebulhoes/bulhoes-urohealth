@@ -258,7 +258,7 @@ export default function Agendamento() {
             </Link>
             <Link href="/local/cemed-sao-luiz-campinas" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#0A2540]/6 hover:shadow-md transition-all block">
               <MapPin className="w-5 h-5 text-[#0D9488] mb-2" />
-              <h3 className="font-bold text-[#0A2540] text-sm mb-1">CEMED São Luiz Campinas</h3>
+              <h3 className="font-bold text-[#0A2540] text-sm mb-1">CEMED - Rede D'Or - São Luiz Campinas</h3>
               <p className="text-xs text-[#64748B]">Centro, Campinas - SP</p>
               <span className="text-[10px] uppercase tracking-wider font-semibold text-[#5EEAD4]">Convênios & Particular</span>
             </Link>

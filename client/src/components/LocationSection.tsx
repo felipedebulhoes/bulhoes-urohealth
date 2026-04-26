@@ -86,7 +86,7 @@ const locations = [
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
   {
-    name: "CEMED São Luiz Campinas",
+    name: "CEMED - Rede D'Or - São Luiz Campinas",
     type: "Convênios & Particular",
     typeColor: "text-[#5EEAD4] bg-[#5EEAD4]/10",
     image: SAO_LUIZ_CAMPINAS_IMG,

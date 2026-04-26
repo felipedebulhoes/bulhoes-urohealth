@@ -193,3 +193,6 @@
 - [x] Renomear local de "CEMED São Luiz Campinas" para "CEMED - Rede D'Or - São Luiz Campinas" em todos os componentes (8 arquivos atualizados)
 - [x] Buscar e adicionar foto real do CEMED São Luiz Campinas no site (fachada do hospital, fonte: rededorsaoluiz.com.br)
 - [x] Adicionar botão de agendamento da Rede D'Or na página do local CEMED (já implementado: bookingUrl + bookingLabel)
+- [x] Criar guia passo a passo para perfil Google Meu Negócio do CEMED São Luiz Campinas
+- [x] Preparar keywords de Campinas para Google Ads com CSV de importação (15 keywords + anúncio + 6 negativas)
+- [x] Atualizar link de agendamento do CEMED São Luiz para URL com unidade Campinas: https://www.rededorsaoluiz.com.br/paciente/marcar-consulta/?unidadem=9303

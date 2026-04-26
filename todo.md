@@ -191,3 +191,5 @@
 - [x] Atualizar componentes de locais (LocationSection, Footer, InteractiveMap, AIChatWidget, FAQ, InsuranceSection, WhatsApp, ScheduleBanner, QuickContactForm)
 - [x] Atualizar sitemap.xml com nova URL (já incluído pelo commit do GitHub)
 - [x] Renomear local de "CEMED São Luiz Campinas" para "CEMED - Rede D'Or - São Luiz Campinas" em todos os componentes (8 arquivos atualizados)
+- [x] Buscar e adicionar foto real do CEMED São Luiz Campinas no site (fachada do hospital, fonte: rededorsaoluiz.com.br)
+- [x] Adicionar botão de agendamento da Rede D'Or na página do local CEMED (já implementado: bookingUrl + bookingLabel)

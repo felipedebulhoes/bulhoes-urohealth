@@ -12,7 +12,7 @@ const CLINOVI_PAULISTA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028
 const CLINOVI_MOEMA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-moema_b149b069.jpg";
 const CLINOVI_PINHEIROS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp";
 const CLINOVI_SBC_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp";
-const SAO_LUIZ_CAMPINAS_IMG = "/manus-storage/sao-luiz-campinas_d1e11d89.webp";
+const SAO_LUIZ_CAMPINAS_IMG = "/manus-storage/sao-luiz-campinas-fachada_a326a12f.webp";
 
 const locations = [
   {

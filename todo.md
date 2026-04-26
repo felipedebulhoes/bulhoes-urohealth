@@ -196,3 +196,4 @@
 - [x] Criar guia passo a passo para perfil Google Meu Negócio do CEMED São Luiz Campinas
 - [x] Preparar keywords de Campinas para Google Ads com CSV de importação (15 keywords + anúncio + 6 negativas)
 - [x] Atualizar link de agendamento do CEMED São Luiz para URL com unidade Campinas: https://www.rededorsaoluiz.com.br/paciente/marcar-consulta/?unidadem=9303
+- [x] Alterar nome no rodapé de "CEMED - Rede D'Or" para "São Luiz Campinas"

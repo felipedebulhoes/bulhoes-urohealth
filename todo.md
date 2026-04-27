@@ -197,3 +197,4 @@
 - [x] Preparar keywords de Campinas para Google Ads com CSV de importação (15 keywords + anúncio + 6 negativas)
 - [x] Atualizar link de agendamento do CEMED São Luiz para URL com unidade Campinas: https://www.rededorsaoluiz.com.br/paciente/marcar-consulta/?unidadem=9303
 - [x] Alterar nome no rodapé de "CEMED - Rede D'Or" para "São Luiz Campinas"
+- [x] Atualizar bookingUrl do CEMED São Luiz para perfil pessoal na Rede D'Or: https://www.rededorsaoluiz.com.br/encontre-um-medico/perfil/felipe-de-bulhoes-ojeda

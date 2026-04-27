@@ -169,7 +169,7 @@ const locations: Record<string, LocationData> = {
     metaDescription: "Urologista em Campinas no Centro Médico São Luiz (Rede D'Or). Atendimento por convênios e particular. Consultas, cirurgias e exames urológicos.",
     insurances: ["Bradesco", "SulAmérica", "Amil", "Porto Seguro", "Mediservice", "Allianz", "Cassi"],
     accentColor: "#1D4ED8",
-    bookingUrl: "https://www.rededorsaoluiz.com.br/paciente/marcar-consulta/?unidadem=9303",
+    bookingUrl: "https://www.rededorsaoluiz.com.br/encontre-um-medico/perfil/felipe-de-bulhoes-ojeda",
     bookingLabel: "Agendar pela Rede D'Or",
   },
 };

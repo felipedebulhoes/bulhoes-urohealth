@@ -227,3 +227,4 @@
 - [x] Criar Reel 15s navegando pelo site (roteiro + storyboard entregue)
 - [x] Criar Reel mockup animado (vídeo 15s) com screenshots do site
 - [x] Otimizar imagens para WebP e adicionar preconnect/preload de fontes (3.8MB economizados)
+- [x] Adicionar animação de carregamento suave com logotipo ao transitar entre páginas

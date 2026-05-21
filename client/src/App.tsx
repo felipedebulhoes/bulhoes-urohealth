@@ -41,6 +41,7 @@ import Consultorios from "./pages/Consultorios";
 import Contato from "./pages/Contato";
 import Agendamento from "./pages/Agendamento";
 import CanonicalTag from "./components/CanonicalTag";
+import PageTransition from "./components/PageTransition";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -103,6 +104,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <CanonicalTag />
+          <PageTransition />
           <Router />
         </TooltipProvider>
       </ThemeProvider>

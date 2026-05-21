@@ -320,3 +320,72 @@ html {
   box-shadow: 0 8px 32px rgba(28, 61, 90, 0.1),
               0 2px 8px rgba(184, 115, 51, 0.06);
 }
+
+/* ===== Page Transition Animation ===== */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 61, 90, 0.92);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition-overlay.fadeIn {
+  opacity: 1;
+}
+
+.page-transition-overlay.fadeOut {
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-transition-icon {
+  width: 80px;
+  height: 80px;
+  animation: transitionLogoEnter 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  filter: brightness(0) invert(1);
+}
+
+.page-transition-pulse {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(184, 115, 51, 0.6);
+  animation: transitionPulse 0.8s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes transitionLogoEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes transitionPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}

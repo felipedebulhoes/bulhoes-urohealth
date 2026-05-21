@@ -9,7 +9,7 @@ import { CalendarCheck, Award, ShieldCheck, Users } from "lucide-react";
 import { trackCtaClick } from "@/lib/analytics";
 
 // Real photo from Instagram — professional portrait with blazer
-const HERO_PORTRAIT = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/felipe-portrait_0e0693e4.jpeg";
+const HERO_PORTRAIT = "/manus-storage/felipe-portrait_0e0693e4_be070ac1.webp";
 
 const stats = [
   { icon: Award, value: "TCBC", label: "Membro Titular CBC" },

@@ -24,9 +24,9 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import InteractiveMap from "@/components/InteractiveMap";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
-const CAMPINAS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/campinas-day-hospital_47df2b14.jpg";
-const CLINOVI_PAULISTA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-paulista_42fff2fa.jpg";
-const CLINOVI_MOEMA_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-moema_b149b069.jpg";
+const CAMPINAS_IMG = "/manus-storage/campinas-day-hospital_47df2b14_d5a9cb24.webp";
+const CLINOVI_PAULISTA_IMG = "/manus-storage/clinovi-paulista_42fff2fa_cecba450.webp";
+const CLINOVI_MOEMA_IMG = "/manus-storage/clinovi-moema_b149b069_cd29f980.webp";
 const CLINOVI_PINHEIROS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp";
 const CLINOVI_SBC_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp";
 

@@ -14,10 +14,10 @@ import {
 
 /* ── CDN URLs ── */
 const IMG = {
-  ureteroscopy: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/ureteroscopy-illustration_0dc79076.jpg",
-  doubleJ: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/double-j-stent_063cc894.png",
-  jjPlacement: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/jj-stent-placement_40a34aa6.jpg",
-  prevention: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/kidney-prevention-diet_6a6af788.jpg",
+  ureteroscopy: "/manus-storage/ureteroscopy-illustration_0dc79076_b87de921.webp",
+  doubleJ: "/manus-storage/double-j-stent_063cc894_8ea27222.webp",
+  jjPlacement: "/manus-storage/jj-stent-placement_40a34aa6_113423d0.webp",
+  prevention: "/manus-storage/kidney-prevention-diet_6a6af788_5e94c70b.webp",
 };
 
 interface Treatment {

@@ -19,7 +19,7 @@ const defaultAuthor = {
   name: "Dr. Felipe de Bulhões",
   credentials: "CRM-SP 202291 | Urologista | TCBC",
   avatar:
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/instagram_profile_bc867e99.jpg",
+    "/manus-storage/instagram_profile_bc867e99_9d4bb2af.webp",
 };
 
 export const blogPosts: BlogPost[] = [
@@ -611,7 +611,7 @@ Se você tem indicação cirúrgica urológica, converse com seu urologista sobr
     excerpt:
       "Saiba quando procurar um urologista em Campinas, quais condições são tratadas, como funciona a primeira consulta e por que o acompanhamento regular é essencial para a saúde masculina.",
     coverImage:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-urologista-campinas-cover_ba932b43.jpg",
+      "/manus-storage/blog-urologista-campinas-cover_ba932b43_ec3a9955.webp",
     category: "Saúde Masculina",
     date: "30 de Março de 2026",
     readTime: "9 min de leitura",
@@ -772,7 +772,7 @@ Se você mora em Campinas ou região e precisa de acompanhamento urológico, nã
     excerpt:
       "Tudo sobre vasectomia em Campinas: como é feita, técnica no-scalpel, preparo, recuperação, mitos e verdades. Procedimento realizado no Campinas Day Hospital pelo Dr. Felipe de Bulhões.",
     coverImage:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/vasectomia-blog-cover_a51a156f.png",
+      "/manus-storage/vasectomia-blog-cover_a51a156f_1918def0.webp",
     category: "Procedimentos",
     date: "2026-03-28",
     readTime: "12 min",
@@ -944,7 +944,7 @@ Se você está considerando a vasectomia, agende uma consulta para discutir toda
     excerpt:
       "Saiba como a cirurgia robótica está transformando a urologia em Campinas. Conheça os procedimentos, vantagens, recuperação e onde encontrar essa tecnologia na região.",
     coverImage:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/cirurgia-robotica-blog_7b6f2d98.jpg",
+      "/manus-storage/cirurgia-robotica-blog_7b6f2d98_4694f840.webp",
     category: "Cirurgia Robótica",
     date: "2026-03-31",
     readTime: "10 min",

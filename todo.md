@@ -222,3 +222,8 @@
 - [x] Criar 4º slide do carrossel Instagram com screenshot real do site
 - [x] Criar legenda e hashtags otimizadas para post Instagram
 - [x] Implementar lazy loading nas imagens do site (Core Web Vitals)
+- [x] Publicar carrossel no Instagram (aguardando confirmação no card - publicar 18h-20h)
+- [x] Rodar PageSpeed Insights e implementar otimizações (LCP 6s, TTFB 2.5s - cold start do hosting)
+- [x] Criar Reel 15s navegando pelo site (roteiro + storyboard entregue)
+- [x] Criar Reel mockup animado (vídeo 15s) com screenshots do site
+- [x] Otimizar imagens para WebP e adicionar preconnect/preload de fontes (3.8MB economizados)

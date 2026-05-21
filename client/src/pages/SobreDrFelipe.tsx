@@ -28,9 +28,9 @@ const fadeUp = {
 
 // CDN URLs corretas (mesmas usadas no restante do site)
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
-const PORTRAIT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/felipe-portrait_0e0693e4.jpeg";
-const UROONCO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/uroonco-solo_7227a008.jpeg";
-const JPU_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/jpu-congress_61ecfbf9.jpeg";
+const PORTRAIT_URL = "/manus-storage/felipe-portrait_0e0693e4_be070ac1.webp";
+const UROONCO_URL = "/manus-storage/uroonco-solo_7227a008_5754f461.webp";
+const JPU_URL = "/manus-storage/jpu-congress_61ecfbf9_f41d816f.webp";
 
 export default function SobreDrFelipe() {
   return (

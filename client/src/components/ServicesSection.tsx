@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, MapPin, CreditCard } from "lucide-react";
 
 // Real photo — Dr. Felipe at UroOnco 2025 congress (solo, professional)
-const LECTURE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/uroonco-solo_7227a008.jpeg";
+const LECTURE_IMG = "/manus-storage/uroonco-solo_7227a008_5754f461.webp";
 
 const services = [
   { name: "Primeira Consulta Urologia", price: "R$ 800", highlight: true },

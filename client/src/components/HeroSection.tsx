@@ -77,7 +77,7 @@ export default function HeroSection() {
                 document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <Button className="bg-[#B87333] hover:bg-[#D4884A] text-white h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-[#B87333]/30 transition-all hover:shadow-xl hover:shadow-[#B87333]/40 hover:-translate-y-0.5">
+              <Button className="bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-[#B87333]/30 transition-all hover:shadow-xl hover:shadow-[#B87333]/40 hover:-translate-y-0.5">
                 <CalendarCheck className="w-5 h-5 mr-2" />
                 Agendar Consulta
               </Button>

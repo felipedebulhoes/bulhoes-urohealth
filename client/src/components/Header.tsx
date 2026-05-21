@@ -211,7 +211,7 @@ export default function Header() {
             onClick={() => trackCtaClick("agendar_consulta", "header_desktop")}
           >
             <Button
-              className="bg-[#B87333] hover:bg-[#D4884A] text-white rounded-md px-5 h-10 text-sm font-semibold shadow-md"
+              className="bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 rounded-md px-5 h-10 text-sm font-semibold shadow-md"
             >
               <Phone className="w-4 h-4 mr-2" />
               Agendar Consulta
@@ -307,7 +307,7 @@ export default function Header() {
                 }}
                 className="mt-2"
               >
-                <Button className="w-full bg-[#B87333] hover:bg-[#D4884A] text-white">
+                <Button className="w-full bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5">
                   <Phone className="w-4 h-4 mr-2" />
                   Agendar Consulta
                 </Button>

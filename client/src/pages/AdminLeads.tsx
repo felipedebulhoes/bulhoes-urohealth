@@ -11,7 +11,7 @@ import { Link } from "wouter";
 const STATUS_CONFIG: Record<string, { label: string; color: string; bg: string; icon: React.ReactNode }> = {
   new: { label: "Novo", color: "text-blue-700", bg: "bg-blue-50 border-blue-200", icon: <CircleDot className="w-3.5 h-3.5" /> },
   contacted: { label: "Contatado", color: "text-amber-700", bg: "bg-amber-50 border-amber-200", icon: <PhoneCall className="w-3.5 h-3.5" /> },
-  scheduled: { label: "Agendado", color: "text-emerald-700", bg: "bg-emerald-50 border-emerald-200", icon: <CalendarCheck className="w-3.5 h-3.5" /> },
+  scheduled: { label: "Agendado", color: "text-amber-700", bg: "bg-amber-50 border-amber-200", icon: <CalendarCheck className="w-3.5 h-3.5" /> },
   completed: { label: "Concluído", color: "text-gray-600", bg: "bg-gray-50 border-gray-200", icon: <CheckCircle2 className="w-3.5 h-3.5" /> },
 };
 
@@ -96,7 +96,7 @@ export default function AdminLeads() {
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <Loader2 className="w-8 h-8 animate-spin text-teal-600" />
+        <Loader2 className="w-8 h-8 animate-spin text-amber-600" />
       </div>
     );
   }
@@ -109,7 +109,7 @@ export default function AdminLeads() {
           <Users className="w-12 h-12 text-gray-300 mx-auto mb-4" />
           <h2 className="text-xl font-bold text-gray-900 mb-2">Acesso Restrito</h2>
           <p className="text-gray-500 mb-4">Esta página é restrita a administradores.</p>
-          <Link href="/" className="text-teal-600 hover:underline">Voltar ao site</Link>
+          <Link href="/" className="text-amber-600 hover:underline">Voltar ao site</Link>
         </div>
       </div>
     );
@@ -136,14 +136,14 @@ export default function AdminLeads() {
             </Link>
             <div>
               <h1 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                <Users className="w-5 h-5 text-teal-600" />
+                <Users className="w-5 h-5 text-amber-600" />
                 Painel de Leads
               </h1>
               <p className="text-sm text-gray-500">Contatos captados pelo assistente virtual</p>
             </div>
           </div>
           <Link href="/admin/files">
-            <button className="text-sm text-teal-600 hover:text-teal-700 font-medium">
+            <button className="text-sm text-amber-600 hover:text-amber-700 font-medium">
               Gerenciar Arquivos →
             </button>
           </Link>
@@ -157,7 +157,7 @@ export default function AdminLeads() {
             { label: "Total", value: stats.total, color: "bg-gray-100 text-gray-700" },
             { label: "Novos", value: stats.new, color: "bg-blue-50 text-blue-700" },
             { label: "Contatados", value: stats.contacted, color: "bg-amber-50 text-amber-700" },
-            { label: "Agendados", value: stats.scheduled, color: "bg-emerald-50 text-emerald-700" },
+            { label: "Agendados", value: stats.scheduled, color: "bg-amber-50 text-amber-700" },
             { label: "Concluídos", value: stats.completed, color: "bg-gray-50 text-gray-600" },
           ].map((stat) => (
             <div key={stat.label} className={`rounded-xl p-4 ${stat.color} border border-gray-200`}>
@@ -176,7 +176,7 @@ export default function AdminLeads() {
               placeholder="Buscar por nome, telefone, email ou motivo..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
             />
           </div>
           <div className="relative">
@@ -184,7 +184,7 @@ export default function AdminLeads() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="pl-10 pr-8 py-2.5 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent appearance-none cursor-pointer"
+              className="pl-10 pr-8 py-2.5 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent appearance-none cursor-pointer"
             >
               {STATUS_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -196,7 +196,7 @@ export default function AdminLeads() {
         {/* Leads List */}
         {isLoading ? (
           <div className="flex items-center justify-center py-20">
-            <Loader2 className="w-8 h-8 animate-spin text-teal-600" />
+            <Loader2 className="w-8 h-8 animate-spin text-amber-600" />
           </div>
         ) : !filteredLeads || filteredLeads.length === 0 ? (
           <div className="text-center py-20">
@@ -269,15 +269,15 @@ export default function AdminLeads() {
                           <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wide">Informações de Contato</h4>
                           <div className="space-y-2">
                             <div className="flex items-center gap-2 text-sm">
-                              <Phone className="w-4 h-4 text-teal-600" />
-                              <a href={`tel:${lead.phone}`} className="text-teal-600 hover:underline font-medium">
+                              <Phone className="w-4 h-4 text-amber-600" />
+                              <a href={`tel:${lead.phone}`} className="text-amber-600 hover:underline font-medium">
                                 {formatPhone(lead.phone)}
                               </a>
                             </div>
                             {lead.email && (
                               <div className="flex items-center gap-2 text-sm">
-                                <Mail className="w-4 h-4 text-teal-600" />
-                                <a href={`mailto:${lead.email}`} className="text-teal-600 hover:underline">
+                                <Mail className="w-4 h-4 text-amber-600" />
+                                <a href={`mailto:${lead.email}`} className="text-amber-600 hover:underline">
                                   {lead.email}
                                 </a>
                               </div>

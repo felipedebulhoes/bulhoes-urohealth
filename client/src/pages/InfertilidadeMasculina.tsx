@@ -268,7 +268,7 @@ const references = [
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; light: string }> = {
-  teal: { bg: "bg-teal-500", text: "text-teal-700", border: "border-teal-200", light: "bg-teal-50" },
+  teal: { bg: "bg-amber-500", text: "text-amber-700", border: "border-amber-200", light: "bg-amber-50" },
   violet: { bg: "bg-violet-500", text: "text-violet-700", border: "border-violet-200", light: "bg-violet-50" },
   amber: { bg: "bg-amber-500", text: "text-amber-700", border: "border-amber-200", light: "bg-amber-50" },
   red: { bg: "bg-red-500", text: "text-red-700", border: "border-red-200", light: "bg-red-50" },
@@ -288,7 +288,7 @@ export default function InfertilidadeMasculina() {
       title="Infertilidade Masculina"
       subtitle="Causas, Diagnóstico e Tratamentos Baseados em Evidências"
       description="Guia completo sobre infertilidade masculina: espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. Baseado nas guidelines EAU 2025 e AUA/ASRM 2024."
-      accentColor="#0D9488"
+      accentColor="#B87333"
       metaTitle="Infertilidade Masculina: Causas e Tratamentos | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre infertilidade masculina: espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. EAU 2025 + AUA 2024. Urologista em Campinas e São Paulo."
     >
@@ -469,16 +469,16 @@ export default function InfertilidadeMasculina() {
                 transition={{ delay: i * 0.08 }}
                 className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
-                  <span className="text-teal-700 font-bold text-lg">{item.step}</span>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+                  <span className="text-amber-700 font-bold text-lg">{item.step}</span>
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <item.icon className="w-4 h-4 text-teal-600" />
+                    <item.icon className="w-4 h-4 text-amber-600" />
                     <h3 className="font-bold text-gray-900">{item.title}</h3>
                   </div>
                   <p className="text-gray-700 text-sm mb-2">{item.description}</p>
-                  <span className="inline-block text-xs font-medium text-teal-700 bg-teal-50 px-2 py-1 rounded-full">
+                  <span className="inline-block text-xs font-medium text-amber-700 bg-amber-50 px-2 py-1 rounded-full">
                     {item.evidence}
                   </span>
                 </div>
@@ -500,7 +500,7 @@ export default function InfertilidadeMasculina() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-teal-600 text-white">
+                <tr className="bg-amber-600 text-white">
                   <th className="px-4 py-3 text-left rounded-tl-lg">Parâmetro</th>
                   <th className="px-4 py-3 text-left">Valor Normal (P5)</th>
                   <th className="px-4 py-3 text-left">Alterado</th>
@@ -595,13 +595,13 @@ export default function InfertilidadeMasculina() {
                   className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-teal-500 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center">
                       <tx.icon className="w-5 h-5 text-white" />
                     </div>
                     <div className="text-left">
                       <div className="flex items-center gap-2">
                         <h3 className="text-lg font-bold text-gray-900">{tx.name}</h3>
-                        <span className="text-xs font-medium text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full">{tx.category}</span>
+                        <span className="text-xs font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">{tx.category}</span>
                       </div>
                       <p className="text-sm text-gray-500">{tx.indication}</p>
                     </div>
@@ -611,13 +611,13 @@ export default function InfertilidadeMasculina() {
                 {openTreatment === i && (
                   <div className="px-5 pb-5">
                     <p className="text-gray-700 mb-3">{tx.description}</p>
-                    <div className="bg-teal-50 rounded-lg p-3 mb-3">
-                      <p className="text-sm font-medium text-teal-800">{tx.evidence}</p>
+                    <div className="bg-amber-50 rounded-lg p-3 mb-3">
+                      <p className="text-sm font-medium text-amber-800">{tx.evidence}</p>
                     </div>
                     <ul className="space-y-2">
                       {tx.details.map((detail, di) => (
                         <li key={di} className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-teal-600 flex-shrink-0 mt-0.5" />
+                          <Check className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
                           <span className="text-gray-700 text-sm">{detail}</span>
                         </li>
                       ))}
@@ -655,7 +655,7 @@ export default function InfertilidadeMasculina() {
                 transition={{ delay: i * 0.05 }}
                 className="flex items-start gap-3 bg-white rounded-lg p-4 shadow-sm border border-gray-100"
               >
-                <ArrowRight className="w-4 h-4 text-teal-600 flex-shrink-0 mt-1" />
+                <ArrowRight className="w-4 h-4 text-amber-600 flex-shrink-0 mt-1" />
                 <p className="text-gray-700 text-sm">{item}</p>
               </motion.div>
             ))}
@@ -701,11 +701,11 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 to-teal-700">
+      <section className="py-16 bg-gradient-to-r from-amber-600 to-amber-700">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-white mb-4">Avaliação Especializada em Fertilidade Masculina</h2>
-            <p className="text-teal-100 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-amber-100 text-lg mb-8 max-w-2xl mx-auto">
               O diagnóstico precoce e o tratamento adequado podem restaurar a fertilidade natural em muitos casos.
               Agende uma consulta para avaliação individualizada.
             </p>
@@ -714,7 +714,7 @@ export default function InfertilidadeMasculina() {
                 href="https://wa.me/5511981124455?text=Olá, gostaria de tirar dúvidas sobre avaliação de fertilidade masculina."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-teal-700 px-8 py-3 rounded-lg font-semibold hover:bg-teal-50 transition-colors shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-white text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors shadow-lg"
               >
                 Agendar pelo WhatsApp
                 <ArrowRight className="w-4 h-4" />
@@ -723,7 +723,7 @@ export default function InfertilidadeMasculina() {
                 href="https://www.doctoralia.com.br/felipe-de-bulhoes/urologista/campinas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-teal-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-400 transition-colors border border-teal-400"
+                className="inline-flex items-center justify-center gap-2 bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 transition-colors border border-amber-400"
               >
                 Agendar pela Doctoralia
                 <ArrowRight className="w-4 h-4" />
@@ -740,7 +740,7 @@ export default function InfertilidadeMasculina() {
           <ol className="space-y-2">
             {references.map((ref) => (
               <li key={ref.num} className="text-sm text-gray-600 flex gap-2">
-                <span className="font-semibold text-teal-700 flex-shrink-0">[{ref.num}]</span>
+                <span className="font-semibold text-amber-700 flex-shrink-0">[{ref.num}]</span>
                 <span>{ref.text}</span>
               </li>
             ))}

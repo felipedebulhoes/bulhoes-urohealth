@@ -41,12 +41,12 @@ export default function InstagramSection() {
         >
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <Instagram className="w-5 h-5 text-[#0D9488]" />
-              <span className="text-[#0D9488] text-sm font-semibold uppercase tracking-[0.15em]">
+              <Instagram className="w-5 h-5 text-[#B87333]" />
+              <span className="text-[#B87333] text-sm font-semibold uppercase tracking-[0.15em]">
                 @drfelipebulhoes
               </span>
             </div>
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] leading-tight">
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] leading-tight">
               Conteúdo Educativo
             </h2>
           </div>
@@ -57,7 +57,7 @@ export default function InstagramSection() {
           >
             <Button
               variant="outline"
-              className="border-[#0A2540]/15 text-[#0A2540] hover:bg-[#0A2540]/5 h-10 px-5 text-sm font-medium rounded-md"
+              className="border-[#1C3D5A]/15 text-[#1C3D5A] hover:bg-[#1C3D5A]/5 h-10 px-5 text-sm font-medium rounded-md"
             >
               Seguir no Instagram
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -76,15 +76,15 @@ export default function InstagramSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
-              className="group relative bg-gradient-to-br from-[#0A2540] to-[#0D3B5C] rounded-lg p-6 aspect-square flex flex-col justify-end overflow-hidden hover:shadow-lg transition-shadow"
+              className="group relative bg-gradient-to-br from-[#1C3D5A] to-[#0D3B5C] rounded-lg p-6 aspect-square flex flex-col justify-end overflow-hidden hover:shadow-lg transition-shadow"
             >
               {/* Decorative */}
               <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
                 <Instagram className="w-8 h-8 text-white" />
               </div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#0D9488]/10 rounded-full blur-2xl" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#B87333]/10 rounded-full blur-2xl" />
 
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#5EEAD4] font-semibold mb-2">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#D4884A] font-semibold mb-2">
                 {post.type}
               </span>
               <p className="text-sm text-white/80 font-sans leading-relaxed line-clamp-3">

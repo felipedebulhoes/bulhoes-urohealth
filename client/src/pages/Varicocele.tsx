@@ -251,7 +251,7 @@ export default function Varicocele() {
     yellow: { bg: "bg-yellow-100", text: "text-yellow-700", border: "border-yellow-300", light: "bg-yellow-50" },
     orange: { bg: "bg-orange-100", text: "text-orange-700", border: "border-orange-300", light: "bg-orange-50" },
     red: { bg: "bg-red-100", text: "text-red-700", border: "border-red-300", light: "bg-red-50" },
-    teal: { bg: "bg-teal-100", text: "text-teal-700", border: "border-teal-300", light: "bg-teal-50" },
+    teal: { bg: "bg-amber-100", text: "text-amber-700", border: "border-amber-300", light: "bg-amber-50" },
     blue: { bg: "bg-blue-100", text: "text-blue-700", border: "border-blue-300", light: "bg-blue-50" },
     amber: { bg: "bg-amber-100", text: "text-amber-700", border: "border-amber-300", light: "bg-amber-50" },
     purple: { bg: "bg-purple-100", text: "text-purple-700", border: "border-purple-300", light: "bg-purple-50" },
@@ -262,7 +262,7 @@ export default function Varicocele() {
       title="Varicocele"
       subtitle="Causas, Diagnóstico e Tratamento"
       description="Entenda o que é varicocele, como é diagnosticada, quando o tratamento é indicado e quais são as técnicas cirúrgicas disponíveis. Baseado nas EAU Guidelines 2025 e AUA/ASRM 2024."
-      accentColor="#0D9488"
+      accentColor="#B87333"
       metaTitle="Varicocele: Causas, Diagnóstico e Tratamento | Dr. Felipe de Bulhões"
       metaDescription="Tudo sobre varicocele: o que é, sintomas, classificação, diagnóstico e tratamento cirúrgico. Varicocelectomia microcirúrgica é o padrão-ouro. Baseado nas EAU Guidelines 2025."
     >
@@ -273,8 +273,8 @@ export default function Varicocele() {
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center">
-                <Search className="w-6 h-6 text-teal-600" />
+              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
+                <Search className="w-6 h-6 text-amber-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">O que é Varicocele?</h2>
             </div>
@@ -310,8 +310,8 @@ export default function Varicocele() {
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center">
-                <Thermometer className="w-6 h-6 text-teal-600" />
+              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
+                <Thermometer className="w-6 h-6 text-amber-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">Como a Varicocele Afeta a Fertilidade?</h2>
             </div>
@@ -335,7 +335,7 @@ export default function Varicocele() {
                   transition={{ delay: i * 0.1 }}
                   className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-shadow"
                 >
-                  <item.icon className="w-8 h-8 text-teal-600 mb-3" />
+                  <item.icon className="w-8 h-8 text-amber-600 mb-3" />
                   <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{item.text}</p>
                 </motion.div>
@@ -350,8 +350,8 @@ export default function Varicocele() {
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-teal-600" />
+              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 text-amber-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">Sintomas</h2>
             </div>
@@ -365,8 +365,8 @@ export default function Varicocele() {
                   transition={{ delay: i * 0.1 }}
                   className="flex gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center flex-shrink-0">
-                    <s.icon className="w-6 h-6 text-teal-600" />
+                  <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
+                    <s.icon className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
@@ -384,8 +384,8 @@ export default function Varicocele() {
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center">
-                <CircleDot className="w-6 h-6 text-teal-600" />
+              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
+                <CircleDot className="w-6 h-6 text-amber-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">Classificação</h2>
             </div>
@@ -427,8 +427,8 @@ export default function Varicocele() {
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center">
-                <Stethoscope className="w-6 h-6 text-teal-600" />
+              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
+                <Stethoscope className="w-6 h-6 text-amber-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">Investigação Diagnóstica</h2>
             </div>
@@ -443,18 +443,18 @@ export default function Varicocele() {
                   className="flex gap-6 items-start"
                 >
                   <div className="flex flex-col items-center flex-shrink-0">
-                    <div className="w-14 h-14 rounded-2xl bg-teal-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    <div className="w-14 h-14 rounded-2xl bg-amber-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                       {step.step}
                     </div>
-                    {i < diagnosticSteps.length - 1 && <div className="w-0.5 h-12 bg-teal-200 mt-2" />}
+                    {i < diagnosticSteps.length - 1 && <div className="w-0.5 h-12 bg-amber-200 mt-2" />}
                   </div>
                   <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <step.icon className="w-5 h-5 text-teal-600" />
+                      <step.icon className="w-5 h-5 text-amber-600" />
                       <h3 className="font-bold text-gray-900 text-lg">{step.title}</h3>
                     </div>
                     <p className="text-gray-600 leading-relaxed mb-2">{step.description}</p>
-                    <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-700">{step.evidence}</span>
+                    <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-700">{step.evidence}</span>
                   </div>
                 </motion.div>
               ))}
@@ -468,8 +468,8 @@ export default function Varicocele() {
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center">
-                <Target className="w-6 h-6 text-teal-600" />
+              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
+                <Target className="w-6 h-6 text-amber-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">Quando Tratar?</h2>
             </div>
@@ -487,20 +487,20 @@ export default function Varicocele() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
                   className={`rounded-xl border p-6 ${
-                    ind.color === "teal" ? "bg-teal-50 border-teal-200" : "bg-red-50 border-red-200"
+                    ind.color === "teal" ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200"
                   }`}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <ind.icon className={`w-6 h-6 ${ind.color === "teal" ? "text-teal-600" : "text-red-600"}`} />
-                    <h3 className={`font-bold text-lg ${ind.color === "teal" ? "text-teal-800" : "text-red-800"}`}>{ind.category}</h3>
+                    <ind.icon className={`w-6 h-6 ${ind.color === "teal" ? "text-amber-600" : "text-red-600"}`} />
+                    <h3 className={`font-bold text-lg ${ind.color === "teal" ? "text-amber-800" : "text-red-800"}`}>{ind.category}</h3>
                   </div>
                   <ul className="space-y-3">
                     {ind.items.map((item, j) => (
                       <li key={j} className="flex gap-2 items-start">
-                        <span className={`mt-1 flex-shrink-0 ${ind.color === "teal" ? "text-teal-600" : "text-red-500"}`}>
+                        <span className={`mt-1 flex-shrink-0 ${ind.color === "teal" ? "text-amber-600" : "text-red-500"}`}>
                           {ind.color === "teal" ? <Check className="w-4 h-4" /> : <AlertTriangle className="w-4 h-4" />}
                         </span>
-                        <span className={`text-sm leading-relaxed ${ind.color === "teal" ? "text-teal-700" : "text-red-700"}`}>{item}</span>
+                        <span className={`text-sm leading-relaxed ${ind.color === "teal" ? "text-amber-700" : "text-red-700"}`}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -516,8 +516,8 @@ export default function Varicocele() {
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center">
-                <Wrench className="w-6 h-6 text-teal-600" />
+              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
+                <Wrench className="w-6 h-6 text-amber-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">Opções de Tratamento Cirúrgico</h2>
             </div>
@@ -533,7 +533,7 @@ export default function Varicocele() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                     className={`rounded-xl border transition-all ${
-                      i === 0 ? "border-teal-300 shadow-md" : "border-gray-200"
+                      i === 0 ? "border-amber-300 shadow-md" : "border-gray-200"
                     }`}
                   >
                     <button
@@ -593,7 +593,7 @@ export default function Varicocele() {
             <div className="overflow-x-auto">
               <table className="w-full bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
                 <thead>
-                  <tr className="bg-teal-600 text-white">
+                  <tr className="bg-amber-600 text-white">
                     <th className="px-4 py-3 text-left text-sm font-semibold">Técnica</th>
                     <th className="px-4 py-3 text-center text-sm font-semibold">Recorrência</th>
                     <th className="px-4 py-3 text-center text-sm font-semibold">Complicações</th>
@@ -601,8 +601,8 @@ export default function Varicocele() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-100 bg-teal-50">
-                    <td className="px-4 py-3 font-semibold text-teal-800">Microcirúrgica Subinguinal</td>
+                  <tr className="border-b border-gray-100 bg-amber-50">
+                    <td className="px-4 py-3 font-semibold text-amber-800">Microcirúrgica Subinguinal</td>
                     <td className="px-4 py-3 text-center text-sm font-bold text-green-600">0,8-4%</td>
                     <td className="px-4 py-3 text-center text-sm">{'< 5%'}</td>
                     <td className="px-4 py-3 text-center text-sm">Local / Raqui</td>
@@ -652,7 +652,7 @@ export default function Varicocele() {
                     className="w-full p-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors"
                   >
                     <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
-                    {openFaq === i ? <ChevronUp className="w-5 h-5 text-teal-600 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />}
+                    {openFaq === i ? <ChevronUp className="w-5 h-5 text-amber-600 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />}
                   </button>
                   {openFaq === i && (
                     <div className="px-5 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
@@ -667,11 +667,11 @@ export default function Varicocele() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 to-teal-700">
+      <section className="py-16 bg-gradient-to-r from-amber-600 to-amber-700">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-white mb-4">Avaliação Especializada em Varicocele</h2>
-            <p className="text-teal-100 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-amber-100 text-lg mb-8 max-w-2xl mx-auto">
               O diagnóstico precoce e o tratamento adequado podem preservar a fertilidade e melhorar a qualidade de vida.
               Agende uma consulta para avaliação individualizada.
             </p>
@@ -680,7 +680,7 @@ export default function Varicocele() {
                 href="https://wa.me/5511981124455?text=Olá, gostaria de tirar dúvidas sobre varicocele."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-teal-700 px-8 py-3 rounded-lg font-semibold hover:bg-teal-50 transition-colors shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-white text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors shadow-lg"
               >
                 Agendar pelo WhatsApp
                 <ArrowRight className="w-4 h-4" />
@@ -689,7 +689,7 @@ export default function Varicocele() {
                 href="https://www.doctoralia.com.br/felipe-de-bulhoes/urologista/campinas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-teal-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-400 transition-colors border border-teal-400"
+                className="inline-flex items-center justify-center gap-2 bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 transition-colors border border-amber-400"
               >
                 Agendar pela Doctoralia
                 <ArrowRight className="w-4 h-4" />
@@ -706,7 +706,7 @@ export default function Varicocele() {
           <ol className="space-y-2">
             {references.map((ref) => (
               <li key={ref.num} className="text-sm text-gray-600 flex gap-2">
-                <span className="font-semibold text-teal-700 flex-shrink-0">[{ref.num}]</span>
+                <span className="font-semibold text-amber-700 flex-shrink-0">[{ref.num}]</span>
                 <span>{ref.text}</span>
               </li>
             ))}

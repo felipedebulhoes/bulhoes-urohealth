@@ -26,7 +26,7 @@ export default function EducationalLayout({
   title,
   subtitle,
   description,
-  accentColor = "#0D9488",
+  accentColor = "#B87333",
   metaTitle,
   metaDescription,
   medicalCondition,
@@ -70,11 +70,11 @@ export default function EducationalLayout({
       />
 
       {/* Header */}
-      <header className="bg-[#0A2540] py-4 sticky top-0 z-50">
+      <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/logo_min8_d351a844.webp"
+              src="/manus-storage/logo-landscape_be6628b3.svg"
               alt="Dr. Felipe de Bulhões - Urologista"
               className="h-12 lg:h-14 w-auto brightness-0 invert"
             />
@@ -92,7 +92,7 @@ export default function EducationalLayout({
               rel="noopener noreferrer"
               className="hidden sm:block"
             >
-              <Button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white">
+              <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white">
                 <Phone className="w-4 h-4 mr-2" />
                 Agendar Consulta
               </Button>
@@ -102,7 +102,7 @@ export default function EducationalLayout({
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-[#0A2540] to-[#0F3460] py-16 lg:py-24">
+      <section className="bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] py-16 lg:py-24">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -131,7 +131,7 @@ export default function EducationalLayout({
       <main>{children}</main>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-[#0A2540] to-[#0F3460]">
+      <section className="py-16 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
         <div className="container text-center">
           <h2 className="text-2xl lg:text-3xl text-white mb-3 font-serif">
             Tem dúvidas? Agende uma consulta
@@ -147,7 +147,7 @@ export default function EducationalLayout({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white px-6 h-11">
+              <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white px-6 h-11">
                 Agendar Consulta
               </Button>
             </a>
@@ -165,7 +165,7 @@ export default function EducationalLayout({
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#071A2E] py-8">
+      <footer className="bg-[#0F2A3F] py-8">
         <div className="container text-center">
           <p className="text-white/30 text-sm">
             &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291

@@ -1,7 +1,7 @@
 /*
- * Design: Clinical Precision — Swiss Medical Design
- * Hero: Split layout — text left, REAL portrait right, dark navy background
- * Uses real Instagram photo (blazer portrait)
+ * Design: Dr. Felipe de Bulhões — Identidade Visual
+ * Hero: Split layout — text left, portrait right, Azul do Nilo background
+ * Cores: #1C3D5A (fundo), #B87333 (cobre CTAs), #C4C4C4 (nuvem), #FEFEFE (branco)
  */
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -19,16 +19,16 @@ const stats = [
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative min-h-[100vh] bg-[#0A2540] overflow-hidden">
+    <section id="inicio" className="relative min-h-[100vh] bg-[#1C3D5A] overflow-hidden">
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
         backgroundSize: '40px 40px'
       }} />
 
-      {/* Decorative teal glow */}
-      <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-[#0D9488]/10 rounded-full blur-[120px]" />
-      <div className="absolute top-40 left-10 w-48 h-48 bg-[#0D9488]/5 rounded-full blur-[80px]" />
+      {/* Decorative copper glow */}
+      <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-[#B87333]/10 rounded-full blur-[120px]" />
+      <div className="absolute top-40 left-10 w-48 h-48 bg-[#B87333]/5 rounded-full blur-[80px]" />
 
       <div className="container relative z-10 flex flex-col lg:flex-row items-center min-h-[100vh]">
         {/* Left: Text Content */}
@@ -39,8 +39,8 @@ export default function HeroSection() {
             transition={{ duration: 0.7 }}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-10 bg-[#0D9488]" />
-              <span className="text-[#5EEAD4] text-xs font-semibold uppercase tracking-[0.2em]">
+              <div className="h-px w-10 bg-[#B87333]" />
+              <span className="text-[#C4C4C4] text-xs font-semibold uppercase tracking-[0.2em]">
                 CRM-SP 202291 · RQE 146538 / RQE 114019
               </span>
             </div>
@@ -48,14 +48,14 @@ export default function HeroSection() {
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl text-white leading-[1.08] mb-4 font-serif">
               Dr. Felipe de
               <br />
-              <span className="text-[#5EEAD4]">Bulhões</span>
+              <span className="text-[#B87333]">Bulhões</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-white/50 font-light mb-6 tracking-wide">
+            <p className="text-xl sm:text-2xl text-[#C4C4C4] font-light mb-6 tracking-wide" style={{ fontStyle: 'normal' }}>
               Urologista & Cirurgião Geral
             </p>
 
-            <p className="text-base text-white/70 leading-relaxed mb-8 max-w-lg">
+            <p className="text-base text-white/70 leading-relaxed mb-8 max-w-lg" style={{ fontStyle: 'normal' }}>
               Especialista em cirurgia minimamente invasiva, robótica e endourologia.
               Formado pelo <strong className="text-white/90">Instituto D'Or de Ensino e Pesquisa</strong>,
               com atuação em São Paulo e Campinas. Atendimento presencial e por teleconsulta.
@@ -77,7 +77,7 @@ export default function HeroSection() {
                 document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <Button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-teal-900/40 transition-all hover:shadow-xl hover:shadow-teal-900/50 hover:-translate-y-0.5">
+              <Button className="bg-[#B87333] hover:bg-[#D4884A] text-white h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-[#B87333]/30 transition-all hover:shadow-xl hover:shadow-[#B87333]/40 hover:-translate-y-0.5">
                 <CalendarCheck className="w-5 h-5 mr-2" />
                 Agendar Consulta
               </Button>
@@ -102,11 +102,11 @@ export default function HeroSection() {
             {stats.map((stat) => (
               <div key={stat.label} className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
-                  <stat.icon className="w-5 h-5 text-[#5EEAD4]" />
+                  <stat.icon className="w-5 h-5 text-[#B87333]" />
                 </div>
                 <div>
-                  <p className="text-base font-bold text-white leading-tight">{stat.value}</p>
-                  <p className="text-[11px] text-white/40 uppercase tracking-wider">{stat.label}</p>
+                  <p className="text-base font-bold text-white leading-tight" style={{ fontStyle: 'normal' }}>{stat.value}</p>
+                  <p className="text-[11px] text-white/40 uppercase tracking-wider" style={{ fontStyle: 'normal' }}>{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -121,9 +121,9 @@ export default function HeroSection() {
           className="flex-1 flex justify-center lg:justify-end items-end self-end relative mt-8 lg:mt-0"
         >
           <div className="relative">
-            {/* Accent border frame */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-[#0D9488]/40 rounded-tl-2xl" />
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-[#0D9488]/40 rounded-br-2xl" />
+            {/* Accent border frame - copper */}
+            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-[#B87333]/40 rounded-tl-2xl" />
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-[#B87333]/40 rounded-br-2xl" />
 
             <img
               src={HERO_PORTRAIT}
@@ -133,15 +133,15 @@ export default function HeroSection() {
 
             {/* Floating credential badge */}
             <div className="absolute -bottom-2 -left-6 bg-white rounded-lg px-4 py-3 shadow-xl z-20">
-              <p className="text-xs font-semibold text-[#0A2540]">Instituto D'Or</p>
-              <p className="text-[10px] text-[#0A2540]/50">Urologia · São Paulo</p>
+              <p className="text-xs font-semibold text-[#1C3D5A]" style={{ fontStyle: 'normal' }}>Instituto D'Or</p>
+              <p className="text-[10px] text-[#1C3D5A]/50" style={{ fontStyle: 'normal' }}>Urologia · São Paulo</p>
             </div>
           </div>
         </motion.div>
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFBFD] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FEFEFE] to-transparent" />
     </section>
   );
 }

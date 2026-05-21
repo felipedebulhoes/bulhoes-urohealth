@@ -56,12 +56,12 @@ export default function InsuranceSection() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-10 bg-[#0D9488]" />
-              <span className="text-[#0D9488] text-sm font-semibold uppercase tracking-[0.15em]">
+              <div className="h-px w-10 bg-[#B87333]" />
+              <span className="text-[#B87333] text-sm font-semibold uppercase tracking-[0.15em]">
                 Convênios Aceitos
               </span>
             </div>
-            <h2 className="text-3xl lg:text-4xl text-[#0A2540] leading-tight">
+            <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight">
               Planos de Saúde
             </h2>
           </motion.div>
@@ -72,10 +72,10 @@ export default function InsuranceSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex items-end"
           >
-            <p className="text-base text-[#0A2540]/60 leading-relaxed">
-              Atendo por diversos convênios no <strong className="text-[#0A2540]/80">Campinas Day Hospital</strong> e no{" "}
-              <strong className="text-[#0A2540]/80">Centro Médico São Luiz Campinas (Rede D'Or)</strong>.
-              Nas unidades <strong className="text-[#0A2540]/80">Clinovi</strong> (Paulista, Moema, Pinheiros e SBC), o atendimento é exclusivamente particular,
+            <p className="text-base text-[#1C3D5A]/60 leading-relaxed">
+              Atendo por diversos convênios no <strong className="text-[#1C3D5A]/80">Campinas Day Hospital</strong> e no{" "}
+              <strong className="text-[#1C3D5A]/80">Centro Médico São Luiz Campinas (Rede D'Or)</strong>.
+              Nas unidades <strong className="text-[#1C3D5A]/80">Clinovi</strong> (Paulista, Moema, Pinheiros e SBC), o atendimento é exclusivamente particular,
               com pagamento via PIX, cartão de crédito ou débito no local antes da consulta.
               Teleconsulta disponível para todo o Brasil.
             </p>
@@ -90,14 +90,14 @@ export default function InsuranceSection() {
               initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
-              className="bg-white rounded-lg border border-[#0A2540]/6 p-5 flex gap-4 items-start"
+              className="bg-white rounded-lg border border-[#1C3D5A]/6 p-5 flex gap-4 items-start"
             >
-              <div className="w-10 h-10 rounded-md bg-[#0D9488]/10 flex items-center justify-center shrink-0">
-                <item.icon className="w-5 h-5 text-[#0D9488]" />
+              <div className="w-10 h-10 rounded-md bg-[#B87333]/10 flex items-center justify-center shrink-0">
+                <item.icon className="w-5 h-5 text-[#B87333]" />
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-[#0A2540] mb-1">{item.title}</h4>
-                <p className="text-xs text-[#0A2540]/50 leading-relaxed">{item.desc}</p>
+                <h4 className="text-sm font-semibold text-[#1C3D5A] mb-1">{item.title}</h4>
+                <p className="text-xs text-[#1C3D5A]/50 leading-relaxed">{item.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -116,25 +116,25 @@ export default function InsuranceSection() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.3, delay: 0.35 + i * 0.04 }}
-                className="group bg-white rounded-lg border border-[#0A2540]/6 hover:border-[#0D9488]/30 hover:shadow-md hover:shadow-[#0D9488]/5 transition-all duration-300 p-4 flex items-center gap-3"
+                className="group bg-white rounded-lg border border-[#1C3D5A]/6 hover:border-[#B87333]/30 hover:shadow-md hover:shadow-[#B87333]/5 transition-all duration-300 p-4 flex items-center gap-3"
               >
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
                   insurer.category === "premium"
-                    ? "bg-[#0D9488]/10"
-                    : "bg-[#0A2540]/5"
+                    ? "bg-[#B87333]/10"
+                    : "bg-[#1C3D5A]/5"
                 }`}>
                   <ShieldCheck className={`w-4 h-4 ${
                     insurer.category === "premium"
-                      ? "text-[#0D9488]"
-                      : "text-[#0A2540]/40"
+                      ? "text-[#B87333]"
+                      : "text-[#1C3D5A]/40"
                   }`} />
                 </div>
                 <div>
-                  <span className="text-sm font-medium text-[#0A2540]/80 group-hover:text-[#0A2540] transition-colors">
+                  <span className="text-sm font-medium text-[#1C3D5A]/80 group-hover:text-[#1C3D5A] transition-colors">
                     {insurer.name}
                   </span>
                   {insurer.note && (
-                    <span className="block text-[10px] text-[#0D9488]/70 mt-0.5">{insurer.note}</span>
+                    <span className="block text-[10px] text-[#B87333]/70 mt-0.5">{insurer.note}</span>
                   )}
                 </div>
               </motion.div>
@@ -147,10 +147,10 @@ export default function InsuranceSection() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-8 flex items-start gap-2 bg-[#0D9488]/5 rounded-lg p-4"
+          className="mt-8 flex items-start gap-2 bg-[#B87333]/5 rounded-lg p-4"
         >
-          <Info className="w-4 h-4 text-[#0D9488] mt-0.5 shrink-0" />
-          <p className="text-xs text-[#0A2540]/50 leading-relaxed">
+          <Info className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
+          <p className="text-xs text-[#1C3D5A]/50 leading-relaxed">
             A cobertura pode variar conforme o plano contratado. Alguns convênios cobrem apenas procedimentos cirúrgicos.
             Recomendamos confirmar a cobertura diretamente com sua operadora ou entrar em contato conosco antes de agendar.
             Fonte: Campinas Day Hospital (2026).

@@ -26,10 +26,10 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-r from-[#0A2540] to-[#0D3B66] relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-r from-[#1C3D5A] to-[#0D3B66] relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#0D9488]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0D9488]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#B87333]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#B87333]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-10">
@@ -40,7 +40,7 @@ export default function NewsletterSection() {
             viewport={{ once: true }}
             className="flex-1 text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 text-[#0D9488] rounded-full text-xs font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 text-[#B87333] rounded-full text-xs font-medium mb-4">
               <Mail className="w-3.5 h-3.5" />
               Newsletter Saúde Masculina
             </div>
@@ -72,7 +72,7 @@ export default function NewsletterSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10"
               >
-                <CheckCircle2 className="w-12 h-12 text-[#0D9488] mx-auto mb-4" />
+                <CheckCircle2 className="w-12 h-12 text-[#B87333] mx-auto mb-4" />
                 <h3 className="text-lg font-bold text-white mb-2">Cadastro Realizado!</h3>
                 <p className="text-white/70 text-sm">
                   Obrigado, {name}! Você receberá nossas dicas de saúde urológica em breve.
@@ -87,7 +87,7 @@ export default function NewsletterSection() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-[#0D9488] transition-colors text-sm"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-[#B87333] transition-colors text-sm"
                   />
                   <input
                     type="email"
@@ -95,12 +95,12 @@ export default function NewsletterSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-[#0D9488] transition-colors text-sm"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-[#B87333] transition-colors text-sm"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#0D9488] text-white rounded-lg font-semibold hover:bg-[#0B8278] transition-colors text-sm"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#B87333] text-white rounded-lg font-semibold hover:bg-[#0B8278] transition-colors text-sm"
                 >
                   <Send className="w-4 h-4" /> Quero Receber as Dicas
                 </button>

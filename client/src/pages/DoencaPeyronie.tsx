@@ -320,10 +320,10 @@ const references = [
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; light: string }> = {
-  teal: { bg: "bg-teal-500", text: "text-teal-700", border: "border-teal-200", light: "bg-teal-50" },
+  teal: { bg: "bg-amber-500", text: "text-amber-700", border: "border-amber-200", light: "bg-amber-50" },
   red: { bg: "bg-red-500", text: "text-red-700", border: "border-red-200", light: "bg-red-50" },
   blue: { bg: "bg-blue-500", text: "text-blue-700", border: "border-blue-200", light: "bg-blue-50" },
-  emerald: { bg: "bg-emerald-500", text: "text-emerald-700", border: "border-emerald-200", light: "bg-emerald-50" },
+  emerald: { bg: "bg-amber-500", text: "text-amber-700", border: "border-amber-200", light: "bg-amber-50" },
   violet: { bg: "bg-violet-500", text: "text-violet-700", border: "border-violet-200", light: "bg-violet-50" },
 };
 
@@ -541,7 +541,7 @@ export default function DoencaPeyronie() {
                         <h4 className="font-semibold text-gray-900">{tx.name}</h4>
                         <div className="flex items-center gap-1.5 shrink-0">
                           {tx.recommended ? (
-                            <span className="text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">Recomendado</span>
+                            <span className="text-xs font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Recomendado</span>
                           ) : (
                             <span className="text-xs font-medium text-red-700 bg-red-50 px-2 py-0.5 rounded-full">Não recomendado</span>
                           )}
@@ -679,11 +679,11 @@ export default function DoencaPeyronie() {
                       </div>
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <p className="text-sm font-semibold text-emerald-700 mb-2">Vantagens</p>
+                          <p className="text-sm font-semibold text-amber-700 mb-2">Vantagens</p>
                           <ul className="space-y-1.5">
                             {option.pros.map((p, pi) => (
                               <li key={pi} className="flex items-start gap-2 text-sm text-gray-600">
-                                <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                                <Check className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
                                 <span>{p}</span>
                               </li>
                             ))}

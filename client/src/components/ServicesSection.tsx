@@ -42,7 +42,7 @@ export default function ServicesSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <div className="rounded-lg overflow-hidden shadow-2xl shadow-[#0A2540]/10 mb-8">
+            <div className="rounded-lg overflow-hidden shadow-2xl shadow-[#1C3D5A]/10 mb-8">
               <img
                 src={LECTURE_IMG}
                 alt="Dr. Felipe no Congresso UroOnco 2025"
@@ -54,10 +54,10 @@ export default function ServicesSection() {
               {features.map((feat) => (
                 <div
                   key={feat.text}
-                  className="flex items-center gap-2 bg-[#0A2540]/5 rounded-md px-4 py-2.5"
+                  className="flex items-center gap-2 bg-[#1C3D5A]/5 rounded-md px-4 py-2.5"
                 >
-                  <feat.icon className="w-4 h-4 text-[#0D9488]" />
-                  <span className="text-sm font-medium text-[#0A2540]/70 font-sans">
+                  <feat.icon className="w-4 h-4 text-[#B87333]" />
+                  <span className="text-sm font-medium text-[#1C3D5A]/70 font-sans">
                     {feat.text}
                   </span>
                 </div>
@@ -72,15 +72,15 @@ export default function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-10 bg-[#0D9488]" />
-              <span className="text-[#0D9488] text-sm font-semibold uppercase tracking-[0.15em]">
+              <div className="h-px w-10 bg-[#B87333]" />
+              <span className="text-[#B87333] text-sm font-semibold uppercase tracking-[0.15em]">
                 Serviços & Valores
               </span>
             </div>
-            <h2 className="text-3xl lg:text-4xl text-[#0A2540] leading-tight mb-3">
+            <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight mb-3">
               Consultas e Procedimentos
             </h2>
-            <p className="text-[#0A2540]/60 font-sans mb-8 text-base">
+            <p className="text-[#1C3D5A]/60 font-sans mb-8 text-base">
               Atendimento presencial em São Paulo e Campinas, além de teleconsulta. Mais de 30 procedimentos disponíveis.
             </p>
 
@@ -92,21 +92,21 @@ export default function ServicesSection() {
                   initial={{ opacity: 0, x: 10 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
-                  className={`flex items-center justify-between py-3.5 border-b border-[#0A2540]/8 ${
-                    service.highlight ? "bg-[#0D9488]/3 -mx-3 px-3 rounded-md" : ""
+                  className={`flex items-center justify-between py-3.5 border-b border-[#1C3D5A]/8 ${
+                    service.highlight ? "bg-[#B87333]/3 -mx-3 px-3 rounded-md" : ""
                   }`}
                 >
-                  <span className="text-sm font-medium text-[#0A2540] font-sans">
+                  <span className="text-sm font-medium text-[#1C3D5A] font-sans">
                     {service.name}
                   </span>
-                  <span className="text-sm font-semibold text-[#0D9488] font-sans whitespace-nowrap ml-4">
+                  <span className="text-sm font-semibold text-[#B87333] font-sans whitespace-nowrap ml-4">
                     {service.price}
                   </span>
                 </motion.div>
               ))}
             </div>
 
-            <p className="text-xs text-[#0A2540]/40 font-sans mb-6">
+            <p className="text-xs text-[#1C3D5A]/40 font-sans mb-6">
               + 30 serviços adicionais disponíveis. Valores podem variar conforme convênio e procedimento.
             </p>
 
@@ -115,7 +115,7 @@ export default function ServicesSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white h-11 px-6 text-sm font-semibold rounded-md">
+              <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white h-11 px-6 text-sm font-semibold rounded-md">
                 Ver Todos os Serviços
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>

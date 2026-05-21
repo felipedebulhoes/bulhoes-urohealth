@@ -215,7 +215,7 @@ const references = [
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; light: string }> = {
-  teal: { bg: "bg-teal-500", text: "text-teal-700", border: "border-teal-200", light: "bg-teal-50" },
+  teal: { bg: "bg-amber-500", text: "text-amber-700", border: "border-amber-200", light: "bg-amber-50" },
   violet: { bg: "bg-violet-500", text: "text-violet-700", border: "border-violet-200", light: "bg-violet-50" },
   amber: { bg: "bg-amber-500", text: "text-amber-700", border: "border-amber-200", light: "bg-amber-50" },
   red: { bg: "bg-red-500", text: "text-red-700", border: "border-red-200", light: "bg-red-50" },
@@ -233,7 +233,7 @@ export default function IncontinenciaUrinaria() {
       title="Incontinência Urinária Masculina"
       subtitle="Causas, Diagnóstico e Tratamentos Baseados em Evidências"
       description="Guia completo sobre incontinência urinária masculina: tipos, classificação de gravidade, exercícios do assoalho pélvico, sling masculino e esfíncter urinário artificial. Baseado nas guidelines AUA 2024 e EAU 2025."
-      accentColor="#0D9488"
+      accentColor="#B87333"
       metaTitle="Incontinência Urinária Masculina: Tratamentos | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre incontinência urinária masculina pós-prostatectomia. Exercícios de Kegel, sling masculino, esfíncter artificial. AUA 2024 + EAU 2025. Urologista em Campinas e São Paulo."
     >
@@ -339,7 +339,7 @@ export default function IncontinenciaUrinaria() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-teal-600 text-white">
+                <tr className="bg-amber-600 text-white">
                   <th className="px-4 py-3 text-left rounded-tl-lg">Gravidade</th>
                   <th className="px-4 py-3 text-left">Absorventes/Dia</th>
                   <th className="px-4 py-3 text-left rounded-tr-lg">Descrição</th>
@@ -387,13 +387,13 @@ export default function IncontinenciaUrinaria() {
                 className="flex gap-4 items-start"
               >
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center shadow-md">
+                  <div className="w-12 h-12 rounded-full bg-amber-600 flex items-center justify-center shadow-md">
                     <step.icon className="w-5 h-5 text-white" />
                   </div>
-                  {i < timeline.length - 1 && <div className="w-0.5 h-16 bg-teal-200"></div>}
+                  {i < timeline.length - 1 && <div className="w-0.5 h-16 bg-amber-200"></div>}
                 </div>
                 <div className="pb-8">
-                  <span className="text-sm font-bold text-teal-600 uppercase tracking-wide">{step.period}</span>
+                  <span className="text-sm font-bold text-amber-600 uppercase tracking-wide">{step.period}</span>
                   <p className="text-gray-700 mt-1">{step.action}</p>
                 </div>
               </motion.div>
@@ -421,18 +421,18 @@ export default function IncontinenciaUrinaria() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-gray-50 rounded-xl p-6 border border-gray-200"
               >
-                <div className="w-12 h-12 rounded-xl bg-teal-600 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-600 flex items-center justify-center mb-4">
                   <treatment.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{treatment.name}</h3>
                 <p className="text-gray-700 text-sm mb-3">{treatment.description}</p>
-                <div className="bg-teal-50 rounded-lg p-3 mb-4">
-                  <p className="text-xs font-medium text-teal-700">{treatment.evidence}</p>
+                <div className="bg-amber-50 rounded-lg p-3 mb-4">
+                  <p className="text-xs font-medium text-amber-700">{treatment.evidence}</p>
                 </div>
                 <ul className="space-y-2">
                   {treatment.details.map((detail, j) => (
                     <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
-                      <Check className="w-4 h-4 text-teal-500 mt-0.5 shrink-0" />
+                      <Check className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
                       <span>{detail}</span>
                     </li>
                   ))}
@@ -467,12 +467,12 @@ export default function IncontinenciaUrinaria() {
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-teal-600 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-xl bg-amber-600 flex items-center justify-center">
                       <option.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-gray-900">{option.name}</h3>
-                      <span className="text-sm text-teal-600 font-medium">Indicação: {option.indication}</span>
+                      <span className="text-sm text-amber-600 font-medium">Indicação: {option.indication}</span>
                     </div>
                   </div>
                   {openSurgery === i ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
@@ -489,9 +489,9 @@ export default function IncontinenciaUrinaria() {
                         <h4 className="font-semibold text-gray-900 mb-2">Como Funciona</h4>
                         <p className="text-gray-700 text-sm">{option.howItWorks}</p>
                       </div>
-                      <div className="bg-teal-50 rounded-lg p-4">
-                        <h4 className="font-semibold text-teal-800 mb-2">Resultados</h4>
-                        <p className="text-teal-700 text-sm">{option.results}</p>
+                      <div className="bg-amber-50 rounded-lg p-4">
+                        <h4 className="font-semibold text-amber-800 mb-2">Resultados</h4>
+                        <p className="text-amber-700 text-sm">{option.results}</p>
                       </div>
                       <div className="bg-blue-50 rounded-lg p-4">
                         <h4 className="font-semibold text-blue-800 mb-2">Nível de Evidência</h4>
@@ -502,7 +502,7 @@ export default function IncontinenciaUrinaria() {
                         <ul className="space-y-2">
                           {option.considerations.map((item, j) => (
                             <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
-                              <ArrowRight className="w-4 h-4 text-teal-500 mt-0.5 shrink-0" />
+                              <ArrowRight className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -529,7 +529,7 @@ export default function IncontinenciaUrinaria() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-teal-600 text-white">
+                <tr className="bg-amber-600 text-white">
                   <th className="px-4 py-3 text-left rounded-tl-lg">Critério</th>
                   <th className="px-4 py-3 text-center">Sling Masculino</th>
                   <th className="px-4 py-3 text-center rounded-tr-lg">Esfíncter Artificial (AUS)</th>
@@ -560,20 +560,20 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* Destaque Campinas */}
-      <section className="py-16 bg-teal-600 text-white">
+      <section className="py-16 bg-amber-600 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <Stethoscope className="w-12 h-12 mx-auto mb-4 opacity-80" />
             <h2 className="text-3xl font-bold mb-4">Tratamento em Campinas e São Paulo</h2>
-            <p className="text-teal-100 text-lg mb-6 max-w-2xl mx-auto">
+            <p className="text-amber-100 text-lg mb-6 max-w-2xl mx-auto">
               O Dr. Felipe de Bulhões realiza avaliação completa da incontinência urinária masculina, incluindo estudo urodinâmico,
               e oferece todas as opções de tratamento — desde fisioterapia pélvica até implante de esfíncter artificial e sling masculino.
               Procedimentos cirúrgicos são realizados no <strong>Campinas Day Hospital</strong>.
             </p>
             <div className="bg-white/10 rounded-xl p-6 max-w-md mx-auto">
               <p className="font-semibold text-lg mb-1">Campinas Day Hospital</p>
-              <p className="text-teal-100">Av. Benjamin Constant, 1991</p>
-              <p className="text-teal-100">Cambuí, Campinas — SP</p>
+              <p className="text-amber-100">Av. Benjamin Constant, 1991</p>
+              <p className="text-amber-100">Cambuí, Campinas — SP</p>
             </div>
           </motion.div>
         </div>

@@ -1,7 +1,7 @@
 /*
- * Design: Clinical Precision — Swiss Medical Design
- * Header: Fixed top nav with transparency, clean typography, teal accent CTA
- * Includes dropdown for educational pages
+ * Design: Dr. Felipe de Bulhões — Identidade Visual
+ * Header: Fixed top nav, Azul do Nilo (#1C3D5A) + Cobre (#B87333) accent
+ * Tipografia: Callingstone (títulos) + Roboto (corpo)
  */
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -89,7 +89,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-border"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#C4C4C4]/30"
           : "bg-transparent"
       }`}
     >
@@ -97,9 +97,9 @@ export default function Header() {
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/logo_min8_d351a844.webp"
+            src="/manus-storage/logo-landscape_be6628b3.svg"
             alt="Dr. Felipe de Bulhões - Urologista"
-            className={`h-14 lg:h-16 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`} style={{width: '190px', height: '128px'}}
+            className={`h-12 lg:h-14 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
           />
         </a>
 
@@ -110,10 +110,10 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => handleNavClick(link.href)}
-              className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 ${
+              className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
                 scrolled
-                  ? "text-[#0A2540]/70 hover:text-[#0A2540] hover:bg-[#0A2540]/5"
-                  : "text-white/80 hover:text-white"
+                  ? "text-[#1C3D5A]/70 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
             >
               {link.label}
@@ -125,10 +125,10 @@ export default function Header() {
             <button
               onClick={() => setEduOpen(!eduOpen)}
               onMouseEnter={() => setEduOpen(true)}
-              className={`flex items-center gap-1 px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 ${
+              className={`flex items-center gap-1 px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
                 scrolled
-                  ? "text-[#0A2540]/70 hover:text-[#0A2540] hover:bg-[#0A2540]/5"
-                  : "text-white/80 hover:text-white"
+                  ? "text-[#1C3D5A]/70 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
             >
               Educativo
@@ -143,7 +143,7 @@ export default function Header() {
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.15 }}
                   onMouseLeave={() => setEduOpen(false)}
-                  className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-xl border border-[#0A2540]/8 overflow-hidden py-2"
+                  className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-xl border border-[#1C3D5A]/8 overflow-hidden py-2"
                 >
                   {educationalLinks.map((link) => (
                     <Link
@@ -151,7 +151,7 @@ export default function Header() {
                       href={link.href}
                       onClick={() => setEduOpen(false)}
                     >
-                      <div className="px-4 py-2.5 text-sm text-[#0A2540]/70 hover:bg-[#0D9488]/5 hover:text-[#0D9488] transition-colors cursor-pointer">
+                      <div className="px-4 py-2.5 text-sm text-[#1C3D5A]/70 hover:bg-[#B87333]/5 hover:text-[#B87333] transition-colors cursor-pointer">
                         {link.label}
                       </div>
                     </Link>
@@ -164,10 +164,10 @@ export default function Header() {
           {quickLinks.map((link) => (
             link.href.startsWith("/") ? (
               <Link key={link.href} href={link.href}>
-                <span className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 cursor-pointer ${
+                <span className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md cursor-pointer ${
                   scrolled
-                    ? "text-[#0D9488] hover:text-[#0B7C72] hover:bg-[#0D9488]/5"
-                    : "text-[#5EEAD4] hover:text-white"
+                    ? "text-[#B87333] hover:text-[#8B5A2B] hover:bg-[#B87333]/5"
+                    : "text-[#D4884A] hover:text-white hover:bg-white/10"
                 }`}>
                   {link.label}
                 </span>
@@ -177,10 +177,10 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 ${
+                className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
                   scrolled
-                    ? "text-[#0A2540]/70 hover:text-[#0A2540] hover:bg-[#0A2540]/5"
-                    : "text-white/80 hover:text-white"
+                    ? "text-[#1C3D5A]/70 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {link.label}
@@ -193,10 +193,10 @@ export default function Header() {
               key={link.href}
               href={link.href.startsWith("/") ? link.href : link.href}
               onClick={() => handleNavClick(link.href)}
-              className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md hover:bg-white/10 ${
+              className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
                 scrolled
-                  ? "text-[#0A2540]/70 hover:text-[#0A2540] hover:bg-[#0A2540]/5"
-                  : "text-white/80 hover:text-white"
+                  ? "text-[#1C3D5A]/70 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
             >
               {link.label}
@@ -211,7 +211,7 @@ export default function Header() {
             onClick={() => trackCtaClick("agendar_consulta", "header_desktop")}
           >
             <Button
-              className="bg-[#0D9488] hover:bg-[#0B7C72] text-white rounded-md px-5 h-10 text-sm font-semibold shadow-md"
+              className="bg-[#B87333] hover:bg-[#D4884A] text-white rounded-md px-5 h-10 text-sm font-semibold shadow-md"
             >
               <Phone className="w-4 h-4 mr-2" />
               Agendar Consulta
@@ -223,7 +223,7 @@ export default function Header() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className={`lg:hidden p-2 rounded-md transition-colors ${
-            scrolled ? "text-[#0A2540]" : "text-white"
+            scrolled ? "text-[#1C3D5A]" : "text-white"
           }`}
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -237,7 +237,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-border overflow-hidden"
+            className="lg:hidden bg-white border-b border-[#C4C4C4]/30 overflow-hidden"
           >
             <nav className="container py-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
               {mainNavLinks.slice(0, 3).map((link) => (
@@ -245,7 +245,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="px-4 py-3 text-[#0A2540] font-medium text-sm rounded-md hover:bg-[#0A2540]/5 transition-colors"
+                  className="px-4 py-3 text-[#1C3D5A] font-medium text-sm rounded-md hover:bg-[#1C3D5A]/5 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -254,7 +254,7 @@ export default function Header() {
               {/* Mobile Educativo accordion */}
               <button
                 onClick={() => setMobileEduOpen(!mobileEduOpen)}
-                className="flex items-center justify-between px-4 py-3 text-[#0A2540] font-medium text-sm rounded-md hover:bg-[#0A2540]/5 transition-colors"
+                className="flex items-center justify-between px-4 py-3 text-[#1C3D5A] font-medium text-sm rounded-md hover:bg-[#1C3D5A]/5 transition-colors"
               >
                 Conteúdo Educativo
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileEduOpen ? 'rotate-180' : ''}`} />
@@ -273,7 +273,7 @@ export default function Header() {
                         href={link.href}
                         onClick={() => { setMobileOpen(false); setMobileEduOpen(false); }}
                       >
-                        <div className="px-8 py-2.5 text-[#0A2540]/60 text-sm hover:text-[#0D9488] transition-colors cursor-pointer">
+                        <div className="px-8 py-2.5 text-[#1C3D5A]/60 text-sm hover:text-[#B87333] transition-colors cursor-pointer">
                           {link.label}
                         </div>
                       </Link>
@@ -283,7 +283,7 @@ export default function Header() {
               </AnimatePresence>
 
               <Link href="/primeira-consulta" onClick={() => setMobileOpen(false)}>
-                <div className="px-4 py-3 text-[#0D9488] font-semibold text-sm rounded-md hover:bg-[#0D9488]/5 transition-colors cursor-pointer">
+                <div className="px-4 py-3 text-[#B87333] font-semibold text-sm rounded-md hover:bg-[#B87333]/5 transition-colors cursor-pointer">
                   Primeira Consulta
                 </div>
               </Link>
@@ -293,7 +293,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href.startsWith("/") ? link.href : link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="px-4 py-3 text-[#0A2540] font-medium text-sm rounded-md hover:bg-[#0A2540]/5 transition-colors"
+                  className="px-4 py-3 text-[#1C3D5A] font-medium text-sm rounded-md hover:bg-[#1C3D5A]/5 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -307,7 +307,7 @@ export default function Header() {
                 }}
                 className="mt-2"
               >
-                <Button className="w-full bg-[#0D9488] hover:bg-[#0B7C72] text-white">
+                <Button className="w-full bg-[#B87333] hover:bg-[#D4884A] text-white">
                   <Phone className="w-4 h-4 mr-2" />
                   Agendar Consulta
                 </Button>

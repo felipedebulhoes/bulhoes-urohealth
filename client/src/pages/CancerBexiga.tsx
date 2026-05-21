@@ -531,8 +531,8 @@ export default function CancerBexiga() {
         className="mb-12"
       >
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center">
-            <CalendarCheck className="w-5 h-5 text-teal-700" />
+          <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+            <CalendarCheck className="w-5 h-5 text-amber-700" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900">Seguimento e Acompanhamento</h2>
         </div>
@@ -543,11 +543,11 @@ export default function CancerBexiga() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-teal-50">
-                  <th className="text-left p-3 font-semibold text-teal-900 border-b border-teal-200">Grupo de Risco</th>
-                  <th className="text-left p-3 font-semibold text-teal-900 border-b border-teal-200">Cistoscopia</th>
-                  <th className="text-left p-3 font-semibold text-teal-900 border-b border-teal-200">Citologia</th>
-                  <th className="text-left p-3 font-semibold text-teal-900 border-b border-teal-200">Imagem (Uro-TC)</th>
+                <tr className="bg-amber-50">
+                  <th className="text-left p-3 font-semibold text-amber-900 border-b border-amber-200">Grupo de Risco</th>
+                  <th className="text-left p-3 font-semibold text-amber-900 border-b border-amber-200">Cistoscopia</th>
+                  <th className="text-left p-3 font-semibold text-amber-900 border-b border-amber-200">Citologia</th>
+                  <th className="text-left p-3 font-semibold text-amber-900 border-b border-amber-200">Imagem (Uro-TC)</th>
                 </tr>
               </thead>
               <tbody>
@@ -588,33 +588,33 @@ export default function CancerBexiga() {
         className="mb-12"
       >
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
-            <Shield className="w-5 h-5 text-emerald-700" />
+          <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+            <Shield className="w-5 h-5 text-amber-700" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900">Prevenção</h2>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm">
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
-              <h4 className="font-semibold text-emerald-800 mb-2">Cessação do Tabagismo</h4>
+            <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
+              <h4 className="font-semibold text-amber-800 mb-2">Cessação do Tabagismo</h4>
               <p className="text-sm text-gray-700">
                 A medida preventiva mais importante. Parar de fumar reduz significativamente o risco de desenvolver câncer de bexiga e de recorrência após o tratamento. O risco diminui progressivamente com o tempo de cessação.
               </p>
             </div>
-            <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
-              <h4 className="font-semibold text-emerald-800 mb-2">Proteção Ocupacional</h4>
+            <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
+              <h4 className="font-semibold text-amber-800 mb-2">Proteção Ocupacional</h4>
               <p className="text-sm text-gray-700">
                 Uso adequado de EPIs em ambientes com exposição a substâncias químicas. Seguir rigorosamente as normas de segurança do trabalho em indústrias de risco.
               </p>
             </div>
-            <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
-              <h4 className="font-semibold text-emerald-800 mb-2">Hidratação Adequada</h4>
+            <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
+              <h4 className="font-semibold text-amber-800 mb-2">Hidratação Adequada</h4>
               <p className="text-sm text-gray-700">
                 Ingestão adequada de líquidos para diluir substâncias potencialmente carcinogênicas na urina e reduzir o tempo de contato com a mucosa vesical.
               </p>
             </div>
-            <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
-              <h4 className="font-semibold text-emerald-800 mb-2">Dieta Mediterrânea</h4>
+            <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
+              <h4 className="font-semibold text-amber-800 mb-2">Dieta Mediterrânea</h4>
               <p className="text-sm text-gray-700">
                 Rica em vegetais, frutas e gorduras não-saturadas (azeite). Associada a redução do risco de câncer de bexiga (HR 0,85). Evitar dieta ocidental rica em gorduras saturadas.
               </p>

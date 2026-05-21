@@ -18,7 +18,7 @@ const locations = [
   {
     name: "Campinas Day Hospital",
     type: "Convênios & Particular",
-    typeColor: "text-[#5EEAD4] bg-[#5EEAD4]/10",
+    typeColor: "text-[#D4884A] bg-[#D4884A]/10",
     image: CAMPINAS_IMG,
     address: "Av. Benjamin Constant, 1991",
     neighborhood: "Cambuí, Campinas - SP",
@@ -88,7 +88,7 @@ const locations = [
   {
     name: "CEMED - Rede D'Or - São Luiz Campinas",
     type: "Convênios & Particular",
-    typeColor: "text-[#5EEAD4] bg-[#5EEAD4]/10",
+    typeColor: "text-[#D4884A] bg-[#D4884A]/10",
     image: SAO_LUIZ_CAMPINAS_IMG,
     address: "Av. Andrade Neves, 863, 4° andar",
     neighborhood: "Centro, Campinas - SP",
@@ -115,15 +115,15 @@ export default function LocationSection() {
           className="mb-14"
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-10 bg-[#0D9488]" />
-            <span className="text-[#0D9488] text-sm font-semibold uppercase tracking-[0.15em]">
+            <div className="h-px w-10 bg-[#B87333]" />
+            <span className="text-[#B87333] text-sm font-semibold uppercase tracking-[0.15em]">
               Onde Atendo
             </span>
           </div>
-          <h2 className="text-3xl lg:text-4xl text-[#0A2540] leading-tight max-w-xl">
+          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight max-w-xl">
             Consultórios e Atendimento
           </h2>
-          <p className="text-[#0A2540]/50 font-sans mt-3 max-w-2xl text-base">
+          <p className="text-[#1C3D5A]/50 font-sans mt-3 max-w-2xl text-base">
             Atendimento presencial em 6 locais — Campinas, São Paulo e ABC — além de teleconsulta por vídeo.
           </p>
         </motion.div>
@@ -136,7 +136,7 @@ export default function LocationSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-              className="bg-[#F8FAFB] rounded-xl overflow-hidden border border-[#0A2540]/6 hover:shadow-lg transition-shadow"
+              className="bg-[#F8FAFB] rounded-xl overflow-hidden border border-[#1C3D5A]/6 hover:shadow-lg transition-shadow"
             >
               {/* Photo */}
               <div className="relative h-48 overflow-hidden">
@@ -159,17 +159,17 @@ export default function LocationSection() {
 
                 <div className="space-y-3">
                   <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-[#0D9488] mt-0.5 shrink-0" />
+                    <MapPin className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm text-[#0A2540] font-sans font-medium">{loc.address}</p>
-                      <p className="text-xs text-[#0A2540]/50 font-sans">{loc.neighborhood}</p>
+                      <p className="text-sm text-[#1C3D5A] font-sans font-medium">{loc.address}</p>
+                      <p className="text-xs text-[#1C3D5A]/50 font-sans">{loc.neighborhood}</p>
                     </div>
                   </div>
 
                   {loc.phone && (
                     <div className="flex items-center gap-2.5">
-                      <Phone className="w-4 h-4 text-[#0D9488] shrink-0" />
-                      <span className="text-sm text-[#0A2540]/70 font-sans">{loc.phone}</span>
+                      <Phone className="w-4 h-4 text-[#B87333] shrink-0" />
+                      <span className="text-sm text-[#1C3D5A]/70 font-sans">{loc.phone}</span>
                     </div>
                   )}
 
@@ -181,28 +181,28 @@ export default function LocationSection() {
                   )}
 
                   <div className="flex items-center gap-2.5">
-                    <Clock className="w-4 h-4 text-[#0D9488] shrink-0" />
-                    <span className="text-xs text-[#0A2540]/50 font-sans">{loc.hours}</span>
+                    <Clock className="w-4 h-4 text-[#B87333] shrink-0" />
+                    <span className="text-xs text-[#1C3D5A]/50 font-sans">{loc.hours}</span>
                   </div>
 
                   <div className="flex items-center gap-2.5">
-                    <Building2 className="w-4 h-4 text-[#0D9488] shrink-0" />
-                    <span className="text-xs text-[#0D9488] font-semibold font-sans">{loc.highlight}</span>
+                    <Building2 className="w-4 h-4 text-[#B87333] shrink-0" />
+                    <span className="text-xs text-[#B87333] font-semibold font-sans">{loc.highlight}</span>
                   </div>
                 </div>
 
                 {/* Payment methods (Clinovi) */}
                 {loc.payment && (
-                  <div className="mt-4 pt-4 border-t border-[#0A2540]/6">
+                  <div className="mt-4 pt-4 border-t border-[#1C3D5A]/6">
                     <div className="flex items-center gap-2 mb-2">
-                      <CreditCard className="w-3.5 h-3.5 text-[#0D9488]" />
-                      <span className="text-[10px] uppercase tracking-wider text-[#0A2540]/40 font-semibold">Formas de pagamento</span>
+                      <CreditCard className="w-3.5 h-3.5 text-[#B87333]" />
+                      <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A]/40 font-semibold">Formas de pagamento</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {loc.payment.map((method: string) => (
                         <span
                           key={method}
-                          className="text-[10px] font-medium text-[#0A2540]/50 bg-white rounded px-2 py-1 border border-[#0A2540]/6 font-sans"
+                          className="text-[10px] font-medium text-[#1C3D5A]/50 bg-white rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans"
                         >
                           {method}
                         </span>
@@ -213,16 +213,16 @@ export default function LocationSection() {
 
                 {/* Insurances */}
                 {loc.insurances && (
-                  <div className="mt-4 pt-4 border-t border-[#0A2540]/6">
+                  <div className="mt-4 pt-4 border-t border-[#1C3D5A]/6">
                     <div className="flex items-center gap-2 mb-2">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#0D9488]" />
-                      <span className="text-[10px] uppercase tracking-wider text-[#0A2540]/40 font-semibold">Convênios aceitos</span>
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#B87333]" />
+                      <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A]/40 font-semibold">Convênios aceitos</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {loc.insurances.map((ins) => (
                         <span
                           key={ins}
-                          className="text-[10px] font-medium text-[#0A2540]/50 bg-white rounded px-2 py-1 border border-[#0A2540]/6 font-sans"
+                          className="text-[10px] font-medium text-[#1C3D5A]/50 bg-white rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans"
                         >
                           {ins}
                         </span>
@@ -240,10 +240,10 @@ export default function LocationSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="bg-gradient-to-r from-[#0A2540] to-[#0D3B5C] rounded-xl p-6 lg:p-8 flex flex-col md:flex-row items-center gap-6"
+          className="bg-gradient-to-r from-[#1C3D5A] to-[#0D3B5C] rounded-xl p-6 lg:p-8 flex flex-col md:flex-row items-center gap-6"
         >
-          <div className="w-16 h-16 rounded-2xl bg-[#0D9488]/20 flex items-center justify-center shrink-0">
-            <Monitor className="w-8 h-8 text-[#5EEAD4]" />
+          <div className="w-16 h-16 rounded-2xl bg-[#B87333]/20 flex items-center justify-center shrink-0">
+            <Monitor className="w-8 h-8 text-[#D4884A]" />
           </div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-lg font-semibold text-white font-sans mb-1">Teleconsulta</h3>
@@ -253,7 +253,7 @@ export default function LocationSection() {
             </p>
           </div>
           <div className="text-center md:text-right shrink-0">
-            <p className="text-2xl font-bold text-[#5EEAD4] font-sans">R$ 800</p>
+            <p className="text-2xl font-bold text-[#D4884A] font-sans">R$ 800</p>
             <p className="text-xs text-white/40 font-sans mt-1">A partir de</p>
           </div>
           <a
@@ -264,7 +264,7 @@ export default function LocationSection() {
             }}
             className="shrink-0"
           >
-            <button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white rounded-lg px-6 py-3 text-sm font-semibold transition-colors">
+            <button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white rounded-lg px-6 py-3 text-sm font-semibold transition-colors">
               Agendar Teleconsulta
             </button>
           </a>
@@ -278,8 +278,8 @@ export default function LocationSection() {
           className="mt-10"
         >
           <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-[#0D9488]" />
-            <span className="text-[#0D9488] text-xs font-semibold uppercase tracking-[0.15em]">
+            <div className="h-px w-8 bg-[#B87333]" />
+            <span className="text-[#B87333] text-xs font-semibold uppercase tracking-[0.15em]">
               Mapa Interativo
             </span>
           </div>

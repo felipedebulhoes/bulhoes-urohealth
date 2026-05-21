@@ -15,7 +15,7 @@ const CATEGORIES = [
 ];
 
 function getFileIcon(mimeType: string) {
-  if (mimeType.startsWith("image/")) return <Image className="w-5 h-5 text-emerald-500" />;
+  if (mimeType.startsWith("image/")) return <Image className="w-5 h-5 text-amber-500" />;
   if (mimeType.startsWith("video/")) return <Film className="w-5 h-5 text-blue-500" />;
   if (mimeType.startsWith("audio/")) return <Music className="w-5 h-5 text-purple-500" />;
   if (mimeType.includes("pdf")) return <FileText className="w-5 h-5 text-red-500" />;
@@ -41,7 +41,7 @@ function CopyButton({ text }: { text: string }) {
       className="p-1.5 rounded-md hover:bg-gray-100 transition-colors"
       title="Copiar URL"
     >
-      {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4 text-gray-400" />}
+      {copied ? <Check className="w-4 h-4 text-amber-500" /> : <Copy className="w-4 h-4 text-gray-400" />}
     </button>
   );
 }
@@ -122,7 +122,7 @@ export default function AdminFiles() {
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <Loader2 className="w-8 h-8 animate-spin text-[#0D9488]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#B87333]" />
       </div>
     );
   }
@@ -133,7 +133,7 @@ export default function AdminFiles() {
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Acesso Restrito</h1>
           <p className="text-gray-600 mb-4">Esta página é exclusiva para administradores.</p>
-          <Link href="/" className="text-[#0D9488] hover:underline">Voltar ao site</Link>
+          <Link href="/" className="text-[#B87333] hover:underline">Voltar ao site</Link>
         </div>
       </div>
     );
@@ -152,13 +152,13 @@ export default function AdminFiles() {
             </Link>
             <div>
               <h1 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                <FolderOpen className="w-5 h-5 text-[#0D9488]" />
+                <FolderOpen className="w-5 h-5 text-[#B87333]" />
                 Gerenciador de Arquivos
               </h1>
               <p className="text-sm text-gray-500">Upload e gerenciamento de arquivos do site</p>
             </div>
           </div>
-          <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full font-medium">
+          <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full font-medium">
             Admin
           </span>
         </div>
@@ -168,7 +168,7 @@ export default function AdminFiles() {
         {/* Upload area */}
         <div className="bg-white rounded-xl shadow-sm border p-6 mb-8">
           <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-            <Upload className="w-5 h-5 text-[#0D9488]" />
+            <Upload className="w-5 h-5 text-[#B87333]" />
             Upload de Arquivo
           </h2>
 
@@ -180,7 +180,7 @@ export default function AdminFiles() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Ex: Certificado TCBC"
-                className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-[#0D9488] focus:border-transparent outline-none"
+                className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-[#B87333] focus:border-transparent outline-none"
               />
             </div>
             <div>
@@ -188,7 +188,7 @@ export default function AdminFiles() {
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-[#0D9488] focus:border-transparent outline-none bg-white"
+                className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-[#B87333] focus:border-transparent outline-none bg-white"
               >
                 <option value="documentos">Documentos</option>
                 <option value="imagens">Imagens</option>
@@ -204,7 +204,7 @@ export default function AdminFiles() {
             onDrop={handleDrop}
             className={`border-2 border-dashed rounded-xl p-8 text-center transition-colors cursor-pointer ${
               dragOver
-                ? "border-[#0D9488] bg-emerald-50"
+                ? "border-[#B87333] bg-amber-50"
                 : "border-gray-300 hover:border-gray-400"
             }`}
             onClick={() => fileInputRef.current?.click()}
@@ -220,14 +220,14 @@ export default function AdminFiles() {
             />
             {uploading ? (
               <div className="flex flex-col items-center gap-2">
-                <Loader2 className="w-8 h-8 animate-spin text-[#0D9488]" />
+                <Loader2 className="w-8 h-8 animate-spin text-[#B87333]" />
                 <p className="text-sm text-gray-600">Enviando arquivo...</p>
               </div>
             ) : (
               <div className="flex flex-col items-center gap-2">
                 <Upload className="w-8 h-8 text-gray-400" />
                 <p className="text-sm text-gray-600">
-                  Arraste um arquivo aqui ou <span className="text-[#0D9488] font-medium">clique para selecionar</span>
+                  Arraste um arquivo aqui ou <span className="text-[#B87333] font-medium">clique para selecionar</span>
                 </p>
                 <p className="text-xs text-gray-400">Máximo 10MB por arquivo</p>
               </div>
@@ -249,7 +249,7 @@ export default function AdminFiles() {
               onClick={() => setSelectedCategory(cat.value)}
               className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === cat.value
-                  ? "bg-[#0D9488] text-white"
+                  ? "bg-[#B87333] text-white"
                   : "bg-white text-gray-600 hover:bg-gray-100 border"
               }`}
             >
@@ -262,7 +262,7 @@ export default function AdminFiles() {
         <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
           {filesQuery.isLoading ? (
             <div className="p-8 text-center">
-              <Loader2 className="w-6 h-6 animate-spin text-[#0D9488] mx-auto" />
+              <Loader2 className="w-6 h-6 animate-spin text-[#B87333] mx-auto" />
             </div>
           ) : !filesQuery.data?.length ? (
             <div className="p-8 text-center text-gray-500">

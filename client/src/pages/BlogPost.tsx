@@ -49,7 +49,7 @@ export default function BlogPost() {
   if (!post) {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-center">
-        <h1 className="text-2xl text-[#0A2540] mb-4">Artigo não encontrado</h1>
+        <h1 className="text-2xl text-[#1C3D5A] mb-4">Artigo não encontrado</h1>
         <Link href="/blog">
           <Button variant="outline">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -114,11 +114,11 @@ export default function BlogPost() {
       />
 
       {/* Header bar */}
-      <header className="bg-[#0A2540] py-4 sticky top-0 z-50">
+      <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/logo_min8_d351a844.webp"
+              src="/manus-storage/logo-landscape_be6628b3.svg"
               alt="Dr. Felipe de Bulhões - Urologista"
               className="h-12 lg:h-14 w-auto brightness-0 invert"
             />
@@ -146,12 +146,12 @@ export default function BlogPost() {
           alt={post.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540] via-[#0A2540]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1C3D5A] via-[#1C3D5A]/40 to-transparent" />
 
         {/* Title overlay */}
         <div className="absolute bottom-0 left-0 right-0 pb-10 lg:pb-14">
           <div className="container">
-            <span className="inline-block bg-[#0D9488] text-white text-xs font-semibold px-3 py-1.5 rounded-md mb-4">
+            <span className="inline-block bg-[#B87333] text-white text-xs font-semibold px-3 py-1.5 rounded-md mb-4">
               {post.category}
             </span>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white leading-tight max-w-4xl">
@@ -170,21 +170,21 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="flex flex-wrap items-center justify-between gap-4 pb-8 mb-8 border-b border-[#0A2540]/8"
+              className="flex flex-wrap items-center justify-between gap-4 pb-8 mb-8 border-b border-[#1C3D5A]/8"
             >
               <div className="flex items-center gap-4">
                 <img
                   src={post.author.avatar}
                   alt={post.author.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-[#0D9488]/20"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-[#B87333]/20"
                 />
                 <div>
-                  <p className="text-sm font-semibold text-[#0A2540]">{post.author.name}</p>
-                  <p className="text-xs text-[#0A2540]/40">{post.author.credentials}</p>
+                  <p className="text-sm font-semibold text-[#1C3D5A]">{post.author.name}</p>
+                  <p className="text-xs text-[#1C3D5A]/40">{post.author.credentials}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-xs text-[#0A2540]/40">
+              <div className="flex items-center gap-4 text-xs text-[#1C3D5A]/40">
                 <span className="flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5" />
                   {post.date}
@@ -195,7 +195,7 @@ export default function BlogPost() {
                 </span>
                 <button
                   onClick={handleShare}
-                  className="flex items-center gap-1.5 hover:text-[#0D9488] transition-colors"
+                  className="flex items-center gap-1.5 hover:text-[#B87333] transition-colors"
                 >
                   <Share2 className="w-3.5 h-3.5" />
                   Compartilhar
@@ -209,16 +209,16 @@ export default function BlogPost() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="prose prose-lg max-w-none
-                prose-headings:text-[#0A2540] prose-headings:font-serif
+                prose-headings:text-[#1C3D5A] prose-headings:font-serif
                 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
                 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-p:text-[#0A2540]/70 prose-p:leading-relaxed
-                prose-strong:text-[#0A2540]/90
-                prose-li:text-[#0A2540]/70
-                prose-a:text-[#0D9488] prose-a:no-underline hover:prose-a:underline
-                prose-hr:border-[#0A2540]/8
-                prose-ol:text-[#0A2540]/70
-                prose-ul:text-[#0A2540]/70
+                prose-p:text-[#1C3D5A]/70 prose-p:leading-relaxed
+                prose-strong:text-[#1C3D5A]/90
+                prose-li:text-[#1C3D5A]/70
+                prose-a:text-[#B87333] prose-a:no-underline hover:prose-a:underline
+                prose-hr:border-[#1C3D5A]/8
+                prose-ol:text-[#1C3D5A]/70
+                prose-ul:text-[#1C3D5A]/70
               "
             >
               <Streamdown>{post.content}</Streamdown>
@@ -229,9 +229,9 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.45 }}
-              className="mt-12 pt-8 border-t border-[#0A2540]/8"
+              className="mt-12 pt-8 border-t border-[#1C3D5A]/8"
             >
-              <p className="text-sm font-semibold text-[#0A2540] mb-4">Compartilhe este artigo</p>
+              <p className="text-sm font-semibold text-[#1C3D5A] mb-4">Compartilhe este artigo</p>
               <div className="flex items-center gap-3">
                 <button
                   onClick={shareWhatsApp}
@@ -255,8 +255,8 @@ export default function BlogPost() {
                   onClick={copyLink}
                   className={`group flex items-center gap-2 rounded-lg px-4 py-2.5 border transition-all duration-300 ${
                     copied
-                      ? "bg-[#0D9488]/10 text-[#0D9488] border-[#0D9488]/20"
-                      : "bg-[#0A2540]/5 hover:bg-[#0A2540]/10 text-[#0A2540]/60 hover:text-[#0A2540] border-[#0A2540]/10 hover:border-[#0A2540]/20"
+                      ? "bg-[#B87333]/10 text-[#B87333] border-[#B87333]/20"
+                      : "bg-[#1C3D5A]/5 hover:bg-[#1C3D5A]/10 text-[#1C3D5A]/60 hover:text-[#1C3D5A] border-[#1C3D5A]/10 hover:border-[#1C3D5A]/20"
                   }`}
                 >
                   {copied ? (
@@ -277,15 +277,15 @@ export default function BlogPost() {
               className="mt-14 relative overflow-hidden rounded-2xl"
             >
               {/* Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0A2540] via-[#0F3460] to-[#0A2540]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1C3D5A] via-[#0F3460] to-[#1C3D5A]" />
               <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
 
               <div className="relative p-8 lg:p-12">
                 {/* Top accent */}
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="h-px w-8 bg-[#0D9488]" />
-                  <span className="text-[#5EEAD4] text-xs font-semibold uppercase tracking-[0.2em]">Agende sua consulta</span>
-                  <div className="h-px w-8 bg-[#0D9488]" />
+                  <div className="h-px w-8 bg-[#B87333]" />
+                  <span className="text-[#D4884A] text-xs font-semibold uppercase tracking-[0.2em]">Agende sua consulta</span>
+                  <div className="h-px w-8 bg-[#B87333]" />
                 </div>
 
                 <h3 className="text-2xl lg:text-3xl text-white text-center mb-3 font-serif">
@@ -304,11 +304,11 @@ export default function BlogPost() {
                     <span className="text-white/40 text-xs">Doctoralia</span>
                   </div>
                   <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5">
-                    <CalendarCheck className="w-4 h-4 text-[#5EEAD4]" />
+                    <CalendarCheck className="w-4 h-4 text-[#D4884A]" />
                     <span className="text-white text-sm font-medium">Agenda online</span>
                   </div>
                   <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2.5">
-                    <MessageCircle className="w-4 h-4 text-[#5EEAD4]" />
+                    <MessageCircle className="w-4 h-4 text-[#D4884A]" />
                     <span className="text-white text-sm font-medium">Teleconsulta</span>
                   </div>
                 </div>
@@ -321,7 +321,7 @@ export default function BlogPost() {
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto"
                   >
-                    <Button className="w-full sm:w-auto bg-[#0D9488] hover:bg-[#0B7C72] text-white px-8 h-12 text-base font-semibold shadow-lg shadow-[#0D9488]/20 transition-all hover:shadow-xl hover:shadow-[#0D9488]/30 hover:-translate-y-0.5">
+                    <Button className="w-full sm:w-auto bg-[#B87333] hover:bg-[#8B5A2B] text-white px-8 h-12 text-base font-semibold shadow-lg shadow-[#B87333]/20 transition-all hover:shadow-xl hover:shadow-[#B87333]/30 hover:-translate-y-0.5">
                       <CalendarCheck className="w-5 h-5 mr-2" />
                       Agendar pelo Doctoralia
                     </Button>
@@ -349,7 +349,7 @@ export default function BlogPost() {
             {/* Back to blog */}
             <div className="mt-10 text-center">
               <Link href="/blog">
-                <Button variant="ghost" className="text-[#0A2540]/50 hover:text-[#0A2540]">
+                <Button variant="ghost" className="text-[#1C3D5A]/50 hover:text-[#1C3D5A]">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Voltar ao Blog
                 </Button>
@@ -360,7 +360,7 @@ export default function BlogPost() {
       </article>
 
       {/* Footer mini */}
-      <footer className="bg-[#071A2E] py-8">
+      <footer className="bg-[#0F2A3F] py-8">
         <div className="container text-center">
           <p className="text-white/30 text-sm">
             &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291

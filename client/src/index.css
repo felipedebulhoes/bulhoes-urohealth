@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Callingstone';
+  src: url('/manus-storage/Callingstone_0c7058f7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -40,55 +48,60 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: "DM Sans", system-ui, sans-serif;
-  --font-serif: "DM Serif Display", Georgia, serif;
+  --color-copper: var(--copper);
+  --color-copper-foreground: var(--copper-foreground);
+  --font-sans: "Roboto", system-ui, sans-serif;
+  --font-serif: "Callingstone", Georgia, serif;
 }
 
 :root {
   --radius: 0.5rem;
-  /* Navy deep - primary brand */
-  --primary: oklch(0.25 0.05 240);
-  --primary-foreground: oklch(0.98 0.005 240);
-  /* Teal accent */
-  --accent: oklch(0.55 0.12 175);
-  --accent-foreground: oklch(0.98 0.005 175);
+  /* Azul do Nilo - primary brand (#1C3D5A) */
+  --primary: oklch(0.350 0.064 247.3);
+  --primary-foreground: oklch(0.997 0.000 263.3);
+  /* Cobre - accent/CTA (#B87333) */
+  --accent: oklch(0.618 0.117 60.4);
+  --accent-foreground: oklch(0.997 0.000 263.3);
+  /* Cobre custom property */
+  --copper: oklch(0.618 0.117 60.4);
+  --copper-foreground: oklch(0.997 0.000 263.3);
   /* Background & foreground */
-  --background: oklch(0.995 0.002 240);
-  --foreground: oklch(0.2 0.03 240);
+  --background: oklch(0.997 0.000 263.3);
+  --foreground: oklch(0.350 0.064 247.3);
   /* Cards */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.03 240);
+  --card-foreground: oklch(0.350 0.064 247.3);
   /* Popover */
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.03 240);
-  /* Secondary */
-  --secondary: oklch(0.96 0.005 240);
-  --secondary-foreground: oklch(0.35 0.03 240);
+  --popover-foreground: oklch(0.350 0.064 247.3);
+  /* Secondary - Nuvem (#C4C4C4) */
+  --secondary: oklch(0.950 0.000 263.3);
+  --secondary-foreground: oklch(0.350 0.064 247.3);
   /* Muted */
-  --muted: oklch(0.96 0.005 240);
-  --muted-foreground: oklch(0.5 0.02 240);
+  --muted: oklch(0.950 0.000 263.3);
+  --muted-foreground: oklch(0.550 0.020 247.3);
   /* Destructive */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   /* Border & input */
-  --border: oklch(0.91 0.005 240);
-  --input: oklch(0.91 0.005 240);
-  --ring: oklch(0.55 0.12 175);
+  --border: oklch(0.900 0.005 247.3);
+  --input: oklch(0.900 0.005 247.3);
+  --ring: oklch(0.618 0.117 60.4);
   /* Charts */
-  --chart-1: oklch(0.55 0.12 175);
-  --chart-2: oklch(0.25 0.05 240);
-  --chart-3: oklch(0.65 0.1 175);
-  --chart-4: oklch(0.35 0.04 240);
-  --chart-5: oklch(0.45 0.08 175);
+  --chart-1: oklch(0.350 0.064 247.3);
+  --chart-2: oklch(0.618 0.117 60.4);
+  --chart-3: oklch(0.820 0.000 263.3);
+  --chart-4: oklch(0.450 0.060 247.3);
+  --chart-5: oklch(0.693 0.121 58.0);
   /* Sidebar */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.2 0.03 240);
-  --sidebar-primary: oklch(0.55 0.12 175);
-  --sidebar-primary-foreground: oklch(0.98 0.005 175);
-  --sidebar-accent: oklch(0.96 0.005 240);
-  --sidebar-accent-foreground: oklch(0.2 0.03 240);
-  --sidebar-border: oklch(0.91 0.005 240);
-  --sidebar-ring: oklch(0.55 0.12 175);
+  --sidebar: oklch(0.350 0.064 247.3);
+  --sidebar-foreground: oklch(0.997 0.000 263.3);
+  --sidebar-primary: oklch(0.618 0.117 60.4);
+  --sidebar-primary-foreground: oklch(0.997 0.000 263.3);
+  --sidebar-accent: oklch(0.450 0.060 247.3);
+  --sidebar-accent-foreground: oklch(0.997 0.000 263.3);
+  --sidebar-border: oklch(0.450 0.060 247.3);
+  --sidebar-ring: oklch(0.618 0.117 60.4);
 }
 
 @layer base {
@@ -101,6 +114,7 @@
   }
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
+    font-style: italic;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -143,6 +157,19 @@
       max-width: 1280px;
     }
   }
+
+  /* Copper button utility */
+  .btn-copper {
+    background-color: oklch(0.618 0.117 60.4);
+    color: oklch(0.997 0.000 263.3);
+    transition: background-color 0.2s ease;
+  }
+  .btn-copper:hover {
+    background-color: oklch(0.693 0.121 58.0);
+  }
+  .btn-copper:active {
+    background-color: oklch(0.512 0.090 62.2);
+  }
 }
 
 /* Smooth scrolling */
@@ -155,12 +182,12 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: oklch(0.96 0.005 240);
+  background: oklch(0.950 0.000 263.3);
 }
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.7 0.02 240);
+  background: oklch(0.820 0.000 263.3);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.55 0.12 175);
+  background: oklch(0.618 0.117 60.4);
 }

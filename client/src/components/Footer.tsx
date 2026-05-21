@@ -8,12 +8,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#071A2E] text-white/60 py-12 lg:py-16">
+    <footer className="bg-[#0F2A3F] text-white/60 py-12 lg:py-16">
       <div className="container">
         {/* Logo ampliado */}
         <div className="mb-10">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/logo_min8_d351a844.webp"
+            src="/manus-storage/logo-landscape_be6628b3.svg"
             alt="Dr. Felipe de Bulhões - Urologista"
             className="h-16 lg:h-20 w-auto brightness-0 invert"
           />
@@ -27,19 +27,19 @@ export default function Footer() {
           {/* Campinas Day Hospital */}
           <div>
             <h4 className="text-sm font-semibold text-white font-sans mb-3">Campinas Day Hospital</h4>
-            <span className="inline-block text-[10px] uppercase tracking-wider text-[#5EEAD4] bg-[#5EEAD4]/10 px-2 py-0.5 rounded mb-3">
+            <span className="inline-block text-[10px] uppercase tracking-wider text-[#D4884A] bg-[#D4884A]/10 px-2 py-0.5 rounded mb-3">
               Convênios
             </span>
             <div className="space-y-2">
               <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#0D9488] mt-0.5 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
                 <span className="text-xs font-sans">
                   Av. Benjamin Constant, 1991<br />
                   Cambuí, Campinas - SP
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                 <span className="text-xs font-sans">(19) 2127-2900</span>
               </div>
               <a href="https://wa.me/5519998559890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/60 hover:text-[#25D366] transition-colors">
@@ -57,14 +57,14 @@ export default function Footer() {
             </span>
             <div className="space-y-2">
               <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#0D9488] mt-0.5 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
                 <span className="text-xs font-sans">
                   Av. Paulista, 1048, 18° andar<br />
                   Bela Vista, São Paulo - SP
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                 <span className="text-xs font-sans">(11) 3382-1529</span>
               </div>
             </div>
@@ -78,14 +78,14 @@ export default function Footer() {
             </span>
             <div className="space-y-2">
               <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#0D9488] mt-0.5 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
                 <span className="text-xs font-sans">
                   Av. Ibirapuera, 1835, 2° andar<br />
                   Moema, São Paulo - SP
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                 <span className="text-xs font-sans">(11) 3382-1529</span>
               </div>
             </div>
@@ -99,14 +99,14 @@ export default function Footer() {
             </span>
             <div className="space-y-2">
               <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#0D9488] mt-0.5 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
                 <span className="text-xs font-sans">
                   Av. Rebouças, 2636<br />
                   Pinheiros, São Paulo - SP
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                 <span className="text-xs font-sans">(11) 3382-1529</span>
               </div>
             </div>
@@ -120,14 +120,14 @@ export default function Footer() {
             </span>
             <div className="space-y-2">
               <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#0D9488] mt-0.5 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
                 <span className="text-xs font-sans">
                   Av. Pereira Barreto, 1479<br />
                   São Bernardo do Campo - SP
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                 <span className="text-xs font-sans">(11) 3382-1529</span>
               </div>
             </div>
@@ -136,19 +136,19 @@ export default function Footer() {
           {/* CEMED - Rede D'Or - São Luiz Campinas */}
           <div>
             <h4 className="text-sm font-semibold text-white font-sans mb-3">São Luiz Campinas</h4>
-            <span className="inline-block text-[10px] uppercase tracking-wider text-[#5EEAD4] bg-[#5EEAD4]/10 px-2 py-0.5 rounded mb-3">
+            <span className="inline-block text-[10px] uppercase tracking-wider text-[#D4884A] bg-[#D4884A]/10 px-2 py-0.5 rounded mb-3">
               Convênios & Particular
             </span>
             <div className="space-y-2">
               <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#0D9488] mt-0.5 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
                 <span className="text-xs font-sans">
                   Av. Andrade Neves, 863<br />
                   Centro, Campinas - SP
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#0D9488] shrink-0" />
+                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
                 <span className="text-xs font-sans">(19) 3014-3000</span>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function Footer() {
                 href="https://www.instagram.com/drfelipebulhoes/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#5EEAD4] transition-colors"
+                className="flex items-center gap-2 hover:text-[#D4884A] transition-colors"
               >
                 <Instagram className="w-4 h-4" />
                 <span className="text-xs font-sans">@drfelipebulhoes</span>
@@ -171,17 +171,17 @@ export default function Footer() {
                 href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#5EEAD4] transition-colors"
+                className="flex items-center gap-2 hover:text-[#D4884A] transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
                 <span className="text-xs font-sans">Doctoralia</span>
               </a>
               <div className="flex items-center gap-2 text-white/50">
-                <Monitor className="w-4 h-4 text-[#0D9488]" />
+                <Monitor className="w-4 h-4 text-[#B87333]" />
                 <span className="text-xs font-sans">Teleconsulta disponível</span>
               </div>
               <div className="flex items-center gap-2 text-white/50">
-                <Mail className="w-4 h-4 text-[#0D9488]" />
+                <Mail className="w-4 h-4 text-[#B87333]" />
                 <span className="text-xs font-sans">drfelipebulhoes@bulhoesurohealth.com</span>
               </div>
             </div>

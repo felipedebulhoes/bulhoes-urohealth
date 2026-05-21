@@ -56,7 +56,7 @@ export default function BiopsiaProstata() {
       title="Biópsia de Próstata: Guia Completo"
       subtitle="Procedimento Diagnóstico"
       description="Tudo o que você precisa saber sobre a biópsia de próstata: indicações, preparo, como é realizada, pós-procedimento e possíveis complicações. Informações baseadas nas diretrizes da EAU 2025, AUA e SBU."
-      accentColor="#0D9488"
+      accentColor="#B87333"
       metaTitle="Biópsia de Próstata: Como é Feita, Preparo e Complicações | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre biópsia de próstata: indicações, preparo, técnicas (transperineal e transretal), pós-biópsia e complicações. Procedimento realizado no Campinas Day Hospital."
     >
@@ -66,8 +66,8 @@ export default function BiopsiaProstata() {
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <div className="bg-gradient-to-r from-teal-50 to-blue-50 border-l-4 border-[#0D9488] p-6 rounded-r-lg mb-10">
-              <p className="text-[#0A2540] leading-relaxed">
+            <div className="bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-[#B87333] p-6 rounded-r-lg mb-10">
+              <p className="text-[#1C3D5A] leading-relaxed">
                 A biópsia de próstata é o <strong>exame definitivo para o diagnóstico do câncer de próstata</strong>. Consiste na coleta de pequenos fragmentos de tecido prostático para análise microscópica (histopatológica). Segundo as <strong>diretrizes da European Association of Urology (EAU 2025)</strong>, a biópsia deve ser precedida por ressonância magnética multiparamétrica (mpMRI) e realizada preferencialmente pela <strong>via transperineal</strong>, que apresenta menor risco de infecção.
               </p>
             </div>
@@ -75,7 +75,7 @@ export default function BiopsiaProstata() {
 
           {/* O que é */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">O que é a Biópsia de Próstata?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">O que é a Biópsia de Próstata?</h2>
             <p className="text-[#334155] leading-relaxed mb-4">
               A biópsia de próstata é um procedimento médico no qual uma agulha especial é utilizada para retirar pequenos fragmentos (cilindros) de tecido da próstata. Esses fragmentos são enviados ao laboratório de patologia, onde são analisados ao microscópio para identificar a presença de células cancerígenas e determinar o grau de agressividade do tumor (escore de Gleason / ISUP Grade Group).
             </p>
@@ -84,17 +84,17 @@ export default function BiopsiaProstata() {
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-[#0D9488]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Microscope className="w-6 h-6 text-[#0D9488]" />
+                <div className="w-12 h-12 bg-[#B87333]/10 rounded-lg flex items-center justify-center mb-4">
+                  <Microscope className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#0A2540] mb-3">Biópsia Sistemática</h3>
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3">Biópsia Sistemática</h3>
                 <p className="text-[#334155] text-sm leading-relaxed mb-3">
                   Coleta padronizada de <strong>12 a 14 fragmentos</strong> distribuídos bilateralmente pela próstata, do ápice à base, nas regiões mais laterais e posteriores da glândula.
                 </p>
                 <ul className="space-y-2">
                   {["Amostragem ampla da próstata", "Padrão mínimo: 12 fragmentos", "Bilateral: ápice, meio e base", "Pode detectar tumores não visíveis na RM"].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[#334155]">
-                      <CheckCircle2 className="w-4 h-4 text-[#0D9488] mt-0.5 shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -102,17 +102,17 @@ export default function BiopsiaProstata() {
                 <p className="text-xs text-[#64748B] mt-3 italic">Fonte: EAU Guidelines 2025</p>
               </div>
               <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-[#0D9488]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Target className="w-6 h-6 text-[#0D9488]" />
+                <div className="w-12 h-12 bg-[#B87333]/10 rounded-lg flex items-center justify-center mb-4">
+                  <Target className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#0A2540] mb-3">Biópsia Dirigida (MRI-Targeted)</h3>
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3">Biópsia Dirigida (MRI-Targeted)</h3>
                 <p className="text-[#334155] text-sm leading-relaxed mb-3">
                   Coleta direcionada para <strong>lesões suspeitas identificadas na ressonância magnética</strong>, utilizando fusão de imagens (MRI-TRUS fusion) ou guia cognitivo. Mínimo de 3-5 fragmentos por lesão.
                 </p>
                 <ul className="space-y-2">
                   {["Maior detecção de câncer significativo", "Menor detecção de câncer insignificante", "Guiada por RM (PI-RADS ≥ 3)", "Complementa a biópsia sistemática"].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[#334155]">
-                      <CheckCircle2 className="w-4 h-4 text-[#0D9488] mt-0.5 shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -129,7 +129,7 @@ export default function BiopsiaProstata() {
 
           {/* Indicações */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Quando a Biópsia é Indicada?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Quando a Biópsia é Indicada?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A biópsia de próstata não é um exame de rotina — ela é indicada quando há <strong>suspeita clínica de câncer de próstata</strong> baseada em um ou mais dos seguintes achados:
             </p>
@@ -166,7 +166,7 @@ export default function BiopsiaProstata() {
                       <item.icon className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#0A2540] mb-1">{item.title}</h4>
+                      <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
                       <p className="text-[#334155] text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -182,13 +182,13 @@ export default function BiopsiaProstata() {
 
           {/* Preparo */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Preparo para a Biópsia</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Preparo para a Biópsia</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               O preparo adequado é fundamental para minimizar complicações e garantir a qualidade do procedimento. As orientações variam conforme a via de acesso (transperineal ou transretal) e o protocolo do serviço.
             </p>
 
-            <h3 className="text-xl font-bold text-[#0A2540] mb-4 flex items-center gap-2">
-              <CalendarCheck className="w-5 h-5 text-[#0D9488]" />
+            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+              <CalendarCheck className="w-5 h-5 text-[#B87333]" />
               Antes do Procedimento
             </h3>
             <div className="space-y-4 mb-8">
@@ -220,18 +220,18 @@ export default function BiopsiaProstata() {
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 items-start">
-                  <div className="w-10 h-10 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0">
+                  <div className="w-10 h-10 bg-[#B87333] rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0">
                     {item.step}
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0A2540] mb-1">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <h3 className="text-xl font-bold text-[#0A2540] mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
               <Ban className="w-5 h-5 text-red-500" />
               O que Evitar Antes da Biópsia
             </h3>
@@ -252,14 +252,14 @@ export default function BiopsiaProstata() {
 
           {/* Como é realizada */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Como é Realizada a Biópsia?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Como é Realizada a Biópsia?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A biópsia de próstata pode ser realizada por duas vias de acesso: <strong>transperineal</strong> (pela pele do períneo, entre o escroto e o ânus) ou <strong>transretal</strong> (através do reto). A via transperineal é atualmente preferida pela EAU 2025 devido ao menor risco de infecção.
             </p>
 
             {/* Comparação das vias */}
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mb-8">
-              <div className="grid grid-cols-3 bg-[#0A2540] text-white text-sm font-semibold">
+              <div className="grid grid-cols-3 bg-[#1C3D5A] text-white text-sm font-semibold">
                 <div className="p-4">Característica</div>
                 <div className="p-4 text-center border-l border-white/10">Transperineal (TP)</div>
                 <div className="p-4 text-center border-l border-white/10">Transretal (TR)</div>
@@ -275,7 +275,7 @@ export default function BiopsiaProstata() {
                 { feat: "Recomendação EAU 2025", tp: "Preferida ✓", tr: "Alternativa" },
               ].map((row, i) => (
                 <div key={i} className={`grid grid-cols-3 text-sm ${i % 2 === 0 ? "bg-gray-50" : "bg-white"}`}>
-                  <div className="p-4 font-medium text-[#0A2540]">{row.feat}</div>
+                  <div className="p-4 font-medium text-[#1C3D5A]">{row.feat}</div>
                   <div className="p-4 text-center text-[#334155] border-l border-gray-100">{row.tp}</div>
                   <div className="p-4 text-center text-[#334155] border-l border-gray-100">{row.tr}</div>
                 </div>
@@ -287,7 +287,7 @@ export default function BiopsiaProstata() {
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-[#0A2540] mb-4">Passo a Passo do Procedimento</h3>
+            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4">Passo a Passo do Procedimento</h3>
             <div className="space-y-4 mb-8">
               {[
                 {
@@ -322,11 +322,11 @@ export default function BiopsiaProstata() {
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 items-start">
-                  <div className="w-10 h-10 bg-[#0D9488] rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0">
+                  <div className="w-10 h-10 bg-[#B87333] rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0">
                     {item.step}
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0A2540] mb-1">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -336,12 +336,12 @@ export default function BiopsiaProstata() {
 
           {/* Pós-biópsia */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={5} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Pós-Biópsia: O que Esperar</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Pós-Biópsia: O que Esperar</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               Após a biópsia, é normal apresentar alguns sintomas leves que tendem a resolver espontaneamente em poucos dias a semanas. Conhecer o que é esperado ajuda a diferenciar o normal de situações que exigem atenção médica.
             </p>
 
-            <h3 className="text-xl font-bold text-[#0A2540] mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-green-600" />
               Sintomas Normais (Esperados)
             </h3>
@@ -378,7 +378,7 @@ export default function BiopsiaProstata() {
                       <item.icon className="w-5 h-5 text-green-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#0A2540]">{item.title}</h4>
+                      <h4 className="font-bold text-[#1C3D5A]">{item.title}</h4>
                       <span className="text-xs text-green-700 bg-green-100 px-2 py-0.5 rounded-full">Duração: {item.duration}</span>
                     </div>
                   </div>
@@ -387,7 +387,7 @@ export default function BiopsiaProstata() {
               ))}
             </div>
 
-            <h3 className="text-xl font-bold text-[#0A2540] mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
               <ShieldAlert className="w-5 h-5 text-red-500" />
               Cuidados no Pós-Procedimento
             </h3>
@@ -402,7 +402,7 @@ export default function BiopsiaProstata() {
                 "Evite AAS e anti-inflamatórios por 5-7 dias após o procedimento",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 bg-gray-50 rounded-lg p-4 border border-gray-100">
-                  <ChevronRight className="w-4 h-4 text-[#0D9488] mt-0.5 shrink-0" />
+                  <ChevronRight className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                   <p className="text-sm text-[#334155]">{item}</p>
                 </div>
               ))}
@@ -411,7 +411,7 @@ export default function BiopsiaProstata() {
 
           {/* Complicações */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={6} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Possíveis Complicações</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Possíveis Complicações</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               Embora a biópsia de próstata seja um procedimento seguro e rotineiro, como qualquer procedimento invasivo, pode apresentar complicações. A maioria é leve e autolimitada. A escolha da via transperineal reduz significativamente o risco de complicações infecciosas.
             </p>
@@ -462,7 +462,7 @@ export default function BiopsiaProstata() {
                     }`} />
                     <div>
                       <div className="flex items-center gap-3 mb-1">
-                        <h4 className="font-bold text-[#0A2540]">{item.title}</h4>
+                        <h4 className="font-bold text-[#1C3D5A]">{item.title}</h4>
                         <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
                           item.color === "red" ? "bg-red-100 text-red-700" :
                           item.color === "orange" ? "bg-orange-100 text-orange-700" :
@@ -487,12 +487,12 @@ export default function BiopsiaProstata() {
 
           {/* Resultados */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={7} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Entendendo os Resultados</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Entendendo os Resultados</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               O resultado da biópsia geralmente fica pronto em 7 a 14 dias úteis. O laudo anatomopatológico informa se há presença de câncer e, em caso positivo, classifica o tumor:
             </p>
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mb-6">
-              <div className="grid grid-cols-4 bg-[#0A2540] text-white text-sm font-semibold">
+              <div className="grid grid-cols-4 bg-[#1C3D5A] text-white text-sm font-semibold">
                 <div className="p-4">ISUP Grade Group</div>
                 <div className="p-4 text-center border-l border-white/10">Gleason Score</div>
                 <div className="p-4 text-center border-l border-white/10">Classificação</div>
@@ -506,7 +506,7 @@ export default function BiopsiaProstata() {
                 { isup: "5", gleason: "4+5 / 5+4 / 5+5 = 9-10", class: "Muito alto grau", risk: "Muito alto", color: "bg-red-100" },
               ].map((row, i) => (
                 <div key={i} className={`grid grid-cols-4 text-sm ${row.color}`}>
-                  <div className="p-4 font-bold text-[#0A2540]">Grupo {row.isup}</div>
+                  <div className="p-4 font-bold text-[#1C3D5A]">Grupo {row.isup}</div>
                   <div className="p-4 text-center text-[#334155] border-l border-gray-100">{row.gleason}</div>
                   <div className="p-4 text-center text-[#334155] border-l border-gray-100">{row.class}</div>
                   <div className="p-4 text-center font-medium border-l border-gray-100">{row.risk}</div>
@@ -525,12 +525,12 @@ export default function BiopsiaProstata() {
 
           {/* Onde realizamos — Campinas Day Hospital */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={8} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Onde Realizamos a Biópsia de Próstata</h2>
-            <div className="bg-gradient-to-br from-[#0A2540] to-[#0F3460] rounded-2xl overflow-hidden">
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Onde Realizamos a Biópsia de Próstata</h2>
+            <div className="bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] rounded-2xl overflow-hidden">
               <div className="p-8 lg:p-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                    <Building2 className="w-6 h-6 text-[#5EEAD4]" />
+                    <Building2 className="w-6 h-6 text-[#D4884A]" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Campinas Day Hospital</h3>
@@ -545,28 +545,28 @@ export default function BiopsiaProstata() {
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="w-4 h-4 text-[#5EEAD4]" />
+                      <MapPin className="w-4 h-4 text-[#D4884A]" />
                       <span className="text-white text-sm font-medium">Endereço</span>
                     </div>
                     <p className="text-white/60 text-sm">Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
-                      <Shield className="w-4 h-4 text-[#5EEAD4]" />
+                      <Shield className="w-4 h-4 text-[#D4884A]" />
                       <span className="text-white text-sm font-medium">Convênios</span>
                     </div>
                     <p className="text-white/60 text-sm">Allianz, Amil, Bradesco, Cassi, Porto Seguro, SulAmérica, Unimed e outros. Também atendimento particular.</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
-                      <Clock className="w-4 h-4 text-[#5EEAD4]" />
+                      <Clock className="w-4 h-4 text-[#D4884A]" />
                       <span className="text-white text-sm font-medium">Atendimento</span>
                     </div>
                     <p className="text-white/60 text-sm">Sexta-feira: 8h às 12h</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
-                      <Phone className="w-4 h-4 text-[#5EEAD4]" />
+                      <Phone className="w-4 h-4 text-[#D4884A]" />
                       <span className="text-white text-sm font-medium">Contato</span>
                     </div>
                     <p className="text-white/60 text-sm">WhatsApp (11) 98112-4455 — apenas mensagens</p>
@@ -576,7 +576,7 @@ export default function BiopsiaProstata() {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link href="/local/campinas-day-hospital">
-                    <Button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white">
+                    <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white">
                       <MapPin className="w-4 h-4 mr-2" />
                       Ver Detalhes do Local
                     </Button>
@@ -598,7 +598,7 @@ export default function BiopsiaProstata() {
 
           {/* Perguntas frequentes */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={9} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Perguntas Frequentes</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Perguntas Frequentes</h2>
             <div className="space-y-4">
               {[
                 {
@@ -627,7 +627,7 @@ export default function BiopsiaProstata() {
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h4 className="font-bold text-[#0A2540] mb-2">{item.q}</h4>
+                  <h4 className="font-bold text-[#1C3D5A] mb-2">{item.q}</h4>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.a}</p>
                 </div>
               ))}
@@ -637,7 +637,7 @@ export default function BiopsiaProstata() {
           {/* Referências */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={10}>
             <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h3 className="text-lg font-bold text-[#0A2540] mb-4">Referências</h3>
+              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
                 <li>1. EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer — Diagnostic Evaluation, 2025. European Association of Urology.</li>
                 <li>2. Kasivisvanathan V, et al. MRI-Targeted or Standard Biopsy for Prostate-Cancer Diagnosis (PRECISION Trial). N Engl J Med. 2018;378(19):1767-1777.</li>

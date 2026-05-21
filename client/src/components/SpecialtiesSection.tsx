@@ -65,7 +65,7 @@ export default function SpecialtiesSection() {
   return (
     <section id="especialidades" className="relative py-20 lg:py-28 overflow-hidden" ref={ref}>
       {/* Background */}
-      <div className="absolute inset-0 bg-[#0A2540]" />
+      <div className="absolute inset-0 bg-[#1C3D5A]" />
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
         backgroundSize: '40px 40px'
@@ -80,11 +80,11 @@ export default function SpecialtiesSection() {
           className="mb-14 text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-10 bg-[#0D9488]" />
-            <span className="text-[#5EEAD4] text-sm font-semibold uppercase tracking-[0.15em]">
+            <div className="h-px w-10 bg-[#B87333]" />
+            <span className="text-[#D4884A] text-sm font-semibold uppercase tracking-[0.15em]">
               Especialidades
             </span>
-            <div className="h-px w-10 bg-[#0D9488]" />
+            <div className="h-px w-10 bg-[#B87333]" />
           </div>
           <h2 className="text-3xl lg:text-4xl text-white leading-tight">
             Áreas de Atuação
@@ -103,10 +103,10 @@ export default function SpecialtiesSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.07 }}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-5 hover:bg-white/10 transition-all duration-300 hover:border-[#0D9488]/30"
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-5 hover:bg-white/10 transition-all duration-300 hover:border-[#B87333]/30"
             >
-              <div className="w-10 h-10 rounded-md bg-[#0D9488]/15 flex items-center justify-center mb-4 group-hover:bg-[#0D9488]/25 transition-colors">
-                <spec.icon className="w-5 h-5 text-[#5EEAD4]" />
+              <div className="w-10 h-10 rounded-md bg-[#B87333]/15 flex items-center justify-center mb-4 group-hover:bg-[#B87333]/25 transition-colors">
+                <spec.icon className="w-5 h-5 text-[#D4884A]" />
               </div>
               <h3 className="text-base font-semibold text-white font-sans mb-2">
                 {spec.title}

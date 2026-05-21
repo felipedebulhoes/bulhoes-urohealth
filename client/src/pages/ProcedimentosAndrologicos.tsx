@@ -246,7 +246,7 @@ function ProcedureSection({ proc, index }: { proc: Procedure; index: number }) {
       transition={{ duration: 0.5 }}
       className="scroll-mt-24"
     >
-      <div className="bg-white rounded-xl border border-[#0A2540]/6 overflow-hidden">
+      <div className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden">
         {/* Header */}
         <div className={`bg-${proc.color}-50 p-6 lg:p-8`}>
           <div className="flex items-center gap-4 mb-4">
@@ -254,26 +254,26 @@ function ProcedureSection({ proc, index }: { proc: Procedure; index: number }) {
               {proc.icon}
             </div>
             <div>
-              <h2 className="text-xl lg:text-2xl font-serif text-[#0A2540]">{proc.name}</h2>
-              <div className="flex items-center gap-3 mt-1 text-xs text-[#0A2540]/40">
+              <h2 className="text-xl lg:text-2xl font-serif text-[#1C3D5A]">{proc.name}</h2>
+              <div className="flex items-center gap-3 mt-1 text-xs text-[#1C3D5A]/40">
                 <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {proc.duration}</span>
                 <span className="flex items-center gap-1"><Stethoscope className="w-3 h-3" /> {proc.anesthesia}</span>
               </div>
             </div>
           </div>
-          <p className="text-sm text-[#0A2540]/60 leading-relaxed">{proc.whatIs}</p>
+          <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">{proc.whatIs}</p>
         </div>
 
         {/* Content */}
         <div className="p-6 lg:p-8 space-y-6">
           {/* Indications */}
           <div>
-            <h3 className="text-sm font-semibold text-[#0A2540] mb-3">Indicações</h3>
+            <h3 className="text-sm font-semibold text-[#1C3D5A] mb-3">Indicações</h3>
             <div className="space-y-1.5">
               {proc.indications.map((ind, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <Check className="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-500" />
-                  <span className="text-xs text-[#0A2540]/60">{ind}</span>
+                  <Check className="w-3.5 h-3.5 mt-0.5 shrink-0 text-amber-500" />
+                  <span className="text-xs text-[#1C3D5A]/60">{ind}</span>
                 </div>
               ))}
             </div>
@@ -281,19 +281,19 @@ function ProcedureSection({ proc, index }: { proc: Procedure; index: number }) {
 
           {/* How it works */}
           <div className="bg-[#F8FAFB] rounded-lg p-4">
-            <h3 className="text-sm font-semibold text-[#0A2540] mb-2">Como é realizado</h3>
-            <p className="text-xs text-[#0A2540]/55 leading-relaxed">{proc.howItWorks}</p>
+            <h3 className="text-sm font-semibold text-[#1C3D5A] mb-2">Como é realizado</h3>
+            <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">{proc.howItWorks}</p>
           </div>
 
           {/* Advantages and Risks */}
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-emerald-50/50 rounded-lg p-4">
-              <h3 className="text-sm font-semibold text-emerald-700 mb-3">Vantagens</h3>
+            <div className="bg-amber-50/50 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-amber-700 mb-3">Vantagens</h3>
               <div className="space-y-1.5">
                 {proc.advantages.map((a, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <Check className="w-3 h-3 mt-0.5 shrink-0 text-emerald-500" />
-                    <span className="text-xs text-emerald-800/70">{a}</span>
+                    <Check className="w-3 h-3 mt-0.5 shrink-0 text-amber-500" />
+                    <span className="text-xs text-amber-800/70">{a}</span>
                   </div>
                 ))}
               </div>
@@ -313,7 +313,7 @@ function ProcedureSection({ proc, index }: { proc: Procedure; index: number }) {
 
           {/* Recovery */}
           <div>
-            <h3 className="text-sm font-semibold text-[#0A2540] mb-3">Recuperação</h3>
+            <h3 className="text-sm font-semibold text-[#1C3D5A] mb-3">Recuperação</h3>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { label: "Trabalho", value: proc.recovery.work },
@@ -322,8 +322,8 @@ function ProcedureSection({ proc, index }: { proc: Procedure; index: number }) {
                 { label: "Cuidados especiais", value: proc.recovery.special },
               ].map((r, i) => (
                 <div key={i} className="bg-[#F8FAFB] rounded-lg p-3">
-                  <h4 className="text-[10px] uppercase tracking-wider font-semibold text-[#0A2540]/40 mb-1">{r.label}</h4>
-                  <p className="text-xs text-[#0A2540]/60 leading-relaxed">{r.value}</p>
+                  <h4 className="text-[10px] uppercase tracking-wider font-semibold text-[#1C3D5A]/40 mb-1">{r.label}</h4>
+                  <p className="text-xs text-[#1C3D5A]/60 leading-relaxed">{r.value}</p>
                 </div>
               ))}
             </div>
@@ -331,15 +331,15 @@ function ProcedureSection({ proc, index }: { proc: Procedure; index: number }) {
 
           {/* Expected vs Warning symptoms */}
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="border border-emerald-200 rounded-lg p-4">
-              <h3 className="text-sm font-semibold text-emerald-700 mb-3 flex items-center gap-2">
+            <div className="border border-amber-200 rounded-lg p-4">
+              <h3 className="text-sm font-semibold text-amber-700 mb-3 flex items-center gap-2">
                 <Check className="w-4 h-4" /> Sintomas Esperados (Normais)
               </h3>
               <div className="space-y-1.5">
                 {proc.expectedSymptoms.map((s, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <Check className="w-3 h-3 mt-0.5 shrink-0 text-emerald-500" />
-                    <span className="text-xs text-emerald-800/70">{s}</span>
+                    <Check className="w-3 h-3 mt-0.5 shrink-0 text-amber-500" />
+                    <span className="text-xs text-amber-800/70">{s}</span>
                   </div>
                 ))}
               </div>
@@ -375,7 +375,7 @@ export default function ProcedimentosAndrologicos() {
       accentColor="#2563EB"
     >
       {/* Quick nav */}
-      <section className="py-8 border-b border-[#0A2540]/6">
+      <section className="py-8 border-b border-[#1C3D5A]/6">
         <div className="container max-w-4xl">
           <div className="flex flex-wrap justify-center gap-3">
             {procedures.map((p) => (
@@ -404,11 +404,11 @@ export default function ProcedimentosAndrologicos() {
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-3xl">
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 lg:p-8">
-            <h3 className="text-lg font-semibold text-[#0A2540] mb-3 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-[#1C3D5A] mb-3 flex items-center gap-2">
               <Shield className="w-5 h-5 text-amber-600" />
               Vacinação contra HPV — A Melhor Prevenção
             </h3>
-            <div className="space-y-3 text-sm text-[#0A2540]/60 leading-relaxed">
+            <div className="space-y-3 text-sm text-[#1C3D5A]/60 leading-relaxed">
               <p>
                 A <strong>vacina nonavalente (Gardasil 9)</strong> protege contra 9 subtipos do HPV (6, 11, 16, 18, 31, 33, 45, 52, 58), prevenindo até <strong>90% das verrugas genitais</strong> e <strong>90% dos cânceres associados ao HPV</strong>.
               </p>
@@ -426,8 +426,8 @@ export default function ProcedimentosAndrologicos() {
       {/* References */}
       <section className="py-8 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h3 className="text-xs font-semibold text-[#0A2540]/40 uppercase tracking-wider mb-3">Referências</h3>
-          <ol className="text-[10px] text-[#0A2540]/35 space-y-1 list-decimal list-inside">
+          <h3 className="text-xs font-semibold text-[#1C3D5A]/40 uppercase tracking-wider mb-3">Referências</h3>
+          <ol className="text-[10px] text-[#1C3D5A]/35 space-y-1 list-decimal list-inside">
             <li>EAU Guidelines on Sexual and Reproductive Health. European Association of Urology, 2025.</li>
             <li>AUA Guideline: Vasectomy. American Urological Association, 2024.</li>
             <li>Partin AW, et al. Campbell-Walsh-Wein Urology, 13th Edition. Elsevier, 2024.</li>

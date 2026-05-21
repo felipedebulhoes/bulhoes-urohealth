@@ -16,7 +16,7 @@ const educationalPages = [
     description: "O que é, sintomas, diagnóstico e tratamento da hiperplasia prostática benigna — guia acessível para o paciente.",
     href: "/educativo/hiperplasia-prostatica",
     icon: <Heart className="w-5 h-5" />,
-    color: "bg-teal-50 text-teal-600",
+    color: "bg-amber-50 text-amber-600",
   },
   {
     title: "Tratamentos para HPB",
@@ -30,7 +30,7 @@ const educationalPages = [
     description: "Laparoscopia, robótica e endoscopia — menos dor, menos cicatriz, recuperação rápida.",
     href: "/educativo/cirurgias-minimamente-invasivas",
     icon: <Scissors className="w-5 h-5" />,
-    color: "bg-emerald-50 text-emerald-600",
+    color: "bg-amber-50 text-amber-600",
   },
   {
     title: "Cálculos Renais",
@@ -128,7 +128,7 @@ const educationalPages = [
     description: "Tipos, classificação, exercícios de Kegel, sling masculino e esfíncter artificial.",
     href: "/educativo/incontinencia-urinaria",
     icon: <Droplets className="w-5 h-5" />,
-    color: "bg-teal-50 text-teal-600",
+    color: "bg-amber-50 text-amber-600",
   },
   {
     title: "Vasectomia",
@@ -170,7 +170,7 @@ const educationalPages = [
     description: "Cuidados após cirurgia, sintomas normais e sinais de alerta.",
     href: "/educativo/orientacoes-pos-operatorias",
     icon: <Stethoscope className="w-5 h-5" />,
-    color: "bg-teal-50 text-teal-600",
+    color: "bg-amber-50 text-amber-600",
   },
 ];
 
@@ -186,15 +186,15 @@ export default function EducationalPreviewSection() {
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center gap-2 mb-3">
-            <BookOpen className="w-5 h-5 text-[#0D9488]" />
-            <span className="text-xs font-semibold text-[#0D9488] uppercase tracking-widest">
+            <BookOpen className="w-5 h-5 text-[#B87333]" />
+            <span className="text-xs font-semibold text-[#B87333] uppercase tracking-widest">
               Conteúdo Educativo
             </span>
           </div>
-          <h2 className="text-2xl lg:text-4xl text-[#0A2540] mb-3 font-serif">
+          <h2 className="text-2xl lg:text-4xl text-[#1C3D5A] mb-3 font-serif">
             Informação de Qualidade para o Paciente
           </h2>
-          <p className="text-sm text-[#0A2540]/50 max-w-xl mx-auto">
+          <p className="text-sm text-[#1C3D5A]/50 max-w-xl mx-auto">
             Material educativo baseado em evidências científicas das principais guidelines internacionais (EAU, AUA, SBU) e livros de referência.
           </p>
         </motion.div>
@@ -210,17 +210,17 @@ export default function EducationalPreviewSection() {
               transition={{ delay: i * 0.04 }}
             >
               <Link href={page.href}>
-                <div className="group bg-white rounded-xl border border-[#0A2540]/6 p-5 h-full hover:border-[#0D9488]/30 hover:shadow-md transition-all duration-300 cursor-pointer">
+                <div className="group bg-white rounded-xl border border-[#1C3D5A]/6 p-5 h-full hover:border-[#B87333]/30 hover:shadow-md transition-all duration-300 cursor-pointer">
                   <div className={`w-10 h-10 rounded-lg ${page.color} flex items-center justify-center mb-3`}>
                     {page.icon}
                   </div>
-                  <h3 className="text-sm font-semibold text-[#0A2540] mb-1.5 group-hover:text-[#0D9488] transition-colors">
+                  <h3 className="text-sm font-semibold text-[#1C3D5A] mb-1.5 group-hover:text-[#B87333] transition-colors">
                     {page.title}
                   </h3>
-                  <p className="text-xs text-[#0A2540]/45 leading-relaxed mb-3">
+                  <p className="text-xs text-[#1C3D5A]/45 leading-relaxed mb-3">
                     {page.description}
                   </p>
-                  <div className="flex items-center gap-1 text-xs font-medium text-[#0D9488] opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center gap-1 text-xs font-medium text-[#B87333] opacity-0 group-hover:opacity-100 transition-opacity">
                     Saiba mais <ArrowRight className="w-3 h-3" />
                   </div>
                 </div>

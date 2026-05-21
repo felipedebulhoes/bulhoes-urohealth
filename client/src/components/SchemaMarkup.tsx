@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const SITE_URL = "https://felipebulhoes.com";
 const DOCTOR_NAME = "Dr. Felipe de Bulhões Ojeda";
 const DOCTOR_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-image_318a8603.jpg";
-const LOGO_URL = "https://cdn.manus.space/webdev/bulhoes-urohealth/logo_min8.webp";
+const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
 
 function useJsonLd(id: string, data: Record<string, unknown>) {
   useEffect(() => {

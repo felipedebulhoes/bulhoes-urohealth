@@ -199,3 +199,18 @@
 - [x] Alterar nome no rodapé de "CEMED - Rede D'Or" para "São Luiz Campinas"
 - [x] Atualizar bookingUrl do CEMED São Luiz para perfil pessoal na Rede D'Or: https://www.rededorsaoluiz.com.br/encontre-um-medico/perfil/felipe-de-bulhoes-ojeda
 - [x] Incluir mapa interativo na página do São Luiz Campinas (/local/cemed-sao-luiz-campinas) — já existia, coordenadas atualizadas para posição real
+- [x] Corrigir erro 4xx no GSC: configurar registro www para bulhoesurohealth.com (CNAME www → cname.manus.space, 301 funcionando)
+
+- [x] Upload logos SVG/PNG do manual de identidade para CDN
+- [x] Upload fonte Callingstone para CDN
+- [x] Reformular index.css com nova paleta (Azul do Nilo #1C3D5A, Nuvem #C4C4C4, Branco #FEFEFE, Cobre #B87333)
+- [x] Configurar tipografia Callingstone (títulos) + Roboto (corpo) no HTML/CSS
+- [x] Reformular Header com novo logo e estilo
+- [x] Reformular Hero Section com nova identidade visual
+- [x] Reformular About Section
+- [x] Reformular Services/Specialties Section
+- [x] Reformular demais seções (Education, Stats, FAQ, etc.)
+- [x] Reformular Footer com nova identidade
+- [x] Atualizar botões/CTAs com cor cobre de destaque
+- [x] Testar responsividade e ajustar (58 testes passando, sem erros TS)
+- [x] Criar novo manual de marca PDF incluindo cor cobre como cor acessória

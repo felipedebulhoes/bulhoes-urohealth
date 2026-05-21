@@ -87,7 +87,7 @@ export default function WhatsAppWidget() {
                   <button
                     key={i}
                     onClick={() => sendMessage(`Olá Dr. Felipe, ${msg.toLowerCase()}.`)}
-                    className="w-full text-left text-sm bg-gray-50 hover:bg-[#0D9488]/10 text-[#334155] hover:text-[#0D9488] px-3 py-2 rounded-lg border border-gray-100 hover:border-[#0D9488]/30 transition-colors"
+                    className="w-full text-left text-sm bg-gray-50 hover:bg-[#B87333]/10 text-[#334155] hover:text-[#B87333] px-3 py-2 rounded-lg border border-gray-100 hover:border-[#B87333]/30 transition-colors"
                   >
                     {msg}
                   </button>

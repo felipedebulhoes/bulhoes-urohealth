@@ -40,7 +40,7 @@ export default function InfeccaoUrinaria() {
           {/* Introdução */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-10">
-              <p className="text-[#0A2540] leading-relaxed">
+              <p className="text-[#1C3D5A] leading-relaxed">
                 Diferentemente das mulheres, a infecção urinária (ITU) no homem é considerada <strong>sempre complicada</strong> pelas diretrizes internacionais (EAU 2025, AUA). Isso significa que toda ITU masculina requer investigação urológica para identificar fatores predisponentes como obstrução prostática, cálculos ou alterações anatômicas. Ignorar uma ITU no homem pode levar a complicações graves como prostatite bacteriana, epididimite, abscesso prostático e sepse urinária.
               </p>
             </div>
@@ -48,7 +48,7 @@ export default function InfeccaoUrinaria() {
 
           {/* Por que é diferente */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Por que a ITU no Homem É Diferente?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Por que a ITU no Homem É Diferente?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A uretra masculina é significativamente mais longa (18-20 cm) que a feminina (3-4 cm), o que naturalmente protege contra infecções ascendentes. Quando um homem desenvolve ITU, isso geralmente indica uma <strong>condição subjacente</strong> que precisa ser investigada.
             </p>
@@ -64,7 +64,7 @@ export default function InfeccaoUrinaria() {
                     <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-red-500" />
                     </div>
-                    <h4 className="font-bold text-[#0A2540]">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A]">{item.title}</h4>
                   </div>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                 </div>
@@ -74,10 +74,10 @@ export default function InfeccaoUrinaria() {
 
           {/* Sintomas */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Sintomas</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Sintomas</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
-                <h3 className="font-bold text-[#0A2540] mb-4">Cistite (Infecção Baixa)</h3>
+                <h3 className="font-bold text-[#1C3D5A] mb-4">Cistite (Infecção Baixa)</h3>
                 <ul className="space-y-2">
                   {["Ardência ao urinar (disúria)", "Aumento da frequência urinária", "Urgência miccional", "Dor suprapúbica", "Urina turva ou com odor forte", "Hematúria (sangue na urina)"].map((s, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[#334155]">
@@ -88,7 +88,7 @@ export default function InfeccaoUrinaria() {
                 </ul>
               </div>
               <div className="bg-red-50 border border-red-100 rounded-xl p-6">
-                <h3 className="font-bold text-[#0A2540] mb-4">Pielonefrite / Prostatite (Infecção Complicada)</h3>
+                <h3 className="font-bold text-[#1C3D5A] mb-4">Pielonefrite / Prostatite (Infecção Complicada)</h3>
                 <ul className="space-y-2">
                   {["Febre alta (>38°C) com calafrios", "Dor lombar (flanco)", "Dor perineal ou pélvica", "Mal-estar geral e prostração", "Náuseas e vômitos", "Retenção urinária aguda"].map((s, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[#334155]">
@@ -108,7 +108,7 @@ export default function InfeccaoUrinaria() {
 
           {/* Diagnóstico */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Diagnóstico</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Diagnóstico</h2>
             <div className="space-y-4">
               {[
                 { icon: Microscope, title: "Urocultura com Antibiograma", desc: "Exame fundamental que identifica a bactéria causadora e os antibióticos eficazes. Deve ser coletada ANTES de iniciar antibiótico. Resultado em 48-72h." },
@@ -118,10 +118,10 @@ export default function InfeccaoUrinaria() {
               ].map((item, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-5 border border-gray-100 flex gap-4 items-start">
                   <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm shrink-0">
-                    <item.icon className="w-5 h-5 text-[#0D9488]" />
+                    <item.icon className="w-5 h-5 text-[#B87333]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0A2540] mb-1">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -131,13 +131,13 @@ export default function InfeccaoUrinaria() {
 
           {/* Tratamento */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Tratamento</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Tratamento</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               O tratamento da ITU masculina difere significativamente do tratamento feminino. Segundo a <strong>EAU Guidelines 2025</strong>:
             </p>
             <div className="space-y-4">
               <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
-                <h4 className="font-bold text-[#0A2540] mb-3">Antibioticoterapia</h4>
+                <h4 className="font-bold text-[#1C3D5A] mb-3">Antibioticoterapia</h4>
                 <ul className="space-y-2">
                   {[
                     "Duração mínima de 7-14 dias (diferente dos 3 dias da cistite feminina)",
@@ -147,14 +147,14 @@ export default function InfeccaoUrinaria() {
                     "Casos graves (sepse): internação com antibiótico endovenoso",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[#334155]">
-                      <CheckCircle2 className="w-4 h-4 text-[#0D9488] mt-0.5 shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
-                <h4 className="font-bold text-[#0A2540] mb-3">Investigação da Causa</h4>
+                <h4 className="font-bold text-[#1C3D5A] mb-3">Investigação da Causa</h4>
                 <ul className="space-y-2">
                   {[
                     "Avaliação prostática (HPB, prostatite crônica)",
@@ -164,7 +164,7 @@ export default function InfeccaoUrinaria() {
                     "Urodinâmica se suspeita de disfunção vesical",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[#334155]">
-                      <ChevronRight className="w-4 h-4 text-[#0D9488] mt-0.5 shrink-0" />
+                      <ChevronRight className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -175,7 +175,7 @@ export default function InfeccaoUrinaria() {
 
           {/* Prevenção */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={5} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Prevenção</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Prevenção</h2>
             <div className="bg-green-50 border border-green-100 rounded-xl p-6">
               <ul className="space-y-3">
                 {[
@@ -198,7 +198,7 @@ export default function InfeccaoUrinaria() {
           {/* Referências */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={6}>
             <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h3 className="text-lg font-bold text-[#0A2540] mb-4">Referências</h3>
+              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
                 <li>1. EAU Guidelines on Urological Infections, 2025. European Association of Urology.</li>
                 <li>2. AUA Best Practice Statement on Urological Infections, 2024. American Urological Association.</li>

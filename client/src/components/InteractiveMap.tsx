@@ -128,7 +128,7 @@ export default function InteractiveMap() {
           display: flex;
           align-items: center;
           gap: 6px;
-          background: #0A2540;
+          background: #1C3D5A;
           color: white;
           padding: 6px 12px;
           border-radius: 20px;
@@ -136,12 +136,12 @@ export default function InteractiveMap() {
           font-size: 12px;
           font-weight: 600;
           box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-          border: 2px solid #0D9488;
+          border: 2px solid #B87333;
           cursor: pointer;
           white-space: nowrap;
           transition: transform 0.2s ease;
         ">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4884A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
             <circle cx="12" cy="10" r="3"/>
           </svg>
@@ -170,13 +170,13 @@ export default function InteractiveMap() {
       // InfoWindow content
       const infoContent = `
         <div style="font-family: 'DM Sans', sans-serif; padding: 4px; max-width: 260px;">
-          <h3 style="font-size: 15px; font-weight: 700; color: #0A2540; margin: 0 0 4px 0;">${clinic.name}</h3>
-          <p style="font-size: 11px; color: #0D9488; font-weight: 600; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">${clinic.type}</p>
+          <h3 style="font-size: 15px; font-weight: 700; color: #1C3D5A; margin: 0 0 4px 0;">${clinic.name}</h3>
+          <p style="font-size: 11px; color: #B87333; font-weight: 600; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">${clinic.type}</p>
           <p style="font-size: 13px; color: #334155; margin: 0 0 2px 0;">${clinic.address}</p>
           <p style="font-size: 12px; color: #64748B; margin: 0 0 8px 0;">${clinic.neighborhood}</p>
-          ${clinic.phone ? `<p style="font-size: 13px; color: #0A2540; margin: 0 0 10px 0;">📞 ${clinic.phone}</p>` : ""}
+          ${clinic.phone ? `<p style="font-size: 13px; color: #1C3D5A; margin: 0 0 10px 0;">📞 ${clinic.phone}</p>` : ""}
           <a href="${clinic.directionsUrl}" target="_blank" rel="noopener noreferrer"
-             style="display: inline-flex; align-items: center; gap: 4px; background: #0D9488; color: white; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none;">
+             style="display: inline-flex; align-items: center; gap: 4px; background: #B87333; color: white; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none;">
             Como chegar
           </a>
         </div>
@@ -211,13 +211,13 @@ export default function InteractiveMap() {
         const marker = markersRef.current[markerIndex];
         const infoContent = `
           <div style="font-family: 'DM Sans', sans-serif; padding: 4px; max-width: 260px;">
-            <h3 style="font-size: 15px; font-weight: 700; color: #0A2540; margin: 0 0 4px 0;">${clinic.name}</h3>
-            <p style="font-size: 11px; color: #0D9488; font-weight: 600; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">${clinic.type}</p>
+            <h3 style="font-size: 15px; font-weight: 700; color: #1C3D5A; margin: 0 0 4px 0;">${clinic.name}</h3>
+            <p style="font-size: 11px; color: #B87333; font-weight: 600; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">${clinic.type}</p>
             <p style="font-size: 13px; color: #334155; margin: 0 0 2px 0;">${clinic.address}</p>
             <p style="font-size: 12px; color: #64748B; margin: 0 0 8px 0;">${clinic.neighborhood}</p>
-            ${clinic.phone ? `<p style="font-size: 13px; color: #0A2540; margin: 0 0 10px 0;">📞 ${clinic.phone}</p>` : ""}
+            ${clinic.phone ? `<p style="font-size: 13px; color: #1C3D5A; margin: 0 0 10px 0;">📞 ${clinic.phone}</p>` : ""}
             <a href="${clinic.directionsUrl}" target="_blank" rel="noopener noreferrer"
-               style="display: inline-flex; align-items: center; gap: 4px; background: #0D9488; color: white; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none;">
+               style="display: inline-flex; align-items: center; gap: 4px; background: #B87333; color: white; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none;">
               Como chegar
             </a>
           </div>
@@ -246,8 +246,8 @@ export default function InteractiveMap() {
           onClick={showAll}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
             activeClinic === null
-              ? "bg-[#0D9488] text-white shadow-md shadow-teal-900/20"
-              : "bg-[#F1F5F9] text-[#0A2540]/60 hover:bg-[#E2E8F0] hover:text-[#0A2540]"
+              ? "bg-[#B87333] text-white shadow-md shadow-amber-900/20"
+              : "bg-[#F1F5F9] text-[#1C3D5A]/60 hover:bg-[#E2E8F0] hover:text-[#1C3D5A]"
           }`}
         >
           <MapPin className="w-4 h-4" />
@@ -259,8 +259,8 @@ export default function InteractiveMap() {
             onClick={() => focusClinic(clinic)}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
               activeClinic === clinic.id
-                ? "bg-[#0D9488] text-white shadow-md shadow-teal-900/20"
-                : "bg-[#F1F5F9] text-[#0A2540]/60 hover:bg-[#E2E8F0] hover:text-[#0A2540]"
+                ? "bg-[#B87333] text-white shadow-md shadow-amber-900/20"
+                : "bg-[#F1F5F9] text-[#1C3D5A]/60 hover:bg-[#E2E8F0] hover:text-[#1C3D5A]"
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
@@ -270,7 +270,7 @@ export default function InteractiveMap() {
       </div>
 
       {/* Map */}
-      <div className="rounded-xl overflow-hidden shadow-lg border border-[#0A2540]/8">
+      <div className="rounded-xl overflow-hidden shadow-lg border border-[#1C3D5A]/8">
         <MapView
           className="h-[380px] lg:h-[450px]"
           initialCenter={DEFAULT_CENTER}
@@ -287,17 +287,17 @@ export default function InteractiveMap() {
             onClick={() => focusClinic(clinic)}
             className={`text-left p-4 rounded-xl border transition-all ${
               activeClinic === clinic.id
-                ? "border-[#0D9488] bg-[#0D9488]/5 shadow-sm"
-                : "border-[#0A2540]/8 bg-[#F8FAFB] hover:border-[#0D9488]/40"
+                ? "border-[#B87333] bg-[#B87333]/5 shadow-sm"
+                : "border-[#1C3D5A]/8 bg-[#F8FAFB] hover:border-[#B87333]/40"
             }`}
           >
-            <h4 className="font-bold text-sm text-[#0A2540] mb-1 font-sans">{clinic.name}</h4>
-            <p className="text-xs text-[#0A2540]/50 font-sans mb-2">{clinic.address}</p>
+            <h4 className="font-bold text-sm text-[#1C3D5A] mb-1 font-sans">{clinic.name}</h4>
+            <p className="text-xs text-[#1C3D5A]/50 font-sans mb-2">{clinic.address}</p>
             <div className="flex items-center justify-between">
               {clinic.phone && (
                 <div className="flex items-center gap-1.5">
-                  <Phone className="w-3 h-3 text-[#0D9488]" />
-                  <span className="text-[11px] text-[#0A2540]/60 font-sans">{clinic.phone}</span>
+                  <Phone className="w-3 h-3 text-[#B87333]" />
+                  <span className="text-[11px] text-[#1C3D5A]/60 font-sans">{clinic.phone}</span>
                 </div>
               )}
               <a
@@ -305,7 +305,7 @@ export default function InteractiveMap() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1 text-[11px] text-[#0D9488] font-semibold hover:underline"
+                className="flex items-center gap-1 text-[11px] text-[#B87333] font-semibold hover:underline"
               >
                 <Navigation className="w-3 h-3" />
                 Rota

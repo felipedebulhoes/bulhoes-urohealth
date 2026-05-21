@@ -27,14 +27,14 @@ export default function BlogPreviewSection() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-10 bg-[#0D9488]" />
-              <span className="text-[#0D9488] text-sm font-semibold uppercase tracking-[0.15em]">
+              <div className="h-px w-10 bg-[#B87333]" />
+              <span className="text-[#B87333] text-sm font-semibold uppercase tracking-[0.15em]">
                 Blog
               </span>
             </div>
-            <h2 className="text-3xl lg:text-4xl text-[#0A2540] leading-tight">
+            <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight">
               Artigos sobre
-              <span className="block text-[#0D9488]">Saúde Urológica</span>
+              <span className="block text-[#B87333]">Saúde Urológica</span>
             </h2>
           </motion.div>
 
@@ -44,7 +44,7 @@ export default function BlogPreviewSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex items-end"
           >
-            <p className="text-base text-[#0A2540]/60 leading-relaxed">
+            <p className="text-base text-[#1C3D5A]/60 leading-relaxed">
               Conteúdo baseado em evidências científicas para ajudar você a cuidar da sua saúde
               com informação de qualidade.
             </p>
@@ -58,7 +58,7 @@ export default function BlogPreviewSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Link href={`/blog/${featured.slug}`}>
-            <div className="group grid lg:grid-cols-2 gap-0 bg-white rounded-xl border border-[#0A2540]/8 overflow-hidden hover:shadow-xl hover:shadow-[#0A2540]/5 transition-all duration-500">
+            <div className="group grid lg:grid-cols-2 gap-0 bg-white rounded-xl border border-[#1C3D5A]/8 overflow-hidden hover:shadow-xl hover:shadow-[#1C3D5A]/5 transition-all duration-500">
               {/* Image */}
               <div className="relative overflow-hidden aspect-[16/9] lg:aspect-auto">
                 <img
@@ -67,7 +67,7 @@ export default function BlogPreviewSection() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-[#0D9488] text-white text-xs font-semibold px-3 py-1.5 rounded-md">
+                  <span className="bg-[#B87333] text-white text-xs font-semibold px-3 py-1.5 rounded-md">
                     {featured.category}
                   </span>
                 </div>
@@ -75,7 +75,7 @@ export default function BlogPreviewSection() {
 
               {/* Content */}
               <div className="p-8 lg:p-10 flex flex-col justify-center">
-                <div className="flex items-center gap-4 text-xs text-[#0A2540]/40 mb-4">
+                <div className="flex items-center gap-4 text-xs text-[#1C3D5A]/40 mb-4">
                   <span className="flex items-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5" />
                     {featured.date}
@@ -86,11 +86,11 @@ export default function BlogPreviewSection() {
                   </span>
                 </div>
 
-                <h3 className="text-xl lg:text-2xl font-semibold text-[#0A2540] leading-snug mb-4 group-hover:text-[#0D9488] transition-colors">
+                <h3 className="text-xl lg:text-2xl font-semibold text-[#1C3D5A] leading-snug mb-4 group-hover:text-[#B87333] transition-colors">
                   {featured.title}
                 </h3>
 
-                <p className="text-sm text-[#0A2540]/50 leading-relaxed mb-6">
+                <p className="text-sm text-[#1C3D5A]/50 leading-relaxed mb-6">
                   {featured.excerpt}
                 </p>
 
@@ -98,15 +98,15 @@ export default function BlogPreviewSection() {
                   <img
                     src={featured.author.avatar}
                     alt={featured.author.name}
-                    className="w-9 h-9 rounded-full object-cover border border-[#0D9488]/20"
+                    className="w-9 h-9 rounded-full object-cover border border-[#B87333]/20"
                   />
                   <div>
-                    <p className="text-xs font-semibold text-[#0A2540]">{featured.author.name}</p>
-                    <p className="text-[10px] text-[#0A2540]/40">{featured.author.credentials}</p>
+                    <p className="text-xs font-semibold text-[#1C3D5A]">{featured.author.name}</p>
+                    <p className="text-[10px] text-[#1C3D5A]/40">{featured.author.credentials}</p>
                   </div>
                 </div>
 
-                <div className="mt-6 flex items-center gap-2 text-[#0D9488] text-sm font-medium">
+                <div className="mt-6 flex items-center gap-2 text-[#B87333] text-sm font-medium">
                   Ler artigo completo
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -123,7 +123,7 @@ export default function BlogPreviewSection() {
           className="mt-8 text-center"
         >
           <Link href="/blog">
-            <Button variant="outline" className="border-[#0A2540]/10 text-[#0A2540]/60 hover:text-[#0A2540] hover:border-[#0A2540]/20">
+            <Button variant="outline" className="border-[#1C3D5A]/10 text-[#1C3D5A]/60 hover:text-[#1C3D5A] hover:border-[#1C3D5A]/20">
               Ver todos os artigos
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>

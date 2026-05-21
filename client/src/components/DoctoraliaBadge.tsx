@@ -40,7 +40,7 @@ export default function DoctoraliaBadge() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-[#00B8A9]/5 to-[#0D9488]/5 rounded-2xl border border-[#0D9488]/10 p-6 lg:p-8"
+          className="bg-gradient-to-br from-[#00B8A9]/5 to-[#B87333]/5 rounded-2xl border border-[#B87333]/10 p-6 lg:p-8"
         >
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left — Badge */}
@@ -60,7 +60,7 @@ export default function DoctoraliaBadge() {
               </div>
 
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-4xl font-bold text-[#0A2540]">5.0</span>
+                <span className="text-4xl font-bold text-[#1C3D5A]">5.0</span>
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
@@ -71,11 +71,11 @@ export default function DoctoraliaBadge() {
               <div className="flex gap-4 mb-4">
                 {stats.map((stat, i) => (
                   <div key={i} className="text-center">
-                    <div className="flex items-center justify-center gap-1 text-[#0D9488]">
+                    <div className="flex items-center justify-center gap-1 text-[#B87333]">
                       {stat.icon}
-                      <span className="text-sm font-bold text-[#0A2540]">{stat.value}</span>
+                      <span className="text-sm font-bold text-[#1C3D5A]">{stat.value}</span>
                     </div>
-                    <span className="text-[10px] text-[#0A2540]/40">{stat.label}</span>
+                    <span className="text-[10px] text-[#1C3D5A]/40">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -84,7 +84,7 @@ export default function DoctoraliaBadge() {
                 href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#00B8A9] hover:text-[#0D9488] transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#00B8A9] hover:text-[#B87333] transition-colors"
               >
                 Ver perfil completo <ExternalLink className="w-3 h-3" />
               </a>
@@ -99,23 +99,23 @@ export default function DoctoraliaBadge() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-lg border border-[#0A2540]/5 p-4"
+                  className="bg-white rounded-lg border border-[#1C3D5A]/5 p-4"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-[#0A2540]/5 flex items-center justify-center">
-                        <span className="text-xs font-bold text-[#0A2540]/40">P</span>
+                      <div className="w-7 h-7 rounded-full bg-[#1C3D5A]/5 flex items-center justify-center">
+                        <span className="text-xs font-bold text-[#1C3D5A]/40">P</span>
                       </div>
-                      <span className="text-xs font-medium text-[#0A2540]/60">{review.name}</span>
+                      <span className="text-xs font-medium text-[#1C3D5A]/60">{review.name}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       {[...Array(review.rating)].map((_, j) => (
                         <Star key={j} className="w-3 h-3 fill-amber-400 text-amber-400" />
                       ))}
-                      <span className="text-[10px] text-[#0A2540]/30 ml-1">{review.date}</span>
+                      <span className="text-[10px] text-[#1C3D5A]/30 ml-1">{review.date}</span>
                     </div>
                   </div>
-                  <p className="text-sm text-[#0A2540]/55 leading-relaxed">
+                  <p className="text-sm text-[#1C3D5A]/55 leading-relaxed">
                     "{review.text}"
                   </p>
                 </motion.div>

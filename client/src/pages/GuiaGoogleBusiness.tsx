@@ -79,13 +79,13 @@ export default function GuiaGoogleBusiness() {
   return (
     <div className="min-h-screen bg-[#F8FAFB]">
       {/* Header */}
-      <div className="bg-[#0A2540] py-16">
+      <div className="bg-[#1C3D5A] py-16">
         <div className="container">
           <Link href="/" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Voltar ao site
           </Link>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="text-[#0D9488] text-sm font-medium uppercase tracking-wider">Guia Interno</span>
+            <span className="text-[#B87333] text-sm font-medium uppercase tracking-wider">Guia Interno</span>
             <h1 className="text-3xl md:text-4xl font-bold text-white mt-2 mb-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
               Como Otimizar seu Google Business Profile
             </h1>
@@ -112,7 +112,7 @@ export default function GuiaGoogleBusiness() {
               transition={{ delay: i * 0.1 }}
               className="bg-white rounded-xl p-5 shadow-sm border border-slate-100 text-center"
             >
-              <div className="text-2xl font-bold text-[#0D9488]">{stat.value}</div>
+              <div className="text-2xl font-bold text-[#B87333]">{stat.value}</div>
               <div className="text-xs text-slate-500 mt-1">{stat.label}</div>
             </motion.div>
           ))}
@@ -133,16 +133,16 @@ export default function GuiaGoogleBusiness() {
                 className="bg-white rounded-xl p-8 shadow-sm border border-slate-100"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#0D9488]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6 text-[#0D9488]" />
+                  <div className="w-12 h-12 bg-[#B87333]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-[#B87333]" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#0A2540] mb-2">{step.title}</h3>
+                    <h3 className="text-lg font-bold text-[#1C3D5A] mb-2">{step.title}</h3>
                     <p className="text-slate-600 text-sm mb-4">{step.description}</p>
                     <ul className="space-y-2">
                       {step.tips.map((tip, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
-                          <CheckCircle2 className="w-4 h-4 text-[#0D9488] mt-0.5 flex-shrink-0" />
+                          <CheckCircle2 className="w-4 h-4 text-[#B87333] mt-0.5 flex-shrink-0" />
                           {tip}
                         </li>
                       ))}
@@ -156,7 +156,7 @@ export default function GuiaGoogleBusiness() {
 
         {/* CTA */}
         <div className="max-w-3xl mx-auto mt-12 text-center">
-          <div className="bg-[#0A2540] rounded-2xl p-8">
+          <div className="bg-[#1C3D5A] rounded-2xl p-8">
             <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'DM Serif Display', serif" }}>
               Comece Agora
             </h3>
@@ -167,7 +167,7 @@ export default function GuiaGoogleBusiness() {
               href="https://business.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#0D9488] text-white rounded-lg font-semibold hover:bg-[#0B8278] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#B87333] text-white rounded-lg font-semibold hover:bg-[#0B8278] transition-colors"
             >
               Acessar Google Business
             </a>

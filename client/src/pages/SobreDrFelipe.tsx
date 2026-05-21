@@ -27,7 +27,7 @@ const fadeUp = {
 };
 
 // CDN URLs corretas (mesmas usadas no restante do site)
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/logo_min8_d351a844.webp";
+const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
 const PORTRAIT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/felipe-portrait_0e0693e4.jpeg";
 const UROONCO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/uroonco-solo_7227a008.jpeg";
 const JPU_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/jpu-congress_61ecfbf9.jpeg";
@@ -36,7 +36,7 @@ export default function SobreDrFelipe() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0A2540] via-[#0F3460] to-[#0A2540] text-white pt-28 pb-20">
+      <section className="bg-gradient-to-br from-[#1C3D5A] via-[#0F3460] to-[#1C3D5A] text-white pt-28 pb-20">
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-12 items-center">
             <motion.div
@@ -46,8 +46,8 @@ export default function SobreDrFelipe() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 mb-4">
-                <Stethoscope className="w-5 h-5 text-[#0D9488]" />
-                <span className="text-[#0D9488] text-sm font-medium tracking-wider uppercase">Urologista | CRM-SP 202.291 | RQE 146538 / RQE 114019</span>
+                <Stethoscope className="w-5 h-5 text-[#B87333]" />
+                <span className="text-[#B87333] text-sm font-medium tracking-wider uppercase">Urologista | CRM-SP 202.291 | RQE 146538 / RQE 114019</span>
               </div>
               <h1 className="text-4xl lg:text-5xl font-serif font-bold mb-6 leading-tight">
                 Dr. Felipe de Bulhões Ojeda
@@ -62,7 +62,7 @@ export default function SobreDrFelipe() {
                     e.preventDefault();
                     document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="bg-[#0D9488] hover:bg-[#0B8276] text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                  className="bg-[#B87333] hover:bg-[#0B8276] text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
                 >
                   <Calendar className="w-4 h-4" />
                   Agendar Consulta
@@ -98,7 +98,7 @@ export default function SobreDrFelipe() {
                       <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <span className="text-sm font-bold text-[#0A2540]">5.0</span>
+                  <span className="text-sm font-bold text-[#1C3D5A]">5.0</span>
                   <span className="text-xs text-[#64748B]">Doctoralia</span>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function SobreDrFelipe() {
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Formação Acadêmica</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Formação Acadêmica</h2>
             <div className="space-y-6">
               {[
                 { year: "2023–2026", title: "Urologia", inst: "Instituto D'Or de Ensino e Pesquisa (IDOR)", city: "São Paulo, SP", detail: "Formação em centro de referência com alto volume cirúrgico em cirurgia robótica, endourologia e uro-oncologia." },
@@ -121,14 +121,14 @@ export default function SobreDrFelipe() {
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 items-start">
                   <div className="text-right min-w-[100px] shrink-0">
-                    <span className="text-sm font-bold text-[#0D9488]">{item.year}</span>
+                    <span className="text-sm font-bold text-[#B87333]">{item.year}</span>
                   </div>
-                  <div className="w-px bg-[#0D9488]/30 relative shrink-0">
-                    <div className="absolute top-1 -left-1.5 w-3 h-3 bg-[#0D9488] rounded-full" />
+                  <div className="w-px bg-[#B87333]/30 relative shrink-0">
+                    <div className="absolute top-1 -left-1.5 w-3 h-3 bg-[#B87333] rounded-full" />
                   </div>
                   <div className="pb-6">
-                    <h4 className="font-bold text-[#0A2540] mb-1">{item.title}</h4>
-                    <p className="text-sm text-[#0D9488] font-medium mb-1">{item.inst}</p>
+                    <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
+                    <p className="text-sm text-[#B87333] font-medium mb-1">{item.inst}</p>
                     <p className="text-xs text-[#64748B] mb-2">{item.city}</p>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.detail}</p>
                   </div>
@@ -143,7 +143,7 @@ export default function SobreDrFelipe() {
       <section className="py-16 bg-gray-50">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Títulos e Certificações</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Títulos e Certificações</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { icon: Award, title: "Título de Especialista em Cirurgia Geral (TCBC)", org: "Colégio Brasileiro de Cirurgiões — AMB/CBC", year: "2023" },
@@ -156,13 +156,13 @@ export default function SobreDrFelipe() {
                 { icon: Award, title: "ATLS — Advanced Trauma Life Support", org: "American College of Surgeons", year: "" },
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm flex gap-4 items-start">
-                  <div className="w-10 h-10 bg-[#0D9488]/10 rounded-lg flex items-center justify-center shrink-0">
-                    <item.icon className="w-5 h-5 text-[#0D9488]" />
+                  <div className="w-10 h-10 bg-[#B87333]/10 rounded-lg flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 text-[#B87333]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0A2540] text-sm mb-1">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] text-sm mb-1">{item.title}</h4>
                     <p className="text-xs text-[#64748B]">{item.org}</p>
-                    {item.year && <p className="text-xs text-[#0D9488] font-medium mt-1">{item.year}</p>}
+                    {item.year && <p className="text-xs text-[#B87333] font-medium mt-1">{item.year}</p>}
                   </div>
                 </div>
               ))}
@@ -175,7 +175,7 @@ export default function SobreDrFelipe() {
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Áreas de Atuação</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Áreas de Atuação</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 "Cirurgias Minimamente Invasivas",
@@ -189,8 +189,8 @@ export default function SobreDrFelipe() {
                 "Saúde do Homem",
               ].map((area, i) => (
                 <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-100 flex items-center gap-3">
-                  <ChevronRight className="w-4 h-4 text-[#0D9488] shrink-0" />
-                  <span className="text-sm font-medium text-[#0A2540]">{area}</span>
+                  <ChevronRight className="w-4 h-4 text-[#B87333] shrink-0" />
+                  <span className="text-sm font-medium text-[#1C3D5A]">{area}</span>
                 </div>
               ))}
             </div>
@@ -202,19 +202,19 @@ export default function SobreDrFelipe() {
       <section className="py-16 bg-gray-50">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Participação em Congressos</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Participação em Congressos</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{marginTop: '-5px', marginRight: '-5px', marginLeft: '6px', width: '367px', height: '409px'}}>
                 <img src={UROONCO_URL} alt="Dr. Felipe no UroOnco 2025" className="w-full h-48 object-cover" style={{paddingRight: '70px', marginTop: '2px', marginLeft: '39px', width: '379px', height: '333px'}} />
                 <div className="p-4 bg-white">
-                  <h4 className="font-bold text-[#0A2540] mb-1">UroOnco 2025</h4>
+                  <h4 className="font-bold text-[#1C3D5A] mb-1">UroOnco 2025</h4>
                   <p className="text-sm text-[#64748B]">Congresso de Uro-Oncologia — São Paulo</p>
                 </div>
               </div>
               <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
                 <img src={JPU_URL} alt="Dr. Felipe no JPU 2025" className="w-full h-48 object-cover" />
                 <div className="p-4 bg-white">
-                  <h4 className="font-bold text-[#0A2540] mb-1">JPU 2025</h4>
+                  <h4 className="font-bold text-[#1C3D5A] mb-1">JPU 2025</h4>
                   <p className="text-sm text-[#64748B]">Jornada Paulista de Urologia — SBU-SP</p>
                 </div>
               </div>
@@ -227,25 +227,25 @@ export default function SobreDrFelipe() {
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-8">Locais de Atendimento</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Locais de Atendimento</h2>
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 { name: "Campinas Day Hospital", address: "Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP", type: "Convênios e Particular", color: "bg-blue-50 border-blue-100" },
-                { name: "Clinovi Paulista", address: "Av. Paulista, 1048, 18° andar — Bela Vista, São Paulo/SP", type: "Particular", color: "bg-teal-50 border-teal-100" },
-                { name: "Clinovi Moema", address: "Av. Ibirapuera, 1835, 2° andar — Moema, São Paulo/SP", type: "Particular", color: "bg-emerald-50 border-emerald-100" },
+                { name: "Clinovi Paulista", address: "Av. Paulista, 1048, 18° andar — Bela Vista, São Paulo/SP", type: "Particular", color: "bg-amber-50 border-amber-100" },
+                { name: "Clinovi Moema", address: "Av. Ibirapuera, 1835, 2° andar — Moema, São Paulo/SP", type: "Particular", color: "bg-amber-50 border-amber-100" },
               ].map((loc, i) => (
                 <div key={i} className={`rounded-xl p-5 border ${loc.color}`}>
-                  <MapPin className="w-5 h-5 text-[#0D9488] mb-3" />
-                  <h4 className="font-bold text-[#0A2540] mb-1 text-sm">{loc.name}</h4>
+                  <MapPin className="w-5 h-5 text-[#B87333] mb-3" />
+                  <h4 className="font-bold text-[#1C3D5A] mb-1 text-sm">{loc.name}</h4>
                   <p className="text-xs text-[#64748B] mb-2">{loc.address}</p>
-                  <span className="text-xs bg-white px-2 py-1 rounded border font-medium text-[#0D9488]">{loc.type}</span>
+                  <span className="text-xs bg-white px-2 py-1 rounded border font-medium text-[#B87333]">{loc.type}</span>
                 </div>
               ))}
             </div>
             <div className="mt-6 bg-indigo-50 border border-indigo-100 rounded-xl p-5 flex items-center gap-4">
               <Video className="w-8 h-8 text-indigo-500 shrink-0" />
               <div>
-                <h4 className="font-bold text-[#0A2540] mb-1">Teleconsulta</h4>
+                <h4 className="font-bold text-[#1C3D5A] mb-1">Teleconsulta</h4>
                 <p className="text-sm text-[#334155]">Atendimento online para todo o Brasil. Agende pelo Doctoralia ou WhatsApp.</p>
               </div>
             </div>
@@ -254,7 +254,7 @@ export default function SobreDrFelipe() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#0A2540]">
+      <section className="py-16 bg-[#1C3D5A]">
         <div className="container max-w-4xl text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <img src={LOGO_URL} alt="Dr. Felipe de Bulhões" className="h-14 mx-auto mb-6 brightness-0 invert" />
@@ -270,7 +270,7 @@ export default function SobreDrFelipe() {
                     document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
                   }, 500);
                 }}
-                className="bg-[#0D9488] hover:bg-[#0B8276] text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+                className="bg-[#B87333] hover:bg-[#0B8276] text-white px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Agendar pelo Doctoralia
               </Link>
@@ -289,7 +289,7 @@ export default function SobreDrFelipe() {
 
       {/* Back to home */}
       <div className="py-6 bg-gray-50 text-center">
-        <Link href="/" className="text-sm text-[#0D9488] hover:underline font-medium">
+        <Link href="/" className="text-sm text-[#B87333] hover:underline font-medium">
           ← Voltar para a página inicial
         </Link>
       </div>

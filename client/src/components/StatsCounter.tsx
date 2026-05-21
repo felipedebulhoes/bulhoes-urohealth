@@ -124,11 +124,11 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
       className="text-center group"
     >
       <div className="inline-flex items-center justify-center w-14 h-14 bg-white/10 rounded-xl mb-4 group-hover:bg-white/20 transition-colors">
-        <Icon className="w-7 h-7 text-[#0D9488]" />
+        <Icon className="w-7 h-7 text-[#B87333]" />
       </div>
       <div className="text-4xl md:text-5xl font-bold text-white mb-1" style={{ fontFamily: "'DM Serif Display', serif" }}>
         {displayValue}
-        <span className="text-[#0D9488]">{stat.suffix}</span>
+        <span className="text-[#B87333]">{stat.suffix}</span>
       </div>
       <div className="text-white font-semibold text-sm mb-1">{stat.label}</div>
       <div className="text-white/60 text-xs">{stat.description}</div>
@@ -138,7 +138,7 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
 
 export default function StatsCounter() {
   return (
-    <section className="py-20 bg-[#0A2540] relative overflow-hidden">
+    <section className="py-20 bg-[#1C3D5A] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

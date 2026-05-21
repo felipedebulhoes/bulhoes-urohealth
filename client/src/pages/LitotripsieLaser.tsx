@@ -73,7 +73,7 @@ export default function LitotripsieLaser() {
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-[#2563EB] p-6 rounded-r-lg mb-10">
-              <p className="text-[#0A2540] leading-relaxed">
+              <p className="text-[#1C3D5A] leading-relaxed">
                 A <strong>litotripsia a laser</strong> é o método mais moderno e eficaz para o tratamento de cálculos renais e ureterais (pedras nos rins e no ureter). O procedimento é realizado por via endoscópica (ureteroscopia), sem cortes, utilizando uma fibra de laser para fragmentar o cálculo em partículas minúsculas que são eliminadas naturalmente pela urina. Segundo as <strong>diretrizes da European Association of Urology (EAU 2025)</strong>, o laser Holmium:YAG e o Thulium Fiber Laser são as tecnologias recomendadas com grau de evidência forte.
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function LitotripsieLaser() {
 
           {/* O que é */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">O que é a Litotripsia a Laser?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">O que é a Litotripsia a Laser?</h2>
             <p className="text-[#334155] leading-relaxed mb-4">
               A litotripsia a laser é um procedimento minimamente invasivo no qual um <strong>ureteroscópio</strong> (instrumento fino e flexível com câmera) é introduzido pela uretra, passando pela bexiga até o ureter ou rim, sem necessidade de incisões. Ao localizar o cálculo, uma fibra de laser é passada pelo canal de trabalho do ureteroscópio e direcionada ao cálculo, fragmentando-o em partículas microscópicas ("poeira") ou em pedaços menores que são removidos com pinças ou cestas endoscópicas.
             </p>
@@ -94,7 +94,7 @@ export default function LitotripsieLaser() {
                 <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
                   <Flame className="w-6 h-6 text-[#2563EB]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#0A2540] mb-3">Laser Holmium:YAG (Ho:YAG)</h3>
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3">Laser Holmium:YAG (Ho:YAG)</h3>
                 <p className="text-[#334155] text-sm leading-relaxed mb-3">
                   O <strong>gold standard</strong> histórico para litotripsia endoscópica. Emite pulsos de energia que fragmentam o cálculo por efeito fototérmico. Disponível em versões de baixa e alta potência (até 120W).
                 </p>
@@ -117,7 +117,7 @@ export default function LitotripsieLaser() {
                 <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-[#2563EB]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#0A2540] mb-3">Thulium Fiber Laser (TFL)</h3>
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3">Thulium Fiber Laser (TFL)</h3>
                 <p className="text-[#334155] text-sm leading-relaxed mb-3">
                   Tecnologia de <strong>última geração</strong> que utiliza fibras mais finas e frequências de pulso mais altas. Resultados clínicos comparáveis ao Ho:YAG, com possível vantagem em tempo operatório.
                 </p>
@@ -147,7 +147,7 @@ export default function LitotripsieLaser() {
 
           {/* Como funciona - Passo a Passo */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Como é Realizada a Litotripsia a Laser?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Como é Realizada a Litotripsia a Laser?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               O procedimento é realizado em centro cirúrgico, sob <strong>anestesia geral ou raquianestesia</strong>, com o paciente em posição de litotomia (deitado de costas com as pernas elevadas). A duração varia de 30 a 90 minutos, dependendo do tamanho, localização e número de cálculos.
             </p>
@@ -196,7 +196,7 @@ export default function LitotripsieLaser() {
                     {item.step}
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0A2540] mb-1 flex items-center gap-2">
+                    <h4 className="font-bold text-[#1C3D5A] mb-1 flex items-center gap-2">
                       <item.icon className="w-4 h-4 text-[#2563EB]" />
                       {item.title}
                     </h4>
@@ -215,14 +215,14 @@ export default function LitotripsieLaser() {
 
           {/* Técnicas de Litotripsia */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Técnicas de Litotripsia a Laser</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Técnicas de Litotripsia a Laser</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               Existem duas estratégias principais para a fragmentação do cálculo com laser, e a escolha depende do tamanho, localização e composição do cálculo:
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-6">
-                <h3 className="text-lg font-bold text-[#0A2540] mb-3 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
                   <Waves className="w-5 h-5 text-[#2563EB]" />
                   Dusting (Pulverização)
                 </h3>
@@ -246,7 +246,7 @@ export default function LitotripsieLaser() {
               </div>
 
               <div className="bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-xl p-6">
-                <h3 className="text-lg font-bold text-[#0A2540] mb-3 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-indigo-600" />
                   Fragmentação + Extração
                 </h3>
@@ -273,7 +273,7 @@ export default function LitotripsieLaser() {
 
           {/* Indicações */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Indicações: Quando a Litotripsia a Laser é Recomendada?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Indicações: Quando a Litotripsia a Laser é Recomendada?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A litotripsia a laser por ureteroscopia é indicada para o tratamento de cálculos urinários em diversas situações. As indicações são baseadas no tamanho, localização e composição do cálculo, além de fatores do paciente:
             </p>
@@ -317,7 +317,7 @@ export default function LitotripsieLaser() {
                       <item.icon className="w-5 h-5 text-[#2563EB]" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#0A2540] mb-1">{item.title}</h4>
+                      <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
                       <p className="text-[#334155] text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -326,11 +326,11 @@ export default function LitotripsieLaser() {
             </div>
 
             {/* Tabela comparativa */}
-            <h3 className="text-xl font-bold text-[#0A2540] mb-4">Comparação: Litotripsia a Laser (URS) vs. LECO vs. PCNL</h3>
+            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4">Comparação: Litotripsia a Laser (URS) vs. LECO vs. PCNL</h3>
             <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-[#0A2540] text-white">
+                  <tr className="bg-[#1C3D5A] text-white">
                     <th className="p-3 text-left font-medium">Característica</th>
                     <th className="p-3 text-center font-medium">URS + Laser</th>
                     <th className="p-3 text-center font-medium">LECO (SWL)</th>
@@ -351,7 +351,7 @@ export default function LitotripsieLaser() {
                     ["Anticoagulantes", "★★★ Preferida", "★ Contraindicada", "★ Contraindicada"],
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                      <td className="p-3 font-medium text-[#0A2540]">{row[0]}</td>
+                      <td className="p-3 font-medium text-[#1C3D5A]">{row[0]}</td>
                       <td className="p-3 text-center text-[#334155]">{row[1]}</td>
                       <td className="p-3 text-center text-[#334155]">{row[2]}</td>
                       <td className="p-3 text-center text-[#334155]">{row[3]}</td>
@@ -367,14 +367,14 @@ export default function LitotripsieLaser() {
 
           {/* Preparo */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={5} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Preparo para o Procedimento</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Preparo para o Procedimento</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               O preparo adequado é essencial para a segurança e o sucesso do procedimento. As orientações devem ser seguidas rigorosamente conforme indicação do urologista:
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-lg font-bold text-[#0A2540] mb-4 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
                   <CalendarCheck className="w-5 h-5 text-[#2563EB]" />
                   Antes do Procedimento
                 </h3>
@@ -404,7 +404,7 @@ export default function LitotripsieLaser() {
                     <div key={i} className="flex items-start gap-3 bg-gray-50 rounded-lg p-4 border border-gray-100">
                       <item.icon className="w-5 h-5 text-[#2563EB] mt-0.5 shrink-0" />
                       <div>
-                        <h4 className="font-bold text-[#0A2540] text-sm">{item.title}</h4>
+                        <h4 className="font-bold text-[#1C3D5A] text-sm">{item.title}</h4>
                         <p className="text-xs text-[#334155] leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
@@ -413,7 +413,7 @@ export default function LitotripsieLaser() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-[#0A2540] mb-4 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
                   <ShieldAlert className="w-5 h-5 text-amber-600" />
                   Contraindicações
                 </h3>
@@ -443,7 +443,7 @@ export default function LitotripsieLaser() {
                     <div key={i} className="flex items-start gap-3 bg-amber-50 rounded-lg p-4 border border-amber-100">
                       <item.icon className="w-5 h-5 text-amber-600 mt-0.5 shrink-0" />
                       <div>
-                        <h4 className="font-bold text-[#0A2540] text-sm">{item.title}</h4>
+                        <h4 className="font-bold text-[#1C3D5A] text-sm">{item.title}</h4>
                         <p className="text-xs text-[#334155] leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
@@ -455,14 +455,14 @@ export default function LitotripsieLaser() {
 
           {/* Pós-operatório */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={6} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Pós-Operatório e Recuperação</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Pós-Operatório e Recuperação</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A recuperação após a litotripsia a laser é geralmente rápida. A maioria dos pacientes recebe alta no mesmo dia (day clinic) ou no dia seguinte. Veja o que esperar em cada fase:
             </p>
 
             <div className="space-y-6">
               <div className="bg-gradient-to-r from-green-50 to-white border border-green-100 rounded-xl p-6">
-                <h3 className="text-lg font-bold text-[#0A2540] mb-3 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-green-600" />
                   Primeiras 24-48 horas
                 </h3>
@@ -484,7 +484,7 @@ export default function LitotripsieLaser() {
               </div>
 
               <div className="bg-gradient-to-r from-blue-50 to-white border border-blue-100 rounded-xl p-6">
-                <h3 className="text-lg font-bold text-[#0A2540] mb-3 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
                   <CalendarCheck className="w-5 h-5 text-[#2563EB]" />
                   Primeira semana
                 </h3>
@@ -506,7 +506,7 @@ export default function LitotripsieLaser() {
               </div>
 
               <div className="bg-gradient-to-r from-purple-50 to-white border border-purple-100 rounded-xl p-6">
-                <h3 className="text-lg font-bold text-[#0A2540] mb-3 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
                   <Stethoscope className="w-5 h-5 text-purple-600" />
                   Cateter Duplo J (quando utilizado)
                 </h3>
@@ -557,7 +557,7 @@ export default function LitotripsieLaser() {
 
           {/* Complicações */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={7} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Possíveis Complicações</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Possíveis Complicações</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A litotripsia a laser por ureteroscopia é um procedimento seguro, mas como qualquer cirurgia, pode apresentar complicações. A taxa geral de complicações é de <strong>4 a 25%</strong>, sendo a maioria de grau leve (Clavien I-II) e sem necessidade de intervenção adicional.
             </p>
@@ -638,8 +638,8 @@ export default function LitotripsieLaser() {
 
           {/* Onde realizamos — Campinas Day Hospital */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={8} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Onde Realizamos a Litotripsia a Laser</h2>
-            <div className="bg-gradient-to-br from-[#0A2540] to-[#0F3460] rounded-2xl overflow-hidden">
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Onde Realizamos a Litotripsia a Laser</h2>
+            <div className="bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] rounded-2xl overflow-hidden">
               <div className="p-8 lg:p-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
@@ -711,7 +711,7 @@ export default function LitotripsieLaser() {
 
           {/* FAQ */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={9} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#0A2540] font-serif mb-6">Perguntas Frequentes</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Perguntas Frequentes</h2>
             <div className="space-y-4">
               {[
                 {
@@ -748,7 +748,7 @@ export default function LitotripsieLaser() {
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h4 className="font-bold text-[#0A2540] mb-2">{item.q}</h4>
+                  <h4 className="font-bold text-[#1C3D5A] mb-2">{item.q}</h4>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.a}</p>
                 </div>
               ))}
@@ -758,7 +758,7 @@ export default function LitotripsieLaser() {
           {/* Referências */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={10}>
             <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h3 className="text-lg font-bold text-[#0A2540] mb-4">Referências</h3>
+              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
                 <li>1. EAU Guidelines on Urolithiasis — Disease Management (Section 3.4), 2025. European Association of Urology.</li>
                 <li>2. EAU Guidelines on Urolithiasis — Ureteroscopy: Retrograde and Antegrade (Section 3.4.6), 2025.</li>

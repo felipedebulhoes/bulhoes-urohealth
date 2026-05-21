@@ -36,11 +36,11 @@ export default function QuickContactForm() {
   ];
 
   return (
-    <section id="formulario" className="py-16 lg:py-24 bg-gradient-to-br from-[#0A2540] to-[#0F3460] relative overflow-hidden">
+    <section id="formulario" className="py-16 lg:py-24 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#0D9488] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#0D9488] rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#B87333] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#B87333] rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       </div>
 
       <div className="container max-w-5xl relative z-10">
@@ -52,8 +52,8 @@ export default function QuickContactForm() {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-2 mb-3">
-              <div className="h-px w-8 bg-[#0D9488]" />
-              <span className="text-xs font-semibold text-[#0D9488] uppercase tracking-widest">
+              <div className="h-px w-8 bg-[#B87333]" />
+              <span className="text-xs font-semibold text-[#B87333] uppercase tracking-widest">
                 Contato Rápido
               </span>
             </div>
@@ -86,7 +86,7 @@ export default function QuickContactForm() {
           >
             {submitted ? (
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
-                <CheckCircle className="w-12 h-12 text-[#0D9488] mx-auto mb-4" />
+                <CheckCircle className="w-12 h-12 text-[#B87333] mx-auto mb-4" />
                 <h3 className="text-xl text-white font-semibold mb-2">
                   Mensagem Enviada!
                 </h3>
@@ -112,7 +112,7 @@ export default function QuickContactForm() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Seu nome"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#0D9488]/50 transition-colors"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#B87333]/50 transition-colors"
                     />
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export default function QuickContactForm() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="(11) 99999-9999"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#0D9488]/50 transition-colors"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#B87333]/50 transition-colors"
                     />
                   </div>
                 </div>
@@ -146,11 +146,11 @@ export default function QuickContactForm() {
                       required
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white appearance-none focus:outline-none focus:border-[#0D9488]/50 transition-colors"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white appearance-none focus:outline-none focus:border-[#B87333]/50 transition-colors"
                     >
-                      <option value="" className="bg-[#0A2540]">Selecione o assunto</option>
+                      <option value="" className="bg-[#1C3D5A]">Selecione o assunto</option>
                       {subjects.map((s) => (
-                        <option key={s} value={s} className="bg-[#0A2540]">{s}</option>
+                        <option key={s} value={s} className="bg-[#1C3D5A]">{s}</option>
                       ))}
                     </select>
                   </div>
@@ -158,7 +158,7 @@ export default function QuickContactForm() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-[#0D9488] hover:bg-[#0B7C72] text-white h-12 text-sm font-semibold rounded-lg mt-2"
+                  className="w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   Enviar pelo WhatsApp

@@ -126,14 +126,14 @@ export default function VideosSection() {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-px w-10 bg-[#0D9488]" />
-                <span className="text-[#0D9488] text-sm font-semibold uppercase tracking-[0.15em]">
+                <div className="h-px w-10 bg-[#B87333]" />
+                <span className="text-[#B87333] text-sm font-semibold uppercase tracking-[0.15em]">
                   Vídeos Educativos
                 </span>
               </div>
-              <h2 className="text-3xl lg:text-4xl text-[#0A2540] leading-tight">
+              <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight">
                 Entenda os
-                <span className="block text-[#0D9488]">Procedimentos</span>
+                <span className="block text-[#B87333]">Procedimentos</span>
               </h2>
             </motion.div>
 
@@ -143,7 +143,7 @@ export default function VideosSection() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="flex items-end"
             >
-              <p className="text-base text-[#0A2540]/60 leading-relaxed">
+              <p className="text-base text-[#1C3D5A]/60 leading-relaxed">
                 Conheça as técnicas minimamente invasivas utilizadas no tratamento das
                 principais doenças urológicas. Vídeos reais de procedimentos e conteúdo
                 educativo para desmistificar os tratamentos.
@@ -164,8 +164,8 @@ export default function VideosSection() {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
                   activeCategory === cat.id
-                    ? "bg-[#0A2540] text-white shadow-md"
-                    : "bg-white text-[#0A2540]/60 border border-[#0A2540]/8 hover:border-[#0D9488]/30 hover:text-[#0A2540]"
+                    ? "bg-[#1C3D5A] text-white shadow-md"
+                    : "bg-white text-[#1C3D5A]/60 border border-[#1C3D5A]/8 hover:border-[#B87333]/30 hover:text-[#1C3D5A]"
                 }`}
               >
                 <cat.icon className="w-4 h-4" />
@@ -188,7 +188,7 @@ export default function VideosSection() {
                   className="group cursor-pointer"
                   onClick={() => setSelectedVideo(video)}
                 >
-                  <div className="bg-white rounded-xl border border-[#0A2540]/6 overflow-hidden hover:shadow-xl hover:shadow-[#0A2540]/5 transition-all duration-500 hover:-translate-y-1">
+                  <div className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-xl hover:shadow-[#1C3D5A]/5 transition-all duration-500 hover:-translate-y-1">
                     {/* Thumbnail */}
                     <div className="relative aspect-video overflow-hidden">
                       <img
@@ -197,9 +197,9 @@ export default function VideosSection() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       {/* Play overlay */}
-                      <div className="absolute inset-0 bg-[#0A2540]/30 group-hover:bg-[#0A2540]/50 transition-colors flex items-center justify-center">
+                      <div className="absolute inset-0 bg-[#1C3D5A]/30 group-hover:bg-[#1C3D5A]/50 transition-colors flex items-center justify-center">
                         <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                          <Play className="w-6 h-6 text-[#0A2540] ml-1" fill="currentColor" />
+                          <Play className="w-6 h-6 text-[#1C3D5A] ml-1" fill="currentColor" />
                         </div>
                       </div>
                       {/* Duration badge */}
@@ -223,14 +223,14 @@ export default function VideosSection() {
                     {/* Info */}
                     <div className="p-5">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-[10px] uppercase tracking-wider text-[#0D9488] font-semibold bg-[#0D9488]/8 px-2 py-0.5 rounded">
+                        <span className="text-[10px] uppercase tracking-wider text-[#B87333] font-semibold bg-[#B87333]/8 px-2 py-0.5 rounded">
                           {categories.find((c) => c.id === video.category)?.label || video.category}
                         </span>
                       </div>
-                      <h3 className="text-base font-semibold text-[#0A2540] leading-snug mb-2 group-hover:text-[#0D9488] transition-colors">
+                      <h3 className="text-base font-semibold text-[#1C3D5A] leading-snug mb-2 group-hover:text-[#B87333] transition-colors">
                         {video.title}
                       </h3>
-                      <p className="text-xs text-[#0A2540]/50 leading-relaxed line-clamp-2">
+                      <p className="text-xs text-[#1C3D5A]/50 leading-relaxed line-clamp-2">
                         {video.description}
                       </p>
                     </div>
@@ -252,7 +252,7 @@ export default function VideosSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" className="border-[#0A2540]/10 text-[#0A2540]/60 hover:text-[#0A2540] hover:border-[#0A2540]/20">
+              <Button variant="outline" className="border-[#1C3D5A]/10 text-[#1C3D5A]/60 hover:text-[#1C3D5A] hover:border-[#1C3D5A]/20">
                 Ver mais vídeos no Instagram
                 <ExternalLink className="w-4 h-4 ml-2" />
               </Button>
@@ -280,10 +280,10 @@ export default function VideosSection() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal header */}
-              <div className="flex items-center justify-between p-4 border-b border-[#0A2540]/8">
+              <div className="flex items-center justify-between p-4 border-b border-[#1C3D5A]/8">
                 <div>
-                  <h3 className="text-base font-semibold text-[#0A2540]">{selectedVideo.title}</h3>
-                  <span className="text-xs text-[#0A2540]/40">
+                  <h3 className="text-base font-semibold text-[#1C3D5A]">{selectedVideo.title}</h3>
+                  <span className="text-xs text-[#1C3D5A]/40">
                     {categories.find((c) => c.id === selectedVideo.category)?.label}
                   </span>
                 </div>
@@ -292,13 +292,13 @@ export default function VideosSection() {
                     href={selectedVideo.externalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-md hover:bg-[#0A2540]/5 transition-colors text-[#0A2540]/40 hover:text-[#0A2540]"
+                    className="p-2 rounded-md hover:bg-[#1C3D5A]/5 transition-colors text-[#1C3D5A]/40 hover:text-[#1C3D5A]"
                   >
                     <ExternalLink className="w-4 h-4" />
                   </a>
                   <button
                     onClick={() => setSelectedVideo(null)}
-                    className="p-2 rounded-md hover:bg-[#0A2540]/5 transition-colors text-[#0A2540]/40 hover:text-[#0A2540]"
+                    className="p-2 rounded-md hover:bg-[#1C3D5A]/5 transition-colors text-[#1C3D5A]/40 hover:text-[#1C3D5A]"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -319,7 +319,7 @@ export default function VideosSection() {
 
               {/* Description */}
               <div className="p-5">
-                <p className="text-sm text-[#0A2540]/60 leading-relaxed">
+                <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">
                   {selectedVideo.description}
                 </p>
                 <div className="mt-4 flex items-center gap-3">
@@ -328,7 +328,7 @@ export default function VideosSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button size="sm" className="bg-[#0D9488] hover:bg-[#0B7C72] text-white text-xs">
+                    <Button size="sm" className="bg-[#B87333] hover:bg-[#8B5A2B] text-white text-xs">
                       Agendar Consulta
                     </Button>
                   </a>
@@ -337,7 +337,7 @@ export default function VideosSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button size="sm" variant="outline" className="text-xs border-[#0A2540]/10">
+                    <Button size="sm" variant="outline" className="text-xs border-[#1C3D5A]/10">
                       Tirar Dúvidas via WhatsApp
                     </Button>
                   </a>

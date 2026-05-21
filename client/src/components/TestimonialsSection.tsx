@@ -117,38 +117,38 @@ function TestimonialCard({ testimonial, index, isInView }: { testimonial: Testim
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.45, delay: 0.08 * index }}
-      className="bg-white rounded-xl p-6 border border-[#0A2540]/6 shadow-sm hover:shadow-lg hover:border-[#0D9488]/20 transition-all duration-300 flex flex-col h-full group"
+      className="bg-white rounded-xl p-6 border border-[#1C3D5A]/6 shadow-sm hover:shadow-lg hover:border-[#B87333]/20 transition-all duration-300 flex flex-col h-full group"
     >
       {/* Quote icon */}
-      <Quote className="w-8 h-8 text-[#0D9488]/15 mb-3 group-hover:text-[#0D9488]/30 transition-colors" />
+      <Quote className="w-8 h-8 text-[#B87333]/15 mb-3 group-hover:text-[#B87333]/30 transition-colors" />
 
       {/* Text */}
-      <p className="text-[15px] text-[#0A2540]/75 leading-relaxed mb-auto flex-1">
+      <p className="text-[15px] text-[#1C3D5A]/75 leading-relaxed mb-auto flex-1">
         "{testimonial.text}"
       </p>
 
       {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#0A2540]/8 to-transparent my-5" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#1C3D5A]/8 to-transparent my-5" />
 
       {/* Author row */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           {/* Avatar */}
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0D9488]/20 to-[#0D9488]/5 flex items-center justify-center">
-            <span className="text-xs font-bold text-[#0D9488]">{testimonial.initials}</span>
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#B87333]/20 to-[#B87333]/5 flex items-center justify-center">
+            <span className="text-xs font-bold text-[#B87333]">{testimonial.initials}</span>
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="text-sm font-semibold text-[#0A2540]">{testimonial.name}</span>
-              <BadgeCheck className="w-4 h-4 text-[#0D9488]" />
+              <span className="text-sm font-semibold text-[#1C3D5A]">{testimonial.name}</span>
+              <BadgeCheck className="w-4 h-4 text-[#B87333]" />
             </div>
             <div className="flex items-center gap-1.5 mt-0.5">
               {testimonial.isTelemedicine ? (
-                <Video className="w-3 h-3 text-[#0A2540]/35" />
+                <Video className="w-3 h-3 text-[#1C3D5A]/35" />
               ) : (
-                <MapPin className="w-3 h-3 text-[#0A2540]/35" />
+                <MapPin className="w-3 h-3 text-[#1C3D5A]/35" />
               )}
-              <span className="text-xs text-[#0A2540]/40">{testimonial.type}</span>
+              <span className="text-xs text-[#1C3D5A]/40">{testimonial.type}</span>
             </div>
           </div>
         </div>
@@ -182,26 +182,26 @@ export default function TestimonialsSection() {
           className="text-center mb-14"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-10 bg-[#0D9488]" />
-            <span className="text-[#0D9488] text-sm font-semibold uppercase tracking-[0.15em]">
+            <div className="h-px w-10 bg-[#B87333]" />
+            <span className="text-[#B87333] text-sm font-semibold uppercase tracking-[0.15em]">
               Depoimentos
             </span>
-            <div className="h-px w-10 bg-[#0D9488]" />
+            <div className="h-px w-10 bg-[#B87333]" />
           </div>
-          <h2 className="text-3xl lg:text-4xl text-[#0A2540] leading-tight font-serif">
+          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight font-serif">
             O que dizem nossos pacientes
           </h2>
-          <p className="text-[#0A2540]/50 mt-4 max-w-xl mx-auto text-sm">
+          <p className="text-[#1C3D5A]/50 mt-4 max-w-xl mx-auto text-sm">
             Todas as opiniões são verificadas pela Doctoralia e representam experiências reais de pacientes atendidos.
           </p>
 
           {/* Rating summary */}
           <div className="flex items-center justify-center gap-4 mt-6">
-            <div className="flex items-center gap-2 bg-white rounded-full px-5 py-2.5 shadow-sm border border-[#0A2540]/6">
-              <div className="text-2xl font-bold text-[#0A2540]">5.0</div>
+            <div className="flex items-center gap-2 bg-white rounded-full px-5 py-2.5 shadow-sm border border-[#1C3D5A]/6">
+              <div className="text-2xl font-bold text-[#1C3D5A]">5.0</div>
               <div className="flex flex-col items-start">
                 <StarRating count={5} size="w-4 h-4" />
-                <span className="text-xs text-[#0A2540]/50 mt-0.5">9 opiniões verificadas</span>
+                <span className="text-xs text-[#1C3D5A]/50 mt-0.5">9 opiniões verificadas</span>
               </div>
             </div>
           </div>
@@ -214,13 +214,13 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="mb-10"
         >
-          <div className="relative bg-gradient-to-br from-[#0A2540] to-[#0F3460] rounded-2xl p-8 lg:p-12 overflow-hidden">
+          <div className="relative bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] rounded-2xl p-8 lg:p-12 overflow-hidden">
             {/* Background pattern */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#0D9488]/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#0D9488]/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#B87333]/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#B87333]/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
             <div className="relative">
-              <Quote className="w-12 h-12 text-[#0D9488]/30 mb-4" />
+              <Quote className="w-12 h-12 text-[#B87333]/30 mb-4" />
 
               <AnimatePresence mode="wait">
                 <motion.div
@@ -236,8 +236,8 @@ export default function TestimonialsSection() {
 
                   <div className="flex items-center justify-between flex-wrap gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-[#0D9488]/20 flex items-center justify-center border border-[#0D9488]/30">
-                        <span className="text-sm font-bold text-[#0D9488]">
+                      <div className="w-12 h-12 rounded-full bg-[#B87333]/20 flex items-center justify-center border border-[#B87333]/30">
+                        <span className="text-sm font-bold text-[#B87333]">
                           {featuredTestimonials[currentFeatured].initials}
                         </span>
                       </div>
@@ -246,7 +246,7 @@ export default function TestimonialsSection() {
                           <span className="text-white font-semibold">
                             {featuredTestimonials[currentFeatured].name}
                           </span>
-                          <BadgeCheck className="w-4 h-4 text-[#0D9488]" />
+                          <BadgeCheck className="w-4 h-4 text-[#B87333]" />
                         </div>
                         <span className="text-white/40 text-sm">
                           {featuredTestimonials[currentFeatured].type} — {featuredTestimonials[currentFeatured].location}
@@ -265,7 +265,7 @@ export default function TestimonialsSection() {
                     key={i}
                     onClick={() => setCurrentFeatured(i)}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
-                      i === currentFeatured ? "w-8 bg-[#0D9488]" : "w-3 bg-white/20 hover:bg-white/40"
+                      i === currentFeatured ? "w-8 bg-[#B87333]" : "w-3 bg-white/20 hover:bg-white/40"
                     }`}
                   />
                 ))}
@@ -300,7 +300,7 @@ export default function TestimonialsSection() {
           >
             <Button
               variant="outline"
-              className="border-[#0D9488]/30 text-[#0D9488] hover:bg-[#0D9488]/5 hover:border-[#0D9488]/50 px-6 h-11 rounded-lg"
+              className="border-[#B87333]/30 text-[#B87333] hover:bg-[#B87333]/5 hover:border-[#B87333]/50 px-6 h-11 rounded-lg"
             >
               Ver todas as opiniões na Doctoralia
             </Button>
@@ -310,7 +310,7 @@ export default function TestimonialsSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="bg-[#0D9488] hover:bg-[#0B7C72] text-white px-6 h-11 rounded-lg">
+            <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white px-6 h-11 rounded-lg">
               Agendar Consulta
             </Button>
           </a>
@@ -323,8 +323,8 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="flex items-center justify-center gap-2 mt-8"
         >
-          <BadgeCheck className="w-4 h-4 text-[#0D9488]/50" />
-          <span className="text-xs text-[#0A2540]/35">
+          <BadgeCheck className="w-4 h-4 text-[#B87333]/50" />
+          <span className="text-xs text-[#1C3D5A]/35">
             Opiniões verificadas pela Doctoralia — plataforma independente de avaliação médica
           </span>
         </motion.div>

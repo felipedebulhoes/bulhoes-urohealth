@@ -255,16 +255,16 @@ const faqs = [
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-[#0A2540]/6 last:border-0">
+    <div className="border-b border-[#1C3D5A]/6 last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between py-4 text-left group"
       >
-        <span className="text-sm font-medium text-[#0A2540] pr-4 group-hover:text-[#0D9488] transition-colors">
+        <span className="text-sm font-medium text-[#1C3D5A] pr-4 group-hover:text-[#B87333] transition-colors">
           {q}
         </span>
         <ChevronDown
-          className={`w-4 h-4 shrink-0 mt-0.5 text-[#0A2540]/30 transition-transform duration-200 ${
+          className={`w-4 h-4 shrink-0 mt-0.5 text-[#1C3D5A]/30 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
         />
@@ -278,7 +278,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <p className="text-sm text-[#0A2540]/55 leading-relaxed pb-4">
+            <p className="text-sm text-[#1C3D5A]/55 leading-relaxed pb-4">
               {a}
             </p>
           </motion.div>
@@ -308,15 +308,15 @@ export default function FAQSection() {
           className="text-center mb-10"
         >
           <div className="flex items-center justify-center gap-2 mb-3">
-            <HelpCircle className="w-5 h-5 text-[#0D9488]" />
-            <span className="text-xs font-semibold text-[#0D9488] uppercase tracking-widest">
+            <HelpCircle className="w-5 h-5 text-[#B87333]" />
+            <span className="text-xs font-semibold text-[#B87333] uppercase tracking-widest">
               Perguntas Frequentes
             </span>
           </div>
-          <h2 className="text-2xl lg:text-4xl text-[#0A2540] mb-3 font-serif">
+          <h2 className="text-2xl lg:text-4xl text-[#1C3D5A] mb-3 font-serif">
             Tire Suas Dúvidas
           </h2>
-          <p className="text-sm text-[#0A2540]/50 max-w-lg mx-auto">
+          <p className="text-sm text-[#1C3D5A]/50 max-w-lg mx-auto">
             Respostas para as perguntas mais comuns sobre saúde masculina, urologia, procedimentos e convênios.
           </p>
         </motion.div>
@@ -329,8 +329,8 @@ export default function FAQSection() {
               onClick={() => setActiveCategory(cat.category)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeCategory === cat.category
-                  ? "bg-[#0A2540] text-white"
-                  : "bg-[#F8FAFB] text-[#0A2540]/50 hover:text-[#0A2540] hover:bg-[#0A2540]/5"
+                  ? "bg-[#1C3D5A] text-white"
+                  : "bg-[#F8FAFB] text-[#1C3D5A]/50 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
               }`}
             >
               {cat.category}
@@ -343,7 +343,7 @@ export default function FAQSection() {
           key={activeCategory}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl border border-[#0A2540]/6 p-6"
+          className="bg-white rounded-xl border border-[#1C3D5A]/6 p-6"
         >
           {faqs
             .find((c) => c.category === activeCategory)
@@ -354,7 +354,7 @@ export default function FAQSection() {
 
         {/* CTA */}
         <div className="mt-8 text-center">
-          <p className="text-sm text-[#0A2540]/40 mb-3">
+          <p className="text-sm text-[#1C3D5A]/40 mb-3">
             Não encontrou sua resposta?
           </p>
           <a

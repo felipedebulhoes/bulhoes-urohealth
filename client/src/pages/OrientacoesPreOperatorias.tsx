@@ -129,8 +129,8 @@ const generalSections: PreOpSection[] = [
     id: "exames",
     title: "Exames e Avaliação Pré-Operatória",
     icon: <FileText className="w-5 h-5" />,
-    color: "text-emerald-700",
-    bgColor: "bg-emerald-50",
+    color: "text-amber-700",
+    bgColor: "bg-amber-50",
     items: [
       {
         title: "Exames laboratoriais",
@@ -229,8 +229,8 @@ const generalSections: PreOpSection[] = [
     id: "habitos",
     title: "Hábitos e Estilo de Vida",
     icon: <Heart className="w-5 h-5" />,
-    color: "text-teal-700",
-    bgColor: "bg-teal-50",
+    color: "text-amber-700",
+    bgColor: "bg-amber-50",
     items: [
       {
         title: "Tabagismo",
@@ -457,7 +457,7 @@ function GeneralSection({ section, index }: { section: PreOpSection; index: numb
       animate={inView ? "visible" : "hidden"}
       variants={fadeUp}
       custom={index}
-      className="bg-white rounded-xl border border-[#0A2540]/8 shadow-sm overflow-hidden"
+      className="bg-white rounded-xl border border-[#1C3D5A]/8 shadow-sm overflow-hidden"
     >
       <button
         onClick={() => setOpen(!open)}
@@ -467,12 +467,12 @@ function GeneralSection({ section, index }: { section: PreOpSection; index: numb
           <div className={`w-10 h-10 ${section.bgColor} rounded-lg flex items-center justify-center ${section.color}`}>
             {section.icon}
           </div>
-          <h3 className="text-lg font-bold text-[#0A2540] text-left">{section.title}</h3>
+          <h3 className="text-lg font-bold text-[#1C3D5A] text-left">{section.title}</h3>
         </div>
         {open ? (
-          <ChevronUp className="w-5 h-5 text-[#0A2540]/40" />
+          <ChevronUp className="w-5 h-5 text-[#1C3D5A]/40" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-[#0A2540]/40" />
+          <ChevronDown className="w-5 h-5 text-[#1C3D5A]/40" />
         )}
       </button>
 
@@ -491,13 +491,13 @@ function GeneralSection({ section, index }: { section: PreOpSection; index: numb
                 {item.important ? (
                   <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5 shrink-0" />
                 ) : (
-                  <Info className="w-5 h-5 text-[#0A2540]/30 mt-0.5 shrink-0" />
+                  <Info className="w-5 h-5 text-[#1C3D5A]/30 mt-0.5 shrink-0" />
                 )}
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h4 className="font-semibold text-[#0A2540]">{item.title}</h4>
+                    <h4 className="font-semibold text-[#1C3D5A]">{item.title}</h4>
                     {item.timing && (
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-white border border-[#0A2540]/10 text-[#0A2540]/60 font-medium">
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-white border border-[#1C3D5A]/10 text-[#1C3D5A]/60 font-medium">
                         {item.timing}
                       </span>
                     )}
@@ -528,40 +528,40 @@ function SurgeryCard({ surgery, index }: { surgery: SurgeryPrep; index: number }
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full bg-white rounded-xl border border-[#0A2540]/8 shadow-sm p-5 hover:shadow-md transition-shadow"
+        className="w-full bg-white rounded-xl border border-[#1C3D5A]/8 shadow-sm p-5 hover:shadow-md transition-shadow"
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#0A2540]/5 rounded-lg flex items-center justify-center text-[#0A2540]/60">
+            <div className="w-10 h-10 bg-[#1C3D5A]/5 rounded-lg flex items-center justify-center text-[#1C3D5A]/60">
               {surgery.icon}
             </div>
             <div className="text-left">
-              <h4 className="font-bold text-[#0A2540]">{surgery.name}</h4>
-              <p className="text-xs text-[#0A2540]/50">{surgery.subtitle}</p>
+              <h4 className="font-bold text-[#1C3D5A]">{surgery.name}</h4>
+              <p className="text-xs text-[#1C3D5A]/50">{surgery.subtitle}</p>
             </div>
           </div>
           {open ? (
-            <ChevronUp className="w-5 h-5 text-[#0A2540]/40 shrink-0" />
+            <ChevronUp className="w-5 h-5 text-[#1C3D5A]/40 shrink-0" />
           ) : (
-            <ChevronDown className="w-5 h-5 text-[#0A2540]/40 shrink-0" />
+            <ChevronDown className="w-5 h-5 text-[#1C3D5A]/40 shrink-0" />
           )}
         </div>
       </button>
 
       {open && (
-        <div className="mt-2 bg-white rounded-xl border border-[#0A2540]/8 p-5 space-y-5">
+        <div className="mt-2 bg-white rounded-xl border border-[#1C3D5A]/8 p-5 space-y-5">
           <p className="text-sm text-gray-600 leading-relaxed">{surgery.description}</p>
 
           {/* Instruções Específicas */}
           <div>
-            <h5 className="font-semibold text-[#0A2540] mb-3 flex items-center gap-2">
-              <ClipboardCheck className="w-4 h-4 text-emerald-600" />
+            <h5 className="font-semibold text-[#1C3D5A] mb-3 flex items-center gap-2">
+              <ClipboardCheck className="w-4 h-4 text-amber-600" />
               Instruções Específicas
             </h5>
             <ul className="space-y-2">
               {surgery.specificInstructions.map((inst, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
                   <span>{inst}</span>
                 </li>
               ))}
@@ -579,7 +579,7 @@ function SurgeryCard({ surgery, index }: { surgery: SurgeryPrep; index: number }
 
           {/* Exames */}
           <div>
-            <h5 className="font-semibold text-[#0A2540] mb-3 flex items-center gap-2">
+            <h5 className="font-semibold text-[#1C3D5A] mb-3 flex items-center gap-2">
               <FileText className="w-4 h-4 text-blue-600" />
               Exames Pré-Operatórios
             </h5>
@@ -598,14 +598,14 @@ function SurgeryCard({ surgery, index }: { surgery: SurgeryPrep; index: number }
           {/* Internação e Anestesia */}
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="bg-gray-50 rounded-lg p-4">
-              <h5 className="font-semibold text-[#0A2540] text-sm mb-1 flex items-center gap-2">
+              <h5 className="font-semibold text-[#1C3D5A] text-sm mb-1 flex items-center gap-2">
                 <BedDouble className="w-4 h-4" />
                 Internação
               </h5>
               <p className="text-xs text-gray-600 leading-relaxed">{surgery.internacao}</p>
             </div>
             <div className="bg-gray-50 rounded-lg p-4">
-              <h5 className="font-semibold text-[#0A2540] text-sm mb-1 flex items-center gap-2">
+              <h5 className="font-semibold text-[#1C3D5A] text-sm mb-1 flex items-center gap-2">
                 <Syringe className="w-4 h-4" />
                 Anestesia
               </h5>
@@ -627,16 +627,16 @@ export default function OrientacoesPreOperatorias() {
       title="Orientações Pré-Operatórias"
       subtitle="Guia Completo de Preparo para Cirurgia"
       description="Tudo o que você precisa saber para se preparar adequadamente para sua cirurgia urológica: jejum, medicamentos, exames, cuidados especiais e checklist completo."
-      accentColor="#0A2540"
+      accentColor="#1C3D5A"
       metaTitle="Orientações Pré-Operatórias | Preparo para Cirurgia Urológica | Dr. Felipe de Bulhões"
       metaDescription="Guia completo de orientações pré-operatórias para cirurgias urológicas: jejum, medicamentos, exames, preparo intestinal, anticoagulantes e checklist. Baseado nas guidelines ASA, EAU 2025 e ERAS."
     >
       {/* Introdução */}
-      <section className="py-12 lg:py-16 border-b border-[#0A2540]/6">
+      <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border-l-4 border-[#0A2540] p-6 rounded-r-lg mb-8">
-              <p className="text-[#0A2540] leading-relaxed">
+            <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border-l-4 border-[#1C3D5A] p-6 rounded-r-lg mb-8">
+              <p className="text-[#1C3D5A] leading-relaxed">
                 O preparo pré-operatório adequado é fundamental para o sucesso da sua cirurgia e para uma recuperação mais rápida e segura. Este guia reúne as orientações baseadas nos protocolos <strong>ERAS (Enhanced Recovery After Surgery)</strong>, nas diretrizes da <strong>ASA (American Society of Anesthesiologists)</strong> e da <strong>EAU (European Association of Urology, 2025)</strong>. Leia com atenção e, em caso de dúvidas, entre em contato com a equipe do Dr. Felipe de Bulhões.
               </p>
             </div>
@@ -646,21 +646,21 @@ export default function OrientacoesPreOperatorias() {
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Utensils className="w-6 h-6 text-amber-600" />
                 </div>
-                <h4 className="font-semibold text-[#0A2540] mb-1">Jejum Seguro</h4>
+                <h4 className="font-semibold text-[#1C3D5A] mb-1">Jejum Seguro</h4>
                 <p className="text-sm text-gray-600">8h sólidos, 2h líquidos claros (ASA 2023)</p>
               </div>
               <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                 <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Pill className="w-6 h-6 text-blue-600" />
                 </div>
-                <h4 className="font-semibold text-[#0A2540] mb-1">Medicamentos</h4>
+                <h4 className="font-semibold text-[#1C3D5A] mb-1">Medicamentos</h4>
                 <p className="text-sm text-gray-600">Saiba o que manter e o que suspender</p>
               </div>
               <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-center">
-                <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <ShieldCheck className="w-6 h-6 text-emerald-600" />
+                <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <ShieldCheck className="w-6 h-6 text-amber-600" />
                 </div>
-                <h4 className="font-semibold text-[#0A2540] mb-1">Checklist</h4>
+                <h4 className="font-semibold text-[#1C3D5A] mb-1">Checklist</h4>
                 <p className="text-sm text-gray-600">Confira tudo antes do dia da cirurgia</p>
               </div>
             </div>
@@ -669,7 +669,7 @@ export default function OrientacoesPreOperatorias() {
       </section>
 
       {/* Tab Navigation */}
-      <section className="py-6 bg-[#F8FAFB] border-b border-[#0A2540]/6">
+      <section className="py-6 bg-[#F8FAFB] border-b border-[#1C3D5A]/6">
         <div className="container">
           <div className="flex flex-wrap gap-2 justify-center">
             {[
@@ -682,8 +682,8 @@ export default function OrientacoesPreOperatorias() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`text-xs px-4 py-2 rounded-full border transition-colors font-medium ${
                   activeTab === tab.id
-                    ? "bg-[#0A2540] text-white border-[#0A2540]"
-                    : "bg-white border-[#0A2540]/8 text-[#0A2540]/60 hover:border-[#0A2540]/20"
+                    ? "bg-[#1C3D5A] text-white border-[#1C3D5A]"
+                    : "bg-white border-[#1C3D5A]/8 text-[#1C3D5A]/60 hover:border-[#1C3D5A]/20"
                 }`}
               >
                 {tab.label}
@@ -727,17 +727,17 @@ export default function OrientacoesPreOperatorias() {
           {activeTab === "checklist" && (
             <div>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-                <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-5 mb-6">
-                  <p className="text-sm text-emerald-800">
+                <div className="bg-amber-50 border border-amber-100 rounded-xl p-5 mb-6">
+                  <p className="text-sm text-amber-800">
                     <strong>Use este checklist</strong> para garantir que tudo está pronto antes da sua cirurgia. Marque cada item conforme for completando. Em caso de dúvida sobre qualquer item, entre em contato com a equipe do Dr. Felipe.
                   </p>
                 </div>
               </motion.div>
 
-              <div className="bg-white rounded-xl border border-[#0A2540]/8 shadow-sm overflow-hidden">
+              <div className="bg-white rounded-xl border border-[#1C3D5A]/8 shadow-sm overflow-hidden">
                 <div className="p-5 border-b border-gray-100">
-                  <h3 className="text-lg font-bold text-[#0A2540] flex items-center gap-2">
-                    <ClipboardCheck className="w-5 h-5 text-emerald-600" />
+                  <h3 className="text-lg font-bold text-[#1C3D5A] flex items-center gap-2">
+                    <ClipboardCheck className="w-5 h-5 text-amber-600" />
                     Checklist Pré-Operatório
                   </h3>
                   <p className="text-sm text-gray-500 mt-1">Confirme cada item antes do dia da cirurgia</p>
@@ -755,12 +755,12 @@ export default function OrientacoesPreOperatorias() {
                     >
                       <input
                         type="checkbox"
-                        className="w-5 h-5 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500 shrink-0"
+                        className="w-5 h-5 rounded border-gray-300 text-amber-600 focus:ring-emerald-500 shrink-0"
                       />
-                      <div className="flex items-center gap-2 text-[#0A2540]/60">
+                      <div className="flex items-center gap-2 text-[#1C3D5A]/60">
                         {item.icon}
                       </div>
-                      <span className="text-sm text-[#0A2540]">{item.text}</span>
+                      <span className="text-sm text-[#1C3D5A]">{item.text}</span>
                     </motion.label>
                   ))}
                 </div>
@@ -773,7 +773,7 @@ export default function OrientacoesPreOperatorias() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={0}
-                className="mt-6 bg-[#0A2540] rounded-xl p-6 text-white"
+                className="mt-6 bg-[#1C3D5A] rounded-xl p-6 text-white"
               >
                 <h4 className="font-bold text-lg mb-2 flex items-center gap-2">
                   <Phone className="w-5 h-5" />
@@ -812,8 +812,8 @@ export default function OrientacoesPreOperatorias() {
       {/* Referências */}
       <section className="py-8 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h3 className="text-sm font-semibold text-[#0A2540]/40 uppercase tracking-wider mb-3">Referências</h3>
-          <ol className="text-xs text-[#0A2540]/40 space-y-1.5 list-decimal list-inside">
+          <h3 className="text-sm font-semibold text-[#1C3D5A]/40 uppercase tracking-wider mb-3">Referências</h3>
+          <ol className="text-xs text-[#1C3D5A]/40 space-y-1.5 list-decimal list-inside">
             <li>ASA — Practice Guidelines for Preoperative Fasting and the Use of Pharmacologic Agents to Reduce the Risk of Pulmonary Aspiration. Anesthesiology, 2023.</li>
             <li>Peri-operative fasting in adults: an international, multidisciplinary consensus statement. Anaesthesia, 2026.</li>
             <li>ESAIC — Perioperative Fasting: Guidelines for Adults and Children. European Society of Anaesthesiology and Intensive Care, 2022.</li>

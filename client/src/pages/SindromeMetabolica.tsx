@@ -203,7 +203,7 @@ export default function SindromeMetabolica() {
           </p>
 
           <div className="mb-8">
-            <img src={IMG.exercise} alt="Exercício e testosterona" className="w-full max-w-2xl mx-auto rounded-xl shadow-sm" />
+            <img loading="lazy" src={IMG.exercise} alt="Exercício e testosterona" className="w-full max-w-2xl mx-auto rounded-xl shadow-sm" />
             <p className="text-xs text-[#1C3D5A]/40 text-center mt-3">O exercício de resistência é fundamental para manutenção da massa muscular e dos níveis de testosterona</p>
           </div>
 

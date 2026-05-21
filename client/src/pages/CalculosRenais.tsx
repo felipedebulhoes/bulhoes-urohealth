@@ -273,13 +273,13 @@ export default function CalculosRenais() {
           </h2>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-              <img src={IMG.ureteroscopy} alt="Ureteroscopia com laser - ilustração" className="w-full h-auto" />
+              <img loading="lazy" src={IMG.ureteroscopy} alt="Ureteroscopia com laser - ilustração" className="w-full h-auto" />
               <div className="p-4">
                 <p className="text-xs text-[#1C3D5A]/50 text-center">Ureteroscopia com litotripsia a laser — o ureteroscópio acessa o rim pela uretra para fragmentar o cálculo</p>
               </div>
             </div>
             <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-              <img src={IMG.doubleJ} alt="Cateter Duplo J - ilustração" className="w-full h-auto" />
+              <img loading="lazy" src={IMG.doubleJ} alt="Cateter Duplo J - ilustração" className="w-full h-auto" />
               <div className="p-4">
                 <p className="text-xs text-[#1C3D5A]/50 text-center">Cateter duplo J posicionado entre o rim e a bexiga para garantir drenagem urinária</p>
               </div>
@@ -329,7 +329,7 @@ export default function CalculosRenais() {
             </div>
             <div className="md:col-span-2">
               <div className="bg-white rounded-xl overflow-hidden shadow-sm sticky top-24">
-                <img src={IMG.jjPlacement} alt="Posicionamento do cateter duplo J" className="w-full h-auto" />
+                <img loading="lazy" src={IMG.jjPlacement} alt="Posicionamento do cateter duplo J" className="w-full h-auto" />
                 <div className="p-4 space-y-3">
                   <p className="text-xs text-[#1C3D5A]/50 text-center">Posicionamento do cateter duplo J no trato urinário</p>
                   <div className="bg-amber-50 rounded-lg p-3">
@@ -378,7 +378,7 @@ export default function CalculosRenais() {
             ))}
           </div>
           <div className="mt-8">
-            <img src={IMG.prevention} alt="Dieta para prevenção de cálculos renais" className="w-full max-w-2xl mx-auto rounded-xl shadow-sm" />
+            <img loading="lazy" src={IMG.prevention} alt="Dieta para prevenção de cálculos renais" className="w-full max-w-2xl mx-auto rounded-xl shadow-sm" />
             <p className="text-xs text-[#1C3D5A]/40 text-center mt-3">Medidas dietéticas para prevenção de cálculos renais</p>
           </div>
         </div>

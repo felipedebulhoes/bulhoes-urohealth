@@ -140,7 +140,7 @@ export default function LocationSection() {
             >
               {/* Photo */}
               <div className="relative h-48 overflow-hidden">
-                <img
+                <img loading="lazy"
                   src={loc.image}
                   alt={loc.name}
                   className="w-full h-full object-cover"

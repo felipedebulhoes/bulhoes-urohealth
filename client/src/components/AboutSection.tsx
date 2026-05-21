@@ -69,7 +69,7 @@ export default function AboutSection() {
             className="relative"
           >
             <div className="rounded-lg overflow-hidden shadow-2xl shadow-[#1C3D5A]/10">
-              <img
+              <img loading="lazy"
                 src={ABOUT_IMG}
                 alt="Dr. Felipe de Bulhões na I Jornada IDOR de Urologia"
                 className="w-full h-auto object-cover object-center aspect-[4/3]" style={{width: '724px', height: '644px'}}

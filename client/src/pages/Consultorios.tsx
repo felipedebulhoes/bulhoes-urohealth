@@ -139,7 +139,7 @@ export default function Consultorios() {
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <Link href="/">
-            <img src={LOGO_URL} alt="Dr. Felipe de Bulhões - Urologista" className="h-12 lg:h-14 w-auto brightness-0 invert" />
+            <img loading="lazy" src={LOGO_URL} alt="Dr. Felipe de Bulhões - Urologista" className="h-12 lg:h-14 w-auto brightness-0 invert" />
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/">
@@ -190,7 +190,7 @@ export default function Consultorios() {
               >
                 {/* Photo */}
                 <div className="relative h-52 overflow-hidden">
-                  <img src={loc.image} alt={loc.name} className="w-full h-full object-cover" />
+                  <img loading="lazy" src={loc.image} alt={loc.name} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   <div className="absolute bottom-3 left-3">
                     <h2 className="text-white font-semibold text-lg font-sans">{loc.name}</h2>

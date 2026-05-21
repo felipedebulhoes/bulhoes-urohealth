@@ -43,7 +43,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="rounded-lg overflow-hidden shadow-2xl shadow-[#1C3D5A]/10 mb-8">
-              <img
+              <img loading="lazy"
                 src={LECTURE_IMG}
                 alt="Dr. Felipe no Congresso UroOnco 2025"
                 className="w-full h-auto object-cover aspect-[4/3]" style={{width: '739px', height: '685px'}}

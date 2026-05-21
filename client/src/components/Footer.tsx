@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container">
         {/* Logo ampliado */}
         <div className="mb-10">
-          <img
+          <img loading="lazy"
             src="/manus-storage/logo-landscape_be6628b3.svg"
             alt="Dr. Felipe de Bulhões - Urologista"
             className="h-16 lg:h-20 w-auto brightness-0 invert"

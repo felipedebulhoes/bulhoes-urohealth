@@ -191,7 +191,7 @@ export default function VideosSection() {
                   <div className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-xl hover:shadow-[#1C3D5A]/5 transition-all duration-500 hover:-translate-y-1">
                     {/* Thumbnail */}
                     <div className="relative aspect-video overflow-hidden">
-                      <img
+                      <img loading="lazy"
                         src={video.thumbnail}
                         alt={video.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

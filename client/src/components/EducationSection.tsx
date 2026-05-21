@@ -87,7 +87,7 @@ export default function EducationSection() {
             className="lg:col-span-2 relative"
           >
             <div className="rounded-xl overflow-hidden shadow-xl shadow-[#1C3D5A]/8">
-              <img
+              <img loading="lazy"
                 src={CONGRESS_IMG}
                 alt="Dr. Felipe no Congresso JPU 2025"
                 className="w-full h-auto object-cover aspect-[4/3]"

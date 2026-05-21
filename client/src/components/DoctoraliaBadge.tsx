@@ -46,7 +46,7 @@ export default function DoctoraliaBadge() {
             {/* Left — Badge */}
             <div className="lg:w-1/3">
               <div className="flex items-center gap-2 mb-4">
-                <img
+                <img loading="lazy"
                   src="https://platform.docplanner.com/img/logo/doctoralia-logo.svg"
                   alt="Doctoralia"
                   className="h-6"

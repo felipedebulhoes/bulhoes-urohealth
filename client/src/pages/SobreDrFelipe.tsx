@@ -86,7 +86,7 @@ export default function SobreDrFelipe() {
             >
               <div className="relative">
                 <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
-                  <img
+                  <img loading="lazy"
                     src={PORTRAIT_URL}
                     alt="Dr. Felipe de Bulhões Ojeda - Urologista"
                     className="w-full h-full object-cover"
@@ -205,14 +205,14 @@ export default function SobreDrFelipe() {
             <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Participação em Congressos</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{marginTop: '-5px', marginRight: '-5px', marginLeft: '6px', width: '367px', height: '409px'}}>
-                <img src={UROONCO_URL} alt="Dr. Felipe no UroOnco 2025" className="w-full h-48 object-cover" style={{paddingRight: '70px', marginTop: '2px', marginLeft: '39px', width: '379px', height: '333px'}} />
+                <img loading="lazy" src={UROONCO_URL} alt="Dr. Felipe no UroOnco 2025" className="w-full h-48 object-cover" style={{paddingRight: '70px', marginTop: '2px', marginLeft: '39px', width: '379px', height: '333px'}} />
                 <div className="p-4 bg-white">
                   <h4 className="font-bold text-[#1C3D5A] mb-1">UroOnco 2025</h4>
                   <p className="text-sm text-[#64748B]">Congresso de Uro-Oncologia — São Paulo</p>
                 </div>
               </div>
               <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
-                <img src={JPU_URL} alt="Dr. Felipe no JPU 2025" className="w-full h-48 object-cover" />
+                <img loading="lazy" src={JPU_URL} alt="Dr. Felipe no JPU 2025" className="w-full h-48 object-cover" />
                 <div className="p-4 bg-white">
                   <h4 className="font-bold text-[#1C3D5A] mb-1">JPU 2025</h4>
                   <p className="text-sm text-[#64748B]">Jornada Paulista de Urologia — SBU-SP</p>
@@ -257,7 +257,7 @@ export default function SobreDrFelipe() {
       <section className="py-16 bg-[#1C3D5A]">
         <div className="container max-w-4xl text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <img src={LOGO_URL} alt="Dr. Felipe de Bulhões" className="h-14 mx-auto mb-6 brightness-0 invert" />
+            <img loading="lazy" src={LOGO_URL} alt="Dr. Felipe de Bulhões" className="h-14 mx-auto mb-6 brightness-0 invert" />
             <h2 className="text-2xl lg:text-3xl text-white font-serif mb-4">Agende Sua Consulta</h2>
             <p className="text-white/70 mb-8 max-w-xl mx-auto">
               Cuide da sua saúde com um urologista especializado. Atendimento presencial em Campinas e São Paulo, ou teleconsulta para todo o Brasil.

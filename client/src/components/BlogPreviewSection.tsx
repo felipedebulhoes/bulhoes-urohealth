@@ -61,7 +61,7 @@ export default function BlogPreviewSection() {
             <div className="group card-hover grid lg:grid-cols-2 gap-0 bg-white rounded-xl border border-[#1C3D5A]/8 overflow-hidden">
               {/* Image */}
               <div className="relative overflow-hidden aspect-[16/9] lg:aspect-auto">
-                <img
+                <img loading="lazy"
                   src={featured.coverImage}
                   alt={featured.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -95,7 +95,7 @@ export default function BlogPreviewSection() {
                 </p>
 
                 <div className="flex items-center gap-3">
-                  <img
+                  <img loading="lazy"
                     src={featured.author.avatar}
                     alt={featured.author.name}
                     className="w-9 h-9 rounded-full object-cover border border-[#B87333]/20"

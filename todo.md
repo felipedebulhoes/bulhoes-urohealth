@@ -219,3 +219,6 @@
 - [x] Gerar posts para Instagram com nova identidade visual (Azul do Nilo + Cobre)
 - [x] Adicionar micro-animações nos cards de especialidades e depoimentos
 - [x] Implementar animação de scroll-reveal nas seções
+- [x] Criar 4º slide do carrossel Instagram com screenshot real do site
+- [x] Criar legenda e hashtags otimizadas para post Instagram
+- [x] Implementar lazy loading nas imagens do site (Core Web Vitals)

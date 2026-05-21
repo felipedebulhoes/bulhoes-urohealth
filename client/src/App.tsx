@@ -43,6 +43,7 @@ import Agendamento from "./pages/Agendamento";
 import CanonicalTag from "./components/CanonicalTag";
 import PageTransition from "./components/PageTransition";
 import SplashScreen from "./components/SplashScreen";
+import CookieBanner from "./components/CookieBanner";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -109,6 +110,7 @@ function App() {
           <SplashScreen />
           <PageTransition />
           <Router />
+          <CookieBanner />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

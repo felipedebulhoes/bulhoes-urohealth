@@ -260,11 +260,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between py-4 text-left group"
       >
-        <span className="text-sm font-medium text-[#1C3D5A] pr-4 group-hover:text-[#B87333] transition-colors">
+        <span className="text-sm font-medium text-[#1C3D5A] dark:text-foreground pr-4 group-hover:text-[#B87333] transition-colors">
           {q}
         </span>
         <ChevronDown
-          className={`w-4 h-4 shrink-0 mt-0.5 text-[#1C3D5A]/30 transition-transform duration-200 ${
+          className={`w-4 h-4 shrink-0 mt-0.5 text-[#1C3D5A] dark:text-foreground/30 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
         />
@@ -278,7 +278,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <p className="text-sm text-[#1C3D5A]/55 leading-relaxed pb-4">
+            <p className="text-sm text-[#1C3D5A] dark:text-foreground/55 leading-relaxed pb-4">
               {a}
             </p>
           </motion.div>
@@ -313,10 +313,10 @@ export default function FAQSection() {
               Perguntas Frequentes
             </span>
           </div>
-          <h2 className="text-2xl lg:text-4xl text-[#1C3D5A] mb-3 font-serif">
+          <h2 className="text-2xl lg:text-4xl text-[#1C3D5A] dark:text-foreground mb-3 font-serif">
             Tire Suas Dúvidas
           </h2>
-          <p className="text-sm text-[#1C3D5A]/50 max-w-lg mx-auto">
+          <p className="text-sm text-[#1C3D5A] dark:text-foreground/50 max-w-lg mx-auto">
             Respostas para as perguntas mais comuns sobre saúde masculina, urologia, procedimentos e convênios.
           </p>
         </motion.div>
@@ -330,7 +330,7 @@ export default function FAQSection() {
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeCategory === cat.category
                   ? "bg-[#1C3D5A] text-white"
-                  : "bg-[#F8FAFB] text-[#1C3D5A]/50 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
+                  : "bg-[#F8FAFB] text-[#1C3D5A] dark:text-foreground/50 hover:text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5"
               }`}
             >
               {cat.category}
@@ -343,7 +343,7 @@ export default function FAQSection() {
           key={activeCategory}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl border border-[#1C3D5A]/6 p-6"
+          className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-6"
         >
           {faqs
             .find((c) => c.category === activeCategory)
@@ -354,7 +354,7 @@ export default function FAQSection() {
 
         {/* CTA */}
         <div className="mt-8 text-center">
-          <p className="text-sm text-[#1C3D5A]/40 mb-3">
+          <p className="text-sm text-[#1C3D5A] dark:text-foreground/40 mb-3">
             Não encontrou sua resposta?
           </p>
           <a

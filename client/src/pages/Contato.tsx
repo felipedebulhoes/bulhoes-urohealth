@@ -116,7 +116,7 @@ export default function Contato() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-card">
       {/* Header */}
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
@@ -161,7 +161,7 @@ export default function Contato() {
       {/* Contact Channels */}
       <section className="py-16 lg:py-20">
         <div className="container max-w-5xl">
-          <h2 className="text-2xl font-bold text-[#1C3D5A] mb-8">Canais de Atendimento</h2>
+          <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground mb-8">Canais de Atendimento</h2>
           <div className="grid sm:grid-cols-2 gap-4 mb-12">
             {contactChannels.map((channel, i) => (
               <motion.a
@@ -186,7 +186,7 @@ export default function Contato() {
                     <channel.icon className="w-5 h-5 text-[#B87333]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#1C3D5A] text-sm mb-0.5">{channel.title}</h3>
+                    <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-0.5">{channel.title}</h3>
                     <p className="text-[#B87333] font-bold text-lg group-hover:underline">{channel.phone}</p>
                     <p className="text-xs text-[#64748B] mt-1">{channel.description}</p>
                   </div>
@@ -196,7 +196,7 @@ export default function Contato() {
           </div>
 
           {/* Offices */}
-          <h2 className="text-2xl font-bold text-[#1C3D5A] mb-6">Locais de Atendimento</h2>
+          <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground mb-6">Locais de Atendimento</h2>
           <div className="grid md:grid-cols-3 gap-4 mb-12">
             {offices.map((office, i) => (
               <motion.div
@@ -208,7 +208,7 @@ export default function Contato() {
                 <Link href={office.link} className="bg-[#F8FAFB] rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all block h-full">
                   <div className="flex items-center gap-2 mb-2">
                     <MapPin className="w-4 h-4 text-[#B87333]" />
-                    <h3 className="font-semibold text-[#1C3D5A] text-sm">{office.name}</h3>
+                    <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm">{office.name}</h3>
                   </div>
                   <p className="text-xs text-[#64748B] mb-2">{office.address}</p>
                   <span className="text-[10px] uppercase tracking-wider font-semibold text-[#B87333]">{office.type}</span>
@@ -240,12 +240,12 @@ export default function Contato() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left — Info */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.6 }}>
-              <h2 className="text-2xl font-bold text-[#1C3D5A] mb-4">Informações Importantes</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Informações Importantes</h2>
               <div className="space-y-4 text-sm text-[#334155] leading-relaxed">
                 <div className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-semibold text-[#1C3D5A]">Horário de atendimento</p>
+                    <p className="font-semibold text-[#1C3D5A] dark:text-foreground">Horário de atendimento</p>
                     <p>Campinas Day Hospital: Sextas, 8h às 12h</p>
                     <p>Clinovi (Paulista e Moema): Segunda a Sábado — consulte horários no Doctoralia</p>
                   </div>
@@ -253,14 +253,14 @@ export default function Contato() {
                 <div className="flex items-start gap-3">
                   <MessageCircle className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-semibold text-[#1C3D5A]">WhatsApp</p>
+                    <p className="font-semibold text-[#1C3D5A] dark:text-foreground">WhatsApp</p>
                     <p>O WhatsApp (11) 98112-4455 é apenas para mensagens. Resposta em até 2 horas durante o horário comercial.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-semibold text-[#1C3D5A]">Agendamento por telefone</p>
+                    <p className="font-semibold text-[#1C3D5A] dark:text-foreground">Agendamento por telefone</p>
                     <p>Para agendamento imediato, ligue diretamente para a unidade desejada.</p>
                   </div>
                 </div>
@@ -268,7 +268,7 @@ export default function Contato() {
 
               {/* Social */}
               <div className="mt-8 pt-6 border-t border-[#1C3D5A]/6">
-                <h3 className="font-semibold text-[#1C3D5A] text-sm mb-3">Redes Sociais</h3>
+                <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-3">Redes Sociais</h3>
                 <div className="flex items-center gap-4">
                   <a href="https://www.instagram.com/drfelipebulhoes/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#64748B] hover:text-[#B87333] transition-colors">
                     <Instagram className="w-5 h-5" />

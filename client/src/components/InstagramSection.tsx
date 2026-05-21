@@ -31,7 +31,7 @@ export default function InstagramSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-16 lg:py-20 bg-white" ref={ref}>
+    <section className="py-16 lg:py-20 bg-white dark:bg-card" ref={ref}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export default function InstagramSection() {
                 @drfelipebulhoes
               </span>
             </div>
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] leading-tight">
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground leading-tight">
               Conteúdo Educativo
             </h2>
           </div>
@@ -57,7 +57,7 @@ export default function InstagramSection() {
           >
             <Button
               variant="outline"
-              className="border-[#1C3D5A]/15 text-[#1C3D5A] hover:bg-[#1C3D5A]/5 h-10 px-5 text-sm font-medium rounded-md"
+              className="border-[#1C3D5A]/15 text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5 h-10 px-5 text-sm font-medium rounded-md"
             >
               Seguir no Instagram
               <ArrowRight className="w-4 h-4 ml-2" />

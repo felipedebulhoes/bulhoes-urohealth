@@ -70,7 +70,7 @@ export default function NewsletterSection() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10"
+                className="bg-white dark:bg-card/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10"
               >
                 <CheckCircle2 className="w-12 h-12 text-[#B87333] mx-auto mb-4" />
                 <h3 className="text-lg font-bold text-white mb-2">Cadastro Realizado!</h3>
@@ -79,7 +79,7 @@ export default function NewsletterSection() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <form onSubmit={handleSubmit} className="bg-white dark:bg-card/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <div className="space-y-3 mb-4">
                   <input
                     type="text"

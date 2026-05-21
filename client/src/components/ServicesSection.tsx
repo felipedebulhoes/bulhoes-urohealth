@@ -33,7 +33,7 @@ export default function ServicesSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="servicos" className="py-20 lg:py-28 bg-white" ref={ref}>
+    <section id="servicos" className="py-20 lg:py-28 bg-white dark:bg-card" ref={ref}>
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Image + features */}
@@ -57,7 +57,7 @@ export default function ServicesSection() {
                   className="flex items-center gap-2 bg-[#1C3D5A]/5 rounded-md px-4 py-2.5"
                 >
                   <feat.icon className="w-4 h-4 text-[#B87333]" />
-                  <span className="text-sm font-medium text-[#1C3D5A]/70 font-sans">
+                  <span className="text-sm font-medium text-[#1C3D5A] dark:text-foreground/70 font-sans">
                     {feat.text}
                   </span>
                 </div>
@@ -77,10 +77,10 @@ export default function ServicesSection() {
                 Serviços & Valores
               </span>
             </div>
-            <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight mb-3">
+            <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] dark:text-foreground leading-tight mb-3">
               Consultas e Procedimentos
             </h2>
-            <p className="text-[#1C3D5A]/60 font-sans mb-8 text-base">
+            <p className="text-[#1C3D5A] dark:text-foreground/60 font-sans mb-8 text-base">
               Atendimento presencial em São Paulo e Campinas, além de teleconsulta. Mais de 30 procedimentos disponíveis.
             </p>
 
@@ -96,7 +96,7 @@ export default function ServicesSection() {
                     service.highlight ? "bg-[#B87333]/3 -mx-3 px-3 rounded-md" : ""
                   }`}
                 >
-                  <span className="text-sm font-medium text-[#1C3D5A] font-sans">
+                  <span className="text-sm font-medium text-[#1C3D5A] dark:text-foreground font-sans">
                     {service.name}
                   </span>
                   <span className="text-sm font-semibold text-[#B87333] font-sans whitespace-nowrap ml-4">
@@ -106,7 +106,7 @@ export default function ServicesSection() {
               ))}
             </div>
 
-            <p className="text-xs text-[#1C3D5A]/40 font-sans mb-6">
+            <p className="text-xs text-[#1C3D5A] dark:text-foreground/40 font-sans mb-6">
               + 30 serviços adicionais disponíveis. Valores podem variar conforme convênio e procedimento.
             </p>
 

@@ -206,7 +206,7 @@ export default function AIChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="absolute bottom-20 left-0 w-[380px] max-w-[calc(100vw-48px)] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col"
+            className="absolute bottom-20 left-0 w-[380px] max-w-[calc(100vw-48px)] bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col"
             style={{ maxHeight: "min(560px, calc(100vh - 140px))" }}
           >
             {/* Header */}
@@ -259,7 +259,7 @@ export default function AIChatWidget() {
                         <div className="w-7 h-7 shrink-0 bg-[#B87333]/10 rounded-full flex items-center justify-center mt-0.5">
                           <Bot className="w-3.5 h-3.5 text-[#B87333]" />
                         </div>
-                        <div className="bg-white rounded-xl rounded-tl-sm p-3 shadow-sm border border-gray-100 max-w-[85%]">
+                        <div className="bg-white dark:bg-card rounded-xl rounded-tl-sm p-3 shadow-sm border border-gray-100 max-w-[85%]">
                           <p className="text-sm text-[#334155] leading-relaxed">
                             Olá! Sou o assistente virtual do consultório do Dr. Felipe de Bulhões.
                             Posso ajudar com informações sobre procedimentos urológicos, orientações
@@ -281,7 +281,7 @@ export default function AIChatWidget() {
                             key={i}
                             onClick={() => handleSend(q)}
                             disabled={chatMutation.isPending}
-                            className="block w-full text-left text-xs bg-white hover:bg-[#B87333]/5 text-[#475569] hover:text-[#B87333] px-3 py-2 rounded-lg border border-gray-100 hover:border-[#B87333]/20 transition-all disabled:opacity-50"
+                            className="block w-full text-left text-xs bg-white dark:bg-card hover:bg-[#B87333]/5 text-[#475569] hover:text-[#B87333] px-3 py-2 rounded-lg border border-gray-100 hover:border-[#B87333]/20 transition-all disabled:opacity-50"
                           >
                             {q}
                           </button>
@@ -301,7 +301,7 @@ export default function AIChatWidget() {
                             </div>
                           ) : (
                             <div className="w-7 h-7 shrink-0 bg-[#1C3D5A]/10 rounded-full flex items-center justify-center mt-0.5">
-                              <User className="w-3.5 h-3.5 text-[#1C3D5A]" />
+                              <User className="w-3.5 h-3.5 text-[#1C3D5A] dark:text-foreground" />
                             </div>
                           )}
                           <div
@@ -330,7 +330,7 @@ export default function AIChatWidget() {
                           <div className="w-7 h-7 shrink-0 bg-[#B87333]/10 rounded-full flex items-center justify-center mt-0.5">
                             <Bot className="w-3.5 h-3.5 text-[#B87333]" />
                           </div>
-                          <div className="bg-white rounded-xl rounded-tl-sm p-3 shadow-sm border border-gray-100">
+                          <div className="bg-white dark:bg-card rounded-xl rounded-tl-sm p-3 shadow-sm border border-gray-100">
                             <div className="flex items-center gap-2">
                               <Loader2 className="w-3.5 h-3.5 animate-spin text-[#B87333]" />
                               <span className="text-xs text-[#94A3B8]">Digitando...</span>
@@ -384,7 +384,7 @@ export default function AIChatWidget() {
                 </AnimatePresence>
 
                 {/* Input area */}
-                <div className="p-3 border-t border-gray-100 bg-white shrink-0">
+                <div className="p-3 border-t border-gray-100 bg-white dark:bg-card shrink-0">
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
@@ -399,7 +399,7 @@ export default function AIChatWidget() {
                       onKeyDown={handleKeyDown}
                       placeholder="Digite sua pergunta..."
                       rows={1}
-                      className="flex-1 resize-none text-sm border border-gray-200 rounded-xl px-3 py-2.5 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 max-h-20 placeholder:text-[#94A3B8]"
+                      className="flex-1 resize-none text-sm border border-gray-200 dark:border-border rounded-xl px-3 py-2.5 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 max-h-20 placeholder:text-[#94A3B8]"
                     />
                     <button
                       type="submit"
@@ -430,7 +430,7 @@ export default function AIChatWidget() {
                   >
                     ← Voltar ao chat
                   </button>
-                  <h3 className="text-base font-bold text-[#1C3D5A]">Solicitar Contato</h3>
+                  <h3 className="text-base font-bold text-[#1C3D5A] dark:text-foreground">Solicitar Contato</h3>
                   <p className="text-xs text-[#64748B] mt-1">
                     Preencha seus dados e a secretária entrará em contato para agendar sua consulta.
                   </p>
@@ -449,7 +449,7 @@ export default function AIChatWidget() {
                       onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))}
                       placeholder="Seu nome"
                       required
-                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 placeholder:text-[#94A3B8]"
+                      className="w-full text-sm border border-gray-200 dark:border-border rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 placeholder:text-[#94A3B8]"
                     />
                   </div>
 
@@ -467,7 +467,7 @@ export default function AIChatWidget() {
                       }
                       placeholder="(11) 99999-9999"
                       required
-                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 placeholder:text-[#94A3B8]"
+                      className="w-full text-sm border border-gray-200 dark:border-border rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 placeholder:text-[#94A3B8]"
                     />
                   </div>
 
@@ -482,7 +482,7 @@ export default function AIChatWidget() {
                       value={formData.email}
                       onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
                       placeholder="seu@email.com"
-                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 placeholder:text-[#94A3B8]"
+                      className="w-full text-sm border border-gray-200 dark:border-border rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 placeholder:text-[#94A3B8]"
                     />
                   </div>
 
@@ -497,7 +497,7 @@ export default function AIChatWidget() {
                       onChange={(e) =>
                         setFormData((p) => ({ ...p, preferredLocation: e.target.value }))
                       }
-                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 text-[#334155] bg-white"
+                      className="w-full text-sm border border-gray-200 dark:border-border rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 text-[#334155] bg-white dark:bg-card"
                     >
                       <option value="">Selecione...</option>
                       <option value="campinas">Campinas Day Hospital (Convênios)</option>
@@ -521,7 +521,7 @@ export default function AIChatWidget() {
                       onChange={(e) => setFormData((p) => ({ ...p, reason: e.target.value }))}
                       placeholder="Ex: Exame de rotina, dor ao urinar, acompanhamento..."
                       rows={2}
-                      className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 placeholder:text-[#94A3B8] resize-none"
+                      className="w-full text-sm border border-gray-200 dark:border-border rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 placeholder:text-[#94A3B8] resize-none"
                     />
                   </div>
 
@@ -562,7 +562,7 @@ export default function AIChatWidget() {
                 >
                   <CheckCircle2 className="w-8 h-8 text-green-600" />
                 </motion.div>
-                <h3 className="text-lg font-bold text-[#1C3D5A] mb-2">Dados recebidos!</h3>
+                <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-2">Dados recebidos!</h3>
                 <p className="text-sm text-[#64748B] mb-1">
                   A secretária do Dr. Felipe entrará em contato pelo número informado para agendar
                   sua consulta.
@@ -599,13 +599,13 @@ export default function AIChatWidget() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="absolute bottom-20 left-0 bg-white rounded-xl shadow-lg p-3 max-w-[220px] border border-gray-100"
+            className="absolute bottom-20 left-0 bg-white dark:bg-card rounded-xl shadow-lg p-3 max-w-[220px] border border-gray-100"
           >
             <button
               onClick={() => setShowBubble(false)}
               className="absolute -top-2 -right-2 w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center"
             >
-              <X className="w-3 h-3 text-gray-500" />
+              <X className="w-3 h-3 text-gray-500 dark:text-muted-foreground" />
             </button>
             <p className="text-xs text-[#334155]">
               Tem dúvidas? Pergunte ao nosso{" "}

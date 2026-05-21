@@ -232,3 +232,6 @@
 - [x] Adicionar som sutil (heartbeat + whoosh) à splash screen
 - [x] Criar versão da animação para Instagram Stories (1080x1920, 6s, com áudio)
 - [x] Implementar dark mode toggle no site (Header desktop + mobile, CSS variables .dark)
+- [x] Ajustar componentes internos para dark mode (EducationalLayout, Footer, Header, seções Home)
+- [x] Adicionar smooth scroll nos links âncora do menu de navegação (com offset do header fixo)
+- [x] Criar banner de cookies/LGPD para conformidade com legislação brasileira

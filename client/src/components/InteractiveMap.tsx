@@ -247,7 +247,7 @@ export default function InteractiveMap() {
           className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
             activeClinic === null
               ? "bg-[#B87333] text-white shadow-md shadow-amber-900/20"
-              : "bg-[#F1F5F9] text-[#1C3D5A]/60 hover:bg-[#E2E8F0] hover:text-[#1C3D5A]"
+              : "bg-[#F1F5F9] text-[#1C3D5A] dark:text-foreground/60 hover:bg-[#E2E8F0] hover:text-[#1C3D5A] dark:text-foreground"
           }`}
         >
           <MapPin className="w-4 h-4" />
@@ -260,7 +260,7 @@ export default function InteractiveMap() {
             className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
               activeClinic === clinic.id
                 ? "bg-[#B87333] text-white shadow-md shadow-amber-900/20"
-                : "bg-[#F1F5F9] text-[#1C3D5A]/60 hover:bg-[#E2E8F0] hover:text-[#1C3D5A]"
+                : "bg-[#F1F5F9] text-[#1C3D5A] dark:text-foreground/60 hover:bg-[#E2E8F0] hover:text-[#1C3D5A] dark:text-foreground"
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
@@ -291,13 +291,13 @@ export default function InteractiveMap() {
                 : "border-[#1C3D5A]/8 bg-[#F8FAFB] hover:border-[#B87333]/40"
             }`}
           >
-            <h4 className="font-bold text-sm text-[#1C3D5A] mb-1 font-sans">{clinic.name}</h4>
-            <p className="text-xs text-[#1C3D5A]/50 font-sans mb-2">{clinic.address}</p>
+            <h4 className="font-bold text-sm text-[#1C3D5A] dark:text-foreground mb-1 font-sans">{clinic.name}</h4>
+            <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 font-sans mb-2">{clinic.address}</p>
             <div className="flex items-center justify-between">
               {clinic.phone && (
                 <div className="flex items-center gap-1.5">
                   <Phone className="w-3 h-3 text-[#B87333]" />
-                  <span className="text-[11px] text-[#1C3D5A]/60 font-sans">{clinic.phone}</span>
+                  <span className="text-[11px] text-[#1C3D5A] dark:text-foreground/60 font-sans">{clinic.phone}</span>
                 </div>
               )}
               <a

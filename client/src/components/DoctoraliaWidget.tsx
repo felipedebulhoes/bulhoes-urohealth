@@ -82,11 +82,11 @@ export default function DoctoraliaWidget() {
             <div className="h-px w-10 bg-[#B87333]" />
           </div>
 
-          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight mb-4 font-serif">
+          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] dark:text-foreground leading-tight mb-4 font-serif">
             Agende sua consulta agora
           </h2>
 
-          <p className="text-[#1C3D5A]/50 font-sans text-base lg:text-lg max-w-lg mx-auto">
+          <p className="text-[#1C3D5A] dark:text-foreground/50 font-sans text-base lg:text-lg max-w-lg mx-auto">
             Escolha o melhor dia e horário diretamente pelo calendário.
             Confirmação imediata pela Doctoralia.
           </p>
@@ -99,17 +99,17 @@ export default function DoctoraliaWidget() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="flex flex-wrap items-center justify-center gap-4 lg:gap-6 mb-10"
         >
-          <div className="flex items-center gap-2 text-sm text-[#1C3D5A]/60">
+          <div className="flex items-center gap-2 text-sm text-[#1C3D5A] dark:text-foreground/60">
             <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
             <span className="font-medium">Nota 5.0 no Doctoralia</span>
           </div>
           <div className="w-px h-4 bg-[#1C3D5A]/10 hidden sm:block" />
-          <div className="flex items-center gap-2 text-sm text-[#1C3D5A]/60">
+          <div className="flex items-center gap-2 text-sm text-[#1C3D5A] dark:text-foreground/60">
             <Shield className="w-4 h-4 text-[#B87333]" />
             <span className="font-medium">Confirmação imediata</span>
           </div>
           <div className="w-px h-4 bg-[#1C3D5A]/10 hidden sm:block" />
-          <div className="flex items-center gap-2 text-sm text-[#1C3D5A]/60">
+          <div className="flex items-center gap-2 text-sm text-[#1C3D5A] dark:text-foreground/60">
             <Clock className="w-4 h-4 text-[#B87333]" />
             <span className="font-medium">Presencial ou teleconsulta</span>
           </div>
@@ -122,7 +122,7 @@ export default function DoctoraliaWidget() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-white rounded-2xl shadow-xl shadow-[#1C3D5A]/5 border border-[#1C3D5A]/5 p-4 sm:p-6 lg:p-8">
+          <div className="bg-white dark:bg-card rounded-2xl shadow-xl shadow-[#1C3D5A]/5 border border-[#1C3D5A]/5 p-4 sm:p-6 lg:p-8">
             {/* Doctoralia widget anchor */}
             <a
               id="zl-url"
@@ -143,7 +143,7 @@ export default function DoctoraliaWidget() {
                 <div className="w-12 h-12 rounded-full bg-[#B87333]/10 flex items-center justify-center">
                   <CalendarCheck className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <p className="text-[#1C3D5A]/60 text-sm">
+                <p className="text-[#1C3D5A] dark:text-foreground/60 text-sm">
                   Carregando calendário de agendamento...
                 </p>
               </div>
@@ -151,7 +151,7 @@ export default function DoctoraliaWidget() {
           </div>
 
           {/* Bottom note */}
-          <p className="text-center text-[#1C3D5A]/30 text-xs mt-6">
+          <p className="text-center text-[#1C3D5A] dark:text-foreground/30 text-xs mt-6">
             Agendamento seguro via Doctoralia · CRM-SP 202291 · RQE 146538 / RQE 114019
           </p>
         </motion.div>

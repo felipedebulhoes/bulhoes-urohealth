@@ -53,7 +53,7 @@ export default function EducationalLayout({
   }, [title, description, metaTitle, metaDescription]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-card">
       {/* Schema Markup for SEO */}
       <MedicalPageSchema
         title={metaTitle || title}

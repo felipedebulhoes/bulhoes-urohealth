@@ -87,7 +87,7 @@ export default function Hipogonadismo() {
       {/* Intro */}
       <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">
         <div className="container max-w-4xl">
-          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] prose-p:text-[#1C3D5A]/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A]/80">
+          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] dark:text-foreground prose-p:text-[#1C3D5A] dark:text-foreground/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A] dark:text-foreground/80">
             <p>
               O <strong>hipogonadismo masculino</strong> é uma condição clínica caracterizada pela <strong>deficiência de testosterona</strong> associada a <strong>sinais e sintomas clínicos</strong>. Afeta cerca de 2-6% dos homens entre 40-79 anos, com prevalência aumentando significativamente com a idade — a testosterona total diminui em média 1-2% ao ano após os 30 anos.
             </p>
@@ -101,8 +101,8 @@ export default function Hipogonadismo() {
       {/* Symptoms */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-5xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-3 text-center font-serif">Sinais e Sintomas</h2>
-          <p className="text-center text-sm text-[#1C3D5A]/50 mb-10 max-w-2xl mx-auto">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-3 text-center font-serif">Sinais e Sintomas</h2>
+          <p className="text-center text-sm text-[#1C3D5A] dark:text-foreground/50 mb-10 max-w-2xl mx-auto">
             Os sintomas do hipogonadismo são inespecíficos e podem se sobrepor a outras condições. A presença de múltiplos sintomas associados reforça a suspeita diagnóstica.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -113,13 +113,13 @@ export default function Hipogonadismo() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="bg-white rounded-xl border border-[#1C3D5A]/6 p-5 hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-5 hover:shadow-md transition-shadow"
               >
                 <div className="w-10 h-10 rounded-lg bg-violet-50 flex items-center justify-center text-violet-600 mb-3">
                   {s.icon}
                 </div>
-                <h3 className="text-sm font-semibold text-[#1C3D5A] mb-1">{s.title}</h3>
-                <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">{s.detail}</p>
+                <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">{s.title}</h3>
+                <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">{s.detail}</p>
               </motion.div>
             ))}
           </div>
@@ -129,7 +129,7 @@ export default function Hipogonadismo() {
       {/* Diagnosis */}
       <section className="py-12 lg:py-16">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">Diagnóstico</h2>
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">Diagnóstico</h2>
           <div className="space-y-4">
             {[
               { step: "1", title: "Avaliação Clínica", detail: "Anamnese detalhada dos sintomas (questionário ADAM), exame físico (volume testicular, distribuição de gordura, ginecomastia, pelos). Excluir causas secundárias: depressão, hipotireoidismo, apneia do sono, uso de opioides." },
@@ -143,14 +143,14 @@ export default function Hipogonadismo() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-5 border border-[#1C3D5A]/6"
+                className="flex items-start gap-4 bg-white dark:bg-card rounded-xl p-5 border border-[#1C3D5A]/6"
               >
                 <div className="shrink-0 w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
                   <span className="text-sm font-bold text-violet-700">{item.step}</span>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-[#1C3D5A] mb-1">{item.title}</h3>
-                  <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">{item.detail}</p>
+                  <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h3>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">{item.detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -161,10 +161,10 @@ export default function Hipogonadismo() {
       {/* TRT Options */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-3 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-3 text-center font-serif">
             Opções de Reposição de Testosterona
           </h2>
-          <p className="text-center text-sm text-[#1C3D5A]/50 mb-10 max-w-2xl mx-auto">
+          <p className="text-center text-sm text-[#1C3D5A] dark:text-foreground/50 mb-10 max-w-2xl mx-auto">
             A escolha da formulação depende da preferência do paciente, custo, conveniência e perfil farmacocinético desejado.
           </p>
           <div className="space-y-4">
@@ -175,21 +175,21 @@ export default function Hipogonadismo() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-xl border border-[#1C3D5A]/6 p-6"
+                className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-6"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-base font-semibold text-[#1C3D5A]">{opt.name}</h3>
+                  <h3 className="text-base font-semibold text-[#1C3D5A] dark:text-foreground">{opt.name}</h3>
                   <span className="text-[10px] uppercase tracking-wider font-semibold text-violet-600 bg-violet-50 px-2 py-0.5 rounded">
                     {opt.frequency}
                   </span>
                 </div>
-                <p className="text-sm text-[#1C3D5A]/60 leading-relaxed mb-4">{opt.description}</p>
+                <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed mb-4">{opt.description}</p>
                 <div className="grid md:grid-cols-2 gap-3">
                   <div className="space-y-1.5">
                     {opt.advantages.map((a, j) => (
                       <div key={j} className="flex items-start gap-2">
                         <ArrowUp className="w-3 h-3 mt-0.5 shrink-0 text-amber-500" />
-                        <span className="text-xs text-[#1C3D5A]/55">{a}</span>
+                        <span className="text-xs text-[#1C3D5A] dark:text-foreground/55">{a}</span>
                       </div>
                     ))}
                   </div>
@@ -197,7 +197,7 @@ export default function Hipogonadismo() {
                     {opt.disadvantages.map((d, j) => (
                       <div key={j} className="flex items-start gap-2">
                         <ArrowDown className="w-3 h-3 mt-0.5 shrink-0 text-red-400" />
-                        <span className="text-xs text-[#1C3D5A]/55">{d}</span>
+                        <span className="text-xs text-[#1C3D5A] dark:text-foreground/55">{d}</span>
                       </div>
                     ))}
                   </div>
@@ -236,11 +236,11 @@ export default function Hipogonadismo() {
       {/* Monitoring */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             Monitoramento Durante a TRT
           </h2>
           <div className="overflow-x-auto">
-            <table className="w-full text-xs border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+            <table className="w-full text-xs border-collapse bg-white dark:bg-card rounded-xl overflow-hidden shadow-sm">
               <thead>
                 <tr className="bg-[#1C3D5A] text-white">
                   <th className="p-3 text-left font-semibold">Exame</th>
@@ -251,9 +251,9 @@ export default function Hipogonadismo() {
               <tbody>
                 {monitoramento.map((m, i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#F8FAFB]"}>
-                    <td className="p-3 font-medium text-[#1C3D5A] border-t border-[#1C3D5A]/5">{m.item}</td>
-                    <td className="p-3 text-center text-[#1C3D5A]/60 border-t border-[#1C3D5A]/5">{m.timing}</td>
-                    <td className="p-3 text-[#1C3D5A]/60 border-t border-[#1C3D5A]/5">{m.target}</td>
+                    <td className="p-3 font-medium text-[#1C3D5A] dark:text-foreground border-t border-[#1C3D5A]/5">{m.item}</td>
+                    <td className="p-3 text-center text-[#1C3D5A] dark:text-foreground/60 border-t border-[#1C3D5A]/5">{m.timing}</td>
+                    <td className="p-3 text-[#1C3D5A] dark:text-foreground/60 border-t border-[#1C3D5A]/5">{m.target}</td>
                   </tr>
                 ))}
               </tbody>
@@ -265,7 +265,7 @@ export default function Hipogonadismo() {
       {/* Benefits */}
       <section className="py-12 lg:py-16">
         <div className="container max-w-3xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             Benefícios Esperados da TRT
           </h2>
           <div className="space-y-3">
@@ -284,12 +284,12 @@ export default function Hipogonadismo() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="flex items-center gap-4 bg-white rounded-lg p-4 border border-[#1C3D5A]/6"
+                className="flex items-center gap-4 bg-white dark:bg-card rounded-lg p-4 border border-[#1C3D5A]/6"
               >
                 <Check className="w-5 h-5 shrink-0 text-amber-500" />
                 <div className="flex-1">
-                  <span className="text-sm font-medium text-[#1C3D5A]">{b.benefit}</span>
-                  <span className="text-xs text-[#1C3D5A]/40 ml-2">({b.timeline})</span>
+                  <span className="text-sm font-medium text-[#1C3D5A] dark:text-foreground">{b.benefit}</span>
+                  <span className="text-xs text-[#1C3D5A] dark:text-foreground/40 ml-2">({b.timeline})</span>
                 </div>
                 <span className="text-[10px] text-[#B87333] font-medium shrink-0 hidden sm:block">{b.evidence}</span>
               </motion.div>
@@ -301,8 +301,8 @@ export default function Hipogonadismo() {
       {/* References */}
       <section className="py-8 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h3 className="text-xs font-semibold text-[#1C3D5A]/40 uppercase tracking-wider mb-3">Referências</h3>
-          <ol className="text-[10px] text-[#1C3D5A]/35 space-y-1 list-decimal list-inside">
+          <h3 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground/40 uppercase tracking-wider mb-3">Referências</h3>
+          <ol className="text-[10px] text-[#1C3D5A] dark:text-foreground/35 space-y-1 list-decimal list-inside">
             <li>Dohle GR, et al. EAU Guidelines on Male Hypogonadism. European Association of Urology, 2025.</li>
             <li>Mulhall JP, et al. AUA Guideline: Evaluation and Management of Testosterone Deficiency. American Urological Association, 2024.</li>
             <li>Partin AW, et al. Campbell-Walsh-Wein Urology, 13th Edition. Elsevier, 2024. Chapters 69-72.</li>

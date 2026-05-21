@@ -117,13 +117,13 @@ function TestimonialCard({ testimonial, index, isInView }: { testimonial: Testim
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.45, delay: 0.08 * index }}
-      className="testimonial-card-hover bg-white rounded-xl p-6 border border-[#1C3D5A]/6 shadow-sm hover:border-[#B87333]/20 flex flex-col h-full group"
+      className="testimonial-card-hover bg-white dark:bg-card rounded-xl p-6 border border-[#1C3D5A]/6 shadow-sm hover:border-[#B87333]/20 flex flex-col h-full group"
     >
       {/* Quote icon */}
       <Quote className="w-8 h-8 text-[#B87333]/15 mb-3 group-hover:text-[#B87333]/30 transition-colors" />
 
       {/* Text */}
-      <p className="text-[15px] text-[#1C3D5A]/75 leading-relaxed mb-auto flex-1">
+      <p className="text-[15px] text-[#1C3D5A] dark:text-foreground/75 leading-relaxed mb-auto flex-1">
         "{testimonial.text}"
       </p>
 
@@ -139,16 +139,16 @@ function TestimonialCard({ testimonial, index, isInView }: { testimonial: Testim
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="text-sm font-semibold text-[#1C3D5A]">{testimonial.name}</span>
+              <span className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground">{testimonial.name}</span>
               <BadgeCheck className="w-4 h-4 text-[#B87333]" />
             </div>
             <div className="flex items-center gap-1.5 mt-0.5">
               {testimonial.isTelemedicine ? (
-                <Video className="w-3 h-3 text-[#1C3D5A]/35" />
+                <Video className="w-3 h-3 text-[#1C3D5A] dark:text-foreground/35" />
               ) : (
-                <MapPin className="w-3 h-3 text-[#1C3D5A]/35" />
+                <MapPin className="w-3 h-3 text-[#1C3D5A] dark:text-foreground/35" />
               )}
-              <span className="text-xs text-[#1C3D5A]/40">{testimonial.type}</span>
+              <span className="text-xs text-[#1C3D5A] dark:text-foreground/40">{testimonial.type}</span>
             </div>
           </div>
         </div>
@@ -188,20 +188,20 @@ export default function TestimonialsSection() {
             </span>
             <div className="h-px w-10 bg-[#B87333]" />
           </div>
-          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight font-serif">
+          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] dark:text-foreground leading-tight font-serif">
             O que dizem nossos pacientes
           </h2>
-          <p className="text-[#1C3D5A]/50 mt-4 max-w-xl mx-auto text-sm">
+          <p className="text-[#1C3D5A] dark:text-foreground/50 mt-4 max-w-xl mx-auto text-sm">
             Todas as opiniões são verificadas pela Doctoralia e representam experiências reais de pacientes atendidos.
           </p>
 
           {/* Rating summary */}
           <div className="flex items-center justify-center gap-4 mt-6">
-            <div className="flex items-center gap-2 bg-white rounded-full px-5 py-2.5 shadow-sm border border-[#1C3D5A]/6">
-              <div className="text-2xl font-bold text-[#1C3D5A]">5.0</div>
+            <div className="flex items-center gap-2 bg-white dark:bg-card rounded-full px-5 py-2.5 shadow-sm border border-[#1C3D5A]/6">
+              <div className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">5.0</div>
               <div className="flex flex-col items-start">
                 <StarRating count={5} size="w-4 h-4" />
-                <span className="text-xs text-[#1C3D5A]/50 mt-0.5">9 opiniões verificadas</span>
+                <span className="text-xs text-[#1C3D5A] dark:text-foreground/50 mt-0.5">9 opiniões verificadas</span>
               </div>
             </div>
           </div>
@@ -324,7 +324,7 @@ export default function TestimonialsSection() {
           className="flex items-center justify-center gap-2 mt-8"
         >
           <BadgeCheck className="w-4 h-4 text-[#B87333]/50" />
-          <span className="text-xs text-[#1C3D5A]/35">
+          <span className="text-xs text-[#1C3D5A] dark:text-foreground/35">
             Opiniões verificadas pela Doctoralia — plataforma independente de avaliação médica
           </span>
         </motion.div>

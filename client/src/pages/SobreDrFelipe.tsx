@@ -34,7 +34,7 @@ const JPU_URL = "/manus-storage/jpu-congress_61ecfbf9_f41d816f.webp";
 
 export default function SobreDrFelipe() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-card">
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1C3D5A] via-[#0F3460] to-[#1C3D5A] text-white pt-28 pb-20">
         <div className="container max-w-6xl">
@@ -92,13 +92,13 @@ export default function SobreDrFelipe() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-3 shadow-lg flex items-center gap-2">
+                <div className="absolute -bottom-4 -right-4 bg-white dark:bg-card rounded-xl p-3 shadow-lg flex items-center gap-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <span className="text-sm font-bold text-[#1C3D5A]">5.0</span>
+                  <span className="text-sm font-bold text-[#1C3D5A] dark:text-foreground">5.0</span>
                   <span className="text-xs text-[#64748B]">Doctoralia</span>
                 </div>
               </div>
@@ -108,10 +108,10 @@ export default function SobreDrFelipe() {
       </section>
 
       {/* Formação */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Formação Acadêmica</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-8">Formação Acadêmica</h2>
             <div className="space-y-6">
               {[
                 { year: "2023–2026", title: "Urologia", inst: "Instituto D'Or de Ensino e Pesquisa (IDOR)", city: "São Paulo, SP", detail: "Formação em centro de referência com alto volume cirúrgico em cirurgia robótica, endourologia e uro-oncologia." },
@@ -127,7 +127,7 @@ export default function SobreDrFelipe() {
                     <div className="absolute top-1 -left-1.5 w-3 h-3 bg-[#B87333] rounded-full" />
                   </div>
                   <div className="pb-6">
-                    <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
                     <p className="text-sm text-[#B87333] font-medium mb-1">{item.inst}</p>
                     <p className="text-xs text-[#64748B] mb-2">{item.city}</p>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.detail}</p>
@@ -140,10 +140,10 @@ export default function SobreDrFelipe() {
       </section>
 
       {/* Títulos e Certificações */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Títulos e Certificações</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-8">Títulos e Certificações</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { icon: Award, title: "Título de Especialista em Cirurgia Geral (TCBC)", org: "Colégio Brasileiro de Cirurgiões — AMB/CBC", year: "2023" },
@@ -155,12 +155,12 @@ export default function SobreDrFelipe() {
                 { icon: BookOpen, title: "Membro Titular do CBC", org: "Colégio Brasileiro de Cirurgiões", year: "2023" },
                 { icon: Award, title: "ATLS — Advanced Trauma Life Support", org: "American College of Surgeons", year: "" },
               ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm flex gap-4 items-start">
+                <div key={i} className="bg-white dark:bg-card rounded-xl p-5 border border-gray-100 shadow-sm flex gap-4 items-start">
                   <div className="w-10 h-10 bg-[#B87333]/10 rounded-lg flex items-center justify-center shrink-0">
                     <item.icon className="w-5 h-5 text-[#B87333]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1C3D5A] text-sm mb-1">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">{item.title}</h4>
                     <p className="text-xs text-[#64748B]">{item.org}</p>
                     {item.year && <p className="text-xs text-[#B87333] font-medium mt-1">{item.year}</p>}
                   </div>
@@ -172,10 +172,10 @@ export default function SobreDrFelipe() {
       </section>
 
       {/* Áreas de Atuação */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Áreas de Atuação</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-8">Áreas de Atuação</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 "Cirurgias Minimamente Invasivas",
@@ -188,9 +188,9 @@ export default function SobreDrFelipe() {
                 "Disfunção Erétil",
                 "Saúde do Homem",
               ].map((area, i) => (
-                <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-100 flex items-center gap-3">
+                <div key={i} className="bg-gray-50 dark:bg-card rounded-lg p-4 border border-gray-100 flex items-center gap-3">
                   <ChevronRight className="w-4 h-4 text-[#B87333] shrink-0" />
-                  <span className="text-sm font-medium text-[#1C3D5A]">{area}</span>
+                  <span className="text-sm font-medium text-[#1C3D5A] dark:text-foreground">{area}</span>
                 </div>
               ))}
             </div>
@@ -199,22 +199,22 @@ export default function SobreDrFelipe() {
       </section>
 
       {/* Congressos */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Participação em Congressos</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-8">Participação em Congressos</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{marginTop: '-5px', marginRight: '-5px', marginLeft: '6px', width: '367px', height: '409px'}}>
                 <img loading="lazy" src={UROONCO_URL} alt="Dr. Felipe no UroOnco 2025" className="w-full h-48 object-cover" style={{paddingRight: '70px', marginTop: '2px', marginLeft: '39px', width: '379px', height: '333px'}} />
-                <div className="p-4 bg-white">
-                  <h4 className="font-bold text-[#1C3D5A] mb-1">UroOnco 2025</h4>
+                <div className="p-4 bg-white dark:bg-card">
+                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">UroOnco 2025</h4>
                   <p className="text-sm text-[#64748B]">Congresso de Uro-Oncologia — São Paulo</p>
                 </div>
               </div>
               <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
                 <img loading="lazy" src={JPU_URL} alt="Dr. Felipe no JPU 2025" className="w-full h-48 object-cover" />
-                <div className="p-4 bg-white">
-                  <h4 className="font-bold text-[#1C3D5A] mb-1">JPU 2025</h4>
+                <div className="p-4 bg-white dark:bg-card">
+                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">JPU 2025</h4>
                   <p className="text-sm text-[#64748B]">Jornada Paulista de Urologia — SBU-SP</p>
                 </div>
               </div>
@@ -224,10 +224,10 @@ export default function SobreDrFelipe() {
       </section>
 
       {/* Locais de Atendimento */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-8">Locais de Atendimento</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-8">Locais de Atendimento</h2>
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 { name: "Campinas Day Hospital", address: "Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP", type: "Convênios e Particular", color: "bg-blue-50 border-blue-100" },
@@ -236,16 +236,16 @@ export default function SobreDrFelipe() {
               ].map((loc, i) => (
                 <div key={i} className={`rounded-xl p-5 border ${loc.color}`}>
                   <MapPin className="w-5 h-5 text-[#B87333] mb-3" />
-                  <h4 className="font-bold text-[#1C3D5A] mb-1 text-sm">{loc.name}</h4>
+                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1 text-sm">{loc.name}</h4>
                   <p className="text-xs text-[#64748B] mb-2">{loc.address}</p>
-                  <span className="text-xs bg-white px-2 py-1 rounded border font-medium text-[#B87333]">{loc.type}</span>
+                  <span className="text-xs bg-white dark:bg-card px-2 py-1 rounded border font-medium text-[#B87333]">{loc.type}</span>
                 </div>
               ))}
             </div>
             <div className="mt-6 bg-indigo-50 border border-indigo-100 rounded-xl p-5 flex items-center gap-4">
               <Video className="w-8 h-8 text-indigo-500 shrink-0" />
               <div>
-                <h4 className="font-bold text-[#1C3D5A] mb-1">Teleconsulta</h4>
+                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">Teleconsulta</h4>
                 <p className="text-sm text-[#334155]">Atendimento online para todo o Brasil. Agende pelo Doctoralia ou WhatsApp.</p>
               </div>
             </div>
@@ -288,7 +288,7 @@ export default function SobreDrFelipe() {
       </section>
 
       {/* Back to home */}
-      <div className="py-6 bg-gray-50 text-center">
+      <div className="py-6 bg-gray-50 dark:bg-card text-center">
         <Link href="/" className="text-sm text-[#B87333] hover:underline font-medium">
           ← Voltar para a página inicial
         </Link>

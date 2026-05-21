@@ -70,40 +70,40 @@ export default function TratamentoCancerProstata() {
       <FAQSchema questions={tratamentoCancerProstataFAQs} />
 
       {/* Introdução */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-[#B87333] p-6 rounded-r-lg mb-10">
-              <p className="text-[#1C3D5A] leading-relaxed">
+              <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
                 O câncer de próstata é o <strong>tumor sólido mais comum no homem</strong> e a segunda causa de morte por câncer no sexo masculino. Felizmente, quando diagnosticado em estágio localizado, as taxas de cura são elevadas. A escolha do tratamento depende do <strong>grupo de risco</strong> (baseado em PSA, Gleason/ISUP e estadiamento), da <strong>expectativa de vida</strong> do paciente e de suas <strong>preferências pessoais</strong>. As diretrizes da <strong>European Association of Urology (EAU 2025)</strong> recomendam uma abordagem individualizada, com decisão compartilhada entre médico e paciente.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-10">
-              <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-center">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Eye className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h4 className="font-semibold text-[#1C3D5A] mb-1">Vigilância Ativa</h4>
-                <p className="text-sm text-gray-600">Monitoramento rigoroso sem tratamento imediato para tumores de baixo risco</p>
+                <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Vigilância Ativa</h4>
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">Monitoramento rigoroso sem tratamento imediato para tumores de baixo risco</p>
               </div>
-              <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-center">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Cpu className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h4 className="font-semibold text-[#1C3D5A] mb-1">Cirurgia Robótica</h4>
-                <p className="text-sm text-gray-600">Prostatectomia radical assistida por robô (RARP) — padrão-ouro cirúrgico</p>
+                <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Cirurgia Robótica</h4>
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">Prostatectomia radical assistida por robô (RARP) — padrão-ouro cirúrgico</p>
               </div>
-              <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-center">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Radiation className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h4 className="font-semibold text-[#1C3D5A] mb-1">Radioterapia</h4>
-                <p className="text-sm text-gray-600">IMRT/VMAT, braquiterapia e SBRT com ou sem hormonioterapia</p>
+                <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Radioterapia</h4>
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">IMRT/VMAT, braquiterapia e SBRT com ou sem hormonioterapia</p>
               </div>
             </div>
 
-            <div className="prose prose-lg max-w-none text-gray-700">
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground">
               <p>
                 Este guia apresenta as principais modalidades de tratamento do câncer de próstata localizado e localmente avançado, com dados de ensaios clínicos randomizados e recomendações das principais sociedades urológicas internacionais.
               </p>
@@ -113,22 +113,22 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* Classificação de Risco */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <BarChart3 className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A]">Classificação de Risco (EAU 2025)</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Classificação de Risco (EAU 2025)</h2>
             </div>
 
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-gray-700 dark:text-foreground mb-6 leading-relaxed">
               A estratificação de risco é fundamental para definir o tratamento mais adequado. A classificação da EAU considera o nível de PSA, o grau histológico (ISUP Grade Group) e o estadiamento clínico (TNM).
             </p>
 
             <div className="overflow-x-auto mb-8">
-              <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+              <table className="w-full border-collapse bg-white dark:bg-card rounded-xl overflow-hidden shadow-sm">
                 <thead>
                   <tr className="bg-[#1C3D5A] text-white">
                     <th className="px-4 py-3 text-left text-sm font-semibold">Grupo de Risco</th>
@@ -176,24 +176,24 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* Vigilância Ativa */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <Eye className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A]">Vigilância Ativa (Active Surveillance)</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Vigilância Ativa (Active Surveillance)</h2>
             </div>
 
-            <div className="prose prose-lg max-w-none text-gray-700 mb-8">
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground mb-8">
               <p>
                 A vigilância ativa (VA) é a <strong>estratégia padrão para câncer de próstata de baixo risco</strong> em pacientes com expectativa de vida superior a 10 anos (EAU 2025, recomendação <strong>Strong</strong>). O objetivo é evitar o sobretratamento — e seus efeitos colaterais — sem comprometer a sobrevida, monitorando rigorosamente o paciente para intervir caso haja progressão da doença.
               </p>
             </div>
 
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Critérios de Inclusão (EAU 2025)</h3>
+            <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Critérios de Inclusão (EAU 2025)</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   { label: "Grau histológico", value: "ISUP Grade Group 1 (Gleason 3+3=6)" },
@@ -206,16 +206,16 @@ export default function TratamentoCancerProstata() {
                   <div key={i} className="flex gap-3 items-start">
                     <CheckCircle2 className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                     <div>
-                      <span className="font-medium text-[#1C3D5A]">{item.label}:</span>{" "}
-                      <span className="text-gray-600 text-sm">{item.value}</span>
+                      <span className="font-medium text-[#1C3D5A] dark:text-foreground">{item.label}:</span>{" "}
+                      <span className="text-gray-600 dark:text-muted-foreground text-sm">{item.value}</span>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Protocolo de Acompanhamento</h3>
+            <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Protocolo de Acompanhamento</h3>
               <div className="space-y-3">
                 {[
                   { icon: Activity, text: "PSA a cada 3–6 meses nos primeiros 2 anos, depois semestral" },
@@ -226,19 +226,19 @@ export default function TratamentoCancerProstata() {
                 ].map((item, i) => (
                   <div key={i} className="flex gap-3 items-center">
                     <item.icon className="w-5 h-5 text-[#B87333] shrink-0" />
-                    <span className="text-gray-700 text-sm">{item.text}</span>
+                    <span className="text-gray-700 dark:text-foreground text-sm">{item.text}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="bg-amber-50 border border-amber-100 rounded-xl p-6 mb-8">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Evidências: Estudo ProtecT (15 anos)</h3>
-              <p className="text-gray-700 text-sm mb-4">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Evidências: Estudo ProtecT (15 anos)</h3>
+              <p className="text-gray-700 dark:text-foreground text-sm mb-4">
                 O estudo ProtecT (Hamdy et al., NEJM 2023) randomizou 1.643 pacientes em três braços: monitoramento ativo, prostatectomia radical e radioterapia. Após 15 anos de seguimento:
               </p>
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse bg-white rounded-lg overflow-hidden">
+                <table className="w-full border-collapse bg-white dark:bg-card rounded-lg overflow-hidden">
                   <thead>
                     <tr className="bg-[#1C3D5A] text-white">
                       <th className="px-3 py-2 text-left text-xs font-semibold">Desfecho</th>
@@ -254,7 +254,7 @@ export default function TratamentoCancerProstata() {
                       <td className="px-3 py-2 text-center">97,8%</td>
                       <td className="px-3 py-2 text-center">97,1%</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-gray-50 dark:bg-card">
                       <td className="px-3 py-2 font-medium">Progressão metastática</td>
                       <td className="px-3 py-2 text-center text-orange-600 font-medium">9,4%</td>
                       <td className="px-3 py-2 text-center text-green-600 font-medium">4,7%</td>
@@ -266,7 +266,7 @@ export default function TratamentoCancerProstata() {
                       <td className="px-3 py-2 text-center">10,7%</td>
                       <td className="px-3 py-2 text-center">10,7%</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-gray-50 dark:bg-card">
                       <td className="px-3 py-2 font-medium">Morte por qualquer causa</td>
                       <td className="px-3 py-2 text-center">21,7%</td>
                       <td className="px-3 py-2 text-center">~21%</td>
@@ -275,7 +275,7 @@ export default function TratamentoCancerProstata() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-gray-500 mt-3">
+              <p className="text-xs text-gray-500 dark:text-muted-foreground mt-3">
                 Fonte: Hamdy FC et al. Fifteen-Year Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. NEJM 2023; 388:1547-58.
               </p>
             </div>
@@ -295,27 +295,27 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* Prostatectomia Radical Robótica */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <Cpu className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A]">Prostatectomia Radical Robótica (RARP)</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Prostatectomia Radical Robótica (RARP)</h2>
             </div>
 
-            <div className="prose prose-lg max-w-none text-gray-700 mb-8">
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground mb-8">
               <p>
                 A prostatectomia radical é o <strong>tratamento cirúrgico padrão</strong> para o câncer de próstata localizado em pacientes com expectativa de vida superior a 10 anos. A técnica <strong>robótica (RARP — Robot-Assisted Radical Prostatectomy)</strong> é atualmente a abordagem mais utilizada mundialmente, oferecendo vantagens em termos de recuperação funcional precoce quando comparada à cirurgia aberta (RRP).
               </p>
             </div>
 
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Vantagens da RARP vs Cirurgia Aberta (RRP)</h3>
-              <p className="text-gray-600 text-sm mb-4">Meta-análise de 5 RCTs com 1.205 pacientes (EAU Guidelines 2025, Table 6.2.4):</p>
+            <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Vantagens da RARP vs Cirurgia Aberta (RRP)</h3>
+              <p className="text-gray-600 dark:text-muted-foreground text-sm mb-4">Meta-análise de 5 RCTs com 1.205 pacientes (EAU Guidelines 2025, Table 6.2.4):</p>
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse bg-white rounded-lg overflow-hidden">
+                <table className="w-full border-collapse bg-white dark:bg-card rounded-lg overflow-hidden">
                   <thead>
                     <tr className="bg-[#1C3D5A] text-white">
                       <th className="px-3 py-2 text-left text-xs font-semibold">Parâmetro</th>
@@ -331,7 +331,7 @@ export default function TratamentoCancerProstata() {
                       <td className="px-3 py-2 text-center">65%</td>
                       <td className="px-3 py-2 text-center">p = 0,002</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-gray-50 dark:bg-card">
                       <td className="px-3 py-2 font-medium">Continência 6 meses</td>
                       <td className="px-3 py-2 text-center text-green-600 font-medium">90%</td>
                       <td className="px-3 py-2 text-center">82%</td>
@@ -343,7 +343,7 @@ export default function TratamentoCancerProstata() {
                       <td className="px-3 py-2 text-center">79%</td>
                       <td className="px-3 py-2 text-center">p &lt; 0,001</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-gray-50 dark:bg-card">
                       <td className="px-3 py-2 font-medium">Recuperação erétil</td>
                       <td className="px-3 py-2 text-center text-green-600 font-medium">OR 4,05</td>
                       <td className="px-3 py-2 text-center">Referência</td>
@@ -355,7 +355,7 @@ export default function TratamentoCancerProstata() {
                       <td className="px-3 py-2 text-center">9%</td>
                       <td className="px-3 py-2 text-center">—</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-gray-50 dark:bg-card">
                       <td className="px-3 py-2 font-medium">Controle oncológico</td>
                       <td className="px-3 py-2 text-center">Equivalente</td>
                       <td className="px-3 py-2 text-center">Equivalente</td>
@@ -364,54 +364,54 @@ export default function TratamentoCancerProstata() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-gray-500 mt-3">
+              <p className="text-xs text-gray-500 dark:text-muted-foreground mt-3">
                 Fontes: Coughlin et al. Eur Urol 2018; Yaxley et al. Lancet 2016; EAU Guidelines 2025.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
-                <h4 className="font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm">
+                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <Shield className="w-5 h-5 text-[#B87333]" />
                   Preservação Neurovascular
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">
                   A técnica <strong>nerve-sparing</strong> (preservação dos feixes neurovasculares) deve ser oferecida quando há baixo risco de doença extracapsular naquele lado (EAU 2025, <strong>Strong</strong>). A visão magnificada 10x do robô Da Vinci permite identificação precisa dos nervos, favorecendo a preservação da função erétil e continência urinária.
                 </p>
               </div>
-              <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
-                <h4 className="font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm">
+                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <Target className="w-5 h-5 text-[#B87333]" />
                   Linfadenectomia (ePLND)
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">
                   A linfadenectomia pélvica estendida (ePLND) é recomendada quando o risco de invasão linfonodal é &gt; 5% por nomogramas (EAU 2025, <strong>Strong</strong>). Deve incluir os linfonodos obturadores, ilíacos internos e externos, e pré-sacrais. É fundamental para estadiamento e prognóstico.
                 </p>
               </div>
             </div>
 
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Indicações por Grupo de Risco</h3>
+            <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Indicações por Grupo de Risco</h3>
               <div className="space-y-4">
                 <div className="flex gap-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full mt-1.5 shrink-0"></div>
                   <div>
-                    <span className="font-medium text-[#1C3D5A]">Baixo Risco:</span>{" "}
-                    <span className="text-gray-600 text-sm">Vigilância ativa é o padrão. RP não é recomendada de rotina (sobretratamento).</span>
+                    <span className="font-medium text-[#1C3D5A] dark:text-foreground">Baixo Risco:</span>{" "}
+                    <span className="text-gray-600 dark:text-muted-foreground text-sm">Vigilância ativa é o padrão. RP não é recomendada de rotina (sobretratamento).</span>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <div className="w-3 h-3 bg-yellow-500 rounded-full mt-1.5 shrink-0"></div>
                   <div>
-                    <span className="font-medium text-[#1C3D5A]">Risco Intermediário:</span>{" "}
-                    <span className="text-gray-600 text-sm">RP é opção padrão para expectativa de vida &gt; 10 anos (Strong). Nerve-sparing quando possível.</span>
+                    <span className="font-medium text-[#1C3D5A] dark:text-foreground">Risco Intermediário:</span>{" "}
+                    <span className="text-gray-600 dark:text-muted-foreground text-sm">RP é opção padrão para expectativa de vida &gt; 10 anos (Strong). Nerve-sparing quando possível.</span>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <div className="w-3 h-3 bg-red-500 rounded-full mt-1.5 shrink-0"></div>
                   <div>
-                    <span className="font-medium text-[#1C3D5A]">Alto Risco:</span>{" "}
-                    <span className="text-gray-600 text-sm">RP é opção em pacientes selecionados com baixo volume tumoral. Pode ser parte de tratamento multimodal (RP + RT adjuvante/salvamento). ePLND obrigatória.</span>
+                    <span className="font-medium text-[#1C3D5A] dark:text-foreground">Alto Risco:</span>{" "}
+                    <span className="text-gray-600 dark:text-muted-foreground text-sm">RP é opção em pacientes selecionados com baixo volume tumoral. Pode ser parte de tratamento multimodal (RP + RT adjuvante/salvamento). ePLND obrigatória.</span>
                   </div>
                 </div>
               </div>
@@ -421,8 +421,8 @@ export default function TratamentoCancerProstata() {
               <div className="bg-gradient-to-r from-amber-50 to-blue-50 border border-amber-200 rounded-xl p-5 cursor-pointer hover:shadow-md transition-shadow">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-semibold text-[#1C3D5A]">Saiba mais sobre Cirurgia Robótica em Urologia</p>
-                    <p className="text-sm text-gray-600">Página completa sobre o sistema Da Vinci, técnica e resultados</p>
+                    <p className="font-semibold text-[#1C3D5A] dark:text-foreground">Saiba mais sobre Cirurgia Robótica em Urologia</p>
+                    <p className="text-sm text-gray-600 dark:text-muted-foreground">Página completa sobre o sistema Da Vinci, técnica e resultados</p>
                   </div>
                   <ChevronRight className="w-5 h-5 text-[#B87333]" />
                 </div>
@@ -433,36 +433,36 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* Radioterapia */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <Radiation className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A]">Radioterapia</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Radioterapia</h2>
             </div>
 
-            <div className="prose prose-lg max-w-none text-gray-700 mb-8">
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground mb-8">
               <p>
                 A radioterapia é uma <strong>alternativa curativa à cirurgia</strong> para o câncer de próstata localizado e localmente avançado. As técnicas modernas — IMRT (Intensity-Modulated Radiation Therapy), VMAT (Volumetric Modulated Arc Therapy) e IGRT (Image-Guided Radiation Therapy) — permitem doses elevadas ao tumor com menor toxicidade aos tecidos adjacentes.
               </p>
             </div>
 
             {/* EBRT */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+            <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-[#B87333]" />
                 Radioterapia Externa (EBRT)
               </h3>
-              <div className="space-y-4 text-sm text-gray-700">
+              <div className="space-y-4 text-sm text-gray-700 dark:text-foreground">
                 <p>
                   A radioterapia externa com modulação de intensidade (IMRT/VMAT) é o padrão atual. Diferentes esquemas de fracionamento estão disponíveis:
                 </p>
                 <div className="overflow-x-auto">
-                  <table className="w-full border-collapse bg-white rounded-lg overflow-hidden border border-gray-200">
+                  <table className="w-full border-collapse bg-white dark:bg-card rounded-lg overflow-hidden border border-gray-200 dark:border-border">
                     <thead>
-                      <tr className="bg-gray-100">
+                      <tr className="bg-gray-100 dark:bg-muted">
                         <th className="px-3 py-2 text-left text-xs font-semibold">Esquema</th>
                         <th className="px-3 py-2 text-left text-xs font-semibold">Dose Total</th>
                         <th className="px-3 py-2 text-left text-xs font-semibold">Frações</th>
@@ -476,7 +476,7 @@ export default function TratamentoCancerProstata() {
                         <td className="px-3 py-2">38–39 fx (2 Gy/fx)</td>
                         <td className="px-3 py-2">~8 semanas</td>
                       </tr>
-                      <tr className="bg-gray-50">
+                      <tr className="bg-gray-50 dark:bg-card">
                         <td className="px-3 py-2 font-medium">Hipofrac. Moderada</td>
                         <td className="px-3 py-2">60–70 Gy</td>
                         <td className="px-3 py-2">20–28 fx (2,5–3 Gy/fx)</td>
@@ -498,15 +498,15 @@ export default function TratamentoCancerProstata() {
             </div>
 
             {/* Braquiterapia */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+            <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
                 <CircleDot className="w-5 h-5 text-[#B87333]" />
                 Braquiterapia
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-blue-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-[#1C3D5A] mb-2">LDR (Baixa Taxa de Dose)</h4>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                  <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-2">LDR (Baixa Taxa de Dose)</h4>
+                  <ul className="text-sm text-gray-700 dark:text-foreground space-y-1">
                     <li>• Sementes radioativas permanentes (I-125 ou Pd-103)</li>
                     <li>• Dose: 145 Gy (I-125) ou 125 Gy (Pd-103)</li>
                     <li>• Indicação: risco intermediário favorável</li>
@@ -515,8 +515,8 @@ export default function TratamentoCancerProstata() {
                   </ul>
                 </div>
                 <div className="bg-purple-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-[#1C3D5A] mb-2">HDR (Alta Taxa de Dose)</h4>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                  <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-2">HDR (Alta Taxa de Dose)</h4>
+                  <ul className="text-sm text-gray-700 dark:text-foreground space-y-1">
                     <li>• Fonte temporária (Ir-192), fracionada</li>
                     <li>• Boost com EBRT (≥ 45 Gy) ou monoterapia</li>
                     <li>• Indicação: risco intermediário/alto</li>
@@ -528,12 +528,12 @@ export default function TratamentoCancerProstata() {
             </div>
 
             {/* ADT + RT */}
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+            <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
                 <Swords className="w-5 h-5 text-[#B87333]" />
                 Hormonioterapia (ADT) Combinada com Radioterapia
               </h3>
-              <div className="text-sm text-gray-700 space-y-3">
+              <div className="text-sm text-gray-700 dark:text-foreground space-y-3">
                 <p>
                   A combinação de radioterapia com terapia de deprivação androgênica (ADT) é superior à radioterapia isolada, conforme demonstrado por múltiplos ensaios clínicos randomizados (EAU 2025, Section 6.2.3.a.4):
                 </p>
@@ -565,20 +565,20 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* Manejo por Grupo de Risco */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A]">Recomendações por Grupo de Risco (EAU 2025)</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Recomendações por Grupo de Risco (EAU 2025)</h2>
             </div>
 
             {/* Baixo Risco */}
-            <div className="bg-white border-l-4 border-green-500 rounded-r-xl p-6 shadow-sm mb-6">
+            <div className="bg-white dark:bg-card border-l-4 border-green-500 rounded-r-xl p-6 shadow-sm mb-6">
               <h3 className="text-lg font-bold text-green-800 mb-3">Baixo Risco</h3>
-              <div className="space-y-2 text-sm text-gray-700">
+              <div className="space-y-2 text-sm text-gray-700 dark:text-foreground">
                 <div className="flex gap-2 items-start">
                   <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
                   <span><strong>Vigilância ativa:</strong> padrão para expectativa de vida &gt; 10 anos (<strong>Strong</strong>)</span>
@@ -595,9 +595,9 @@ export default function TratamentoCancerProstata() {
             </div>
 
             {/* Risco Intermediário */}
-            <div className="bg-white border-l-4 border-yellow-500 rounded-r-xl p-6 shadow-sm mb-6">
+            <div className="bg-white dark:bg-card border-l-4 border-yellow-500 rounded-r-xl p-6 shadow-sm mb-6">
               <h3 className="text-lg font-bold text-yellow-800 mb-3">Risco Intermediário</h3>
-              <div className="space-y-2 text-sm text-gray-700">
+              <div className="space-y-2 text-sm text-gray-700 dark:text-foreground">
                 <div className="flex gap-2 items-start">
                   <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
                   <span><strong>RP (RARP):</strong> oferecer para expectativa de vida &gt; 10 anos, nerve-sparing quando possível (<strong>Strong</strong>)</span>
@@ -622,9 +622,9 @@ export default function TratamentoCancerProstata() {
             </div>
 
             {/* Alto Risco */}
-            <div className="bg-white border-l-4 border-red-500 rounded-r-xl p-6 shadow-sm mb-6">
+            <div className="bg-white dark:bg-card border-l-4 border-red-500 rounded-r-xl p-6 shadow-sm mb-6">
               <h3 className="text-lg font-bold text-red-800 mb-3">Alto Risco Localizado</h3>
-              <div className="space-y-2 text-sm text-gray-700">
+              <div className="space-y-2 text-sm text-gray-700 dark:text-foreground">
                 <div className="flex gap-2 items-start">
                   <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
                   <span><strong>EBRT + ADT longa (2–3 anos):</strong> padrão de tratamento (<strong>Strong</strong>)</span>
@@ -649,9 +649,9 @@ export default function TratamentoCancerProstata() {
             </div>
 
             {/* Localmente Avançado */}
-            <div className="bg-white border-l-4 border-purple-500 rounded-r-xl p-6 shadow-sm">
+            <div className="bg-white dark:bg-card border-l-4 border-purple-500 rounded-r-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold text-purple-800 mb-3">Localmente Avançado (cT3–T4 / N+)</h3>
-              <div className="space-y-2 text-sm text-gray-700">
+              <div className="space-y-2 text-sm text-gray-700 dark:text-foreground">
                 <div className="flex gap-2 items-start">
                   <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
                   <span><strong>EBRT + ADT longa (2–3 anos):</strong> tratamento padrão (<strong>Strong</strong>)</span>
@@ -671,17 +671,17 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* Terapias Focais */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <Crosshair className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A]">Terapias Focais e Investigacionais</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Terapias Focais e Investigacionais</h2>
             </div>
 
-            <div className="prose prose-lg max-w-none text-gray-700 mb-8">
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground mb-8">
               <p>
                 As terapias focais tratam apenas a área do tumor dentro da próstata, preservando o tecido saudável. Embora promissoras em termos de redução de efeitos colaterais, a EAU 2025 recomenda que sejam utilizadas <strong>apenas dentro de ensaios clínicos ou registros</strong> (recomendação <strong>Strong</strong>), devido à falta de dados comparativos de longo prazo.
               </p>
@@ -710,12 +710,12 @@ export default function TratamentoCancerProstata() {
                   status: "Investigacional",
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
+                <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-bold text-[#1C3D5A]">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
                     <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full">{item.status}</span>
                   </div>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
+                  <p className="text-sm text-gray-600 dark:text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -724,35 +724,35 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* Decisão Compartilhada */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <Users className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A]">Decisão Compartilhada</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Decisão Compartilhada</h2>
             </div>
 
-            <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
-              <p className="text-gray-700 leading-relaxed mb-4">
+            <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
+              <p className="text-gray-700 dark:text-foreground leading-relaxed mb-4">
                 A EAU 2025 enfatiza que a escolha do tratamento deve ser uma <strong>decisão compartilhada</strong> entre médico e paciente, considerando não apenas as características do tumor, mas também os valores, preferências e expectativas do paciente em relação à qualidade de vida.
               </p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-amber-50 rounded-lg p-4 text-center">
                   <HeartPulse className="w-8 h-8 text-[#B87333] mx-auto mb-2" />
-                  <h5 className="font-semibold text-[#1C3D5A] text-sm mb-1">Função Sexual</h5>
-                  <p className="text-xs text-gray-600">Preservação da ereção é prioridade? RARP nerve-sparing ou RT podem ser mais adequadas.</p>
+                  <h5 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Função Sexual</h5>
+                  <p className="text-xs text-gray-600 dark:text-muted-foreground">Preservação da ereção é prioridade? RARP nerve-sparing ou RT podem ser mais adequadas.</p>
                 </div>
                 <div className="bg-amber-50 rounded-lg p-4 text-center">
                   <Shield className="w-8 h-8 text-[#B87333] mx-auto mb-2" />
-                  <h5 className="font-semibold text-[#1C3D5A] text-sm mb-1">Continência</h5>
-                  <p className="text-xs text-gray-600">Incontinência urinária é mais comum após RP, mas geralmente transitória com RARP.</p>
+                  <h5 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Continência</h5>
+                  <p className="text-xs text-gray-600 dark:text-muted-foreground">Incontinência urinária é mais comum após RP, mas geralmente transitória com RARP.</p>
                 </div>
                 <div className="bg-amber-50 rounded-lg p-4 text-center">
                   <Clock className="w-8 h-8 text-[#B87333] mx-auto mb-2" />
-                  <h5 className="font-semibold text-[#1C3D5A] text-sm mb-1">Tempo de Tratamento</h5>
-                  <p className="text-xs text-gray-600">RP: recuperação em semanas. RT: sessões por semanas/meses. VA: monitoramento contínuo.</p>
+                  <h5 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Tempo de Tratamento</h5>
+                  <p className="text-xs text-gray-600 dark:text-muted-foreground">RP: recuperação em semanas. RT: sessões por semanas/meses. VA: monitoramento contínuo.</p>
                 </div>
               </div>
             </div>
@@ -761,14 +761,14 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* Campinas Day Hospital */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <Building2 className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A]">Tratamento em Campinas e São Paulo</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Tratamento em Campinas e São Paulo</h2>
             </div>
 
             <div className="bg-gradient-to-r from-[#1C3D5A] to-[#0D3B66] rounded-xl p-8 text-white mb-8">
@@ -811,10 +811,10 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl font-bold text-[#1C3D5A] mb-8">Perguntas Frequentes</h2>
+            <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground mb-8">Perguntas Frequentes</h2>
             <div className="space-y-4">
               {[
                 {
@@ -850,12 +850,12 @@ export default function TratamentoCancerProstata() {
                   a: "Sim. Após prostatectomia radical, o PSA deve tornar-se indetectável (< 0,1 ng/mL). Qualquer elevação acima de 0,2 ng/mL em duas medidas consecutivas é considerada recorrência bioquímica e deve ser investigada.",
                 },
               ].map((item, i) => (
-                <details key={i} className="bg-white border border-gray-100 rounded-xl shadow-sm group">
-                  <summary className="px-6 py-4 cursor-pointer font-medium text-[#1C3D5A] flex items-center justify-between">
+                <details key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl shadow-sm group">
+                  <summary className="px-6 py-4 cursor-pointer font-medium text-[#1C3D5A] dark:text-foreground flex items-center justify-between">
                     {item.q}
                     <ChevronRight className="w-4 h-4 text-gray-400 group-open:rotate-90 transition-transform" />
                   </summary>
-                  <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed">{item.a}</div>
+                  <div className="px-6 pb-4 text-sm text-gray-600 dark:text-muted-foreground leading-relaxed">{item.a}</div>
                 </details>
               ))}
             </div>
@@ -864,11 +864,11 @@ export default function TratamentoCancerProstata() {
       </section>
 
       {/* Referências */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <h2 className="text-2xl font-bold text-[#1C3D5A] mb-6">Referências</h2>
-            <div className="bg-gray-50 rounded-xl p-6 space-y-3 text-sm text-gray-600">
+            <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground mb-6">Referências</h2>
+            <div className="bg-gray-50 dark:bg-card rounded-xl p-6 space-y-3 text-sm text-gray-600 dark:text-muted-foreground">
               <p>1. EAU Guidelines on Prostate Cancer 2025. Chapter 6: Treatment. European Association of Urology.</p>
               <p>2. Hamdy FC, et al. Fifteen-Year Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. N Engl J Med. 2023;388:1547-1558. DOI: 10.1056/NEJMoa2214122</p>
               <p>3. Bill-Axelson A, et al. Radical Prostatectomy or Watchful Waiting in Prostate Cancer — 29-Year Follow-up (SPCG-4). N Engl J Med. 2018;379:2319-2329. DOI: 10.1056/NEJMoa1807801</p>

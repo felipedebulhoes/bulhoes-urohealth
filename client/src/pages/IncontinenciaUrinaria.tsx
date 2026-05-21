@@ -240,7 +240,7 @@ export default function IncontinenciaUrinaria() {
       <FAQSchema questions={faqs.map(item => ({ question: item.q, answer: item.a }))} />
 
       {/* Imagem Ilustrativa */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-10 bg-gray-50 dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -258,15 +258,15 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* Introdução */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">O Que é Incontinência Urinária Masculina?</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-6">O Que é Incontinência Urinária Masculina?</h2>
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground space-y-4">
               <p>
                 A <strong>incontinência urinária (IU)</strong> é definida como a perda involuntária de urina, uma condição que afeta
                 significativamente a qualidade de vida do homem. Embora seja mais discutida em mulheres, a IU masculina é uma condição
@@ -289,11 +289,11 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* Tipos de Incontinência */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Tipos de Incontinência Urinária</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Tipos de Incontinência Urinária</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Cada tipo tem mecanismo, causa e tratamento diferentes. O diagnóstico correto é fundamental.
             </p>
           </motion.div>
@@ -313,13 +313,13 @@ export default function IncontinenciaUrinaria() {
                     <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center`}>
                       <type.icon className="w-5 h-5 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900">{type.name}</h3>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-foreground">{type.name}</h3>
                   </div>
-                  <p className="text-gray-700 mb-3">{type.description}</p>
+                  <p className="text-gray-700 dark:text-foreground mb-3">{type.description}</p>
                   <div className={`${colors.light} rounded-lg p-3 mb-3`}>
-                    <p className="text-sm"><strong className={colors.text}>Causas:</strong> <span className="text-gray-700">{type.causes}</span></p>
+                    <p className="text-sm"><strong className={colors.text}>Causas:</strong> <span className="text-gray-700 dark:text-foreground">{type.causes}</span></p>
                   </div>
-                  <p className="text-sm text-gray-500">{type.prevalence}</p>
+                  <p className="text-sm text-gray-500 dark:text-muted-foreground">{type.prevalence}</p>
                 </motion.div>
               );
             })}
@@ -328,11 +328,11 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* Classificação de Gravidade */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Classificação de Gravidade</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Classificação de Gravidade</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Baseada no número de absorventes utilizados por dia — AUA/GURS/SUFU Guideline 2024
             </p>
           </motion.div>
@@ -349,15 +349,15 @@ export default function IncontinenciaUrinaria() {
                 {severityScale.map((item, i) => {
                   const colors = colorMap[item.color];
                   return (
-                    <tr key={i} className={`border-b ${i % 2 === 0 ? "bg-gray-50" : "bg-white"}`}>
+                    <tr key={i} className={`border-b ${i % 2 === 0 ? "bg-gray-50 dark:bg-card" : "bg-white"}`}>
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-2">
                           <div className={`w-3 h-3 rounded-full ${colors.bg}`}></div>
-                          <span className="font-semibold text-gray-900">{item.level}</span>
+                          <span className="font-semibold text-gray-900 dark:text-foreground">{item.level}</span>
                         </div>
                       </td>
-                      <td className="px-4 py-3 font-medium text-gray-700">{item.pads}</td>
-                      <td className="px-4 py-3 text-gray-600">{item.description}</td>
+                      <td className="px-4 py-3 font-medium text-gray-700 dark:text-foreground">{item.pads}</td>
+                      <td className="px-4 py-3 text-gray-600 dark:text-muted-foreground">{item.description}</td>
                     </tr>
                   );
                 })}
@@ -368,11 +368,11 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* Timeline de Tratamento */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Linha do Tempo do Tratamento</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Linha do Tempo do Tratamento</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Algoritmo de manejo da incontinência pós-prostatectomia — AUA 2024
             </p>
           </motion.div>
@@ -394,7 +394,7 @@ export default function IncontinenciaUrinaria() {
                 </div>
                 <div className="pb-8">
                   <span className="text-sm font-bold text-amber-600 uppercase tracking-wide">{step.period}</span>
-                  <p className="text-gray-700 mt-1">{step.action}</p>
+                  <p className="text-gray-700 dark:text-foreground mt-1">{step.action}</p>
                 </div>
               </motion.div>
             ))}
@@ -403,11 +403,11 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* Tratamento Conservador */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Tratamento Conservador</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Tratamento Conservador</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Primeira linha de tratamento para todos os pacientes com incontinência urinária
             </p>
           </motion.div>
@@ -419,19 +419,19 @@ export default function IncontinenciaUrinaria() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-gray-50 rounded-xl p-6 border border-gray-200"
+                className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-200 dark:border-border"
               >
                 <div className="w-12 h-12 rounded-xl bg-amber-600 flex items-center justify-center mb-4">
                   <treatment.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{treatment.name}</h3>
-                <p className="text-gray-700 text-sm mb-3">{treatment.description}</p>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-foreground mb-2">{treatment.name}</h3>
+                <p className="text-gray-700 dark:text-foreground text-sm mb-3">{treatment.description}</p>
                 <div className="bg-amber-50 rounded-lg p-3 mb-4">
                   <p className="text-xs font-medium text-amber-700">{treatment.evidence}</p>
                 </div>
                 <ul className="space-y-2">
                   {treatment.details.map((detail, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                    <li key={j} className="flex items-start gap-2 text-sm text-gray-600 dark:text-muted-foreground">
                       <Check className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
                       <span>{detail}</span>
                     </li>
@@ -444,11 +444,11 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* Tratamento Cirúrgico */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Tratamento Cirúrgico</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Tratamento Cirúrgico</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Opções para incontinência persistente após tratamento conservador
             </p>
           </motion.div>
@@ -460,18 +460,18 @@ export default function IncontinenciaUrinaria() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden"
+                className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-border overflow-hidden"
               >
                 <button
                   onClick={() => setOpenSurgery(openSurgery === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-muted dark:bg-card transition-colors"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-amber-600 flex items-center justify-center">
                       <option.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900">{option.name}</h3>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-foreground">{option.name}</h3>
                       <span className="text-sm text-amber-600 font-medium">Indicação: {option.indication}</span>
                     </div>
                   </div>
@@ -484,10 +484,10 @@ export default function IncontinenciaUrinaria() {
                     className="px-6 pb-6 border-t border-gray-100"
                   >
                     <div className="pt-4 space-y-4">
-                      <p className="text-gray-700">{option.description}</p>
-                      <div className="bg-gray-50 rounded-lg p-4">
-                        <h4 className="font-semibold text-gray-900 mb-2">Como Funciona</h4>
-                        <p className="text-gray-700 text-sm">{option.howItWorks}</p>
+                      <p className="text-gray-700 dark:text-foreground">{option.description}</p>
+                      <div className="bg-gray-50 dark:bg-card rounded-lg p-4">
+                        <h4 className="font-semibold text-gray-900 dark:text-foreground mb-2">Como Funciona</h4>
+                        <p className="text-gray-700 dark:text-foreground text-sm">{option.howItWorks}</p>
                       </div>
                       <div className="bg-amber-50 rounded-lg p-4">
                         <h4 className="font-semibold text-amber-800 mb-2">Resultados</h4>
@@ -498,10 +498,10 @@ export default function IncontinenciaUrinaria() {
                         <p className="text-blue-700 text-sm">{option.recommendation}</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Considerações Importantes</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-foreground mb-2">Considerações Importantes</h4>
                         <ul className="space-y-2">
                           {option.considerations.map((item, j) => (
-                            <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                            <li key={j} className="flex items-start gap-2 text-sm text-gray-600 dark:text-muted-foreground">
                               <ArrowRight className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
                               <span>{item}</span>
                             </li>
@@ -518,11 +518,11 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* Tabela Comparativa */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Comparativo: Sling vs Esfíncter Artificial</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Comparativo: Sling vs Esfíncter Artificial</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Baseado no estudo MASTER (Lancet 2022) e meta-análise de Grigoryan et al. (2024)
             </p>
           </motion.div>
@@ -547,10 +547,10 @@ export default function IncontinenciaUrinaria() {
                   ["Recuperação", "2-4 semanas", "4-6 semanas (ativação em 6 sem)"],
                   ["Custo relativo", "Menor", "Maior"],
                 ].map((row, i) => (
-                  <tr key={i} className={`border-b ${i % 2 === 0 ? "bg-gray-50" : "bg-white"}`}>
-                    <td className="px-4 py-3 font-semibold text-gray-900">{row[0]}</td>
-                    <td className="px-4 py-3 text-center text-gray-700">{row[1]}</td>
-                    <td className="px-4 py-3 text-center text-gray-700">{row[2]}</td>
+                  <tr key={i} className={`border-b ${i % 2 === 0 ? "bg-gray-50 dark:bg-card" : "bg-white"}`}>
+                    <td className="px-4 py-3 font-semibold text-gray-900 dark:text-foreground">{row[0]}</td>
+                    <td className="px-4 py-3 text-center text-gray-700 dark:text-foreground">{row[1]}</td>
+                    <td className="px-4 py-3 text-center text-gray-700 dark:text-foreground">{row[2]}</td>
                   </tr>
                 ))}
               </tbody>
@@ -570,7 +570,7 @@ export default function IncontinenciaUrinaria() {
               e oferece todas as opções de tratamento — desde fisioterapia pélvica até implante de esfíncter artificial e sling masculino.
               Procedimentos cirúrgicos são realizados no <strong>Campinas Day Hospital</strong>.
             </p>
-            <div className="bg-white/10 rounded-xl p-6 max-w-md mx-auto">
+            <div className="bg-white dark:bg-card/10 rounded-xl p-6 max-w-md mx-auto">
               <p className="font-semibold text-lg mb-1">Campinas Day Hospital</p>
               <p className="text-amber-100">Av. Benjamin Constant, 1991</p>
               <p className="text-amber-100">Cambuí, Campinas — SP</p>
@@ -580,11 +580,11 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-3xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Perguntas Frequentes</h2>
-            <p className="text-gray-600 text-center mb-10">Dúvidas comuns sobre incontinência urinária masculina</p>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Perguntas Frequentes</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10">Dúvidas comuns sobre incontinência urinária masculina</p>
           </motion.div>
           <div className="space-y-3">
             {faqs.map((faq, i) => (
@@ -594,20 +594,20 @@ export default function IncontinenciaUrinaria() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="border border-gray-200 rounded-xl overflow-hidden"
+                className="border border-gray-200 dark:border-border rounded-xl overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 dark:hover:bg-muted dark:bg-card transition-colors"
                 >
-                  <span className="font-medium text-gray-900 pr-4">{faq.q}</span>
+                  <span className="font-medium text-gray-900 dark:text-foreground pr-4">{faq.q}</span>
                   {openFaq === i ? <ChevronUp className="w-5 h-5 text-gray-400 shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" />}
                 </button>
                 {openFaq === i && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="px-4 pb-4 text-gray-600 border-t border-gray-100 pt-3"
+                    className="px-4 pb-4 text-gray-600 dark:text-muted-foreground border-t border-gray-100 pt-3"
                   >
                     {faq.a}
                   </motion.div>
@@ -619,14 +619,14 @@ export default function IncontinenciaUrinaria() {
       </section>
 
       {/* Referências */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Referências</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-6">Referências</h2>
             <ol className="space-y-2">
               {references.map((ref) => (
-                <li key={ref.num} className="text-sm text-gray-600 flex gap-2">
-                  <span className="font-semibold text-gray-500 shrink-0">{ref.num}.</span>
+                <li key={ref.num} className="text-sm text-gray-600 dark:text-muted-foreground flex gap-2">
+                  <span className="font-semibold text-gray-500 dark:text-muted-foreground shrink-0">{ref.num}.</span>
                   <span>{ref.text}</span>
                 </li>
               ))}

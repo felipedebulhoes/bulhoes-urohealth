@@ -70,11 +70,11 @@ export default function CirurgiaRobotica() {
       <FAQSchema questions={cirurgiaRoboticaFAQs} />
 
       {/* Introdução */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-indigo-50 to-violet-50 border-l-4 border-[#6366F1] p-6 rounded-r-lg mb-10">
-              <p className="text-[#1C3D5A] leading-relaxed">
+              <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
                 A <strong>cirurgia robótica</strong> representa uma das maiores revoluções da cirurgia moderna. Na urologia, o sistema robótico permite ao cirurgião operar com <strong>precisão milimétrica, visão tridimensional ampliada em até 10 vezes</strong> e movimentos articulados que superam a capacidade da mão humana. Segundo as <strong>diretrizes da European Association of Urology (EAU 2025)</strong>, a abordagem robótica é uma opção estabelecida para os principais procedimentos urológicos, com resultados funcionais e oncológicos comparáveis ou superiores às técnicas convencionais.
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function CirurgiaRobotica() {
 
           {/* O que é */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">O que é a Cirurgia Robótica?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">O que é a Cirurgia Robótica?</h2>
             <p className="text-[#334155] leading-relaxed mb-4">
               A cirurgia robótica — também chamada de <strong>cirurgia assistida por robô</strong> — é uma modalidade de cirurgia minimamente invasiva na qual o cirurgião opera sentado em um console, controlando braços robóticos que seguram instrumentos miniaturizados e uma câmera de alta definição 3D. O robô não opera sozinho: ele é um instrumento que amplifica as habilidades do cirurgião, filtrando tremores naturais das mãos e permitindo movimentos com até 7 graus de liberdade em espaços anatômicos reduzidos.
             </p>
@@ -97,13 +97,13 @@ export default function CirurgiaRobotica() {
                 alt="Sistema robótico Da Vinci Xi em sala cirúrgica — cirurgia robótica urológica"
                 className="w-full h-auto"
               />
-              <p className="text-xs text-[#64748B] italic text-center py-2 bg-gray-50">
+              <p className="text-xs text-[#64748B] italic text-center py-2 bg-gray-50 dark:bg-card">
                 Sistema robótico Da Vinci Xi em sala cirúrgica — imagem ilustrativa
               </p>
             </div>
 
             {/* Componentes do sistema */}
-            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4">Componentes do Sistema Robótico</h3>
+            <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Componentes do Sistema Robótico</h3>
             <div className="grid md:grid-cols-3 gap-5">
               {[
                 {
@@ -122,11 +122,11 @@ export default function CirurgiaRobotica() {
                   desc: "Sistema de processamento de imagem que gera a visão 3D em alta definição, além de integrar tecnologias como fluorescência (Firefly/ICG) para identificação de estruturas vasculares.",
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                   <div className="w-12 h-12 bg-[#6366F1]/10 rounded-lg flex items-center justify-center mb-4">
                     <item.icon className="w-6 h-6 text-[#6366F1]" />
                   </div>
-                  <h4 className="text-lg font-bold text-[#1C3D5A] mb-2">{item.title}</h4>
+                  <h4 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h4>
                   <p className="text-[#334155] text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -135,7 +135,7 @@ export default function CirurgiaRobotica() {
 
           {/* Vantagens */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Vantagens da Cirurgia Robótica</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Vantagens da Cirurgia Robótica</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               As vantagens da cirurgia robótica em relação à cirurgia aberta convencional são bem documentadas na literatura. Segundo meta-análises de ensaios clínicos randomizados citados nas <strong>diretrizes da EAU 2025</strong>, os principais benefícios incluem:
             </p>
@@ -178,11 +178,11 @@ export default function CirurgiaRobotica() {
                   evidence: "Continência 3 meses: 80% robótica vs 65% aberta (p=0.002)",
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                   <div className="w-10 h-10 bg-[#6366F1]/10 rounded-lg flex items-center justify-center mb-3">
                     <item.icon className="w-5 h-5 text-[#6366F1]" />
                   </div>
-                  <h4 className="font-bold text-[#1C3D5A] mb-2">{item.title}</h4>
+                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h4>
                   <p className="text-[#334155] text-sm leading-relaxed mb-2">{item.desc}</p>
                   <p className="text-xs text-[#6366F1] font-medium">{item.evidence}</p>
                 </div>
@@ -192,11 +192,11 @@ export default function CirurgiaRobotica() {
 
           {/* Tabela comparativa RARP vs RRP */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Robótica vs Aberta vs Laparoscópica: Comparação</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Robótica vs Aberta vs Laparoscópica: Comparação</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A tabela abaixo compara os resultados da <strong>prostatectomia radical</strong> realizada por via robótica (RARP), laparoscópica (LRP) e aberta (RRP), conforme dados compilados nas diretrizes da EAU 2025 (Tabela 6.2.4):
             </p>
-            <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-border shadow-sm">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#1C3D5A] text-white">
@@ -218,8 +218,8 @@ export default function CirurgiaRobotica() {
                     { outcome: "Clavien-Dindo IIIa", rarp: "0,5%", lrp: "2,3%", rrp: "1,8%" },
                     { outcome: "Mortalidade (Clavien V)", rarp: "<0,1%", lrp: "0,2%", rrp: "0,2%" },
                   ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                      <td className="p-3 font-medium text-[#1C3D5A]">{row.outcome}</td>
+                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50 dark:bg-card"}>
+                      <td className="p-3 font-medium text-[#1C3D5A] dark:text-foreground">{row.outcome}</td>
                       <td className="p-3 text-center text-green-700 font-semibold">{row.rarp}</td>
                       <td className="p-3 text-center text-amber-700">{row.lrp}</td>
                       <td className="p-3 text-center text-red-700">{row.rrp}</td>
@@ -227,7 +227,7 @@ export default function CirurgiaRobotica() {
                   ))}
                 </tbody>
               </table>
-              <div className="p-3 bg-gray-50 border-t border-gray-200">
+              <div className="p-3 bg-gray-50 dark:bg-card border-t border-gray-200 dark:border-border">
                 <p className="text-xs text-[#64748B] italic text-center">
                   Fonte: EAU Guidelines 2025 — Tabela 6.2.4 (Prostate Cancer — Treatment)
                 </p>
@@ -237,24 +237,24 @@ export default function CirurgiaRobotica() {
 
           {/* Resultados funcionais */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Resultados Funcionais: O que Dizem os Estudos?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Resultados Funcionais: O que Dizem os Estudos?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               Os resultados funcionais — especialmente a <strong>continência urinária</strong> e a <strong>função erétil</strong> — são prioridades na prostatectomia radical. Ensaios clínicos randomizados (RCTs) demonstram vantagens significativas para a abordagem robótica:
             </p>
             <div className="space-y-5">
               <div className="bg-gradient-to-r from-indigo-50 to-white border border-indigo-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
+                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <Activity className="w-5 h-5 text-[#6366F1]" />
                   Continência Urinária
                 </h4>
                 <div className="space-y-3">
-                  <div className="bg-white rounded-lg p-4 border border-gray-100">
+                  <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                     <p className="text-sm text-[#334155] leading-relaxed">
                       <strong>RCT com 327 pacientes (RARP vs RRP):</strong> A continência urinária foi significativamente melhor no grupo robótico em todos os intervalos avaliados — <strong>3 meses: 80% vs 65% (p=0,002)</strong>, 6 meses: 90% vs 82% (p=0,04) e 18 meses: 95% vs 79% (p&lt;0,001).
                     </p>
                     <p className="text-xs text-[#64748B] mt-2 italic">Fonte: EAU Guidelines 2025 — Prostate Cancer Treatment</p>
                   </div>
-                  <div className="bg-white rounded-lg p-4 border border-gray-100">
+                  <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                     <p className="text-sm text-[#334155] leading-relaxed">
                       <strong>Meta-análise de 5 RCTs (1.205 pacientes, RARP vs LRP):</strong> Melhor continência aos 3 meses (OR 1,81) e 6 meses (OR 1,88) para RARP. Aos 12 meses, sem diferença significativa entre as técnicas.
                     </p>
@@ -264,11 +264,11 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-gradient-to-r from-violet-50 to-white border border-violet-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
+                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <HeartPulse className="w-5 h-5 text-violet-600" />
                   Função Erétil
                 </h4>
-                <div className="bg-white rounded-lg p-4 border border-gray-100">
+                <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                   <p className="text-sm text-[#334155] leading-relaxed">
                     <strong>Meta-análise de 5 RCTs (RARP vs LRP):</strong> Recuperação da função erétil significativamente melhor em pacientes potentes submetidos à preservação neurovascular — <strong>OR 4,05 (p=0,003)</strong> a favor da robótica. Aos 10 anos, taxas comparáveis, mas com qualidade funcional superior no grupo robótico.
                   </p>
@@ -277,18 +277,18 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-gradient-to-r from-emerald-50 to-white border border-amber-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
+                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <Award className="w-5 h-5 text-amber-600" />
                   Técnicas Avançadas de Preservação
                 </h4>
                 <div className="space-y-3">
-                  <div className="bg-white rounded-lg p-4 border border-gray-100">
+                  <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                     <p className="text-sm text-[#334155] leading-relaxed">
                       <strong>Preservação neurovascular (Nerve-Sparing):</strong> A visão ampliada e a precisão robótica permitem preservação dos feixes neurovasculares com maior acurácia. A técnica <strong>NeuroSAFE</strong> (avaliação intraoperatória de margens) aumentou a taxa de preservação bilateral de 56% para 82%, com melhores escores de função erétil (IIEF-5).
                     </p>
                     <p className="text-xs text-[#64748B] mt-2 italic">Fonte: NeuroSAFE PROOF Trial — EAU Guidelines 2025</p>
                   </div>
-                  <div className="bg-white rounded-lg p-4 border border-gray-100">
+                  <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                     <p className="text-sm text-[#334155] leading-relaxed">
                       <strong>Retzius-sparing (rsRARP):</strong> Técnica que preserva o espaço de Retzius, com melhora na recuperação precoce e global da continência. Deve-se considerar que pode haver taxas ligeiramente maiores de margens positivas (OR 0,45, p&lt;0,05), sem diferença na recorrência bioquímica.
                     </p>
@@ -301,7 +301,7 @@ export default function CirurgiaRobotica() {
 
           {/* Indicações */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={5} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Principais Procedimentos Robóticos em Urologia</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Principais Procedimentos Robóticos em Urologia</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A cirurgia robótica é aplicada em diversos procedimentos urológicos. As indicações mais estabelecidas, com evidências robustas nas guidelines internacionais, são:
             </p>
@@ -356,7 +356,7 @@ export default function CirurgiaRobotica() {
                   color: "#0891B2",
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                   <div className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${item.color}15` }}>
@@ -364,11 +364,11 @@ export default function CirurgiaRobotica() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <h3 className="text-lg font-bold text-[#1C3D5A]">{item.title}</h3>
+                          <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h3>
                         </div>
                         <p className="text-sm font-medium mb-3" style={{ color: item.color }}>{item.subtitle}</p>
                         <p className="text-[#334155] text-sm leading-relaxed mb-3">{item.desc}</p>
-                        <div className="bg-gray-50 rounded-lg p-3 border border-gray-100">
+                        <div className="bg-gray-50 dark:bg-card rounded-lg p-3 border border-gray-100">
                           <p className="text-xs text-[#64748B] leading-relaxed">{item.evidence}</p>
                         </div>
                       </div>
@@ -381,7 +381,7 @@ export default function CirurgiaRobotica() {
 
           {/* Como é o procedimento */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={6} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Como é Realizada a Cirurgia Robótica?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Como é Realizada a Cirurgia Robótica?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               O passo a passo de uma cirurgia robótica urológica segue uma sequência padronizada. Embora cada procedimento tenha particularidades, as etapas gerais são:
             </p>
@@ -422,8 +422,8 @@ export default function CirurgiaRobotica() {
                   <div className="w-10 h-10 bg-[#6366F1] rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm">
                     {item.step}
                   </div>
-                  <div className="flex-1 bg-gray-50 rounded-xl p-5 border border-gray-100">
-                    <h4 className="font-bold text-[#1C3D5A] mb-2">{item.title}</h4>
+                  <div className="flex-1 bg-gray-50 dark:bg-card rounded-xl p-5 border border-gray-100">
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h4>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -433,7 +433,7 @@ export default function CirurgiaRobotica() {
 
           {/* Preparo */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={7} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Preparo para a Cirurgia Robótica</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Preparo para a Cirurgia Robótica</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               O preparo pré-operatório é fundamental para o sucesso da cirurgia e a recuperação do paciente. As orientações gerais incluem:
             </p>
@@ -460,12 +460,12 @@ export default function CirurgiaRobotica() {
                   items: ["Chegar ao hospital no horário indicado", "Trazer exames e documentos", "Usar roupas confortáveis", "Acompanhante obrigatório para alta"],
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+                <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-[#6366F1]/10 rounded-lg flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-[#6366F1]" />
                     </div>
-                    <h4 className="font-bold text-[#1C3D5A]">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
                   </div>
                   <ul className="space-y-2">
                     {item.items.map((text, j) => (
@@ -482,13 +482,13 @@ export default function CirurgiaRobotica() {
 
           {/* Pós-operatório */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={8} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Pós-Operatório e Recuperação</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Pós-Operatório e Recuperação</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A recuperação após cirurgia robótica é significativamente mais rápida que após cirurgia aberta. O protocolo de recuperação acelerada (ERAS — Enhanced Recovery After Surgery) é aplicado para otimizar os resultados:
             </p>
             <div className="space-y-4">
               <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
+                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-[#6366F1]" />
                   Primeiras 24-48 horas
                 </h4>
@@ -509,7 +509,7 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-violet-50 border border-violet-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
+                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <CalendarCheck className="w-5 h-5 text-violet-600" />
                   Primeiras semanas
                 </h4>
@@ -531,7 +531,7 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] mb-3 flex items-center gap-2">
+                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-amber-600" />
                   Recuperação completa
                 </h4>
@@ -555,7 +555,7 @@ export default function CirurgiaRobotica() {
 
           {/* Complicações */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={9} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Possíveis Complicações</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Possíveis Complicações</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               Como em qualquer procedimento cirúrgico, a cirurgia robótica pode apresentar complicações, embora as taxas sejam significativamente menores que na cirurgia aberta. As principais complicações, conforme as diretrizes da EAU 2025, incluem:
             </p>
@@ -574,8 +574,8 @@ export default function CirurgiaRobotica() {
                     { name: "Retenção urinária transitória", freq: "Após retirada de sonda" },
                     { name: "Incontinência urinária temporária", freq: "Melhora progressiva" },
                   ].map((item, i) => (
-                    <div key={i} className="bg-white rounded-lg p-3 border border-green-100">
-                      <p className="text-sm font-medium text-[#1C3D5A]">{item.name}</p>
+                    <div key={i} className="bg-white dark:bg-card rounded-lg p-3 border border-green-100">
+                      <p className="text-sm font-medium text-[#1C3D5A] dark:text-foreground">{item.name}</p>
                       <p className="text-xs text-[#64748B]">{item.freq}</p>
                     </div>
                   ))}
@@ -594,8 +594,8 @@ export default function CirurgiaRobotica() {
                     { name: "Linfocele", freq: "~1-3%" },
                     { name: "Sangramento requerendo transfusão", freq: "~1-2% (RARP)" },
                   ].map((item, i) => (
-                    <div key={i} className="bg-white rounded-lg p-3 border border-amber-100">
-                      <p className="text-sm font-medium text-[#1C3D5A]">{item.name}</p>
+                    <div key={i} className="bg-white dark:bg-card rounded-lg p-3 border border-amber-100">
+                      <p className="text-sm font-medium text-[#1C3D5A] dark:text-foreground">{item.name}</p>
                       <p className="text-xs text-[#64748B]">{item.freq}</p>
                     </div>
                   ))}
@@ -614,8 +614,8 @@ export default function CirurgiaRobotica() {
                     { name: "Conversão para cirurgia aberta", freq: "~1-2%" },
                     { name: "Mortalidade perioperatória", freq: "<0,1% (RARP)" },
                   ].map((item, i) => (
-                    <div key={i} className="bg-white rounded-lg p-3 border border-red-100">
-                      <p className="text-sm font-medium text-[#1C3D5A]">{item.name}</p>
+                    <div key={i} className="bg-white dark:bg-card rounded-lg p-3 border border-red-100">
+                      <p className="text-sm font-medium text-[#1C3D5A] dark:text-foreground">{item.name}</p>
                       <p className="text-xs text-[#64748B]">{item.freq}</p>
                     </div>
                   ))}
@@ -631,7 +631,7 @@ export default function CirurgiaRobotica() {
 
           {/* Onde realizamos */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={10} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Cirurgia Robótica em Campinas e São Paulo</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Cirurgia Robótica em Campinas e São Paulo</h2>
             <div className="bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] rounded-2xl overflow-hidden">
               <div className="p-8 lg:p-10">
                 <div className="flex items-center gap-3 mb-6">
@@ -649,28 +649,28 @@ export default function CirurgiaRobotica() {
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Cpu className="w-4 h-4 text-[#818CF8]" />
                       <span className="text-white text-sm font-medium">Tecnologia</span>
                     </div>
                     <p className="text-white/60 text-sm">Plataforma Da Vinci Xi — última geração, com visão 3D, fluorescência (Firefly) e instrumentos articulados.</p>
                   </div>
-                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Users className="w-4 h-4 text-[#818CF8]" />
                       <span className="text-white text-sm font-medium">Equipe</span>
                     </div>
                     <p className="text-white/60 text-sm">Equipe multidisciplinar com urologista, anestesista, enfermagem especializada e instrumentador treinado em robótica.</p>
                   </div>
-                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Shield className="w-4 h-4 text-[#818CF8]" />
                       <span className="text-white text-sm font-medium">Convênios</span>
                     </div>
                     <p className="text-white/60 text-sm">Diversos convênios cobrem a cirurgia robótica. Consulte disponibilidade para o seu plano de saúde.</p>
                   </div>
-                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Phone className="w-4 h-4 text-[#818CF8]" />
                       <span className="text-white text-sm font-medium">Contato</span>
@@ -708,7 +708,7 @@ export default function CirurgiaRobotica() {
 
           {/* FAQ */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={11} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Perguntas Frequentes</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Perguntas Frequentes</h2>
             <div className="space-y-4">
               {[
                 {
@@ -744,8 +744,8 @@ export default function CirurgiaRobotica() {
                   a: "Não. A indicação é individualizada, considerando o tipo de doença, a anatomia do paciente, cirurgias prévias e outros fatores. Em alguns casos, a cirurgia aberta ou laparoscópica convencional pode ser mais adequada. O urologista avaliará a melhor abordagem para cada situação.",
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h4 className="font-bold text-[#1C3D5A] mb-2">{item.q}</h4>
+                <div key={i} className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
+                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.q}</h4>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.a}</p>
                 </div>
               ))}
@@ -754,8 +754,8 @@ export default function CirurgiaRobotica() {
 
           {/* Referências */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={12}>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Referências</h3>
+            <div className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
                 <li>1. EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer — Treatment, 2025. European Association of Urology. Tabela 6.2.4.</li>
                 <li>2. EAU Guidelines on Renal Cell Carcinoma — Disease Management, 2025. European Association of Urology. Seção 7.2.2.</li>

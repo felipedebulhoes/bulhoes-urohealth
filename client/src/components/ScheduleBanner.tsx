@@ -38,12 +38,12 @@ export default function ScheduleBanner() {
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
           className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-sm z-40"
         >
-          <div className="bg-white rounded-xl shadow-2xl border border-[#1C3D5A]/8 p-4 relative">
+          <div className="bg-white dark:bg-card rounded-xl shadow-2xl border border-[#1C3D5A]/8 p-4 relative">
             <button
               onClick={handleDismiss}
               className="absolute top-2 right-2 p-1 rounded-full hover:bg-[#1C3D5A]/5 transition-colors"
             >
-              <X className="w-4 h-4 text-[#1C3D5A]/30" />
+              <X className="w-4 h-4 text-[#1C3D5A] dark:text-foreground/30" />
             </button>
 
             <div className="flex items-start gap-3">
@@ -51,10 +51,10 @@ export default function ScheduleBanner() {
                 <Calendar className="w-5 h-5 text-[#B87333]" />
               </div>
               <div className="flex-1 pr-4">
-                <p className="text-sm font-semibold text-[#1C3D5A] mb-0.5">
+                <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-0.5">
                   Agende sua consulta online
                 </p>
-                <p className="text-xs text-[#1C3D5A]/40 mb-3">
+                <p className="text-xs text-[#1C3D5A] dark:text-foreground/40 mb-3">
                   Agende pelo Doctoralia ou ligue: Clinovi (11) 3382-1529 | Campinas Day Hospital (19) 2127-2900 | São Luiz Campinas (19) 3014-3000.
                 </p>
                 <div className="flex gap-2">

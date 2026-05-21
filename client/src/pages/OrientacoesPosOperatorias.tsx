@@ -229,7 +229,7 @@ function SurgeryCard({ surgery, index }: { surgery: Surgery; index: number }) {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.05 }}
       id={surgery.id}
-      className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-lg transition-shadow scroll-mt-24"
+      className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-lg transition-shadow scroll-mt-24"
     >
       {/* Header */}
       <div className="p-6 cursor-pointer" onClick={() => setExpanded(!expanded)}>
@@ -239,12 +239,12 @@ function SurgeryCard({ surgery, index }: { surgery: Surgery; index: number }) {
               {surgery.icon}
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-[#1C3D5A] mb-0.5">{surgery.name}</h3>
-              <p className="text-xs text-[#1C3D5A]/40 mb-2">{surgery.subtitle}</p>
-              <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">{surgery.description}</p>
+              <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-0.5">{surgery.name}</h3>
+              <p className="text-xs text-[#1C3D5A] dark:text-foreground/40 mb-2">{surgery.subtitle}</p>
+              <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">{surgery.description}</p>
             </div>
           </div>
-          <button className="shrink-0 mt-1 text-[#1C3D5A]/30">
+          <button className="shrink-0 mt-1 text-[#1C3D5A] dark:text-foreground/30">
             {expanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
           </button>
         </div>
@@ -261,7 +261,7 @@ function SurgeryCard({ surgery, index }: { surgery: Surgery; index: number }) {
           <div className="p-6 space-y-6">
             {/* Expected symptoms */}
             <div>
-              <h4 className="text-sm font-semibold text-[#1C3D5A] mb-3 flex items-center gap-2">
+              <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                 <Check className="w-4 h-4 text-amber-500" />
                 Sintomas Esperados (Normais)
               </h4>
@@ -269,12 +269,12 @@ function SurgeryCard({ surgery, index }: { surgery: Surgery; index: number }) {
                 {surgery.expectedSymptoms.map((s, i) => (
                   <div key={i} className="bg-amber-50/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm font-medium text-[#1C3D5A]">{s.symptom}</span>
+                      <span className="text-sm font-medium text-[#1C3D5A] dark:text-foreground">{s.symptom}</span>
                       <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-600 bg-amber-100 px-2 py-0.5 rounded">
                         {s.duration}
                       </span>
                     </div>
-                    <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">{s.detail}</p>
+                    <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">{s.detail}</p>
                   </div>
                 ))}
               </div>
@@ -309,12 +309,12 @@ function SurgeryCard({ surgery, index }: { surgery: Surgery; index: number }) {
 
             {/* General care */}
             <div>
-              <h4 className="text-sm font-semibold text-[#1C3D5A] mb-3">Cuidados Gerais</h4>
+              <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-3">Cuidados Gerais</h4>
               <div className="grid sm:grid-cols-2 gap-2">
                 {surgery.generalCare.map((care, i) => (
                   <div key={i} className="flex items-start gap-2 bg-[#F8FAFB] rounded-lg p-3">
                     <Check className="w-3.5 h-3.5 mt-0.5 shrink-0 text-[#B87333]" />
-                    <span className="text-xs text-[#1C3D5A]/60">{care}</span>
+                    <span className="text-xs text-[#1C3D5A] dark:text-foreground/60">{care}</span>
                   </div>
                 ))}
               </div>
@@ -322,11 +322,11 @@ function SurgeryCard({ surgery, index }: { surgery: Surgery; index: number }) {
 
             {/* Return to activities */}
             <div className="bg-[#1C3D5A]/3 rounded-lg p-4">
-              <h4 className="text-xs font-semibold text-[#1C3D5A]/70 mb-1 flex items-center gap-2">
+              <h4 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground/70 mb-1 flex items-center gap-2">
                 <Clock className="w-3.5 h-3.5 text-[#B87333]" />
                 Retorno às Atividades
               </h4>
-              <p className="text-xs text-[#1C3D5A]/55">{surgery.returnToActivities}</p>
+              <p className="text-xs text-[#1C3D5A] dark:text-foreground/55">{surgery.returnToActivities}</p>
             </div>
           </div>
         </motion.div>
@@ -350,7 +350,7 @@ export default function OrientacoesPosOperatorias() {
       {/* Intro */}
       <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">
         <div className="container max-w-4xl">
-          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] prose-p:text-[#1C3D5A]/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A]/80">
+          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] dark:text-foreground prose-p:text-[#1C3D5A] dark:text-foreground/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A] dark:text-foreground/80">
             <p>
               A recuperação após uma cirurgia urológica envolve sintomas que são <strong>esperados e normais</strong> — como sangue na urina, desconforto e urgência urinária — e outros que representam <strong>sinais de alerta</strong> e exigem avaliação médica imediata. Saber diferenciar esses dois cenários é fundamental para uma recuperação segura e tranquila.
             </p>
@@ -380,7 +380,7 @@ export default function OrientacoesPosOperatorias() {
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="text-xs px-3 py-1.5 rounded-full bg-white border border-[#1C3D5A]/8 text-[#1C3D5A]/60 hover:border-[#1C3D5A]/20 transition-colors"
+                className="text-xs px-3 py-1.5 rounded-full bg-white dark:bg-card border border-[#1C3D5A]/8 text-[#1C3D5A] dark:text-foreground/60 hover:border-[#1C3D5A]/20 transition-colors"
               >
                 {s.name.split("(")[0].trim()}
               </a>
@@ -401,8 +401,8 @@ export default function OrientacoesPosOperatorias() {
       {/* References */}
       <section className="py-8 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h3 className="text-xs font-semibold text-[#1C3D5A]/40 uppercase tracking-wider mb-3">Referências</h3>
-          <ol className="text-[10px] text-[#1C3D5A]/35 space-y-1 list-decimal list-inside">
+          <h3 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground/40 uppercase tracking-wider mb-3">Referências</h3>
+          <ol className="text-[10px] text-[#1C3D5A] dark:text-foreground/35 space-y-1 list-decimal list-inside">
             <li>EAU Guidelines on Urolithiasis, 2025. European Association of Urology.</li>
             <li>EAU Guidelines on Non-neurogenic Male LUTS (BPH), 2025. European Association of Urology.</li>
             <li>AUA/ASTRO Guidelines on Clinically Localized Prostate Cancer, 2025.</li>

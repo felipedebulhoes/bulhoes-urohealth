@@ -109,10 +109,10 @@ export default function PrimeiraConsulta() {
                 <Clock className="w-6 h-6 text-[#B87333]" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#1C3D5A] mb-2">
+                <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-2">
                   Duração média: 30-45 minutos
                 </h3>
-                <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">
+                <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">
                   A primeira consulta urológica é mais longa que as consultas de retorno, pois inclui uma avaliação completa do seu histórico e estado de saúde. Reserve tempo suficiente e chegue 15 minutos antes para preenchimento de cadastro.
                 </p>
               </div>
@@ -124,7 +124,7 @@ export default function PrimeiraConsulta() {
       {/* Steps */}
       <section className="py-8 lg:py-12">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 font-serif text-center">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 font-serif text-center">
             Etapas da Consulta
           </h2>
           <div className="space-y-6">
@@ -135,29 +135,29 @@ export default function PrimeiraConsulta() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-xl border border-[#1C3D5A]/6 p-6 hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-6 hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#1C3D5A]/5 flex items-center justify-center shrink-0 text-[#1C3D5A]">
+                  <div className="w-12 h-12 rounded-xl bg-[#1C3D5A]/5 flex items-center justify-center shrink-0 text-[#1C3D5A] dark:text-foreground">
                     {step.icon}
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-base font-semibold text-[#1C3D5A]">
+                      <h3 className="text-base font-semibold text-[#1C3D5A] dark:text-foreground">
                         {step.title}
                       </h3>
                       <span className="text-xs bg-[#B87333]/10 text-[#B87333] px-2 py-0.5 rounded-full">
                         {step.duration}
                       </span>
                     </div>
-                    <p className="text-sm text-[#1C3D5A]/55 leading-relaxed mb-4">
+                    <p className="text-sm text-[#1C3D5A] dark:text-foreground/55 leading-relaxed mb-4">
                       {step.description}
                     </p>
                     <div className="bg-[#F8FAFB] rounded-lg p-4">
-                      <p className="text-xs font-semibold text-[#1C3D5A]/70 mb-2">Dicas:</p>
+                      <p className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground/70 mb-2">Dicas:</p>
                       <ul className="space-y-1.5">
                         {step.tips.map((tip, j) => (
-                          <li key={j} className="flex items-start gap-2 text-xs text-[#1C3D5A]/50">
+                          <li key={j} className="flex items-start gap-2 text-xs text-[#1C3D5A] dark:text-foreground/50">
                             <CheckCircle className="w-3.5 h-3.5 text-[#B87333] shrink-0 mt-0.5" />
                             {tip}
                           </li>
@@ -175,7 +175,7 @@ export default function PrimeiraConsulta() {
       {/* What to bring */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 font-serif text-center">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 font-serif text-center">
             O Que Trazer
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -186,12 +186,12 @@ export default function PrimeiraConsulta() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="bg-white rounded-xl border border-[#1C3D5A]/6 p-4 flex items-start gap-3"
+                className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-4 flex items-start gap-3"
               >
                 <div className="w-9 h-9 rounded-lg bg-[#B87333]/10 flex items-center justify-center shrink-0 text-[#B87333]">
                   {item.icon}
                 </div>
-                <span className="text-sm text-[#1C3D5A]/70">{item.text}</span>
+                <span className="text-sm text-[#1C3D5A] dark:text-foreground/70">{item.text}</span>
               </motion.div>
             ))}
           </div>
@@ -201,10 +201,10 @@ export default function PrimeiraConsulta() {
       {/* Myths */}
       <section className="py-12 lg:py-16">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-3 font-serif text-center">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-3 font-serif text-center">
             Mitos e Verdades
           </h2>
-          <p className="text-sm text-[#1C3D5A]/40 text-center mb-8 max-w-lg mx-auto">
+          <p className="text-sm text-[#1C3D5A] dark:text-foreground/40 text-center mb-8 max-w-lg mx-auto">
             Informação correta é o primeiro passo para cuidar da sua saúde.
           </p>
           <div className="space-y-4">
@@ -214,13 +214,13 @@ export default function PrimeiraConsulta() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl border border-[#1C3D5A]/6 p-5"
+                className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-5"
               >
                 <div className="flex items-start gap-3 mb-3">
                   <span className="text-xs font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded shrink-0">
                     MITO
                   </span>
-                  <p className="text-sm font-medium text-[#1C3D5A]">
+                  <p className="text-sm font-medium text-[#1C3D5A] dark:text-foreground">
                     "{item.myth}"
                   </p>
                 </div>
@@ -229,7 +229,7 @@ export default function PrimeiraConsulta() {
                     <span className="text-xs font-bold text-[#B87333] bg-[#B87333]/10 px-2 py-0.5 rounded inline-block mb-1">
                       VERDADE
                     </span>
-                    <p className="text-sm text-[#1C3D5A]/55 leading-relaxed">
+                    <p className="text-sm text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                       {item.truth}
                     </p>
                   </div>
@@ -243,7 +243,7 @@ export default function PrimeiraConsulta() {
       {/* When to seek */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 font-serif text-center">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 font-serif text-center">
             Quando Procurar um Urologista?
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -267,10 +267,10 @@ export default function PrimeiraConsulta() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.03 }}
-                className="flex items-center gap-3 bg-white rounded-lg border border-[#1C3D5A]/6 p-3"
+                className="flex items-center gap-3 bg-white dark:bg-card rounded-lg border border-[#1C3D5A]/6 p-3"
               >
                 <ArrowRight className="w-4 h-4 text-[#B87333] shrink-0" />
-                <span className="text-sm text-[#1C3D5A]/70">{symptom}</span>
+                <span className="text-sm text-[#1C3D5A] dark:text-foreground/70">{symptom}</span>
               </motion.div>
             ))}
           </div>

@@ -37,11 +37,11 @@ export default function ExameProstata() {
       metaDescription="Guia completo sobre o exame de próstata (toque retal e PSA): como funciona, preparo, quando fazer, mitos e verdades. Urologista em São Paulo e Campinas."
     >
       {/* Introdução */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-[#B87333] p-6 rounded-r-lg mb-10">
-              <p className="text-[#1C3D5A] leading-relaxed">
+              <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
                 O exame de próstata é um dos procedimentos mais importantes para a saúde do homem, mas também um dos mais cercados de mitos e tabus. Segundo a <strong>Sociedade Brasileira de Urologia (SBU)</strong>, o rastreamento deve começar aos <strong>50 anos</strong> para a população geral e aos <strong>45 anos</strong> para homens com fatores de risco (histórico familiar, raça negra). A <strong>European Association of Urology (EAU 2025)</strong> recomenda uma abordagem baseada em risco, iniciando com PSA basal a partir dos 50 anos.
               </p>
             </div>
@@ -49,16 +49,16 @@ export default function ExameProstata() {
 
           {/* O que é */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">O que é o Exame de Próstata?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">O que é o Exame de Próstata?</h2>
             <p className="text-[#334155] leading-relaxed mb-4">
               O "exame de próstata" na verdade engloba dois procedimentos complementares que, juntos, oferecem a melhor avaliação da saúde prostática:
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
-              <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 bg-[#B87333]/10 rounded-lg flex items-center justify-center mb-4">
                   <Stethoscope className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3">Toque Retal (TR)</h3>
+                <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-3">Toque Retal (TR)</h3>
                 <p className="text-[#334155] text-sm leading-relaxed mb-3">
                   Exame físico em que o urologista palpa a próstata através do reto para avaliar seu tamanho, consistência e presença de nódulos. Dura apenas <strong>10 a 15 segundos</strong>.
                 </p>
@@ -71,11 +71,11 @@ export default function ExameProstata() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 bg-[#B87333]/10 rounded-lg flex items-center justify-center mb-4">
                   <Activity className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3">PSA (Antígeno Prostático Específico)</h3>
+                <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-3">PSA (Antígeno Prostático Específico)</h3>
                 <p className="text-[#334155] text-sm leading-relaxed mb-3">
                   Exame de sangue que mede os níveis de PSA, uma proteína produzida pela próstata. Valores elevados podem indicar diversas condições prostáticas.
                 </p>
@@ -96,7 +96,7 @@ export default function ExameProstata() {
 
           {/* Quando fazer */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Quando Fazer o Exame?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Quando Fazer o Exame?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               As recomendações variam entre as sociedades médicas, mas convergem na importância do rastreamento individualizado:
             </p>
@@ -118,11 +118,11 @@ export default function ExameProstata() {
                   ref: "AUA/ASTRO/SUO Guideline 2024",
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                <div key={i} className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
                   <div className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-[#B87333] mt-1 shrink-0" />
                     <div>
-                      <h4 className="font-bold text-[#1C3D5A] mb-1">{item.org}</h4>
+                      <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.org}</h4>
                       <p className="text-[#334155] text-sm leading-relaxed">{item.rec}</p>
                       <p className="text-xs text-[#64748B] mt-2 italic">Fonte: {item.ref}</p>
                     </div>
@@ -134,7 +134,7 @@ export default function ExameProstata() {
 
           {/* Fatores de risco */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Fatores de Risco para Câncer de Próstata</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Fatores de Risco para Câncer de Próstata</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { title: "Idade", desc: "O risco aumenta significativamente após os 50 anos. Cerca de 60% dos casos são diagnosticados em homens acima de 65 anos.", icon: Clock },
@@ -142,12 +142,12 @@ export default function ExameProstata() {
                 { title: "Raça/Etnia", desc: "Homens negros têm incidência 1,7 vezes maior e mortalidade 2,1 vezes maior em comparação com homens brancos (INCA 2025).", icon: AlertTriangle },
                 { title: "Estilo de Vida", desc: "Obesidade, sedentarismo e dieta rica em gorduras saturadas estão associados a maior risco de doença agressiva.", icon: Activity },
               ].map((item, i) => (
-                <div key={i} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
+                <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-red-500" />
                     </div>
-                    <h4 className="font-bold text-[#1C3D5A]">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
                   </div>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                 </div>
@@ -157,9 +157,9 @@ export default function ExameProstata() {
 
           {/* Como é feito */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Como É Feito o Exame?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Como É Feito o Exame?</h2>
 
-            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4">Toque Retal — Passo a Passo</h3>
+            <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Toque Retal — Passo a Passo</h3>
             <div className="space-y-4 mb-8">
               {[
                 { step: "1", title: "Posicionamento", desc: "O paciente deita de lado com os joelhos flexionados (posição mais confortável) ou fica em pé inclinado sobre a maca." },
@@ -172,15 +172,15 @@ export default function ExameProstata() {
                     {item.step}
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4">PSA — Coleta e Interpretação</h3>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">PSA — Coleta e Interpretação</h3>
+            <div className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
               <p className="text-[#334155] leading-relaxed mb-4">
                 O PSA é coletado por meio de uma simples amostra de sangue. Alguns cuidados antes da coleta:
               </p>
@@ -207,7 +207,7 @@ export default function ExameProstata() {
 
           {/* Mitos e Verdades */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={5} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Mitos e Verdades</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Mitos e Verdades</h2>
             <div className="space-y-4">
               {[
                 { myth: "O toque retal é muito doloroso", truth: "O exame dura 10-15 segundos e causa apenas leve desconforto. A grande maioria dos pacientes relata que o procedimento é muito mais simples do que imaginavam.", isMyth: true },
@@ -222,7 +222,7 @@ export default function ExameProstata() {
                       {item.isMyth ? "MITO" : "VERDADE"}
                     </span>
                     <div>
-                      <p className="font-semibold text-[#1C3D5A] mb-1">"{item.myth}"</p>
+                      <p className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">"{item.myth}"</p>
                       <p className="text-sm text-[#334155] leading-relaxed">{item.truth}</p>
                     </div>
                   </div>
@@ -233,7 +233,7 @@ export default function ExameProstata() {
 
           {/* Exames complementares */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={6} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Exames Complementares</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Exames Complementares</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               Quando os exames iniciais (PSA e toque retal) indicam necessidade de investigação adicional, o urologista pode solicitar:
             </p>
@@ -244,10 +244,10 @@ export default function ExameProstata() {
                 { title: "PHI (Prostate Health Index)", desc: "Exame de sangue que combina PSA total, PSA livre e p2PSA para melhor estratificação de risco, reduzindo biópsias desnecessárias.", ref: "NCCN Guidelines 2024" },
                 { title: "Ultrassonografia Prostática", desc: "Avalia o tamanho da próstata e pode auxiliar no diagnóstico de HPB. Geralmente realizada por via transretal ou suprapúbica.", ref: "Campbell-Walsh-Wein 13th Ed." },
               ].map((item, i) => (
-                <div key={i} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
+                <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm">
                   <div className="flex items-center gap-3 mb-3">
                     <FileText className="w-5 h-5 text-[#B87333]" />
-                    <h4 className="font-bold text-[#1C3D5A]">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
                   </div>
                   <p className="text-sm text-[#334155] leading-relaxed mb-2">{item.desc}</p>
                   <p className="text-xs text-[#64748B] italic">Fonte: {item.ref}</p>
@@ -258,8 +258,8 @@ export default function ExameProstata() {
 
           {/* Referências */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={7}>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Referências</h3>
+            <div className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
                 <li>1. EAU Guidelines on Prostate Cancer, 2025. European Association of Urology.</li>
                 <li>2. AUA/ASTRO/SUO Guideline on Clinically Localized Prostate Cancer, 2024. American Urological Association.</li>

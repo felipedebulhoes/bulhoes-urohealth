@@ -132,9 +132,9 @@ export default function HeroSection() {
             />
 
             {/* Floating credential badge */}
-            <div className="absolute -bottom-2 -left-6 bg-white rounded-lg px-4 py-3 shadow-xl z-20">
-              <p className="text-xs font-semibold text-[#1C3D5A]" style={{ fontStyle: 'normal' }}>Instituto D'Or</p>
-              <p className="text-[10px] text-[#1C3D5A]/50" style={{ fontStyle: 'normal' }}>Urologia · São Paulo</p>
+            <div className="absolute -bottom-2 -left-6 bg-white dark:bg-card rounded-lg px-4 py-3 shadow-xl z-20">
+              <p className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground" style={{ fontStyle: 'normal' }}>Instituto D'Or</p>
+              <p className="text-[10px] text-[#1C3D5A] dark:text-foreground/50" style={{ fontStyle: 'normal' }}>Urologia · São Paulo</p>
             </div>
           </div>
         </motion.div>

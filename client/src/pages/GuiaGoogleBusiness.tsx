@@ -110,7 +110,7 @@ export default function GuiaGoogleBusiness() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-xl p-5 shadow-sm border border-slate-100 text-center"
+              className="bg-white dark:bg-card rounded-xl p-5 shadow-sm border border-slate-100 text-center"
             >
               <div className="text-2xl font-bold text-[#B87333]">{stat.value}</div>
               <div className="text-xs text-slate-500 mt-1">{stat.label}</div>
@@ -130,14 +130,14 @@ export default function GuiaGoogleBusiness() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-sm border border-slate-100"
+                className="bg-white dark:bg-card rounded-xl p-8 shadow-sm border border-slate-100"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-[#B87333]/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon className="w-6 h-6 text-[#B87333]" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#1C3D5A] mb-2">{step.title}</h3>
+                    <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-2">{step.title}</h3>
                     <p className="text-slate-600 text-sm mb-4">{step.description}</p>
                     <ul className="space-y-2">
                       {step.tips.map((tip, i) => (

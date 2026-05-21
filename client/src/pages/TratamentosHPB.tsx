@@ -596,39 +596,39 @@ function TreatmentCard({ treatment, index }: { treatment: Treatment; index: numb
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.04 }}
-      className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-lg transition-shadow"
+      className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-lg transition-shadow"
     >
       <div className="p-6 cursor-pointer" onClick={() => setExpanded(!expanded)}>
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-lg bg-[#1C3D5A]/5 flex items-center justify-center text-[#1C3D5A]/70 shrink-0">
+            <div className="w-12 h-12 rounded-lg bg-[#1C3D5A]/5 flex items-center justify-center text-[#1C3D5A] dark:text-foreground/70 shrink-0">
               {treatment.icon}
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1 flex-wrap">
-                <h3 className="text-lg font-semibold text-[#1C3D5A]">{treatment.name}</h3>
+                <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">{treatment.name}</h3>
                 <span className={`text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded ${typeStyle.bg} ${typeStyle.text}`}>
                   {typeStyle.label}
                 </span>
               </div>
-              <p className="text-xs text-[#1C3D5A]/40 mb-2">{treatment.fullName}</p>
-              <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">{treatment.description}</p>
+              <p className="text-xs text-[#1C3D5A] dark:text-foreground/40 mb-2">{treatment.fullName}</p>
+              <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">{treatment.description}</p>
             </div>
           </div>
-          <button className="shrink-0 mt-1 text-[#1C3D5A]/30">
+          <button className="shrink-0 mt-1 text-[#1C3D5A] dark:text-foreground/30">
             {expanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
           </button>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-          <div className="flex items-center gap-2 text-xs text-[#1C3D5A]/50">
+          <div className="flex items-center gap-2 text-xs text-[#1C3D5A] dark:text-foreground/50">
             <Ruler className="w-3.5 h-3.5 text-[#B87333]" />
             <span>{treatment.prostateSize}</span>
           </div>
-          <div className="flex items-center gap-2 text-xs text-[#1C3D5A]/50">
+          <div className="flex items-center gap-2 text-xs text-[#1C3D5A] dark:text-foreground/50">
             <Clock className="w-3.5 h-3.5 text-[#B87333]" />
             <span>{treatment.recovery}</span>
           </div>
-          <div className="flex items-center gap-2 text-xs text-[#1C3D5A]/50">
+          <div className="flex items-center gap-2 text-xs text-[#1C3D5A] dark:text-foreground/50">
             <ShieldCheck className="w-3.5 h-3.5 text-[#B87333]" />
             <span>{treatment.hospitalization}</span>
           </div>
@@ -659,8 +659,8 @@ function TreatmentCard({ treatment, index }: { treatment: Treatment; index: numb
         >
           <div className="p-6 space-y-5">
             <div>
-              <h4 className="text-sm font-semibold text-[#1C3D5A] mb-2">Como funciona</h4>
-              <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">{treatment.howItWorks}</p>
+              <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-2">Como funciona</h4>
+              <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">{treatment.howItWorks}</p>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-amber-50/50 rounded-lg p-4">
@@ -692,7 +692,7 @@ function TreatmentCard({ treatment, index }: { treatment: Treatment; index: numb
             </div>
             <div className="bg-[#1C3D5A]/3 rounded-lg p-3 flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#B87333]" />
-              <span className="text-xs text-[#1C3D5A]/60">{treatment.evidenceLevel}</span>
+              <span className="text-xs text-[#1C3D5A] dark:text-foreground/60">{treatment.evidenceLevel}</span>
             </div>
           </div>
         </motion.div>
@@ -730,7 +730,7 @@ export default function TratamentosHPB() {
       {/* Intro */}
       <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">
         <div className="container max-w-4xl">
-          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] prose-p:text-[#1C3D5A]/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A]/80">
+          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] dark:text-foreground prose-p:text-[#1C3D5A] dark:text-foreground/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A] dark:text-foreground/80">
             <p>
               A <strong>Hiperplasia Prostática Benigna (HPB)</strong> é o aumento não canceroso da próstata que afeta mais de 50% dos homens acima de 60 anos e até 90% dos homens acima de 85 anos. À medida que a próstata cresce, pode comprimir a uretra e dificultar a passagem da urina, causando sintomas como jato fraco, necessidade de urinar com frequência (especialmente à noite), urgência e sensação de esvaziamento incompleto.
             </p>
@@ -755,7 +755,7 @@ export default function TratamentosHPB() {
                 className={`text-xs px-4 py-2 rounded-full font-medium transition-all ${
                   filter === f.key
                     ? "bg-[#1C3D5A] text-white"
-                    : "bg-white border border-[#1C3D5A]/8 text-[#1C3D5A]/60 hover:border-[#1C3D5A]/20"
+                    : "bg-white border border-[#1C3D5A]/8 text-[#1C3D5A] dark:text-foreground/60 hover:border-[#1C3D5A]/20"
                 }`}
               >
                 {f.label}
@@ -777,11 +777,11 @@ export default function TratamentosHPB() {
       {/* Comparison table */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             Tabela Comparativa
           </h2>
           <div className="overflow-x-auto">
-            <table className="w-full text-xs border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+            <table className="w-full text-xs border-collapse bg-white dark:bg-card rounded-xl overflow-hidden shadow-sm">
               <thead>
                 <tr className="bg-[#1C3D5A] text-white">
                   <th className="p-3 text-left font-semibold">Técnica</th>
@@ -815,7 +815,7 @@ export default function TratamentosHPB() {
                     {row.map((cell, j) => (
                       <td
                         key={j}
-                        className={`p-3 ${j === 0 ? "text-left font-semibold text-[#1C3D5A]" : "text-center text-[#1C3D5A]/60"} border-t border-[#1C3D5A]/5`}
+                        className={`p-3 ${j === 0 ? "text-left font-semibold text-[#1C3D5A] dark:text-foreground" : "text-center text-[#1C3D5A] dark:text-foreground/60"} border-t border-[#1C3D5A]/5`}
                       >
                         {cell}
                       </td>
@@ -825,7 +825,7 @@ export default function TratamentosHPB() {
               </tbody>
             </table>
           </div>
-          <div className="mt-4 text-[10px] text-[#1C3D5A]/40 space-y-1">
+          <div className="mt-4 text-[10px] text-[#1C3D5A] dark:text-foreground/40 space-y-1">
             <p>* UroLift: contraindicado se houver lobo mediano proeminente.</p>
             <p>* PAE: não recomendada pela EAU 2026 como tratamento padrão — apenas em contexto de pesquisa.</p>
             <p>* iTIND, TPLA, DiLEP: dados de longo prazo ainda limitados.</p>
@@ -837,8 +837,8 @@ export default function TratamentosHPB() {
       <section className="py-12 lg:py-16">
         <div className="container max-w-3xl">
           <div className="bg-[#B87333]/5 border border-[#B87333]/15 rounded-xl p-6 lg:p-8">
-            <h3 className="text-lg font-semibold text-[#1C3D5A] mb-3">Qual o melhor tratamento para mim?</h3>
-            <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">
+            <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-3">Qual o melhor tratamento para mim?</h3>
+            <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">
               A escolha do tratamento ideal depende de uma avaliação individualizada que considera o tamanho da próstata, a intensidade dos sintomas (IPSS), a presença de complicações (retenção urinária, infecções de repetição, cálculos vesicais), suas prioridades em relação à função sexual e sua saúde geral. Não existe uma técnica universalmente superior — existe a técnica certa para cada paciente. Agende uma consulta para que possamos avaliar seu caso e definir juntos a melhor estratégia.
             </p>
           </div>
@@ -848,8 +848,8 @@ export default function TratamentosHPB() {
       {/* References */}
       <section className="py-8 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h3 className="text-xs font-semibold text-[#1C3D5A]/40 uppercase tracking-wider mb-3">Referências</h3>
-          <ol className="text-[10px] text-[#1C3D5A]/35 space-y-1 list-decimal list-inside">
+          <h3 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground/40 uppercase tracking-wider mb-3">Referências</h3>
+          <ol className="text-[10px] text-[#1C3D5A] dark:text-foreground/35 space-y-1 list-decimal list-inside">
             <li>Gravas S, et al. EAU Guidelines on Management of Non-Neurogenic Male LUTS. European Association of Urology, 2026.</li>
             <li>Lerner LB, et al. AUA Guideline: Surgical Management of LUTS Attributed to BPH. American Urological Association, 2025.</li>
             <li>Partin AW, et al. Campbell-Walsh-Wein Urology, 13th Edition. Elsevier, 2024.</li>

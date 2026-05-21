@@ -263,7 +263,7 @@ export default function SymptomChecker() {
             <Stethoscope className="w-4 h-4" />
             Ferramenta Interativa
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1C3D5A] mb-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1C3D5A] dark:text-foreground mb-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
             Avaliação de Sintomas
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
@@ -311,9 +311,9 @@ export default function SymptomChecker() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="bg-white rounded-2xl shadow-lg border border-slate-100 p-8"
+                className="bg-white dark:bg-card rounded-2xl shadow-lg border border-slate-100 p-8"
               >
-                <h3 className="text-xl font-bold text-[#1C3D5A] mb-6">Qual é a sua faixa etária?</h3>
+                <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-6">Qual é a sua faixa etária?</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {ageGroups.map((age) => (
                     <button
@@ -328,7 +328,7 @@ export default function SymptomChecker() {
                           : "border-slate-200 hover:border-[#B87333]/50"
                       }`}
                     >
-                      <span className="text-lg font-semibold text-[#1C3D5A]">{age.label}</span>
+                      <span className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">{age.label}</span>
                     </button>
                   ))}
                 </div>
@@ -342,9 +342,9 @@ export default function SymptomChecker() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="bg-white rounded-2xl shadow-lg border border-slate-100 p-8"
+                className="bg-white dark:bg-card rounded-2xl shadow-lg border border-slate-100 p-8"
               >
-                <h3 className="text-xl font-bold text-[#1C3D5A] mb-2">Selecione seus sintomas</h3>
+                <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-2">Selecione seus sintomas</h3>
                 <p className="text-slate-500 text-sm mb-6">Marque todos os sintomas que você está sentindo</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                   {symptoms.map((symptom) => (
@@ -353,7 +353,7 @@ export default function SymptomChecker() {
                       onClick={() => toggleSymptom(symptom.id)}
                       className={`p-3 rounded-lg border text-left text-sm transition-all flex items-center gap-3 ${
                         selectedSymptoms.includes(symptom.id)
-                          ? "border-[#B87333] bg-amber-50 text-[#1C3D5A] font-medium shadow-sm"
+                          ? "border-[#B87333] bg-amber-50 text-[#1C3D5A] dark:text-foreground font-medium shadow-sm"
                           : "border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
                       }`}
                     >
@@ -368,7 +368,7 @@ export default function SymptomChecker() {
                 <div className="flex justify-between">
                   <button
                     onClick={() => setStep("age")}
-                    className="flex items-center gap-2 px-5 py-3 text-slate-600 hover:text-[#1C3D5A] transition-colors"
+                    className="flex items-center gap-2 px-5 py-3 text-slate-600 hover:text-[#1C3D5A] dark:text-foreground transition-colors"
                   >
                     <ArrowLeft className="w-4 h-4" /> Voltar
                   </button>
@@ -405,7 +405,7 @@ export default function SymptomChecker() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.15 }}
-                      className="bg-white rounded-2xl shadow-lg border border-slate-100 p-8"
+                      className="bg-white dark:bg-card rounded-2xl shadow-lg border border-slate-100 p-8"
                     >
                       <div className="flex items-start gap-4 mb-4">
                         <div className={`p-2 rounded-lg border ${urgency.color}`}>
@@ -413,14 +413,14 @@ export default function SymptomChecker() {
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-1 flex-wrap">
-                            <h3 className="text-lg font-bold text-[#1C3D5A]">{result.condition}</h3>
+                            <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground">{result.condition}</h3>
                             <span className={`text-xs px-2 py-1 rounded-full border font-medium ${urgency.color}`}>
                               {urgency.label}
                             </span>
                           </div>
                           <p className="text-slate-600 text-sm leading-relaxed mb-3">{result.description}</p>
                           <div className="bg-slate-50 rounded-lg p-4 mb-4">
-                            <p className="text-sm text-[#1C3D5A] font-medium">
+                            <p className="text-sm text-[#1C3D5A] dark:text-foreground font-medium">
                               <strong>Recomendação:</strong> {result.recommendation}
                             </p>
                           </div>
@@ -471,7 +471,7 @@ export default function SymptomChecker() {
                 <div className="text-center">
                   <button
                     onClick={reset}
-                    className="inline-flex items-center gap-2 text-slate-500 hover:text-[#1C3D5A] transition-colors text-sm"
+                    className="inline-flex items-center gap-2 text-slate-500 hover:text-[#1C3D5A] dark:text-foreground transition-colors text-sm"
                   >
                     <RotateCcw className="w-4 h-4" /> Refazer avaliação
                   </button>

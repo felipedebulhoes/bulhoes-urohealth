@@ -48,8 +48,8 @@ export default function BlogPost() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center">
-        <h1 className="text-2xl text-[#1C3D5A] mb-4">Artigo não encontrado</h1>
+      <div className="min-h-screen bg-white dark:bg-card flex flex-col items-center justify-center">
+        <h1 className="text-2xl text-[#1C3D5A] dark:text-foreground mb-4">Artigo não encontrado</h1>
         <Link href="/blog">
           <Button variant="outline">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -92,7 +92,7 @@ export default function BlogPost() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-card">
       {/* Schema Markup for SEO */}
       <ArticleSchema
         title={post.title}
@@ -179,12 +179,12 @@ export default function BlogPost() {
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#B87333]/20"
                 />
                 <div>
-                  <p className="text-sm font-semibold text-[#1C3D5A]">{post.author.name}</p>
-                  <p className="text-xs text-[#1C3D5A]/40">{post.author.credentials}</p>
+                  <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground">{post.author.name}</p>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/40">{post.author.credentials}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-xs text-[#1C3D5A]/40">
+              <div className="flex items-center gap-4 text-xs text-[#1C3D5A] dark:text-foreground/40">
                 <span className="flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5" />
                   {post.date}
@@ -209,16 +209,16 @@ export default function BlogPost() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="prose prose-lg max-w-none
-                prose-headings:text-[#1C3D5A] prose-headings:font-serif
+                prose-headings:text-[#1C3D5A] dark:text-foreground prose-headings:font-serif
                 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
                 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-p:text-[#1C3D5A]/70 prose-p:leading-relaxed
-                prose-strong:text-[#1C3D5A]/90
-                prose-li:text-[#1C3D5A]/70
+                prose-p:text-[#1C3D5A] dark:text-foreground/70 prose-p:leading-relaxed
+                prose-strong:text-[#1C3D5A] dark:text-foreground/90
+                prose-li:text-[#1C3D5A] dark:text-foreground/70
                 prose-a:text-[#B87333] prose-a:no-underline hover:prose-a:underline
                 prose-hr:border-[#1C3D5A]/8
-                prose-ol:text-[#1C3D5A]/70
-                prose-ul:text-[#1C3D5A]/70
+                prose-ol:text-[#1C3D5A] dark:text-foreground/70
+                prose-ul:text-[#1C3D5A] dark:text-foreground/70
               "
             >
               <Streamdown>{post.content}</Streamdown>
@@ -231,7 +231,7 @@ export default function BlogPost() {
               transition={{ duration: 0.5, delay: 0.45 }}
               className="mt-12 pt-8 border-t border-[#1C3D5A]/8"
             >
-              <p className="text-sm font-semibold text-[#1C3D5A] mb-4">Compartilhe este artigo</p>
+              <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-4">Compartilhe este artigo</p>
               <div className="flex items-center gap-3">
                 <button
                   onClick={shareWhatsApp}
@@ -256,7 +256,7 @@ export default function BlogPost() {
                   className={`group flex items-center gap-2 rounded-lg px-4 py-2.5 border transition-all duration-300 ${
                     copied
                       ? "bg-[#B87333]/10 text-[#B87333] border-[#B87333]/20"
-                      : "bg-[#1C3D5A]/5 hover:bg-[#1C3D5A]/10 text-[#1C3D5A]/60 hover:text-[#1C3D5A] border-[#1C3D5A]/10 hover:border-[#1C3D5A]/20"
+                      : "bg-[#1C3D5A]/5 hover:bg-[#1C3D5A]/10 text-[#1C3D5A] dark:text-foreground/60 hover:text-[#1C3D5A] dark:text-foreground border-[#1C3D5A]/10 hover:border-[#1C3D5A]/20"
                   }`}
                 >
                   {copied ? (
@@ -349,7 +349,7 @@ export default function BlogPost() {
             {/* Back to blog */}
             <div className="mt-10 text-center">
               <Link href="/blog">
-                <Button variant="ghost" className="text-[#1C3D5A]/50 hover:text-[#1C3D5A]">
+                <Button variant="ghost" className="text-[#1C3D5A] dark:text-foreground/50 hover:text-[#1C3D5A] dark:text-foreground">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Voltar ao Blog
                 </Button>

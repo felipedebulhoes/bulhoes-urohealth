@@ -42,7 +42,7 @@ export default function WhatsAppWidget() {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="absolute bottom-20 right-0 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+            className="absolute bottom-20 right-0 w-80 bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
           >
             {/* Header */}
             <div className="bg-[#075E54] p-4 text-white">
@@ -67,7 +67,7 @@ export default function WhatsAppWidget() {
 
             {/* Chat area */}
             <div className="bg-[#ECE5DD] p-4 min-h-[120px]">
-              <div className="bg-white rounded-lg p-3 shadow-sm max-w-[85%] relative">
+              <div className="bg-white dark:bg-card rounded-lg p-3 shadow-sm max-w-[85%] relative">
                 <p className="text-sm text-[#334155] leading-relaxed">
                   Olá! Sou o Dr. Felipe de Bulhões, urologista. Envie sua mensagem por aqui. Para agendamento por telefone, ligue: Clinovi (11) 3382-1529 | Campinas Day Hospital (19) 2127-2900 | São Luiz Campinas (19) 3014-3000. WhatsApp: (19) 99855-9890.
                 </p>
@@ -87,7 +87,7 @@ export default function WhatsAppWidget() {
                   <button
                     key={i}
                     onClick={() => sendMessage(`Olá Dr. Felipe, ${msg.toLowerCase()}.`)}
-                    className="w-full text-left text-sm bg-gray-50 hover:bg-[#B87333]/10 text-[#334155] hover:text-[#B87333] px-3 py-2 rounded-lg border border-gray-100 hover:border-[#B87333]/30 transition-colors"
+                    className="w-full text-left text-sm bg-gray-50 dark:bg-card hover:bg-[#B87333]/10 text-[#334155] hover:text-[#B87333] px-3 py-2 rounded-lg border border-gray-100 hover:border-[#B87333]/30 transition-colors"
                   >
                     {msg}
                   </button>
@@ -111,10 +111,10 @@ export default function WhatsAppWidget() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            className="absolute bottom-20 right-0 bg-white rounded-xl shadow-lg p-3 max-w-[220px] border border-gray-100"
+            className="absolute bottom-20 right-0 bg-white dark:bg-card rounded-xl shadow-lg p-3 max-w-[220px] border border-gray-100"
           >
             <button onClick={() => setShowBubble(false)} className="absolute -top-2 -right-2 w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center">
-              <X className="w-3 h-3 text-gray-500" />
+              <X className="w-3 h-3 text-gray-500 dark:text-muted-foreground" />
             </button>
             <p className="text-xs text-[#334155]">
               Precisa de ajuda? Fale conosco pelo <strong className="text-[#075E54]">WhatsApp</strong>!

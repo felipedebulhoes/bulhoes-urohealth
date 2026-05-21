@@ -179,7 +179,7 @@ function CategoryCard({ category, index }: { category: SurgeryCategory; index: n
       id={category.id}
       className="scroll-mt-24"
     >
-      <div className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-lg transition-shadow">
+      <div className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-lg transition-shadow">
         {/* Top accent bar */}
         <div className="h-1" style={{ backgroundColor: category.color }} />
 
@@ -193,11 +193,11 @@ function CategoryCard({ category, index }: { category: SurgeryCategory; index: n
               {category.icon}
             </div>
             <div className="flex-1">
-              <h2 className="text-xl lg:text-2xl font-semibold text-[#1C3D5A] mb-1">
+              <h2 className="text-xl lg:text-2xl font-semibold text-[#1C3D5A] dark:text-foreground mb-1">
                 {category.name}
               </h2>
-              <p className="text-sm text-[#1C3D5A]/40 mb-3">{category.subtitle}</p>
-              <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">{category.overview}</p>
+              <p className="text-sm text-[#1C3D5A] dark:text-foreground/40 mb-3">{category.subtitle}</p>
+              <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">{category.overview}</p>
             </div>
           </div>
 
@@ -209,7 +209,7 @@ function CategoryCard({ category, index }: { category: SurgeryCategory; index: n
                   {char.icon}
                   <span className="text-[10px] uppercase tracking-wider font-semibold">{char.label}</span>
                 </div>
-                <p className="text-xs text-[#1C3D5A]/70 font-medium">{char.value}</p>
+                <p className="text-xs text-[#1C3D5A] dark:text-foreground/70 font-medium">{char.value}</p>
               </div>
             ))}
           </div>
@@ -236,18 +236,18 @@ function CategoryCard({ category, index }: { category: SurgeryCategory; index: n
             <div className="p-6 lg:p-8 space-y-6">
               {/* How it works */}
               <div>
-                <h3 className="text-sm font-semibold text-[#1C3D5A] mb-2">Como funciona</h3>
-                <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">{category.howItWorks}</p>
+                <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-2">Como funciona</h3>
+                <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">{category.howItWorks}</p>
               </div>
 
               {/* Procedures */}
               <div>
-                <h3 className="text-sm font-semibold text-[#1C3D5A] mb-3">Procedimentos realizados</h3>
+                <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-3">Procedimentos realizados</h3>
                 <div className="space-y-2">
                   {category.procedures.map((proc, i) => (
                     <div key={i} className="flex items-start gap-2">
                       <ArrowRight className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: category.color }} />
-                      <span className="text-sm text-[#1C3D5A]/60">{proc}</span>
+                      <span className="text-sm text-[#1C3D5A] dark:text-foreground/60">{proc}</span>
                     </div>
                   ))}
                 </div>
@@ -255,12 +255,12 @@ function CategoryCard({ category, index }: { category: SurgeryCategory; index: n
 
               {/* Advantages */}
               <div className={`${category.bgColor} rounded-lg p-5`}>
-                <h3 className="text-sm font-semibold text-[#1C3D5A] mb-3">Vantagens</h3>
+                <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-3">Vantagens</h3>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {category.advantages.map((adv, i) => (
                     <div key={i} className="flex items-start gap-2">
                       <Check className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: category.color }} />
-                      <span className="text-xs text-[#1C3D5A]/60">{adv}</span>
+                      <span className="text-xs text-[#1C3D5A] dark:text-foreground/60">{adv}</span>
                     </div>
                   ))}
                 </div>
@@ -288,7 +288,7 @@ export default function CirurgiasMinimamenteInvasivas() {
       {/* Intro */}
       <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">
         <div className="container max-w-4xl">
-          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] prose-p:text-[#1C3D5A]/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A]/80">
+          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] dark:text-foreground prose-p:text-[#1C3D5A] dark:text-foreground/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A] dark:text-foreground/80">
             <p>
               A <strong>cirurgia minimamente invasiva</strong> transformou a urologia nas últimas décadas. Em vez de grandes incisões, os cirurgiões agora utilizam câmeras, instrumentos miniaturizados e até braços robóticos para realizar procedimentos complexos com menor trauma ao paciente. O resultado: menos dor, recuperação mais rápida, menor tempo de internação e melhor resultado estético.
             </p>
@@ -307,7 +307,7 @@ export default function CirurgiasMinimamenteInvasivas() {
               <a
                 key={cat.id}
                 href={`#${cat.id}`}
-                className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-[#1C3D5A]/8 text-[#1C3D5A]/70 hover:border-[#1C3D5A]/20 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-card border border-[#1C3D5A]/8 text-[#1C3D5A] dark:text-foreground/70 hover:border-[#1C3D5A]/20 transition-colors"
               >
                 <span style={{ color: cat.color }}>{cat.icon}</span>
                 {cat.name}
@@ -329,11 +329,11 @@ export default function CirurgiasMinimamenteInvasivas() {
       {/* Comparison */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             Comparação entre as Técnicas
           </h2>
           <div className="overflow-x-auto">
-            <table className="w-full text-xs border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+            <table className="w-full text-xs border-collapse bg-white dark:bg-card rounded-xl overflow-hidden shadow-sm">
               <thead>
                 <tr className="bg-[#1C3D5A] text-white">
                   <th className="p-3 text-left font-semibold">Característica</th>
@@ -358,7 +358,7 @@ export default function CirurgiasMinimamenteInvasivas() {
                     {row.map((cell, j) => (
                       <td
                         key={j}
-                        className={`p-3 ${j === 0 ? "text-left font-semibold text-[#1C3D5A]" : "text-center text-[#1C3D5A]/60"} border-t border-[#1C3D5A]/5`}
+                        className={`p-3 ${j === 0 ? "text-left font-semibold text-[#1C3D5A] dark:text-foreground" : "text-center text-[#1C3D5A] dark:text-foreground/60"} border-t border-[#1C3D5A]/5`}
                       >
                         {cell}
                       </td>
@@ -368,7 +368,7 @@ export default function CirurgiasMinimamenteInvasivas() {
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-[10px] text-[#1C3D5A]/40 text-center">
+          <p className="mt-4 text-[10px] text-[#1C3D5A] dark:text-foreground/40 text-center">
             Fontes: EAU Guidelines 2025, AUA Guidelines 2025, Einstein/SP, H9J/SP.
           </p>
         </div>
@@ -378,12 +378,12 @@ export default function CirurgiasMinimamenteInvasivas() {
       <section className="py-12 lg:py-16">
         <div className="container max-w-3xl">
           <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 lg:p-8">
-            <h3 className="text-lg font-semibold text-[#1C3D5A] mb-3">O robô opera sozinho?</h3>
-            <p className="text-sm text-[#1C3D5A]/60 leading-relaxed mb-4">
-              <strong className="text-[#1C3D5A]/80">Não.</strong> O robô cirúrgico é uma ferramenta controlada integralmente pelo cirurgião. Ele não toma decisões nem realiza movimentos autônomos. O sistema traduz os movimentos das mãos do cirurgião para os braços robóticos com maior precisão, filtrando tremores e ampliando a visão. A experiência e o treinamento do cirurgião continuam sendo os fatores mais importantes para o sucesso da cirurgia.
+            <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-3">O robô opera sozinho?</h3>
+            <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed mb-4">
+              <strong className="text-[#1C3D5A] dark:text-foreground/80">Não.</strong> O robô cirúrgico é uma ferramenta controlada integralmente pelo cirurgião. Ele não toma decisões nem realiza movimentos autônomos. O sistema traduz os movimentos das mãos do cirurgião para os braços robóticos com maior precisão, filtrando tremores e ampliando a visão. A experiência e o treinamento do cirurgião continuam sendo os fatores mais importantes para o sucesso da cirurgia.
             </p>
-            <h3 className="text-lg font-semibold text-[#1C3D5A] mb-3">Qual técnica é melhor?</h3>
-            <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">
+            <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-3">Qual técnica é melhor?</h3>
+            <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">
               Não existe uma técnica universalmente superior. A escolha depende do tipo de doença, da localização, da anatomia do paciente e da experiência do cirurgião. Em muitos casos, diferentes técnicas podem ser utilizadas para tratar a mesma condição, e a decisão deve ser individualizada. Agende uma consulta para discutirmos a melhor abordagem para o seu caso.
             </p>
           </div>

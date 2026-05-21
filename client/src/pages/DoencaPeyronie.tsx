@@ -347,7 +347,7 @@ export default function DoencaPeyronie() {
       <FAQSchema questions={faqs.map(item => ({ question: item.q, answer: item.a }))} />
 
       {/* Imagem Ilustrativa */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-10 bg-gray-50 dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -365,11 +365,11 @@ export default function DoencaPeyronie() {
       </section>
 
       {/* Introdução */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">O Que é a Doença de Peyronie?</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-6">O Que é a Doença de Peyronie?</h2>
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground space-y-4">
               <p>
                 A <strong>Doença de Peyronie (DP)</strong> é uma condição adquirida caracterizada pela formação de
                 uma <strong>placa fibrótica na túnica albugínea</strong> do pênis, resultando em curvatura peniana,
@@ -407,7 +407,7 @@ export default function DoencaPeyronie() {
             ].map((stat, i) => (
               <div key={i} className="bg-violet-50 rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold text-violet-700">{stat.value}</p>
-                <p className="text-xs text-gray-600 mt-1">{stat.label}</p>
+                <p className="text-xs text-gray-600 dark:text-muted-foreground mt-1">{stat.label}</p>
               </div>
             ))}
           </motion.div>
@@ -415,11 +415,11 @@ export default function DoencaPeyronie() {
       </section>
 
       {/* Fases da Doença */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Fases da Doença</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Fases da Doença</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Distinguir entre fase aguda e crônica é fundamental — as opções de tratamento são diferentes em cada fase.
             </p>
           </motion.div>
@@ -440,20 +440,20 @@ export default function DoencaPeyronie() {
                       <phase.icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900">{phase.phase}</h3>
-                      <p className="text-xs text-gray-500">{phase.duration}</p>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-foreground">{phase.phase}</h3>
+                      <p className="text-xs text-gray-500 dark:text-muted-foreground">{phase.duration}</p>
                     </div>
                   </div>
                   <ul className="space-y-2 mb-4">
                     {phase.characteristics.map((c, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-gray-700">
+                      <li key={j} className="flex items-start gap-2 text-sm text-gray-700 dark:text-foreground">
                         <CircleDot className={`w-4 h-4 ${colors.text} shrink-0 mt-0.5`} />
                         <span>{c}</span>
                       </li>
                     ))}
                   </ul>
                   <div className={`${colors.light} rounded-lg p-3`}>
-                    <p className="text-sm"><strong className={colors.text}>Conduta:</strong> <span className="text-gray-700">{phase.treatment}</span></p>
+                    <p className="text-sm"><strong className={colors.text}>Conduta:</strong> <span className="text-gray-700 dark:text-foreground">{phase.treatment}</span></p>
                   </div>
                 </motion.div>
               );
@@ -463,11 +463,11 @@ export default function DoencaPeyronie() {
       </section>
 
       {/* Diagnóstico */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Investigação Diagnóstica</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Investigação Diagnóstica</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Avaliação sistemática em 4 etapas — EAU Guidelines 2025
             </p>
           </motion.div>
@@ -479,21 +479,21 @@ export default function DoencaPeyronie() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-gray-50 rounded-xl p-6 border border-gray-100"
+                className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center text-violet-700 font-bold text-sm">
                     {step.step}
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900">{step.title}</h3>
+                    <h3 className="font-bold text-gray-900 dark:text-foreground">{step.title}</h3>
                     <span className="text-xs text-violet-600 font-medium">{step.evidence}</span>
                   </div>
                 </div>
-                <p className="text-sm text-gray-700 mb-3">{step.description}</p>
+                <p className="text-sm text-gray-700 dark:text-foreground mb-3">{step.description}</p>
                 <ul className="space-y-1.5">
                   {step.details.map((d, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                    <li key={j} className="flex items-start gap-2 text-sm text-gray-600 dark:text-muted-foreground">
                       <Check className="w-3.5 h-3.5 text-violet-500 shrink-0 mt-0.5" />
                       <span>{d}</span>
                     </li>
@@ -506,11 +506,11 @@ export default function DoencaPeyronie() {
       </section>
 
       {/* Tratamento Conservador */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Tratamento Conservador</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Tratamento Conservador</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Opções não cirúrgicas baseadas em evidências — EAU 2025 e AUA
             </p>
           </motion.div>
@@ -529,16 +529,16 @@ export default function DoencaPeyronie() {
                   <div className={`w-8 h-8 rounded-lg ${catColors.bg} flex items-center justify-center`}>
                     <category.icon className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">{category.category}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-foreground">{category.category}</h3>
                 </div>
                 <div className="space-y-3">
                   {category.treatments.map((tx, ti) => (
                     <div
                       key={ti}
-                      className={`bg-white rounded-xl border p-5 ${"highlight" in tx && tx.highlight ? "border-violet-300 ring-1 ring-violet-100" : "border-gray-200"}`}
+                      className={`bg-white rounded-xl border p-5 ${"highlight" in tx && tx.highlight ? "border-violet-300 ring-1 ring-violet-100" : "border-gray-200 dark:border-border"}`}
                     >
                       <div className="flex items-start justify-between gap-3 mb-2">
-                        <h4 className="font-semibold text-gray-900">{tx.name}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-foreground">{tx.name}</h4>
                         <div className="flex items-center gap-1.5 shrink-0">
                           {tx.recommended ? (
                             <span className="text-xs font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Recomendado</span>
@@ -547,8 +547,8 @@ export default function DoencaPeyronie() {
                           )}
                         </div>
                       </div>
-                      <p className="text-sm text-gray-600 mb-2"><strong>Mecanismo:</strong> {tx.mechanism}</p>
-                      <p className="text-sm text-gray-600 mb-2"><strong>Indicação:</strong> {tx.indication}</p>
+                      <p className="text-sm text-gray-600 dark:text-muted-foreground mb-2"><strong>Mecanismo:</strong> {tx.mechanism}</p>
+                      <p className="text-sm text-gray-600 dark:text-muted-foreground mb-2"><strong>Indicação:</strong> {tx.indication}</p>
                       {"warning" in tx && tx.warning && (
                         <div className="flex items-center gap-2 text-sm text-amber-700 bg-amber-50 rounded-lg px-3 py-1.5 mb-2">
                           <AlertTriangle className="w-4 h-4 shrink-0" />
@@ -558,18 +558,18 @@ export default function DoencaPeyronie() {
                       <div className="grid md:grid-cols-2 gap-2 mt-2">
                         <div className="bg-blue-50 rounded-lg px-3 py-2">
                           <p className="text-xs font-medium text-blue-700">EAU 2025</p>
-                          <p className="text-xs text-gray-700">{tx.eau}</p>
+                          <p className="text-xs text-gray-700 dark:text-foreground">{tx.eau}</p>
                         </div>
                         <div className="bg-indigo-50 rounded-lg px-3 py-2">
                           <p className="text-xs font-medium text-indigo-700">AUA</p>
-                          <p className="text-xs text-gray-700">{tx.aua}</p>
+                          <p className="text-xs text-gray-700 dark:text-foreground">{tx.aua}</p>
                         </div>
                       </div>
                       {"details" in tx && tx.details && (
                         <div className="mt-3 pt-3 border-t border-gray-100">
                           <ul className="space-y-1">
                             {(tx.details as string[]).map((d: string, di: number) => (
-                              <li key={di} className="flex items-start gap-2 text-sm text-gray-600">
+                              <li key={di} className="flex items-start gap-2 text-sm text-gray-600 dark:text-muted-foreground">
                                 <ArrowRight className="w-3.5 h-3.5 text-violet-400 shrink-0 mt-0.5" />
                                 <span>{d}</span>
                               </li>
@@ -587,11 +587,11 @@ export default function DoencaPeyronie() {
       </section>
 
       {/* Algoritmo Cirúrgico */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Algoritmo de Decisão Cirúrgica</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Algoritmo de Decisão Cirúrgica</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Pré-requisito: doença estável por ≥ 3-6 meses, curvatura funcionalmente significativa — EAU 2025 / AUA
             </p>
           </motion.div>
@@ -605,9 +605,9 @@ export default function DoencaPeyronie() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
-                  className="flex items-center gap-4 bg-gray-50 rounded-xl p-4 border border-gray-200"
+                  className="flex items-center gap-4 bg-gray-50 dark:bg-card rounded-xl p-4 border border-gray-200 dark:border-border"
                 >
-                  <div className="flex-1 text-sm text-gray-700 font-medium">{item.condition}</div>
+                  <div className="flex-1 text-sm text-gray-700 dark:text-foreground font-medium">{item.condition}</div>
                   <ArrowRight className="w-5 h-5 text-gray-400 shrink-0" />
                   <div className={`${colors.light} ${colors.text} rounded-lg px-4 py-2 text-sm font-semibold shrink-0`}>
                     {item.treatment}
@@ -620,11 +620,11 @@ export default function DoencaPeyronie() {
       </section>
 
       {/* Opções Cirúrgicas Detalhadas */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Opções Cirúrgicas</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Opções Cirúrgicas</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Três abordagens principais, escolhidas conforme grau de curvatura e função erétil
             </p>
           </motion.div>
@@ -639,42 +639,42 @@ export default function DoencaPeyronie() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={`bg-white rounded-xl border ${isOpen ? colors.border : "border-gray-200"} shadow-sm overflow-hidden`}
+                  className={`bg-white rounded-xl border ${isOpen ? colors.border : "border-gray-200 dark:border-border"} shadow-sm overflow-hidden`}
                 >
                   <button
                     onClick={() => setOpenSurgery(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition-colors"
+                    className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 dark:hover:bg-muted dark:bg-card transition-colors"
                   >
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center`}>
                         <option.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-gray-900">{option.name}</h3>
-                        <p className="text-xs text-gray-500">{option.indication}</p>
+                        <h3 className="font-bold text-gray-900 dark:text-foreground">{option.name}</h3>
+                        <p className="text-xs text-gray-500 dark:text-muted-foreground">{option.indication}</p>
                       </div>
                     </div>
                     {isOpen ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
                   </button>
                   {isOpen && (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-5 pb-5 border-t border-gray-100 pt-4">
-                      <p className="text-gray-700 mb-4">{option.description}</p>
-                      <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                        <p className="text-sm font-semibold text-gray-800 mb-1">Como funciona:</p>
-                        <p className="text-sm text-gray-600">{option.howItWorks}</p>
+                      <p className="text-gray-700 dark:text-foreground mb-4">{option.description}</p>
+                      <div className="bg-gray-50 dark:bg-card rounded-lg p-4 mb-4">
+                        <p className="text-sm font-semibold text-gray-800 dark:text-foreground mb-1">Como funciona:</p>
+                        <p className="text-sm text-gray-600 dark:text-muted-foreground">{option.howItWorks}</p>
                       </div>
                       <div className={`${colors.light} rounded-lg p-4 mb-4`}>
                         <p className="text-sm font-semibold ${colors.text} mb-1">Resultados:</p>
-                        <p className="text-sm text-gray-700">{option.results}</p>
+                        <p className="text-sm text-gray-700 dark:text-foreground">{option.results}</p>
                       </div>
                       <div className="grid md:grid-cols-2 gap-3 mb-4">
                         <div className="bg-blue-50 rounded-lg p-3">
                           <p className="text-xs font-medium text-blue-700">EAU 2025</p>
-                          <p className="text-xs text-gray-700">{option.eau}</p>
+                          <p className="text-xs text-gray-700 dark:text-foreground">{option.eau}</p>
                         </div>
                         <div className="bg-indigo-50 rounded-lg p-3">
                           <p className="text-xs font-medium text-indigo-700">AUA</p>
-                          <p className="text-xs text-gray-700">{option.aua}</p>
+                          <p className="text-xs text-gray-700 dark:text-foreground">{option.aua}</p>
                         </div>
                       </div>
                       <div className="grid md:grid-cols-2 gap-4">
@@ -682,7 +682,7 @@ export default function DoencaPeyronie() {
                           <p className="text-sm font-semibold text-amber-700 mb-2">Vantagens</p>
                           <ul className="space-y-1.5">
                             {option.pros.map((p, pi) => (
-                              <li key={pi} className="flex items-start gap-2 text-sm text-gray-600">
+                              <li key={pi} className="flex items-start gap-2 text-sm text-gray-600 dark:text-muted-foreground">
                                 <Check className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
                                 <span>{p}</span>
                               </li>
@@ -693,7 +693,7 @@ export default function DoencaPeyronie() {
                           <p className="text-sm font-semibold text-red-700 mb-2">Limitações</p>
                           <ul className="space-y-1.5">
                             {option.cons.map((c, ci) => (
-                              <li key={ci} className="flex items-start gap-2 text-sm text-gray-600">
+                              <li key={ci} className="flex items-start gap-2 text-sm text-gray-600 dark:text-muted-foreground">
                                 <AlertCircle className="w-3.5 h-3.5 text-red-400 shrink-0 mt-0.5" />
                                 <span>{c}</span>
                               </li>
@@ -711,16 +711,16 @@ export default function DoencaPeyronie() {
       </section>
 
       {/* Impacto Psicossocial */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Impacto Psicossocial</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-6 text-center">Impacto Psicossocial</h2>
             <div className="bg-violet-50 rounded-2xl p-6 md:p-8 border border-violet-100">
               <div className="flex items-start gap-3 mb-4">
                 <Heart className="w-6 h-6 text-violet-600 shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">A Doença de Peyronie vai além da curvatura</h3>
-                  <p className="text-gray-700 text-sm mb-4">
+                  <h3 className="font-bold text-gray-900 dark:text-foreground mb-2">A Doença de Peyronie vai além da curvatura</h3>
+                  <p className="text-gray-700 dark:text-foreground text-sm mb-4">
                     Muitos homens com DP experimentam sofrimento emocional significativo, sintomas depressivos e dificuldades
                     no relacionamento. O impacto psicológico é frequentemente subestimado.
                   </p>
@@ -732,13 +732,13 @@ export default function DoencaPeyronie() {
                   { stat: "48%", desc: "apresentam sintomas depressivos" },
                   { stat: "81%", desc: "relatam impacto na autoimagem masculina" },
                 ].map((item, i) => (
-                  <div key={i} className="bg-white rounded-xl p-4 text-center">
+                  <div key={i} className="bg-white dark:bg-card rounded-xl p-4 text-center">
                     <p className="text-2xl font-bold text-violet-700">{item.stat}</p>
-                    <p className="text-xs text-gray-600 mt-1">{item.desc}</p>
+                    <p className="text-xs text-gray-600 dark:text-muted-foreground mt-1">{item.desc}</p>
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-gray-600 mt-4">
+              <p className="text-sm text-gray-600 dark:text-muted-foreground mt-4">
                 O acompanhamento psicológico e a comunicação aberta com o parceiro(a) são componentes importantes do
                 tratamento. Não hesite em discutir esses aspectos com seu urologista.
               </p>
@@ -748,11 +748,11 @@ export default function DoencaPeyronie() {
       </section>
 
       {/* FAQs */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-3xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Perguntas Frequentes</h2>
-            <p className="text-gray-600 text-center mb-10">Dúvidas comuns sobre a Doença de Peyronie</p>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Perguntas Frequentes</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10">Dúvidas comuns sobre a Doença de Peyronie</p>
           </motion.div>
           <div className="space-y-3">
             {faqs.map((faq, i) => (
@@ -762,20 +762,20 @@ export default function DoencaPeyronie() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="border border-gray-200 rounded-xl overflow-hidden"
+                className="border border-gray-200 dark:border-border rounded-xl overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 dark:hover:bg-muted dark:bg-card transition-colors"
                 >
-                  <span className="font-medium text-gray-900 pr-4">{faq.q}</span>
+                  <span className="font-medium text-gray-900 dark:text-foreground pr-4">{faq.q}</span>
                   {openFaq === i ? <ChevronUp className="w-5 h-5 text-gray-400 shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" />}
                 </button>
                 {openFaq === i && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="px-4 pb-4 text-gray-600 border-t border-gray-100 pt-3"
+                    className="px-4 pb-4 text-gray-600 dark:text-muted-foreground border-t border-gray-100 pt-3"
                   >
                     {faq.a}
                   </motion.div>
@@ -787,14 +787,14 @@ export default function DoencaPeyronie() {
       </section>
 
       {/* Referências */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Referências</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-6">Referências</h2>
             <ol className="space-y-2">
               {references.map((ref) => (
-                <li key={ref.num} className="text-sm text-gray-600 flex gap-2">
-                  <span className="font-semibold text-gray-500 shrink-0">{ref.num}.</span>
+                <li key={ref.num} className="text-sm text-gray-600 dark:text-muted-foreground flex gap-2">
+                  <span className="font-semibold text-gray-500 dark:text-muted-foreground shrink-0">{ref.num}.</span>
                   <span>{ref.text}</span>
                 </li>
               ))}

@@ -457,22 +457,22 @@ function GeneralSection({ section, index }: { section: PreOpSection; index: numb
       animate={inView ? "visible" : "hidden"}
       variants={fadeUp}
       custom={index}
-      className="bg-white rounded-xl border border-[#1C3D5A]/8 shadow-sm overflow-hidden"
+      className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/8 shadow-sm overflow-hidden"
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-5 hover:bg-gray-50/50 transition-colors"
+        className="w-full flex items-center justify-between p-5 hover:bg-gray-50 dark:hover:bg-muted dark:bg-card/50 transition-colors"
       >
         <div className="flex items-center gap-3">
           <div className={`w-10 h-10 ${section.bgColor} rounded-lg flex items-center justify-center ${section.color}`}>
             {section.icon}
           </div>
-          <h3 className="text-lg font-bold text-[#1C3D5A] text-left">{section.title}</h3>
+          <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground text-left">{section.title}</h3>
         </div>
         {open ? (
-          <ChevronUp className="w-5 h-5 text-[#1C3D5A]/40" />
+          <ChevronUp className="w-5 h-5 text-[#1C3D5A] dark:text-foreground/40" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-[#1C3D5A]/40" />
+          <ChevronDown className="w-5 h-5 text-[#1C3D5A] dark:text-foreground/40" />
         )}
       </button>
 
@@ -484,25 +484,25 @@ function GeneralSection({ section, index }: { section: PreOpSection; index: numb
               className={`p-4 rounded-lg border ${
                 item.important
                   ? "border-amber-200 bg-amber-50/50"
-                  : "border-gray-100 bg-gray-50/50"
+                  : "border-gray-100 bg-gray-50 dark:bg-card/50"
               }`}
             >
               <div className="flex items-start gap-3">
                 {item.important ? (
                   <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5 shrink-0" />
                 ) : (
-                  <Info className="w-5 h-5 text-[#1C3D5A]/30 mt-0.5 shrink-0" />
+                  <Info className="w-5 h-5 text-[#1C3D5A] dark:text-foreground/30 mt-0.5 shrink-0" />
                 )}
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h4 className="font-semibold text-[#1C3D5A]">{item.title}</h4>
+                    <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
                     {item.timing && (
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-white border border-[#1C3D5A]/10 text-[#1C3D5A]/60 font-medium">
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-white dark:bg-card border border-[#1C3D5A]/10 text-[#1C3D5A] dark:text-foreground/60 font-medium">
                         {item.timing}
                       </span>
                     )}
                   </div>
-                  <p className="text-sm text-gray-600 mt-1.5 leading-relaxed">{item.detail}</p>
+                  <p className="text-sm text-gray-600 dark:text-muted-foreground mt-1.5 leading-relaxed">{item.detail}</p>
                 </div>
               </div>
             </div>
@@ -528,39 +528,39 @@ function SurgeryCard({ surgery, index }: { surgery: SurgeryPrep; index: number }
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full bg-white rounded-xl border border-[#1C3D5A]/8 shadow-sm p-5 hover:shadow-md transition-shadow"
+        className="w-full bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/8 shadow-sm p-5 hover:shadow-md transition-shadow"
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#1C3D5A]/5 rounded-lg flex items-center justify-center text-[#1C3D5A]/60">
+            <div className="w-10 h-10 bg-[#1C3D5A]/5 rounded-lg flex items-center justify-center text-[#1C3D5A] dark:text-foreground/60">
               {surgery.icon}
             </div>
             <div className="text-left">
-              <h4 className="font-bold text-[#1C3D5A]">{surgery.name}</h4>
-              <p className="text-xs text-[#1C3D5A]/50">{surgery.subtitle}</p>
+              <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{surgery.name}</h4>
+              <p className="text-xs text-[#1C3D5A] dark:text-foreground/50">{surgery.subtitle}</p>
             </div>
           </div>
           {open ? (
-            <ChevronUp className="w-5 h-5 text-[#1C3D5A]/40 shrink-0" />
+            <ChevronUp className="w-5 h-5 text-[#1C3D5A] dark:text-foreground/40 shrink-0" />
           ) : (
-            <ChevronDown className="w-5 h-5 text-[#1C3D5A]/40 shrink-0" />
+            <ChevronDown className="w-5 h-5 text-[#1C3D5A] dark:text-foreground/40 shrink-0" />
           )}
         </div>
       </button>
 
       {open && (
-        <div className="mt-2 bg-white rounded-xl border border-[#1C3D5A]/8 p-5 space-y-5">
-          <p className="text-sm text-gray-600 leading-relaxed">{surgery.description}</p>
+        <div className="mt-2 bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/8 p-5 space-y-5">
+          <p className="text-sm text-gray-600 dark:text-muted-foreground leading-relaxed">{surgery.description}</p>
 
           {/* Instruções Específicas */}
           <div>
-            <h5 className="font-semibold text-[#1C3D5A] mb-3 flex items-center gap-2">
+            <h5 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
               <ClipboardCheck className="w-4 h-4 text-amber-600" />
               Instruções Específicas
             </h5>
             <ul className="space-y-2">
               {surgery.specificInstructions.map((inst, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
                   <span>{inst}</span>
                 </li>
@@ -579,7 +579,7 @@ function SurgeryCard({ surgery, index }: { surgery: SurgeryPrep; index: number }
 
           {/* Exames */}
           <div>
-            <h5 className="font-semibold text-[#1C3D5A] mb-3 flex items-center gap-2">
+            <h5 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
               <FileText className="w-4 h-4 text-blue-600" />
               Exames Pré-Operatórios
             </h5>
@@ -597,19 +597,19 @@ function SurgeryCard({ surgery, index }: { surgery: SurgeryPrep; index: number }
 
           {/* Internação e Anestesia */}
           <div className="grid sm:grid-cols-2 gap-4">
-            <div className="bg-gray-50 rounded-lg p-4">
-              <h5 className="font-semibold text-[#1C3D5A] text-sm mb-1 flex items-center gap-2">
+            <div className="bg-gray-50 dark:bg-card rounded-lg p-4">
+              <h5 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1 flex items-center gap-2">
                 <BedDouble className="w-4 h-4" />
                 Internação
               </h5>
-              <p className="text-xs text-gray-600 leading-relaxed">{surgery.internacao}</p>
+              <p className="text-xs text-gray-600 dark:text-muted-foreground leading-relaxed">{surgery.internacao}</p>
             </div>
-            <div className="bg-gray-50 rounded-lg p-4">
-              <h5 className="font-semibold text-[#1C3D5A] text-sm mb-1 flex items-center gap-2">
+            <div className="bg-gray-50 dark:bg-card rounded-lg p-4">
+              <h5 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1 flex items-center gap-2">
                 <Syringe className="w-4 h-4" />
                 Anestesia
               </h5>
-              <p className="text-xs text-gray-600 leading-relaxed">{surgery.anestesia}</p>
+              <p className="text-xs text-gray-600 dark:text-muted-foreground leading-relaxed">{surgery.anestesia}</p>
             </div>
           </div>
         </div>
@@ -636,32 +636,32 @@ export default function OrientacoesPreOperatorias() {
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border-l-4 border-[#1C3D5A] p-6 rounded-r-lg mb-8">
-              <p className="text-[#1C3D5A] leading-relaxed">
+              <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
                 O preparo pré-operatório adequado é fundamental para o sucesso da sua cirurgia e para uma recuperação mais rápida e segura. Este guia reúne as orientações baseadas nos protocolos <strong>ERAS (Enhanced Recovery After Surgery)</strong>, nas diretrizes da <strong>ASA (American Society of Anesthesiologists)</strong> e da <strong>EAU (European Association of Urology, 2025)</strong>. Leia com atenção e, em caso de dúvidas, entre em contato com a equipe do Dr. Felipe de Bulhões.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-3 gap-4">
-              <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-center">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Utensils className="w-6 h-6 text-amber-600" />
                 </div>
-                <h4 className="font-semibold text-[#1C3D5A] mb-1">Jejum Seguro</h4>
-                <p className="text-sm text-gray-600">8h sólidos, 2h líquidos claros (ASA 2023)</p>
+                <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Jejum Seguro</h4>
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">8h sólidos, 2h líquidos claros (ASA 2023)</p>
               </div>
-              <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-center">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                 <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Pill className="w-6 h-6 text-blue-600" />
                 </div>
-                <h4 className="font-semibold text-[#1C3D5A] mb-1">Medicamentos</h4>
-                <p className="text-sm text-gray-600">Saiba o que manter e o que suspender</p>
+                <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Medicamentos</h4>
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">Saiba o que manter e o que suspender</p>
               </div>
-              <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm text-center">
+              <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <ShieldCheck className="w-6 h-6 text-amber-600" />
                 </div>
-                <h4 className="font-semibold text-[#1C3D5A] mb-1">Checklist</h4>
-                <p className="text-sm text-gray-600">Confira tudo antes do dia da cirurgia</p>
+                <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Checklist</h4>
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">Confira tudo antes do dia da cirurgia</p>
               </div>
             </div>
           </motion.div>
@@ -683,7 +683,7 @@ export default function OrientacoesPreOperatorias() {
                 className={`text-xs px-4 py-2 rounded-full border transition-colors font-medium ${
                   activeTab === tab.id
                     ? "bg-[#1C3D5A] text-white border-[#1C3D5A]"
-                    : "bg-white border-[#1C3D5A]/8 text-[#1C3D5A]/60 hover:border-[#1C3D5A]/20"
+                    : "bg-white border-[#1C3D5A]/8 text-[#1C3D5A] dark:text-foreground/60 hover:border-[#1C3D5A]/20"
                 }`}
               >
                 {tab.label}
@@ -734,13 +734,13 @@ export default function OrientacoesPreOperatorias() {
                 </div>
               </motion.div>
 
-              <div className="bg-white rounded-xl border border-[#1C3D5A]/8 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/8 shadow-sm overflow-hidden">
                 <div className="p-5 border-b border-gray-100">
-                  <h3 className="text-lg font-bold text-[#1C3D5A] flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground flex items-center gap-2">
                     <ClipboardCheck className="w-5 h-5 text-amber-600" />
                     Checklist Pré-Operatório
                   </h3>
-                  <p className="text-sm text-gray-500 mt-1">Confirme cada item antes do dia da cirurgia</p>
+                  <p className="text-sm text-gray-500 dark:text-muted-foreground mt-1">Confirme cada item antes do dia da cirurgia</p>
                 </div>
                 <div className="divide-y divide-gray-50">
                   {checklistItems.map((item, i) => (
@@ -751,16 +751,16 @@ export default function OrientacoesPreOperatorias() {
                       viewport={{ once: true }}
                       variants={fadeUp}
                       custom={i}
-                      className="flex items-center gap-4 p-4 hover:bg-gray-50/50 transition-colors cursor-pointer"
+                      className="flex items-center gap-4 p-4 hover:bg-gray-50 dark:hover:bg-muted dark:bg-card/50 transition-colors cursor-pointer"
                     >
                       <input
                         type="checkbox"
                         className="w-5 h-5 rounded border-gray-300 text-amber-600 focus:ring-emerald-500 shrink-0"
                       />
-                      <div className="flex items-center gap-2 text-[#1C3D5A]/60">
+                      <div className="flex items-center gap-2 text-[#1C3D5A] dark:text-foreground/60">
                         {item.icon}
                       </div>
-                      <span className="text-sm text-[#1C3D5A]">{item.text}</span>
+                      <span className="text-sm text-[#1C3D5A] dark:text-foreground">{item.text}</span>
                     </motion.label>
                   ))}
                 </div>
@@ -812,8 +812,8 @@ export default function OrientacoesPreOperatorias() {
       {/* Referências */}
       <section className="py-8 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h3 className="text-sm font-semibold text-[#1C3D5A]/40 uppercase tracking-wider mb-3">Referências</h3>
-          <ol className="text-xs text-[#1C3D5A]/40 space-y-1.5 list-decimal list-inside">
+          <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground/40 uppercase tracking-wider mb-3">Referências</h3>
+          <ol className="text-xs text-[#1C3D5A] dark:text-foreground/40 space-y-1.5 list-decimal list-inside">
             <li>ASA — Practice Guidelines for Preoperative Fasting and the Use of Pharmacologic Agents to Reduce the Risk of Pulmonary Aspiration. Anesthesiology, 2023.</li>
             <li>Peri-operative fasting in adults: an international, multidisciplinary consensus statement. Anaesthesia, 2026.</li>
             <li>ESAIC — Perioperative Fasting: Guidelines for Adults and Children. European Society of Anaesthesiology and Intensive Care, 2022.</li>

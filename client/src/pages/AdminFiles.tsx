@@ -19,7 +19,7 @@ function getFileIcon(mimeType: string) {
   if (mimeType.startsWith("video/")) return <Film className="w-5 h-5 text-blue-500" />;
   if (mimeType.startsWith("audio/")) return <Music className="w-5 h-5 text-purple-500" />;
   if (mimeType.includes("pdf")) return <FileText className="w-5 h-5 text-red-500" />;
-  return <File className="w-5 h-5 text-gray-500" />;
+  return <File className="w-5 h-5 text-gray-500 dark:text-muted-foreground" />;
 }
 
 function formatFileSize(bytes: number): string {
@@ -38,7 +38,7 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="p-1.5 rounded-md hover:bg-gray-100 transition-colors"
+      className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-muted dark:bg-muted transition-colors"
       title="Copiar URL"
     >
       {copied ? <Check className="w-4 h-4 text-amber-500" /> : <Copy className="w-4 h-4 text-gray-400" />}
@@ -121,7 +121,7 @@ export default function AdminFiles() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-card">
         <Loader2 className="w-8 h-8 animate-spin text-[#B87333]" />
       </div>
     );
@@ -129,10 +129,10 @@ export default function AdminFiles() {
 
   if (!isAuthenticated || user?.role !== "admin") {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-card">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Acesso Restrito</h1>
-          <p className="text-gray-600 mb-4">Esta página é exclusiva para administradores.</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-2">Acesso Restrito</h1>
+          <p className="text-gray-600 dark:text-muted-foreground mb-4">Esta página é exclusiva para administradores.</p>
           <Link href="/" className="text-[#B87333] hover:underline">Voltar ao site</Link>
         </div>
       </div>
@@ -140,22 +140,22 @@ export default function AdminFiles() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-card">
       {/* Header */}
-      <div className="bg-white border-b">
+      <div className="bg-white dark:bg-card border-b">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/">
-              <button className="p-2 rounded-lg hover:bg-gray-100 transition-colors">
-                <ArrowLeft className="w-5 h-5 text-gray-600" />
+              <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-muted dark:bg-muted transition-colors">
+                <ArrowLeft className="w-5 h-5 text-gray-600 dark:text-muted-foreground" />
               </button>
             </Link>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+              <h1 className="text-xl font-bold text-gray-900 dark:text-foreground flex items-center gap-2">
                 <FolderOpen className="w-5 h-5 text-[#B87333]" />
                 Gerenciador de Arquivos
               </h1>
-              <p className="text-sm text-gray-500">Upload e gerenciamento de arquivos do site</p>
+              <p className="text-sm text-gray-500 dark:text-muted-foreground">Upload e gerenciamento de arquivos do site</p>
             </div>
           </div>
           <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full font-medium">
@@ -166,15 +166,15 @@ export default function AdminFiles() {
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Upload area */}
-        <div className="bg-white rounded-xl shadow-sm border p-6 mb-8">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+        <div className="bg-white dark:bg-card rounded-xl shadow-sm border p-6 mb-8">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-foreground mb-4 flex items-center gap-2">
             <Upload className="w-5 h-5 text-[#B87333]" />
             Upload de Arquivo
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Descrição (opcional)</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-foreground mb-1">Descrição (opcional)</label>
               <input
                 type="text"
                 value={description}
@@ -184,11 +184,11 @@ export default function AdminFiles() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Categoria</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-foreground mb-1">Categoria</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-[#B87333] focus:border-transparent outline-none bg-white"
+                className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-[#B87333] focus:border-transparent outline-none bg-white dark:bg-card"
               >
                 <option value="documentos">Documentos</option>
                 <option value="imagens">Imagens</option>
@@ -221,12 +221,12 @@ export default function AdminFiles() {
             {uploading ? (
               <div className="flex flex-col items-center gap-2">
                 <Loader2 className="w-8 h-8 animate-spin text-[#B87333]" />
-                <p className="text-sm text-gray-600">Enviando arquivo...</p>
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">Enviando arquivo...</p>
               </div>
             ) : (
               <div className="flex flex-col items-center gap-2">
                 <Upload className="w-8 h-8 text-gray-400" />
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">
                   Arraste um arquivo aqui ou <span className="text-[#B87333] font-medium">clique para selecionar</span>
                 </p>
                 <p className="text-xs text-gray-400">Máximo 10MB por arquivo</p>
@@ -250,7 +250,7 @@ export default function AdminFiles() {
               className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === cat.value
                   ? "bg-[#B87333] text-white"
-                  : "bg-white text-gray-600 hover:bg-gray-100 border"
+                  : "bg-white text-gray-600 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-muted dark:bg-muted border"
               }`}
             >
               {cat.label}
@@ -259,20 +259,20 @@ export default function AdminFiles() {
         </div>
 
         {/* File list */}
-        <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
+        <div className="bg-white dark:bg-card rounded-xl shadow-sm border overflow-hidden">
           {filesQuery.isLoading ? (
             <div className="p-8 text-center">
               <Loader2 className="w-6 h-6 animate-spin text-[#B87333] mx-auto" />
             </div>
           ) : !filesQuery.data?.length ? (
-            <div className="p-8 text-center text-gray-500">
+            <div className="p-8 text-center text-gray-500 dark:text-muted-foreground">
               <FolderOpen className="w-12 h-12 text-gray-300 mx-auto mb-2" />
               <p className="text-sm">Nenhum arquivo encontrado.</p>
             </div>
           ) : (
             <div className="divide-y">
               {filesQuery.data.map((file) => (
-                <div key={file.id} className="p-4 flex items-center gap-4 hover:bg-gray-50 transition-colors">
+                <div key={file.id} className="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-muted dark:bg-card transition-colors">
                   {/* Thumbnail or icon */}
                   <div className="flex-shrink-0">
                     {file.mimeType.startsWith("image/") ? (
@@ -282,7 +282,7 @@ export default function AdminFiles() {
                         className="w-12 h-12 rounded-lg object-cover border"
                       />
                     ) : (
-                      <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-muted flex items-center justify-center">
                         {getFileIcon(file.mimeType)}
                       </div>
                     )}
@@ -290,8 +290,8 @@ export default function AdminFiles() {
 
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate">{file.filename}</p>
-                    <div className="flex items-center gap-2 text-xs text-gray-500 mt-0.5">
+                    <p className="text-sm font-medium text-gray-900 dark:text-foreground truncate">{file.filename}</p>
+                    <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-muted-foreground mt-0.5">
                       <span>{formatFileSize(file.size)}</span>
                       <span>·</span>
                       <span>{file.category || "Sem categoria"}</span>
@@ -312,7 +312,7 @@ export default function AdminFiles() {
                       href={file.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-1.5 rounded-md hover:bg-gray-100 transition-colors"
+                      className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-muted dark:bg-muted transition-colors"
                       title="Abrir arquivo"
                     >
                       <FileText className="w-4 h-4 text-gray-400" />

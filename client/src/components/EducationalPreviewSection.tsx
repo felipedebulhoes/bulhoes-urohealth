@@ -191,10 +191,10 @@ export default function EducationalPreviewSection() {
               Conteúdo Educativo
             </span>
           </div>
-          <h2 className="text-2xl lg:text-4xl text-[#1C3D5A] mb-3 font-serif">
+          <h2 className="text-2xl lg:text-4xl text-[#1C3D5A] dark:text-foreground mb-3 font-serif">
             Informação de Qualidade para o Paciente
           </h2>
-          <p className="text-sm text-[#1C3D5A]/50 max-w-xl mx-auto">
+          <p className="text-sm text-[#1C3D5A] dark:text-foreground/50 max-w-xl mx-auto">
             Material educativo baseado em evidências científicas das principais guidelines internacionais (EAU, AUA, SBU) e livros de referência.
           </p>
         </motion.div>
@@ -210,14 +210,14 @@ export default function EducationalPreviewSection() {
               transition={{ delay: i * 0.04 }}
             >
               <Link href={page.href}>
-                <div className="group card-hover bg-white rounded-xl border border-[#1C3D5A]/6 p-5 h-full hover:border-[#B87333]/30 cursor-pointer">
+                <div className="group card-hover bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-5 h-full hover:border-[#B87333]/30 cursor-pointer">
                   <div className={`w-10 h-10 rounded-lg ${page.color} flex items-center justify-center mb-3`}>
                     {page.icon}
                   </div>
-                  <h3 className="text-sm font-semibold text-[#1C3D5A] mb-1.5 group-hover:text-[#B87333] transition-colors">
+                  <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1.5 group-hover:text-[#B87333] transition-colors">
                     {page.title}
                   </h3>
-                  <p className="text-xs text-[#1C3D5A]/45 leading-relaxed mb-3">
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/45 leading-relaxed mb-3">
                     {page.description}
                   </p>
                   <div className="flex items-center gap-1 text-xs font-medium text-[#B87333] opacity-0 group-hover:opacity-100 transition-opacity">

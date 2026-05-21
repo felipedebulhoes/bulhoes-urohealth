@@ -71,10 +71,10 @@ export default function EducationSection() {
                 Formação
               </span>
             </div>
-            <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight mb-4">
+            <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] dark:text-foreground leading-tight mb-4">
               Trajetória Acadêmica
             </h2>
-            <p className="text-base text-[#1C3D5A]/60 leading-relaxed max-w-lg">
+            <p className="text-base text-[#1C3D5A] dark:text-foreground/60 leading-relaxed max-w-lg">
               Uma formação sólida em centros de referência, com participação ativa em congressos
               nacionais e internacionais, pesquisa clínica e educação continuada.
             </p>
@@ -128,13 +128,13 @@ export default function EducationSection() {
                   <span className="text-xs font-semibold text-[#B87333] font-sans uppercase tracking-wider">
                     {item.period}
                   </span>
-                  <h3 className="text-base font-semibold text-[#1C3D5A] font-sans mt-1">
+                  <h3 className="text-base font-semibold text-[#1C3D5A] dark:text-foreground font-sans mt-1">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-[#1C3D5A]/60 font-sans mt-0.5">
+                  <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 font-sans mt-0.5">
                     {item.institution}
                   </p>
-                  <p className="text-xs text-[#1C3D5A]/40 font-sans">
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/40 font-sans">
                     {item.location}
                   </p>
                 </motion.div>
@@ -150,7 +150,7 @@ export default function EducationSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mb-6"
             >
-              <h3 className="text-xl font-semibold text-[#1C3D5A]">
+              <h3 className="text-xl font-semibold text-[#1C3D5A] dark:text-foreground">
                 Títulos & Certificações
               </h3>
             </motion.div>
@@ -162,10 +162,10 @@ export default function EducationSection() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.3, delay: 0.3 + i * 0.06 }}
-                  className="flex items-start gap-3 bg-white rounded-lg p-4 border border-[#1C3D5A]/6 shadow-sm"
+                  className="flex items-start gap-3 bg-white dark:bg-card rounded-lg p-4 border border-[#1C3D5A]/6 shadow-sm"
                 >
                   <div className="w-2 h-2 rounded-full bg-[#B87333] mt-1.5 shrink-0" />
-                  <span className="text-sm font-medium text-[#1C3D5A]/80 font-sans">
+                  <span className="text-sm font-medium text-[#1C3D5A] dark:text-foreground/80 font-sans">
                     {cert}
                   </span>
                 </motion.div>

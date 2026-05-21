@@ -159,7 +159,7 @@ function TreatmentCard({ treatment, index }: { treatment: Treatment; index: numb
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-lg transition-shadow"
+      className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 overflow-hidden hover:shadow-lg transition-shadow"
     >
       <div className="p-6 cursor-pointer" onClick={() => setExpanded(!expanded)}>
         <div className="flex items-start justify-between gap-4">
@@ -168,21 +168,21 @@ function TreatmentCard({ treatment, index }: { treatment: Treatment; index: numb
               {treatment.icon}
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-[#1C3D5A] mb-0.5">{treatment.name}</h3>
-              <p className="text-xs text-[#1C3D5A]/40 mb-2">{treatment.fullName}</p>
-              <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">{treatment.description}</p>
+              <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-0.5">{treatment.name}</h3>
+              <p className="text-xs text-[#1C3D5A] dark:text-foreground/40 mb-2">{treatment.fullName}</p>
+              <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">{treatment.description}</p>
             </div>
           </div>
-          <button className="shrink-0 mt-1 text-[#1C3D5A]/30">
+          <button className="shrink-0 mt-1 text-[#1C3D5A] dark:text-foreground/30">
             {expanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
           </button>
         </div>
         <div className="grid grid-cols-2 gap-3 mt-4">
-          <div className="flex items-center gap-2 text-xs text-[#1C3D5A]/50">
+          <div className="flex items-center gap-2 text-xs text-[#1C3D5A] dark:text-foreground/50">
             <Clock className="w-3.5 h-3.5 text-[#B87333]" />
             <span>Recuperação: {treatment.recovery.split(".")[0]}</span>
           </div>
-          <div className="flex items-center gap-2 text-xs text-[#1C3D5A]/50">
+          <div className="flex items-center gap-2 text-xs text-[#1C3D5A] dark:text-foreground/50">
             <Ruler className="w-3.5 h-3.5 text-[#B87333]" />
             <span>Duplo J: {treatment.needsDoubleJ.split(".")[0]}</span>
           </div>
@@ -197,8 +197,8 @@ function TreatmentCard({ treatment, index }: { treatment: Treatment; index: numb
         >
           <div className="p-6 space-y-5">
             <div>
-              <h4 className="text-sm font-semibold text-[#1C3D5A] mb-2">Como funciona</h4>
-              <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">{treatment.howItWorks}</p>
+              <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-2">Como funciona</h4>
+              <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">{treatment.howItWorks}</p>
             </div>
             <div className="bg-blue-50 rounded-lg p-4">
               <h4 className="text-sm font-semibold text-blue-700 mb-2">Indicações</h4>
@@ -254,7 +254,7 @@ export default function CalculosRenais() {
       {/* Intro */}
       <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">
         <div className="container max-w-4xl">
-          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] prose-p:text-[#1C3D5A]/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A]/80">
+          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] dark:text-foreground prose-p:text-[#1C3D5A] dark:text-foreground/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A] dark:text-foreground/80">
             <p>
               Os <strong>cálculos renais</strong> (pedras nos rins) afetam cerca de <strong>12% dos homens e 6% das mulheres</strong> ao longo da vida, com pico de incidência entre 30 e 60 anos. A prevalência vem aumentando globalmente, associada a mudanças dietéticas, obesidade e aquecimento climático. Sem medidas preventivas, a <strong>taxa de recorrência é de 50% em 5-10 anos</strong>.
             </p>
@@ -268,20 +268,20 @@ export default function CalculosRenais() {
       {/* Illustration */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-5xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             Tratamentos Minimamente Invasivos
           </h2>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+            <div className="bg-white dark:bg-card rounded-xl overflow-hidden shadow-sm">
               <img loading="lazy" src={IMG.ureteroscopy} alt="Ureteroscopia com laser - ilustração" className="w-full h-auto" />
               <div className="p-4">
-                <p className="text-xs text-[#1C3D5A]/50 text-center">Ureteroscopia com litotripsia a laser — o ureteroscópio acessa o rim pela uretra para fragmentar o cálculo</p>
+                <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 text-center">Ureteroscopia com litotripsia a laser — o ureteroscópio acessa o rim pela uretra para fragmentar o cálculo</p>
               </div>
             </div>
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+            <div className="bg-white dark:bg-card rounded-xl overflow-hidden shadow-sm">
               <img loading="lazy" src={IMG.doubleJ} alt="Cateter Duplo J - ilustração" className="w-full h-auto" />
               <div className="p-4">
-                <p className="text-xs text-[#1C3D5A]/50 text-center">Cateter duplo J posicionado entre o rim e a bexiga para garantir drenagem urinária</p>
+                <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 text-center">Cateter duplo J posicionado entre o rim e a bexiga para garantir drenagem urinária</p>
               </div>
             </div>
           </div>
@@ -291,7 +291,7 @@ export default function CalculosRenais() {
       {/* Treatment cards */}
       <section className="py-12 lg:py-16">
         <div className="container max-w-4xl space-y-4">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             Opções de Tratamento
           </h2>
           {treatments.map((t, i) => (
@@ -303,12 +303,12 @@ export default function CalculosRenais() {
       {/* Double J section */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             O Cateter Duplo J
           </h2>
           <div className="grid md:grid-cols-5 gap-8 items-start">
             <div className="md:col-span-3 space-y-4">
-              <div className="prose prose-sm max-w-none prose-p:text-[#1C3D5A]/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A]/80 prose-headings:text-[#1C3D5A]">
+              <div className="prose prose-sm max-w-none prose-p:text-[#1C3D5A] dark:text-foreground/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A] dark:text-foreground/80 prose-headings:text-[#1C3D5A] dark:text-foreground">
                 <h3>O que é?</h3>
                 <p>
                   O cateter duplo J (ou stent ureteral) é um tubo flexível de silicone ou poliuretano com extremidades em formato de "J" que é posicionado internamente entre o rim e a bexiga. Sua função é <strong>garantir a drenagem da urina</strong> do rim para a bexiga, prevenindo obstrução por fragmentos de cálculo, edema ou coágulos após procedimentos urológicos.
@@ -328,10 +328,10 @@ export default function CalculosRenais() {
               </div>
             </div>
             <div className="md:col-span-2">
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm sticky top-24">
+              <div className="bg-white dark:bg-card rounded-xl overflow-hidden shadow-sm sticky top-24">
                 <img loading="lazy" src={IMG.jjPlacement} alt="Posicionamento do cateter duplo J" className="w-full h-auto" />
                 <div className="p-4 space-y-3">
-                  <p className="text-xs text-[#1C3D5A]/50 text-center">Posicionamento do cateter duplo J no trato urinário</p>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 text-center">Posicionamento do cateter duplo J no trato urinário</p>
                   <div className="bg-amber-50 rounded-lg p-3">
                     <h4 className="text-xs font-semibold text-amber-700 mb-1">Sintomas comuns com o cateter:</h4>
                     <ul className="text-[10px] text-amber-800/70 space-y-1">
@@ -352,10 +352,10 @@ export default function CalculosRenais() {
       {/* Prevention */}
       <section className="py-12 lg:py-16">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-3 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-3 text-center font-serif">
             Prevenção de Cálculos Renais
           </h2>
-          <p className="text-center text-sm text-[#1C3D5A]/50 mb-10 max-w-2xl mx-auto">
+          <p className="text-center text-sm text-[#1C3D5A] dark:text-foreground/50 mb-10 max-w-2xl mx-auto">
             A prevenção é fundamental para evitar recorrência. Medidas dietéticas e comportamentais simples podem reduzir o risco de novos cálculos em até 50%.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -366,20 +366,20 @@ export default function CalculosRenais() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-xl border border-[#1C3D5A]/6 p-5 hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-5 hover:shadow-md transition-shadow"
               >
                 <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600 mb-3">
                   {tip.icon}
                 </div>
-                <h3 className="text-sm font-semibold text-[#1C3D5A] mb-2">{tip.title}</h3>
-                <p className="text-xs text-[#1C3D5A]/55 leading-relaxed mb-2">{tip.detail}</p>
+                <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-2">{tip.title}</h3>
+                <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed mb-2">{tip.detail}</p>
                 <p className="text-[10px] text-[#B87333] font-medium">{tip.source}</p>
               </motion.div>
             ))}
           </div>
           <div className="mt-8">
             <img loading="lazy" src={IMG.prevention} alt="Dieta para prevenção de cálculos renais" className="w-full max-w-2xl mx-auto rounded-xl shadow-sm" />
-            <p className="text-xs text-[#1C3D5A]/40 text-center mt-3">Medidas dietéticas para prevenção de cálculos renais</p>
+            <p className="text-xs text-[#1C3D5A] dark:text-foreground/40 text-center mt-3">Medidas dietéticas para prevenção de cálculos renais</p>
           </div>
         </div>
       </section>
@@ -387,7 +387,7 @@ export default function CalculosRenais() {
       {/* Decision flowchart */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-3xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             Como escolhemos o tratamento?
           </h2>
           <div className="space-y-4">
@@ -404,12 +404,12 @@ export default function CalculosRenais() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-5 border border-[#1C3D5A]/6"
+                className="flex items-start gap-4 bg-white dark:bg-card rounded-xl p-5 border border-[#1C3D5A]/6"
               >
                 <div className={`shrink-0 w-20 h-10 rounded-lg bg-${item.color}-50 flex items-center justify-center`}>
                   <span className={`text-sm font-bold text-${item.color}-600`}>{item.size}</span>
                 </div>
-                <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">{item.rec}</p>
+                <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">{item.rec}</p>
               </motion.div>
             ))}
           </div>
@@ -419,8 +419,8 @@ export default function CalculosRenais() {
       {/* References */}
       <section className="py-8 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h3 className="text-xs font-semibold text-[#1C3D5A]/40 uppercase tracking-wider mb-3">Referências</h3>
-          <ol className="text-[10px] text-[#1C3D5A]/35 space-y-1 list-decimal list-inside">
+          <h3 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground/40 uppercase tracking-wider mb-3">Referências</h3>
+          <ol className="text-[10px] text-[#1C3D5A] dark:text-foreground/35 space-y-1 list-decimal list-inside">
             <li>Türk C, et al. EAU Guidelines on Urolithiasis. European Association of Urology, 2025.</li>
             <li>Assimos D, et al. AUA/Endourology Society Guideline: Surgical Management of Stones. American Urological Association, 2025.</li>
             <li>Partin AW, et al. Campbell-Walsh-Wein Urology, 13th Edition. Elsevier, 2024. Chapters 90-100.</li>

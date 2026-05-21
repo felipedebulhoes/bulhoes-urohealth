@@ -105,7 +105,7 @@ export default function LocationSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="consultorios" className="py-20 lg:py-28 bg-white" ref={ref}>
+    <section id="consultorios" className="py-20 lg:py-28 bg-white dark:bg-card" ref={ref}>
       <div className="container">
         {/* Section header */}
         <motion.div
@@ -120,10 +120,10 @@ export default function LocationSection() {
               Onde Atendo
             </span>
           </div>
-          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight max-w-xl">
+          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] dark:text-foreground leading-tight max-w-xl">
             Consultórios e Atendimento
           </h2>
-          <p className="text-[#1C3D5A]/50 font-sans mt-3 max-w-2xl text-base">
+          <p className="text-[#1C3D5A] dark:text-foreground/50 font-sans mt-3 max-w-2xl text-base">
             Atendimento presencial em 6 locais — Campinas, São Paulo e ABC — além de teleconsulta por vídeo.
           </p>
         </motion.div>
@@ -161,15 +161,15 @@ export default function LocationSection() {
                   <div className="flex items-start gap-2.5">
                     <MapPin className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm text-[#1C3D5A] font-sans font-medium">{loc.address}</p>
-                      <p className="text-xs text-[#1C3D5A]/50 font-sans">{loc.neighborhood}</p>
+                      <p className="text-sm text-[#1C3D5A] dark:text-foreground font-sans font-medium">{loc.address}</p>
+                      <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 font-sans">{loc.neighborhood}</p>
                     </div>
                   </div>
 
                   {loc.phone && (
                     <div className="flex items-center gap-2.5">
                       <Phone className="w-4 h-4 text-[#B87333] shrink-0" />
-                      <span className="text-sm text-[#1C3D5A]/70 font-sans">{loc.phone}</span>
+                      <span className="text-sm text-[#1C3D5A] dark:text-foreground/70 font-sans">{loc.phone}</span>
                     </div>
                   )}
 
@@ -182,7 +182,7 @@ export default function LocationSection() {
 
                   <div className="flex items-center gap-2.5">
                     <Clock className="w-4 h-4 text-[#B87333] shrink-0" />
-                    <span className="text-xs text-[#1C3D5A]/50 font-sans">{loc.hours}</span>
+                    <span className="text-xs text-[#1C3D5A] dark:text-foreground/50 font-sans">{loc.hours}</span>
                   </div>
 
                   <div className="flex items-center gap-2.5">
@@ -196,13 +196,13 @@ export default function LocationSection() {
                   <div className="mt-4 pt-4 border-t border-[#1C3D5A]/6">
                     <div className="flex items-center gap-2 mb-2">
                       <CreditCard className="w-3.5 h-3.5 text-[#B87333]" />
-                      <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A]/40 font-semibold">Formas de pagamento</span>
+                      <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A] dark:text-foreground/40 font-semibold">Formas de pagamento</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {loc.payment.map((method: string) => (
                         <span
                           key={method}
-                          className="text-[10px] font-medium text-[#1C3D5A]/50 bg-white rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans"
+                          className="text-[10px] font-medium text-[#1C3D5A] dark:text-foreground/50 bg-white dark:bg-card rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans"
                         >
                           {method}
                         </span>
@@ -216,13 +216,13 @@ export default function LocationSection() {
                   <div className="mt-4 pt-4 border-t border-[#1C3D5A]/6">
                     <div className="flex items-center gap-2 mb-2">
                       <ShieldCheck className="w-3.5 h-3.5 text-[#B87333]" />
-                      <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A]/40 font-semibold">Convênios aceitos</span>
+                      <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A] dark:text-foreground/40 font-semibold">Convênios aceitos</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {loc.insurances.map((ins) => (
                         <span
                           key={ins}
-                          className="text-[10px] font-medium text-[#1C3D5A]/50 bg-white rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans"
+                          className="text-[10px] font-medium text-[#1C3D5A] dark:text-foreground/50 bg-white dark:bg-card rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans"
                         >
                           {ins}
                         </span>

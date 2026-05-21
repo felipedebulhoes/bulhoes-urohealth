@@ -17,7 +17,7 @@ export default function BlogPreviewSection() {
   if (!featured) return null;
 
   return (
-    <section id="blog" className="py-20 lg:py-28 bg-white" ref={ref}>
+    <section id="blog" className="py-20 lg:py-28 bg-white dark:bg-card" ref={ref}>
       <div className="container">
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 mb-12">
@@ -32,7 +32,7 @@ export default function BlogPreviewSection() {
                 Blog
               </span>
             </div>
-            <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight">
+            <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] dark:text-foreground leading-tight">
               Artigos sobre
               <span className="block text-[#B87333]">Saúde Urológica</span>
             </h2>
@@ -44,7 +44,7 @@ export default function BlogPreviewSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex items-end"
           >
-            <p className="text-base text-[#1C3D5A]/60 leading-relaxed">
+            <p className="text-base text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">
               Conteúdo baseado em evidências científicas para ajudar você a cuidar da sua saúde
               com informação de qualidade.
             </p>
@@ -58,7 +58,7 @@ export default function BlogPreviewSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Link href={`/blog/${featured.slug}`}>
-            <div className="group card-hover grid lg:grid-cols-2 gap-0 bg-white rounded-xl border border-[#1C3D5A]/8 overflow-hidden">
+            <div className="group card-hover grid lg:grid-cols-2 gap-0 bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/8 overflow-hidden">
               {/* Image */}
               <div className="relative overflow-hidden aspect-[16/9] lg:aspect-auto">
                 <img loading="lazy"
@@ -75,7 +75,7 @@ export default function BlogPreviewSection() {
 
               {/* Content */}
               <div className="p-8 lg:p-10 flex flex-col justify-center">
-                <div className="flex items-center gap-4 text-xs text-[#1C3D5A]/40 mb-4">
+                <div className="flex items-center gap-4 text-xs text-[#1C3D5A] dark:text-foreground/40 mb-4">
                   <span className="flex items-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5" />
                     {featured.date}
@@ -86,11 +86,11 @@ export default function BlogPreviewSection() {
                   </span>
                 </div>
 
-                <h3 className="text-xl lg:text-2xl font-semibold text-[#1C3D5A] leading-snug mb-4 group-hover:text-[#B87333] transition-colors">
+                <h3 className="text-xl lg:text-2xl font-semibold text-[#1C3D5A] dark:text-foreground leading-snug mb-4 group-hover:text-[#B87333] transition-colors">
                   {featured.title}
                 </h3>
 
-                <p className="text-sm text-[#1C3D5A]/50 leading-relaxed mb-6">
+                <p className="text-sm text-[#1C3D5A] dark:text-foreground/50 leading-relaxed mb-6">
                   {featured.excerpt}
                 </p>
 
@@ -101,8 +101,8 @@ export default function BlogPreviewSection() {
                     className="w-9 h-9 rounded-full object-cover border border-[#B87333]/20"
                   />
                   <div>
-                    <p className="text-xs font-semibold text-[#1C3D5A]">{featured.author.name}</p>
-                    <p className="text-[10px] text-[#1C3D5A]/40">{featured.author.credentials}</p>
+                    <p className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground">{featured.author.name}</p>
+                    <p className="text-[10px] text-[#1C3D5A] dark:text-foreground/40">{featured.author.credentials}</p>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@ export default function BlogPreviewSection() {
           className="mt-8 text-center"
         >
           <Link href="/blog">
-            <Button variant="outline" className="border-[#1C3D5A]/10 text-[#1C3D5A]/60 hover:text-[#1C3D5A] hover:border-[#1C3D5A]/20">
+            <Button variant="outline" className="border-[#1C3D5A]/10 text-[#1C3D5A] dark:text-foreground/60 hover:text-[#1C3D5A] dark:text-foreground hover:border-[#1C3D5A]/20">
               Ver todos os artigos
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>

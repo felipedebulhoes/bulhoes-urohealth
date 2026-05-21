@@ -39,7 +39,7 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre" className="py-20 lg:py-28 bg-white" ref={ref}>
+    <section id="sobre" className="py-20 lg:py-28 bg-white dark:bg-card" ref={ref}>
       <div className="container">
         {/* Section header */}
         <motion.div
@@ -54,7 +54,7 @@ export default function AboutSection() {
               Sobre o Médico
             </span>
           </div>
-          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] leading-tight max-w-xl">
+          <h2 className="text-3xl lg:text-4xl text-[#1C3D5A] dark:text-foreground leading-tight max-w-xl">
             Excelência técnica com cuidado humanizado
           </h2>
         </motion.div>
@@ -88,19 +88,19 @@ export default function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <p className="text-base lg:text-lg text-[#1C3D5A]/70 leading-relaxed mb-6">
+            <p className="text-base lg:text-lg text-[#1C3D5A] dark:text-foreground/70 leading-relaxed mb-6">
               Sou o Dr. Felipe de Bulhões, médico especialista em Urologia e Cirurgia Geral.
               Acredito que a excelência médica exige duas coisas: domínio técnico absoluto e a
               capacidade de ouvir o paciente de verdade.
             </p>
-            <p className="text-base lg:text-lg text-[#1C3D5A]/70 leading-relaxed mb-6">
+            <p className="text-base lg:text-lg text-[#1C3D5A] dark:text-foreground/70 leading-relaxed mb-6">
               Na prática clínica, atuo como o médico principal da saúde do homem. Nossa primeira
               consulta é uma investigação completa — avaliamos desde a saúde metabólica e
               distribuição de peso até o rastreio rigoroso da próstata e exames funcionais como
               a urodinâmica. O objetivo não é apenas tratar o que dói hoje, mas otimizar sua
               performance para o futuro.
             </p>
-            <p className="text-base lg:text-lg text-[#1C3D5A]/70 leading-relaxed mb-8">
+            <p className="text-base lg:text-lg text-[#1C3D5A] dark:text-foreground/70 leading-relaxed mb-8">
               No centro cirúrgico, minha prioridade é a sua segurança e rápida recuperação.
               Com treinamento intensivo em centros de alto volume, utilizo técnicas minimamente
               invasivas — robótica, videolaparoscopia e endourologia — para o tratamento de
@@ -124,8 +124,8 @@ export default function AboutSection() {
                     <cred.icon className="w-4 h-4 text-[#B87333]" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] font-sans mb-1">{cred.title}</h4>
-                    <p className="text-xs text-[#1C3D5A]/55 font-sans leading-relaxed">{cred.desc}</p>
+                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground font-sans mb-1">{cred.title}</h4>
+                    <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 font-sans leading-relaxed">{cred.desc}</p>
                   </div>
                 </motion.div>
               ))}

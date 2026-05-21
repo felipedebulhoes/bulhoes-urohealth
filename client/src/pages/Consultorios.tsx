@@ -134,7 +134,7 @@ export default function Consultorios() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-card">
       {/* Header */}
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
@@ -209,14 +209,14 @@ export default function Consultorios() {
                     <div className="flex items-start gap-2.5">
                       <MapPin className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-sm text-[#1C3D5A] font-sans font-medium">{loc.address}</p>
-                        <p className="text-xs text-[#1C3D5A]/50 font-sans">{loc.neighborhood}</p>
+                        <p className="text-sm text-[#1C3D5A] dark:text-foreground font-sans font-medium">{loc.address}</p>
+                        <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 font-sans">{loc.neighborhood}</p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2.5">
                       <Phone className="w-4 h-4 text-[#B87333] shrink-0" />
-                      <span className="text-sm text-[#1C3D5A]/70 font-sans">{loc.phone}</span>
+                      <span className="text-sm text-[#1C3D5A] dark:text-foreground/70 font-sans">{loc.phone}</span>
                     </div>
 
                     {loc.whatsapp && (
@@ -228,7 +228,7 @@ export default function Consultorios() {
 
                     <div className="flex items-center gap-2.5">
                       <Clock className="w-4 h-4 text-[#B87333] shrink-0" />
-                      <span className="text-xs text-[#1C3D5A]/50 font-sans">{loc.hours}</span>
+                      <span className="text-xs text-[#1C3D5A] dark:text-foreground/50 font-sans">{loc.hours}</span>
                     </div>
 
                     <div className="flex items-center gap-2.5">
@@ -242,11 +242,11 @@ export default function Consultorios() {
                     <div className="mt-4 pt-4 border-t border-[#1C3D5A]/6">
                       <div className="flex items-center gap-2 mb-2">
                         <CreditCard className="w-3.5 h-3.5 text-[#B87333]" />
-                        <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A]/40 font-semibold">Formas de pagamento</span>
+                        <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A] dark:text-foreground/40 font-semibold">Formas de pagamento</span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {loc.payment.map((method) => (
-                          <span key={method} className="text-[10px] font-medium text-[#1C3D5A]/50 bg-white rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans">{method}</span>
+                          <span key={method} className="text-[10px] font-medium text-[#1C3D5A] dark:text-foreground/50 bg-white dark:bg-card rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans">{method}</span>
                         ))}
                       </div>
                     </div>
@@ -257,11 +257,11 @@ export default function Consultorios() {
                     <div className="mt-4 pt-4 border-t border-[#1C3D5A]/6">
                       <div className="flex items-center gap-2 mb-2">
                         <ShieldCheck className="w-3.5 h-3.5 text-[#B87333]" />
-                        <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A]/40 font-semibold">Convênios aceitos</span>
+                        <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A] dark:text-foreground/40 font-semibold">Convênios aceitos</span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {loc.insurances.map((ins) => (
-                          <span key={ins} className="text-[10px] font-medium text-[#1C3D5A]/50 bg-white rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans">{ins}</span>
+                          <span key={ins} className="text-[10px] font-medium text-[#1C3D5A] dark:text-foreground/50 bg-white dark:bg-card rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans">{ins}</span>
                         ))}
                       </div>
                     </div>

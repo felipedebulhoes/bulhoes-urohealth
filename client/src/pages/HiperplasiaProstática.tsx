@@ -168,8 +168,8 @@ function Accordion({ titulo, children, defaultOpen = false }: { titulo: string; 
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between p-4 md:p-5 text-left hover:bg-[#1C3D5A]/2 transition-colors"
       >
-        <span className="font-semibold text-[#1C3D5A] text-sm md:text-base">{titulo}</span>
-        {open ? <ChevronUp className="w-4 h-4 text-[#1C3D5A]/40 shrink-0" /> : <ChevronDown className="w-4 h-4 text-[#1C3D5A]/40 shrink-0" />}
+        <span className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm md:text-base">{titulo}</span>
+        {open ? <ChevronUp className="w-4 h-4 text-[#1C3D5A] dark:text-foreground/40 shrink-0" /> : <ChevronDown className="w-4 h-4 text-[#1C3D5A] dark:text-foreground/40 shrink-0" />}
       </button>
       {open && (
         <motion.div
@@ -208,34 +208,34 @@ export default function HiperplasiaProstática() {
           viewport={{ once: true }}
           className="bg-gradient-to-br from-[#B87333]/5 to-[#B87333]/10 rounded-2xl p-6 md:p-8 border border-[#B87333]/15"
         >
-          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] mb-4">
+          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] dark:text-foreground mb-4">
             O que é a Hiperplasia Prostática Benigna?
           </h2>
-          <div className="space-y-4 text-sm md:text-base text-[#1C3D5A]/70 leading-relaxed">
+          <div className="space-y-4 text-sm md:text-base text-[#1C3D5A] dark:text-foreground/70 leading-relaxed">
             <p>
-              A <strong className="text-[#1C3D5A]">próstata</strong> é uma glândula do tamanho de uma noz que fica logo abaixo da bexiga e envolve a uretra (o canal por onde a urina sai). Sua função principal é produzir parte do líquido seminal.
+              A <strong className="text-[#1C3D5A] dark:text-foreground">próstata</strong> é uma glândula do tamanho de uma noz que fica logo abaixo da bexiga e envolve a uretra (o canal por onde a urina sai). Sua função principal é produzir parte do líquido seminal.
             </p>
             <p>
-              Com o passar dos anos, a próstata tende a crescer naturalmente — isso é chamado de <strong className="text-[#1C3D5A]">Hiperplasia Prostática Benigna (HPB)</strong>. A palavra "benigna" significa que <strong className="text-[#1C3D5A]">não é câncer</strong>. Esse crescimento pode comprimir a uretra e dificultar a passagem da urina, causando sintomas urinários.
+              Com o passar dos anos, a próstata tende a crescer naturalmente — isso é chamado de <strong className="text-[#1C3D5A] dark:text-foreground">Hiperplasia Prostática Benigna (HPB)</strong>. A palavra "benigna" significa que <strong className="text-[#1C3D5A] dark:text-foreground">não é câncer</strong>. Esse crescimento pode comprimir a uretra e dificultar a passagem da urina, causando sintomas urinários.
             </p>
             <p>
-              A HPB é extremamente comum: afeta cerca de <strong className="text-[#1C3D5A]">50% dos homens aos 50 anos</strong> e até <strong className="text-[#1C3D5A]">90% após os 80 anos</strong>. Nem todo homem com próstata aumentada terá sintomas — o tamanho da próstata nem sempre se correlaciona com a intensidade dos sintomas.
+              A HPB é extremamente comum: afeta cerca de <strong className="text-[#1C3D5A] dark:text-foreground">50% dos homens aos 50 anos</strong> e até <strong className="text-[#1C3D5A] dark:text-foreground">90% após os 80 anos</strong>. Nem todo homem com próstata aumentada terá sintomas — o tamanho da próstata nem sempre se correlaciona com a intensidade dos sintomas.
             </p>
           </div>
 
           {/* Ilustração simplificada */}
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white rounded-xl p-4 text-center border border-[#1C3D5A]/6">
+            <div className="bg-white dark:bg-card rounded-xl p-4 text-center border border-[#1C3D5A]/6">
               <div className="text-2xl font-bold text-[#B87333]">~20g</div>
-              <div className="text-xs text-[#1C3D5A]/50 mt-1">Próstata normal<br />(tamanho de uma noz)</div>
+              <div className="text-xs text-[#1C3D5A] dark:text-foreground/50 mt-1">Próstata normal<br />(tamanho de uma noz)</div>
             </div>
-            <div className="bg-white rounded-xl p-4 text-center border border-[#1C3D5A]/6">
+            <div className="bg-white dark:bg-card rounded-xl p-4 text-center border border-[#1C3D5A]/6">
               <div className="text-2xl font-bold text-amber-500">40-60g</div>
-              <div className="text-xs text-[#1C3D5A]/50 mt-1">HPB moderada<br />(tamanho de um limão)</div>
+              <div className="text-xs text-[#1C3D5A] dark:text-foreground/50 mt-1">HPB moderada<br />(tamanho de um limão)</div>
             </div>
-            <div className="bg-white rounded-xl p-4 text-center border border-[#1C3D5A]/6">
+            <div className="bg-white dark:bg-card rounded-xl p-4 text-center border border-[#1C3D5A]/6">
               <div className="text-2xl font-bold text-red-500">80-150g+</div>
-              <div className="text-xs text-[#1C3D5A]/50 mt-1">HPB volumosa<br />(tamanho de uma laranja)</div>
+              <div className="text-xs text-[#1C3D5A] dark:text-foreground/50 mt-1">HPB volumosa<br />(tamanho de uma laranja)</div>
             </div>
           </div>
         </motion.div>
@@ -248,10 +248,10 @@ export default function HiperplasiaProstática() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] mb-2">
+          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] dark:text-foreground mb-2">
             Quais são os sintomas?
           </h2>
-          <p className="text-sm text-[#1C3D5A]/50 mb-6">
+          <p className="text-sm text-[#1C3D5A] dark:text-foreground/50 mb-6">
             Os sintomas da HPB são chamados de LUTS (Lower Urinary Tract Symptoms — Sintomas do Trato Urinário Inferior). Nem todos os homens apresentam todos os sintomas.
           </p>
         </motion.div>
@@ -264,15 +264,15 @@ export default function HiperplasiaProstática() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="bg-white rounded-xl border border-[#1C3D5A]/6 p-5 hover:border-[#B87333]/20 hover:shadow-sm transition-all"
+              className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-5 hover:border-[#B87333]/20 hover:shadow-sm transition-all"
             >
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-lg bg-[#B87333]/10 text-[#B87333] flex items-center justify-center shrink-0">
                   {s.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#1C3D5A] text-sm mb-1">{s.titulo}</h3>
-                  <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">{s.descricao}</p>
+                  <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">{s.titulo}</h3>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">{s.descricao}</p>
                 </div>
               </div>
             </motion.div>
@@ -308,7 +308,7 @@ export default function HiperplasiaProstática() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] mb-6">
+          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] dark:text-foreground mb-6">
             Fatores de Risco
           </h2>
         </motion.div>
@@ -321,12 +321,12 @@ export default function HiperplasiaProstática() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="flex items-start gap-3 bg-white rounded-xl border border-[#1C3D5A]/6 p-4"
+              className="flex items-start gap-3 bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-4"
             >
               <ArrowRight className="w-4 h-4 text-[#B87333] shrink-0 mt-0.5" />
               <div>
-                <span className="font-semibold text-[#1C3D5A] text-sm">{f.fator}</span>
-                <p className="text-xs text-[#1C3D5A]/50 mt-0.5">{f.detalhe}</p>
+                <span className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm">{f.fator}</span>
+                <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 mt-0.5">{f.detalhe}</p>
               </div>
             </motion.div>
           ))}
@@ -340,10 +340,10 @@ export default function HiperplasiaProstática() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] mb-2">
+          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] dark:text-foreground mb-2">
             Como é feito o diagnóstico?
           </h2>
-          <p className="text-sm text-[#1C3D5A]/50 mb-6">
+          <p className="text-sm text-[#1C3D5A] dark:text-foreground/50 mb-6">
             O diagnóstico da HPB é feito pelo urologista através de uma combinação de exames. Nem todos são necessários em todos os casos — o médico vai indicar os mais adequados para a sua situação.
           </p>
         </motion.div>
@@ -356,27 +356,27 @@ export default function HiperplasiaProstática() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
-              className="bg-white rounded-xl border border-[#1C3D5A]/6 p-5"
+              className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-5"
             >
               <div className="flex items-start gap-3">
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${e.obrigatorio ? 'bg-[#B87333]/10 text-[#B87333]' : 'bg-[#1C3D5A]/5 text-[#1C3D5A]/40'}`}>
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${e.obrigatorio ? 'bg-[#B87333]/10 text-[#B87333]' : 'bg-[#1C3D5A]/5 text-[#1C3D5A] dark:text-foreground/40'}`}>
                   {e.obrigatorio ? <CheckCircle2 className="w-4 h-4" /> : <HelpCircle className="w-4 h-4" />}
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold text-[#1C3D5A] text-sm">{e.nome}</h3>
+                    <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm">{e.nome}</h3>
                     {e.obrigatorio && (
                       <span className="text-[10px] bg-[#B87333]/10 text-[#B87333] px-2 py-0.5 rounded-full font-medium">
                         Essencial
                       </span>
                     )}
                     {!e.obrigatorio && (
-                      <span className="text-[10px] bg-[#1C3D5A]/5 text-[#1C3D5A]/40 px-2 py-0.5 rounded-full font-medium">
+                      <span className="text-[10px] bg-[#1C3D5A]/5 text-[#1C3D5A] dark:text-foreground/40 px-2 py-0.5 rounded-full font-medium">
                         Complementar
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">{e.descricao}</p>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">{e.descricao}</p>
                 </div>
               </div>
             </motion.div>
@@ -391,10 +391,10 @@ export default function HiperplasiaProstática() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] mb-2">
+          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] dark:text-foreground mb-2">
             Opções de Tratamento
           </h2>
-          <p className="text-sm text-[#1C3D5A]/50 mb-6">
+          <p className="text-sm text-[#1C3D5A] dark:text-foreground/50 mb-6">
             O tratamento da HPB é individualizado — depende da intensidade dos sintomas, do tamanho da próstata, da presença de complicações e das preferências do paciente. A decisão é sempre compartilhada entre médico e paciente.
           </p>
         </motion.div>
@@ -414,14 +414,14 @@ export default function HiperplasiaProstática() {
                   {t.icone}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#1C3D5A] text-base">{t.categoria}</h3>
-                  <p className="text-xs text-[#1C3D5A]/50">Para quem: {t.paraQuem}</p>
+                  <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-base">{t.categoria}</h3>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/50">Para quem: {t.paraQuem}</p>
                 </div>
               </div>
-              <p className="text-sm text-[#1C3D5A]/70 leading-relaxed mb-3">{t.descricao}</p>
+              <p className="text-sm text-[#1C3D5A] dark:text-foreground/70 leading-relaxed mb-3">{t.descricao}</p>
               <div className="flex flex-wrap gap-2">
                 {t.exemplos.map((ex, j) => (
-                  <span key={j} className="text-[11px] bg-white/60 text-[#1C3D5A]/60 px-2.5 py-1 rounded-full border border-[#1C3D5A]/8">
+                  <span key={j} className="text-[11px] bg-white/60 text-[#1C3D5A] dark:text-foreground/60 px-2.5 py-1 rounded-full border border-[#1C3D5A]/8">
                     {ex}
                   </span>
                 ))}
@@ -440,8 +440,8 @@ export default function HiperplasiaProstática() {
           <div className="flex items-start gap-3">
             <BookOpen className="w-5 h-5 text-[#B87333] shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-[#1C3D5A] text-sm mb-1">Quer saber mais sobre cada técnica cirúrgica?</h3>
-              <p className="text-xs text-[#1C3D5A]/55 mb-2">
+              <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Quer saber mais sobre cada técnica cirúrgica?</h3>
+              <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 mb-2">
                 Temos uma página detalhada comparando todas as técnicas cirúrgicas para HPB (RTU, HoLEP, ThuLEP, Rezum, UroLift, GreenLight e mais), com dados de eficácia, tempo de recuperação e preservação da ejaculação.
               </p>
               <a
@@ -475,15 +475,15 @@ export default function HiperplasiaProstática() {
             </p>
           </div>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="bg-white/10 rounded-xl p-4 text-center">
+            <div className="bg-white dark:bg-card/10 rounded-xl p-4 text-center">
               <Heart className="w-5 h-5 text-[#B87333] mx-auto mb-2" />
               <div className="text-xs text-white/70">Atendimento humanizado e acolhedor</div>
             </div>
-            <div className="bg-white/10 rounded-xl p-4 text-center">
+            <div className="bg-white dark:bg-card/10 rounded-xl p-4 text-center">
               <Stethoscope className="w-5 h-5 text-[#B87333] mx-auto mb-2" />
               <div className="text-xs text-white/70">Decisão compartilhada entre médico e paciente</div>
             </div>
-            <div className="bg-white/10 rounded-xl p-4 text-center">
+            <div className="bg-white dark:bg-card/10 rounded-xl p-4 text-center">
               <ShieldCheck className="w-5 h-5 text-[#B87333] mx-auto mb-2" />
               <div className="text-xs text-white/70">Tratamento baseado em evidências científicas</div>
             </div>
@@ -498,7 +498,7 @@ export default function HiperplasiaProstática() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] mb-6">
+          <h2 className="text-xl md:text-2xl font-serif text-[#1C3D5A] dark:text-foreground mb-6">
             Perguntas Frequentes
           </h2>
         </motion.div>
@@ -513,7 +513,7 @@ export default function HiperplasiaProstática() {
               transition={{ delay: i * 0.03 }}
             >
               <Accordion titulo={pf.pergunta} defaultOpen={i === 0}>
-                <p className="text-sm text-[#1C3D5A]/65 leading-relaxed">{pf.resposta}</p>
+                <p className="text-sm text-[#1C3D5A] dark:text-foreground/65 leading-relaxed">{pf.resposta}</p>
               </Accordion>
             </motion.div>
           ))}
@@ -522,9 +522,9 @@ export default function HiperplasiaProstática() {
 
       {/* ─── Referências ─── */}
       <section className="mb-8">
-        <h2 className="text-lg font-serif text-[#1C3D5A] mb-4">Referências</h2>
+        <h2 className="text-lg font-serif text-[#1C3D5A] dark:text-foreground mb-4">Referências</h2>
         <div className="bg-[#1C3D5A]/2 rounded-xl p-5 border border-[#1C3D5A]/6">
-          <ol className="text-[11px] text-[#1C3D5A]/45 space-y-1.5 list-decimal list-inside">
+          <ol className="text-[11px] text-[#1C3D5A] dark:text-foreground/45 space-y-1.5 list-decimal list-inside">
             <li>EAU Guidelines on Management of Non-neurogenic Male LUTS (incl. BPO). European Association of Urology, 2025.</li>
             <li>Lerner LB, McVary KT, Barry MJ, et al. Management of Lower Urinary Tract Symptoms Attributed to Benign Prostatic Hyperplasia: AUA Guideline Part I and II. J Urol. 2021;206(4):806-826.</li>
             <li>Campbell-Walsh-Wein Urology, 13th Edition — Chapter on Benign Prostatic Hyperplasia. Elsevier, 2024.</li>

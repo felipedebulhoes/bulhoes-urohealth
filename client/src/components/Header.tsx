@@ -82,6 +82,15 @@ export default function Header() {
     if (href.startsWith("#")) {
       if (!isHomePage) {
         window.location.href = "/" + href;
+        return;
+      }
+      const id = href.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        const headerOffset = 96;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
       }
     }
   };
@@ -90,7 +99,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#C4C4C4]/30"
+          ? "bg-white/95 dark:bg-card/95 backdrop-blur-md shadow-sm border-b border-[#C4C4C4]/30"
           : "bg-transparent"
       }`}
     >
@@ -113,7 +122,7 @@ export default function Header() {
               onClick={() => handleNavClick(link.href)}
               className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
                 scrolled
-                  ? "text-[#1C3D5A]/70 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
+                  ? "text-[#1C3D5A] dark:text-foreground/70 hover:text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
             >
@@ -128,7 +137,7 @@ export default function Header() {
               onMouseEnter={() => setEduOpen(true)}
               className={`flex items-center gap-1 px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
                 scrolled
-                  ? "text-[#1C3D5A]/70 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
+                  ? "text-[#1C3D5A] dark:text-foreground/70 hover:text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
             >
@@ -144,7 +153,7 @@ export default function Header() {
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.15 }}
                   onMouseLeave={() => setEduOpen(false)}
-                  className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-xl border border-[#1C3D5A]/8 overflow-hidden py-2"
+                  className="absolute top-full left-0 mt-1 w-72 bg-white dark:bg-card rounded-xl shadow-xl border border-[#1C3D5A]/8 overflow-hidden py-2"
                 >
                   {educationalLinks.map((link) => (
                     <Link
@@ -152,7 +161,7 @@ export default function Header() {
                       href={link.href}
                       onClick={() => setEduOpen(false)}
                     >
-                      <div className="px-4 py-2.5 text-sm text-[#1C3D5A]/70 hover:bg-[#B87333]/5 hover:text-[#B87333] transition-colors cursor-pointer">
+                      <div className="px-4 py-2.5 text-sm text-[#1C3D5A] dark:text-foreground/70 hover:bg-[#B87333]/5 hover:text-[#B87333] transition-colors cursor-pointer">
                         {link.label}
                       </div>
                     </Link>
@@ -180,7 +189,7 @@ export default function Header() {
                 onClick={() => handleNavClick(link.href)}
                 className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
                   scrolled
-                    ? "text-[#1C3D5A]/70 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
+                    ? "text-[#1C3D5A] dark:text-foreground/70 hover:text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5"
                     : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
@@ -196,7 +205,7 @@ export default function Header() {
               onClick={() => handleNavClick(link.href)}
               className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
                 scrolled
-                  ? "text-[#1C3D5A]/70 hover:text-[#1C3D5A] hover:bg-[#1C3D5A]/5"
+                  ? "text-[#1C3D5A] dark:text-foreground/70 hover:text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
             >
@@ -225,7 +234,7 @@ export default function Header() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className={`lg:hidden p-2 rounded-md transition-colors ${
-            scrolled ? "text-[#1C3D5A]" : "text-white"
+            scrolled ? "text-[#1C3D5A] dark:text-foreground" : "text-white"
           }`}
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -239,7 +248,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-[#C4C4C4]/30 overflow-hidden"
+            className="lg:hidden bg-white dark:bg-card border-b border-[#C4C4C4]/30 overflow-hidden"
           >
             <nav className="container py-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
               {mainNavLinks.slice(0, 3).map((link) => (
@@ -247,7 +256,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="px-4 py-3 text-[#1C3D5A] font-medium text-sm rounded-md hover:bg-[#1C3D5A]/5 transition-colors"
+                  className="px-4 py-3 text-[#1C3D5A] dark:text-foreground font-medium text-sm rounded-md hover:bg-[#1C3D5A]/5 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -256,7 +265,7 @@ export default function Header() {
               {/* Mobile Educativo accordion */}
               <button
                 onClick={() => setMobileEduOpen(!mobileEduOpen)}
-                className="flex items-center justify-between px-4 py-3 text-[#1C3D5A] font-medium text-sm rounded-md hover:bg-[#1C3D5A]/5 transition-colors"
+                className="flex items-center justify-between px-4 py-3 text-[#1C3D5A] dark:text-foreground font-medium text-sm rounded-md hover:bg-[#1C3D5A]/5 transition-colors"
               >
                 Conteúdo Educativo
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileEduOpen ? 'rotate-180' : ''}`} />
@@ -275,7 +284,7 @@ export default function Header() {
                         href={link.href}
                         onClick={() => { setMobileOpen(false); setMobileEduOpen(false); }}
                       >
-                        <div className="px-8 py-2.5 text-[#1C3D5A]/60 text-sm hover:text-[#B87333] transition-colors cursor-pointer">
+                        <div className="px-8 py-2.5 text-[#1C3D5A] dark:text-foreground/60 text-sm hover:text-[#B87333] transition-colors cursor-pointer">
                           {link.label}
                         </div>
                       </Link>
@@ -295,7 +304,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href.startsWith("/") ? link.href : link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="px-4 py-3 text-[#1C3D5A] font-medium text-sm rounded-md hover:bg-[#1C3D5A]/5 transition-colors"
+                  className="px-4 py-3 text-[#1C3D5A] dark:text-foreground font-medium text-sm rounded-md hover:bg-[#1C3D5A]/5 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -303,7 +312,7 @@ export default function Header() {
 
               {/* Theme Toggle Mobile */}
               <div className="flex items-center justify-between px-4 py-2 border-t border-[#C4C4C4]/20 mt-2">
-                <span className="text-sm text-[#1C3D5A]/70">Tema</span>
+                <span className="text-sm text-[#1C3D5A] dark:text-foreground/70">Tema</span>
                 <ThemeToggle />
               </div>
 

@@ -69,7 +69,7 @@ const typeConfig = {
 
 export default function MediaSection() {
   return (
-    <section id="midia" className="py-20 bg-white">
+    <section id="midia" className="py-20 bg-white dark:bg-card">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -78,11 +78,11 @@ export default function MediaSection() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1C3D5A]/5 text-[#1C3D5A] rounded-full text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1C3D5A]/5 text-[#1C3D5A] dark:text-foreground rounded-full text-sm font-medium mb-4">
             <Award className="w-4 h-4" />
             Congressos e Formação
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1C3D5A] mb-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1C3D5A] dark:text-foreground mb-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
             Atualização Contínua e Excelência
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
@@ -116,14 +116,14 @@ export default function MediaSection() {
 
                 {/* Content */}
                 <div className={`ml-10 md:ml-0 md:w-[calc(50%-2rem)] ${isLeft ? "md:pr-8" : "md:pl-8"}`}>
-                  <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-white dark:bg-card rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center gap-3 mb-3 flex-wrap">
                       <span className="text-sm font-bold text-[#B87333]">{event.year}</span>
                       <span className={`text-xs px-2 py-1 rounded-full border font-medium ${typeStyle.color}`}>
                         {typeStyle.label}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-[#1C3D5A] mb-2 leading-snug">{event.title}</h3>
+                    <h3 className="text-base font-bold text-[#1C3D5A] dark:text-foreground mb-2 leading-snug">{event.title}</h3>
                     <div className="flex items-center gap-4 text-xs text-slate-500 mb-3 flex-wrap">
                       <span className="flex items-center gap-1">
                         <Users className="w-3 h-3" /> {event.organization}
@@ -161,11 +161,11 @@ export default function MediaSection() {
             Formação pelo Instituto D'Or de Ensino e Pesquisa — referência em ensino médico no Brasil
           </p>
           <div className="flex items-center justify-center gap-6 flex-wrap">
-            <div className="flex items-center gap-2 text-sm text-[#1C3D5A] font-medium">
+            <div className="flex items-center gap-2 text-sm text-[#1C3D5A] dark:text-foreground font-medium">
               <Award className="w-5 h-5 text-[#B87333]" />
               TCBC — Colégio Brasileiro de Cirurgiões
             </div>
-            <div className="flex items-center gap-2 text-sm text-[#1C3D5A] font-medium">
+            <div className="flex items-center gap-2 text-sm text-[#1C3D5A] dark:text-foreground font-medium">
               <Calendar className="w-5 h-5 text-[#B87333]" />
               CRM-SP 202.291
             </div>

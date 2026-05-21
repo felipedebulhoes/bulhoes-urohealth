@@ -272,7 +272,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string; light
   violet: { bg: "bg-violet-500", text: "text-violet-700", border: "border-violet-200", light: "bg-violet-50" },
   amber: { bg: "bg-amber-500", text: "text-amber-700", border: "border-amber-200", light: "bg-amber-50" },
   red: { bg: "bg-red-500", text: "text-red-700", border: "border-red-200", light: "bg-red-50" },
-  gray: { bg: "bg-gray-500", text: "text-gray-700", border: "border-gray-200", light: "bg-gray-50" },
+  gray: { bg: "bg-gray-50 dark:bg-card0", text: "text-gray-700 dark:text-foreground", border: "border-gray-200 dark:border-border", light: "bg-gray-50 dark:bg-card" },
   green: { bg: "bg-green-500", text: "text-green-700", border: "border-green-200", light: "bg-green-50" },
 };
 
@@ -295,7 +295,7 @@ export default function InfertilidadeMasculina() {
       <FAQSchema questions={faqs.map(item => ({ question: item.q, answer: item.a }))} />
 
       {/* Imagem Ilustrativa */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-10 bg-gray-50 dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -313,15 +313,15 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* Introdução */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">O Que é Infertilidade Masculina?</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-6">O Que é Infertilidade Masculina?</h2>
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground space-y-4">
               <p>
                 A <strong>infertilidade</strong> é definida como a incapacidade de um casal conceber após 12 meses de relações sexuais
                 regulares sem contracepção. O <strong>fator masculino</strong> está presente, isoladamente ou em combinação com o fator
@@ -366,11 +366,11 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* Epidemiologia */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Números da Infertilidade Masculina</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Números da Infertilidade Masculina</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Dados epidemiológicos baseados em estudos populacionais e guidelines internacionais
             </p>
           </motion.div>
@@ -387,10 +387,10 @@ export default function InfertilidadeMasculina() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100"
+                className="bg-white dark:bg-card rounded-xl p-6 text-center shadow-sm border border-gray-100"
               >
                 <p className={`text-4xl font-bold ${colorMap[stat.color].text} mb-2`}>{stat.value}</p>
-                <p className="text-gray-600 text-sm">{stat.label}</p>
+                <p className="text-gray-600 dark:text-muted-foreground text-sm">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -398,11 +398,11 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* Causas */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Causas da Infertilidade Masculina</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Causas da Infertilidade Masculina</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Classificadas por localização anatômica — Baseado em EAU 2025 e Campbell-Walsh-Wein 13th Ed.
             </p>
           </motion.div>
@@ -420,15 +420,15 @@ export default function InfertilidadeMasculina() {
                 >
                   <button
                     onClick={() => setOpenCause(openCause === gi ? null : gi)}
-                    className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
+                    className="w-full flex items-center justify-between p-5 hover:bg-gray-50 dark:hover:bg-muted dark:bg-card transition-colors"
                   >
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center`}>
                         <group.icon className="w-5 h-5 text-white" />
                       </div>
                       <div className="text-left">
-                        <h3 className="text-lg font-bold text-gray-900">{group.category}</h3>
-                        <p className="text-sm text-gray-500">{group.items.length} {group.items.length === 1 ? "causa" : "causas"}</p>
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-foreground">{group.category}</h3>
+                        <p className="text-sm text-gray-500 dark:text-muted-foreground">{group.items.length} {group.items.length === 1 ? "causa" : "causas"}</p>
                       </div>
                     </div>
                     {openCause === gi ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
@@ -438,7 +438,7 @@ export default function InfertilidadeMasculina() {
                       {group.items.map((item, ii) => (
                         <div key={ii} className={`${colors.light} rounded-lg p-4`}>
                           <p className={`font-semibold ${colors.text} mb-1`}>{item.name}</p>
-                          <p className="text-gray-700 text-sm">{item.detail}</p>
+                          <p className="text-gray-700 dark:text-foreground text-sm">{item.detail}</p>
                         </div>
                       ))}
                     </div>
@@ -451,11 +451,11 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* Investigação Diagnóstica */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Investigação Diagnóstica</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Investigação Diagnóstica</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Abordagem sistemática recomendada pelas guidelines EAU 2025 e AUA/ASRM 2024
             </p>
           </motion.div>
@@ -467,7 +467,7 @@ export default function InfertilidadeMasculina() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100"
+                className="flex items-start gap-4 bg-white dark:bg-card rounded-xl p-5 shadow-sm border border-gray-100"
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
                   <span className="text-amber-700 font-bold text-lg">{item.step}</span>
@@ -475,9 +475,9 @@ export default function InfertilidadeMasculina() {
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <item.icon className="w-4 h-4 text-amber-600" />
-                    <h3 className="font-bold text-gray-900">{item.title}</h3>
+                    <h3 className="font-bold text-gray-900 dark:text-foreground">{item.title}</h3>
                   </div>
-                  <p className="text-gray-700 text-sm mb-2">{item.description}</p>
+                  <p className="text-gray-700 dark:text-foreground text-sm mb-2">{item.description}</p>
                   <span className="inline-block text-xs font-medium text-amber-700 bg-amber-50 px-2 py-1 rounded-full">
                     {item.evidence}
                   </span>
@@ -489,11 +489,11 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* Espermograma — Parâmetros de Referência */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Espermograma: Valores de Referência</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Espermograma: Valores de Referência</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Baseado no Manual da OMS para Exame de Sêmen, 6ª edição (2021)
             </p>
           </motion.div>
@@ -509,11 +509,11 @@ export default function InfertilidadeMasculina() {
               </thead>
               <tbody>
                 {semenParameters.map((item, i) => (
-                  <tr key={i} className={`border-b ${i % 2 === 0 ? "bg-gray-50" : "bg-white"}`}>
-                    <td className="px-4 py-3 font-semibold text-gray-900">{item.parameter}</td>
+                  <tr key={i} className={`border-b ${i % 2 === 0 ? "bg-gray-50 dark:bg-card" : "bg-white"}`}>
+                    <td className="px-4 py-3 font-semibold text-gray-900 dark:text-foreground">{item.parameter}</td>
                     <td className="px-4 py-3 text-green-700 font-medium">{item.normal}</td>
                     <td className="px-4 py-3 text-red-600">{item.altered}</td>
-                    <td className="px-4 py-3 text-gray-600 text-sm">{item.significance}</td>
+                    <td className="px-4 py-3 text-gray-600 dark:text-muted-foreground text-sm">{item.significance}</td>
                   </tr>
                 ))}
               </tbody>
@@ -535,11 +535,11 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* Algoritmo da Azoospermia */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Azoospermia: Algoritmo de Investigação</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Azoospermia: Algoritmo de Investigação</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Ausência completa de espermatozoides no ejaculado — presente em 10-15% dos homens inférteis
             </p>
           </motion.div>
@@ -558,8 +558,8 @@ export default function InfertilidadeMasculina() {
                   <div className={`flex-shrink-0 w-10 h-10 rounded-full ${colors.bg} flex items-center justify-center`}>
                     <item.icon className="w-5 h-5 text-white" />
                   </div>
-                  <div className="flex-1 bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                    <p className="text-gray-800 font-medium">{item.step}</p>
+                  <div className="flex-1 bg-white dark:bg-card rounded-lg p-4 shadow-sm border border-gray-100">
+                    <p className="text-gray-800 dark:text-foreground font-medium">{item.step}</p>
                   </div>
                   {i < azoospermiaAlgorithm.length - 1 && (
                     <ArrowRight className="w-4 h-4 text-gray-300 rotate-90 hidden sm:block absolute right-0" />
@@ -572,11 +572,11 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* Tratamentos */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Opções de Tratamento</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Opções de Tratamento</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Do tratamento clínico à reprodução assistida — abordagem individualizada baseada na causa
             </p>
           </motion.div>
@@ -588,11 +588,11 @@ export default function InfertilidadeMasculina() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
+                className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-border overflow-hidden shadow-sm"
               >
                 <button
                   onClick={() => setOpenTreatment(openTreatment === i ? null : i)}
-                  className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 hover:bg-gray-50 dark:hover:bg-muted dark:bg-card transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center">
@@ -600,17 +600,17 @@ export default function InfertilidadeMasculina() {
                     </div>
                     <div className="text-left">
                       <div className="flex items-center gap-2">
-                        <h3 className="text-lg font-bold text-gray-900">{tx.name}</h3>
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-foreground">{tx.name}</h3>
                         <span className="text-xs font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">{tx.category}</span>
                       </div>
-                      <p className="text-sm text-gray-500">{tx.indication}</p>
+                      <p className="text-sm text-gray-500 dark:text-muted-foreground">{tx.indication}</p>
                     </div>
                   </div>
                   {openTreatment === i ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
                 </button>
                 {openTreatment === i && (
                   <div className="px-5 pb-5">
-                    <p className="text-gray-700 mb-3">{tx.description}</p>
+                    <p className="text-gray-700 dark:text-foreground mb-3">{tx.description}</p>
                     <div className="bg-amber-50 rounded-lg p-3 mb-3">
                       <p className="text-sm font-medium text-amber-800">{tx.evidence}</p>
                     </div>
@@ -618,7 +618,7 @@ export default function InfertilidadeMasculina() {
                       {tx.details.map((detail, di) => (
                         <li key={di} className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 text-sm">{detail}</span>
+                          <span className="text-gray-700 dark:text-foreground text-sm">{detail}</span>
                         </li>
                       ))}
                     </ul>
@@ -631,10 +631,10 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* Quando Procurar o Urologista */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Quando Procurar o Urologista?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-6 text-center">Quando Procurar o Urologista?</h2>
           </motion.div>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
@@ -653,10 +653,10 @@ export default function InfertilidadeMasculina() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="flex items-start gap-3 bg-white rounded-lg p-4 shadow-sm border border-gray-100"
+                className="flex items-start gap-3 bg-white dark:bg-card rounded-lg p-4 shadow-sm border border-gray-100"
               >
                 <ArrowRight className="w-4 h-4 text-amber-600 flex-shrink-0 mt-1" />
-                <p className="text-gray-700 text-sm">{item}</p>
+                <p className="text-gray-700 dark:text-foreground text-sm">{item}</p>
               </motion.div>
             ))}
           </div>
@@ -664,11 +664,11 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Perguntas Frequentes</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Perguntas Frequentes</h2>
+            <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
               Respostas baseadas nas guidelines EAU 2025 e AUA/ASRM 2024
             </p>
           </motion.div>
@@ -680,18 +680,18 @@ export default function InfertilidadeMasculina() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden"
+                className="bg-gray-50 dark:bg-card rounded-xl border border-gray-200 dark:border-border overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-5 hover:bg-gray-100 transition-colors"
+                  className="w-full flex items-center justify-between p-5 hover:bg-gray-100 dark:hover:bg-muted dark:bg-muted transition-colors"
                 >
-                  <span className="text-left font-semibold text-gray-900 pr-4">{faq.q}</span>
+                  <span className="text-left font-semibold text-gray-900 dark:text-foreground pr-4">{faq.q}</span>
                   {openFaq === i ? <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />}
                 </button>
                 {openFaq === i && (
                   <div className="px-5 pb-5">
-                    <p className="text-gray-700 leading-relaxed">{faq.a}</p>
+                    <p className="text-gray-700 dark:text-foreground leading-relaxed">{faq.a}</p>
                   </div>
                 )}
               </motion.div>
@@ -714,7 +714,7 @@ export default function InfertilidadeMasculina() {
                 href="https://wa.me/5511981124455?text=Olá, gostaria de tirar dúvidas sobre avaliação de fertilidade masculina."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-white dark:bg-card text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors shadow-lg"
               >
                 Agendar pelo WhatsApp
                 <ArrowRight className="w-4 h-4" />
@@ -734,12 +734,12 @@ export default function InfertilidadeMasculina() {
       </section>
 
       {/* Referências */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-50 dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Referências</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-6">Referências</h2>
           <ol className="space-y-2">
             {references.map((ref) => (
-              <li key={ref.num} className="text-sm text-gray-600 flex gap-2">
+              <li key={ref.num} className="text-sm text-gray-600 dark:text-muted-foreground flex gap-2">
                 <span className="font-semibold text-amber-700 flex-shrink-0">[{ref.num}]</span>
                 <span>{ref.text}</span>
               </li>

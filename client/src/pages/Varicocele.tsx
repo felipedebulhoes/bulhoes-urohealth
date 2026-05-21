@@ -247,7 +247,7 @@ export default function Varicocele() {
   const [expandedTreatment, setExpandedTreatment] = useState<number | null>(0);
 
   const colorMap: Record<string, { bg: string; text: string; border: string; light: string }> = {
-    gray: { bg: "bg-gray-100", text: "text-gray-700", border: "border-gray-300", light: "bg-gray-50" },
+    gray: { bg: "bg-gray-100 dark:bg-muted", text: "text-gray-700 dark:text-foreground", border: "border-gray-300", light: "bg-gray-50 dark:bg-card" },
     yellow: { bg: "bg-yellow-100", text: "text-yellow-700", border: "border-yellow-300", light: "bg-yellow-50" },
     orange: { bg: "bg-orange-100", text: "text-orange-700", border: "border-orange-300", light: "bg-orange-50" },
     red: { bg: "bg-red-100", text: "text-red-700", border: "border-red-300", light: "bg-red-50" },
@@ -269,34 +269,34 @@ export default function Varicocele() {
       <FAQSchema questions={faqItems} />
 
       {/* O que é Varicocele */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
                 <Search className="w-6 h-6 text-amber-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">O que é Varicocele?</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground">O que é Varicocele?</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="space-y-4">
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 dark:text-foreground leading-relaxed">
                   A <strong>varicocele</strong> é a dilatação anormal das veias do <strong>plexo pampiniforme</strong> no escroto — a rede de veias que drena o sangue dos testículos. É semelhante às varizes que ocorrem nas pernas, mas localizada no escroto.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 dark:text-foreground leading-relaxed">
                   Afeta aproximadamente <strong>15% dos homens</strong> da população geral e é a <strong>causa tratável mais comum de infertilidade masculina</strong>, sendo encontrada em 35-40% dos homens com infertilidade primária e até 80% com infertilidade secundária.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 dark:text-foreground leading-relaxed">
                   A varicocele ocorre predominantemente do <strong>lado esquerdo</strong> (85-90% dos casos), devido à anatomia da veia espermática esquerda, que drena em ângulo reto na veia renal esquerda, criando maior pressão hidrostática. Pode ser bilateral em 10-15% dos casos.
                 </p>
               </div>
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <div className="bg-gray-50 dark:bg-card rounded-2xl p-6 border border-gray-200 dark:border-border">
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/edu-varicocele-hero-599XQPQfjE7X8GrKiTmeJT.webp"
                   alt="Ilustração anatômica da varicocele"
                   className="w-full rounded-xl"
                 />
-                <p className="text-sm text-gray-500 mt-3 text-center">
+                <p className="text-sm text-gray-500 dark:text-muted-foreground mt-3 text-center">
                   Comparação entre lado com varicocele (esquerdo) e lado normal (direito)
                 </p>
               </div>
@@ -306,16 +306,16 @@ export default function Varicocele() {
       </section>
 
       {/* Fisiopatologia */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
                 <Thermometer className="w-6 h-6 text-amber-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Como a Varicocele Afeta a Fertilidade?</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground">Como a Varicocele Afeta a Fertilidade?</h2>
             </div>
-            <p className="text-gray-700 leading-relaxed mb-8 max-w-3xl">
+            <p className="text-gray-700 dark:text-foreground leading-relaxed mb-8 max-w-3xl">
               A varicocele pode comprometer a função testicular por múltiplos mecanismos. A presença de veias dilatadas causa estase venosa e aumento da temperatura escrotal, que é prejudicial à espermatogênese.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -333,11 +333,11 @@ export default function Varicocele() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-shadow"
+                  className="bg-white dark:bg-card rounded-xl p-6 border border-gray-200 dark:border-border hover:shadow-md transition-shadow"
                 >
                   <item.icon className="w-8 h-8 text-amber-600 mb-3" />
-                  <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.text}</p>
+                  <h3 className="font-bold text-gray-900 dark:text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-muted-foreground leading-relaxed">{item.text}</p>
                 </motion.div>
               ))}
             </div>
@@ -346,14 +346,14 @@ export default function Varicocele() {
       </section>
 
       {/* Sintomas */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
                 <AlertTriangle className="w-6 h-6 text-amber-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Sintomas</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground">Sintomas</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {symptoms.map((s, i) => (
@@ -363,14 +363,14 @@ export default function Varicocele() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200"
+                  className="flex gap-4 p-6 bg-gray-50 dark:bg-card rounded-xl border border-gray-200 dark:border-border"
                 >
                   <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
                     <s.icon className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{s.description}</p>
+                    <h3 className="font-bold text-gray-900 dark:text-foreground mb-1">{s.title}</h3>
+                    <p className="text-sm text-gray-600 dark:text-muted-foreground leading-relaxed">{s.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -380,16 +380,16 @@ export default function Varicocele() {
       </section>
 
       {/* Classificação */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
                 <CircleDot className="w-6 h-6 text-amber-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Classificação</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground">Classificação</h2>
             </div>
-            <p className="text-gray-700 leading-relaxed mb-8 max-w-3xl">
+            <p className="text-gray-700 dark:text-foreground leading-relaxed mb-8 max-w-3xl">
               A varicocele é classificada em graus conforme o exame físico. A classificação mais utilizada é a de <strong>Dubin & Amelar</strong>, que divide em três graus clínicos além da varicocele subclínica.
             </p>
             <div className="space-y-4">
@@ -409,9 +409,9 @@ export default function Varicocele() {
                         {g.grade}
                       </div>
                       <div className="flex-1">
-                        <p className="text-gray-800 font-medium">{g.description}</p>
-                        <p className="text-sm text-gray-500 mt-1"><strong>Diagnóstico:</strong> {g.exam}</p>
-                        <p className="text-sm text-gray-600 mt-1"><strong>Conduta:</strong> {g.treatment}</p>
+                        <p className="text-gray-800 dark:text-foreground font-medium">{g.description}</p>
+                        <p className="text-sm text-gray-500 dark:text-muted-foreground mt-1"><strong>Diagnóstico:</strong> {g.exam}</p>
+                        <p className="text-sm text-gray-600 dark:text-muted-foreground mt-1"><strong>Conduta:</strong> {g.treatment}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -423,14 +423,14 @@ export default function Varicocele() {
       </section>
 
       {/* Diagnóstico */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
                 <Stethoscope className="w-6 h-6 text-amber-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Investigação Diagnóstica</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground">Investigação Diagnóstica</h2>
             </div>
             <div className="space-y-6">
               {diagnosticSteps.map((step, i) => (
@@ -448,12 +448,12 @@ export default function Varicocele() {
                     </div>
                     {i < diagnosticSteps.length - 1 && <div className="w-0.5 h-12 bg-amber-200 mt-2" />}
                   </div>
-                  <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 flex-1">
+                  <div className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-200 dark:border-border flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <step.icon className="w-5 h-5 text-amber-600" />
-                      <h3 className="font-bold text-gray-900 text-lg">{step.title}</h3>
+                      <h3 className="font-bold text-gray-900 dark:text-foreground text-lg">{step.title}</h3>
                     </div>
-                    <p className="text-gray-600 leading-relaxed mb-2">{step.description}</p>
+                    <p className="text-gray-600 dark:text-muted-foreground leading-relaxed mb-2">{step.description}</p>
                     <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-700">{step.evidence}</span>
                   </div>
                 </motion.div>
@@ -464,14 +464,14 @@ export default function Varicocele() {
       </section>
 
       {/* Indicações de Tratamento */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
                 <Target className="w-6 h-6 text-amber-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Quando Tratar?</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground">Quando Tratar?</h2>
             </div>
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
               <p className="text-amber-800 font-medium">
@@ -512,14 +512,14 @@ export default function Varicocele() {
       </section>
 
       {/* Opções de Tratamento */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
                 <Wrench className="w-6 h-6 text-amber-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Opções de Tratamento Cirúrgico</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground">Opções de Tratamento Cirúrgico</h2>
             </div>
             <div className="space-y-4">
               {treatmentOptions.map((t, i) => {
@@ -533,7 +533,7 @@ export default function Varicocele() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                     className={`rounded-xl border transition-all ${
-                      i === 0 ? "border-amber-300 shadow-md" : "border-gray-200"
+                      i === 0 ? "border-amber-300 shadow-md" : "border-gray-200 dark:border-border"
                     }`}
                   >
                     <button
@@ -546,17 +546,17 @@ export default function Varicocele() {
                         </div>
                         <div>
                           <div className="flex items-center gap-3 flex-wrap">
-                            <h3 className="font-bold text-gray-900">{t.name}</h3>
+                            <h3 className="font-bold text-gray-900 dark:text-foreground">{t.name}</h3>
                             <span className={`text-xs font-semibold px-3 py-1 rounded-full ${colors.bg} ${colors.text}`}>{t.badge}</span>
                           </div>
-                          <p className="text-sm text-gray-500 mt-1">Recorrência: {t.recurrence} | Complicações: {t.complications}</p>
+                          <p className="text-sm text-gray-500 dark:text-muted-foreground mt-1">Recorrência: {t.recurrence} | Complicações: {t.complications}</p>
                         </div>
                       </div>
                       {isExpanded ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
                     </button>
                     {isExpanded && (
                       <div className="px-6 pb-6 border-t border-gray-100 pt-4">
-                        <p className="text-gray-700 leading-relaxed mb-4">{t.description}</p>
+                        <p className="text-gray-700 dark:text-foreground leading-relaxed mb-4">{t.description}</p>
                         <div className="grid md:grid-cols-2 gap-4">
                           <div className="bg-green-50 rounded-lg p-4">
                             <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2"><Check className="w-4 h-4" /> Vantagens</h4>
@@ -586,12 +586,12 @@ export default function Varicocele() {
       </section>
 
       {/* Tabela Comparativa */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Comparativo das Técnicas Cirúrgicas</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-8 text-center">Comparativo das Técnicas Cirúrgicas</h2>
             <div className="overflow-x-auto">
-              <table className="w-full bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
+              <table className="w-full bg-white dark:bg-card rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-border">
                 <thead>
                   <tr className="bg-amber-600 text-white">
                     <th className="px-4 py-3 text-left text-sm font-semibold">Técnica</th>
@@ -608,25 +608,25 @@ export default function Varicocele() {
                     <td className="px-4 py-3 text-center text-sm">Local / Raqui</td>
                   </tr>
                   <tr className="border-b border-gray-100">
-                    <td className="px-4 py-3 font-medium text-gray-800">Laparoscópica</td>
+                    <td className="px-4 py-3 font-medium text-gray-800 dark:text-foreground">Laparoscópica</td>
                     <td className="px-4 py-3 text-center text-sm">3-7%</td>
                     <td className="px-4 py-3 text-center text-sm">5-10%</td>
                     <td className="px-4 py-3 text-center text-sm">Geral</td>
                   </tr>
                   <tr className="border-b border-gray-100">
-                    <td className="px-4 py-3 font-medium text-gray-800">Inguinal (Ivanissevich)</td>
+                    <td className="px-4 py-3 font-medium text-gray-800 dark:text-foreground">Inguinal (Ivanissevich)</td>
                     <td className="px-4 py-3 text-center text-sm">5-15%</td>
                     <td className="px-4 py-3 text-center text-sm">10-15%</td>
                     <td className="px-4 py-3 text-center text-sm">Local / Raqui</td>
                   </tr>
                   <tr className="border-b border-gray-100">
-                    <td className="px-4 py-3 font-medium text-gray-800">Retroperitoneal (Palomo)</td>
+                    <td className="px-4 py-3 font-medium text-gray-800 dark:text-foreground">Retroperitoneal (Palomo)</td>
                     <td className="px-4 py-3 text-center text-sm text-red-600 font-bold">15-25%</td>
                     <td className="px-4 py-3 text-center text-sm">10-15%</td>
                     <td className="px-4 py-3 text-center text-sm">Geral / Raqui</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-medium text-gray-800">Embolização Percutânea</td>
+                    <td className="px-4 py-3 font-medium text-gray-800 dark:text-foreground">Embolização Percutânea</td>
                     <td className="px-4 py-3 text-center text-sm">5-11%</td>
                     <td className="px-4 py-3 text-center text-sm">5-10%</td>
                     <td className="px-4 py-3 text-center text-sm">Local</td>
@@ -634,28 +634,28 @@ export default function Varicocele() {
                 </tbody>
               </table>
             </div>
-            <p className="text-sm text-gray-500 mt-4 text-center">Fonte: EAU Guidelines 2025, Tabela 11.3</p>
+            <p className="text-sm text-gray-500 dark:text-muted-foreground mt-4 text-center">Fonte: EAU Guidelines 2025, Tabela 11.3</p>
           </motion.div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Perguntas Frequentes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-3">
               {faqItems.map((faq, i) => (
-                <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
+                <div key={i} className="border border-gray-200 dark:border-border rounded-xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full p-5 flex items-center justify-between text-left bg-white hover:bg-gray-50 transition-colors"
+                    className="w-full p-5 flex items-center justify-between text-left bg-white dark:bg-card hover:bg-gray-50 dark:hover:bg-muted dark:bg-card transition-colors"
                   >
-                    <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
+                    <span className="font-semibold text-gray-900 dark:text-foreground pr-4">{faq.question}</span>
                     {openFaq === i ? <ChevronUp className="w-5 h-5 text-amber-600 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />}
                   </button>
                   {openFaq === i && (
-                    <div className="px-5 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                    <div className="px-5 pb-5 text-gray-600 dark:text-muted-foreground leading-relaxed border-t border-gray-100 pt-4">
                       {faq.answer}
                     </div>
                   )}
@@ -680,7 +680,7 @@ export default function Varicocele() {
                 href="https://wa.me/5511981124455?text=Olá, gostaria de tirar dúvidas sobre varicocele."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-white dark:bg-card text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors shadow-lg"
               >
                 Agendar pelo WhatsApp
                 <ArrowRight className="w-4 h-4" />
@@ -700,12 +700,12 @@ export default function Varicocele() {
       </section>
 
       {/* Referências */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-50 dark:bg-card">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Referências</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-6">Referências</h2>
           <ol className="space-y-2">
             {references.map((ref) => (
-              <li key={ref.num} className="text-sm text-gray-600 flex gap-2">
+              <li key={ref.num} className="text-sm text-gray-600 dark:text-muted-foreground flex gap-2">
                 <span className="font-semibold text-amber-700 flex-shrink-0">[{ref.num}]</span>
                 <span>{ref.text}</span>
               </li>

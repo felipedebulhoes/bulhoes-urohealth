@@ -193,7 +193,7 @@ function LocationPage({ slug }: { slug: string }) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-card">
       <MedicalClinicSchema
         name={loc.fullName}
         description={loc.description}
@@ -247,15 +247,15 @@ function LocationPage({ slug }: { slug: string }) {
             {/* Coluna principal */}
             <div className="lg:col-span-2 space-y-8">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-                <h2 className="text-xl font-bold text-[#1C3D5A] mb-4">Sobre o Local</h2>
+                <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Sobre o Local</h2>
                 <p className="text-[#334155] leading-relaxed">{loc.description}</p>
               </motion.div>
 
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}>
-                <h2 className="text-xl font-bold text-[#1C3D5A] mb-4">Serviços Disponíveis</h2>
+                <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Serviços Disponíveis</h2>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {loc.services.map((s, i) => (
-                    <div key={i} className="flex items-center gap-3 bg-gray-50 rounded-lg p-3 border border-gray-100">
+                    <div key={i} className="flex items-center gap-3 bg-gray-50 dark:bg-card rounded-lg p-3 border border-gray-100">
                       <CheckCircle2 className="w-4 h-4 text-[#B87333] shrink-0" />
                       <span className="text-sm text-[#334155]">{s}</span>
                     </div>
@@ -265,7 +265,7 @@ function LocationPage({ slug }: { slug: string }) {
 
               {loc.insurances && (
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}>
-                  <h2 className="text-xl font-bold text-[#1C3D5A] mb-4">Convênios Aceitos</h2>
+                  <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Convênios Aceitos</h2>
                   <div className="flex flex-wrap gap-2">
                     {loc.insurances.map((ins, i) => (
                       <span key={i} className="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg text-sm font-medium border border-blue-100">
@@ -278,8 +278,8 @@ function LocationPage({ slug }: { slug: string }) {
 
               {/* Mapa */}
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}>
-                <h2 className="text-xl font-bold text-[#1C3D5A] mb-4">Como Chegar</h2>
-                <div className="rounded-xl overflow-hidden border border-gray-200 h-64">
+                <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Como Chegar</h2>
+                <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-border h-64">
                   <iframe
                     src={loc.mapEmbed}
                     width="100%"
@@ -304,14 +304,14 @@ function LocationPage({ slug }: { slug: string }) {
 
             {/* Sidebar */}
             <div className="space-y-4">
-              <div className="bg-gray-50 rounded-xl p-5 border border-gray-100 sticky top-24">
-                <h3 className="font-bold text-[#1C3D5A] mb-4">Informações</h3>
+              <div className="bg-gray-50 dark:bg-card rounded-xl p-5 border border-gray-100 sticky top-24">
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-4">Informações</h3>
 
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start gap-3">
                     <Clock className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm font-semibold text-[#1C3D5A] mb-1">Horários</p>
+                      <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Horários</p>
                       {loc.hours.map((h, i) => (
                         <p key={i} className="text-xs text-[#64748B]">{h}</p>
                       ))}
@@ -321,7 +321,7 @@ function LocationPage({ slug }: { slug: string }) {
                   <div className="flex items-start gap-3">
                     <Car className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm font-semibold text-[#1C3D5A] mb-1">Estacionamento</p>
+                      <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Estacionamento</p>
                       <p className="text-xs text-[#64748B]">{loc.parking}</p>
                     </div>
                   </div>
@@ -329,7 +329,7 @@ function LocationPage({ slug }: { slug: string }) {
                   <div className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm font-semibold text-[#1C3D5A] mb-1">Atendimento</p>
+                      <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Atendimento</p>
                       <p className="text-xs text-[#64748B]">{loc.typeLabel}</p>
                     </div>
                   </div>
@@ -338,7 +338,7 @@ function LocationPage({ slug }: { slug: string }) {
                     <div className="flex items-start gap-3">
                       <CreditCard className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-sm font-semibold text-[#1C3D5A] mb-1">Formas de Pagamento</p>
+                        <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Formas de Pagamento</p>
                         <p className="text-xs text-[#64748B]">{loc.payment.join(", ")}</p>
                       </div>
                     </div>
@@ -370,22 +370,22 @@ function LocationPage({ slug }: { slug: string }) {
       </section>
 
       {/* Outros locais */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-50 dark:bg-card">
         <div className="container max-w-4xl">
-          <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Outros Locais de Atendimento</h3>
+          <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Outros Locais de Atendimento</h3>
           <div className="grid sm:grid-cols-3 gap-4">
             {Object.entries(locations)
               .filter(([key]) => key !== slug)
               .map(([key, other]) => (
-                <Link key={key} href={`/local/${key}`} className="bg-white rounded-xl p-4 border border-gray-100 hover:shadow-md transition-shadow block">
-                  <h4 className="font-bold text-[#1C3D5A] text-sm mb-1">{other.name}</h4>
+                <Link key={key} href={`/local/${key}`} className="bg-white dark:bg-card rounded-xl p-4 border border-gray-100 hover:shadow-md transition-shadow block">
+                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">{other.name}</h4>
                   <p className="text-xs text-[#64748B] mb-2">{other.city}</p>
                   <span className="text-xs font-medium" style={{ color: other.accentColor }}>{other.typeLabel}</span>
                 </Link>
               ))}
             <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100">
               <Video className="w-5 h-5 text-indigo-500 mb-2" />
-              <h4 className="font-bold text-[#1C3D5A] text-sm mb-1">Teleconsulta</h4>
+              <h4 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Teleconsulta</h4>
               <p className="text-xs text-[#64748B]">Atendimento online para todo o Brasil</p>
             </div>
           </div>

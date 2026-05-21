@@ -90,7 +90,7 @@ export default function SindromeMetabolica() {
       {/* Intro */}
       <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">
         <div className="container max-w-4xl">
-          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] prose-p:text-[#1C3D5A]/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A]/80">
+          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] dark:text-foreground prose-p:text-[#1C3D5A] dark:text-foreground/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A] dark:text-foreground/80">
             <p>
               A <strong>síndrome metabólica</strong> é um conjunto de fatores de risco cardiovascular — obesidade abdominal, hipertensão, dislipidemia e resistência insulínica — que afeta cerca de <strong>30-40% dos homens acima de 50 anos</strong>. Sua relação com a <strong>testosterona</strong> é bidirecional: a obesidade reduz os níveis de testosterona, e a deficiência de testosterona favorece o acúmulo de gordura visceral, criando um <strong>ciclo vicioso</strong> que acelera o envelhecimento e aumenta o risco de diabetes, doenças cardiovasculares e disfunção sexual.
             </p>
@@ -104,10 +104,10 @@ export default function SindromeMetabolica() {
       {/* Vicious cycle */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             O Ciclo Vicioso: Obesidade ↔ Testosterona Baixa
           </h2>
-          <div className="bg-white rounded-xl border border-[#1C3D5A]/6 p-6 lg:p-8">
+          <div className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-6 lg:p-8">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -115,8 +115,8 @@ export default function SindromeMetabolica() {
                     <TrendingDown className="w-4 h-4 text-red-600" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] mb-1">Obesidade → ↓ Testosterona</h4>
-                    <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">
+                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Obesidade → ↓ Testosterona</h4>
+                    <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                       O tecido adiposo (gordura) contém a enzima <strong>aromatase</strong>, que converte testosterona em estradiol (estrogênio). Quanto mais gordura visceral, maior a conversão e menor a testosterona disponível. A obesidade também reduz a SHBG, alterando a biodisponibilidade hormonal.
                     </p>
                   </div>
@@ -126,8 +126,8 @@ export default function SindromeMetabolica() {
                     <TrendingDown className="w-4 h-4 text-red-600" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] mb-1">↓ Testosterona → Mais Obesidade</h4>
-                    <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">
+                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">↓ Testosterona → Mais Obesidade</h4>
+                    <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                       A deficiência de testosterona favorece o acúmulo de gordura (especialmente visceral), reduz a massa muscular e o metabolismo basal, aumenta a resistência insulínica e diminui a motivação para atividade física — perpetuando o ciclo.
                     </p>
                   </div>
@@ -139,8 +139,8 @@ export default function SindromeMetabolica() {
                     <TrendingUp className="w-4 h-4 text-amber-600" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] mb-1">Perda de Peso → ↑ Testosterona</h4>
-                    <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">
+                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Perda de Peso → ↑ Testosterona</h4>
+                    <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                       Perda de 5-10% do peso corporal pode aumentar a testosterona em <strong>50-100 ng/dL</strong>. A cirurgia bariátrica em obesos graves pode aumentar em até 200-300 ng/dL. A perda de gordura visceral reduz a atividade da aromatase.
                     </p>
                   </div>
@@ -150,8 +150,8 @@ export default function SindromeMetabolica() {
                     <TrendingUp className="w-4 h-4 text-amber-600" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] mb-1">Exercício → Quebra o Ciclo</h4>
-                    <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">
+                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Exercício → Quebra o Ciclo</h4>
+                    <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                       O exercício físico regular (aeróbico + resistência) é a intervenção mais eficaz para quebrar o ciclo vicioso: reduz gordura visceral, aumenta massa muscular, melhora sensibilidade insulínica e eleva os níveis de testosterona — tudo simultaneamente.
                     </p>
                   </div>
@@ -165,10 +165,10 @@ export default function SindromeMetabolica() {
       {/* Metabolic syndrome criteria */}
       <section className="py-12 lg:py-16">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-3 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-3 text-center font-serif">
             Critérios Diagnósticos
           </h2>
-          <p className="text-center text-sm text-[#1C3D5A]/50 mb-8">
+          <p className="text-center text-sm text-[#1C3D5A] dark:text-foreground/50 mb-8">
             Diagnóstico: presença de 3 ou mais dos 5 critérios abaixo (IDF/AHA/NHLBI 2009)
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
@@ -179,12 +179,12 @@ export default function SindromeMetabolica() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-xl border border-[#1C3D5A]/6 p-4 text-center"
+                className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 p-4 text-center"
               >
                 <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-500 mx-auto mb-2">
                   {c.icon}
                 </div>
-                <h4 className="text-xs font-semibold text-[#1C3D5A] mb-1">{c.name}</h4>
+                <h4 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground mb-1">{c.name}</h4>
                 <p className="text-xs text-red-600 font-medium">{c.value}</p>
               </motion.div>
             ))}
@@ -195,16 +195,16 @@ export default function SindromeMetabolica() {
       {/* Exercise section */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-3 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-3 text-center font-serif">
             Exercício Físico: O Pilar do Tratamento
           </h2>
-          <p className="text-center text-sm text-[#1C3D5A]/50 mb-10 max-w-2xl mx-auto">
+          <p className="text-center text-sm text-[#1C3D5A] dark:text-foreground/50 mb-10 max-w-2xl mx-auto">
             O exercício é a intervenção com maior impacto na síndrome metabólica e nos níveis de testosterona. A combinação de exercícios aeróbicos e de resistência oferece o máximo benefício.
           </p>
 
           <div className="mb-8">
             <img loading="lazy" src={IMG.exercise} alt="Exercício e testosterona" className="w-full max-w-2xl mx-auto rounded-xl shadow-sm" />
-            <p className="text-xs text-[#1C3D5A]/40 text-center mt-3">O exercício de resistência é fundamental para manutenção da massa muscular e dos níveis de testosterona</p>
+            <p className="text-xs text-[#1C3D5A] dark:text-foreground/40 text-center mt-3">O exercício de resistência é fundamental para manutenção da massa muscular e dos níveis de testosterona</p>
           </div>
 
           <div className="space-y-6">
@@ -215,7 +215,7 @@ export default function SindromeMetabolica() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden"
+                className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 overflow-hidden"
               >
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
@@ -223,16 +223,16 @@ export default function SindromeMetabolica() {
                       {ex.icon}
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-[#1C3D5A]">{ex.type}</h3>
-                      <p className="text-xs text-[#1C3D5A]/40">{ex.recommendation}</p>
+                      <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">{ex.type}</h3>
+                      <p className="text-xs text-[#1C3D5A] dark:text-foreground/40">{ex.recommendation}</p>
                     </div>
                   </div>
-                  <p className="text-xs text-[#1C3D5A]/50 mb-3"><strong>Exemplos:</strong> {ex.examples}</p>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 mb-3"><strong>Exemplos:</strong> {ex.examples}</p>
                   <div className="grid sm:grid-cols-2 gap-2 mb-4">
                     {ex.benefits.map((b, j) => (
                       <div key={j} className="flex items-start gap-2 bg-[#F8FAFB] rounded-lg p-2.5">
                         <Check className="w-3 h-3 mt-0.5 shrink-0 text-amber-500" />
-                        <span className="text-xs text-[#1C3D5A]/55">{b}</span>
+                        <span className="text-xs text-[#1C3D5A] dark:text-foreground/55">{b}</span>
                       </div>
                     ))}
                   </div>
@@ -253,7 +253,7 @@ export default function SindromeMetabolica() {
       {/* Practical recommendations */}
       <section className="py-12 lg:py-16">
         <div className="container max-w-3xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">
             Recomendações Práticas
           </h2>
           <div className="space-y-3">
@@ -271,14 +271,14 @@ export default function SindromeMetabolica() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-5 border border-[#1C3D5A]/6"
+                className="flex items-start gap-4 bg-white dark:bg-card rounded-xl p-5 border border-[#1C3D5A]/6"
               >
                 <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600 shrink-0">
                   {rec.icon}
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-[#1C3D5A] mb-1">{rec.title}</h3>
-                  <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">{rec.detail}</p>
+                  <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">{rec.title}</h3>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">{rec.detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -290,8 +290,8 @@ export default function SindromeMetabolica() {
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-3xl">
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 lg:p-8">
-            <h3 className="text-lg font-semibold text-[#1C3D5A] mb-3">Mensagem Principal</h3>
-            <p className="text-sm text-[#1C3D5A]/60 leading-relaxed">
+            <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-3">Mensagem Principal</h3>
+            <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">
               O envelhecimento saudável do homem depende de um tripé: <strong>controle do peso</strong>, <strong>exercício físico regular</strong> (aeróbico + resistência) e <strong>equilíbrio hormonal</strong>. A síndrome metabólica e o hipogonadismo são condições tratáveis que, quando abordadas de forma integrada, permitem uma melhora significativa da qualidade de vida, da função sexual, da composição corporal e da saúde cardiovascular. Agende uma consulta para avaliarmos seu perfil metabólico e hormonal de forma personalizada.
             </p>
           </div>
@@ -301,8 +301,8 @@ export default function SindromeMetabolica() {
       {/* References */}
       <section className="py-8 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h3 className="text-xs font-semibold text-[#1C3D5A]/40 uppercase tracking-wider mb-3">Referências</h3>
-          <ol className="text-[10px] text-[#1C3D5A]/35 space-y-1 list-decimal list-inside">
+          <h3 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground/40 uppercase tracking-wider mb-3">Referências</h3>
+          <ol className="text-[10px] text-[#1C3D5A] dark:text-foreground/35 space-y-1 list-decimal list-inside">
             <li>Dohle GR, et al. EAU Guidelines on Male Hypogonadism. European Association of Urology, 2025.</li>
             <li>Mulhall JP, et al. AUA Guideline: Evaluation and Management of Testosterone Deficiency. American Urological Association, 2024.</li>
             <li>Alberti KG, et al. Harmonizing the metabolic syndrome (IDF/AHA/NHLBI). Circulation. 2009;120(16):1640-5.</li>

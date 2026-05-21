@@ -148,7 +148,7 @@ function CauseCategory({ cat, index }: { cat: typeof causes[0]; index: number })
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
-      className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden"
+      className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 overflow-hidden"
     >
       <button
         onClick={() => setOpen(!open)}
@@ -156,10 +156,10 @@ function CauseCategory({ cat, index }: { cat: typeof causes[0]; index: number })
       >
         <div className="flex items-center gap-3">
           <div className={`w-3 h-3 rounded-full bg-${cat.color}-500`} />
-          <h3 className="text-sm font-semibold text-[#1C3D5A]">{cat.category}</h3>
-          <span className="text-xs text-[#1C3D5A]/30">({cat.items.length})</span>
+          <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground">{cat.category}</h3>
+          <span className="text-xs text-[#1C3D5A] dark:text-foreground/30">({cat.items.length})</span>
         </div>
-        {open ? <ChevronUp className="w-4 h-4 text-[#1C3D5A]/30" /> : <ChevronDown className="w-4 h-4 text-[#1C3D5A]/30" />}
+        {open ? <ChevronUp className="w-4 h-4 text-[#1C3D5A] dark:text-foreground/30" /> : <ChevronDown className="w-4 h-4 text-[#1C3D5A] dark:text-foreground/30" />}
       </button>
       {open && (
         <div className="px-5 pb-5 space-y-3 border-t border-[#1C3D5A]/5 pt-3">
@@ -167,8 +167,8 @@ function CauseCategory({ cat, index }: { cat: typeof causes[0]; index: number })
             <div key={i} className="flex items-start gap-3">
               <div className={`w-1.5 h-1.5 rounded-full bg-${cat.color}-400 mt-1.5 shrink-0`} />
               <div>
-                <span className="text-xs font-semibold text-[#1C3D5A]">{item.name}: </span>
-                <span className="text-xs text-[#1C3D5A]/55">{item.detail}</span>
+                <span className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground">{item.name}: </span>
+                <span className="text-xs text-[#1C3D5A] dark:text-foreground/55">{item.detail}</span>
               </div>
             </div>
           ))}
@@ -191,7 +191,7 @@ export default function DisfuncaoEretil() {
       {/* Intro */}
       <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">
         <div className="container max-w-4xl">
-          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] prose-p:text-[#1C3D5A]/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A]/80">
+          <div className="prose prose-lg max-w-none prose-headings:text-[#1C3D5A] dark:text-foreground prose-p:text-[#1C3D5A] dark:text-foreground/65 prose-p:leading-relaxed prose-strong:text-[#1C3D5A] dark:text-foreground/80">
             <p>
               A <strong>disfunção erétil (DE)</strong> é definida como a incapacidade persistente de obter e/ou manter uma ereção suficiente para uma atividade sexual satisfatória. Afeta cerca de <strong>52% dos homens entre 40-70 anos</strong> em algum grau (Massachusetts Male Aging Study), com prevalência aumentando significativamente com a idade — de 5-10% aos 40 anos para 40-70% aos 70 anos.
             </p>
@@ -221,10 +221,10 @@ export default function DisfuncaoEretil() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="text-center bg-white rounded-xl p-4 border border-[#1C3D5A]/6"
+                className="text-center bg-white dark:bg-card rounded-xl p-4 border border-[#1C3D5A]/6"
               >
-                <div className="text-2xl font-bold text-[#1C3D5A] mb-1">{s.number}</div>
-                <p className="text-xs text-[#1C3D5A]/50">{s.label}</p>
+                <div className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground mb-1">{s.number}</div>
+                <p className="text-xs text-[#1C3D5A] dark:text-foreground/50">{s.label}</p>
                 <p className="text-[9px] text-[#B87333] mt-1">{s.source}</p>
               </motion.div>
             ))}
@@ -235,8 +235,8 @@ export default function DisfuncaoEretil() {
       {/* Causes */}
       <section className="py-12 lg:py-16">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-3 text-center font-serif">Causas da Disfunção Erétil</h2>
-          <p className="text-center text-sm text-[#1C3D5A]/50 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-3 text-center font-serif">Causas da Disfunção Erétil</h2>
+          <p className="text-center text-sm text-[#1C3D5A] dark:text-foreground/50 mb-8 max-w-2xl mx-auto">
             A DE é multifatorial — a maioria dos pacientes tem mais de uma causa contribuindo. Identificar todas as causas é essencial para um tratamento eficaz.
           </p>
           <div className="space-y-3">
@@ -250,7 +250,7 @@ export default function DisfuncaoEretil() {
       {/* Diagnosis */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-8 text-center font-serif">Diagnóstico</h2>
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-8 text-center font-serif">Diagnóstico</h2>
           <div className="space-y-4">
             {[
               { step: "1", title: "Anamnese detalhada", detail: "Questionário IIEF-5 (International Index of Erectile Function), história sexual, início e progressão dos sintomas, fatores de risco cardiovascular, medicamentos em uso, saúde mental, qualidade do relacionamento. Diferenciar DE de outros distúrbios (ejaculação precoce, diminuição da libido, anorgasmia)." },
@@ -264,14 +264,14 @@ export default function DisfuncaoEretil() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-5 border border-[#1C3D5A]/6"
+                className="flex items-start gap-4 bg-white dark:bg-card rounded-xl p-5 border border-[#1C3D5A]/6"
               >
                 <div className="shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
                   <span className="text-sm font-bold text-red-700">{item.step}</span>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-[#1C3D5A] mb-1">{item.title}</h3>
-                  <p className="text-xs text-[#1C3D5A]/55 leading-relaxed">{item.detail}</p>
+                  <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h3>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">{item.detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -296,10 +296,10 @@ export default function DisfuncaoEretil() {
       {/* Treatments */}
       <section className="py-12 lg:py-16 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] mb-3 text-center font-serif">
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground mb-3 text-center font-serif">
             Opções de Tratamento
           </h2>
-          <p className="text-center text-sm text-[#1C3D5A]/50 mb-10 max-w-2xl mx-auto">
+          <p className="text-center text-sm text-[#1C3D5A] dark:text-foreground/50 mb-10 max-w-2xl mx-auto">
             O tratamento é escalonado e individualizado, baseado na decisão compartilhada entre médico e paciente. A escolha considera a causa, gravidade, preferências do paciente e do casal.
           </p>
           <div className="space-y-5">
@@ -310,7 +310,7 @@ export default function DisfuncaoEretil() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden"
+                className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/6 overflow-hidden"
               >
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
@@ -321,13 +321,13 @@ export default function DisfuncaoEretil() {
                     }`}>
                       {t.line}
                     </span>
-                    <div className="w-8 h-8 rounded-lg bg-[#F8FAFB] flex items-center justify-center text-[#1C3D5A]/50">
+                    <div className="w-8 h-8 rounded-lg bg-[#F8FAFB] flex items-center justify-center text-[#1C3D5A] dark:text-foreground/50">
                       {t.icon}
                     </div>
-                    <h3 className="text-base font-semibold text-[#1C3D5A]">{t.name}</h3>
+                    <h3 className="text-base font-semibold text-[#1C3D5A] dark:text-foreground">{t.name}</h3>
                   </div>
-                  <p className="text-sm text-[#1C3D5A]/50 mb-3">{t.description}</p>
-                  <p className="text-xs text-[#1C3D5A]/55 leading-relaxed mb-4">{t.details}</p>
+                  <p className="text-sm text-[#1C3D5A] dark:text-foreground/50 mb-3">{t.description}</p>
+                  <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed mb-4">{t.details}</p>
                   <div className="grid sm:grid-cols-2 gap-3">
                     <div className="bg-amber-50/50 rounded-lg p-3">
                       <h4 className="text-[10px] uppercase tracking-wider font-semibold text-amber-700 mb-1">Eficácia</h4>
@@ -381,8 +381,8 @@ export default function DisfuncaoEretil() {
       {/* References */}
       <section className="py-8 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h3 className="text-xs font-semibold text-[#1C3D5A]/40 uppercase tracking-wider mb-3">Referências</h3>
-          <ol className="text-[10px] text-[#1C3D5A]/35 space-y-1 list-decimal list-inside">
+          <h3 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground/40 uppercase tracking-wider mb-3">Referências</h3>
+          <ol className="text-[10px] text-[#1C3D5A] dark:text-foreground/35 space-y-1 list-decimal list-inside">
             <li>Salonia A, et al. EAU Guidelines on Sexual and Reproductive Health. European Association of Urology, 2025.</li>
             <li>Burnett AL, et al. AUA Guideline: Erectile Dysfunction. American Urological Association, 2024.</li>
             <li>Partin AW, et al. Campbell-Walsh-Wein Urology, 13th Edition. Elsevier, 2024. Chapters 62-68.</li>

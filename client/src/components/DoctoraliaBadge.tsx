@@ -60,7 +60,7 @@ export default function DoctoraliaBadge() {
               </div>
 
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-4xl font-bold text-[#1C3D5A]">5.0</span>
+                <span className="text-4xl font-bold text-[#1C3D5A] dark:text-foreground">5.0</span>
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
@@ -73,9 +73,9 @@ export default function DoctoraliaBadge() {
                   <div key={i} className="text-center">
                     <div className="flex items-center justify-center gap-1 text-[#B87333]">
                       {stat.icon}
-                      <span className="text-sm font-bold text-[#1C3D5A]">{stat.value}</span>
+                      <span className="text-sm font-bold text-[#1C3D5A] dark:text-foreground">{stat.value}</span>
                     </div>
-                    <span className="text-[10px] text-[#1C3D5A]/40">{stat.label}</span>
+                    <span className="text-[10px] text-[#1C3D5A] dark:text-foreground/40">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -99,23 +99,23 @@ export default function DoctoraliaBadge() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-lg border border-[#1C3D5A]/5 p-4"
+                  className="bg-white dark:bg-card rounded-lg border border-[#1C3D5A]/5 p-4"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <div className="w-7 h-7 rounded-full bg-[#1C3D5A]/5 flex items-center justify-center">
-                        <span className="text-xs font-bold text-[#1C3D5A]/40">P</span>
+                        <span className="text-xs font-bold text-[#1C3D5A] dark:text-foreground/40">P</span>
                       </div>
-                      <span className="text-xs font-medium text-[#1C3D5A]/60">{review.name}</span>
+                      <span className="text-xs font-medium text-[#1C3D5A] dark:text-foreground/60">{review.name}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       {[...Array(review.rating)].map((_, j) => (
                         <Star key={j} className="w-3 h-3 fill-amber-400 text-amber-400" />
                       ))}
-                      <span className="text-[10px] text-[#1C3D5A]/30 ml-1">{review.date}</span>
+                      <span className="text-[10px] text-[#1C3D5A] dark:text-foreground/30 ml-1">{review.date}</span>
                     </div>
                   </div>
-                  <p className="text-sm text-[#1C3D5A]/55 leading-relaxed">
+                  <p className="text-sm text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                     "{review.text}"
                   </p>
                 </motion.div>

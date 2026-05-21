@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Blog() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-card">
       {/* Header bar */}
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
@@ -70,7 +70,7 @@ export default function Blog() {
                 className="group"
               >
                 <Link href={`/blog/${post.slug}`}>
-                  <div className="bg-white rounded-xl border border-[#1C3D5A]/8 overflow-hidden hover:shadow-xl hover:shadow-[#1C3D5A]/5 transition-all duration-500 hover:-translate-y-1">
+                  <div className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/8 overflow-hidden hover:shadow-xl hover:shadow-[#1C3D5A]/5 transition-all duration-500 hover:-translate-y-1">
                     {/* Cover image */}
                     <div className="relative overflow-hidden aspect-[16/9]">
                       <img
@@ -87,7 +87,7 @@ export default function Blog() {
 
                     {/* Content */}
                     <div className="p-6">
-                      <div className="flex items-center gap-4 text-xs text-[#1C3D5A]/40 mb-3">
+                      <div className="flex items-center gap-4 text-xs text-[#1C3D5A] dark:text-foreground/40 mb-3">
                         <span className="flex items-center gap-1.5">
                           <Calendar className="w-3.5 h-3.5" />
                           {post.date}
@@ -98,11 +98,11 @@ export default function Blog() {
                         </span>
                       </div>
 
-                      <h2 className="text-lg font-semibold text-[#1C3D5A] leading-snug mb-3 group-hover:text-[#B87333] transition-colors line-clamp-2">
+                      <h2 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground leading-snug mb-3 group-hover:text-[#B87333] transition-colors line-clamp-2">
                         {post.title}
                       </h2>
 
-                      <p className="text-sm text-[#1C3D5A]/50 leading-relaxed mb-4 line-clamp-3">
+                      <p className="text-sm text-[#1C3D5A] dark:text-foreground/50 leading-relaxed mb-4 line-clamp-3">
                         {post.excerpt}
                       </p>
 
@@ -125,7 +125,7 @@ export default function Blog() {
               transition={{ delay: 0.5 }}
               className="mt-12 text-center"
             >
-              <p className="text-[#1C3D5A]/30 text-sm">
+              <p className="text-[#1C3D5A] dark:text-foreground/30 text-sm">
                 Novos artigos serão publicados em breve. Acompanhe também pelo{" "}
                 <a
                   href="https://www.instagram.com/drfelipebulhoes/"

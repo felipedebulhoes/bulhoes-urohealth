@@ -12,7 +12,7 @@ const STATUS_CONFIG: Record<string, { label: string; color: string; bg: string; 
   new: { label: "Novo", color: "text-blue-700", bg: "bg-blue-50 border-blue-200", icon: <CircleDot className="w-3.5 h-3.5" /> },
   contacted: { label: "Contatado", color: "text-amber-700", bg: "bg-amber-50 border-amber-200", icon: <PhoneCall className="w-3.5 h-3.5" /> },
   scheduled: { label: "Agendado", color: "text-amber-700", bg: "bg-amber-50 border-amber-200", icon: <CalendarCheck className="w-3.5 h-3.5" /> },
-  completed: { label: "Concluído", color: "text-gray-600", bg: "bg-gray-50 border-gray-200", icon: <CheckCircle2 className="w-3.5 h-3.5" /> },
+  completed: { label: "Concluído", color: "text-gray-600 dark:text-muted-foreground", bg: "bg-gray-50 dark:bg-card border-gray-200 dark:border-border", icon: <CheckCircle2 className="w-3.5 h-3.5" /> },
 };
 
 const STATUS_OPTIONS = [
@@ -95,7 +95,7 @@ export default function AdminLeads() {
   // Loading state
   if (authLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-card">
         <Loader2 className="w-8 h-8 animate-spin text-amber-600" />
       </div>
     );
@@ -104,11 +104,11 @@ export default function AdminLeads() {
   // Not admin
   if (!isAuthenticated || user?.role !== "admin") {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-card">
         <div className="text-center">
           <Users className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Acesso Restrito</h2>
-          <p className="text-gray-500 mb-4">Esta página é restrita a administradores.</p>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-foreground mb-2">Acesso Restrito</h2>
+          <p className="text-gray-500 dark:text-muted-foreground mb-4">Esta página é restrita a administradores.</p>
           <Link href="/" className="text-amber-600 hover:underline">Voltar ao site</Link>
         </div>
       </div>
@@ -124,22 +124,22 @@ export default function AdminLeads() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-card">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <header className="bg-white dark:bg-card border-b border-gray-200 dark:border-border sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/">
-              <button className="p-2 rounded-lg hover:bg-gray-100 transition-colors">
-                <ArrowLeft className="w-5 h-5 text-gray-600" />
+              <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-muted dark:bg-muted transition-colors">
+                <ArrowLeft className="w-5 h-5 text-gray-600 dark:text-muted-foreground" />
               </button>
             </Link>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+              <h1 className="text-xl font-bold text-gray-900 dark:text-foreground flex items-center gap-2">
                 <Users className="w-5 h-5 text-amber-600" />
                 Painel de Leads
               </h1>
-              <p className="text-sm text-gray-500">Contatos captados pelo assistente virtual</p>
+              <p className="text-sm text-gray-500 dark:text-muted-foreground">Contatos captados pelo assistente virtual</p>
             </div>
           </div>
           <Link href="/admin/files">
@@ -154,13 +154,13 @@ export default function AdminLeads() {
         {/* Stats Cards */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
           {[
-            { label: "Total", value: stats.total, color: "bg-gray-100 text-gray-700" },
+            { label: "Total", value: stats.total, color: "bg-gray-100 dark:bg-muted text-gray-700 dark:text-foreground" },
             { label: "Novos", value: stats.new, color: "bg-blue-50 text-blue-700" },
             { label: "Contatados", value: stats.contacted, color: "bg-amber-50 text-amber-700" },
             { label: "Agendados", value: stats.scheduled, color: "bg-amber-50 text-amber-700" },
-            { label: "Concluídos", value: stats.completed, color: "bg-gray-50 text-gray-600" },
+            { label: "Concluídos", value: stats.completed, color: "bg-gray-50 dark:bg-card text-gray-600 dark:text-muted-foreground" },
           ].map((stat) => (
-            <div key={stat.label} className={`rounded-xl p-4 ${stat.color} border border-gray-200`}>
+            <div key={stat.label} className={`rounded-xl p-4 ${stat.color} border border-gray-200 dark:border-border`}>
               <p className="text-2xl font-bold">{stat.value}</p>
               <p className="text-sm opacity-80">{stat.label}</p>
             </div>
@@ -176,7 +176,7 @@ export default function AdminLeads() {
               placeholder="Buscar por nome, telefone, email ou motivo..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 dark:border-border bg-white dark:bg-card text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
             />
           </div>
           <div className="relative">
@@ -184,7 +184,7 @@ export default function AdminLeads() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="pl-10 pr-8 py-2.5 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent appearance-none cursor-pointer"
+              className="pl-10 pr-8 py-2.5 rounded-lg border border-gray-200 dark:border-border bg-white dark:bg-card text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent appearance-none cursor-pointer"
             >
               {STATUS_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -201,8 +201,8 @@ export default function AdminLeads() {
         ) : !filteredLeads || filteredLeads.length === 0 ? (
           <div className="text-center py-20">
             <MessageSquare className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-gray-900 mb-1">Nenhum lead encontrado</h3>
-            <p className="text-gray-500">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-foreground mb-1">Nenhum lead encontrado</h3>
+            <p className="text-gray-500 dark:text-muted-foreground">
               {searchQuery || statusFilter
                 ? "Tente ajustar os filtros de busca."
                 : "Quando pacientes deixarem seus dados no chat, eles aparecerão aqui."}
@@ -217,7 +217,7 @@ export default function AdminLeads() {
               return (
                 <div
                   key={lead.id}
-                  className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-sm transition-shadow"
+                  className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-border overflow-hidden hover:shadow-sm transition-shadow"
                 >
                   {/* Lead Summary */}
                   <button
@@ -230,12 +230,12 @@ export default function AdminLeads() {
                       </div>
                       <div className="min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="font-semibold text-gray-900 truncate">{lead.name}</h3>
+                          <h3 className="font-semibold text-gray-900 dark:text-foreground truncate">{lead.name}</h3>
                           <span className={`text-xs px-2 py-0.5 rounded-full border ${statusCfg.bg} ${statusCfg.color} font-medium`}>
                             {statusCfg.label}
                           </span>
                         </div>
-                        <div className="flex items-center gap-3 text-sm text-gray-500 mt-0.5">
+                        <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-muted-foreground mt-0.5">
                           <span className="flex items-center gap-1">
                             <Phone className="w-3.5 h-3.5" />
                             {formatPhone(lead.phone)}
@@ -266,7 +266,7 @@ export default function AdminLeads() {
                       <div className="grid md:grid-cols-2 gap-4">
                         {/* Contact Info */}
                         <div className="space-y-3">
-                          <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wide">Informações de Contato</h4>
+                          <h4 className="text-sm font-semibold text-gray-900 dark:text-foreground uppercase tracking-wide">Informações de Contato</h4>
                           <div className="space-y-2">
                             <div className="flex items-center gap-2 text-sm">
                               <Phone className="w-4 h-4 text-amber-600" />
@@ -284,14 +284,14 @@ export default function AdminLeads() {
                             )}
                             {lead.preferredLocation && (
                               <div className="flex items-center gap-2 text-sm">
-                                <MapPin className="w-4 h-4 text-gray-500" />
-                                <span className="text-gray-700">{LOCATION_MAP[lead.preferredLocation] || lead.preferredLocation}</span>
+                                <MapPin className="w-4 h-4 text-gray-500 dark:text-muted-foreground" />
+                                <span className="text-gray-700 dark:text-foreground">{LOCATION_MAP[lead.preferredLocation] || lead.preferredLocation}</span>
                               </div>
                             )}
                             {lead.reason && (
                               <div className="flex items-start gap-2 text-sm">
-                                <MessageSquare className="w-4 h-4 text-gray-500 mt-0.5" />
-                                <span className="text-gray-700">{lead.reason}</span>
+                                <MessageSquare className="w-4 h-4 text-gray-500 dark:text-muted-foreground mt-0.5" />
+                                <span className="text-gray-700 dark:text-foreground">{lead.reason}</span>
                               </div>
                             )}
                           </div>
@@ -328,7 +328,7 @@ export default function AdminLeads() {
 
                         {/* Status Update */}
                         <div className="space-y-3">
-                          <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wide">Atualizar Status</h4>
+                          <h4 className="text-sm font-semibold text-gray-900 dark:text-foreground uppercase tracking-wide">Atualizar Status</h4>
                           <div className="grid grid-cols-2 gap-2">
                             {Object.entries(STATUS_CONFIG).map(([key, cfg]) => (
                               <button
@@ -338,7 +338,7 @@ export default function AdminLeads() {
                                 className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium border transition-colors ${
                                   lead.status === key
                                     ? `${cfg.bg} ${cfg.color} border-current opacity-100`
-                                    : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+                                    : "bg-white text-gray-600 dark:text-muted-foreground border-gray-200 dark:border-border hover:bg-gray-50 dark:hover:bg-muted dark:bg-card"
                                 } ${updatingId === lead.id ? "opacity-50 cursor-not-allowed" : ""}`}
                               >
                                 {updatingId === lead.id ? (
@@ -354,8 +354,8 @@ export default function AdminLeads() {
                           {/* Chat History */}
                           {lead.chatHistory && (
                             <div className="mt-3">
-                              <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-2">Histórico do Chat</h4>
-                              <div className="bg-gray-50 rounded-lg p-3 max-h-48 overflow-y-auto text-sm text-gray-600 whitespace-pre-wrap border border-gray-200">
+                              <h4 className="text-sm font-semibold text-gray-900 dark:text-foreground uppercase tracking-wide mb-2">Histórico do Chat</h4>
+                              <div className="bg-gray-50 dark:bg-card rounded-lg p-3 max-h-48 overflow-y-auto text-sm text-gray-600 dark:text-muted-foreground whitespace-pre-wrap border border-gray-200 dark:border-border">
                                 {lead.chatHistory}
                               </div>
                             </div>
@@ -364,8 +364,8 @@ export default function AdminLeads() {
                           {/* Notes */}
                           {lead.notes && (
                             <div className="mt-2">
-                              <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-1">Notas</h4>
-                              <p className="text-sm text-gray-600">{lead.notes}</p>
+                              <h4 className="text-sm font-semibold text-gray-900 dark:text-foreground uppercase tracking-wide mb-1">Notas</h4>
+                              <p className="text-sm text-gray-600 dark:text-muted-foreground">{lead.notes}</p>
                             </div>
                           )}
                         </div>

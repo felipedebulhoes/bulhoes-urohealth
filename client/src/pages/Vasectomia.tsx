@@ -70,11 +70,11 @@ export default function Vasectomia() {
       <FAQSchema questions={vasectomiaFAQs} />
 
       {/* Introdução */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-[#B87333] p-6 rounded-r-lg mb-10">
-              <p className="text-[#1C3D5A] leading-relaxed">
+              <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
                 A vasectomia é o <strong>método mais seguro e eficaz de contracepção permanente masculina</strong>. Trata-se de um procedimento ambulatorial, minimamente invasivo, com taxa de falha inferior a 1%. Segundo o <strong>AUA Vasectomy Guideline (2026)</strong>, mais de 500.000 vasectomias são realizadas anualmente nos Estados Unidos, sendo um dos procedimentos urológicos mais comuns. O procedimento <strong>não altera a libido, a ereção nem a ejaculação</strong> — apenas impede a passagem dos espermatozoides.
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function Vasectomia() {
 
           {/* O que é */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">O que é a Vasectomia?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">O que é a Vasectomia?</h2>
             <p className="text-[#334155] leading-relaxed mb-4">
               A vasectomia é um procedimento cirúrgico que consiste na <strong>secção e oclusão dos ductos deferentes</strong> — os canais que transportam os espermatozoides dos testículos até a uretra. Após a vasectomia, os espermatozoides continuam sendo produzidos pelos testículos, mas são reabsorvidos pelo organismo, sem serem eliminados no ejaculado.
             </p>
@@ -98,7 +98,7 @@ export default function Vasectomia() {
               ].map((item, i) => (
                 <div key={i} className="bg-[#B87333]/5 rounded-xl p-5 text-center border border-[#B87333]/10">
                   <item.icon className="w-8 h-8 text-[#B87333] mx-auto mb-2" />
-                  <p className="text-xl font-bold text-[#1C3D5A]">{item.label}</p>
+                  <p className="text-xl font-bold text-[#1C3D5A] dark:text-foreground">{item.label}</p>
                   <p className="text-xs text-[#64748B]">{item.desc}</p>
                 </div>
               ))}
@@ -107,7 +107,7 @@ export default function Vasectomia() {
 
           {/* Indicações */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Quando a Vasectomia é Indicada?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Quando a Vasectomia é Indicada?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A vasectomia é indicada para homens que desejam <strong>contracepção definitiva</strong> e que já têm certeza de que não querem mais filhos. Segundo o AUA Guideline 2026, a consulta pré-operatória é obrigatória e deve abordar:
             </p>
@@ -134,13 +134,13 @@ export default function Vasectomia() {
                   icon: ShieldAlert,
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                <div key={i} className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
                   <div className="flex items-start gap-3">
                     <div className="w-10 h-10 bg-[#B87333]/10 rounded-lg flex items-center justify-center shrink-0">
                       <item.icon className="w-5 h-5 text-[#B87333]" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
+                      <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
                       <p className="text-[#334155] text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -157,7 +157,7 @@ export default function Vasectomia() {
 
           {/* Mitos e Verdades */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Mitos e Verdades sobre a Vasectomia</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Mitos e Verdades sobre a Vasectomia</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               O AUA Vasectomy Guideline 2026 abordou especificamente diversas preocupações comuns dos pacientes, com base em evidências científicas de alta qualidade:
             </p>
@@ -217,12 +217,12 @@ export default function Vasectomia() {
 
           {/* Preparo */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Preparo para a Vasectomia</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Preparo para a Vasectomia</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               O preparo para a vasectomia é simples. As orientações abaixo seguem as recomendações do AUA Guideline 2026:
             </p>
 
-            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
               <CalendarCheck className="w-5 h-5 text-[#B87333]" />
               Antes do Procedimento
             </h3>
@@ -259,14 +259,14 @@ export default function Vasectomia() {
                     {item.step}
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
               <Ban className="w-5 h-5 text-red-500" />
               O que Evitar Antes da Vasectomia
             </h3>
@@ -296,12 +296,12 @@ export default function Vasectomia() {
 
           {/* Como é realizada */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={5} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Como é Realizada a Vasectomia?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Como é Realizada a Vasectomia?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A técnica recomendada pelo AUA Guideline 2026 é a <strong>vasectomia sem bisturi (no-scalpel vasectomy — NSV)</strong>, uma abordagem minimamente invasiva com menor risco de sangramento e infecção. Abaixo, o passo a passo do procedimento:
             </p>
 
-            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
               <Scissors className="w-5 h-5 text-[#B87333]" />
               Passo a Passo do Procedimento
             </h3>
@@ -343,7 +343,7 @@ export default function Vasectomia() {
                     {item.step}
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-[#1C3D5A] mb-1">{item.title}</h4>
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -351,17 +351,17 @@ export default function Vasectomia() {
             </div>
 
             {/* Comparação de técnicas */}
-            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+            <div className="bg-white dark:bg-card border border-gray-200 dark:border-border rounded-xl overflow-hidden">
               <div className="bg-[#1C3D5A] text-white p-4">
                 <h3 className="text-lg font-bold">Comparação: No-Scalpel vs. Vasectomia Convencional</h3>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-gray-50">
+                  <thead className="bg-gray-50 dark:bg-card">
                     <tr>
-                      <th className="text-left p-4 font-bold text-[#1C3D5A] border-b">Característica</th>
+                      <th className="text-left p-4 font-bold text-[#1C3D5A] dark:text-foreground border-b">Característica</th>
                       <th className="text-left p-4 font-bold text-[#B87333] border-b">No-Scalpel (NSV)</th>
-                      <th className="text-left p-4 font-bold text-gray-500 border-b">Convencional</th>
+                      <th className="text-left p-4 font-bold text-gray-500 dark:text-muted-foreground border-b">Convencional</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -374,8 +374,8 @@ export default function Vasectomia() {
                       ["Recuperação", "Mais rápida", "Padrão"],
                       ["Recomendação AUA", "Recomendada (Grau A)", "Aceitável"],
                     ].map((row, i) => (
-                      <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                        <td className="p-4 font-medium text-[#1C3D5A] border-b">{row[0]}</td>
+                      <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50 dark:bg-card"}>
+                        <td className="p-4 font-medium text-[#1C3D5A] dark:text-foreground border-b">{row[0]}</td>
                         <td className="p-4 text-[#334155] border-b">{row[1]}</td>
                         <td className="p-4 text-[#64748B] border-b">{row[2]}</td>
                       </tr>
@@ -388,12 +388,12 @@ export default function Vasectomia() {
 
           {/* Pós-operatório */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={6} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Pós-Operatório: O que Esperar</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Pós-Operatório: O que Esperar</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A recuperação após a vasectomia é rápida. A maioria dos homens retorna às atividades leves em 2-3 dias. Veja o que é normal e o que requer atenção:
             </p>
 
-            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-green-600" />
               Sintomas Normais (Esperados)
             </h3>
@@ -435,7 +435,7 @@ export default function Vasectomia() {
               ))}
             </div>
 
-            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
               <CalendarCheck className="w-5 h-5 text-[#B87333]" />
               Orientações Pós-Operatórias
             </h3>
@@ -449,14 +449,14 @@ export default function Vasectomia() {
                 { text: "Evitar relações sexuais por 5-7 dias (ou até se sentir confortável)", icon: Heart },
                 { text: "Retorno ao trabalho leve em 2-3 dias; trabalho pesado em 7 dias", icon: Building2 },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3 bg-gray-50 rounded-lg p-4 border border-gray-100">
+                <div key={i} className="flex items-start gap-3 bg-gray-50 dark:bg-card rounded-lg p-4 border border-gray-100">
                   <item.icon className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                   <p className="text-sm text-[#334155]">{item.text}</p>
                 </div>
               ))}
             </div>
 
-            <h3 className="text-xl font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-red-500" />
               Sinais de Alerta — Procure o Médico
             </h3>
@@ -480,13 +480,13 @@ export default function Vasectomia() {
 
           {/* Espermograma de Controle */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={7} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Espermograma de Controle (PVSA)</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Espermograma de Controle (PVSA)</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A vasectomia <strong>não é imediatamente eficaz</strong>. Espermatozoides residuais permanecem nos ductos deferentes acima do ponto de oclusão e precisam ser eliminados. O espermograma pós-vasectomia (PVSA) é <strong>obrigatório</strong> para confirmar o sucesso do procedimento.
             </p>
 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-6">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4 flex items-center gap-2">
                 <TestTube className="w-5 h-5 text-blue-600" />
                 Recomendações do AUA 2026
               </h3>
@@ -509,8 +509,8 @@ export default function Vasectomia() {
                     desc: "Amostra não centrifugada, avaliada em laboratório, consultório ou por teste enviado por correio (mail-in testing).",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="bg-white/70 rounded-lg p-4">
-                    <h4 className="font-bold text-[#1C3D5A] text-sm mb-1">{item.title}</h4>
+                  <div key={i} className="bg-white dark:bg-card/70 rounded-lg p-4">
+                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">{item.title}</h4>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
@@ -523,7 +523,7 @@ export default function Vasectomia() {
               </p>
             </div>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-4">
+            <div className="bg-gray-50 dark:bg-card border border-gray-200 dark:border-border rounded-lg p-4 mt-4">
               <p className="text-sm text-[#334155]">
                 <strong>Se espermatozoides móveis persistirem após 6 meses:</strong> deve-se considerar re-vasectomia. Se houver &gt; 100.000 espermatozoides não-móveis/mL após 6 meses, a decisão entre re-vasectomia, manutenção de contracepção ou novos espermogramas deve ser compartilhada entre médico e paciente. (AUA 2026 — Expert Opinion)
               </p>
@@ -532,7 +532,7 @@ export default function Vasectomia() {
 
           {/* Complicações */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={8} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Possíveis Complicações</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Possíveis Complicações</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A vasectomia é um procedimento seguro, mas como qualquer cirurgia, pode apresentar complicações. O AUA Guideline 2026 destaca que o cirurgião deve ser capaz de reconhecer e tratar as seguintes complicações:
             </p>
@@ -607,17 +607,17 @@ export default function Vasectomia() {
 
           {/* Reversão */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={9} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Reversão da Vasectomia</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Reversão da Vasectomia</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               Embora a vasectomia seja considerada um método permanente, a <strong>reversão é possível</strong> através de microcirurgia. O AUA Guideline 2026 aborda detalhadamente as opções de restauração da fertilidade após vasectomia:
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+              <div className="bg-white dark:bg-card border border-gray-200 dark:border-border rounded-xl p-6 shadow-sm">
                 <div className="w-12 h-12 bg-[#B87333]/10 rounded-lg flex items-center justify-center mb-4">
                   <Undo2 className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3">Vasovasostomia</h3>
+                <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-3">Vasovasostomia</h3>
                 <p className="text-sm text-[#334155] leading-relaxed mb-3">
                   Reconexão microcirúrgica dos ductos deferentes. Técnica de 1 ou 2 camadas (AUA 2026). Taxas de patência de 75-97% quando realizada nos primeiros 3 anos.
                 </p>
@@ -630,11 +630,11 @@ export default function Vasectomia() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+              <div className="bg-white dark:bg-card border border-gray-200 dark:border-border rounded-xl p-6 shadow-sm">
                 <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
                   <Baby className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-lg font-bold text-[#1C3D5A] mb-3">Recuperação de Espermatozoides + ICSI</h3>
+                <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-3">Recuperação de Espermatozoides + ICSI</h3>
                 <p className="text-sm text-[#334155] leading-relaxed mb-3">
                   Alternativa à reversão cirúrgica. Espermatozoides são recuperados diretamente do testículo ou epidídimo e utilizados em fertilização in vitro (FIV) com injeção intracitoplasmática (ICSI).
                 </p>
@@ -658,7 +658,7 @@ export default function Vasectomia() {
 
           {/* Onde é realizada */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={10} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Onde a Vasectomia é Realizada</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Onde a Vasectomia é Realizada</h2>
             <div className="bg-gradient-to-r from-[#1C3D5A] to-[#0D3B66] rounded-xl p-6 text-white">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
@@ -689,7 +689,7 @@ export default function Vasectomia() {
 
           {/* FAQ */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={11} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] font-serif mb-6">Perguntas Frequentes</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Perguntas Frequentes</h2>
             <div className="space-y-4">
               {[
                 {
@@ -725,8 +725,8 @@ export default function Vasectomia() {
                   a: "A taxa de falha é inferior a 1%. A recanalização espontânea (reconexão dos ductos) é rara, mas possível. Por isso o espermograma de controle é obrigatório para confirmar o sucesso.",
                 },
               ].map((item, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h4 className="font-bold text-[#1C3D5A] mb-2">{item.q}</h4>
+                <div key={i} className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
+                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.q}</h4>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.a}</p>
                 </div>
               ))}
@@ -735,8 +735,8 @@ export default function Vasectomia() {
 
           {/* Referências */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={12}>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h3 className="text-lg font-bold text-[#1C3D5A] mb-4">Referências</h3>
+            <div className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
                 <li>1. Schlegel PN, Clark JY, Coward RM, et al. Vasectomy: AUA Guideline Part I. J Urol. 2026. DOI:10.1097/JU.0000000000004861.</li>
                 <li>2. Schlegel PN, Clark JY, Coward RM, et al. Fertility Restoration After Vasectomy: AUA Guideline Part II. J Urol. 2026. DOI:10.1097/JU.0000000000004862.</li>

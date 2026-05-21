@@ -9,6 +9,7 @@ import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { trackCtaClick } from "@/lib/analytics";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const mainNavLinks = [
   { label: "Início", href: "#inicio" },
@@ -204,8 +205,9 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA */}
-        <div className="hidden lg:flex items-center gap-3">
+        {/* CTA + Theme Toggle */}
+        <div className="hidden lg:flex items-center gap-2">
+          <ThemeToggle />
           <Link
             href="/agendamento"
             onClick={() => trackCtaClick("agendar_consulta", "header_desktop")}
@@ -298,6 +300,12 @@ export default function Header() {
                   {link.label}
                 </a>
               ))}
+
+              {/* Theme Toggle Mobile */}
+              <div className="flex items-center justify-between px-4 py-2 border-t border-[#C4C4C4]/20 mt-2">
+                <span className="text-sm text-[#1C3D5A]/70">Tema</span>
+                <ThemeToggle />
+              </div>
 
               <Link
                 href="/agendamento"

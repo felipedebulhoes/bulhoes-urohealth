@@ -1,16 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 /**
  * SplashScreen — Animação de abertura do site
  * Mostra a próstata se transformando no "B" do logotipo FB,
  * depois revela o logotipo completo e faz fade-out para o site.
  * 
+ * Sons: heartbeat (batimento cardíaco suave) + whoosh (transição)
  * Só aparece 1x por sessão (sessionStorage).
  * A animação dura ~5s e depois faz fade-out.
  */
 export default function SplashScreen() {
   const [show, setShow] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  const heartbeatRef = useRef<HTMLAudioElement | null>(null);
+  const whooshRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Só mostra 1x por sessão
@@ -20,14 +23,42 @@ export default function SplashScreen() {
     setShow(true);
     sessionStorage.setItem("splash_seen", "1");
 
+    // Tocar heartbeat imediatamente (volume baixo, sutil)
+    try {
+      const heartbeat = new Audio("/manus-storage/heartbeat_c004f89d.mp3");
+      heartbeat.volume = 0.3;
+      heartbeatRef.current = heartbeat;
+      heartbeat.play().catch(() => {/* autoplay bloqueado - ok, silencioso */});
+    } catch {}
+
+    // Tocar whoosh na transição (2s = quando a próstata começa a girar)
+    const whooshTimer = setTimeout(() => {
+      try {
+        const whoosh = new Audio("/manus-storage/whoosh_c71d172a.mp3");
+        whoosh.volume = 0.25;
+        whooshRef.current = whoosh;
+        whoosh.play().catch(() => {});
+      } catch {}
+    }, 2000);
+
     // Após 5s, inicia fade-out
     const fadeTimer = setTimeout(() => setFadeOut(true), 5000);
     // Após 5.8s, remove do DOM
     const removeTimer = setTimeout(() => setShow(false), 5800);
 
     return () => {
+      clearTimeout(whooshTimer);
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
+      // Cleanup audio
+      if (heartbeatRef.current) {
+        heartbeatRef.current.pause();
+        heartbeatRef.current = null;
+      }
+      if (whooshRef.current) {
+        whooshRef.current.pause();
+        whooshRef.current = null;
+      }
     };
   }, []);
 

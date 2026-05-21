@@ -229,3 +229,6 @@
 - [x] Otimizar imagens para WebP e adicionar preconnect/preload de fontes (3.8MB economizados)
 - [x] Adicionar animação de carregamento suave com logotipo ao transitar entre páginas
 - [x] Criar splash screen animada (próstata → B → logotipo FB) ao abrir o site pela primeira vez
+- [x] Adicionar som sutil (heartbeat + whoosh) à splash screen
+- [x] Criar versão da animação para Instagram Stories (1080x1920, 6s, com áudio)
+- [x] Implementar dark mode toggle no site (Header desktop + mobile, CSS variables .dark)

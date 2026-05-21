@@ -228,3 +228,4 @@
 - [x] Criar Reel mockup animado (vídeo 15s) com screenshots do site
 - [x] Otimizar imagens para WebP e adicionar preconnect/preload de fontes (3.8MB economizados)
 - [x] Adicionar animação de carregamento suave com logotipo ao transitar entre páginas
+- [x] Criar splash screen animada (próstata → B → logotipo FB) ao abrir o site pela primeira vez

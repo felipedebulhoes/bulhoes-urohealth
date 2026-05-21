@@ -117,7 +117,7 @@ function TestimonialCard({ testimonial, index, isInView }: { testimonial: Testim
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.45, delay: 0.08 * index }}
-      className="bg-white rounded-xl p-6 border border-[#1C3D5A]/6 shadow-sm hover:shadow-lg hover:border-[#B87333]/20 transition-all duration-300 flex flex-col h-full group"
+      className="testimonial-card-hover bg-white rounded-xl p-6 border border-[#1C3D5A]/6 shadow-sm hover:border-[#B87333]/20 flex flex-col h-full group"
     >
       {/* Quote icon */}
       <Quote className="w-8 h-8 text-[#B87333]/15 mb-3 group-hover:text-[#B87333]/30 transition-colors" />

@@ -103,7 +103,7 @@ export default function SpecialtiesSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.07 }}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-5 hover:bg-white/10 transition-all duration-300 hover:border-[#B87333]/30"
+              className="group specialty-card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-5 hover:bg-white/10 hover:border-[#B87333]/30"
             >
               <div className="w-10 h-10 rounded-md bg-[#B87333]/15 flex items-center justify-center mb-4 group-hover:bg-[#B87333]/25 transition-colors">
                 <spec.icon className="w-5 h-5 text-[#D4884A]" />

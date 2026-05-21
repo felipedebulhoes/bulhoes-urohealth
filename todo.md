@@ -214,3 +214,8 @@
 - [x] Atualizar botões/CTAs com cor cobre de destaque
 - [x] Testar responsividade e ajustar (58 testes passando, sem erros TS)
 - [x] Criar novo manual de marca PDF incluindo cor cobre como cor acessória
+- [x] Revisar páginas internas (educativas, blog, contato) e corrigir legibilidade
+- [x] Atualizar favicon com isotipo FB do manual de marca
+- [x] Gerar posts para Instagram com nova identidade visual (Azul do Nilo + Cobre)
+- [x] Adicionar micro-animações nos cards de especialidades e depoimentos
+- [x] Implementar animação de scroll-reveal nas seções

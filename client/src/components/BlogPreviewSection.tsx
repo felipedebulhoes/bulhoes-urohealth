@@ -58,7 +58,7 @@ export default function BlogPreviewSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Link href={`/blog/${featured.slug}`}>
-            <div className="group grid lg:grid-cols-2 gap-0 bg-white rounded-xl border border-[#1C3D5A]/8 overflow-hidden hover:shadow-xl hover:shadow-[#1C3D5A]/5 transition-all duration-500">
+            <div className="group card-hover grid lg:grid-cols-2 gap-0 bg-white rounded-xl border border-[#1C3D5A]/8 overflow-hidden">
               {/* Image */}
               <div className="relative overflow-hidden aspect-[16/9] lg:aspect-auto">
                 <img

@@ -24,6 +24,7 @@ import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import AIChatWidget from "@/components/AIChatWidget";
 import ScheduleBanner from "@/components/ScheduleBanner";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
@@ -31,25 +32,63 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <DoctoraliaBadge />
-        <AboutSection />
-        <StatsCounter />
-        <EducationSection />
-        <MediaSection />
-        <SpecialtiesSection />
-        <EducationalPreviewSection />
-        <SymptomChecker />
-        <VideosSection />
-        <ServicesSection />
-        <InsuranceSection />
-        <TestimonialsSection />
-        <LocationSection />
-        <FAQSection />
-        <QuickContactForm />
-        <BlogPreviewSection />
-        <NewsletterSection />
-        <InstagramSection />
-        <ContactSection />
+        <ScrollReveal>
+          <DoctoraliaBadge />
+        </ScrollReveal>
+        <ScrollReveal>
+          <AboutSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <StatsCounter />
+        </ScrollReveal>
+        <ScrollReveal>
+          <EducationSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <MediaSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <SpecialtiesSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <EducationalPreviewSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <SymptomChecker />
+        </ScrollReveal>
+        <ScrollReveal>
+          <VideosSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ServicesSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <InsuranceSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <TestimonialsSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <LocationSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <FAQSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <QuickContactForm />
+        </ScrollReveal>
+        <ScrollReveal>
+          <BlogPreviewSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <NewsletterSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <InstagramSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
         <DoctoraliaWidget />
       </main>
       <Footer />

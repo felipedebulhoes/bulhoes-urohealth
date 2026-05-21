@@ -210,7 +210,7 @@ export default function EducationalPreviewSection() {
               transition={{ delay: i * 0.04 }}
             >
               <Link href={page.href}>
-                <div className="group bg-white rounded-xl border border-[#1C3D5A]/6 p-5 h-full hover:border-[#B87333]/30 hover:shadow-md transition-all duration-300 cursor-pointer">
+                <div className="group card-hover bg-white rounded-xl border border-[#1C3D5A]/6 p-5 h-full hover:border-[#B87333]/30 cursor-pointer">
                   <div className={`w-10 h-10 rounded-lg ${page.color} flex items-center justify-center mb-3`}>
                     {page.icon}
                   </div>

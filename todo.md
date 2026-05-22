@@ -238,3 +238,4 @@
 - [x] Adicionar botão "Pular" na splash screen após 3s
 - [x] Criar página de Política de Privacidade (/privacidade) completa LGPD
 - [x] Implementar GTM condicionado ao consentimento de cookies (GTM-MPZWHZ2V)
+- [x] Splash screen atualizada para v3 "O Diagnóstico Vivo" - ultrassonografia transretal realista via vídeo MP4 (6s, 178KB)

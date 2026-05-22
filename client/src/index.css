@@ -456,58 +456,33 @@ html {
   pointer-events: none;
 }
 
-.splash-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.splash-svg-container {
-  width: clamp(160px, 40vw, 320px);
-  aspect-ratio: 1 / 1;
-}
-
-.splash-svg-container svg {
+.splash-video-container {
+  position: relative;
   width: 100%;
   height: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.splash-tagline {
-  font-family: 'Callingstone', serif;
-  font-style: italic;
-  font-size: clamp(1.4rem, 4vw, 2.2rem);
-  color: #FEFEFE;
+.splash-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0;
-  animation: splashTextFadeIn 1s ease-out 3.5s forwards;
+  transition: opacity 0.3s ease;
 }
 
-.splash-subtitle {
-  font-family: 'Roboto', sans-serif;
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  color: #C4C4C4;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: splashTextFadeIn 1s ease-out 3.8s forwards;
+.splash-video.splash-video-visible {
+  opacity: 1;
 }
 
-@keyframes splashTextFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 480px) {
-  .splash-svg-container {
-    width: clamp(140px, 50vw, 200px);
-  }
+.splash-poster-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Botão Pular da Splash Screen */

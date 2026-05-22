@@ -51,6 +51,8 @@ export default function CookieBanner() {
       marketing: accepted ? marketing : false,
     };
     localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+    // Disparar evento para que o GoogleTagManager detecte imediatamente
+    window.dispatchEvent(new Event("cookie_consent_updated"));
     setVisible(false);
   };
 
@@ -97,7 +99,8 @@ export default function CookieBanner() {
                     <span className="font-medium text-[#1C3D5A] dark:text-foreground">
                       Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018)
                     </span>
-                    . Você pode gerenciar suas preferências a qualquer momento.
+                    . Você pode gerenciar suas preferências a qualquer momento.{" "}
+                    <a href="/privacidade" className="text-[#B87333] hover:underline font-medium">Política de Privacidade completa</a>.
                   </p>
 
                   {/* Detalhes expandíveis */}

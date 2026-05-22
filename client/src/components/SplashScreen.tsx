@@ -18,6 +18,7 @@ import { useState, useEffect, useRef } from "react";
 export default function SplashScreen() {
   const [show, setShow] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  const [showSkip, setShowSkip] = useState(false);
   const heartbeatRef = useRef<HTMLAudioElement | null>(null);
   const whooshRef = useRef<HTMLAudioElement | null>(null);
 
@@ -46,12 +47,16 @@ export default function SplashScreen() {
       } catch {}
     }, 6500);
 
+    // Mostrar botão "Pular" após 3s
+    const skipTimer = setTimeout(() => setShowSkip(true), 3000);
+
     // Após 10s, inicia fade-out (logo FB já está completo)
     const fadeTimer = setTimeout(() => setFadeOut(true), 10000);
     // Após 11s, remove do DOM
     const removeTimer = setTimeout(() => setShow(false), 11000);
 
     return () => {
+      clearTimeout(skipTimer);
       clearTimeout(whooshTimer);
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
@@ -65,6 +70,19 @@ export default function SplashScreen() {
       }
     };
   }, []);
+
+  const handleSkip = () => {
+    setFadeOut(true);
+    setTimeout(() => setShow(false), 800);
+    if (heartbeatRef.current) {
+      heartbeatRef.current.pause();
+      heartbeatRef.current = null;
+    }
+    if (whooshRef.current) {
+      whooshRef.current.pause();
+      whooshRef.current = null;
+    }
+  };
 
   if (!show) return null;
 
@@ -207,6 +225,17 @@ export default function SplashScreen() {
           Urologista & Cirurgião Geral
         </p>
       </div>
+
+      {/* Botão Pular - aparece após 3s */}
+      {showSkip && !fadeOut && (
+        <button
+          onClick={handleSkip}
+          className="splash-skip-btn"
+          aria-label="Pular animação de abertura"
+        >
+          Pular
+        </button>
+      )}
     </div>
   );
 }

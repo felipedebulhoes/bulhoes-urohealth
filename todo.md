@@ -235,3 +235,6 @@
 - [x] Ajustar componentes internos para dark mode (EducationalLayout, Footer, Header, seções Home)
 - [x] Adicionar smooth scroll nos links âncora do menu de navegação (com offset do header fixo)
 - [x] Criar banner de cookies/LGPD para conformidade com legislação brasileira
+- [x] Adicionar botão "Pular" na splash screen após 3s
+- [x] Criar página de Política de Privacidade (/privacidade) completa LGPD
+- [x] Implementar GTM condicionado ao consentimento de cookies (GTM-MPZWHZ2V)

@@ -39,11 +39,13 @@ import AdminFiles from "./pages/AdminFiles";
 import AdminLeads from "./pages/AdminLeads";
 import Consultorios from "./pages/Consultorios";
 import Contato from "./pages/Contato";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Agendamento from "./pages/Agendamento";
 import CanonicalTag from "./components/CanonicalTag";
 import PageTransition from "./components/PageTransition";
 import SplashScreen from "./components/SplashScreen";
 import CookieBanner from "./components/CookieBanner";
+import GoogleTagManager from "./components/GoogleTagManager";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -90,6 +92,7 @@ function Router() {
       <Route path={"/guia-google-business"} component={GuiaGoogleBusiness} />
       <Route path={"/admin/files"} component={AdminFiles} />
       <Route path={"/admin/leads"} component={AdminLeads} />
+      <Route path={"/privacidade"} component={PrivacyPolicy} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -111,6 +114,7 @@ function App() {
           <PageTransition />
           <Router />
           <CookieBanner />
+          <GoogleTagManager />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

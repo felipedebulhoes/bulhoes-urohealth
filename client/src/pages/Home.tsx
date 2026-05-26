@@ -13,7 +13,7 @@ import VideosSection from "@/components/VideosSection";
 import ServicesSection from "@/components/ServicesSection";
 import InsuranceSection from "@/components/InsuranceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import LocationSection from "@/components/LocationSection";
+import LocationCardsSection from "@/components/LocationCardsSection";
 import FAQSection from "@/components/FAQSection";
 import QuickContactForm from "@/components/QuickContactForm";
 import BlogPreviewSection from "@/components/BlogPreviewSection";
@@ -76,7 +76,7 @@ export default function Home() {
           <TestimonialsSection />
         </ScrollReveal>
         <ScrollReveal>
-          <LocationSection />
+          <LocationCardsSection />
         </ScrollReveal>
         <ScrollReveal>
           <FAQSection />

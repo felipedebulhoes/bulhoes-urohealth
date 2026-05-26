@@ -1685,9 +1685,9 @@ O diagnóstico precoce permite iniciar o tratamento adequado e **prevenir compli
   {
     id: "12",
     slug: "urologista-sao-paulo-paulista-moema",
-    title: "Urologista em S\u00e3o Paulo: Atendimento Especializado na Paulista e Moema",
+    title: "Urologista em S\u00e3o Paulo: Atendimento na Paulista, Moema, Pinheiros e ABC",
     excerpt:
-      "Procurando um urologista em S\u00e3o Paulo? Dr. Felipe de Bulh\u00f5es atende na Av. Paulista e em Moema com foco em cirurgia rob\u00f3tica, endourologia e sa\u00fade masculina. Saiba como funciona a consulta e quando procurar.",
+      "Procurando um urologista em S\u00e3o Paulo? Dr. Felipe de Bulh\u00f5es atende na Av. Paulista, Moema, Pinheiros e ABC (S\u00e3o Bernardo) com foco em cirurgia rob\u00f3tica, endourologia e sa\u00fade masculina. Tamb\u00e9m atende em Campinas na Rede D\u2019Or.",
     coverImage:
       "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-urologista-sao-paulo-7LHFJjdMynXArAzkHbTUti.webp",
     category: "Sa\u00fade Masculina",
@@ -1719,9 +1719,9 @@ Sua pr\u00e1tica cl\u00ednica combina **atendimento humanizado** com **medicina 
 
 ---
 
-## Onde atende em S\u00e3o Paulo
+## Onde atende em S\u00e3o Paulo e Regi\u00e3o
 
-O Dr. Felipe de Bulh\u00f5es realiza atendimento particular em duas localiza\u00e7\u00f5es estrat\u00e9gicas na capital paulista, ambas na **Clinovi Consult\u00f3rios com Servi\u00e7os** \u2014 uma rede de consult\u00f3rios m\u00e9dicos de alto padr\u00e3o projetada para oferecer a melhor experi\u00eancia ao paciente.
+O Dr. Felipe de Bulh\u00f5es realiza atendimento particular em **quatro unidades** da **Clinovi Consult\u00f3rios com Servi\u00e7os** \u2014 uma rede de consult\u00f3rios m\u00e9dicos de alto padr\u00e3o \u2014 cobrindo as principais regi\u00f5es de S\u00e3o Paulo (Paulista, Moema, Pinheiros) e o ABC Paulista (S\u00e3o Bernardo do Campo).
 
 ### Clinovi Paulista
 
@@ -1747,17 +1747,44 @@ Localizada no cora\u00e7\u00e3o da Avenida Paulista, a unidade oferece uma **vis
 
 A unidade de Moema est\u00e1 em uma das regi\u00f5es mais valorizadas da Zona Sul de S\u00e3o Paulo, com f\u00e1cil acesso \u00e0s principais vias da cidade (Av. Ibirapuera, Av. dos Bandeirantes, Marginal Pinheiros). A proximidade com hospitais de refer\u00eancia \u00e9 uma vantagem adicional para pacientes que necessitam de procedimentos cir\u00fargicos.
 
+### Clinovi Pinheiros
+
+| Informa\u00e7\u00e3o | Detalhes |
+|---|---|
+| **Endere\u00e7o** | Av. Rebou\u00e7as, 2636 \u2014 Pinheiros, S\u00e3o Paulo/SP |
+| **Estrutura** | Espa\u00e7o ComVem Rebou\u00e7as, infraestrutura moderna |
+| **Acesso** | Pr\u00f3ximo \u00e0 esta\u00e7\u00e3o Pinheiros (Linha 4-Amarela) e Faria Lima |
+| **Estacionamento** | Dispon\u00edvel no pr\u00f3prio edif\u00edcio |
+| **Modalidade** | Atendimento particular |
+
+A unidade de Pinheiros est\u00e1 dentro do ComVem Rebou\u00e7as, um espa\u00e7o moderno e estrat\u00e9gico. Ideal para pacientes da Zona Oeste de S\u00e3o Paulo, com excelente acessibilidade por transporte p\u00fablico e vias r\u00e1pidas como a Av. Faria Lima e Marginal Pinheiros.
+
+### Clinovi SBC (ABC Paulista)
+
+| Informa\u00e7\u00e3o | Detalhes |
+|---|---|
+| **Endere\u00e7o** | Av. Pereira Barreto, 1479 \u2014 S\u00e3o Bernardo do Campo/SP |
+| **Estrutura** | Edif\u00edcio Helbor Trilogy, mais de 1.000 m\u00b2, 30+ consult\u00f3rios |
+| **Acesso** | Divisa entre Santo Andr\u00e9 e S\u00e3o Caetano do Sul |
+| **Estacionamento** | Dispon\u00edvel no edif\u00edcio |
+| **Modalidade** | Atendimento particular |
+
+A Clinovi SBC atende pacientes de toda a regi\u00e3o do ABC Paulista (S\u00e3o Bernardo do Campo, Santo Andr\u00e9, S\u00e3o Caetano do Sul e Diadema), oferecendo a mesma qualidade de atendimento das unidades da capital em uma localiza\u00e7\u00e3o conveniente para quem reside no Grande ABC.
+
 ---
 
 ## Tamb\u00e9m atende em Campinas
 
-Al\u00e9m de S\u00e3o Paulo, o Dr. Felipe de Bulh\u00f5es realiza atendimento e cirurgias no **Campinas Day Hospital**, onde aceita diversos **planos de sa\u00fade**. Essa dupla atua\u00e7\u00e3o permite atender pacientes de toda a regi\u00e3o metropolitana de Campinas e do interior paulista.
+Al\u00e9m de S\u00e3o Paulo e regi\u00e3o, o Dr. Felipe de Bulh\u00f5es realiza atendimento e cirurgias no **Centro M\u00e9dico S\u00e3o Luiz Campinas (Rede D\u2019Or)** e no **Campinas Day Hospital**, onde aceita diversos **planos de sa\u00fade**. O agendamento para o S\u00e3o Luiz Campinas pode ser feito diretamente pelo [site da Rede D\u2019Or](https://www.rededorsaoluiz.com.br/encontre-um-medico/perfil/felipe-de-bulhoes-ojeda).
 
 | Local | Endere\u00e7o | Modalidade |
 |---|---|---|
 | Clinovi Paulista | Av. Paulista, 1048, 18\u00ba andar | Particular |
 | Clinovi Moema | Av. Ibirapuera, 1835, 2\u00ba andar | Particular |
-| Campinas Day Hospital | Campinas/SP | Particular + Conv\u00eanios |
+| Clinovi Pinheiros | Av. Rebou\u00e7as, 2636 | Particular |
+| Clinovi SBC | Av. Pereira Barreto, 1479 | Particular |
+| CEMED S\u00e3o Luiz Campinas (Rede D\u2019Or) | Av. Andrade Neves, 863, 4\u00ba andar | Particular + Conv\u00eanios |
+| Campinas Day Hospital | Av. Benjamin Constant, 1991 | Particular + Conv\u00eanios |
 
 ---
 
@@ -1837,6 +1864,7 @@ Para retornos e orienta\u00e7\u00f5es, o Dr. Felipe oferece **teleconsulta**, fa
 O agendamento pode ser feito de forma r\u00e1pida e pr\u00e1tica:
 
 - **Doctoralia**: agende online diretamente pelo perfil do Dr. Felipe de Bulh\u00f5es
+- **Rede D\u2019Or (S\u00e3o Luiz Campinas)**: [agende pelo site da Rede D\u2019Or](https://www.rededorsaoluiz.com.br/encontre-um-medico/perfil/felipe-de-bulhoes-ojeda)
 - **WhatsApp**: (11) 98112-4455 \u2014 apenas mensagens de texto
 - **Telefone Clinovi**: (11) 3382-1529 | **Campinas**: (19) 2127-2900 \u2014 para agendamento por liga\u00e7\u00e3o
 - **Site**: utilize o bot\u00e3o \u201cAgendar Consulta\u201d em qualquer p\u00e1gina deste site
@@ -1846,7 +1874,7 @@ N\u00e3o espere os sintomas aparecerem. A preven\u00e7\u00e3o \u00e9 sempre o me
 ---
 
 ### Palavras-chave relacionadas
-Urologista S\u00e3o Paulo, urologista Paulista, urologista Moema, urologista Zona Sul SP, consulta urol\u00f3gica particular S\u00e3o Paulo, m\u00e9dico urologista SP, cirurgia rob\u00f3tica urologia S\u00e3o Paulo, urologista perto de mim, melhor urologista S\u00e3o Paulo, urologista Avenida Paulista.
+Urologista S\u00e3o Paulo, urologista Paulista, urologista Moema, urologista Pinheiros, urologista ABC, urologista S\u00e3o Bernardo do Campo, urologista Zona Sul SP, urologista Zona Oeste SP, consulta urol\u00f3gica particular S\u00e3o Paulo, m\u00e9dico urologista SP, cirurgia rob\u00f3tica urologia S\u00e3o Paulo, urologista perto de mim, melhor urologista S\u00e3o Paulo, urologista Avenida Paulista, urologista Rede D\u2019Or Campinas.
 `,
   },
 ];

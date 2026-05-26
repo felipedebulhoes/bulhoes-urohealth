@@ -3,7 +3,7 @@
   <!-- Página principal -->
   <url>
     <loc>https://felipebulhoes.com/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Sobre Dr. Felipe -->
   <url>
     <loc>https://felipebulhoes.com/sobre</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -27,7 +27,7 @@
   <!-- Blog -->
   <url>
     <loc>https://felipebulhoes.com/blog</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -315,4 +315,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- Privacidade -->
+  <url>
+    <loc>https://felipebulhoes.com/privacidade</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

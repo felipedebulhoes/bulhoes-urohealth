@@ -242,3 +242,5 @@
 - [x] Meta descriptions específicas para cada página interna (educacional, serviços, etc.)
 - [x] Dados estruturados Schema.org (Physician, MedicalClinic) aprimorados para SEO (já existiam completos via EducationalLayout + index.html)
 - [ ] Orientar sobre registros MX para Google Workspace (felipebulhoes.com)
+- [x] Criar/atualizar sitemap.xml com todas as páginas do site (adicionada /privacidade, atualizado lastmod)
+- [x] Atualizar artigo de blog SEO local "Urologista em São Paulo" com Clinovi Pinheiros, SBC e São Luiz Campinas (Rede D'Or)

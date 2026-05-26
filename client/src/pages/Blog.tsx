@@ -7,8 +7,15 @@ import { Link } from "wouter";
 import { blogPosts } from "@/lib/blogData";
 import { Calendar, Clock, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Blog() {
+  usePageMeta({
+    title: "Blog de Urologia",
+    description: "Artigos sobre urologia, saúde do homem, câncer de próstata, vasectomia, cálculos renais e cirurgia robótica. Conteúdo baseado em evidências científicas (EAU, AUA). Dr. Felipe de Bulhões.",
+    canonical: "https://felipebulhoes.com/blog",
+  });
+
   return (
     <div className="min-h-screen bg-white dark:bg-card">
       {/* Header bar */}

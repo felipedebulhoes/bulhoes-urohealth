@@ -93,6 +93,7 @@ export default function PrimeiraConsulta() {
       title="Sua Primeira Consulta Urológica"
       subtitle="Guia do Paciente"
       description="Tudo o que você precisa saber para se sentir seguro e preparado. Entenda como funciona a consulta, o que trazer e o que esperar."
+      metaDescription="Primeira consulta com urologista: o que esperar, como se preparar, exames necessários e dicas. Guia completo do Dr. Felipe de Bulhões — Urologista em São Paulo e Campinas."
       accentColor="#B87333"
     >
       {/* Intro */}

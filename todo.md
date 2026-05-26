@@ -239,3 +239,6 @@
 - [x] Criar página de Política de Privacidade (/privacidade) completa LGPD
 - [x] Implementar GTM condicionado ao consentimento de cookies (GTM-MPZWHZ2V)
 - [x] Splash screen atualizada para v3 "O Diagnóstico Vivo" - ultrassonografia transretal realista via vídeo MP4 (6s, 178KB)
+- [x] Meta descriptions específicas para cada página interna (educacional, serviços, etc.)
+- [x] Dados estruturados Schema.org (Physician, MedicalClinic) aprimorados para SEO (já existiam completos via EducationalLayout + index.html)
+- [ ] Orientar sobre registros MX para Google Workspace (felipebulhoes.com)

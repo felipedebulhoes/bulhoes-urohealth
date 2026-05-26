@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import DoctoraliaBadge from "@/components/DoctoraliaBadge";
 import AboutSection from "@/components/AboutSection";
 import StatsCounter from "@/components/StatsCounter";
@@ -27,6 +28,12 @@ import ScheduleBanner from "@/components/ScheduleBanner";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function Home() {
+  usePageMeta({
+    title: "Urologista em São Paulo e Campinas",
+    description: "Dr. Felipe de Bulhões — Urologista e Cirurgião Geral (TCBC). Cirurgia robótica, endourologia, saúde do homem. Atendimento humanizado, particular e convênios. Formado Instituto D'Or. Agende online.",
+    canonical: "https://felipebulhoes.com/",
+  });
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

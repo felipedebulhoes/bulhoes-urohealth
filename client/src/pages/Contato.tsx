@@ -3,8 +3,9 @@
  * Página real /contato — Informações de contato completas
  * Criada para resolver Soft 404 no Google Search Console
  */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -82,19 +83,11 @@ export default function Contato() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", subject: "" });
 
-  useEffect(() => {
-    document.title = "Contato | Dr. Felipe de Bulhões - Urologista em São Paulo e Campinas";
-    let metaTag = document.querySelector('meta[name="description"]');
-    if (!metaTag) {
-      metaTag = document.createElement("meta");
-      metaTag.setAttribute("name", "description");
-      document.head.appendChild(metaTag);
-    }
-    metaTag.setAttribute("content", "Entre em contato com o Dr. Felipe de Bulhões, urologista em São Paulo e Campinas. Telefone, WhatsApp, formulário de contato e endereços dos consultórios.");
-    return () => {
-      document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";
-    };
-  }, []);
+  usePageMeta({
+    title: "Contato",
+    description: "Entre em contato com o Dr. Felipe de Bulhões, urologista em São Paulo e Campinas. Telefone, WhatsApp, formulário de contato e endereços dos consultórios. Agendamento online.",
+    canonical: "https://felipebulhoes.com/contato",
+  });
 
   const subjects = [
     "Consulta particular",

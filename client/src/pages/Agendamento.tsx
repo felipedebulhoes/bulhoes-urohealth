@@ -5,6 +5,7 @@
  */
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -41,19 +42,11 @@ function loadDoctoraliaScript() {
 export default function Agendamento() {
   const hasLoaded = useRef(false);
 
-  useEffect(() => {
-    document.title = "Agendar Consulta | Dr. Felipe de Bulhões - Urologista em São Paulo e Campinas";
-    let metaTag = document.querySelector('meta[name="description"]');
-    if (!metaTag) {
-      metaTag = document.createElement("meta");
-      metaTag.setAttribute("name", "description");
-      document.head.appendChild(metaTag);
-    }
-    metaTag.setAttribute("content", "Agende sua consulta com o Dr. Felipe de Bulhões, urologista em São Paulo e Campinas. Agendamento online pelo Doctoralia com confirmação imediata. Presencial ou teleconsulta.");
-    return () => {
-      document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";
-    };
-  }, []);
+  usePageMeta({
+    title: "Agendar Consulta",
+    description: "Agende sua consulta com o Dr. Felipe de Bulhões, urologista em São Paulo e Campinas. Agendamento online pelo Doctoralia com confirmação imediata. Presencial ou teleconsulta.",
+    canonical: "https://felipebulhoes.com/agendamento",
+  });
 
   useEffect(() => {
     if (!hasLoaded.current) {

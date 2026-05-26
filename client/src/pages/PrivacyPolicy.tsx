@@ -1,6 +1,13 @@
 import { Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function PrivacyPolicy() {
+  usePageMeta({
+    title: "Política de Privacidade",
+    description: "Política de Privacidade e Proteção de Dados (LGPD) do site do Dr. Felipe de Bulhões. Saiba como coletamos, usamos e protegemos seus dados pessoais.",
+    canonical: "https://felipebulhoes.com/privacidade",
+  });
+
   return (
     <div className="min-h-screen bg-white dark:bg-[#0F2A3F]">
       {/* Header */}

@@ -3,8 +3,9 @@
  * Página real /consultorios — Listagem completa dos locais de atendimento
  * Criada para resolver Soft 404 no Google Search Console
  */
-import { useEffect } from "react";
 import { Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -119,21 +120,18 @@ const locations = [
 ];
 
 export default function Consultorios() {
-  useEffect(() => {
-    document.title = "Consultórios e Locais de Atendimento | Dr. Felipe de Bulhões - Urologista";
-    let metaTag = document.querySelector('meta[name="description"]');
-    if (!metaTag) {
-      metaTag = document.createElement("meta");
-      metaTag.setAttribute("name", "description");
-      document.head.appendChild(metaTag);
-    }
-    metaTag.setAttribute("content", "Conheça os consultórios do Dr. Felipe de Bulhões: Campinas Day Hospital (convênios), Clinovi Paulista, Moema, Pinheiros e SBC (particular). Atendimento presencial e teleconsulta.");
-    return () => {
-      document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";
-    };
-  }, []);
+  usePageMeta({
+    title: "Consultórios e Locais de Atendimento",
+    description: "Conheça os consultórios do Dr. Felipe de Bulhões: Campinas Day Hospital, São Luiz Campinas (convênios), Clinovi Paulista, Moema, Pinheiros e SBC (particular). Atendimento presencial e teleconsulta.",
+    canonical: "https://felipebulhoes.com/consultorios",
+  });
 
   return (
+    <>
+    <BreadcrumbSchema items={[
+      { name: "Início", url: "/" },
+      { name: "Consultórios", url: "/consultorios" },
+    ]} />
     <div className="min-h-screen bg-white dark:bg-card">
       {/* Header */}
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
@@ -346,5 +344,6 @@ export default function Consultorios() {
 
       <WhatsAppButton />
     </div>
+    </>
   );
 }

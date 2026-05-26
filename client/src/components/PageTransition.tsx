@@ -50,7 +50,7 @@ export default function PageTransition() {
       <div className="page-transition-logo">
         <img
           src="/manus-storage/isotipo-fb_b21c0959.svg"
-          alt=""
+          alt="Logotipo Dr. Felipe de Bulhões"
           className="page-transition-icon"
         />
         <div className="page-transition-pulse" />

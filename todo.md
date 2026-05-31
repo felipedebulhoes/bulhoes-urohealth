@@ -255,3 +255,6 @@
 - [x] Painel admin /admin/keywords com tendências de palavras-chave (urologia, robótica, andrologia)
 - [x] Integração SimilarWeb Keywords Overview API no painel de keywords (GSC requer OAuth manual)
 - [x] Job semanal automático de coleta de dados de keywords (Heartbeat pronto para deploy)
+- [x] Botão de exportação CSV no painel de keywords
+- [x] Indicadores visuais com cores (barra de dificuldade) na tabela de keywords
+- [x] Gerador de ideias de artigos de blog baseado nas keywords de maior volume

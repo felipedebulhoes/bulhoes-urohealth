@@ -3,7 +3,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { toast } from "sonner";
 import {
   TrendingUp,
@@ -19,6 +19,9 @@ import {
   Database,
   Eye,
   EyeOff,
+  Download,
+  Lightbulb,
+  Sparkles,
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -56,6 +59,150 @@ function IntentBadge({ intent }: { intent: string | null }) {
       {intent}
     </span>
   );
+}
+
+/** Visual difficulty bar with color gradient */
+function DifficultyBar({ difficulty }: { difficulty: number | null }) {
+  if (difficulty === null) return <span className="text-muted-foreground">—</span>;
+
+  const getColor = (d: number) => {
+    if (d <= 20) return { bg: "bg-green-500", text: "text-green-700 dark:text-green-400", label: "Fácil" };
+    if (d <= 40) return { bg: "bg-lime-500", text: "text-lime-700 dark:text-lime-400", label: "Moderada" };
+    if (d <= 60) return { bg: "bg-amber-500", text: "text-amber-700 dark:text-amber-400", label: "Média" };
+    if (d <= 80) return { bg: "bg-orange-500", text: "text-orange-700 dark:text-orange-400", label: "Difícil" };
+    return { bg: "bg-red-500", text: "text-red-700 dark:text-red-400", label: "Muito Difícil" };
+  };
+
+  const { bg, text, label } = getColor(difficulty);
+
+  return (
+    <div className="flex items-center gap-2 min-w-[120px]">
+      <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
+        <div
+          className={`h-full rounded-full transition-all ${bg}`}
+          style={{ width: `${difficulty}%` }}
+        />
+      </div>
+      <span className={`text-xs font-mono font-medium ${text} min-w-[24px] text-right`}>
+        {difficulty}
+      </span>
+    </div>
+  );
+}
+
+/** Blog article idea generator based on top keywords */
+function ArticleIdeasSection({ snapshots }: { snapshots: Array<{ keyword: string; volume: number | null; difficulty: number | null; category: string; intent: string | null }> }) {
+  const [showIdeas, setShowIdeas] = useState(false);
+
+  const ideas = useMemo(() => {
+    // Sort by volume (highest first), then by lowest difficulty (best opportunities)
+    const sorted = [...snapshots]
+      .filter((s) => s.volume && s.volume > 0)
+      .sort((a, b) => {
+        // Score = volume / (difficulty + 1) — higher is better opportunity
+        const scoreA = (a.volume || 0) / ((a.difficulty || 50) + 1);
+        const scoreB = (b.volume || 0) / ((b.difficulty || 50) + 1);
+        return scoreB - scoreA;
+      })
+      .slice(0, 10);
+
+    return sorted.map((s) => {
+      const templates = getArticleTemplates(s.keyword, s.category, s.intent);
+      return {
+        keyword: s.keyword,
+        volume: s.volume,
+        difficulty: s.difficulty,
+        category: s.category,
+        suggestions: templates,
+      };
+    });
+  }, [snapshots]);
+
+  if (ideas.length === 0) return null;
+
+  return (
+    <Card>
+      <CardHeader className="pb-3">
+        <CardTitle className="text-base flex items-center justify-between">
+          <span className="flex items-center gap-2">
+            <Lightbulb className="w-4 h-4 text-amber-500" />
+            Gerador de Ideias de Artigos
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowIdeas(!showIdeas)}
+          >
+            <Sparkles className="w-4 h-4 mr-1" />
+            {showIdeas ? "Ocultar" : "Gerar Ideias"}
+          </Button>
+        </CardTitle>
+      </CardHeader>
+      {showIdeas && (
+        <CardContent className="pt-0">
+          <p className="text-xs text-muted-foreground mb-4">
+            Sugestões baseadas nas keywords com melhor relação volume/dificuldade (melhores oportunidades de ranqueamento).
+          </p>
+          <div className="space-y-4">
+            {ideas.map((idea, idx) => (
+              <div key={idx} className="border rounded-lg p-4 hover:bg-muted/30 transition-colors">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${categoryColors[idea.category] || ""}`}>
+                      {categoryLabels[idea.category] || idea.category}
+                    </span>
+                    <span className="text-sm font-medium">{idea.keyword}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                    <span>Vol: {idea.volume?.toLocaleString("pt-BR")}</span>
+                    <span>Dif: {idea.difficulty || "?"}</span>
+                  </div>
+                </div>
+                <div className="space-y-1.5 ml-2">
+                  {idea.suggestions.map((title, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <span className="text-[#b87333] mt-0.5">•</span>
+                      <span className="text-sm">{title}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      )}
+    </Card>
+  );
+}
+
+/** Generate article title templates based on keyword, category and intent */
+function getArticleTemplates(keyword: string, category: string, intent: string | null): string[] {
+  const kw = keyword.charAt(0).toUpperCase() + keyword.slice(1);
+  const templates: string[] = [];
+
+  // Intent-based templates
+  if (intent === "informational" || !intent) {
+    templates.push(`${kw}: Guia Completo do Urologista para Pacientes`);
+    templates.push(`Tudo o que Você Precisa Saber sobre ${kw}`);
+  }
+  if (intent === "transactional" || intent === "commercial") {
+    templates.push(`Quando Procurar um Especialista em ${kw}? Sinais de Alerta`);
+    templates.push(`${kw}: Quanto Custa e Como Funciona o Tratamento`);
+  }
+
+  // Category-based templates
+  if (category === "robotica") {
+    templates.push(`${kw}: Vantagens da Tecnologia Robótica vs. Cirurgia Convencional`);
+    if (templates.length < 3) templates.push(`Recuperação Após ${kw}: O Que Esperar`);
+  } else if (category === "andrologia") {
+    templates.push(`${kw}: Mitos e Verdades que Todo Homem Deveria Saber`);
+    if (templates.length < 3) templates.push(`${kw} em 2026: Novos Tratamentos e Evidências`);
+  } else {
+    templates.push(`${kw}: Diagnóstico, Tratamento e Prevenção`);
+    if (templates.length < 3) templates.push(`5 Perguntas Frequentes sobre ${kw}`);
+  }
+
+  return templates.slice(0, 3);
 }
 
 export default function AdminKeywords() {
@@ -141,6 +288,45 @@ export default function AdminKeywords() {
     return { total, active, withData, trending };
   }, [trackedQuery.data, latestSnapshots]);
 
+  // CSV Export
+  const exportCSV = useCallback(() => {
+    if (filteredSnapshots.length === 0) {
+      toast.error("Nenhum dado para exportar");
+      return;
+    }
+
+    const headers = ["Keyword", "Categoria", "Volume", "Dificuldade", "CPC", "Intenção", "Tendência", "Variação (%)", "Data"];
+    const rows = filteredSnapshots.map((s) => [
+      s.keyword,
+      categoryLabels[s.category] || s.category,
+      s.volume?.toString() || "",
+      s.difficulty?.toString() || "",
+      s.cpc || "",
+      s.intent || "",
+      s.trend || "stable",
+      s.trendChange || "",
+      s.weekDate ? new Date(s.weekDate).toLocaleDateString("pt-BR") : "",
+    ]);
+
+    const csvContent = [
+      headers.join(";"),
+      ...rows.map((row) => row.map((cell) => `"${cell}"`).join(";")),
+    ].join("\n");
+
+    // BOM for Excel UTF-8 compatibility
+    const blob = new Blob(["\uFEFF" + csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `keywords-seo-${new Date().toISOString().split("T")[0]}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    toast.success(`${filteredSnapshots.length} keywords exportadas para CSV`);
+  }, [filteredSnapshots]);
+
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -172,7 +358,7 @@ export default function AdminKeywords() {
       {/* Header */}
       <div className="border-b bg-card">
         <div className="container py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap gap-3">
             <div className="flex items-center gap-4">
               <Link href="/">
                 <Button variant="ghost" size="sm">
@@ -189,7 +375,16 @@ export default function AdminKeywords() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={exportCSV}
+                disabled={filteredSnapshots.length === 0}
+              >
+                <Download className="w-4 h-4 mr-1" />
+                Exportar CSV
+              </Button>
               <Button
                 variant="outline"
                 size="sm"
@@ -316,7 +511,17 @@ export default function AdminKeywords() {
           <CardHeader className="pb-3">
             <CardTitle className="text-base flex items-center justify-between">
               <span>Dados de Keywords ({filteredSnapshots.length})</span>
-              {snapshotsQuery.isLoading && <Loader2 className="w-4 h-4 animate-spin" />}
+              <div className="flex items-center gap-2">
+                {snapshotsQuery.isLoading && <Loader2 className="w-4 h-4 animate-spin" />}
+                {/* Difficulty Legend */}
+                <div className="hidden md:flex items-center gap-3 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-green-500" />Fácil</span>
+                  <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-lime-500" />Moderada</span>
+                  <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-amber-500" />Média</span>
+                  <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-orange-500" />Difícil</span>
+                  <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-500" />Muito Difícil</span>
+                </div>
+              </div>
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
@@ -336,7 +541,7 @@ export default function AdminKeywords() {
                       <th className="text-left p-3 font-medium">Keyword</th>
                       <th className="text-left p-3 font-medium">Categoria</th>
                       <th className="text-right p-3 font-medium">Volume</th>
-                      <th className="text-right p-3 font-medium">Dificuldade</th>
+                      <th className="text-left p-3 font-medium pl-4">Dificuldade</th>
                       <th className="text-right p-3 font-medium">CPC</th>
                       <th className="text-center p-3 font-medium">Intenção</th>
                       <th className="text-center p-3 font-medium">Tendência</th>
@@ -355,16 +560,8 @@ export default function AdminKeywords() {
                         <td className="p-3 text-right font-mono">
                           {s.volume ? s.volume.toLocaleString("pt-BR") : "—"}
                         </td>
-                        <td className="p-3 text-right">
-                          {s.difficulty !== null ? (
-                            <span className={`font-mono ${
-                              s.difficulty > 70 ? "text-red-600" :
-                              s.difficulty > 40 ? "text-amber-600" :
-                              "text-green-600"
-                            }`}>
-                              {s.difficulty}
-                            </span>
-                          ) : "—"}
+                        <td className="p-3 pl-4">
+                          <DifficultyBar difficulty={s.difficulty} />
                         </td>
                         <td className="p-3 text-right font-mono">
                           {s.cpc ? `$${parseFloat(s.cpc).toFixed(2)}` : "—"}
@@ -390,6 +587,9 @@ export default function AdminKeywords() {
             )}
           </CardContent>
         </Card>
+
+        {/* Article Ideas Generator */}
+        <ArticleIdeasSection snapshots={filteredSnapshots} />
 
         {/* Tracked Keywords Management */}
         <Card>
@@ -452,6 +652,7 @@ export default function AdminKeywords() {
               <strong>Fonte dos dados:</strong> SimilarWeb Keywords Overview API (volume global, dificuldade orgânica, CPC, intenção de busca).
               Os dados são coletados semanalmente via job automático. Use "Atualizar Dados" para forçar uma coleta manual.
               A tendência é calculada comparando o volume atual com o snapshot anterior.
+              O CSV exportado usa separador ";" e encoding UTF-8 com BOM para compatibilidade com Excel.
             </p>
           </CardContent>
         </Card>

@@ -245,3 +245,6 @@
 - [x] Criar/atualizar sitemap.xml com todas as páginas do site (adicionada /privacidade, atualizado lastmod)
 - [x] Atualizar artigo de blog SEO local "Urologista em São Paulo" com Clinovi Pinheiros, SBC e São Luiz Campinas (Rede D'Or)
 - [x] Seção interativa na Home com cards detalhados e links de agendamento para todos os locais de atendimento
+- [x] Adicionar mapa interativo (InteractiveMap) abaixo dos cards de locais
+- [x] Criar filtros por região (São Paulo / ABC / Campinas) nos cards de locais
+- [x] Submeter sitemap ao Google Search Console (instruções fornecidas ao usuário)

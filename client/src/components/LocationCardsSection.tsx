@@ -1,10 +1,10 @@
 /*
  * LocationCardsSection — Interactive cards with direct booking links
  * Design: Clinical Precision — Swiss Medical Design
- * Each card has location details + a direct CTA to book
+ * Features: Region filters + cards + interactive map
  */
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState, useMemo } from "react";
 import {
   MapPin,
   Clock,
@@ -15,11 +15,15 @@ import {
   ExternalLink,
   ChevronRight,
   Navigation,
+  Filter,
 } from "lucide-react";
+import InteractiveMap from "@/components/InteractiveMap";
 
 interface LocationData {
   name: string;
   shortName: string;
+  region: "sao-paulo" | "abc" | "campinas";
+  regionLabel: string;
   type: "particular" | "convenio";
   typeLabel: string;
   image: string;
@@ -37,10 +41,19 @@ interface LocationData {
   slug: string;
 }
 
+const regions = [
+  { id: "todos", label: "Todos", count: 6 },
+  { id: "sao-paulo", label: "São Paulo", count: 3 },
+  { id: "abc", label: "ABC Paulista", count: 1 },
+  { id: "campinas", label: "Campinas", count: 2 },
+] as const;
+
 const locations: LocationData[] = [
   {
     name: "Clinovi Paulista",
     shortName: "Paulista",
+    region: "sao-paulo",
+    regionLabel: "São Paulo",
     type: "particular",
     typeLabel: "Particular",
     image: "/manus-storage/clinovi-paulista_42fff2fa_cecba450.webp",
@@ -58,6 +71,8 @@ const locations: LocationData[] = [
   {
     name: "Clinovi Moema",
     shortName: "Moema",
+    region: "sao-paulo",
+    regionLabel: "São Paulo",
     type: "particular",
     typeLabel: "Particular",
     image: "/manus-storage/clinovi-moema_b149b069_cd29f980.webp",
@@ -75,6 +90,8 @@ const locations: LocationData[] = [
   {
     name: "Clinovi Pinheiros",
     shortName: "Pinheiros",
+    region: "sao-paulo",
+    regionLabel: "São Paulo",
     type: "particular",
     typeLabel: "Particular",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp",
@@ -92,6 +109,8 @@ const locations: LocationData[] = [
   {
     name: "Clinovi SBC",
     shortName: "ABC",
+    region: "abc",
+    regionLabel: "ABC Paulista",
     type: "particular",
     typeLabel: "Particular",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp",
@@ -109,6 +128,8 @@ const locations: LocationData[] = [
   {
     name: "CEMED São Luiz Campinas",
     shortName: "Rede D'Or",
+    region: "campinas",
+    regionLabel: "Campinas",
     type: "convenio",
     typeLabel: "Convênios & Particular",
     image: "/manus-storage/sao-luiz-campinas-fachada_a326a12f.webp",
@@ -126,6 +147,8 @@ const locations: LocationData[] = [
   {
     name: "Campinas Day Hospital",
     shortName: "Campinas",
+    region: "campinas",
+    regionLabel: "Campinas",
     type: "convenio",
     typeLabel: "Convênios & Particular",
     image: "/manus-storage/campinas-day-hospital_47df2b14_d5a9cb24.webp",
@@ -148,9 +171,11 @@ function LocationCard({ loc, index, isInView }: { loc: LocationData; index: numb
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: 0.1 + index * 0.08 }}
+      layout
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+      transition={{ duration: 0.35, delay: index * 0.05 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="group relative bg-white dark:bg-card rounded-2xl overflow-hidden border border-[#1C3D5A]/8 hover:border-[#B87333]/40 shadow-sm hover:shadow-xl transition-all duration-300"
@@ -178,6 +203,14 @@ function LocationCard({ loc, index, isInView }: { loc: LocationData; index: numb
               <CreditCard className="w-3 h-3" />
             )}
             {loc.typeLabel}
+          </span>
+        </div>
+
+        {/* Region badge */}
+        <div className="absolute top-3 left-3">
+          <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-bold px-2.5 py-1.5 rounded-full backdrop-blur-sm bg-[#1C3D5A]/70 text-white">
+            <MapPin className="w-3 h-3" />
+            {loc.regionLabel}
           </span>
         </div>
 
@@ -271,13 +304,26 @@ function LocationCard({ loc, index, isInView }: { loc: LocationData; index: numb
               <Navigation className="w-3.5 h-3.5" />
               Como chegar
             </a>
-            <a
-              href={`/local/${loc.slug}`}
-              className="flex items-center justify-center gap-1.5 flex-1 bg-[#F0F4F8] dark:bg-muted hover:bg-[#E8EDF2] text-[#1C3D5A] dark:text-foreground rounded-lg px-3 py-2 text-xs font-medium transition-colors"
-            >
-              Mais detalhes
-              <ChevronRight className="w-3.5 h-3.5" />
-            </a>
+            {loc.whatsapp && (
+              <a
+                href={`https://wa.me/55${loc.whatsapp.replace(/[^0-9]/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 flex-1 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] rounded-lg px-3 py-2 text-xs font-medium transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                WhatsApp
+              </a>
+            )}
+            {!loc.whatsapp && (
+              <a
+                href={`/consultorios`}
+                className="flex items-center justify-center gap-1.5 flex-1 bg-[#F0F4F8] dark:bg-muted hover:bg-[#E8EDF2] text-[#1C3D5A] dark:text-foreground rounded-lg px-3 py-2 text-xs font-medium transition-colors"
+              >
+                Mais detalhes
+                <ChevronRight className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -293,6 +339,12 @@ function LocationCard({ loc, index, isInView }: { loc: LocationData; index: numb
 export default function LocationCardsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const [activeRegion, setActiveRegion] = useState<string>("todos");
+
+  const filteredLocations = useMemo(() => {
+    if (activeRegion === "todos") return locations;
+    return locations.filter((loc) => loc.region === activeRegion);
+  }, [activeRegion]);
 
   return (
     <section id="locais-atendimento" className="py-20 lg:py-28 bg-[#F8FAFB] dark:bg-background" ref={ref}>
@@ -302,7 +354,7 @@ export default function LocationCardsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="text-center mb-10"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-10 bg-[#B87333]" />
@@ -320,11 +372,43 @@ export default function LocationCardsSection() {
           </p>
         </motion.div>
 
-        {/* Cards grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {locations.map((loc, i) => (
-            <LocationCard key={loc.slug} loc={loc} index={i} isInView={isInView} />
+        {/* Region filters */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="flex flex-wrap items-center justify-center gap-2 mb-10"
+        >
+          <Filter className="w-4 h-4 text-[#1C3D5A]/40 dark:text-foreground/40 mr-1" />
+          {regions.map((region) => (
+            <button
+              key={region.id}
+              onClick={() => setActiveRegion(region.id)}
+              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                activeRegion === region.id
+                  ? "bg-[#1C3D5A] text-white shadow-md"
+                  : "bg-white dark:bg-card text-[#1C3D5A] dark:text-foreground border border-[#1C3D5A]/10 hover:border-[#B87333]/40 hover:bg-[#B87333]/5"
+              }`}
+            >
+              {region.label}
+              <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
+                activeRegion === region.id
+                  ? "bg-white/20 text-white"
+                  : "bg-[#1C3D5A]/8 text-[#1C3D5A]/60 dark:bg-foreground/10 dark:text-foreground/50"
+              }`}>
+                {region.count}
+              </span>
+            </button>
           ))}
+        </motion.div>
+
+        {/* Cards grid with animation */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]">
+          <AnimatePresence mode="popLayout">
+            {filteredLocations.map((loc, i) => (
+              <LocationCard key={loc.slug} loc={loc} index={i} isInView={isInView} />
+            ))}
+          </AnimatePresence>
         </div>
 
         {/* WhatsApp CTA */}
@@ -348,6 +432,22 @@ export default function LocationCardsSection() {
             </svg>
             Fale conosco pelo WhatsApp
           </a>
+        </motion.div>
+
+        {/* Interactive Google Map */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="mt-14"
+        >
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-[#B87333]" />
+            <span className="text-[#B87333] text-xs font-semibold uppercase tracking-[0.15em]">
+              Mapa Interativo
+            </span>
+          </div>
+          <InteractiveMap />
         </motion.div>
       </div>
     </section>

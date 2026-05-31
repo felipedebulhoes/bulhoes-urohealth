@@ -258,3 +258,6 @@
 - [x] Botão de exportação CSV no painel de keywords
 - [x] Indicadores visuais com cores (barra de dificuldade) na tabela de keywords
 - [x] Gerador de ideias de artigos de blog baseado nas keywords de maior volume
+- [x] Botão "Criar Rascunho" nas ideias de artigos para gerar estrutura inicial do post (via LLM)
+- [x] Filtros e ordenação na tabela de keywords (por volume, dificuldade, categoria, CPC, keyword)
+- [x] Sistema de favoritos para ideias de artigos (salvar em lista separada com status e CRUD)

@@ -143,3 +143,55 @@ export const trackedKeywords = mysqlTable("tracked_keywords", {
 
 export type TrackedKeyword = typeof trackedKeywords.$inferSelect;
 export type InsertTrackedKeyword = typeof trackedKeywords.$inferInsert;
+
+/**
+ * Favorited article ideas from the keyword panel.
+ * Admin can save suggested article titles for later planning.
+ */
+export const articleFavorites = mysqlTable("article_favorites", {
+  id: int("id").autoincrement().primaryKey(),
+  /** The keyword that generated this idea */
+  keyword: varchar("keyword", { length: 512 }).notNull(),
+  /** Category of the keyword */
+  category: varchar("category", { length: 64 }).notNull(),
+  /** The suggested article title */
+  title: text("title").notNull(),
+  /** Search volume of the keyword at time of save */
+  volume: int("volume"),
+  /** Difficulty of the keyword at time of save */
+  difficulty: int("difficulty"),
+  /** Status: pending, in_progress, published */
+  status: mysqlEnum("status", ["pending", "in_progress", "published"]).default("pending").notNull(),
+  /** Optional notes from the admin */
+  notes: text("notes"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type ArticleFavorite = typeof articleFavorites.$inferSelect;
+export type InsertArticleFavorite = typeof articleFavorites.$inferInsert;
+
+/**
+ * Article drafts generated from keyword ideas.
+ * Stores the auto-generated structure for blog posts.
+ */
+export const articleDrafts = mysqlTable("article_drafts", {
+  id: int("id").autoincrement().primaryKey(),
+  /** Reference to the favorite (if created from a favorite) */
+  favoriteId: int("favoriteId"),
+  /** The keyword that inspired this draft */
+  keyword: varchar("keyword", { length: 512 }).notNull(),
+  /** Category */
+  category: varchar("category", { length: 64 }).notNull(),
+  /** Article title */
+  title: text("title").notNull(),
+  /** Generated article structure/outline in markdown */
+  content: text("content").notNull(),
+  /** Status: draft, review, published */
+  status: mysqlEnum("status", ["draft", "review", "published"]).default("draft").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type ArticleDraft = typeof articleDrafts.$inferSelect;
+export type InsertArticleDraft = typeof articleDrafts.$inferInsert;

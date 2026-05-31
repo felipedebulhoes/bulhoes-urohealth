@@ -1,8 +1,9 @@
 import { z } from "zod";
 import { adminProcedure, router } from "../_core/trpc";
 import { getDb } from "../db";
-import { keywordSnapshots, trackedKeywords } from "../../drizzle/schema";
-import { eq, desc, and } from "drizzle-orm";
+import { keywordSnapshots, trackedKeywords, articleFavorites, articleDrafts } from "../../drizzle/schema";
+import { eq, desc, and, asc } from "drizzle-orm";
+import { invokeLLM } from "../_core/llm";
 import { callDataApi } from "../_core/dataApi";
 import { TRPCError } from "@trpc/server";
 
@@ -173,6 +174,117 @@ export const keywordsRouter = router({
 
     return { success: true, results, refreshedAt: now.toISOString() };
   }),
+
+  /** List all article favorites */
+  listFavorites: adminProcedure.query(async () => {
+    const db = await requireDb();
+    return db.select().from(articleFavorites).orderBy(desc(articleFavorites.createdAt));
+  }),
+
+  /** Add an article idea to favorites */
+  addFavorite: adminProcedure
+    .input(z.object({
+      keyword: z.string(),
+      category: z.string(),
+      title: z.string(),
+      volume: z.number().nullable().optional(),
+      difficulty: z.number().nullable().optional(),
+    }))
+    .mutation(async ({ input }) => {
+      const db = await requireDb();
+      const [result] = await db.insert(articleFavorites).values({
+        keyword: input.keyword,
+        category: input.category,
+        title: input.title,
+        volume: input.volume ?? null,
+        difficulty: input.difficulty ?? null,
+      });
+      return { id: (result as any).insertId };
+    }),
+
+  /** Remove a favorite */
+  removeFavorite: adminProcedure
+    .input(z.object({ id: z.number() }))
+    .mutation(async ({ input }) => {
+      const db = await requireDb();
+      await db.delete(articleFavorites).where(eq(articleFavorites.id, input.id));
+      return { success: true };
+    }),
+
+  /** Update favorite status */
+  updateFavoriteStatus: adminProcedure
+    .input(z.object({
+      id: z.number(),
+      status: z.enum(["pending", "in_progress", "published"]),
+    }))
+    .mutation(async ({ input }) => {
+      const db = await requireDb();
+      await db.update(articleFavorites)
+        .set({ status: input.status })
+        .where(eq(articleFavorites.id, input.id));
+      return { success: true };
+    }),
+
+  /** Generate article draft using LLM */
+  createDraft: adminProcedure
+    .input(z.object({
+      keyword: z.string(),
+      category: z.string(),
+      title: z.string(),
+      favoriteId: z.number().nullable().optional(),
+    }))
+    .mutation(async ({ input }) => {
+      const db = await requireDb();
+
+      // Generate article structure using LLM
+      const response = await invokeLLM({
+        messages: [
+          {
+            role: "system",
+            content: `Você é um redator especializado em conteúdo médico para SEO. Gere a estrutura completa de um artigo de blog para um urologista (Dr. Felipe de Bulhões). O artigo deve ser informativo, baseado em evidências, e otimizado para a keyword fornecida. Escreva em Português do Brasil. Formato: Markdown com H2, H3, parágrafos, e sugestões de CTA. Inclua: introdução engajante, 4-6 seções principais, FAQ com 3-5 perguntas, e conclusão com CTA para agendamento. O tom deve ser profissional mas acessível ao paciente leigo.`,
+          },
+          {
+            role: "user",
+            content: `Gere a estrutura completa do artigo:\n\nTítulo: ${input.title}\nKeyword principal: ${input.keyword}\nCategoria: ${input.category}\n\nInclua conteúdo real (não apenas placeholders), com informações médicas precisas e atualizadas.`,
+          },
+        ],
+      });
+
+      const rawContent = response.choices?.[0]?.message?.content;
+      const content = typeof rawContent === "string" ? rawContent : "Erro ao gerar conteúdo";
+
+      const [result] = await db.insert(articleDrafts).values({
+        keyword: input.keyword,
+        category: input.category,
+        title: input.title,
+        content,
+        favoriteId: input.favoriteId ?? null,
+      });
+
+      // Update favorite status if linked
+      if (input.favoriteId) {
+        await db.update(articleFavorites)
+          .set({ status: "in_progress" })
+          .where(eq(articleFavorites.id, input.favoriteId));
+      }
+
+      return { id: (result as any).insertId, content };
+    }),
+
+  /** List all article drafts */
+  listDrafts: adminProcedure.query(async () => {
+    const db = await requireDb();
+    return db.select().from(articleDrafts).orderBy(desc(articleDrafts.createdAt));
+  }),
+
+  /** Delete a draft */
+  removeDraft: adminProcedure
+    .input(z.object({ id: z.number() }))
+    .mutation(async ({ input }) => {
+      const db = await requireDb();
+      await db.delete(articleDrafts).where(eq(articleDrafts.id, input.id));
+      return { success: true };
+    }),
 
   /** Seed default keywords for tracking */
   seedDefaults: adminProcedure.mutation(async () => {

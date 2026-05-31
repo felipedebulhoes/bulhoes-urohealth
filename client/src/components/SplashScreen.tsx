@@ -122,9 +122,8 @@ export default function SplashScreen() {
         {!videoLoaded && (
           <img
             src="/manus-storage/splash-poster_0d71c137.png"
-            alt=""
+            alt="Animação de abertura Dr. Felipe de Bulhões Urologista"
             className="splash-poster-fallback"
-            aria-hidden="true"
           />
         )}
       </div>

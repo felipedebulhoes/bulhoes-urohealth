@@ -84,3 +84,62 @@ export const leads = mysqlTable("leads", {
 
 export type Lead = typeof leads.$inferSelect;
 export type InsertLead = typeof leads.$inferInsert;
+
+/**
+ * Keyword snapshots table for SEO keyword tracking.
+ * Stores weekly snapshots of keyword performance data.
+ */
+export const keywordSnapshots = mysqlTable("keyword_snapshots", {
+  id: int("id").autoincrement().primaryKey(),
+  /** The keyword/search term */
+  keyword: varchar("keyword", { length: 512 }).notNull(),
+  /** Category: urologia, robotica, andrologia */
+  category: varchar("category", { length: 64 }).notNull(),
+  /** Data source: similarweb, google_trends, search_console */
+  source: varchar("source", { length: 64 }).notNull(),
+  /** Search volume (monthly) */
+  volume: int("volume"),
+  /** Traffic share (0-1) */
+  trafficShare: text("trafficShare"),
+  /** Organic difficulty (0-100) */
+  difficulty: int("difficulty"),
+  /** CPC in BRL */
+  cpc: text("cpc"),
+  /** Position in SERP (if available) */
+  position: int("position"),
+  /** Primary search intent: informational, navigational, transactional, commercial */
+  intent: varchar("intent", { length: 32 }),
+  /** Trend direction: up, down, stable */
+  trend: varchar("trend", { length: 16 }),
+  /** Trend change percentage */
+  trendChange: text("trendChange"),
+  /** Additional JSON data */
+  metadata: text("metadata"),
+  /** Snapshot week date (Monday of the week) */
+  weekDate: timestamp("weekDate").notNull(),
+  /** Cron task UID for the scheduled job */
+  scheduleCronTaskUid: varchar("scheduleCronTaskUid", { length: 65 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type KeywordSnapshot = typeof keywordSnapshots.$inferSelect;
+export type InsertKeywordSnapshot = typeof keywordSnapshots.$inferInsert;
+
+/**
+ * Tracked keywords configuration.
+ * Admin can add/remove keywords to track.
+ */
+export const trackedKeywords = mysqlTable("tracked_keywords", {
+  id: int("id").autoincrement().primaryKey(),
+  /** The keyword to track */
+  keyword: varchar("keyword", { length: 512 }).notNull(),
+  /** Category: urologia, robotica, andrologia */
+  category: varchar("category", { length: 64 }).notNull(),
+  /** Whether actively tracking */
+  active: mysqlEnum("active", ["yes", "no"]).default("yes").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type TrackedKeyword = typeof trackedKeywords.$inferSelect;
+export type InsertTrackedKeyword = typeof trackedKeywords.$inferInsert;

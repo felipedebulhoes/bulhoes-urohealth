@@ -252,3 +252,6 @@
 - [x] Artigo de blog SEO local "Urologista em Pinheiros" (slug: urologista-pinheiros-zona-oeste-sp)
 - [x] Artigo de blog SEO local "Urologista no ABC" (slug: urologista-abc-sao-bernardo-santo-andre)
 - [x] Schema Review nos depoimentos de pacientes para estrelas no Google (Physician + AggregateRating + 9 Reviews)
+- [x] Painel admin /admin/keywords com tendências de palavras-chave (urologia, robótica, andrologia)
+- [x] Integração SimilarWeb Keywords Overview API no painel de keywords (GSC requer OAuth manual)
+- [x] Job semanal automático de coleta de dados de keywords (Heartbeat pronto para deploy)

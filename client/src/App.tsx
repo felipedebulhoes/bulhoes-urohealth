@@ -37,6 +37,7 @@ import SobreDrFelipe from "./pages/SobreDrFelipe";
 import { CampinasDayHospital, ClinoviPaulista, ClinoviMoema, ClinoviPinheiros, ClinoviSBC, CemedSaoLuizCampinas } from "./pages/LocationPages";
 import AdminFiles from "./pages/AdminFiles";
 import AdminLeads from "./pages/AdminLeads";
+import AdminKeywords from "./pages/AdminKeywords";
 import Consultorios from "./pages/Consultorios";
 import Contato from "./pages/Contato";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -92,6 +93,7 @@ function Router() {
       <Route path={"/guia-google-business"} component={GuiaGoogleBusiness} />
       <Route path={"/admin/files"} component={AdminFiles} />
       <Route path={"/admin/leads"} component={AdminLeads} />
+      <Route path={"/admin/keywords"} component={AdminKeywords} />
       <Route path={"/privacidade"} component={PrivacyPolicy} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

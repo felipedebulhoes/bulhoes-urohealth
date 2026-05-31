@@ -1877,7 +1877,242 @@ N\u00e3o espere os sintomas aparecerem. A preven\u00e7\u00e3o \u00e9 sempre o me
 Urologista S\u00e3o Paulo, urologista Paulista, urologista Moema, urologista Pinheiros, urologista ABC, urologista S\u00e3o Bernardo do Campo, urologista Zona Sul SP, urologista Zona Oeste SP, consulta urol\u00f3gica particular S\u00e3o Paulo, m\u00e9dico urologista SP, cirurgia rob\u00f3tica urologia S\u00e3o Paulo, urologista perto de mim, melhor urologista S\u00e3o Paulo, urologista Avenida Paulista, urologista Rede D\u2019Or Campinas.
 `,
   },
+  {
+    id: "16",
+    slug: "urologista-pinheiros-zona-oeste-sp",
+    title: "Urologista em Pinheiros: Atendimento Especializado na Zona Oeste de São Paulo",
+    excerpt:
+      "Procurando urologista em Pinheiros? Dr. Felipe de Bulhões atende na Clinovi Pinheiros (Av. Rebouças, 2636), com foco em cirurgia robótica, endourologia e saúde masculina. Agendamento online via Doctoralia.",
+    coverImage:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp",
+    category: "Saúde Masculina",
+    date: "26 de Maio de 2026",
+    readTime: "8 min de leitura",
+    author: defaultAuthor,
+    content: `
+## Urologista em Pinheiros — Zona Oeste de São Paulo
+
+Pinheiros é um dos bairros mais dinâmicos e bem localizados de São Paulo, concentrando uma população que valoriza **praticidade, qualidade de vida e acesso rápido a serviços de saúde**. Se você mora ou trabalha na região de Pinheiros, Vila Madalena, Jardins, Itaim Bibi ou Alto de Pinheiros, agora pode contar com atendimento urológico especializado sem precisar se deslocar para outras regiões da cidade.
+
+O **Dr. Felipe de Bulhões** — urologista formado pelo Instituto D'Or de Ensino e Pesquisa e cirurgião geral com título de especialista pelo Colégio Brasileiro de Cirurgiões (TCBC) — atende na **Clinovi Pinheiros**, oferecendo consultas urológicas completas com foco em diagnóstico preciso e tratamento personalizado.
+
+---
+
+## Clinovi Pinheiros — Localização e Estrutura
+
+| Informação | Detalhes |
+|---|---|
+| **Endereço** | Av. Rebouças, 2636 — Pinheiros, São Paulo/SP |
+| **Espaço** | ComVem Rebouças — infraestrutura moderna e acessível |
+| **Acesso** | Próximo à estação Pinheiros (Linha 4-Amarela) e Av. Faria Lima |
+| **Estacionamento** | Disponível no próprio edifício |
+| **Modalidade** | Atendimento particular |
+| **Agendamento** | Online via Doctoralia ou WhatsApp (11) 98112-4455 |
+
+A Clinovi Pinheiros está estrategicamente localizada no **ComVem Rebouças**, um espaço de saúde moderno que reúne diversas especialidades médicas em um ambiente confortável e funcional. A proximidade com a estação Pinheiros do Metrô (Linha 4-Amarela) e com a Av. Faria Lima torna o acesso extremamente conveniente para pacientes de toda a Zona Oeste.
+
+---
+
+## Quem se beneficia do atendimento urológico em Pinheiros?
+
+### Homens a partir dos 40 anos
+O rastreamento do câncer de próstata deve começar aos 50 anos para a população geral e aos 45 anos para homens com fatores de risco (histórico familiar, raça negra). A consulta preventiva inclui dosagem de PSA e, quando indicado, toque retal — um exame rápido e fundamental para a detecção precoce.
+
+### Jovens com sintomas urinários
+Infecções urinárias de repetição, dor testicular, varicocele e disfunções sexuais são queixas comuns em homens jovens que muitas vezes adiam a consulta por constrangimento. O atendimento é realizado com total **sigilo, respeito e acolhimento**.
+
+### Pacientes com cálculos renais
+A litíase urinária (pedra nos rins) é uma das emergências urológicas mais comuns. O Dr. Felipe de Bulhões é especialista em **endourologia** — técnicas minimamente invasivas para tratamento de cálculos sem cortes.
+
+### Mulheres com incontinência urinária
+A urologia também atende mulheres, especialmente para quadros de incontinência urinária, infecções urinárias de repetição e prolapsos pélvicos.
+
+---
+
+## Especialidades e Procedimentos
+
+O Dr. Felipe de Bulhões oferece atendimento nas seguintes áreas:
+
+- **Cirurgia robótica urológica** — prostatectomia, nefrectomia parcial, pieloplastia
+- **Endourologia** — ureteroscopia flexível, litotripsia a laser para cálculos renais
+- **Uro-oncologia** — câncer de próstata, rim, bexiga e testículo
+- **Saúde masculina** — disfunção erétil, reposição hormonal, infertilidade
+- **Hiperplasia prostática benigna** — tratamentos modernos (HoLEP, Rezum, UroLift)
+- **Vasectomia** — procedimento ambulatorial com recuperação rápida
+
+---
+
+## Diferenciais do atendimento
+
+### Formação de excelência
+Residência em Cirurgia Geral e Urologia no Instituto D'Or de Ensino e Pesquisa (IDOR) em São Paulo — um dos programas mais competitivos do Brasil, com exposição a alto volume cirúrgico e tecnologia de ponta.
+
+### Atualização científica constante
+Participação ativa em congressos nacionais e internacionais (AUA, EAU, SBU), com prática baseada nas melhores evidências disponíveis.
+
+### Atendimento humanizado
+Cada paciente é único. A consulta é conduzida sem pressa, com escuta ativa e explicação detalhada do diagnóstico e opções de tratamento.
+
+### Tecnologia de ponta
+Acesso a equipamentos de última geração para diagnóstico (ultrassonografia, cistoscopia) e tratamento (laser, robótica).
+
+---
+
+## Bairros atendidos pela Clinovi Pinheiros
+
+A localização central na Av. Rebouças facilita o acesso de pacientes de diversos bairros da Zona Oeste e adjacências:
+
+- Pinheiros e Vila Madalena
+- Jardins (Jardim Paulista, Jardim América, Jardim Europa)
+- Itaim Bibi e Vila Olímpia
+- Alto de Pinheiros e Sumaré
+- Perdizes e Pompeia
+- Lapa e Vila Leopoldina
+- Butantã e Cidade Universitária
+
+---
+
+## Como agendar sua consulta em Pinheiros
+
+O agendamento é simples e rápido:
+
+- **Doctoralia**: agende online com horários disponíveis em tempo real
+- **WhatsApp**: (11) 98112-4455 — apenas mensagens de texto
+- **Site**: utilize o botão "Agendar Consulta" neste site
+
+A primeira consulta urológica não requer preparo especial. Traga exames anteriores, se houver, e uma lista de medicamentos em uso.
+
+---
+
+### Palavras-chave relacionadas
+Urologista Pinheiros, urologista Zona Oeste SP, urologista Vila Madalena, urologista Jardins, urologista Itaim Bibi, urologista Av. Rebouças, urologista Faria Lima, consulta urológica Pinheiros, médico urologista Pinheiros São Paulo, Clinovi Pinheiros urologista, urologista particular Pinheiros, urologista perto de mim Pinheiros.
+`,
+  },
+  {
+    id: "17",
+    slug: "urologista-abc-sao-bernardo-santo-andre",
+    title: "Urologista no ABC Paulista: Atendimento em São Bernardo do Campo",
+    excerpt:
+      "Urologista no ABC Paulista? Dr. Felipe de Bulhões atende na Clinovi SBC (Av. Pereira Barreto, 1479), com foco em cirurgia robótica, endourologia e saúde masculina. Atendimento particular com agendamento online.",
+    coverImage:
+      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp",
+    category: "Saúde Masculina",
+    date: "26 de Maio de 2026",
+    readTime: "8 min de leitura",
+    author: defaultAuthor,
+    content: `
+## Urologista no ABC Paulista — São Bernardo do Campo
+
+A região do **ABC Paulista** (Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema, Mauá, Ribeirão Pires e Rio Grande da Serra) concentra mais de 2,8 milhões de habitantes e uma demanda crescente por atendimento médico especializado de qualidade. Se você mora no Grande ABC e precisa de um urologista, agora pode contar com atendimento de alto nível sem precisar se deslocar até São Paulo.
+
+O **Dr. Felipe de Bulhões** — urologista formado pelo Instituto D'Or de Ensino e Pesquisa e cirurgião geral com título de especialista pelo Colégio Brasileiro de Cirurgiões (TCBC) — atende na **Clinovi SBC**, trazendo para a região a mesma qualidade de atendimento das melhores clínicas da capital.
+
+---
+
+## Clinovi SBC — Localização e Estrutura
+
+| Informação | Detalhes |
+|---|---|
+| **Endereço** | Av. Pereira Barreto, 1479 — São Bernardo do Campo/SP |
+| **Espaço** | Edifício Helbor Trilogy — mais de 1.000m², 30+ consultórios |
+| **Acesso** | Divisa entre Santo André e São Caetano do Sul |
+| **Estacionamento** | Disponível no edifício |
+| **Modalidade** | Atendimento particular |
+| **Agendamento** | Online via Doctoralia ou WhatsApp (11) 98112-4455 |
+
+A Clinovi SBC está localizada no **Edifício Helbor Trilogy**, um dos mais modernos centros médicos da região do ABC. Com mais de 1.000m² de área e mais de 30 consultórios equipados, o espaço oferece infraestrutura completa para consultas e pequenos procedimentos ambulatoriais.
+
+A localização na Av. Pereira Barreto é estratégica: na divisa entre São Bernardo do Campo, Santo André e São Caetano do Sul, com fácil acesso pelas principais vias da região (Anchieta-Imigrantes, Av. dos Estados, Rodoanel).
+
+---
+
+## Por que escolher um urologista no ABC?
+
+### Conveniência e economia de tempo
+Deslocar-se até São Paulo para uma consulta médica pode significar horas no trânsito. Com atendimento urológico de excelência no próprio ABC, você economiza tempo e reduz o estresse do deslocamento.
+
+### Mesma qualidade da capital
+O Dr. Felipe de Bulhões traz para o ABC a mesma formação, experiência e atualização científica que oferece em seus consultórios em São Paulo. A qualidade do atendimento é idêntica — o que muda é a conveniência da localização.
+
+### Continuidade do cuidado
+Ter um urologista próximo facilita o acompanhamento a longo prazo, retornos e exames de controle — essenciais para condições crônicas como hiperplasia prostática ou acompanhamento pós-cirúrgico.
+
+---
+
+## Condições tratadas
+
+### Próstata
+- **Câncer de próstata** — rastreamento (PSA + toque retal), biópsia guiada, cirurgia robótica
+- **Hiperplasia prostática benigna (HPB)** — medicamentos, HoLEP, Rezum, UroLift
+- **Prostatite** — diagnóstico diferencial e tratamento adequado
+
+### Cálculos urinários
+- **Pedra nos rins** — ureteroscopia flexível com laser (sem cortes)
+- **Cálculos ureterais** — tratamento endoscópico minimamente invasivo
+- **Prevenção de recorrência** — avaliação metabólica completa
+
+### Saúde masculina
+- **Disfunção erétil** — investigação e tratamento personalizado
+- **Reposição hormonal (testosterona)** — quando indicada, com monitoramento
+- **Vasectomia** — procedimento ambulatorial com recuperação rápida
+- **Infertilidade masculina** — espermograma, varicocele, azoospermia
+
+### Uro-oncologia
+- **Câncer de rim** — nefrectomia parcial robótica (preserva o rim)
+- **Câncer de bexiga** — RTU de bexiga, imunoterapia intravesical
+- **Câncer de testículo** — orquiectomia, estadiamento, seguimento
+
+### Urologia feminina
+- **Incontinência urinária** — avaliação urodinâmica, tratamento clínico e cirúrgico
+- **Infecções urinárias de repetição** — investigação e profilaxia
+
+---
+
+## Cidades atendidas pela Clinovi SBC
+
+A localização central na Av. Pereira Barreto facilita o acesso de pacientes de toda a região do ABC:
+
+- **São Bernardo do Campo** — Rudge Ramos, Baeta Neves, Centro, Demarchi
+- **Santo André** — Centro, Vila Assunção, Jardim, Campestre
+- **São Caetano do Sul** — Santa Paula, Barcelona, Fundação
+- **Diadema** — Centro, Serraria, Conceição
+- **Mauá** — Parque São Vicente, Vila Noêmia
+- **Ribeirão Pires e Rio Grande da Serra**
+
+---
+
+## Diferenciais do atendimento
+
+### Formação de referência
+Residência em Cirurgia Geral e Urologia no Instituto D'Or de Ensino e Pesquisa (IDOR) — programa de excelência com alto volume cirúrgico e exposição a tecnologias de ponta como cirurgia robótica (Da Vinci).
+
+### Abordagem minimamente invasiva
+Sempre que possível, o tratamento é realizado por técnicas que minimizam cortes, dor e tempo de recuperação. A endourologia e a cirurgia robótica são pilares da prática do Dr. Felipe.
+
+### Atendimento humanizado e sem pressa
+A consulta é um momento de escuta e orientação. Cada paciente recebe atenção individualizada, com explicação clara do diagnóstico e das opções terapêuticas.
+
+---
+
+## Como agendar sua consulta no ABC
+
+O agendamento é simples e rápido:
+
+- **Doctoralia**: agende online com horários disponíveis em tempo real
+- **WhatsApp**: (11) 98112-4455 — apenas mensagens de texto
+- **Site**: utilize o botão "Agendar Consulta" neste site
+
+Não é necessário preparo especial para a primeira consulta. Traga exames anteriores e lista de medicamentos em uso.
+
+---
+
+### Palavras-chave relacionadas
+Urologista ABC, urologista São Bernardo do Campo, urologista Santo André, urologista São Caetano do Sul, urologista Diadema, urologista Grande ABC, consulta urológica ABC Paulista, médico urologista ABC SP, Clinovi SBC urologista, urologista particular ABC, urologista perto de mim ABC, urologista Av. Pereira Barreto.
+`,
+  },
 ];
+
+
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
 }

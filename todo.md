@@ -248,3 +248,7 @@
 - [x] Adicionar mapa interativo (InteractiveMap) abaixo dos cards de locais
 - [x] Criar filtros por região (São Paulo / ABC / Campinas) nos cards de locais
 - [x] Submeter sitemap ao Google Search Console (instruções fornecidas ao usuário)
+- [x] Verificar propriedade felipebulhoes.com no GSC e submeter sitemap (propriedade verificada, robots.txt já referencia sitemap)
+- [x] Artigo de blog SEO local "Urologista em Pinheiros" (slug: urologista-pinheiros-zona-oeste-sp)
+- [x] Artigo de blog SEO local "Urologista no ABC" (slug: urologista-abc-sao-bernardo-santo-andre)
+- [x] Schema Review nos depoimentos de pacientes para estrelas no Google (Physician + AggregateRating + 9 Reviews)

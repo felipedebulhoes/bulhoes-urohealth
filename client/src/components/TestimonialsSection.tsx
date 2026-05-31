@@ -158,6 +158,74 @@ function TestimonialCard({ testimonial, index, isInView }: { testimonial: Testim
   );
 }
 
+// Schema.org Review JSON-LD for Google Rich Results (stars in search)
+function ReviewSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Felipe de Bulhões Ojeda",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/dr-felipe-hero-portrait_a1e2b3c4.webp",
+    "url": "https://felipebulhoes.com",
+    "telephone": "+5511981124455",
+    "priceRange": "$$",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Paulista, 1048, 18° andar",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "01310-100",
+        "addressCountry": "BR"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Rebouças, 2636",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Pereira Barreto, 1479",
+        "addressLocality": "São Bernardo do Campo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      }
+    ],
+    "medicalSpecialty": "Urology",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "9",
+      "reviewCount": "9"
+    },
+    "review": testimonials.map((t) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": t.name
+      },
+      "datePublished": "2026-03-01",
+      "reviewBody": t.text,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }))
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -329,6 +397,9 @@ export default function TestimonialsSection() {
           </span>
         </motion.div>
       </div>
+
+      {/* Schema.org Review structured data for Google Rich Results */}
+      <ReviewSchema />
     </section>
   );
 }

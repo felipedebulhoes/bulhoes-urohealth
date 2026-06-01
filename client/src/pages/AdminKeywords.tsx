@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { toast } from "sonner";
 import {
   TrendingUp,
@@ -38,6 +38,11 @@ import {
   Tag,
   X,
   AlertTriangle,
+  Bold,
+  Italic,
+  List,
+  ListOrdered,
+  Heading,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Streamdown } from "streamdown";
@@ -187,6 +192,54 @@ export default function AdminKeywords() {
   const [generatingMeta, setGeneratingMeta] = useState<number | null>(null);
   const [draftMetas, setDraftMetas] = useState<Record<number, { seoTitle: string; seoDescription: string }>>({})
   const [confirmDeleteId, setConfirmDeleteId] = useState<number | null>(null);
+  const [autoSaved, setAutoSaved] = useState(false);
+  const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Auto-save: salva automaticamente após 3s sem digitar
+  useEffect(() => {
+    if (editingDraft === null) return;
+    if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current);
+    autoSaveTimerRef.current = setTimeout(() => {
+      if (editingDraft && editContent) {
+        updateDraft.mutate({ id: editingDraft, content: editContent }, {
+          onSuccess: () => { setAutoSaved(true); setTimeout(() => setAutoSaved(false), 2000); }
+        });
+      }
+    }, 3000);
+    return () => { if (autoSaveTimerRef.current) clearTimeout(autoSaveTimerRef.current); };
+  }, [editContent, editingDraft]);
+
+  // Toolbar formatting helpers
+  const insertFormatting = useCallback((prefix: string, suffix: string = "") => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const selected = editContent.substring(start, end);
+    const before = editContent.substring(0, start);
+    const after = editContent.substring(end);
+    const newText = `${before}${prefix}${selected || "texto"}${suffix || prefix}${after}`;
+    setEditContent(newText);
+    setTimeout(() => {
+      textarea.focus();
+      const newCursorPos = start + prefix.length;
+      textarea.setSelectionRange(newCursorPos, newCursorPos + (selected.length || 5));
+    }, 0);
+  }, [editContent]);
+
+  const insertLinePrefix = useCallback((prefix: string) => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const selected = editContent.substring(start, end);
+    const lines = selected ? selected.split("\n") : ["item"];
+    const formatted = lines.map(line => `${prefix}${line}`).join("\n");
+    const before = editContent.substring(0, start);
+    const after = editContent.substring(end);
+    setEditContent(`${before}${formatted}${after}`);
+  }, [editContent]);
 
   // Queries
   const trackedQuery = trpc.keywords.listTracked.useQuery();
@@ -908,6 +961,11 @@ export default function AdminKeywords() {
                                   <span className="text-xs text-muted-foreground">
                                     {editContent.trim().split(/\s+/).filter(Boolean).length} palavras | {editContent.length} caracteres
                                   </span>
+                                  {autoSaved && (
+                                    <span className="text-xs text-green-500 flex items-center gap-1">
+                                      <Check className="w-3 h-3" /> Salvo
+                                    </span>
+                                  )}
                                   <Button size="sm" variant="default" className="h-7 text-xs gap-1"
                                     onClick={() => updateDraft.mutate({ id: draft.id, content: editContent })}
                                     disabled={updateDraft.isPending}>
@@ -925,11 +983,40 @@ export default function AdminKeywords() {
                                   <Streamdown>{editContent}</Streamdown>
                                 </div>
                               ) : (
-                                <textarea
-                                  className="w-full min-h-[400px] p-3 text-sm font-mono border rounded-md bg-background resize-y focus:outline-none focus:ring-2 focus:ring-ring"
-                                  value={editContent}
-                                  onChange={(e) => setEditContent(e.target.value)}
-                                />
+                                <div>
+                                  {/* Toolbar de formatação */}
+                                  <div className="flex items-center gap-1 p-2 border rounded-t-md bg-muted/30 border-b-0">
+                                    <Button type="button" variant="ghost" size="sm" className="h-7 w-7 p-0" title="Negrito"
+                                      onClick={() => insertFormatting("**")}>
+                                      <Bold className="w-3.5 h-3.5" />
+                                    </Button>
+                                    <Button type="button" variant="ghost" size="sm" className="h-7 w-7 p-0" title="Itálico"
+                                      onClick={() => insertFormatting("*")}>
+                                      <Italic className="w-3.5 h-3.5" />
+                                    </Button>
+                                    <div className="w-px h-4 bg-border mx-1" />
+                                    <Button type="button" variant="ghost" size="sm" className="h-7 w-7 p-0" title="Título (H2)"
+                                      onClick={() => insertLinePrefix("## ")}>
+                                      <Heading className="w-3.5 h-3.5" />
+                                    </Button>
+                                    <Button type="button" variant="ghost" size="sm" className="h-7 w-7 p-0" title="Lista"
+                                      onClick={() => insertLinePrefix("- ")}>
+                                      <List className="w-3.5 h-3.5" />
+                                    </Button>
+                                    <Button type="button" variant="ghost" size="sm" className="h-7 w-7 p-0" title="Lista numerada"
+                                      onClick={() => insertLinePrefix("1. ")}>
+                                      <ListOrdered className="w-3.5 h-3.5" />
+                                    </Button>
+                                    <div className="w-px h-4 bg-border mx-1" />
+                                    <span className="text-[10px] text-muted-foreground ml-1">Auto-save ativo (3s)</span>
+                                  </div>
+                                  <textarea
+                                    ref={textareaRef}
+                                    className="w-full min-h-[400px] p-3 text-sm font-mono border rounded-b-md bg-background resize-y focus:outline-none focus:ring-2 focus:ring-ring"
+                                    value={editContent}
+                                    onChange={(e) => setEditContent(e.target.value)}
+                                  />
+                                </div>
                               )}
                             </div>
                           ) : (

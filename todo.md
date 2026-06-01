@@ -268,3 +268,6 @@
 - [x] Contador de palavras e caracteres no editor Markdown integrado
 - [x] Modo de visualização (preview) no editor Markdown antes de salvar
 - [x] Modal de confirmação ao remover rascunho para evitar exclusões acidentais
+- [x] Botão copiar conteúdo do rascunho para clipboard com um clique (já existia)
+- [x] Auto-save no editor de rascunhos para evitar perda de dados (3s debounce)
+- [x] Barra de ferramentas no editor com formatação rápida (negrito, itálico, listas, títulos, listas numeradas)

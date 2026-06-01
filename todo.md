@@ -262,3 +262,6 @@
 - [x] Filtros e ordenação na tabela de keywords (por volume, dificuldade, categoria, CPC, keyword)
 - [x] Sistema de favoritos para ideias de artigos (salvar em lista separada com status e CRUD)
 - [x] Exportação de rascunhos para PDF e Word no painel de keywords
+- [x] Botão para gerar meta tags SEO (título e descrição) automaticamente para cada rascunho
+- [x] Editor de texto integrado para edição rápida do rascunho antes da exportação
+- [x] Botão "Copiar para área de transferência" junto às opções de exportação

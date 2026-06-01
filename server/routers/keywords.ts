@@ -296,6 +296,17 @@ export const keywordsRouter = router({
       return draft;
     }),
 
+  /** Update draft content */
+  updateDraft: adminProcedure
+    .input(z.object({ id: z.number(), content: z.string() }))
+    .mutation(async ({ input }) => {
+      const db = await requireDb();
+      await db.update(articleDrafts)
+        .set({ content: input.content, updatedAt: new Date() })
+        .where(eq(articleDrafts.id, input.id));
+      return { success: true };
+    }),
+
   /** Seed default keywords for tracking */
   seedDefaults: adminProcedure.mutation(async () => {
     const db = await requireDb();

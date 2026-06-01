@@ -30,6 +30,12 @@ import {
   Heart,
   BookOpen,
   FileDown,
+  Copy,
+  Check,
+  Pencil,
+  Save,
+  Tag,
+  X,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Streamdown } from "streamdown";
@@ -172,6 +178,11 @@ export default function AdminKeywords() {
   const [showDrafts, setShowDrafts] = useState(false);
   const [expandedDraft, setExpandedDraft] = useState<number | null>(null);
   const [generatingDraft, setGeneratingDraft] = useState<string | null>(null);
+  const [editingDraft, setEditingDraft] = useState<number | null>(null);
+  const [editContent, setEditContent] = useState("");
+  const [copiedId, setCopiedId] = useState<number | null>(null);
+  const [generatingMeta, setGeneratingMeta] = useState<number | null>(null);
+  const [draftMetas, setDraftMetas] = useState<Record<number, { seoTitle: string; seoDescription: string }>>({});
 
   // Queries
   const trackedQuery = trpc.keywords.listTracked.useQuery();
@@ -311,6 +322,48 @@ export default function AdminKeywords() {
       toast.success("Arquivo Word baixado!");
     }
   }, []);
+
+  // Copy draft content to clipboard
+  const copyToClipboard = useCallback((draft: { id: number; content: string; title: string }) => {
+    navigator.clipboard.writeText(draft.content).then(() => {
+      setCopiedId(draft.id);
+      toast.success("Conteúdo copiado para a área de transferência!");
+      setTimeout(() => setCopiedId(null), 2000);
+    }).catch(() => toast.error("Erro ao copiar"));
+  }, []);
+
+  // Generate SEO meta tags for a draft
+  const generateMetaTags = useCallback(async (draft: { id: number; title: string; keyword: string; content: string; category: string }) => {
+    setGeneratingMeta(draft.id);
+    try {
+      // Extract first 500 chars of content for context
+      const excerpt = draft.content.substring(0, 500);
+      const seoTitle = `${draft.title} | Dr. Felipe de Bulhões - Urologista`.substring(0, 60);
+      const seoDescription = excerpt
+        .replace(/^#+\s.*$/gm, "")
+        .replace(/\*\*/g, "")
+        .replace(/\*/g, "")
+        .replace(/\n+/g, " ")
+        .trim()
+        .substring(0, 155) + "...";
+      setDraftMetas((prev) => ({ ...prev, [draft.id]: { seoTitle, seoDescription } }));
+      toast.success("Meta tags SEO geradas!");
+    } catch {
+      toast.error("Erro ao gerar meta tags");
+    } finally {
+      setGeneratingMeta(null);
+    }
+  }, []);
+
+  // Update draft mutation
+  const updateDraft = trpc.keywords.updateDraft.useMutation({
+    onSuccess: () => {
+      toast.success("Rascunho salvo!");
+      draftsQuery.refetch();
+      setEditingDraft(null);
+    },
+    onError: (e: { message: string }) => toast.error(e.message),
+  });
 
   // Group snapshots by keyword for the latest data
   const latestSnapshots = useMemo(() => {
@@ -784,6 +837,19 @@ export default function AdminKeywords() {
                           <p className="text-sm font-medium">{draft.title}</p>
                         </div>
                         <div className="flex items-center gap-1 ml-3">
+                          <Button variant="ghost" size="sm" className="h-7 w-7 p-0" title="Copiar texto"
+                            onClick={(e) => { e.stopPropagation(); copyToClipboard(draft); }}>
+                            {copiedId === draft.id ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4 text-gray-500" />}
+                          </Button>
+                          <Button variant="ghost" size="sm" className="h-7 w-7 p-0" title="Gerar Meta Tags SEO"
+                            onClick={(e) => { e.stopPropagation(); generateMetaTags(draft); }}
+                            disabled={generatingMeta === draft.id}>
+                            {generatingMeta === draft.id ? <Loader2 className="w-4 h-4 animate-spin" /> : <Tag className="w-4 h-4 text-amber-600" />}
+                          </Button>
+                          <Button variant="ghost" size="sm" className="h-7 w-7 p-0" title="Editar"
+                            onClick={(e) => { e.stopPropagation(); setEditingDraft(draft.id); setEditContent(draft.content); setExpandedDraft(draft.id); }}>
+                            <Pencil className="w-4 h-4 text-green-600" />
+                          </Button>
                           <Button variant="ghost" size="sm" className="h-7 w-7 p-0" title="Exportar PDF"
                             onClick={(e) => { e.stopPropagation(); exportDraft(draft, "pdf"); }}>
                             <FileDown className="w-4 h-4 text-red-600" />
@@ -799,9 +865,56 @@ export default function AdminKeywords() {
                           {expandedDraft === draft.id ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                         </div>
                       </div>
+                      {/* Meta Tags SEO */}
+                      {draftMetas[draft.id] && (
+                        <div className="border-t px-4 py-2 bg-amber-50 dark:bg-amber-950/20">
+                          <div className="flex items-center gap-2 mb-1">
+                            <Tag className="w-3 h-3 text-amber-600" />
+                            <span className="text-xs font-semibold text-amber-700 dark:text-amber-400">Meta Tags SEO</span>
+                            <Button variant="ghost" size="sm" className="h-5 w-5 p-0 ml-auto" title="Copiar meta tags"
+                              onClick={() => {
+                                const meta = draftMetas[draft.id];
+                                navigator.clipboard.writeText(`<title>${meta.seoTitle}</title>\n<meta name="description" content="${meta.seoDescription}">`);
+                                toast.success("Meta tags copiadas!");
+                              }}>
+                              <Copy className="w-3 h-3" />
+                            </Button>
+                          </div>
+                          <p className="text-xs"><strong>Title:</strong> {draftMetas[draft.id].seoTitle}</p>
+                          <p className="text-xs"><strong>Description:</strong> {draftMetas[draft.id].seoDescription}</p>
+                        </div>
+                      )}
+                      {/* Content / Editor */}
                       {expandedDraft === draft.id && (
-                        <div className="border-t p-4 bg-muted/10 max-h-[500px] overflow-y-auto prose prose-sm dark:prose-invert max-w-none">
-                          <Streamdown>{draft.content}</Streamdown>
+                        <div className="border-t">
+                          {editingDraft === draft.id ? (
+                            <div className="p-3">
+                              <div className="flex items-center justify-between mb-2">
+                                <span className="text-xs font-medium text-muted-foreground">Editando rascunho (Markdown)</span>
+                                <div className="flex gap-1">
+                                  <Button size="sm" variant="default" className="h-7 text-xs gap-1"
+                                    onClick={() => updateDraft.mutate({ id: draft.id, content: editContent })}
+                                    disabled={updateDraft.isPending}>
+                                    {updateDraft.isPending ? <Loader2 className="w-3 h-3 animate-spin" /> : <Save className="w-3 h-3" />}
+                                    Salvar
+                                  </Button>
+                                  <Button size="sm" variant="outline" className="h-7 text-xs gap-1"
+                                    onClick={() => setEditingDraft(null)}>
+                                    <X className="w-3 h-3" /> Cancelar
+                                  </Button>
+                                </div>
+                              </div>
+                              <textarea
+                                className="w-full min-h-[400px] p-3 text-sm font-mono border rounded-md bg-background resize-y focus:outline-none focus:ring-2 focus:ring-ring"
+                                value={editContent}
+                                onChange={(e) => setEditContent(e.target.value)}
+                              />
+                            </div>
+                          ) : (
+                            <div className="p-4 bg-muted/10 max-h-[500px] overflow-y-auto prose prose-sm dark:prose-invert max-w-none">
+                              <Streamdown>{draft.content}</Streamdown>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>

@@ -29,6 +29,7 @@ import {
   ArrowUpDown,
   Heart,
   BookOpen,
+  FileDown,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Streamdown } from "streamdown";
@@ -242,6 +243,74 @@ export default function AdminKeywords() {
   const removeDraft = trpc.keywords.removeDraft.useMutation({
     onSuccess: () => { toast.success("Rascunho removido!"); draftsQuery.refetch(); },
   });
+
+  // Export draft as PDF or Word (DOCX)
+  const exportDraft = useCallback((draft: { title: string; content: string; keyword: string; category: string; createdAt: string | number | Date }, format: "pdf" | "docx") => {
+    const title = draft.title;
+    const content = draft.content;
+    const date = new Date(draft.createdAt).toLocaleDateString("pt-BR");
+
+    if (format === "pdf") {
+      // Generate PDF using browser print
+      const printWindow = window.open("", "_blank");
+      if (!printWindow) { toast.error("Popup bloqueado. Permita popups para exportar."); return; }
+      printWindow.document.write(`
+        <!DOCTYPE html>
+        <html><head><meta charset="utf-8">
+        <title>${title}</title>
+        <style>
+          body { font-family: 'Segoe UI', Roboto, sans-serif; max-width: 700px; margin: 40px auto; padding: 20px; line-height: 1.7; color: #1a1a1a; }
+          h1 { font-size: 24px; border-bottom: 2px solid #b87333; padding-bottom: 8px; margin-bottom: 4px; }
+          .meta { font-size: 12px; color: #666; margin-bottom: 24px; }
+          h2 { font-size: 18px; margin-top: 28px; color: #2c3e50; }
+          h3 { font-size: 15px; margin-top: 20px; color: #34495e; }
+          p { margin: 10px 0; text-align: justify; }
+          ul, ol { margin: 10px 0; padding-left: 24px; }
+          li { margin: 4px 0; }
+          blockquote { border-left: 3px solid #b87333; margin: 16px 0; padding: 8px 16px; background: #faf8f5; }
+          code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+          @media print { body { margin: 0; } }
+        </style>
+        </head><body>
+        <h1>${title}</h1>
+        <div class="meta">Keyword: ${draft.keyword} | Categoria: ${draft.category} | Gerado em: ${date}</div>
+        ${content.replace(/^### (.*$)/gm, '<h3>$1</h3>').replace(/^## (.*$)/gm, '<h2>$1</h2>').replace(/^# (.*$)/gm, '<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>').replace(/^- (.*$)/gm, '<li>$1</li>').replace(/(<li>[\s\S]*<\/li>)/, '<ul>$1</ul>').replace(/\n\n/g, '</p><p>').replace(/^(?!<[hulo])/gm, '<p>').replace(/<p><\/p>/g, '')}
+        </body></html>
+      `);
+      printWindow.document.close();
+      setTimeout(() => { printWindow.print(); }, 500);
+      toast.success("Janela de impressão aberta — salve como PDF");
+    } else {
+      // Generate DOCX-compatible HTML file
+      const htmlContent = `
+        <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+        <head><meta charset="utf-8"><title>${title}</title>
+        <style>
+          body { font-family: 'Calibri', sans-serif; font-size: 12pt; line-height: 1.6; color: #1a1a1a; }
+          h1 { font-size: 20pt; color: #2c3e50; border-bottom: 1pt solid #b87333; }
+          h2 { font-size: 16pt; color: #2c3e50; margin-top: 18pt; }
+          h3 { font-size: 13pt; color: #34495e; margin-top: 12pt; }
+          p { margin: 6pt 0; text-align: justify; }
+          ul, ol { margin: 6pt 0; }
+          li { margin: 3pt 0; }
+        </style></head><body>
+        <h1>${title}</h1>
+        <p style="font-size:10pt;color:#666;">Keyword: ${draft.keyword} | Categoria: ${draft.category} | Gerado em: ${date}</p>
+        ${content.replace(/^### (.*$)/gm, '<h3>$1</h3>').replace(/^## (.*$)/gm, '<h2>$1</h2>').replace(/^# (.*$)/gm, '<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>').replace(/^- (.*$)/gm, '<li>$1</li>').replace(/\n\n/g, '</p><p>').replace(/^(?!<[hulo])/gm, '<p>')}
+        </body></html>
+      `;
+      const blob = new Blob([htmlContent], { type: "application/msword" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${title.replace(/[^a-zA-Z0-9\u00C0-\u024F ]/g, "").trim().replace(/\s+/g, "-").substring(0, 60)}.doc`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      toast.success("Arquivo Word baixado!");
+    }
+  }, []);
 
   // Group snapshots by keyword for the latest data
   const latestSnapshots = useMemo(() => {
@@ -715,7 +784,15 @@ export default function AdminKeywords() {
                           <p className="text-sm font-medium">{draft.title}</p>
                         </div>
                         <div className="flex items-center gap-1 ml-3">
-                          <Button variant="ghost" size="sm" className="h-7 w-7 p-0"
+                          <Button variant="ghost" size="sm" className="h-7 w-7 p-0" title="Exportar PDF"
+                            onClick={(e) => { e.stopPropagation(); exportDraft(draft, "pdf"); }}>
+                            <FileDown className="w-4 h-4 text-red-600" />
+                          </Button>
+                          <Button variant="ghost" size="sm" className="h-7 w-7 p-0" title="Exportar Word"
+                            onClick={(e) => { e.stopPropagation(); exportDraft(draft, "docx"); }}>
+                            <FileText className="w-4 h-4 text-blue-600" />
+                          </Button>
+                          <Button variant="ghost" size="sm" className="h-7 w-7 p-0" title="Remover"
                             onClick={(e) => { e.stopPropagation(); if (confirm("Remover rascunho?")) removeDraft.mutate({ id: draft.id }); }}>
                             <Trash2 className="w-4 h-4 text-red-500" />
                           </Button>

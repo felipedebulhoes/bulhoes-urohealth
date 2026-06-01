@@ -261,3 +261,4 @@
 - [x] Botão "Criar Rascunho" nas ideias de artigos para gerar estrutura inicial do post (via LLM)
 - [x] Filtros e ordenação na tabela de keywords (por volume, dificuldade, categoria, CPC, keyword)
 - [x] Sistema de favoritos para ideias de artigos (salvar em lista separada com status e CRUD)
+- [x] Exportação de rascunhos para PDF e Word no painel de keywords

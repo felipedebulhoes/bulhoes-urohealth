@@ -286,6 +286,16 @@ export const keywordsRouter = router({
       return { success: true };
     }),
 
+  /** Get a single draft by ID (for export) */
+  getDraft: adminProcedure
+    .input(z.object({ id: z.number() }))
+    .query(async ({ input }) => {
+      const db = await requireDb();
+      const [draft] = await db.select().from(articleDrafts).where(eq(articleDrafts.id, input.id));
+      if (!draft) throw new TRPCError({ code: "NOT_FOUND", message: "Rascunho não encontrado" });
+      return draft;
+    }),
+
   /** Seed default keywords for tracking */
   seedDefaults: adminProcedure.mutation(async () => {
     const db = await requireDb();

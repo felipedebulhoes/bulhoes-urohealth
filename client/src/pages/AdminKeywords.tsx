@@ -3,6 +3,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { useState, useMemo, useCallback } from "react";
 import { toast } from "sonner";
 import {
@@ -36,6 +37,7 @@ import {
   Save,
   Tag,
   X,
+  AlertTriangle,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Streamdown } from "streamdown";
@@ -180,9 +182,11 @@ export default function AdminKeywords() {
   const [generatingDraft, setGeneratingDraft] = useState<string | null>(null);
   const [editingDraft, setEditingDraft] = useState<number | null>(null);
   const [editContent, setEditContent] = useState("");
+  const [editPreview, setEditPreview] = useState(false);
   const [copiedId, setCopiedId] = useState<number | null>(null);
   const [generatingMeta, setGeneratingMeta] = useState<number | null>(null);
-  const [draftMetas, setDraftMetas] = useState<Record<number, { seoTitle: string; seoDescription: string }>>({});
+  const [draftMetas, setDraftMetas] = useState<Record<number, { seoTitle: string; seoDescription: string }>>({})
+  const [confirmDeleteId, setConfirmDeleteId] = useState<number | null>(null);
 
   // Queries
   const trackedQuery = trpc.keywords.listTracked.useQuery();
@@ -859,7 +863,7 @@ export default function AdminKeywords() {
                             <FileText className="w-4 h-4 text-blue-600" />
                           </Button>
                           <Button variant="ghost" size="sm" className="h-7 w-7 p-0" title="Remover"
-                            onClick={(e) => { e.stopPropagation(); if (confirm("Remover rascunho?")) removeDraft.mutate({ id: draft.id }); }}>
+                            onClick={(e) => { e.stopPropagation(); setConfirmDeleteId(draft.id); }}>
                             <Trash2 className="w-4 h-4 text-red-500" />
                           </Button>
                           {expandedDraft === draft.id ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -890,8 +894,20 @@ export default function AdminKeywords() {
                           {editingDraft === draft.id ? (
                             <div className="p-3">
                               <div className="flex items-center justify-between mb-2">
-                                <span className="text-xs font-medium text-muted-foreground">Editando rascunho (Markdown)</span>
-                                <div className="flex gap-1">
+                                <div className="flex items-center gap-2">
+                                  <span className="text-xs font-medium text-muted-foreground">
+                                    {editPreview ? "Preview" : "Editor Markdown"}
+                                  </span>
+                                  <Button size="sm" variant={editPreview ? "default" : "outline"} className="h-6 text-xs px-2"
+                                    onClick={() => setEditPreview(!editPreview)}>
+                                    {editPreview ? <Pencil className="w-3 h-3 mr-1" /> : <Eye className="w-3 h-3 mr-1" />}
+                                    {editPreview ? "Editar" : "Preview"}
+                                  </Button>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <span className="text-xs text-muted-foreground">
+                                    {editContent.trim().split(/\s+/).filter(Boolean).length} palavras | {editContent.length} caracteres
+                                  </span>
                                   <Button size="sm" variant="default" className="h-7 text-xs gap-1"
                                     onClick={() => updateDraft.mutate({ id: draft.id, content: editContent })}
                                     disabled={updateDraft.isPending}>
@@ -899,16 +915,22 @@ export default function AdminKeywords() {
                                     Salvar
                                   </Button>
                                   <Button size="sm" variant="outline" className="h-7 text-xs gap-1"
-                                    onClick={() => setEditingDraft(null)}>
+                                    onClick={() => { setEditingDraft(null); setEditPreview(false); }}>
                                     <X className="w-3 h-3" /> Cancelar
                                   </Button>
                                 </div>
                               </div>
-                              <textarea
-                                className="w-full min-h-[400px] p-3 text-sm font-mono border rounded-md bg-background resize-y focus:outline-none focus:ring-2 focus:ring-ring"
-                                value={editContent}
-                                onChange={(e) => setEditContent(e.target.value)}
-                              />
+                              {editPreview ? (
+                                <div className="p-4 border rounded-md bg-muted/10 max-h-[500px] overflow-y-auto prose prose-sm dark:prose-invert max-w-none">
+                                  <Streamdown>{editContent}</Streamdown>
+                                </div>
+                              ) : (
+                                <textarea
+                                  className="w-full min-h-[400px] p-3 text-sm font-mono border rounded-md bg-background resize-y focus:outline-none focus:ring-2 focus:ring-ring"
+                                  value={editContent}
+                                  onChange={(e) => setEditContent(e.target.value)}
+                                />
+                              )}
                             </div>
                           ) : (
                             <div className="p-4 bg-muted/10 max-h-[500px] overflow-y-auto prose prose-sm dark:prose-invert max-w-none">
@@ -969,6 +991,34 @@ export default function AdminKeywords() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Modal de confirmação de exclusão */}
+      <Dialog open={confirmDeleteId !== null} onOpenChange={(open) => { if (!open) setConfirmDeleteId(null); }}>
+        <DialogContent className="max-w-sm">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 text-red-500" />
+              Confirmar Exclusão
+            </DialogTitle>
+          </DialogHeader>
+          <p className="text-sm text-muted-foreground">
+            Tem certeza que deseja remover este rascunho? Esta ação não pode ser desfeita.
+          </p>
+          <DialogFooter className="gap-2">
+            <Button variant="outline" size="sm" onClick={() => setConfirmDeleteId(null)}>
+              Cancelar
+            </Button>
+            <Button variant="destructive" size="sm" onClick={() => {
+              if (confirmDeleteId) {
+                removeDraft.mutate({ id: confirmDeleteId });
+                setConfirmDeleteId(null);
+              }
+            }}>
+              <Trash2 className="w-4 h-4 mr-1" /> Remover
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

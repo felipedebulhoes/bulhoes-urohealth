@@ -265,3 +265,6 @@
 - [x] Botão para gerar meta tags SEO (título e descrição) automaticamente para cada rascunho
 - [x] Editor de texto integrado para edição rápida do rascunho antes da exportação
 - [x] Botão "Copiar para área de transferência" junto às opções de exportação
+- [x] Contador de palavras e caracteres no editor Markdown integrado
+- [x] Modo de visualização (preview) no editor Markdown antes de salvar
+- [x] Modal de confirmação ao remover rascunho para evitar exclusões acidentais

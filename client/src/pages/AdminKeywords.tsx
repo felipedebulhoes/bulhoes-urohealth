@@ -43,6 +43,8 @@ import {
   List,
   ListOrdered,
   Heading,
+  Link2 as LinkIcon,
+  Image as ImageIcon,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Streamdown } from "streamdown";
@@ -1006,6 +1008,15 @@ export default function AdminKeywords() {
                                     <Button type="button" variant="ghost" size="sm" className="h-7 w-7 p-0" title="Lista numerada"
                                       onClick={() => insertLinePrefix("1. ")}>
                                       <ListOrdered className="w-3.5 h-3.5" />
+                                    </Button>
+                                    <div className="w-px h-4 bg-border mx-1" />
+                                    <Button type="button" variant="ghost" size="sm" className="h-7 px-1.5" title="Inserir link"
+                                      onClick={() => insertFormatting("[", "](url)")}>
+                                      <LinkIcon className="w-3.5 h-3.5" />
+                                    </Button>
+                                    <Button type="button" variant="ghost" size="sm" className="h-7 px-1.5" title="Inserir imagem"
+                                      onClick={() => insertFormatting("![", "](url-da-imagem)")}>
+                                      <ImageIcon className="w-3.5 h-3.5" />
                                     </Button>
                                     <div className="w-px h-4 bg-border mx-1" />
                                     <span className="text-[10px] text-muted-foreground ml-1">Auto-save ativo (3s)</span>

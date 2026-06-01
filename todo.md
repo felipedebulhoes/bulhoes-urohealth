@@ -271,3 +271,4 @@
 - [x] Botão copiar conteúdo do rascunho para clipboard com um clique (já existia)
 - [x] Auto-save no editor de rascunhos para evitar perda de dados (3s debounce)
 - [x] Barra de ferramentas no editor com formatação rápida (negrito, itálico, listas, títulos, listas numeradas)
+- [x] Botões de link e imagem na barra de ferramentas do editor de rascunhos

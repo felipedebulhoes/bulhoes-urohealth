@@ -273,3 +273,4 @@
 - [x] Barra de ferramentas no editor com formatação rápida (negrito, itálico, listas, títulos, listas numeradas)
 - [x] Botões de link e imagem na barra de ferramentas do editor de rascunhos
 - [x] Adicionar metatag de verificação do Facebook (facebook-domain-verification) na seção head do index.html
+- [x] Instalar Meta Pixel (ID: 1730608694762791) no site — código base adicionado na seção head do index.html

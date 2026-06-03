@@ -93,10 +93,10 @@
 - [x] Criar página educativa completa sobre Doença de Peyronie
 - [x] Integrar página de Peyronie ao site (rota + navegação + seção educativa)
 - [x] Verificar funcionamento, testes e salvar checkpoint (42 testes passando, página de Peyronie OK, sem erros TS)
-- [ ] Verificar status de indexação do site bulhoesurohealth.com no Google
+- [x] Verificar status de indexação do site felipebulhoes.com no Google — 25+ páginas indexadas, domínio legado com 2 residuais (01/06/2026)
 - [x] Verificar propagação DNS do Resend - todos os registros propagados (DKIM, SPF, MX)
-- [ ] Pesquisar e redigir artigo de blog SEO local "urologista São Paulo" (Clinovi Paulista e Moema)
-- [ ] Integrar artigo de blog ao site
+- [x] Pesquisar e redigir artigo de blog SEO local "urologista São Paulo" (Clinovi Paulista e Moema) — DUPLICADO: concluído nas linhas 113-115
+- [x] Integrar artigo de blog ao site — DUPLICADO: artigo já publicado (slug: urologista-sao-paulo-paulista-moema)
 - [x] Pesquisar informações sobre Varicocele nas guidelines EAU/AUA
 - [x] Criar página educativa completa sobre Varicocele
 - [x] Integrar página de Varicocele ao site (rota + navegação + seção educativa)
@@ -146,12 +146,12 @@
 - [x] Integrar página HPB leigos ao site (rota + navegação)
 - [x] Atualizar sitemap.xml com novas páginas (orientações pré-operatórias + HPB leigos) — 43 URLs total
 - [x] Resubmeter sitemap ao Google Search Console (ping depreciado; reindexado automaticamente após publicação)
-- [ ] Verificar funcionamento, salvar checkpoint e publicar
+- [x] Verificar funcionamento, salvar checkpoint e publicar — CONCLUÍDO: site publicado em checkpoints posteriores
 - [x] Adicionar WhatsApp (19) 99855-9890 para agendamento no Campinas Day Hospital em todos os locais do site
 - [x] Página educativa sobre Disfunção Erétil já existia (399 linhas, EAU 2025, AUA 2024, Campbell 13ª ed.) — verificada e completa
 - [x] Página DE já integrada ao site (rota, navegação, seção educativa, sitemap, AI chat)
 - [x] Configurar Google Meu Negócio para o Campinas Day Hospital (guia passo a passo entregue)
-- [ ] Verificar funcionamento, salvar checkpoint e publicar
+- [x] Verificar funcionamento, salvar checkpoint e publicar — CONCLUÍDO: site publicado em checkpoints posteriores
 - [x] Investigar e corrigir problemas de indexação no Google Search Console (tags canônicas, páginas não indexadas)
 - [x] Corrigir problemas de Soft 404 nas páginas /consultorios, /contato, /agendamento, /educativo/cancer-de-prostata
 - [x] Implementar redirecionamentos 301 no servidor para resolver Soft 404 do Googlebot (causa raiz: seções âncora, não rotas reais)
@@ -166,7 +166,7 @@
 - [x] Atualizar links do Header para apontar para rotas reais (/consultorios, /contato e /agendamento)
 - [x] Resolicitar indexação no GSC para /consultorios, /contato e /agendamento
 - [x] Reenviar sitemap atualizado no Google Search Console (12/abr/2026)
-- [ ] Redigir artigo de blog SEO local sobre "urologista São Paulo" focando Clinovi Paulista e Moema
+- [x] Redigir artigo de blog SEO local sobre "urologista São Paulo" focando Clinovi Paulista e Moema — DUPLICADO: já concluído (linhas 113-115, slug existente)
 - [x] Adicionar schema JSON-LD de Physician/MedicalBusiness na homepage e página /sobre (já existia no index.html)
 - [x] Adicionar schema JSON-LD de MedicalClinic + BreadcrumbList nas páginas de localização (/local/*)
 - [x] Adicionar schema JSON-LD de Article/MedicalWebPage nos artigos do blog (ArticleSchema + BreadcrumbSchema em BlogPost.tsx)
@@ -182,7 +182,7 @@
 - [x] Preparar plano de monitoramento de performance (7 dias) — cronograma e métricas definidos
 - [ ] Criar perfil Google Meu Negócio para Clinovi Pinheiros
 - [ ] Criar perfil Google Meu Negócio para Clinovi SBC
-- [ ] Verificação completa do site (páginas principais e novas)
+- [x] Verificação completa do site (páginas principais e novas) — 13 rotas testadas em produção, todas OK (01/06/2026)
 - [ ] Verificação do Google Ads (status da campanha)
 - [x] Instalar tag de conversão do Google Ads no site (AW-18050357375 adicionado ao gtag config)
 - [x] Configurar eventos de conversão do Google Ads (generate_lead, contact_whatsapp, contact_doctoralia, contact_phone, cta_click)
@@ -241,7 +241,7 @@
 - [x] Splash screen atualizada para v3 "O Diagnóstico Vivo" - ultrassonografia transretal realista via vídeo MP4 (6s, 178KB)
 - [x] Meta descriptions específicas para cada página interna (educacional, serviços, etc.)
 - [x] Dados estruturados Schema.org (Physician, MedicalClinic) aprimorados para SEO (já existiam completos via EducationalLayout + index.html)
-- [ ] Orientar sobre registros MX para Google Workspace (felipebulhoes.com)
+- [x] Orientar sobre registros MX para Google Workspace (felipebulhoes.com) — CONCLUÍDO: Google Workspace configurado, email contato@felipebulhoes.com funcional
 - [x] Criar/atualizar sitemap.xml com todas as páginas do site (adicionada /privacidade, atualizado lastmod)
 - [x] Atualizar artigo de blog SEO local "Urologista em São Paulo" com Clinovi Pinheiros, SBC e São Luiz Campinas (Rede D'Or)
 - [x] Seção interativa na Home com cards detalhados e links de agendamento para todos os locais de atendimento
@@ -272,3 +272,4 @@
 - [x] Auto-save no editor de rascunhos para evitar perda de dados (3s debounce)
 - [x] Barra de ferramentas no editor com formatação rápida (negrito, itálico, listas, títulos, listas numeradas)
 - [x] Botões de link e imagem na barra de ferramentas do editor de rascunhos
+- [x] Adicionar metatag de verificação do Facebook (facebook-domain-verification) na seção head do index.html

@@ -195,3 +195,23 @@ export const articleDrafts = mysqlTable("article_drafts", {
 
 export type ArticleDraft = typeof articleDrafts.$inferSelect;
 export type InsertArticleDraft = typeof articleDrafts.$inferInsert;
+
+/**
+ * Playbook leads table for capturing name/email in exchange for PDF download.
+ * Tracks who downloaded the "Guia de Saúde Integral" material.
+ */
+export const playbookLeads = mysqlTable("playbook_leads", {
+  id: int("id").autoincrement().primaryKey(),
+  /** Lead's full name */
+  name: varchar("name", { length: 256 }).notNull(),
+  /** Lead's email address */
+  email: varchar("email", { length: 320 }).notNull(),
+  /** Which playbook/material was downloaded */
+  material: varchar("material", { length: 256 }).default("guia-saude-integral").notNull(),
+  /** Source: homepage, landing-page, etc. */
+  source: varchar("source", { length: 64 }).default("homepage").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type PlaybookLead = typeof playbookLeads.$inferSelect;
+export type InsertPlaybookLead = typeof playbookLeads.$inferInsert;

@@ -274,3 +274,8 @@
 - [x] Botões de link e imagem na barra de ferramentas do editor de rascunhos
 - [x] Adicionar metatag de verificação do Facebook (facebook-domain-verification) na seção head do index.html
 - [x] Instalar Meta Pixel (ID: 1730608694762791) no site — código base adicionado na seção head do index.html
+- [x] Hospedar Playbook Saúde Integral no site (PDF via S3)
+- [x] Criar tabela de leads_playbook no banco de dados para captura de nome/email
+- [x] Criar endpoint tRPC para registrar leads e liberar download do Playbook
+- [x] Criar seção de propaganda/captura de leads na homepage com formulário (nome + email)
+- [x] Fornecer link direto do PDF hospedado — URL: /manus-storage/Playbook-Saude-Integral-DrFelipeBulhoes_57b5fc71.pdf

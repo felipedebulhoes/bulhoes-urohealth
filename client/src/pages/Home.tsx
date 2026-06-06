@@ -26,6 +26,7 @@ import WhatsAppWidget from "@/components/WhatsAppWidget";
 import AIChatWidget from "@/components/AIChatWidget";
 import ScheduleBanner from "@/components/ScheduleBanner";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import PlaybookSection from "@/components/PlaybookSection";
 
 export default function Home() {
   usePageMeta({
@@ -56,6 +57,9 @@ export default function Home() {
         </ScrollReveal>
         <ScrollReveal>
           <SpecialtiesSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <PlaybookSection />
         </ScrollReveal>
         <ScrollReveal>
           <EducationalPreviewSection />

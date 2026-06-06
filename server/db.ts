@@ -1,6 +1,6 @@
 import { and, desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, InsertFile, FileRecord, InsertLead, Lead, users, files, leads } from "../drizzle/schema";
+import { InsertUser, InsertFile, FileRecord, InsertLead, Lead, users, files, leads, playbookLeads, InsertPlaybookLead, PlaybookLead } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -166,4 +166,25 @@ export async function updateLeadStatus(id: number, status: string, notes?: strin
   if (notes !== undefined) updateSet.notes = notes;
   const result = await db.update(leads).set(updateSet).where(eq(leads.id, id));
   return (result[0] as any).affectedRows > 0;
+}
+
+// ── Playbook lead helpers ──
+
+export async function insertPlaybookLead(lead: InsertPlaybookLead): Promise<PlaybookLead | undefined> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot insert playbook lead: database not available");
+    return undefined;
+  }
+  const result = await db.insert(playbookLeads).values(lead);
+  const insertId = (result[0] as any).insertId;
+  if (!insertId) return undefined;
+  const rows = await db.select().from(playbookLeads).where(eq(playbookLeads.id, insertId)).limit(1);
+  return rows[0];
+}
+
+export async function listPlaybookLeads(): Promise<PlaybookLead[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(playbookLeads).orderBy(desc(playbookLeads.createdAt));
 }

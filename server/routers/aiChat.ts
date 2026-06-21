@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { router, publicProcedure, protectedProcedure } from "../_core/trpc";
+import { router, publicProcedure, protectedProcedure, rateLimit } from "../_core/trpc";
 import { invokeLLM, type Message } from "../_core/llm";
 import { notifyOwner } from "../_core/notification";
 import { insertLead, listLeads, updateLeadStatus } from "../db";
@@ -55,7 +55,11 @@ export const aiChatRouter = router({
    * Send a message to the AI assistant and get a response.
    * Accepts the conversation history and returns the assistant's reply.
    */
+  // Each chat turn triggers a paid LLM call, so we cap how often a single
+  // IP can hit this endpoint to limit abuse/cost exposure: 20 messages per
+  // 10 minutes is generous for a real conversation but blocks scripted spam.
   sendMessage: publicProcedure
+    .use(rateLimit({ windowMs: 10 * 60 * 1000, max: 20 }))
     .input(
       z.object({
         messages: z.array(

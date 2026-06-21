@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { publicProcedure, protectedProcedure, router } from "../_core/trpc";
+import { publicProcedure, protectedProcedure, router, rateLimit } from "../_core/trpc";
 import { insertPlaybookLead, listPlaybookLeads } from "../db";
 import { notifyOwner } from "../_core/notification";
 
@@ -9,7 +9,10 @@ export const playbookRouter = router({
   /**
    * Public: register a lead (name + email) and return the PDF download URL.
    */
+  // Lead-capture form: limit submissions per IP so it can't be scripted
+  // to spam the leads table / owner notification email.
   requestDownload: publicProcedure
+    .use(rateLimit({ windowMs: 60 * 60 * 1000, max: 5 }))
     .input(
       z.object({
         name: z.string().min(2, "Nome é obrigatório"),

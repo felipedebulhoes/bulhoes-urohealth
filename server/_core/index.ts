@@ -34,6 +34,16 @@ async function startServer() {
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+
+  // Baseline security response headers. Intentionally NOT setting
+  // X-Frame-Options/frame-ancestors here: the Manus visual editor relies on
+  // iframing the site for live preview, and a frame-deny policy would break
+  // that workflow. Revisit if/when the site is fully off the Manus builder.
+  app.use((_req, res, next) => {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+    next();
+  });
   // SEO: 301 redirect — domain consolidation
   // Redirect bulhoesurohealth.com → felipebulhoes.com (canonical domain)
   app.use((req, res, next) => {

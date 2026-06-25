@@ -42,7 +42,7 @@ const faqs = [
       },
       {
         q: "Qual o valor da consulta particular?",
-        a: "Os valores de consulta particular variam conforme o local de atendimento. Nas unidades Clinovi (Paulista e Moema), aceitamos pagamento via PIX, cartão de crédito ou débito, realizado no local antes da consulta. Para informações sobre valores, envie uma mensagem pelo WhatsApp (11) 98112-4455 (São Paulo) ou (19) 99855-9890 (Campinas), ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
+        a: "Os valores de consulta particular variam conforme o local de atendimento. Nas unidades Clinovi (Paulista, Moema, Pinheiros e SBC) e no Campinas Day Hospital, aceitamos pagamento via PIX, cartão de crédito ou débito, realizado no local antes da consulta. Para informações sobre valores, envie uma mensagem pelo WhatsApp (11) 98112-4455 (São Paulo) ou (19) 99855-9890 (Campinas), ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
       },
       {
         q: "Vocês emitem nota fiscal / recibo para reembolso?",
@@ -76,7 +76,7 @@ const faqs = [
     questions: [
       {
         q: "As cirurgias são realizadas em quais hospitais?",
-        a: "As cirurgias são realizadas no Campinas Day Hospital (Campinas), Centro Médico São Luiz Campinas (para pacientes com convênio) e nos hospitais parceiros em São Paulo. A escolha do local depende do procedimento, preferência do paciente e tipo de atendimento (particular ou convênio).",
+        a: "As cirurgias são realizadas no Campinas Day Hospital (Campinas, particular), Centro Médico São Luiz Campinas (para pacientes com convênio) e nos hospitais parceiros em São Paulo. A escolha do local depende do procedimento, preferência do paciente e tipo de atendimento.",
       },
       {
         q: "Quanto tempo dura a recuperação das cirurgias?",

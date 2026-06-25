@@ -17,8 +17,8 @@ const SAO_LUIZ_CAMPINAS_IMG = "/manus-storage/sao-luiz-campinas-fachada_a326a12f
 const locations = [
   {
     name: "Campinas Day Hospital",
-    type: "Convênios & Particular",
-    typeColor: "text-[#D4884A] bg-[#D4884A]/10",
+    type: "Apenas Particular",
+    typeColor: "text-amber-400 bg-amber-400/10",
     image: CAMPINAS_IMG,
     address: "Av. Benjamin Constant, 1991",
     neighborhood: "Cambuí, Campinas - SP",
@@ -27,7 +27,8 @@ const locations = [
     whatsapp: "(19) 99855-9890",
     hours: "Sextas, 8h às 12h",
     highlight: "Centro Urológico Avançado",
-    insurances: ["Bradesco Saúde", "Sul América", "Allianz", "Cassi", "GAMA Saúde", "e outros"],
+    insurances: null,
+    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
   {
     name: "Clinovi Paulista",

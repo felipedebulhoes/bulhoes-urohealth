@@ -700,13 +700,13 @@ A consulta urológica é mais simples do que muitos imaginam. Veja o que esperar
 
 ## Atendimento urológico em Campinas: Campinas Day Hospital
 
-O **Campinas Day Hospital** é um centro cirúrgico moderno localizado no **Cambuí**, em Campinas, equipado com tecnologia de ponta para consultas, exames e procedimentos urológicos. O atendimento é realizado por convênios e particular.
+O **Campinas Day Hospital** é um centro cirúrgico moderno localizado no **Cambuí**, em Campinas, equipado com tecnologia de ponta para consultas, exames e procedimentos urológicos. O atendimento é exclusivamente particular.
 
 **Endereço:** Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
 
 **Horário:** Sexta-feira, 8h às 12h
 
-**Convênios aceitos:** Allianz, Amil, Assefaz, Bradesco, Cassi, Gama, Go Care, Holambra, Medservice, Porto Seguro, Skill/Omint, SulAmérica, Unimed
+**Pagamento:** PIX, cartão de crédito ou débito no local
 
 **Serviços disponíveis:**
 - Consultas urológicas

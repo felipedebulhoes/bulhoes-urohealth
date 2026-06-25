@@ -26,7 +26,7 @@ const mainInsurers = [
 const highlights = [
   {
     icon: Building2,
-    title: "Campinas Day Hospital",
+    title: "São Luiz Campinas (Rede D'Or)",
     desc: "Convênios aceitos para consultas e procedimentos cirúrgicos",
   },
   {
@@ -73,9 +73,10 @@ export default function InsuranceSection() {
             className="flex items-end"
           >
             <p className="text-base text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">
-              Atendo por diversos convênios no <strong className="text-[#1C3D5A] dark:text-foreground/80">Campinas Day Hospital</strong> e no{" "}
+              Atendo por diversos convênios no{" "}
               <strong className="text-[#1C3D5A] dark:text-foreground/80">Centro Médico São Luiz Campinas (Rede D'Or)</strong>.
-              Nas unidades <strong className="text-[#1C3D5A] dark:text-foreground/80">Clinovi</strong> (Paulista, Moema, Pinheiros e SBC), o atendimento é exclusivamente particular,
+              Nas unidades <strong className="text-[#1C3D5A] dark:text-foreground/80">Clinovi</strong> (Paulista, Moema, Pinheiros e SBC) e no{" "}
+              <strong className="text-[#1C3D5A] dark:text-foreground/80">Campinas Day Hospital</strong>, o atendimento é exclusivamente particular,
               com pagamento via PIX, cartão de crédito ou débito no local antes da consulta.
               Teleconsulta disponível para todo o Brasil.
             </p>
@@ -153,7 +154,7 @@ export default function InsuranceSection() {
           <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 leading-relaxed">
             A cobertura pode variar conforme o plano contratado. Alguns convênios cobrem apenas procedimentos cirúrgicos.
             Recomendamos confirmar a cobertura diretamente com sua operadora ou entrar em contato conosco antes de agendar.
-            Fonte: Campinas Day Hospital (2026).
+            Convênios aceitos exclusivamente no Centro Médico São Luiz Campinas (Rede D'Or).
           </p>
         </motion.div>
       </div>

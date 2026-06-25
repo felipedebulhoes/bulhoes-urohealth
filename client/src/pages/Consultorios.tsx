@@ -35,7 +35,7 @@ const locations = [
   {
     name: "Campinas Day Hospital",
     slug: "campinas-day-hospital",
-    type: "Convênios & Particular",
+    type: "Particular",
     typeColor: "text-[#D4884A] bg-[#D4884A]/10",
     image: CAMPINAS_IMG,
     address: "Av. Benjamin Constant, 1991",
@@ -122,7 +122,7 @@ const locations = [
 export default function Consultorios() {
   usePageMeta({
     title: "Consultórios e Locais de Atendimento",
-    description: "Conheça os consultórios do Dr. Felipe de Bulhões: Campinas Day Hospital, São Luiz Campinas (convênios), Clinovi Paulista, Moema, Pinheiros e SBC (particular). Atendimento presencial e teleconsulta.",
+    description: "Conheça os consultórios do Dr. Felipe de Bulhões: Campinas Day Hospital (particular), São Luiz Campinas (convênios e particular), Clinovi Paulista, Moema, Pinheiros e SBC (particular). Atendimento presencial e teleconsulta.",
     canonical: "https://felipebulhoes.com/consultorios",
   });
 

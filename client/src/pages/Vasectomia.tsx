@@ -50,7 +50,7 @@ const vasectomiaFAQs = [
   { question: "A vasectomia dói?", answer: "O procedimento é realizado sob anestesia local, portanto a dor durante a cirurgia é mínima — geralmente limitada à picada da anestesia. Após o procedimento, é normal sentir desconforto leve por 2-5 dias, controlado com paracetamol ou anti-inflamatórios." },
   { question: "Quanto tempo depois da vasectomia posso ter relações sexuais?", answer: "Geralmente após 5-7 dias, ou quando se sentir confortável. É obrigatório usar outro método contraceptivo até o espermograma de controle confirmar a ausência de espermatozoides (mínimo 8 semanas após o procedimento)." },
   { question: "A vasectomia afeta a ereção ou o prazer sexual?", answer: "Não. A vasectomia não interfere na produção de testosterona, na libido, na ereção nem no orgasmo. O volume do ejaculado permanece praticamente inalterado." },
-  { question: "A vasectomia é coberta pelo convênio?", answer: "Sim. A vasectomia está incluída no rol de procedimentos da ANS e é coberta pela maioria dos convênios médicos. Também é oferecida pelo SUS." },
+  { question: "A vasectomia é coberta pelo convênio?", answer: "Sim. A vasectomia está incluída no rol de procedimentos da ANS. Realizo vasectomia por convênio no Centro Médico São Luiz Campinas (Rede D'Or). Nas demais unidades, o atendimento é exclusivamente particular." },
   { question: "Posso fazer vasectomia se não tenho filhos?", answer: "Sim, não há exigência legal de ter filhos. A Lei 14.443/2022 permite a vasectomia a partir dos 21 anos, independentemente do número de filhos, com prazo de reflexão de 60 dias." },
   { question: "Preciso da autorização da esposa/parceira?", answer: "Segundo a Lei 14.443/2022, não é necessário consentimento do cônjuge para a realização da vasectomia. A decisão é individual do paciente." },
   { question: "Quanto tempo leva para a vasectomia fazer efeito?", answer: "A vasectomia não é imediatamente eficaz. O espermograma de controle pode ser coletado a partir de 8 semanas. Até a confirmação, use outro método contraceptivo." },
@@ -706,7 +706,7 @@ export default function Vasectomia() {
                 },
                 {
                   q: "A vasectomia é coberta pelo convênio?",
-                  a: "Sim. A vasectomia está incluída no rol de procedimentos da ANS e é coberta pela maioria dos convênios médicos. Também é oferecida pelo SUS. Verifique com seu plano de saúde os detalhes de cobertura.",
+                  a: "Sim. A vasectomia está incluída no rol de procedimentos da ANS. Realizo vasectomia por convênio no Centro Médico São Luiz Campinas (Rede D'Or). Nas demais unidades, o atendimento é exclusivamente particular.",
                 },
                 {
                   q: "Posso fazer vasectomia se não tenho filhos?",

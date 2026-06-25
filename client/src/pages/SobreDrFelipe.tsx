@@ -237,7 +237,7 @@ export default function SobreDrFelipe() {
             <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-8">Locais de Atendimento</h2>
             <div className="grid sm:grid-cols-3 gap-4">
               {[
-                { name: "Campinas Day Hospital", address: "Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP", type: "Convênios e Particular", color: "bg-blue-50 border-blue-100" },
+                { name: "Campinas Day Hospital", address: "Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP", type: "Particular", color: "bg-amber-50 border-amber-100" },
                 { name: "Clinovi Paulista", address: "Av. Paulista, 1048, 18° andar — Bela Vista, São Paulo/SP", type: "Particular", color: "bg-amber-50 border-amber-100" },
                 { name: "Clinovi Moema", address: "Av. Ibirapuera, 1835, 2° andar — Moema, São Paulo/SP", type: "Particular", color: "bg-amber-50 border-amber-100" },
               ].map((loc, i) => (

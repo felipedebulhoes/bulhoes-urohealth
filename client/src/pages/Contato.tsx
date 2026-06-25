@@ -62,7 +62,7 @@ const offices = [
   {
     name: "Campinas Day Hospital",
     address: "Av. Benjamin Constant, 1991 — Cambuí, Campinas - SP",
-    type: "Convênios & Particular",
+    type: "Particular",
     link: "/local/campinas-day-hospital",
   },
   {
@@ -91,7 +91,7 @@ export default function Contato() {
 
   const subjects = [
     "Consulta particular",
-    "Consulta por convênio",
+    "Consulta por convênio (São Luiz Campinas)",
     "Teleconsulta",
     "Cirurgia / Procedimento",
     "Segunda opinião médica",

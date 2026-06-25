@@ -38,7 +38,7 @@ const faqs = [
     questions: [
       {
         q: "Quais convênios são aceitos?",
-        a:"No Campinas Day Hospital e no Centro Médico São Luiz Campinas (Rede D'Or), atendo por convênios como Bradesco, Sul América, Amil, Allianz, Porto Seguro, Unimed, entre outros. No Campinas Day Hospital também aceito Assefaz, Cassi, Gama, Go Care, Holambra, Medservice e Skill/Omint. Nas unidades Clinovi (Paulista, Moema, Pinheiros e SBC), o atendimento é exclusivamente particular, com pagamento via PIX, cartão de crédito ou débito no local antes da consulta.",
+        a:"No Centro Médico São Luiz Campinas (Rede D'Or), atendo por convênios como Bradesco, Sul América, Amil, Allianz, Porto Seguro, Unimed, Mediservice, entre outros. Nas unidades Clinovi (Paulista, Moema, Pinheiros e SBC) e no Campinas Day Hospital, o atendimento é exclusivamente particular, com pagamento via PIX, cartão de crédito ou débito no local antes da consulta.",
       },
       {
         q: "Qual o valor da consulta particular?",
@@ -50,7 +50,7 @@ const faqs = [
       },
       {
         q: "O convênio cobre cirurgias?",
-        a: "Sim, a maioria dos convênios cobre procedimentos cirúrgicos urológicos quando há indicação médica. Alguns convênios como Go Care e SulAmérica cobrem apenas cirurgias no Campinas Day Hospital. Verificamos a cobertura antes de qualquer procedimento.",
+        a: "Sim, a maioria dos convênios cobre procedimentos cirúrgicos urológicos quando há indicação médica no Centro Médico São Luiz Campinas. Verificamos a cobertura antes de qualquer procedimento.",
       },
     ],
   },
@@ -76,7 +76,7 @@ const faqs = [
     questions: [
       {
         q: "As cirurgias são realizadas em quais hospitais?",
-        a: "As cirurgias são realizadas no Campinas Day Hospital (Campinas) e nos hospitais parceiros em São Paulo. A escolha do local depende do procedimento, convênio e preferência do paciente.",
+        a: "As cirurgias são realizadas no Campinas Day Hospital (Campinas), Centro Médico São Luiz Campinas (para pacientes com convênio) e nos hospitais parceiros em São Paulo. A escolha do local depende do procedimento, preferência do paciente e tipo de atendimento (particular ou convênio).",
       },
       {
         q: "Quanto tempo dura a recuperação das cirurgias?",

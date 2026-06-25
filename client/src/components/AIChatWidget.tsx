@@ -507,12 +507,12 @@ export default function AIChatWidget() {
                       className="w-full text-sm border border-gray-200 dark:border-border rounded-lg px-3 py-2 focus:outline-none focus:border-[#B87333] focus:ring-1 focus:ring-[#B87333]/20 text-[#334155] bg-white dark:bg-card"
                     >
                       <option value="">Selecione...</option>
-                      <option value="campinas">Campinas Day Hospital (Convênios)</option>
+                      <option value="campinas">Campinas Day Hospital (Particular)</option>
                       <option value="sp-paulista">Clinovi Paulista (Particular)</option>
                       <option value="sp-moema">Clinovi Moema (Particular)</option>
                       <option value="sp-pinheiros">Clinovi Pinheiros (Particular)</option>
                       <option value="sp-sbc">Clinovi SBC (Particular)</option>
-                      <option value="cemed-campinas">CEMED - Rede D'Or - São Luiz Campinas (Convênios)</option>
+                      <option value="cemed-campinas">CEMED - Rede D'Or - São Luiz Campinas (Particular e Convênios)</option>
                     </select>
                   </div>
 

@@ -52,7 +52,7 @@ const locations = [
   {
     name: "Clinovi Paulista",
     slug: "clinovi-paulista",
-    type: "Apenas Particular",
+    type: "Particular",
     typeColor: "text-amber-400 bg-amber-400/10",
     image: CLINOVI_PAULISTA_IMG,
     address: "Av. Paulista, 1048, 18° andar",
@@ -69,7 +69,7 @@ const locations = [
   {
     name: "Clinovi Moema",
     slug: "clinovi-moema",
-    type: "Apenas Particular",
+    type: "Particular",
     typeColor: "text-amber-400 bg-amber-400/10",
     image: CLINOVI_MOEMA_IMG,
     address: "Av. Ibirapuera, 1835, 2° andar",
@@ -86,7 +86,7 @@ const locations = [
   {
     name: "Clinovi Pinheiros",
     slug: "clinovi-pinheiros",
-    type: "Apenas Particular",
+    type: "Particular",
     typeColor: "text-amber-400 bg-amber-400/10",
     image: CLINOVI_PINHEIROS_IMG,
     address: "Av. Rebouças, 2636",
@@ -103,7 +103,7 @@ const locations = [
   {
     name: "Clinovi SBC",
     slug: "clinovi-sbc",
-    type: "Apenas Particular",
+    type: "Particular",
     typeColor: "text-amber-400 bg-amber-400/10",
     image: CLINOVI_SBC_IMG,
     address: "Av. Pereira Barreto, 1479",

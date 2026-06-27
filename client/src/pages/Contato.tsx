@@ -68,13 +68,13 @@ const offices = [
   {
     name: "Clinovi Paulista",
     address: "Av. Paulista, 1048, 18° andar — Bela Vista, São Paulo - SP",
-    type: "Apenas Particular",
+    type: "Particular",
     link: "/local/clinovi-paulista",
   },
   {
     name: "Clinovi Moema",
     address: "Av. Ibirapuera, 1835, 2° andar — Moema, São Paulo - SP",
-    type: "Apenas Particular",
+    type: "Particular",
     link: "/local/clinovi-moema",
   },
 ];

@@ -53,6 +53,7 @@ const Consultorios = lazy(() => import("./pages/Consultorios"));
 const Contato = lazy(() => import("./pages/Contato"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const Agendamento = lazy(() => import("./pages/Agendamento"));
+const GuiaGLP1 = lazy(() => import("./pages/GuiaGLP1"));
 
 import CanonicalTag from "./components/CanonicalTag";
 import PageTransition from "./components/PageTransition";
@@ -114,6 +115,8 @@ function Router() {
         <Route path={"/admin/files"} component={AdminFiles} />
         <Route path={"/admin/leads"} component={AdminLeads} />
         <Route path={"/admin/keywords"} component={AdminKeywords} />
+        <Route path={"/guia-glp1"} component={GuiaGLP1} />
+        <Route path={"/canetas-emagrecedoras"} component={GuiaGLP1} />
         <Route path={"/privacidade"} component={PrivacyPolicy} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}

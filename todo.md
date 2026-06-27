@@ -182,6 +182,7 @@
 - [x] Preparar plano de monitoramento de performance (7 dias) — cronograma e métricas definidos
 - [ ] Criar perfil Google Meu Negócio para Clinovi Pinheiros
 - [ ] Criar perfil Google Meu Negócio para Clinovi SBC
+- [x] Página pública "Guia das Canetas GLP-1" em /guia-glp1 (alias /canetas-emagrecedoras)
 - [x] Verificação completa do site (páginas principais e novas) — 13 rotas testadas em produção, todas OK (01/06/2026)
 - [ ] Verificação do Google Ads (status da campanha)
 - [x] Instalar tag de conversão do Google Ads no site (AW-18050357375 adicionado ao gtag config)

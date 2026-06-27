@@ -189,7 +189,7 @@ const generalSections: PreOpSection[] = [
       },
       {
         title: "Organize seus pertences",
-        detail: "Separe documentos (RG, cartão do convênio, guias autorizadas, exames pré-operatórios), roupas confortáveis e folgadas para a alta, chinelo, itens de higiene pessoal. Não leve joias, relógios ou objetos de valor ao hospital.",
+        detail: "Separe documentos (RG, exames pré-operatórios), roupas confortáveis e folgadas para a alta, chinelo, itens de higiene pessoal. Não leve joias, relógios ou objetos de valor ao hospital.",
       },
     ],
   },
@@ -438,7 +438,7 @@ const checklistItems = [
   { text: "Fitoterápicos e suplementos suspensos há 2 semanas", icon: <Apple className="w-4 h-4" /> },
   { text: "Banho com clorexidina degermante realizado", icon: <Droplets className="w-4 h-4" /> },
   { text: "Jejum respeitado (8h sólidos / 2h líquidos claros)", icon: <Utensils className="w-4 h-4" /> },
-  { text: "Documentos separados (RG, convênio, guias, exames)", icon: <ClipboardCheck className="w-4 h-4" /> },
+  { text: "Documentos separados (RG, exames)", icon: <ClipboardCheck className="w-4 h-4" /> },
   { text: "Roupas confortáveis e itens pessoais organizados", icon: <Shirt className="w-4 h-4" /> },
   { text: "Esmalte removido, sem joias/piercings/lentes de contato", icon: <XCircle className="w-4 h-4" /> },
   { text: "Acompanhante adulto confirmado para o dia da cirurgia", icon: <Car className="w-4 h-4" /> },

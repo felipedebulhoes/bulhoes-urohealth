@@ -52,7 +52,7 @@ const cirurgiaRoboticaFAQs = [
   { question: "Qual o tempo de duração de uma cirurgia robótica?", answer: "Depende do procedimento. Uma prostatectomia radical robótica dura em média 2-3 horas. Uma nefrectomia parcial robótica, 2-4 horas. O tempo operatório é comparável ou ligeiramente maior que a cirurgia aberta, mas com benefícios significativos na recuperação." },
   { question: "Quanto tempo de internação após cirurgia robótica?", answer: "Na maioria dos procedimentos, a internação é de 1-2 dias (vs 5-7 dias na cirurgia aberta). Em alguns casos selecionados, o paciente pode receber alta no mesmo dia." },
   { question: "A cirurgia robótica deixa cicatriz?", answer: "As incisões são muito pequenas (8-12mm), resultando em cicatrizes mínimas que se tornam praticamente imperceptíveis com o tempo. Geralmente são 5-6 pequenas incisões no abdome." },
-  { question: "Meu convênio cobre cirurgia robótica?", answer: "Muitos convênios cobrem a cirurgia robótica para procedimentos urológicos no Centro Médico São Luiz Campinas (Rede D'Or). A cobertura depende do plano e da operadora. No Campinas Day Hospital, o atendimento é exclusivamente particular. Recomendamos entrar em contato conosco para verificar a melhor opção." },
+  { question: "Quanto custa a cirurgia robótica?", answer: "O valor varia conforme o procedimento e a indicação cirúrgica. Realizamos cirurgias robóticas no Centro Médico São Luiz Campinas (Rede D'Or) e no Campinas Day Hospital. Entre em contato para uma avaliação individualizada e informações sobre valores." },
   { question: "Quando posso voltar a trabalhar após a cirurgia?", answer: "Para atividades sedentárias, o retorno geralmente ocorre em 2-3 semanas. Para atividades que exigem esforço físico, recomenda-se aguardar 4-6 semanas. Cada caso é individualizado conforme o tipo de cirurgia e a evolução do paciente." },
   { question: "A cirurgia robótica é indicada para todos os casos?", answer: "Não. A indicação é individualizada, considerando o tipo de doença, a anatomia do paciente, cirurgias prévias e outros fatores. Em alguns casos, a cirurgia aberta ou laparoscópica convencional pode ser mais adequada. O urologista avaliará a melhor abordagem para cada situação." }
 ];
@@ -666,9 +666,9 @@ export default function CirurgiaRobotica() {
                   <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Shield className="w-4 h-4 text-[#818CF8]" />
-                      <span className="text-white text-sm font-medium">Convênios (São Luiz Campinas)</span>
+                      <span className="text-white text-sm font-medium">São Luiz Campinas</span>
                     </div>
-                    <p className="text-white/60 text-sm">Diversos convênios cobrem a cirurgia robótica no Centro Médico São Luiz Campinas. Consulte disponibilidade para o seu plano.</p>
+                    <p className="text-white/60 text-sm">Cirurgias realizadas no Centro Médico São Luiz Campinas (Rede D'Or) e Campinas Day Hospital. Entre em contato para mais informações.</p>
                   </div>
                   <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
@@ -732,8 +732,8 @@ export default function CirurgiaRobotica() {
                   a: "As incisões são muito pequenas (8-12mm), resultando em cicatrizes mínimas que se tornam praticamente imperceptíveis com o tempo. Geralmente são 5-6 pequenas incisões no abdome.",
                 },
                 {
-                  q: "Meu convênio cobre cirurgia robótica?",
-                  a: "Muitos convênios cobrem a cirurgia robótica no Centro Médico São Luiz Campinas (Rede D'Or). No Campinas Day Hospital, o atendimento é exclusivamente particular. Entre em contato para verificar a melhor opção.",
+                  q: "Quanto custa a cirurgia robótica?",
+                  a: "O valor varia conforme o procedimento e a indicação cirúrgica. Realizamos cirurgias robóticas no Centro Médico São Luiz Campinas (Rede D'Or) e no Campinas Day Hospital. Entre em contato para uma avaliação individualizada.",
                 },
                 {
                   q: "Quando posso voltar a trabalhar após a cirurgia?",

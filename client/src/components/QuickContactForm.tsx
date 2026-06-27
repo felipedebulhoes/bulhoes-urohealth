@@ -27,7 +27,6 @@ export default function QuickContactForm() {
 
   const subjects = [
     "Consulta particular",
-    "Consulta por convênio",
     "Teleconsulta",
     "Cirurgia / Procedimento",
     "Segunda opinião médica",

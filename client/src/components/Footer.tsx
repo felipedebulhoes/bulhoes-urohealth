@@ -27,9 +27,7 @@ export default function Footer() {
           {/* Campinas Day Hospital */}
           <div>
             <h4 className="text-sm font-semibold text-white font-sans mb-3">Campinas Day Hospital</h4>
-            <span className="inline-block text-[10px] uppercase tracking-wider text-[#D4884A] bg-[#D4884A]/10 px-2 py-0.5 rounded mb-3">
-              Convênios
-            </span>
+
             <div className="space-y-2">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
@@ -136,9 +134,7 @@ export default function Footer() {
           {/* CEMED - Rede D'Or - São Luiz Campinas */}
           <div>
             <h4 className="text-sm font-semibold text-white font-sans mb-3">São Luiz Campinas</h4>
-            <span className="inline-block text-[10px] uppercase tracking-wider text-[#D4884A] bg-[#D4884A]/10 px-2 py-0.5 rounded mb-3">
-              Convênios & Particular
-            </span>
+
             <div className="space-y-2">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />

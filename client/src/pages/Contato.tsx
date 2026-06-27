@@ -91,7 +91,6 @@ export default function Contato() {
 
   const subjects = [
     "Consulta particular",
-    "Consulta por convênio (São Luiz Campinas)",
     "Teleconsulta",
     "Cirurgia / Procedimento",
     "Segunda opinião médica",

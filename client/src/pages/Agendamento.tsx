@@ -223,7 +223,7 @@ export default function Agendamento() {
               <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
               <h3 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Campinas Day Hospital</h3>
               <p className="text-xs text-[#64748B]">Cambuí, Campinas - SP</p>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#D4884A]">Convênios & Particular</span>
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#D4884A]">Particular</span>
             </Link>
             <Link href="/local/clinovi-paulista" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all block">
               <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
@@ -253,7 +253,7 @@ export default function Agendamento() {
               <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
               <h3 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">CEMED - Rede D'Or - São Luiz Campinas</h3>
               <p className="text-xs text-[#64748B]">Centro, Campinas - SP</p>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#D4884A]">Convênios & Particular</span>
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#D4884A]">Particular</span>
             </Link>
           </div>
           <div className="mt-4 bg-gradient-to-r from-[#1C3D5A] to-[#0D3B5C] rounded-xl p-5 flex items-center gap-4">

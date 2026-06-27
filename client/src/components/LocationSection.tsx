@@ -88,8 +88,8 @@ const locations = [
   },
   {
     name: "CEMED - Rede D'Or - São Luiz Campinas",
-    type: "Convênios & Particular",
-    typeColor: "text-[#D4884A] bg-[#D4884A]/10",
+    type: "Particular",
+    typeColor: "text-amber-400 bg-amber-400/10",
     image: SAO_LUIZ_CAMPINAS_IMG,
     address: "Av. Andrade Neves, 863, 4° andar",
     neighborhood: "Centro, Campinas - SP",
@@ -97,7 +97,7 @@ const locations = [
     phone: "(19) 3014-3000",
     hours: "Sextas, 13h às 17h",
     highlight: "Hospital Rede D'Or — Acreditação JCI",
-    insurances: ["Bradesco", "SulAmérica", "Amil", "Porto Seguro", "Mediservice", "e outros"],
+    insurances: null,
   },
 ];
 
@@ -212,25 +212,7 @@ export default function LocationSection() {
                   </div>
                 )}
 
-                {/* Insurances */}
-                {loc.insurances && (
-                  <div className="mt-4 pt-4 border-t border-[#1C3D5A]/6">
-                    <div className="flex items-center gap-2 mb-2">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#B87333]" />
-                      <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A] dark:text-foreground/40 font-semibold">Convênios aceitos</span>
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {loc.insurances.map((ins) => (
-                        <span
-                          key={ins}
-                          className="text-[10px] font-medium text-[#1C3D5A] dark:text-foreground/50 bg-white dark:bg-card rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans"
-                        >
-                          {ins}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
+
               </div>
             </motion.div>
           ))}

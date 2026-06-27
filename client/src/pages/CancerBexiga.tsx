@@ -651,7 +651,7 @@ export default function CancerBexiga() {
               <p className="text-sm text-gray-600 dark:text-muted-foreground">
                 Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP<br />
                 Procedimentos cirúrgicos e RTU-B<br />
-                <strong>Aceita planos de saúde</strong>
+                
               </p>
             </div>
             <div className="bg-white dark:bg-card rounded-lg p-4 shadow-sm">

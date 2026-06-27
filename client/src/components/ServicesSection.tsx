@@ -25,7 +25,7 @@ const services = [
 const features = [
   { icon: Monitor, text: "Teleconsulta disponível" },
   { icon: MapPin, text: "São Paulo & Campinas" },
-  { icon: CreditCard, text: "12 convênios aceitos" },
+  { icon: CreditCard, text: "PIX, crédito e débito" },
 ];
 
 export default function ServicesSection() {
@@ -107,7 +107,7 @@ export default function ServicesSection() {
             </div>
 
             <p className="text-xs text-[#1C3D5A] dark:text-foreground/40 font-sans mb-6">
-              + 30 serviços adicionais disponíveis. Valores podem variar conforme convênio e procedimento.
+              + 30 serviços adicionais disponíveis. Valores podem variar conforme o procedimento.
             </p>
 
             <a

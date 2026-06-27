@@ -36,7 +36,7 @@ interface LocationData {
   fullName: string;
   address: string;
   city: string;
-  type: "convenio" | "particular";
+  type: "particular";
   typeLabel: string;
   phone: string;
   whatsapp?: string;
@@ -48,7 +48,7 @@ interface LocationData {
   description: string;
   metaTitle: string;
   metaDescription: string;
-  insurances?: string[];
+  
   payment?: string[];
   accentColor: string;
   bookingUrl?: string;
@@ -156,18 +156,18 @@ const locations: Record<string, LocationData> = {
     fullName: "Centro Médico São Luiz Campinas — Rede D'Or",
     address: "Av. Andrade Neves, 863, 4° andar — Centro",
     city: "Campinas, SP",
-    type: "convenio",
-    typeLabel: "Particular e Convênios",
+    type: "particular",
+    typeLabel: "Particular",
     phone: "(19) 3014-3000",
     mapUrl: "https://www.google.com/maps/place/Hospital+e+Maternidade+S%C3%A3o+Luiz+Campinas/@-22.9023,-47.0633,17z",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.3!2d-47.0655!3d-22.9023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8b4a2b4c5d7%3A0x5e4a7e3f1c8b9d2a!2sHospital+e+Maternidade+S%C3%A3o+Luiz+Campinas!5e0!3m2!1spt-BR!2sbr!4v1714000000000",
     hours: ["Sexta-feira: 13h às 17h"],
     services: ["Consultas", "Cirurgias", "Urodinâmica", "Exames", "Procedimentos ambulatoriais"],
     parking: "Estacionamento próprio do hospital",
-    description: "O Centro Médico São Luiz Campinas (CEMED) faz parte do Hospital e Maternidade São Luiz Campinas, da Rede D'Or / Atlântica D'Or. Inaugurado em 2023, é um hospital geral de alta complexidade com acreditação internacional JCI. Localizado no Centro de Campinas, oferece atendimento por convênios e particular em infraestrutura hospitalar de alto padrão.",
+    description: "O Centro Médico São Luiz Campinas (CEMED) faz parte do Hospital e Maternidade São Luiz Campinas, da Rede D'Or / Atlântica D'Or. Inaugurado em 2023, é um hospital geral de alta complexidade com acreditação internacional JCI. Localizado no Centro de Campinas, oferece infraestrutura hospitalar de alto padrão.",
     metaTitle: "Urologista em Campinas — CEMED Rede D'Or São Luiz | Dr. Felipe de Bulhões",
-    metaDescription: "Urologista em Campinas no Centro Médico São Luiz (Rede D'Or). Atendimento por convênios e particular. Consultas, cirurgias e exames urológicos.",
-    insurances: ["Bradesco", "SulAmérica", "Amil", "Porto Seguro", "Mediservice", "Allianz", "Cassi"],
+    metaDescription: "Urologista em Campinas no Centro Médico São Luiz (Rede D'Or). Consultas, cirurgias e exames urológicos.",
+    
     accentColor: "#1D4ED8",
     bookingUrl: "https://www.rededorsaoluiz.com.br/encontre-um-medico/perfil/felipe-de-bulhoes-ojeda",
     bookingLabel: "Agendar pela Rede D'Or",
@@ -202,7 +202,6 @@ function LocationPage({ slug }: { slug: string }) {
         phone={loc.phone}
         slug={slug}
         type={loc.type}
-        insurances={loc.insurances}
         services={loc.services}
         hours={loc.hours}
         paymentMethods={loc.payment}
@@ -263,18 +262,6 @@ function LocationPage({ slug }: { slug: string }) {
                 </div>
               </motion.div>
 
-              {loc.insurances && (
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}>
-                  <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Convênios Aceitos</h2>
-                  <div className="flex flex-wrap gap-2">
-                    {loc.insurances.map((ins, i) => (
-                      <span key={i} className="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg text-sm font-medium border border-blue-100">
-                        {ins}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
 
               {/* Mapa */}
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}>

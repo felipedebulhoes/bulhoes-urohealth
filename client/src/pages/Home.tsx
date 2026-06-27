@@ -11,7 +11,6 @@ import EducationalPreviewSection from "@/components/EducationalPreviewSection";
 import SymptomChecker from "@/components/SymptomChecker";
 import VideosSection from "@/components/VideosSection";
 import ServicesSection from "@/components/ServicesSection";
-import InsuranceSection from "@/components/InsuranceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import LocationCardsSection from "@/components/LocationCardsSection";
 import FAQSection from "@/components/FAQSection";
@@ -72,9 +71,6 @@ export default function Home() {
         </ScrollReveal>
         <ScrollReveal>
           <ServicesSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <InsuranceSection />
         </ScrollReveal>
         <ScrollReveal>
           <TestimonialsSection />

@@ -33,7 +33,7 @@ REGRAS IMPORTANTES:
 - Procedimentos Andrológicos (postectomia, varicocele)
 
 LOCAIS DE ATENDIMENTO:
-- Campinas Day Hospital: Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP (convênios e particular)
+- Campinas Day Hospital: Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
 - Clinovi Paulista: Av. Paulista, 807, 17° andar, São Paulo/SP (apenas particular — PIX, cartão de crédito ou débito no local)
 - Clinovi Moema: Av. Lavandisca, 741, 4° andar, São Paulo/SP (apenas particular — PIX, cartão de crédito ou débito no local)
 

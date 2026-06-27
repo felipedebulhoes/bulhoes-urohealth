@@ -537,7 +537,7 @@ As principais vantagens incluem:
 
 O Brasil tem acompanhado a tendência mundial de adoção da cirurgia robótica. Segundo dados recentes, o país conta com mais de 100 sistemas robóticos instalados e aproximadamente 2.500 cirurgiões treinados na plataforma Da Vinci. O crescimento nos últimos anos foi expressivo — a Associação Médica Brasileira (AMB) registrou um aumento de 417% no número de procedimentos robóticos realizados no país.
 
-Um marco importante ocorreu em outubro de 2025, quando a **prostatectomia robótica foi oficialmente incorporada ao Sistema Único de Saúde (SUS)**, ampliando o acesso a essa tecnologia para a população brasileira. Além disso, a partir de abril de 2026, a prostatectomia robótica tornou-se obrigatória na cobertura dos planos de saúde.
+Um marco importante ocorreu em outubro de 2025, quando a **prostatectomia robótica foi oficialmente incorporada ao Sistema Único de Saúde (SUS)**, ampliando o acesso a essa tecnologia para a população brasileira. 
 
 A chegada de novos fabricantes ao mercado — como o Versius (CMR Surgical), Hugo (Medtronic) e Hinotori (Medicaroid) — tem contribuído para a redução de custos, com estimativas de queda de 30% a 50% no valor dos procedimentos para o paciente.
 
@@ -582,7 +582,7 @@ Estudos recentes demonstram que a integração de IA já é capaz de reduzir o t
 
 ## Considerações finais
 
-A cirurgia robótica urológica representa uma evolução significativa no tratamento de doenças urológicas, combinando precisão tecnológica com a experiência do cirurgião para oferecer melhores resultados aos pacientes. Com a expansão do acesso no Brasil — tanto no SUS quanto nos planos de saúde — essa tecnologia está cada vez mais disponível.
+A cirurgia robótica urológica representa uma evolução significativa no tratamento de doenças urológicas, combinando precisão tecnológica com a experiência do cirurgião para oferecer melhores resultados aos pacientes. Com a expansão do acesso no Brasil, essa tecnologia está cada vez mais disponível.
 
 Se você tem indicação cirúrgica urológica, converse com seu urologista sobre a possibilidade da abordagem robótica. A decisão deve ser baseada em evidências, experiência do cirurgião e nas características individuais de cada caso.
 
@@ -907,7 +907,6 @@ O **Dr. Felipe de Bulhões** realiza vasectomias no **Campinas Day Hospital**, u
 **Campinas Day Hospital**
 - 📍 Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
 - 📞 Telefone: (19) 2127-2900\n- 💬 WhatsApp: (11) 98112-4455 (apenas mensagens)
-- 🏥 Convênios: Allianz, Amil, Bradesco, Cassi, Porto Seguro, SulAmérica, Unimed e outros
 - ⏰ Sexta-feira: 8h às 12h
 
 [Agendar consulta pelo Doctoralia](https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas)
@@ -1038,8 +1037,8 @@ A indicação é sempre individualizada, considerando o tipo e estágio da doen�
 
 ## Perguntas Frequentes
 
-### A cirurgia robótica é coberta pelo convênio?
-Alguns convênios já cobrem a cirurgia robótica, especialmente para câncer de próstata. A cobertura varia por operadora e plano. Consulte seu convênio ou entre em contato conosco para verificar.
+### Quanto custa a cirurgia robótica?
+O valor varia conforme o procedimento e a indicação cirúrgica. Entre em contato conosco para uma avaliação individualizada e informações sobre valores.
 
 ### O robô opera sozinho?
 Não. O robô é um instrumento controlado integralmente pelo cirurgião. Cada movimento dos braços robóticos é comandado em tempo real pelo médico, que opera sentado no console com visão 3D ampliada.

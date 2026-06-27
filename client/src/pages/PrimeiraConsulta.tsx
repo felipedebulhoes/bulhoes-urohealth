@@ -61,11 +61,11 @@ const steps = [
 ];
 
 const whatToBring = [
-  { icon: <FileText className="w-5 h-5" />, text: "Documento de identidade e cartão do convênio" },
+  { icon: <FileText className="w-5 h-5" />, text: "Documento de identidade" },
   { icon: <ClipboardList className="w-5 h-5" />, text: "Lista de medicamentos em uso (com doses)" },
   { icon: <TestTube className="w-5 h-5" />, text: "Exames anteriores (sangue, imagem, biópsias)" },
   { icon: <Heart className="w-5 h-5" />, text: "Histórico de cirurgias e internações" },
-  { icon: <Shield className="w-5 h-5" />, text: "Guia de encaminhamento (se necessário pelo convênio)" },
+  { icon: <Shield className="w-5 h-5" />, text: "Guia de encaminhamento (se houver)" },
 ];
 
 const myths = [

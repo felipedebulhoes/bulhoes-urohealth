@@ -24,7 +24,7 @@ interface LocationData {
   shortName: string;
   region: "sao-paulo" | "abc" | "campinas";
   regionLabel: string;
-  type: "particular" | "convenio";
+  type: "particular";
   typeLabel: string;
   image: string;
   address: string;
@@ -33,7 +33,6 @@ interface LocationData {
   whatsapp?: string;
   hours: string;
   highlight: string;
-  insurances?: string[];
   payment?: string[];
   bookingUrl: string;
   bookingLabel: string;
@@ -130,15 +129,15 @@ const locations: LocationData[] = [
     shortName: "Rede D'Or",
     region: "campinas",
     regionLabel: "Campinas",
-    type: "convenio",
-    typeLabel: "Convênios & Particular",
+    type: "particular",
+    typeLabel: "Particular",
     image: "/manus-storage/sao-luiz-campinas-fachada_a326a12f.webp",
     address: "Av. Andrade Neves, 863, 4° andar",
     neighborhood: "Centro, Campinas - SP",
     phone: "(19) 3014-3000",
     hours: "Sextas, 13h às 17h",
     highlight: "Hospital Rede D'Or — Acreditação JCI",
-    insurances: ["Bradesco", "SulAmérica", "Amil", "Porto Seguro", "Mediservice", "Allianz"],
+
     bookingUrl: "https://www.rededorsaoluiz.com.br/encontre-um-medico/perfil/felipe-de-bulhoes-ojeda",
     bookingLabel: "Agendar pela Rede D'Or",
     mapUrl: "https://maps.google.com/?q=Av.+Andrade+Neves+863+Centro+Campinas",
@@ -158,7 +157,7 @@ const locations: LocationData[] = [
     whatsapp: "(19) 99855-9890",
     hours: "Sextas, 8h às 12h",
     highlight: "Centro Urológico Avançado",
-    insurances: ["Bradesco Saúde", "Sul América", "Allianz", "Cassi", "GAMA Saúde"],
+
     bookingUrl: "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas",
     bookingLabel: "Agendar via Doctoralia",
     mapUrl: "https://maps.google.com/?q=Av.+Benjamin+Constant+1991+Cambuí+Campinas",
@@ -193,15 +192,11 @@ function LocationCard({ loc, index, isInView }: { loc: LocationData; index: numb
         {/* Type badge */}
         <div className="absolute top-3 right-3">
           <span className={`inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-bold px-2.5 py-1.5 rounded-full backdrop-blur-sm ${
-            loc.type === "convenio"
+            false
               ? "bg-[#D4884A]/90 text-white"
               : "bg-white/90 text-[#1C3D5A]"
           }`}>
-            {loc.type === "convenio" ? (
-              <ShieldCheck className="w-3 h-3" />
-            ) : (
-              <CreditCard className="w-3 h-3" />
-            )}
+            <CreditCard className="w-3 h-3" />
             {loc.typeLabel}
           </span>
         </div>
@@ -248,22 +243,7 @@ function LocationCard({ loc, index, isInView }: { loc: LocationData; index: numb
           </div>
         </div>
 
-        {/* Insurances or Payment */}
-        {loc.insurances && (
-          <div className="mb-4 pb-4 border-b border-[#1C3D5A]/6">
-            <div className="flex items-center gap-1.5 mb-2">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#B87333]" />
-              <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A]/50 dark:text-foreground/40 font-semibold">Convênios</span>
-            </div>
-            <div className="flex flex-wrap gap-1">
-              {loc.insurances.map((ins) => (
-                <span key={ins} className="text-[10px] font-medium text-[#1C3D5A]/70 dark:text-foreground/50 bg-[#F0F4F8] dark:bg-card rounded px-2 py-0.5 font-sans">
-                  {ins}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Payment */}
 
         {loc.payment && (
           <div className="mb-4 pb-4 border-b border-[#1C3D5A]/6">

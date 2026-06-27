@@ -46,7 +46,7 @@ const locations = [
     hours: "Sextas, 8h às 12h",
     highlight: "Centro Urológico Avançado",
     description: "Centro cirúrgico moderno e completo, equipado com tecnologia de ponta para procedimentos urológicos. Estrutura para cirurgias ambulatoriais e internação de curta permanência.",
-    insurances: ["Bradesco Saúde", "Sul América", "Allianz", "Cassi", "GAMA Saúde", "e outros"],
+    insurances: null,
     payment: null,
   },
   {
@@ -122,7 +122,7 @@ const locations = [
 export default function Consultorios() {
   usePageMeta({
     title: "Consultórios e Locais de Atendimento",
-    description: "Conheça os consultórios do Dr. Felipe de Bulhões: Campinas Day Hospital (particular), São Luiz Campinas (convênios e particular), Clinovi Paulista, Moema, Pinheiros e SBC (particular). Atendimento presencial e teleconsulta.",
+    description: "Conheça os consultórios do Dr. Felipe de Bulhões: Campinas Day Hospital, São Luiz Campinas, Clinovi Paulista, Moema, Pinheiros e SBC. Atendimento presencial e teleconsulta.",
     canonical: "https://felipebulhoes.com/consultorios",
   });
 
@@ -245,21 +245,6 @@ export default function Consultorios() {
                       <div className="flex flex-wrap gap-1.5">
                         {loc.payment.map((method) => (
                           <span key={method} className="text-[10px] font-medium text-[#1C3D5A] dark:text-foreground/50 bg-white dark:bg-card rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans">{method}</span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Insurances */}
-                  {loc.insurances && (
-                    <div className="mt-4 pt-4 border-t border-[#1C3D5A]/6">
-                      <div className="flex items-center gap-2 mb-2">
-                        <ShieldCheck className="w-3.5 h-3.5 text-[#B87333]" />
-                        <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A] dark:text-foreground/40 font-semibold">Convênios aceitos</span>
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {loc.insurances.map((ins) => (
-                          <span key={ins} className="text-[10px] font-medium text-[#1C3D5A] dark:text-foreground/50 bg-white dark:bg-card rounded px-2 py-1 border border-[#1C3D5A]/6 font-sans">{ins}</span>
                         ))}
                       </div>
                     </div>

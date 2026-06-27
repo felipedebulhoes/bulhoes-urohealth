@@ -223,8 +223,7 @@ interface MedicalClinicSchemaProps {
   city: string;
   phone: string;
   slug: string;
-  type: "convenio" | "particular";
-  insurances?: string[];
+  type: "particular";
   services: string[];
   hours: string[];
   paymentMethods?: string[];
@@ -238,7 +237,6 @@ export function MedicalClinicSchema({
   phone,
   slug,
   type,
-  insurances,
   services,
   hours,
   paymentMethods,
@@ -276,8 +274,8 @@ export function MedicalClinicSchema({
     },
   };
 
-  if (type === "convenio" && insurances && insurances.length > 0) {
-    clinicData["paymentAccepted"] = "Convênios e Particular";
+  if (false) {
+    clinicData["paymentAccepted"] = "Particular";
     clinicData["currenciesAccepted"] = "BRL";
   } else {
     clinicData["paymentAccepted"] = paymentMethods?.join(", ") || "PIX, Cartão de Crédito, Cartão de Débito";

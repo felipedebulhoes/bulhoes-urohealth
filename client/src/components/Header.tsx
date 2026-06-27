@@ -15,7 +15,7 @@ const mainNavLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Sobre", href: "/sobre" },
   { label: "Especialidades", href: "#especialidades" },
-  { label: "Convênios", href: "#convenios" },
+
   { label: "Consultórios", href: "/consultorios" },
   { label: "Blog", href: "/blog" },
   { label: "Contato", href: "/contato" },
@@ -50,6 +50,7 @@ const educationalLinks = [
   { label: "Doença de Peyronie", href: "/educativo/doenca-peyronie" },
   { label: "Orientações Pré-Operatórias", href: "/educativo/orientacoes-pre-operatorias" },
   { label: "Orientações Pós-Operatórias", href: "/educativo/orientacoes-pos-operatorias" },
+  { label: "Canetas Emagrecedoras (GLP-1)", href: "/guia-glp1" },
 ];
 
 export default function Header() {

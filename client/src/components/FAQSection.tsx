@@ -34,23 +34,15 @@ const faqs = [
     ],
   },
   {
-    category: "Convênios e Valores",
+    category: "Valores e Pagamento",
     questions: [
       {
-        q: "Quais convênios são aceitos?",
-        a:"No Centro Médico São Luiz Campinas (Rede D'Or), atendo por convênios como Bradesco, Sul América, Amil, Allianz, Porto Seguro, Unimed, Mediservice, entre outros. Nas unidades Clinovi (Paulista, Moema, Pinheiros e SBC) e no Campinas Day Hospital, o atendimento é exclusivamente particular, com pagamento via PIX, cartão de crédito ou débito no local antes da consulta.",
-      },
-      {
-        q: "Qual o valor da consulta particular?",
-        a: "Os valores de consulta particular variam conforme o local de atendimento. Nas unidades Clinovi (Paulista, Moema, Pinheiros e SBC) e no Campinas Day Hospital, aceitamos pagamento via PIX, cartão de crédito ou débito, realizado no local antes da consulta. Para informações sobre valores, envie uma mensagem pelo WhatsApp (11) 98112-4455 (São Paulo) ou (19) 99855-9890 (Campinas), ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
+        q: "Qual o valor da consulta?",
+        a: "Os valores de consulta variam conforme o local de atendimento. Aceitamos pagamento via PIX, cartão de crédito ou débito, realizado no local antes da consulta. Para informações sobre valores, envie uma mensagem pelo WhatsApp (11) 98112-4455 (São Paulo) ou (19) 99855-9890 (Campinas), ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
       },
       {
         q: "Vocês emitem nota fiscal / recibo para reembolso?",
-        a: "Sim. Emitimos recibo detalhado com todos os dados necessários para solicitar reembolso junto ao seu plano de saúde, quando aplicável.",
-      },
-      {
-        q: "O convênio cobre cirurgias?",
-        a: "Sim, a maioria dos convênios cobre procedimentos cirúrgicos urológicos quando há indicação médica no Centro Médico São Luiz Campinas. Verificamos a cobertura antes de qualquer procedimento.",
+        a: "Sim. Emitimos recibo detalhado com todos os dados necessários para solicitar reembolso, quando aplicável.",
       },
     ],
   },
@@ -76,7 +68,7 @@ const faqs = [
     questions: [
       {
         q: "As cirurgias são realizadas em quais hospitais?",
-        a: "As cirurgias são realizadas no Campinas Day Hospital (Campinas, particular), Centro Médico São Luiz Campinas (para pacientes com convênio) e nos hospitais parceiros em São Paulo. A escolha do local depende do procedimento, preferência do paciente e tipo de atendimento.",
+        a: "As cirurgias são realizadas no Campinas Day Hospital (Campinas), Centro Médico São Luiz Campinas e nos hospitais parceiros em São Paulo. A escolha do local depende do procedimento e preferência do paciente.",
       },
       {
         q: "Quanto tempo dura a recuperação das cirurgias?",
@@ -212,8 +204,8 @@ const faqs = [
         a: "A recuperação é significativamente mais rápida que na cirurgia aberta. Em geral, o paciente recebe alta em 1-2 dias, retorna a atividades leves em 7-10 dias e a atividades físicas em 4-6 semanas. As incisões pequenas (8-12mm) cicatrizam rapidamente e causam menos dor. Orientações específicas são fornecidas conforme o tipo de procedimento realizado.",
       },
       {
-        q: "A cirurgia robótica é coberta pelo convênio?",
-        a: "A cobertura varia conforme o plano de saúde e a indicação cirúrgica. Alguns convênios já cobrem procedimentos robóticos, especialmente a prostatectomia radical. Verificamos a cobertura junto ao seu convênio antes de qualquer procedimento e orientamos sobre as opções disponíveis.",
+        q: "Quanto custa a cirurgia robótica?",
+        a: "O valor varia conforme o procedimento e a indicação cirúrgica. Entre em contato conosco para uma avaliação individualizada e informações sobre valores.",
       },
     ],
   },
@@ -317,7 +309,7 @@ export default function FAQSection() {
             Tire Suas Dúvidas
           </h2>
           <p className="text-sm text-[#1C3D5A] dark:text-foreground/50 max-w-lg mx-auto">
-            Respostas para as perguntas mais comuns sobre saúde masculina, urologia, procedimentos e convênios.
+            Respostas para as perguntas mais comuns sobre saúde masculina, urologia e procedimentos.
           </p>
         </motion.div>
 

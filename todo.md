@@ -183,6 +183,8 @@
 - [ ] Criar perfil Google Meu Negócio para Clinovi Pinheiros
 - [ ] Criar perfil Google Meu Negócio para Clinovi SBC
 - [x] Página pública "Guia das Canetas GLP-1" em /guia-glp1 (alias /canetas-emagrecedoras)
+- [x] Adicionar link para /guia-glp1 na navegação do site (Header/menu educativo)
+- [x] Remover TODAS as referências a convênios de todo o site (exclusivamente particular)
 - [x] Verificação completa do site (páginas principais e novas) — 13 rotas testadas em produção, todas OK (01/06/2026)
 - [ ] Verificação do Google Ads (status da campanha)
 - [x] Instalar tag de conversão do Google Ads no site (AW-18050357375 adicionado ao gtag config)

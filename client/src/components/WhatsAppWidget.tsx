@@ -12,7 +12,7 @@ const WHATSAPP_NUMBER = "5511981124455";
 const quickMessages = [
   "Tenho dúvidas sobre um procedimento",
   "Quero saber sobre teleconsulta",
-  "Informações sobre convênios",
+
   "Quero informações sobre valores",
 ];
 

@@ -512,7 +512,7 @@ export default function AIChatWidget() {
                       <option value="sp-moema">Clinovi Moema (Particular)</option>
                       <option value="sp-pinheiros">Clinovi Pinheiros (Particular)</option>
                       <option value="sp-sbc">Clinovi SBC (Particular)</option>
-                      <option value="cemed-campinas">CEMED - Rede D'Or - São Luiz Campinas (Particular e Convênios)</option>
+                      <option value="cemed-campinas">CEMED - Rede D'Or - São Luiz Campinas</option>
                     </select>
                   </div>
 

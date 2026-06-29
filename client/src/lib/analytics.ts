@@ -14,11 +14,12 @@
  * - cta_click: clique em qualquer CTA de agendamento
  */
 
-// Tipagem global para gtag
+// Tipagem global para gtag e Meta Pixel
 declare global {
   interface Window {
     gtag: (...args: any[]) => void;
     dataLayer: any[];
+    fbq: (...args: any[]) => void;
   }
 }
 
@@ -71,6 +72,8 @@ export function trackLeadGenerated(data: {
   });
   // Dispara conversão no Google Ads (lead = conversão principal)
   trackGoogleAdsConversion(100.0);
+  // Dispara Lead no Meta Pixel
+  trackMetaLead({ content_name: data.reason || 'chat_lead' });
 }
 
 /**
@@ -84,6 +87,8 @@ export function trackWhatsAppClick(source: string) {
     contact_method: "whatsapp",
   });
   trackGoogleAdsConversion(50.0);
+  // Dispara Schedule no Meta Pixel (WhatsApp = intenção de agendamento)
+  trackMetaSchedule({ content_name: `whatsapp_${source}` });
 }
 
 /**
@@ -97,6 +102,8 @@ export function trackDoctoraliaClick(source: string) {
     contact_method: "doctoralia",
   });
   trackGoogleAdsConversion(80.0);
+  // Dispara Schedule no Meta Pixel
+  trackMetaSchedule({ content_name: source });
 }
 
 /**
@@ -144,4 +151,50 @@ export function trackCtaClick(ctaType: string, source: string) {
     cta_source: source,
   });
   trackGoogleAdsConversion(30.0);
+}
+
+// ===== META PIXEL EVENTS =====
+// test_event_code para validação no Events Manager
+const META_TEST_EVENT_CODE = 'TEST85913';
+
+/**
+ * Dispara evento Lead no Meta Pixel
+ * Usado quando um lead é captado (chat, formulário)
+ */
+export function trackMetaLead(data?: { content_name?: string; value?: number }) {
+  if (typeof window !== "undefined" && window.fbq) {
+    window.fbq('track', 'Lead', {
+      content_name: data?.content_name || 'agendamento',
+      value: data?.value || 100.0,
+      currency: 'BRL',
+    }, { eventID: `lead_${Date.now()}` });
+    // Enviar test event para validação
+    window.fbq('track', 'Lead', {
+      content_name: data?.content_name || 'agendamento',
+      value: data?.value || 100.0,
+      currency: 'BRL',
+      test_event_code: META_TEST_EVENT_CODE,
+    });
+  }
+}
+
+/**
+ * Dispara evento Schedule no Meta Pixel
+ * Usado quando o paciente clica para agendar (Doctoralia, Rede D'Or, WhatsApp)
+ */
+export function trackMetaSchedule(data?: { content_name?: string; value?: number }) {
+  if (typeof window !== "undefined" && window.fbq) {
+    window.fbq('track', 'Schedule', {
+      content_name: data?.content_name || 'consulta',
+      value: data?.value || 80.0,
+      currency: 'BRL',
+    }, { eventID: `schedule_${Date.now()}` });
+    // Enviar test event para validação
+    window.fbq('track', 'Schedule', {
+      content_name: data?.content_name || 'consulta',
+      value: data?.value || 80.0,
+      currency: 'BRL',
+      test_event_code: META_TEST_EVENT_CODE,
+    });
+  }
 }

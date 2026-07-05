@@ -1,3 +1,4 @@
+import { trackDoctoraliaClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Location Pages individuais para SEO local
@@ -333,7 +334,7 @@ function LocationPage({ slug }: { slug: string }) {
                 </div>
 
                 <a
-                  href={loc.bookingUrl || "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"}
+                  href={`${loc.bookingUrl || "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"}?utm_source=site&utm_medium=location&utm_campaign=${loc.name.toLowerCase().replace(/ /g, "-")}`} onClick={() => trackDoctoraliaClick(`location_${loc.name.toLowerCase().replace(/ /g, "-")}`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-[#B87333] hover:bg-[#0B8276] text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 mb-3"

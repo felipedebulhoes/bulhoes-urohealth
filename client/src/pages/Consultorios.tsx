@@ -1,3 +1,4 @@
+import { trackDoctoraliaClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página real /consultorios — Listagem completa dos locais de atendimento
@@ -146,7 +147,7 @@ export default function Consultorios() {
                 Voltar
               </Button>
             </Link>
-            <a href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas" target="_blank" rel="noopener noreferrer" className="hidden sm:block">
+            <a href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=page&utm_campaign=consultorios" target="_blank" rel="noopener noreferrer" className="hidden sm:block" onClick={() => trackDoctoraliaClick("consultorios")}>
               <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white">
                 <Phone className="w-4 h-4 mr-2" />
                 Agendar Consulta

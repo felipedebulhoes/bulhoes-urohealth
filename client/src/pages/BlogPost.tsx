@@ -1,3 +1,4 @@
+import { trackDoctoraliaClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Blog post detail page with rich typography and reading experience
@@ -316,7 +317,7 @@ export default function BlogPost() {
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a
-                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=blog&utm_campaign=blog-post" onClick={() => trackDoctoraliaClick("blog_post")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto"

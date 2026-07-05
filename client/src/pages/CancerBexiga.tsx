@@ -1,3 +1,4 @@
+import { trackDoctoraliaClick } from "@/lib/analytics";
 /**
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Câncer de Bexiga — Guia Completo
@@ -668,7 +669,7 @@ export default function CancerBexiga() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="https://www.doctoralia.com.br/felipe-de-bulhoes/urologista/campinas"
+              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=educational&utm_campaign=cancer-bexiga" onClick={() => trackDoctoraliaClick("cancer_bexiga")}
               target="_blank"
               rel="noopener noreferrer"
             >

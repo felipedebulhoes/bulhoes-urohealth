@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
+import { trackWhatsAppClick, trackPhoneClick, trackDoctoraliaClick } from "@/lib/analytics";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
 
@@ -122,7 +122,7 @@ export default function Contato() {
                 Voltar
               </Button>
             </Link>
-            <a href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas" target="_blank" rel="noopener noreferrer" className="hidden sm:block">
+            <a href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=page&utm_campaign=contato" target="_blank" rel="noopener noreferrer" className="hidden sm:block" onClick={() => trackDoctoraliaClick("contato")}>
               <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white">
                 <Phone className="w-4 h-4 mr-2" />
                 Agendar Consulta

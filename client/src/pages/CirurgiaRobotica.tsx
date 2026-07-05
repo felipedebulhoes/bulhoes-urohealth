@@ -1,3 +1,4 @@
+import { trackDoctoraliaClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Cirurgia Robótica em Urologia — Guia Completo
@@ -682,7 +683,7 @@ export default function CirurgiaRobotica() {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
-                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=educational&utm_campaign=cirurgia-robotica" onClick={() => trackDoctoraliaClick("cirurgia_robotica")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

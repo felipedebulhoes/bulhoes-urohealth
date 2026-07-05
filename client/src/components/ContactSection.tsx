@@ -130,7 +130,7 @@ export default function ContactSection() {
               <span className="text-sm font-sans">@drfelipebulhoes</span>
             </a>
             <a
-              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=homepage&utm_campaign=contact-section"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-white/50 hover:text-[#D4884A] transition-colors"

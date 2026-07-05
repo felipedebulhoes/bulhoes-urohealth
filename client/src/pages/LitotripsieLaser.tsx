@@ -1,3 +1,4 @@
+import { trackDoctoraliaClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Litotripsia a Laser — Guia Completo
@@ -695,7 +696,7 @@ export default function LitotripsieLaser() {
                     </Button>
                   </Link>
                   <a
-                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=educational&utm_campaign=litotripsia-laser" onClick={() => trackDoctoraliaClick("litotripsia_laser")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

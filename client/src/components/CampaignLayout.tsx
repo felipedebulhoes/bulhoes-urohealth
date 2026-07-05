@@ -39,7 +39,7 @@ export default function CampaignLayout({
   children,
 }: CampaignLayoutProps) {
   const whatsappUrl = getWhatsAppUrl({ page: campaignSlug });
-  const doctoraliaUrl = "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas";
+  const doctoraliaUrl = `https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=campaign&utm_campaign=${campaignSlug}`;
 
   useEffect(() => {
     const pageTitle = metaTitle || `${title} | Dr. Felipe de Bulhões - Urologista`;

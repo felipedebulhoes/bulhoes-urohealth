@@ -164,7 +164,7 @@ export default function Footer() {
                 <span className="text-xs font-sans">@drfelipebulhoes</span>
               </a>
               <a
-                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=footer&utm_campaign=footer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-[#D4884A] transition-colors"

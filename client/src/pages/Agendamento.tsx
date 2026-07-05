@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
+import { trackDoctoraliaClick, trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
 const DOCTORALIA_PROFILE = "felipe-de-bulhoes-ojeda-2";
@@ -181,7 +181,7 @@ export default function Agendamento() {
           <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-6 text-center">Outras formas de agendar</h2>
           <div className="grid sm:grid-cols-3 gap-4">
             <a
-              href="tel:+551133821529"
+              href="tel:+551133821529" onClick={() => trackPhoneClick("agendamento_sp")}
               className="bg-white dark:bg-card rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all text-center"
             >
               <Phone className="w-6 h-6 text-[#B87333] mx-auto mb-2" />
@@ -190,7 +190,7 @@ export default function Agendamento() {
               <p className="text-xs text-[#64748B] mt-1">Paulista, Moema, Pinheiros e SBC</p>
             </a>
             <a
-              href="tel:+551921272900"
+              href="tel:+551921272900" onClick={() => trackPhoneClick("agendamento_campinas")}
               className="bg-white dark:bg-card rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all text-center"
             >
               <Phone className="w-6 h-6 text-[#B87333] mx-auto mb-2" />

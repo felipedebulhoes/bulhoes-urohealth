@@ -1,3 +1,4 @@
+import { trackDoctoraliaClick } from "@/lib/analytics";
 /**
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Infertilidade Masculina — Causas, Diagnóstico e Tratamentos
@@ -720,7 +721,7 @@ export default function InfertilidadeMasculina() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="https://www.doctoralia.com.br/felipe-de-bulhoes/urologista/campinas"
+                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=educational&utm_campaign=infertilidade-masculina" onClick={() => trackDoctoraliaClick("infertilidade_masculina")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 transition-colors border border-amber-400"

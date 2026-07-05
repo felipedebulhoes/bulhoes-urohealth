@@ -1,3 +1,4 @@
+import { trackDoctoraliaClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Biópsia de Próstata — Guia Completo
@@ -582,7 +583,7 @@ export default function BiopsiaProstata() {
                     </Button>
                   </Link>
                   <a
-                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+                    href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=educational&utm_campaign=biopsia-prostata" onClick={() => trackDoctoraliaClick("biopsia_prostata")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

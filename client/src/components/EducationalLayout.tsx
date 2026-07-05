@@ -8,7 +8,8 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "./WhatsAppButton";
-import { trackEducationalPageView } from "@/lib/analytics";
+import { trackEducationalPageView, trackDoctoraliaClick } from "@/lib/analytics";
+import { getWhatsAppUrl } from "@/lib/tracking";
 import { MedicalPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 interface EducationalLayoutProps {
@@ -32,6 +33,13 @@ export default function EducationalLayout({
   medicalCondition,
   children,
 }: EducationalLayoutProps) {
+  const pageSlug = typeof window !== "undefined"
+    ? window.location.pathname.replace(/^\//, "").replace(/\//g, "-") || "home"
+    : "educational";
+
+  const doctoraliaUrl = `https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=educational&utm_campaign=${pageSlug}`;
+  const whatsappCtaUrl = getWhatsAppUrl({ page: pageSlug });
+
   useEffect(() => {
     const pageTitle = metaTitle || `${title} | Dr. Felipe de Bulhões - Urologista`;
     document.title = pageTitle;
@@ -51,6 +59,10 @@ export default function EducationalLayout({
       document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";
     };
   }, [title, description, metaTitle, metaDescription]);
+
+  const handleDoctoraliaClick = () => {
+    trackDoctoraliaClick(`educational_${pageSlug}`);
+  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-card">
@@ -87,10 +99,11 @@ export default function EducationalLayout({
               </Button>
             </Link>
             <a
-              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+              href={doctoraliaUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:block"
+              onClick={handleDoctoraliaClick}
             >
               <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white">
                 <Phone className="w-4 h-4 mr-2" />
@@ -143,16 +156,17 @@ export default function EducationalLayout({
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
+              href={doctoraliaUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleDoctoraliaClick}
             >
               <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white px-6 h-11">
                 Agendar Consulta
               </Button>
             </a>
             <a
-              href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20um%20tratamento."
+              href={whatsappCtaUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -178,7 +192,7 @@ export default function EducationalLayout({
 
       <WhatsAppButton
         message={`Olá! Vi a página sobre ${title} e gostaria de agendar uma consulta com o Dr. Felipe de Bulhões.`}
-        source={`educational_${title.toLowerCase().replace(/\s+/g, '-')}`}
+        source={`educational_${pageSlug}`}
       />
     </div>
   );

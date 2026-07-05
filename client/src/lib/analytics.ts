@@ -78,11 +78,18 @@ export function trackLeadGenerated(data: {
 
 /**
  * Rastreia clique no WhatsApp
- * Dispara conversão no Google Ads (contato = conversão)
+ * Dispara conversão no GA4 (lead_whatsapp) + Google Ads + Meta Pixel
  */
 export function trackWhatsAppClick(source: string) {
+  // Evento legado (manter para compatibilidade)
   trackEvent("contact_whatsapp", {
     event_category: "contact",
+    event_label: source,
+    contact_method: "whatsapp",
+  });
+  // Evento GA4 específico para Google Ads
+  trackEvent("lead_whatsapp", {
+    event_category: "conversion",
     event_label: source,
     contact_method: "whatsapp",
   });
@@ -93,11 +100,18 @@ export function trackWhatsAppClick(source: string) {
 
 /**
  * Rastreia clique na Doctoralia
- * Dispara conversão no Google Ads (agendamento = conversão)
+ * Dispara conversão no GA4 (lead_doctoralia) + Google Ads + Meta Pixel
  */
 export function trackDoctoraliaClick(source: string) {
+  // Evento legado (manter para compatibilidade)
   trackEvent("contact_doctoralia", {
     event_category: "contact",
+    event_label: source,
+    contact_method: "doctoralia",
+  });
+  // Evento GA4 específico para Google Ads
+  trackEvent("lead_doctoralia", {
+    event_category: "conversion",
     event_label: source,
     contact_method: "doctoralia",
   });
@@ -108,15 +122,34 @@ export function trackDoctoraliaClick(source: string) {
 
 /**
  * Rastreia clique no telefone
- * Dispara conversão no Google Ads (contato = conversão)
+ * Dispara conversão no GA4 (lead_phone) + Google Ads
  */
 export function trackPhoneClick(source: string) {
+  // Evento legado (manter para compatibilidade)
   trackEvent("contact_phone", {
     event_category: "contact",
     event_label: source,
     contact_method: "phone",
   });
+  // Evento GA4 específico para Google Ads
+  trackEvent("lead_phone", {
+    event_category: "conversion",
+    event_label: source,
+    contact_method: "phone",
+  });
   trackGoogleAdsConversion(50.0);
+}
+
+/**
+ * Rastreia clique em Google Maps / rotas (secundário)
+ */
+export function trackMapsClick(source: string, location?: string) {
+  trackEvent("lead_maps", {
+    event_category: "engagement",
+    event_label: source,
+    location: location || "unknown",
+  });
+  // Não dispara conversão Google Ads (evento secundário)
 }
 
 /**

@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -54,7 +54,12 @@ const Contato = lazy(() => import("./pages/Contato"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const Agendamento = lazy(() => import("./pages/Agendamento"));
 const GuiaGLP1 = lazy(() => import("./pages/GuiaGLP1"));
+const VasectomiaSemBisturi = lazy(() => import("./pages/VasectomiaSemBisturi"));
+const AndrologiaPerformance = lazy(() => import("./pages/AndrologiaPerformance"));
+const EsteticaIntimaMasculina = lazy(() => import("./pages/EsteticaIntimaMasculina"));
+const AgendarDoctoralia = lazy(() => import("./pages/AgendarDoctoralia"));
 
+import { captureAttribution } from "@/lib/tracking";
 import CanonicalTag from "./components/CanonicalTag";
 import PageTransition from "./components/PageTransition";
 import SplashScreen from "./components/SplashScreen";
@@ -116,6 +121,10 @@ function Router() {
         <Route path={"/admin/leads"} component={AdminLeads} />
         <Route path={"/admin/keywords"} component={AdminKeywords} />
         <Route path={"/guia-glp1"} component={GuiaGLP1} />
+        <Route path={"/vasectomia-sem-bisturi"} component={VasectomiaSemBisturi} />
+        <Route path={"/andrologia-performance-masculina"} component={AndrologiaPerformance} />
+        <Route path={"/estetica-intima-masculina"} component={EsteticaIntimaMasculina} />
+        <Route path={"/agendar/doctoralia"} component={AgendarDoctoralia} />
         <Route path={"/canetas-emagrecedoras"} component={GuiaGLP1} />
         <Route path={"/privacidade"} component={PrivacyPolicy} />
         <Route path={"/404"} component={NotFound} />
@@ -127,6 +136,10 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+    captureAttribution();
+  }, []);
+
   return (
     <ErrorBoundary>
       <ThemeProvider

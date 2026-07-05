@@ -282,3 +282,11 @@
 - [x] Criar endpoint tRPC para registrar leads e liberar download do Playbook
 - [x] Criar seção de propaganda/captura de leads na homepage com formulário (nome + email)
 - [x] Fornecer link direto do PDF hospedado — URL: /manus-storage/Playbook-Saude-Integral-DrFelipeBulhoes_57b5fc71.pdf
+- [x] Rastreamento: captura/persistência de gclid, gbraid, wbraid e UTMs em localStorage por 90 dias
+- [x] Rastreamento: eventos GA4 específicos (lead_whatsapp, lead_doctoralia, lead_phone, lead_maps)
+- [x] Rastreamento: placeholders para labels de conversão Google Ads por tipo de evento
+- [x] Rastreamento: WhatsApp parametrizado com mensagens diferentes por página/campanha
+- [x] Landing page: /vasectomia-sem-bisturi (campanha Google Ads)
+- [x] Landing page: /andrologia-performance-masculina (campanha Google Ads)
+- [x] Landing page: /estetica-intima-masculina (campanha Google Ads)
+- [x] Landing page: /agendar/doctoralia (redirect com evento lead_doctoralia)

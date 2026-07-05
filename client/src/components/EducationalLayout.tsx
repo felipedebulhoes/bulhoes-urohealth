@@ -176,7 +176,10 @@ export default function EducationalLayout({
         </div>
       </footer>
 
-      <WhatsAppButton />
+      <WhatsAppButton
+        message={`Olá! Vi a página sobre ${title} e gostaria de agendar uma consulta com o Dr. Felipe de Bulhões.`}
+        source={`educational_${title.toLowerCase().replace(/\s+/g, '-')}`}
+      />
     </div>
   );
 }

@@ -295,3 +295,4 @@
 - [ ] Criar conversões separadas no Google Ads (lead_whatsapp, lead_doctoralia, lead_phone)
 - [ ] Substituir labels placeholder no tracking.ts pelos labels reais do Google Ads
 - [ ] Configurar campanhas Google Ads apontando para as landing pages específicas
+- [x] WhatsApp flutuante: mensagem padrão personalizada por landing page (identificar origem)

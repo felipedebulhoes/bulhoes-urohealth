@@ -371,7 +371,7 @@ export default function Contato() {
         </div>
       </footer>
 
-      <WhatsAppButton />
+      <WhatsAppButton message="Olá! Vim pela página de Contato e gostaria de falar com o Dr. Felipe de Bulhões." source="contato" />
     </div>
   );
 }

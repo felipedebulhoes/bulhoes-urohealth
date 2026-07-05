@@ -327,7 +327,7 @@ export default function Consultorios() {
         </div>
       </footer>
 
-      <WhatsAppButton />
+      <WhatsAppButton message="Olá! Vi os consultórios do Dr. Felipe de Bulhões e gostaria de agendar uma consulta." source="consultorios" />
     </div>
     </>
   );

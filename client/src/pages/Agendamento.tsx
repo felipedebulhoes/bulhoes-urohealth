@@ -273,7 +273,7 @@ export default function Agendamento() {
         </div>
       </footer>
 
-      <WhatsAppButton />
+      <WhatsAppButton message="Olá! Vim pela página de Agendamento e gostaria de marcar uma consulta com o Dr. Felipe de Bulhões." source="agendamento" />
     </div>
   );
 }

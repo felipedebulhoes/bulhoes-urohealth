@@ -214,7 +214,10 @@ export default function CampaignLayout({
         </div>
       </footer>
 
-      <WhatsAppButton />
+      <WhatsAppButton
+        message={`Olá! Vi a página sobre ${title} e gostaria de agendar uma consulta com o Dr. Felipe de Bulhões.`}
+        source={`campaign_${campaignSlug}`}
+      />
     </div>
   );
 }

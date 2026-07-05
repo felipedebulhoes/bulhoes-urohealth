@@ -192,6 +192,81 @@ export function getAttribution(): AttributionData | null {
   return null;
 }
 
+// ===== ENGAGEMENT METRICS =====
+
+/**
+ * Rastreia tempo na página, interações (cliques, scrolls) e profundidade de scroll.
+ * Métricas são anexadas automaticamente a cada evento de conversão.
+ */
+const engagement = {
+  pageLoadTime: Date.now(),
+  clicks: 0,
+  scrolls: 0,
+  maxScrollDepth: 0,
+  initialized: false,
+};
+
+/**
+ * Inicializa rastreamento de engajamento na página.
+ * Deve ser chamado uma vez no carregamento.
+ */
+export function initEngagementTracking(): void {
+  if (typeof window === "undefined" || engagement.initialized) return;
+  engagement.initialized = true;
+  engagement.pageLoadTime = Date.now();
+  engagement.clicks = 0;
+  engagement.scrolls = 0;
+  engagement.maxScrollDepth = 0;
+
+  // Contar cliques
+  document.addEventListener("click", () => {
+    engagement.clicks++;
+  }, { passive: true });
+
+  // Contar scrolls e profundidade máxima
+  let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+  window.addEventListener("scroll", () => {
+    if (!scrollTimeout) {
+      engagement.scrolls++;
+    }
+    // Debounce scroll count (1 scroll = 1 gesto contínuo)
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => { scrollTimeout = null; }, 150);
+
+    // Calcular profundidade de scroll
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0) {
+      const depth = Math.round((scrollTop / docHeight) * 100);
+      if (depth > engagement.maxScrollDepth) {
+        engagement.maxScrollDepth = depth;
+      }
+    }
+  }, { passive: true });
+
+  // Reset ao navegar (SPA)
+  const originalPushState = history.pushState;
+  history.pushState = function (...args) {
+    engagement.pageLoadTime = Date.now();
+    engagement.clicks = 0;
+    engagement.scrolls = 0;
+    engagement.maxScrollDepth = 0;
+    return originalPushState.apply(this, args);
+  };
+}
+
+/**
+ * Retorna métricas de engajamento atuais
+ */
+function getEngagementMetrics() {
+  return {
+    time_on_page_seconds: Math.round((Date.now() - engagement.pageLoadTime) / 1000),
+    interactions_clicks: engagement.clicks,
+    interactions_scrolls: engagement.scrolls,
+    max_scroll_depth_percent: engagement.maxScrollDepth,
+  };
+}
+
 // ===== EVENTOS GA4 ESPECÍFICOS =====
 
 declare global {
@@ -205,12 +280,19 @@ declare global {
 function fireGA4Event(eventName: string, params: Record<string, string | number | boolean | undefined>) {
   if (typeof window === "undefined" || !window.gtag) return;
   
-  // Anexar dados de atribuição ao evento
+  // Anexar dados de atribuição e métricas de engajamento ao evento
   const attribution = getAttribution();
+  const engagementData = getEngagementMetrics();
   const enrichedParams: Record<string, string | number | boolean | undefined> = {
     ...params,
     page_path: window.location.pathname,
     service_context: getServiceContext(),
+    // Métricas de engajamento
+    time_on_page_seconds: engagementData.time_on_page_seconds,
+    interactions_clicks: engagementData.interactions_clicks,
+    interactions_scrolls: engagementData.interactions_scrolls,
+    max_scroll_depth_percent: engagementData.max_scroll_depth_percent,
+    // Atribuição
     ...(attribution?.gclid && { gclid: attribution.gclid }),
     ...(attribution?.gbraid && { gbraid: attribution.gbraid }),
     ...(attribution?.wbraid && { wbraid: attribution.wbraid }),

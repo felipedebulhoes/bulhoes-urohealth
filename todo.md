@@ -290,3 +290,8 @@
 - [x] Landing page: /andrologia-performance-masculina (campanha Google Ads)
 - [x] Landing page: /estetica-intima-masculina (campanha Google Ads)
 - [x] Landing page: /agendar/doctoralia (redirect com evento lead_doctoralia)
+- [x] Melhorar redirect Doctoralia: adicionar contador visual de tempo antes do redirecionamento
+- [x] Adicionar seção FAQ expansível na landing page de vasectomia sem bisturi
+- [ ] Criar conversões separadas no Google Ads (lead_whatsapp, lead_doctoralia, lead_phone)
+- [ ] Substituir labels placeholder no tracking.ts pelos labels reais do Google Ads
+- [ ] Configurar campanhas Google Ads apontando para as landing pages específicas

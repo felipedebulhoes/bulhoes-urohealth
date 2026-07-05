@@ -3,8 +3,9 @@
  * Campanha Google Ads — foco em conversão high ticket
  * Tom: médico, elegante, discreto, autoridade técnica
  */
-import { motion } from "framer-motion";
-import { CheckCircle2, Clock, ShieldCheck, Stethoscope, Heart, AlertCircle } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, Clock, ShieldCheck, Stethoscope, Heart, AlertCircle, ChevronDown } from "lucide-react";
 import CampaignLayout from "@/components/CampaignLayout";
 
 const fadeUp = {
@@ -202,6 +203,84 @@ export default function VasectomiaSemBisturi() {
           </motion.div>
         </div>
       </section>
+
+      {/* Seção: FAQ Expansível */}
+      <VasectomiaFAQ />
     </CampaignLayout>
+  );
+}
+
+// FAQ Data
+const faqItems = [
+  {
+    q: "A vasectomia é reversível?",
+    a: "Tecnicamente, existe a cirurgia de reversão (vasovasostomia), mas ela é complexa, cara e não garante sucesso. A vasectomia deve ser considerada um método definitivo. Para quem tem dúvidas sobre fertilidade futura, a criopreservação de sêmen antes do procedimento é uma opção segura.",
+  },
+  {
+    q: "Quanto tempo após a vasectomia posso ter relações sexuais?",
+    a: "Recomenda-se aguardar pelo menos 7 dias após o procedimento. É fundamental manter método contraceptivo alternativo até a confirmação de azoospermia no espermograma de controle (aproximadamente 3 meses).",
+  },
+  {
+    q: "A vasectomia altera a ejaculação?",
+    a: "Não. O volume ejaculatório permanece praticamente inalterado, pois os espermatozoides representam menos de 5% do líquido seminal. A sensação do orgasmo também não é afetada.",
+  },
+  {
+    q: "Preciso de internação hospitalar?",
+    a: "Não. A vasectomia sem bisturi é realizada em ambiente ambulatorial, com anestesia local. O paciente recebe alta no mesmo dia, geralmente após 30-60 minutos de observação.",
+  },
+  {
+    q: "Qual a idade mínima para fazer vasectomia?",
+    a: "De acordo com a Lei 14.443/2022, a vasectomia é permitida para homens com 21 anos ou mais, independentemente do número de filhos e sem necessidade de consentimento do cônjuge.",
+  },
+  {
+    q: "Existe risco de falha?",
+    a: "A taxa de falha da vasectomia é inferior a 0,15% quando confirmada por espermograma de controle. Recanalização espontânea é extremamente rara (< 1 em 2.000 casos).",
+  },
+];
+
+function VasectomiaFAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="py-16 lg:py-20 bg-[#F8FAFB]">
+      <div className="container max-w-4xl">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+          <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-8">
+            Perguntas frequentes
+          </h2>
+          <div className="space-y-3">
+            {faqItems.map((item, i) => (
+              <div key={i} className="bg-white rounded-xl border border-[#1C3D5A]/6 overflow-hidden">
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-[#F8FAFB]/50 transition-colors"
+                >
+                  <span className="font-medium text-[#1C3D5A] dark:text-foreground text-sm pr-4">{item.q}</span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-[#B87333] shrink-0 transition-transform duration-200 ${
+                      openIndex === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {openIndex === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="px-5 pb-5">
+                        <p className="text-sm text-[#334155] leading-relaxed">{item.a}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }

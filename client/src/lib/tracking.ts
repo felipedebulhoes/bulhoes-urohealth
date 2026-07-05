@@ -483,11 +483,18 @@ export function getWhatsAppUrl(options: {
 
   const message = customMessage || messages[page] || messages[campaign || ""] || messages["default"];
 
-  // Adicionar referência de campanha se disponível
+  // Adicionar origem do tráfego (UTM) na mensagem para rastrear campanhas
   const attribution = getAttribution();
   let finalMessage = message;
-  if (attribution?.utm_campaign) {
-    finalMessage += ` [ref: ${attribution.utm_campaign}]`;
+  const trafficParts: string[] = [];
+  if (attribution?.utm_source) trafficParts.push(attribution.utm_source);
+  if (attribution?.utm_medium) trafficParts.push(attribution.utm_medium);
+  if (attribution?.utm_campaign) trafficParts.push(attribution.utm_campaign);
+  if (!trafficParts.length && (attribution?.gclid || attribution?.gbraid || attribution?.wbraid)) {
+    trafficParts.push("google", "cpc");
+  }
+  if (trafficParts.length > 0) {
+    finalMessage += `\n[via: ${trafficParts.join("/")}]`;
   }
 
   return `https://wa.me/${phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(finalMessage)}`;

@@ -58,6 +58,7 @@ const VasectomiaSemBisturi = lazy(() => import("./pages/VasectomiaSemBisturi"));
 const AndrologiaPerformance = lazy(() => import("./pages/AndrologiaPerformance"));
 const EsteticaIntimaMasculina = lazy(() => import("./pages/EsteticaIntimaMasculina"));
 const AgendarDoctoralia = lazy(() => import("./pages/AgendarDoctoralia"));
+const AgendarWhatsApp = lazy(() => import("./pages/AgendarWhatsApp"));
 
 import { captureAttribution, initGlobalContactListener, initEngagementTracking } from "@/lib/tracking";
 import CanonicalTag from "./components/CanonicalTag";
@@ -125,6 +126,7 @@ function Router() {
         <Route path={"/andrologia-performance-masculina"} component={AndrologiaPerformance} />
         <Route path={"/estetica-intima-masculina"} component={EsteticaIntimaMasculina} />
         <Route path={"/agendar/doctoralia"} component={AgendarDoctoralia} />
+        <Route path={"/agendar/whatsapp"} component={AgendarWhatsApp} />
         <Route path={"/canetas-emagrecedoras"} component={GuiaGLP1} />
         <Route path={"/privacidade"} component={PrivacyPolicy} />
         <Route path={"/404"} component={NotFound} />

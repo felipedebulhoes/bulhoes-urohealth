@@ -4,6 +4,7 @@
  */
 import { useState, useEffect } from "react";
 import { trackWhatsAppClick } from "@/lib/analytics";
+import { getWhatsAppUrl } from "@/lib/tracking";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Clock } from "lucide-react";
 

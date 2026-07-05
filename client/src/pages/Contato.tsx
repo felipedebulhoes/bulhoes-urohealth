@@ -20,11 +20,12 @@ import {
   Monitor,
   MessageCircle,
   Clock,
+  Mail,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileBottomBar from "@/components/MobileBottomBar";
-import { trackWhatsAppClick, trackPhoneClick, trackDoctoraliaClick } from "@/lib/analytics";
+import { trackWhatsAppClick, trackPhoneClick, trackDoctoraliaClick, fireFormConversionEvents } from "@/lib/analytics";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
 
@@ -82,7 +83,8 @@ const offices = [
 
 export default function Contato() {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: "", phone: "", subject: "" });
+  const [loadingForm, setLoadingForm] = useState(false);
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "", privacyConsent: false });
 
   usePageMeta({
     title: "Contato",
@@ -99,12 +101,22 @@ export default function Contato() {
     "Outro assunto",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Olá, meu nome é ${formData.name}. Gostaria de informações sobre: ${formData.subject}. Meu telefone: ${formData.phone}`;
+    if (loadingForm) return;
+    setLoadingForm(true);
+
+    // Disparar eventos de conversão otimizados antes do redirecionamento
+    await fireFormConversionEvents({
+      email: formData.email,
+      phone: formData.phone,
+    });
+
+    const message = `Olá, meu nome é ${formData.name}. ${formData.message ? `Mensagem: ${formData.message}. ` : ""}Meu telefone: ${formData.phone}`;
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/5511981124455?text=${encoded}`, "_blank");
     setSubmitted(true);
+    setLoadingForm(false);
     setTimeout(() => setSubmitted(false), 5000);
   };
 
@@ -289,8 +301,9 @@ export default function Contato() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
+                    {/* Nome */}
                     <div>
-                      <label className="text-white/70 text-xs font-medium mb-1.5 block">Nome completo</label>
+                      <label className="text-white/70 text-xs font-medium mb-1.5 block">Nome completo *</label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                         <input
@@ -303,8 +316,9 @@ export default function Contato() {
                         />
                       </div>
                     </div>
+                    {/* WhatsApp */}
                     <div>
-                      <label className="text-white/70 text-xs font-medium mb-1.5 block">Telefone / WhatsApp</label>
+                      <label className="text-white/70 text-xs font-medium mb-1.5 block">WhatsApp *</label>
                       <div className="relative">
                         <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                         <input
@@ -317,26 +331,60 @@ export default function Contato() {
                         />
                       </div>
                     </div>
+                    {/* E-mail */}
                     <div>
-                      <label className="text-white/70 text-xs font-medium mb-1.5 block">Assunto</label>
+                      <label className="text-white/70 text-xs font-medium mb-1.5 block">E-mail *</label>
                       <div className="relative">
-                        <FileText className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                        <select
+                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+                        <input
+                          type="email"
                           required
-                          value={formData.subject}
-                          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                          className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white appearance-none focus:outline-none focus:border-[#B87333]/50 transition-colors"
-                        >
-                          <option value="" className="bg-[#1C3D5A]">Selecione o assunto</option>
-                          {subjects.map((s) => (
-                            <option key={s} value={s} className="bg-[#1C3D5A]">{s}</option>
-                          ))}
-                        </select>
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          placeholder="seu@email.com"
+                          className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#B87333]/50 transition-colors"
+                        />
                       </div>
                     </div>
-                    <Button type="submit" className="w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2">
+                    {/* Mensagem */}
+                    <div>
+                      <label className="text-white/70 text-xs font-medium mb-1.5 block">Mensagem</label>
+                      <div className="relative">
+                        <FileText className="absolute left-3 top-3.5 w-4 h-4 text-white/30" />
+                        <textarea
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                          placeholder="Como podemos ajudar? (opcional)"
+                          rows={3}
+                          className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#B87333]/50 transition-colors resize-none"
+                        />
+                      </div>
+                    </div>
+                    {/* Checkbox de privacidade — obrigatório */}
+                    <div className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        id="privacyConsentContato"
+                        required
+                        checked={formData.privacyConsent}
+                        onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
+                        className="mt-0.5 w-4 h-4 accent-[#B87333] flex-shrink-0 cursor-pointer"
+                      />
+                      <label htmlFor="privacyConsentContato" className="text-white/50 text-[11px] leading-relaxed cursor-pointer">
+                        Ao enviar, você concorda em ser contatado por WhatsApp/e-mail e com a{" "}
+                        <a href="/privacidade" className="text-[#B87333] hover:underline" target="_blank" rel="noopener noreferrer">
+                          Política de Privacidade
+                        </a>
+                        . Não envie informações médicas sensíveis neste formulário.
+                      </label>
+                    </div>
+                    <Button
+                      type="submit"
+                      disabled={loadingForm}
+                      className="w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2 disabled:opacity-70"
+                    >
                       <Send className="w-4 h-4 mr-2" />
-                      Enviar pelo WhatsApp
+                      {loadingForm ? "Enviando..." : "Enviar pelo WhatsApp"}
                     </Button>
                     <p className="text-white/25 text-[11px] text-center">
                       Ao enviar, você será redirecionado para o WhatsApp com sua mensagem pré-preenchida.

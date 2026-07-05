@@ -4,7 +4,7 @@
  * Mostra contador visual de tempo antes do redirecionamento automático
  */
 import { useEffect, useState, useRef } from "react";
-import { trackWhatsAppClick } from "@/lib/analytics";
+import { trackWhatsAppClick, trackEvent } from "@/lib/analytics";
 import { getAttribution } from "@/lib/tracking";
 import { MessageCircle } from "lucide-react";
 
@@ -18,8 +18,19 @@ export default function AgendarWhatsApp() {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    // Disparar evento de conversão com rastreamento
+    // Disparar eventos de conversão: contact_whatsapp + lead_whatsapp
     trackWhatsAppClick("redirect_page");
+    // Garantir disparo explícito dos dois eventos nomeados
+    trackEvent("contact_whatsapp", {
+      event_category: "contact",
+      contact_method: "whatsapp",
+      event_label: "redirect_page",
+    });
+    trackEvent("lead_whatsapp", {
+      event_category: "conversion",
+      contact_method: "whatsapp",
+      event_label: "redirect_page",
+    });
 
     // Construir URL do WhatsApp com mensagem personalizada
     const attribution = getAttribution();

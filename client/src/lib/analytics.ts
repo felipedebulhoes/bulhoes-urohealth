@@ -28,6 +28,95 @@ const GOOGLE_ADS_CONVERSION_ID = "AW-18050357375";
 const GOOGLE_ADS_CONVERSION_LABEL = "1tRMCJ6z3ZscEP-wip9D";
 const GOOGLE_ADS_SEND_TO = `${GOOGLE_ADS_CONVERSION_ID}/${GOOGLE_ADS_CONVERSION_LABEL}`;
 
+// ===== CONVERSÕES OTIMIZADAS (Enhanced Conversions) =====
+
+/**
+ * Normaliza número de telefone para formato E.164 (ex: +5511981124455).
+ * Remove tudo que não é dígito, adiciona +55 se não tiver DDI.
+ */
+function normalizePhone(phone: string): string {
+  const digits = phone.replace(/\D/g, "");
+  if (digits.startsWith("55") && digits.length >= 12) {
+    return `+${digits}`;
+  }
+  if (digits.length >= 10) {
+    return `+55${digits}`;
+  }
+  return `+55${digits}`;
+}
+
+/**
+ * Envia user_data normalizado ao Google Ads para Conversões Otimizadas.
+ * NUNCA incluir informações clínicas — apenas email e telefone do formulário.
+ * Deve ser chamado ANTES de disparar o evento de conversão.
+ */
+export function setUserDataForOptimizedConversions(data: {
+  email?: string;
+  phone?: string;
+}): void {
+  if (typeof window === "undefined" || !window.gtag) return;
+
+  const userData: Record<string, string> = {};
+
+  if (data.email) {
+    userData.email = data.email.trim().toLowerCase();
+  }
+  if (data.phone) {
+    userData.phone_number = normalizePhone(data.phone);
+  }
+
+  if (Object.keys(userData).length > 0) {
+    window.gtag("set", "user_data", userData);
+  }
+}
+
+/**
+ * Dispara todos os eventos de conversão do formulário WhatsApp:
+ * - user_data para Conversões Otimizadas
+ * - conversion Google Ads
+ * - lead_form_submit, contact_whatsapp, lead_whatsapp
+ * - Meta Lead
+ * Retorna uma Promise que resolve após o delay técnico (800ms).
+ */
+export function fireFormConversionEvents(data: {
+  email?: string;
+  phone?: string;
+}): Promise<void> {
+  return new Promise((resolve) => {
+    // 1. Enviar user_data para Enhanced Conversions
+    setUserDataForOptimizedConversions(data);
+
+    // 2. Conversão principal Google Ads
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: GOOGLE_ADS_SEND_TO,
+        value: 100,
+        currency: "BRL",
+      });
+
+      // 3. Eventos GA4 adicionais
+      window.gtag("event", "lead_form_submit", {
+        event_category: "conversion",
+        contact_method: "whatsapp",
+      });
+      window.gtag("event", "contact_whatsapp", {
+        event_category: "contact",
+        contact_method: "whatsapp",
+      });
+      window.gtag("event", "lead_whatsapp", {
+        event_category: "conversion",
+        contact_method: "whatsapp",
+      });
+    }
+
+    // 4. Meta Lead
+    trackMetaLead({ content_name: "form_whatsapp" });
+
+    // 5. Aguardar janela técnica antes do redirecionamento
+    setTimeout(resolve, 800);
+  });
+}
+
 /**
  * Envia um evento personalizado para o GA4
  */
@@ -78,45 +167,39 @@ export function trackLeadGenerated(data: {
 
 /**
  * Rastreia clique no WhatsApp
- * Dispara conversão no GA4 (lead_whatsapp) + Google Ads + Meta Pixel
+ * Dispara conversão no GA4 (contact_whatsapp + lead_whatsapp) + Google Ads + Meta Pixel
  */
 export function trackWhatsAppClick(source: string) {
-  // Evento legado (manter para compatibilidade)
   trackEvent("contact_whatsapp", {
     event_category: "contact",
     event_label: source,
     contact_method: "whatsapp",
   });
-  // Evento GA4 específico para Google Ads
   trackEvent("lead_whatsapp", {
     event_category: "conversion",
     event_label: source,
     contact_method: "whatsapp",
   });
   trackGoogleAdsConversion(50.0);
-  // Dispara Schedule no Meta Pixel (WhatsApp = intenção de agendamento)
   trackMetaSchedule({ content_name: `whatsapp_${source}` });
 }
 
 /**
  * Rastreia clique na Doctoralia
- * Dispara conversão no GA4 (lead_doctoralia) + Google Ads + Meta Pixel
+ * Dispara conversão no GA4 (contact_doctoralia + lead_doctoralia) + Google Ads + Meta Pixel
  */
 export function trackDoctoraliaClick(source: string) {
-  // Evento legado (manter para compatibilidade)
   trackEvent("contact_doctoralia", {
     event_category: "contact",
     event_label: source,
     contact_method: "doctoralia",
   });
-  // Evento GA4 específico para Google Ads
   trackEvent("lead_doctoralia", {
     event_category: "conversion",
     event_label: source,
     contact_method: "doctoralia",
   });
   trackGoogleAdsConversion(80.0);
-  // Dispara Schedule no Meta Pixel
   trackMetaSchedule({ content_name: source });
 }
 

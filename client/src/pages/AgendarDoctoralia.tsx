@@ -4,7 +4,7 @@
  * Mostra contador visual de tempo antes do redirecionamento automático
  */
 import { useEffect, useState, useRef } from "react";
-import { trackDoctoraliaClick } from "@/lib/analytics";
+import { trackDoctoraliaClick, trackEvent } from "@/lib/analytics";
 import { Calendar } from "lucide-react";
 
 const DOCTORALIA_URL = "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas";
@@ -16,8 +16,19 @@ export default function AgendarDoctoralia() {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    // Disparar evento de conversão
+    // Disparar eventos de conversão: contact_doctoralia + lead_doctoralia
     trackDoctoraliaClick("redirect_page");
+    // Garantir disparo explícito dos dois eventos nomeados
+    trackEvent("contact_doctoralia", {
+      event_category: "contact",
+      contact_method: "doctoralia",
+      event_label: "redirect_page",
+    });
+    trackEvent("lead_doctoralia", {
+      event_category: "conversion",
+      contact_method: "doctoralia",
+      event_label: "redirect_page",
+    });
 
     // Atualizar meta tags
     document.title = "Agendando Consulta... | Dr. Felipe de Bulhões";

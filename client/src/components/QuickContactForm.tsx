@@ -1,38 +1,45 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Component: Quick Contact Form — Formulário de contato rápido para captação
+ * Atualizado: Conversões Otimizadas Google Ads (Enhanced Conversions)
  */
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle, User, Phone, FileText } from "lucide-react";
+import { Send, CheckCircle, User, Phone, FileText, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { fireFormConversionEvents } from "@/lib/analytics";
 
 export default function QuickContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    subject: "",
+    email: "",
+    message: "",
+    privacyConsent: false,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (loading) return;
+    setLoading(true);
+
+    // Disparar eventos de conversão otimizados antes do redirecionamento
+    // Apenas email e telefone — nunca dados clínicos
+    await fireFormConversionEvents({
+      email: formData.email,
+      phone: formData.phone,
+    });
+
     // Redireciona para WhatsApp com os dados preenchidos
-    const message = `Olá, meu nome é ${formData.name}. Gostaria de informações sobre: ${formData.subject}. Meu telefone: ${formData.phone}`;
+    const message = `Olá, meu nome é ${formData.name}. ${formData.message ? `Mensagem: ${formData.message}. ` : ""}Meu telefone: ${formData.phone}`;
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/5511981124455?text=${encoded}`, "_blank");
     setSubmitted(true);
+    setLoading(false);
     setTimeout(() => setSubmitted(false), 5000);
   };
-
-  const subjects = [
-    "Consulta particular",
-    "Teleconsulta",
-    "Cirurgia / Procedimento",
-    "Segunda opinião médica",
-    "Exame urodinâmico",
-    "Outro assunto",
-  ];
 
   return (
     <section id="formulario" className="py-16 lg:py-24 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] relative overflow-hidden">
@@ -101,7 +108,7 @@ export default function QuickContactForm() {
                 {/* Nome */}
                 <div>
                   <label className="text-white/70 text-xs font-medium mb-1.5 block">
-                    Nome completo
+                    Nome completo *
                   </label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
@@ -116,10 +123,10 @@ export default function QuickContactForm() {
                   </div>
                 </div>
 
-                {/* Telefone */}
+                {/* WhatsApp */}
                 <div>
                   <label className="text-white/70 text-xs font-medium mb-1.5 block">
-                    Telefone / WhatsApp
+                    WhatsApp *
                   </label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
@@ -134,33 +141,67 @@ export default function QuickContactForm() {
                   </div>
                 </div>
 
-                {/* Assunto */}
+                {/* E-mail */}
                 <div>
                   <label className="text-white/70 text-xs font-medium mb-1.5 block">
-                    Assunto
+                    E-mail *
                   </label>
                   <div className="relative">
-                    <FileText className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                    <select
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+                    <input
+                      type="email"
                       required
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white appearance-none focus:outline-none focus:border-[#B87333]/50 transition-colors"
-                    >
-                      <option value="" className="bg-[#1C3D5A]">Selecione o assunto</option>
-                      {subjects.map((s) => (
-                        <option key={s} value={s} className="bg-[#1C3D5A]">{s}</option>
-                      ))}
-                    </select>
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="seu@email.com"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#B87333]/50 transition-colors"
+                    />
                   </div>
+                </div>
+
+                {/* Mensagem */}
+                <div>
+                  <label className="text-white/70 text-xs font-medium mb-1.5 block">
+                    Mensagem
+                  </label>
+                  <div className="relative">
+                    <FileText className="absolute left-3 top-3.5 w-4 h-4 text-white/30" />
+                    <textarea
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Como podemos ajudar? (opcional)"
+                      rows={3}
+                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#B87333]/50 transition-colors resize-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Checkbox de privacidade — obrigatório */}
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="privacyConsent"
+                    required
+                    checked={formData.privacyConsent}
+                    onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
+                    className="mt-0.5 w-4 h-4 accent-[#B87333] flex-shrink-0 cursor-pointer"
+                  />
+                  <label htmlFor="privacyConsent" className="text-white/50 text-[11px] leading-relaxed cursor-pointer">
+                    Ao enviar, você concorda em ser contatado por WhatsApp/e-mail e com a{" "}
+                    <a href="/privacidade" className="text-[#B87333] hover:underline" target="_blank" rel="noopener noreferrer">
+                      Política de Privacidade
+                    </a>
+                    . Não envie informações médicas sensíveis neste formulário.
+                  </label>
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2"
+                  disabled={loading}
+                  className="w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2 disabled:opacity-70"
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  Enviar pelo WhatsApp
+                  {loading ? "Enviando..." : "Enviar pelo WhatsApp"}
                 </Button>
 
                 <p className="text-white/25 text-[11px] text-center">

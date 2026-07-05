@@ -2,10 +2,11 @@
  * Advanced Tracking Module — Google Ads Attribution & UTM Persistence
  * 
  * Funcionalidades:
- * 1. Captura e persiste gclid, gbraid, wbraid e UTMs por 90 dias (localStorage)
+ * 1. Captura e persiste gclid, gbraid, wbraid e UTMs por 90 dias (localStorage + cookies first-party)
  * 2. Eventos GA4 específicos por tipo de clique (lead_whatsapp, lead_doctoralia, lead_phone, lead_maps)
  * 3. Placeholders para labels de conversão Google Ads por tipo de evento
  * 4. WhatsApp parametrizado com mensagens diferentes por página/campanha
+ * 5. Listener global de cliques para captura automática de eventos de contato
  * 
  * Google Ads ID: AW-18050357375
  * GA4 ID: G-PJHFGVQPS6
@@ -14,16 +15,16 @@
 // ===== CONFIGURAÇÃO =====
 const GOOGLE_ADS_ID = "AW-18050357375";
 const STORAGE_KEY = "fb_ads_attribution";
+const COOKIE_PREFIX = "ads_";
 const EXPIRY_DAYS = 90;
 
 // Placeholders para labels de conversão Google Ads (configurar no painel do Google Ads)
-// Cada tipo de conversão pode ter seu próprio label
 const GOOGLE_ADS_LABELS: Record<string, string> = {
-  lead_whatsapp: "1tRMCJ6z3ZscEP-wip9D", // Label principal (atualizar quando criar conversões separadas)
-  lead_doctoralia: "1tRMCJ6z3ZscEP-wip9D", // Placeholder — criar conversão separada no Google Ads
-  lead_phone: "1tRMCJ6z3ZscEP-wip9D", // Placeholder — criar conversão separada no Google Ads
-  lead_maps: "", // Secundário — sem conversão Ads por padrão
-  lead_chat: "1tRMCJ6z3ZscEP-wip9D", // Label principal
+  lead_whatsapp: "1tRMCJ6z3ZscEP-wip9D",
+  lead_doctoralia: "1tRMCJ6z3ZscEP-wip9D",
+  lead_phone: "1tRMCJ6z3ZscEP-wip9D",
+  lead_maps: "",
+  lead_chat: "1tRMCJ6z3ZscEP-wip9D",
 };
 
 // ===== TIPOS =====
@@ -41,10 +42,73 @@ interface AttributionData {
   expiry: number;
 }
 
+// ===== COOKIES FIRST-PARTY =====
+
+/**
+ * Define um cookie first-party com expiração configurável
+ */
+function setCookie(name: string, value: string, days: number = EXPIRY_DAYS): void {
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  const expires = `expires=${date.toUTCString()}`;
+  document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/; SameSite=Lax`;
+}
+
+/**
+ * Obtém um cookie pelo nome
+ */
+function getCookie(name: string): string | null {
+  const nameEQ = `${name}=`;
+  const cookies = document.cookie.split(";");
+  for (let cookie of cookies) {
+    cookie = cookie.trim();
+    if (cookie.startsWith(nameEQ)) {
+      return decodeURIComponent(cookie.substring(nameEQ.length));
+    }
+  }
+  return null;
+}
+
+/**
+ * Persiste parâmetros individuais em cookies first-party como backup
+ */
+function persistToCookies(data: AttributionData): void {
+  const params = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"] as const;
+  params.forEach((param) => {
+    const value = data[param];
+    if (value) {
+      try {
+        setCookie(`${COOKIE_PREFIX}${param}`, value);
+      } catch {
+        // Cookie indisponível
+      }
+    }
+  });
+}
+
+/**
+ * Recupera parâmetros de cookies first-party (fallback quando localStorage falha)
+ */
+function getFromCookies(): Partial<AttributionData> | null {
+  const params = ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"] as const;
+  const result: Partial<AttributionData> = {};
+  let hasAny = false;
+
+  params.forEach((param) => {
+    const value = getCookie(`${COOKIE_PREFIX}${param}`);
+    if (value) {
+      (result as any)[param] = value;
+      hasAny = true;
+    }
+  });
+
+  return hasAny ? result : null;
+}
+
 // ===== GCLID / UTM PERSISTENCE =====
 
 /**
- * Captura gclid, gbraid, wbraid e UTMs da URL e persiste em localStorage por 90 dias.
+ * Captura gclid, gbraid, wbraid e UTMs da URL e persiste em localStorage + cookies por 90 dias.
  * Deve ser chamado uma vez no carregamento da página (App.tsx ou main.tsx).
  */
 export function captureAttribution(): void {
@@ -81,32 +145,51 @@ export function captureAttribution(): void {
     expiry,
   };
 
+  // Persistir em localStorage
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   } catch {
     // localStorage indisponível (modo privado em alguns browsers)
   }
+
+  // Persistir em cookies first-party (backup)
+  persistToCookies(data);
 }
 
 /**
- * Recupera dados de atribuição persistidos. Retorna null se expirado ou inexistente.
+ * Recupera dados de atribuição persistidos.
+ * Tenta localStorage primeiro, depois cookies como fallback.
+ * Retorna null se expirado ou inexistente.
  */
 export function getAttribution(): AttributionData | null {
   if (typeof window === "undefined") return null;
 
+  // Tentar localStorage primeiro
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-
-    const data: AttributionData = JSON.parse(raw);
-    if (Date.now() > data.expiry) {
-      localStorage.removeItem(STORAGE_KEY);
-      return null;
+    if (raw) {
+      const data: AttributionData = JSON.parse(raw);
+      if (Date.now() > data.expiry) {
+        localStorage.removeItem(STORAGE_KEY);
+      } else {
+        return data;
+      }
     }
-    return data;
   } catch {
-    return null;
+    // localStorage indisponível
   }
+
+  // Fallback: tentar cookies
+  const cookieData = getFromCookies();
+  if (cookieData) {
+    return {
+      ...cookieData,
+      timestamp: Date.now(),
+      expiry: Date.now() + EXPIRY_DAYS * 24 * 60 * 60 * 1000,
+    } as AttributionData;
+  }
+
+  return null;
 }
 
 // ===== EVENTOS GA4 ESPECÍFICOS =====
@@ -126,11 +209,16 @@ function fireGA4Event(eventName: string, params: Record<string, string | number 
   const attribution = getAttribution();
   const enrichedParams: Record<string, string | number | boolean | undefined> = {
     ...params,
+    page_path: window.location.pathname,
+    service_context: getServiceContext(),
     ...(attribution?.gclid && { gclid: attribution.gclid }),
+    ...(attribution?.gbraid && { gbraid: attribution.gbraid }),
+    ...(attribution?.wbraid && { wbraid: attribution.wbraid }),
     ...(attribution?.utm_source && { utm_source: attribution.utm_source }),
     ...(attribution?.utm_medium && { utm_medium: attribution.utm_medium }),
     ...(attribution?.utm_campaign && { utm_campaign: attribution.utm_campaign }),
     ...(attribution?.utm_term && { utm_term: attribution.utm_term }),
+    ...(attribution?.utm_content && { utm_content: attribution.utm_content }),
   };
 
   window.gtag("event", eventName, enrichedParams);
@@ -140,7 +228,9 @@ function fireGoogleAdsConversion(eventType: string, value: number) {
   if (typeof window === "undefined" || !window.gtag) return;
 
   const label = GOOGLE_ADS_LABELS[eventType];
-  if (!label) return; // Sem label configurado = não dispara conversão Ads
+  if (!label) return;
+  // Não disparar se label for placeholder
+  if (label.includes("AQUI")) return;
 
   window.gtag("event", "conversion", {
     send_to: `${GOOGLE_ADS_ID}/${label}`,
@@ -150,8 +240,26 @@ function fireGoogleAdsConversion(eventType: string, value: number) {
 }
 
 /**
+ * Determina o contexto do serviço baseado na página atual
+ */
+function getServiceContext(): string {
+  if (typeof window === "undefined") return "geral";
+  const pathname = window.location.pathname;
+  if (pathname.includes("vasectomia")) return "vasectomia";
+  if (pathname.includes("andrologia")) return "andrologia";
+  if (pathname.includes("estetica-intima")) return "estetica_intima";
+  if (pathname.includes("glp1") || pathname.includes("canetas")) return "glp1";
+  if (pathname.includes("cirurgia-robotica")) return "cirurgia_robotica";
+  if (pathname.includes("litotripsia")) return "litotripsia";
+  if (pathname.includes("biopsia")) return "biopsia";
+  if (pathname === "/") return "marca";
+  return "geral";
+}
+
+// ===== FUNÇÕES DE TRACKING POR TIPO =====
+
+/**
  * Evento: lead_whatsapp
- * Disparado quando o paciente clica no botão de WhatsApp
  */
 export function trackLeadWhatsApp(source: string, campaign?: string) {
   fireGA4Event("lead_whatsapp", {
@@ -165,7 +273,6 @@ export function trackLeadWhatsApp(source: string, campaign?: string) {
 
 /**
  * Evento: lead_doctoralia
- * Disparado quando o paciente clica no botão de agendamento Doctoralia
  */
 export function trackLeadDoctoralia(source: string, campaign?: string) {
   fireGA4Event("lead_doctoralia", {
@@ -179,7 +286,6 @@ export function trackLeadDoctoralia(source: string, campaign?: string) {
 
 /**
  * Evento: lead_phone
- * Disparado quando o paciente clica em um link tel:
  */
 export function trackLeadPhone(source: string, phoneNumber?: string) {
   fireGA4Event("lead_phone", {
@@ -193,7 +299,6 @@ export function trackLeadPhone(source: string, phoneNumber?: string) {
 
 /**
  * Evento: lead_maps (secundário)
- * Disparado quando o paciente clica em "Como chegar" / Google Maps
  */
 export function trackLeadMaps(source: string, location?: string) {
   fireGA4Event("lead_maps", {
@@ -201,7 +306,70 @@ export function trackLeadMaps(source: string, location?: string) {
     event_label: source,
     location: location || "unknown",
   });
-  // Não dispara conversão Ads (evento secundário)
+}
+
+// ===== LISTENER GLOBAL DE CLIQUES (FALLBACK) =====
+
+/**
+ * Detecta tipo de evento baseado na URL do link
+ */
+function getContactEventType(url: string): string | null {
+  if (url.includes("wa.me") || url.includes("whatsapp") || url.includes("api.whatsapp")) {
+    return "lead_whatsapp";
+  }
+  if (url.includes("doctoralia.com.br") || url.includes("rededorsaoluiz.com.br")) {
+    return "lead_doctoralia";
+  }
+  if (url.startsWith("tel:")) {
+    return "lead_phone";
+  }
+  if (url.includes("maps.google.com") || url.includes("maps.app.goo.gl") || url.includes("google.com/maps")) {
+    return "lead_maps";
+  }
+  return null;
+}
+
+/**
+ * Inicializa listener global de cliques para captura automática de eventos de contato.
+ * Funciona como fallback — captura cliques em links de contato mesmo sem onClick explícito.
+ * Deve ser chamado uma vez no carregamento da página.
+ */
+export function initGlobalContactListener(): void {
+  if (typeof window === "undefined") return;
+
+  const handleClick = (e: MouseEvent) => {
+    // Encontrar o link mais próximo (pode ser o target ou um pai)
+    const target = (e.target as HTMLElement).closest("a") as HTMLAnchorElement | null;
+    if (!target || !target.href) return;
+
+    const eventType = getContactEventType(target.href);
+    if (!eventType) return;
+
+    // Verificar se já foi rastreado por onClick explícito (evitar duplicação)
+    if (target.dataset.tracked === "true") return;
+
+    fireGA4Event(eventType, {
+      event_category: "conversion",
+      event_label: `global_${window.location.pathname.replace(/\//g, "_")}`,
+      contact_method: eventType.replace("lead_", ""),
+      link_url: target.href,
+      link_text: target.textContent?.trim()?.substring(0, 50) || "",
+    });
+
+    // Disparar conversão Google Ads
+    const values: Record<string, number> = {
+      lead_whatsapp: 50.0,
+      lead_doctoralia: 80.0,
+      lead_phone: 50.0,
+      lead_maps: 0,
+    };
+    if (values[eventType]) {
+      fireGoogleAdsConversion(eventType, values[eventType]);
+    }
+  };
+
+  // Usar capture phase para pegar antes da navegação
+  document.addEventListener("click", handleClick, true);
 }
 
 // ===== WHATSAPP PARAMETRIZADO =====
@@ -218,7 +386,6 @@ export function getWhatsAppUrl(options: {
 }): string {
   const { phone = "5511981124455", page, campaign, customMessage } = options;
 
-  // Mensagens padrão por página/campanha
   const messages: Record<string, string> = {
     "vasectomia": "Olá! Gostaria de agendar uma consulta sobre vasectomia sem bisturi com o Dr. Felipe Bulhões.",
     "vasectomia-sem-bisturi": "Olá! Gostaria de agendar uma consulta sobre vasectomia sem bisturi com o Dr. Felipe Bulhões.",

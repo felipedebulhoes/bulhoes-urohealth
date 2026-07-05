@@ -59,7 +59,7 @@ const AndrologiaPerformance = lazy(() => import("./pages/AndrologiaPerformance")
 const EsteticaIntimaMasculina = lazy(() => import("./pages/EsteticaIntimaMasculina"));
 const AgendarDoctoralia = lazy(() => import("./pages/AgendarDoctoralia"));
 
-import { captureAttribution } from "@/lib/tracking";
+import { captureAttribution, initGlobalContactListener } from "@/lib/tracking";
 import CanonicalTag from "./components/CanonicalTag";
 import PageTransition from "./components/PageTransition";
 import SplashScreen from "./components/SplashScreen";
@@ -138,6 +138,7 @@ function Router() {
 function App() {
   useEffect(() => {
     captureAttribution();
+    initGlobalContactListener();
   }, []);
 
   return (

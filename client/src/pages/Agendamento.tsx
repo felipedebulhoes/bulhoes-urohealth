@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import MobileBottomBar from "@/components/MobileBottomBar";
 import { trackDoctoraliaClick, trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
@@ -273,6 +274,7 @@ export default function Agendamento() {
         </div>
       </footer>
 
+      <MobileBottomBar source="agendamento" />
       <WhatsAppButton message="Olá! Vim pela página de Agendamento e gostaria de marcar uma consulta com o Dr. Felipe de Bulhões." source="agendamento" />
     </div>
   );

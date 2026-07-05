@@ -22,6 +22,7 @@ import ContactSection from "@/components/ContactSection";
 import DoctoraliaWidget from "@/components/DoctoraliaWidget";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import MobileBottomBar from "@/components/MobileBottomBar";
 import AIChatWidget from "@/components/AIChatWidget";
 import ScheduleBanner from "@/components/ScheduleBanner";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -100,6 +101,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppWidget />
+      <MobileBottomBar source="homepage" />
       <AIChatWidget />
       <ScheduleBanner />
     </div>

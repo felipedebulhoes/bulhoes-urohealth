@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { Phone, Calendar, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "./WhatsAppButton";
+import MobileBottomBar from "./MobileBottomBar";
 import { trackEducationalPageView, trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { MedicalPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
@@ -214,6 +215,7 @@ export default function CampaignLayout({
         </div>
       </footer>
 
+      <MobileBottomBar source={campaignSlug} />
       <WhatsAppButton
         message={`Olá! Vi a página sobre ${title} e gostaria de agendar uma consulta com o Dr. Felipe de Bulhões.`}
         source={`campaign_${campaignSlug}`}

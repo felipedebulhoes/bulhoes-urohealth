@@ -297,3 +297,4 @@
 - [ ] Configurar campanhas Google Ads apontando para as landing pages específicas
 - [x] WhatsApp flutuante: mensagem padrão personalizada por landing page (identificar origem)
 - [x] Doctoralia e telefone: identificar origem da página nos links (UTM ou parâmetro de rastreamento)
+- [x] Barra fixa inferior mobile com botões WhatsApp, Doctoralia e Telefone

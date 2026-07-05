@@ -521,3 +521,14 @@ html {
     display: none;
   }
 }
+
+/* Mobile bottom bar safe area */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 5rem;
+  }
+}

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "./WhatsAppButton";
+import MobileBottomBar from "./MobileBottomBar";
 import { trackEducationalPageView, trackDoctoraliaClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { MedicalPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
@@ -190,6 +191,7 @@ export default function EducationalLayout({
         </div>
       </footer>
 
+      <MobileBottomBar source={pageSlug} />
       <WhatsAppButton
         message={`Olá! Vi a página sobre ${title} e gostaria de agendar uma consulta com o Dr. Felipe de Bulhões.`}
         source={`educational_${pageSlug}`}

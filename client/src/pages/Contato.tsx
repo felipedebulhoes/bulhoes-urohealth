@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import MobileBottomBar from "@/components/MobileBottomBar";
 import { trackWhatsAppClick, trackPhoneClick, trackDoctoraliaClick } from "@/lib/analytics";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
@@ -371,6 +372,7 @@ export default function Contato() {
         </div>
       </footer>
 
+      <MobileBottomBar source="contato" />
       <WhatsAppButton message="Olá! Vim pela página de Contato e gostaria de falar com o Dr. Felipe de Bulhões." source="contato" />
     </div>
   );

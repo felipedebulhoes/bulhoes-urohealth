@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import MobileBottomBar from "@/components/MobileBottomBar";
 import InteractiveMap from "@/components/InteractiveMap";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
@@ -328,6 +329,7 @@ export default function Consultorios() {
         </div>
       </footer>
 
+      <MobileBottomBar source="consultorios" />
       <WhatsAppButton message="Olá! Vi os consultórios do Dr. Felipe de Bulhões e gostaria de agendar uma consulta." source="consultorios" />
     </div>
     </>

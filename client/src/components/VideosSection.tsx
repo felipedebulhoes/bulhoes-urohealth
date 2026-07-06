@@ -7,6 +7,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play, X, ExternalLink, Microscope, Cpu, Heart, ShieldCheck, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 interface VideoItem {
   id: string;
@@ -333,7 +334,7 @@ export default function VideosSection() {
                     </Button>
                   </a>
                   <a
-                    href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20assisti%20o%20v%C3%ADdeo%20e%20gostaria%20de%20saber%20mais."
+                    href={getWhatsAppUrl({ page: "videos" })}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

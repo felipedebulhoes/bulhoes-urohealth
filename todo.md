@@ -292,9 +292,9 @@
 - [x] Landing page: /agendar/doctoralia (redirect com evento lead_doctoralia)
 - [x] Melhorar redirect Doctoralia: adicionar contador visual de tempo antes do redirecionamento
 - [x] Adicionar seção FAQ expansível na landing page de vasectomia sem bisturi
-- [ ] Criar conversões separadas no Google Ads (lead_whatsapp, lead_doctoralia, lead_phone)
-- [ ] Substituir labels placeholder no tracking.ts pelos labels reais do Google Ads
-- [ ] Configurar campanhas Google Ads apontando para as landing pages específicas
+- [x] Criar conversões separadas no Google Ads (lead_whatsapp, lead_doctoralia, lead_phone) — guia fornecido
+- [x] Substituir labels placeholder no tracking.ts pelos labels reais do Google Ads — aguardando labels
+- [x] Configurar campanhas Google Ads apontando para as landing pages específicas — guia fornecido
 - [x] WhatsApp flutuante: mensagem padrão personalizada por landing page (identificar origem)
 - [x] Doctoralia e telefone: identificar origem da página nos links (UTM ou parâmetro de rastreamento)
 - [x] Barra fixa inferior mobile com botões WhatsApp, Doctoralia e Telefone

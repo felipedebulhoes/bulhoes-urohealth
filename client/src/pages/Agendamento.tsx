@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import { trackDoctoraliaClick, trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
 const DOCTORALIA_PROFILE = "felipe-de-bulhoes-ojeda-2";
@@ -200,7 +201,7 @@ export default function Agendamento() {
               <p className="text-xs text-[#64748B] mt-1">Campinas Day Hospital</p>
             </a>
             <a
-              href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta."
+              href={getWhatsAppUrl({ page: "agendamento" })}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick("agendamento_page")}

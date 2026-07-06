@@ -15,6 +15,7 @@ import {
   Shirt, Thermometer
 } from "lucide-react";
 import EducationalLayout from "@/components/EducationalLayout";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 /* ─── Types ─── */
 interface PreOpSection {
@@ -784,7 +785,7 @@ export default function OrientacoesPreOperatorias() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   <a
-                    href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20preparo%20pr%C3%A9-operat%C3%B3rio."
+                    href={getWhatsAppUrl({ page: "pre-operatorio" })}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-white/10 hover:bg-white/15 rounded-lg p-3 transition-colors"

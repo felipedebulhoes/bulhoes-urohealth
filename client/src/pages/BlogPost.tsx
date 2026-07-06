@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Streamdown } from "streamdown";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
@@ -328,7 +329,7 @@ export default function BlogPost() {
                     </Button>
                   </a>
                   <a
-                    href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20li%20o%20artigo%20no%20blog%20e%20gostaria%20de%20tirar%20d%C3%BAvidas."
+                    href={getWhatsAppUrl({ page: "blog" })}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto"

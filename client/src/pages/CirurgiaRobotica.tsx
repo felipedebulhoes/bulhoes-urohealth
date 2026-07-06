@@ -37,6 +37,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import EducationalLayout from "@/components/EducationalLayout";
 import { FAQSchema } from "@/components/SchemaMarkup";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -693,7 +694,7 @@ export default function CirurgiaRobotica() {
                     </Button>
                   </a>
                   <a
-                    href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20cirurgia%20rob%C3%B3tica."
+                    href={getWhatsAppUrl({ page: "cirurgia-robotica" })}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

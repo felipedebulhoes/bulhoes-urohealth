@@ -5,6 +5,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getWhatsAppUrl } from "@/lib/tracking";
 import {
   Activity,
   AlertTriangle,
@@ -457,7 +458,7 @@ export default function SymptomChecker() {
                       Agendar Consulta <ArrowRight className="w-4 h-4" />
                     </a>
                     <a
-                      href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de tirar dúvidas."
+                      href={getWhatsAppUrl({ page: "sintomas" })}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors"

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import EducationalLayout from "@/components/EducationalLayout";
 import { FAQSchema } from "@/components/SchemaMarkup";
+import { getWhatsAppUrl } from "@/lib/tracking";
 import {
   Baby, Microscope, Activity, Dumbbell, Wrench, AlertTriangle,
   Check, ChevronDown, ChevronUp, Stethoscope, Clock, Target,
@@ -712,7 +713,7 @@ export default function InfertilidadeMasculina() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/5511981124455?text=Olá, gostaria de tirar dúvidas sobre avaliação de fertilidade masculina."
+                href={getWhatsAppUrl({ page: "infertilidade" })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white dark:bg-card text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors shadow-lg"

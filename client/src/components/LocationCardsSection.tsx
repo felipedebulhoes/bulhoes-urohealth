@@ -18,6 +18,7 @@ import {
   Filter,
 } from "lucide-react";
 import InteractiveMap from "@/components/InteractiveMap";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 interface LocationData {
   name: string;
@@ -402,7 +403,7 @@ export default function LocationCardsSection() {
             Dúvidas sobre qual unidade escolher?
           </p>
           <a
-            href="https://wa.me/5511981124455?text=Olá! Gostaria de agendar uma consulta com o Dr. Felipe de Bulhões."
+            href={getWhatsAppUrl({ page: "consultorios" })}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1DA851] text-white rounded-full px-6 py-3 text-sm font-semibold transition-colors shadow-md hover:shadow-lg"

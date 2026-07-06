@@ -35,6 +35,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import EducationalLayout from "@/components/EducationalLayout";
 import { FAQSchema } from "@/components/SchemaMarkup";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -678,7 +679,7 @@ export default function CancerBexiga() {
                 Agendar Consulta
               </Button>
             </a>
-            <a href="https://wa.me/5511981124455" target="_blank" rel="noopener noreferrer">
+            <a href={getWhatsAppUrl({ page: "cancer-bexiga" })} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50">
                 <Phone className="w-4 h-4 mr-2" />
                 WhatsApp SP: (11) 98112-4455 | WhatsApp Campinas: (19) 99855-9890 | Tel: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900

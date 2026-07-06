@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import EducationalLayout from "@/components/EducationalLayout";
 import { FAQSchema } from "@/components/SchemaMarkup";
+import { getWhatsAppUrl } from "@/lib/tracking";
 import {
   Activity, AlertTriangle, ArrowRight, Baby, Check, ChevronDown,
   ChevronUp, Clock, Dna, FlaskConical, Heart, Microscope, Pill,
@@ -678,7 +679,7 @@ export default function Varicocele() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/5511981124455?text=Olá, gostaria de tirar dúvidas sobre varicocele."
+                href={getWhatsAppUrl({ page: "varicocele" })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white dark:bg-card text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors shadow-lg"

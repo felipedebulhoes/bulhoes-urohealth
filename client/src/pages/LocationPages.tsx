@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { MedicalClinicSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -343,7 +344,7 @@ function LocationPage({ slug }: { slug: string }) {
                   {loc.bookingLabel || "Agendar Consulta"}
                 </a>
                 <a
-                  href={loc.whatsapp ? `https://wa.me/55${loc.whatsapp.replace(/[^0-9]/g, '')}?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20no%20${encodeURIComponent(loc.name)}.` : "https://wa.me/5511981124455?text=Olá%2C%20gostaria%20de%20tirar%20dúvidas%20sobre%20um%20tratamento."}
+                  href={getWhatsAppUrl({ page: "local" })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full border border-[#25D366] text-[#25D366] hover:bg-[#25D366]/5 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"

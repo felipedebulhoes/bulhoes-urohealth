@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import InteractiveMap from "@/components/InteractiveMap";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
 const CAMPINAS_IMG = "/manus-storage/campinas-day-hospital_47df2b14_d5a9cb24.webp";
@@ -312,7 +313,7 @@ export default function Consultorios() {
                 Agendar Consulta
               </Button>
             </Link>
-            <a href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer">
+            <a href={getWhatsAppUrl({ page: "consultorios" })} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="text-white border-white/20 hover:bg-white/10 bg-transparent px-6 h-11">
                 WhatsApp
               </Button>

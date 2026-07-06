@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, X } from "lucide-react";
 import { trackWhatsAppClick, trackCtaClick } from "@/lib/analytics";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 export default function ScheduleBanner() {
   const [visible, setVisible] = useState(false);
@@ -70,7 +71,7 @@ export default function ScheduleBanner() {
                     Agendar Agora
                   </a>
                   <a
-                    href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20um%20tratamento."
+                    href={getWhatsAppUrl({ page: "agendamento" })}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackWhatsAppClick("schedule_banner")}

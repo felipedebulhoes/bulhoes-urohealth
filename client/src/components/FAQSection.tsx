@@ -6,6 +6,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HelpCircle, ChevronDown, MessageCircle } from "lucide-react";
 import FAQSchema from "@/components/FAQSchema";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 const faqs = [
   {
@@ -350,7 +351,7 @@ export default function FAQSection() {
             Não encontrou sua resposta?
           </p>
           <a
-            href="https://wa.me/5511981124455?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20um%20tratamento%20urol%C3%B3gico."
+            href={getWhatsAppUrl({ page: "faq" })}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#20BD5A] text-white text-sm font-semibold rounded-lg transition-colors"

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -75,7 +76,7 @@ export default function SobreDrFelipe() {
                   Agendar Consulta
                 </a>
                 <a
-                  href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de tirar dúvidas."
+                  href={getWhatsAppUrl({ page: "sobre" })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border border-white/30 hover:bg-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
@@ -282,7 +283,7 @@ export default function SobreDrFelipe() {
                 Agendar pelo Doctoralia
               </Link>
               <a
-                href="https://wa.me/5511981124455?text=Olá Dr. Felipe, gostaria de tirar dúvidas."
+                href={getWhatsAppUrl({ page: "sobre" })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-semibold transition-colors"

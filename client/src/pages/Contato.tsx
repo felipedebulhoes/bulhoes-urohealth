@@ -26,6 +26,7 @@ import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import { trackWhatsAppClick, trackPhoneClick, trackDoctoraliaClick, fireFormConversionEvents } from "@/lib/analytics";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
 

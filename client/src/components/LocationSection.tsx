@@ -3,6 +3,7 @@
  * Location: 3 clinics + teleconsulta + interactive Google Map with all markers
  */
 import { motion, useInView } from "framer-motion";
+import { getWhatsAppUrl } from "@/lib/tracking";
 import { useRef } from "react";
 import { MapPin, Clock, Phone, CreditCard, Monitor, Building2, ShieldCheck, Wallet } from "lucide-react";
 import InteractiveMap from "@/components/InteractiveMap";

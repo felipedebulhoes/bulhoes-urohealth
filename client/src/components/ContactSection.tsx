@@ -3,6 +3,7 @@
  * Contact: CTA section + social links + teleconsulta + 3 locais
  */
 import { motion, useInView } from "framer-motion";
+import { getWhatsAppUrl } from "@/lib/tracking";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { CalendarCheck, Instagram, MessageCircle, ExternalLink, Monitor, MapPin } from "lucide-react";
@@ -103,7 +104,7 @@ export default function ContactSection() {
               </Button>
             </a>
             <a
-              href="https://wa.me/5511981124455"
+              href={getWhatsAppUrl({ page: "contato" })}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick("contact_section")}

@@ -4,6 +4,7 @@
  * Atualizado: Conversões Otimizadas Google Ads (Enhanced Conversions)
  */
 import { useState } from "react";
+import { getWhatsAppUrl } from "@/lib/tracking";
 import { motion } from "framer-motion";
 import { Send, CheckCircle, User, Phone, FileText, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";

@@ -298,3 +298,8 @@
 - [x] WhatsApp flutuante: mensagem padrão personalizada por landing page (identificar origem)
 - [x] Doctoralia e telefone: identificar origem da página nos links (UTM ou parâmetro de rastreamento)
 - [x] Barra fixa inferior mobile com botões WhatsApp, Doctoralia e Telefone
+- [x] Criar perfil Google Meu Negócio para Campinas Day Hospital (Av. Benjamin Constant, 1991 - Cambuí)
+- [x] Criar perfil Google Meu Negócio para Clinovi Pinheiros
+- [x] Criar perfil Google Meu Negócio para Clinovi SBC
+- [x] Adicionar palavras-chave de SBC e Pinheiros no Google Ads
+- [x] Verificação do Google Ads (status da campanha)

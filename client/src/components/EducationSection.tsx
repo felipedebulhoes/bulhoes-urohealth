@@ -44,10 +44,15 @@ const certifications = [
   "Título de Especialista em Cirurgia Geral — AMB/CBC",
   "Membro Titular do Colégio Brasileiro de Cirurgiões (TCBC)",
   "Membro da Sociedade Brasileira de Urologia (SBU)",
-  "Membro da American Urological Association (AUA)",
-  "Membro da European Association of Urology (EAU)",
-  "ATLS — Advanced Trauma Life Support",
-  "ACLS — Advanced Cardiovascular Life Support",
+  "Membro Internacional da American Urological Association (AUA)",
+  "Membro Internacional da European Association of Urology (EAU)",
+  "ATLS — Advanced Trauma Life Support (Atualizado)",
+  "ACLS/SAVC — Advanced Cardiovascular Life Support (Atualizado)",
+  "Cirurgia Robótica — Programa Pré-Clínico IDOR/Rede D'Or (2026)",
+  "Ultrassonografia em Urologia — Cetrus Sanar/SBUS (2026, 40h)",
+  "Doppler Peniano com Fármaco-Indução — Cetrus Sanar (2026, 20h)",
+  "Hands-On Biópsia de Próstata guiada por Ultrassonografia (2024)",
+  "Pesquisa Clínica (PPCR) — Harvard T.H. Chan School of Public Health (2021)",
 ];
 
 export default function EducationSection() {

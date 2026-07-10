@@ -15,12 +15,12 @@ const credentials = [
   {
     icon: GraduationCap,
     title: "Formação de Excelência",
-    desc: "Medicina pela UFF, Cirurgia Geral pela FMABC e Urologia pelo Instituto D'Or de Ensino e Pesquisa (SP)",
+    desc: "Medicina pela Universidade Federal Fluminense (UFF), Cirurgia Geral pela Faculdade de Medicina do ABC (FMABC) e Urologia pelo Instituto D'Or de Pesquisa e Ensino (IDOR) — Hospital Rede D'Or São Luiz Jabaquara",
   },
   {
     icon: Stethoscope,
     title: "Título de Especialista",
-    desc: "Membro Titular do Colégio Brasileiro de Cirurgiões (TCBC) com Título de Especialista em Cirurgia Geral pela AMB/CBC",
+    desc: "Membro Titular do Colégio Brasileiro de Cirurgiões (TCBC). Membro da Sociedade Brasileira de Urologia (SBU), American Urological Association (AUA) e European Association of Urology (EAU)",
   },
   {
     icon: Globe,
@@ -30,7 +30,7 @@ const credentials = [
   {
     icon: BookOpen,
     title: "Pesquisa & Ensino",
-    desc: "Pesquisa clínica por Harvard (PPCR), publicações em congressos nacionais e internacionais, e atuação como editor do UroTrends",
+    desc: "Pesquisa clínica (PPCR - Harvard), publicações em periódicos e congressos nacionais/internacionais, coautoria em capítulo do Tratado de Urologia da SBU",
   },
 ];
 

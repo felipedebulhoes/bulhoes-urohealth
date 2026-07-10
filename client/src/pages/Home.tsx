@@ -5,6 +5,7 @@ import DoctoraliaBadge from "@/components/DoctoraliaBadge";
 import AboutSection from "@/components/AboutSection";
 import StatsCounter from "@/components/StatsCounter";
 import EducationSection from "@/components/EducationSection";
+import ResearchSection from "@/components/ResearchSection";
 import MediaSection from "@/components/MediaSection";
 import SpecialtiesSection from "@/components/SpecialtiesSection";
 import EducationalPreviewSection from "@/components/EducationalPreviewSection";
@@ -51,6 +52,9 @@ export default function Home() {
         </ScrollReveal>
         <ScrollReveal>
           <EducationSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ResearchSection />
         </ScrollReveal>
         <ScrollReveal>
           <MediaSection />

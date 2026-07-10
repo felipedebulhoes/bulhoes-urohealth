@@ -21,80 +21,86 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "P.S.",
-    initials: "PS",
-    text: "Fui para uma consulta de rotina e saí muito satisfeito com o nível de profissionalismo e a precisão das orientações. Senti muita segurança dado que o Dr. Felipe demonstra um conhecimento técnico profundo e está atualizado com o que há de mais moderno na área.",
+    name: "Natanael Nicolini",
+    initials: "NN",
+    text: "Melhor atendimento medico que recebi até hoje. Otima qualidade de atendimento durante a consulta e no pós consulta, providenciou um nível extremamente completo de informações além de ter buscado o melhor tratamento para o meu caso. Recomendo!",
     type: "Primeira consulta Urologia",
-    location: "Clinovi — Av. Paulista",
-    date: "Março 2026",
+    location: "CEMED — Rede D'Or São Luiz Campinas",
+    date: "Junho 2026",
     featured: true,
   },
   {
-    name: "L. A. S.",
-    initials: "LS",
-    text: "Dr. Felipe é extremamente atencioso e em 3 minutos de conversa já é percebido que realmente entende do assunto, explicando de forma clara e pontual todos os aspectos relevantes. Só tenho a agradecer!",
+    name: "Luis M",
+    initials: "LM",
+    text: "Mostrou-se bom profissional, atento às questões expostas. Detalhista. Coloca sua avaliação de forma clara. Procura saber se ficou clara a informação. Recomendo",
     type: "Primeira consulta Urologia",
-    location: "Clinovi — Av. Paulista",
-    date: "Março 2026",
+    location: "CEMED — Rede D'Or São Luiz Campinas",
+    date: "Maio 2026",
     featured: true,
   },
   {
-    name: "Flavio",
-    initials: "FL",
-    text: "Excelente profissional... atencioso, competente e atento às modernidades da medicina. Recomendo a todos.",
+    name: "Jorge L L Francato",
+    initials: "JF",
+    text: "Médico muito atencioso, respondendo todas perguntas com clareza e utilizando equipamentos modernos.",
     type: "Primeira consulta Urologia",
-    location: "Clinovi — Av. Paulista",
-    date: "Março 2026",
+    location: "Campinas Day Hospital",
+    date: "Abril 2026",
   },
   {
-    name: "G.I.S.B.S.",
-    initials: "GS",
-    text: "Atencioso e competente. Recomendei aos meus familiares.",
+    name: "R.G.Z.O",
+    initials: "RG",
+    text: "Dr Felipe muito atencioso, explica e tira as dúvidas com amplo conhecimento técnico. Recomendo.",
+    type: "Retorno de consultas Urologia",
+    location: "CEMED — Rede D'Or São Luiz Campinas",
+    date: "Julho 2026",
+  },
+  {
+    name: "Carlos",
+    initials: "CA",
+    text: "Ótima experiência, primeira consulta com boas expectativas.",
     type: "Primeira consulta Urologia",
-    location: "Clinovi — Av. Paulista",
-    date: "Março 2026",
+    location: "Campinas Day Hospital",
+    date: "Julho 2026",
   },
   {
-    name: "A.L.",
-    initials: "AL",
-    text: "Excelente profissional. Ele é atencioso, o que deixa o paciente tranquilo e ajuda no diagnóstico mais preciso.",
-    type: "Consulta",
-    location: "Presencial",
-    date: "Março 2026",
-  },
-  {
-    name: "N.A.S.",
-    initials: "NS",
-    text: "Ótimo profissional! Atencioso e bom preparo técnico.",
-    type: "Teleconsulta",
-    location: "Telemedicina",
-    date: "Março 2026",
-    isTelemedicine: true,
-  },
-  {
-    name: "E.U.",
-    initials: "EU",
-    text: "Dr. Felipe é exemplar. Se você procura um profissional competente, você encontrou.",
-    type: "Consulta",
-    location: "Clinovi — Av. Paulista",
-    date: "Março 2026",
-  },
-  {
-    name: "A.G.",
-    initials: "AG",
-    text: "Excelente profissional, fiquei satisfeita com a consulta.",
-    type: "Teleconsulta em Urologia",
-    location: "Telemedicina",
-    date: "Março 2026",
-    isTelemedicine: true,
-  },
-  {
-    name: "A.S.",
-    initials: "AS",
-    text: "Ótimo profissional! Além de pontual, o atendimento é nota 1000.",
+    name: "Paulo Moreira da Costa",
+    initials: "PM",
+    text: "Bom profissional. Ótimo atendimento bem atencioso",
     type: "Primeira consulta Urologia",
-    location: "Clinovi — Av. Paulista",
-    date: "Março 2026",
+    location: "Campinas Day Hospital",
+    date: "Julho 2026",
+  },
+  {
+    name: "Vanderlei Festi",
+    initials: "VF",
+    text: "Ótima tratativa e explanação sobre o assunto. Mostrou o conhecimento e experiência.",
+    type: "Primeira consulta Urologia",
+    location: "CEMED — Rede D'Or São Luiz Campinas",
+    date: "Maio 2026",
+  },
+  {
+    name: "Radija",
+    initials: "RA",
+    text: "Ótimo profissional, super atencioso e prestativo. Tirou todas as minhas dúvidas com muita clareza. Recomendo!",
+    type: "Primeira consulta Urologia",
+    location: "Campinas Day Hospital",
+    date: "Maio 2026",
+  },
+  {
+    name: "Douglas Razaboni",
+    initials: "DR",
+    text: "Excelente. Muito satisfeito pela atenção e correta análise.",
+    type: "Primeira consulta Urologia",
+    location: "CEMED — Rede D'Or São Luiz Campinas",
+    date: "Maio 2026",
+  },
+  {
+    name: "JCP",
+    initials: "JC",
+    text: "Profissional competente com excelente conhecimento",
+    type: "Primeira consulta Urologia",
+    location: "CEMED — Rede D'Or São Luiz Campinas",
+    date: "Maio 2026",
   },
 ];
 
@@ -198,8 +204,8 @@ function ReviewSchema() {
       "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "9",
-      "reviewCount": "9"
+      "ratingCount": "30",
+      "reviewCount": "30"
     },
     "review": testimonials.map((t) => ({
       "@type": "Review",
@@ -265,11 +271,11 @@ export default function TestimonialsSection() {
 
           {/* Rating summary */}
           <div className="flex items-center justify-center gap-4 mt-6">
-            <div className="flex items-center gap-2 bg-white dark:bg-card rounded-full px-5 py-2.5 shadow-sm border border-[#1C3D5A]/6">
+              <div className="flex items-center gap-2 bg-white dark:bg-card rounded-full px-5 py-2.5 shadow-sm border border-[#1C3D5A]/6">
               <div className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">5.0</div>
               <div className="flex flex-col items-start">
                 <StarRating count={5} size="w-4 h-4" />
-                <span className="text-xs text-[#1C3D5A] dark:text-foreground/50 mt-0.5">9 opiniões verificadas</span>
+                <span className="text-xs text-[#1C3D5A] dark:text-foreground/50 mt-0.5">30 opiniões verificadas</span>
               </div>
             </div>
           </div>

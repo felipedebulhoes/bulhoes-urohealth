@@ -172,6 +172,13 @@ const educationalPages = [
     icon: <Stethoscope className="w-5 h-5" />,
     color: "bg-amber-50 text-amber-600",
   },
+  {
+    title: "Engrossamento Peniano",
+    description: "Engrossamento peniano com ácido hialurônico: técnica, segurança, eficácia e resultados baseados em evidências.",
+    href: "/educativo/engrossamento-peniano",
+    icon: <Syringe className="w-5 h-5" />,
+    color: "bg-blue-50 text-blue-600",
+  },
 ];
 
 export default function EducationalPreviewSection() {

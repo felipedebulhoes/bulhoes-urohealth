@@ -57,6 +57,7 @@ const GuiaGLP1 = lazy(() => import("./pages/GuiaGLP1"));
 const VasectomiaSemBisturi = lazy(() => import("./pages/VasectomiaSemBisturi"));
 const AndrologiaPerformance = lazy(() => import("./pages/AndrologiaPerformance"));
 const EsteticaIntimaMasculina = lazy(() => import("./pages/EsteticaIntimaMasculina"));
+const EngrossamentoPeniano = lazy(() => import("./pages/EngrossamentoPeniano"));
 const AgendarDoctoralia = lazy(() => import("./pages/AgendarDoctoralia"));
 const AgendarWhatsApp = lazy(() => import("./pages/AgendarWhatsApp"));
 
@@ -125,6 +126,7 @@ function Router() {
         <Route path={"/vasectomia-sem-bisturi"} component={VasectomiaSemBisturi} />
         <Route path={"/andrologia-performance-masculina"} component={AndrologiaPerformance} />
         <Route path={"/estetica-intima-masculina"} component={EsteticaIntimaMasculina} />
+        <Route path={"/educativo/engrossamento-peniano"} component={EngrossamentoPeniano} />
         <Route path={"/agendar/doctoralia"} component={AgendarDoctoralia} />
         <Route path={"/agendar/whatsapp"} component={AgendarWhatsApp} />
         <Route path={"/canetas-emagrecedoras"} component={GuiaGLP1} />

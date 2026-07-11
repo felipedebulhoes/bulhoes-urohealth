@@ -186,3 +186,7 @@
 - [x] Instalar tag de conversão do Google Ads no site (AW-18050357375 adicionado ao gtag config)
 - [x] Configurar eventos de conversão do Google Ads (generate_lead, contact_whatsapp, contact_doctoralia, contact_phone, cta_click)
 
+- [ ] Criar página educativa sobre engrossamento peniano com ácido hialurônico (baseado em evidências AUA/EAU)
+- [ ] Integrar página de engrossamento peniano ao site (rota + navegação + seção educativa)
+- [ ] Atualizar sitemap.xml com nova página educativa
+- [ ] Verificar funcionamento e salvar checkpoint

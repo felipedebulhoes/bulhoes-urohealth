@@ -192,9 +192,9 @@
 - [x] Verificar funcionamento e salvar checkpoint
 
 - [ ] Testar preview do banner Open Graph no Facebook Sharing Debugger
-- [ ] Criar variação do banner para landing page /vasectomia-sem-bisturi
-- [ ] Criar variação do banner para landing page /engrossamento-peniano
-- [ ] Criar variação do banner para landing page /andrologia-performance-masculina
-- [ ] Criar variação do banner para landing page /estetica-intima-masculina
+- [x] Criar variação do banner para landing page /vasectomia-sem-bisturi
+- [ ] Criar variação do banner para landing page /engrossamento-peniano (bloqueado por política de segurança - gerar manualmente)
+- [x] Criar variação do banner para landing page /andrologia-performance-masculina
+- [x] Criar variação do banner para landing page /estetica-intima-masculina
 - [ ] Publicar Stories Banners no Instagram (perfil + especialidades)
 - [ ] Monitorar performance de compartilhamentos em redes sociais

@@ -34,6 +34,56 @@
 
 ---
 
+## Variações de Banner para Landing Pages (1200x630px)
+
+### 1. Banner Vasectomia Sem Bisturi
+**Dimensões:** 1200x630px
+**Formato:** PNG
+**URL Original:** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-vasectomia-T3FhkNuSM9V9Q2UvMZ2pMm.png
+**URL Comprimida (WebP):** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-vasectomia-iNDMiPaU2WaU44zJw39LpN.webp
+
+**Conteúdo:**
+- Ícone médico de vasectomia
+- Título: "Vasectomia Sem Bisturi"
+- Subtítulo: "Minimamente Invasiva"
+- Benefícios: Recuperação Rápida • Sem Cicatrizes • Reversível
+
+**Uso:** Compartilhamentos da landing page `/vasectomia-sem-bisturi`
+
+---
+
+### 2. Banner Andrologia
+**Dimensões:** 1200x630px
+**Formato:** PNG
+**URL Original:** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-andrologia-5MNza8WeePLcioXt5hqUNr.png
+**URL Comprimida (WebP):** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-andrologia-AapdWkYMxqzUuyANUr9tsX.webp
+
+**Conteúdo:**
+- Ícone médico (caduceu)
+- Título: "Andrologia"
+- Subtítulo: "Saúde e Performance Masculina"
+- Especialidades: Disfunção Erétil • Infertilidade • Saúde Sexual
+
+**Uso:** Compartilhamentos da landing page `/andrologia-performance-masculina`
+
+---
+
+### 3. Banner Estética Íntima Masculina
+**Dimensões:** 1200x630px
+**Formato:** PNG
+**URL Original:** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-estetica-intima-9jXDPQ5y9xybYDDczDfBQY.png
+**URL Comprimida (WebP):** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-estetica-intima-FkkVz4ALHv97gUM6oueqvB.webp
+
+**Conteúdo:**
+- Ícone médico (caduceu)
+- Título: "Estética Íntima Masculina"
+- Subtítulo: "Bem-estar e Confiança"
+- Benefícios: Procedimento Seguro • Resultados Naturais • Rápida Recuperação
+
+**Uso:** Compartilhamentos da landing page `/estetica-intima-masculina`
+
+---
+
 ## Instagram Stories Banners (1080x1920px)
 
 ### 1. Banner Perfil Dr. Felipe

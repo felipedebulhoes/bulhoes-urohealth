@@ -4,8 +4,9 @@
 
 **Dimensões:** 1200x630px
 **Formato:** PNG
-**URL Original:** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-dr-felipe-DFXUhaRQ5mqt5w42VPiobK.png
-**URL Comprimida (WebP):** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-dr-felipe-9jHUbRHLoYenwmxdRGrt5H.webp
+**URL Original (Antigo):** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-dr-felipe-DFXUhaRQ5mqt5w42VPiobK.png
+**URL Novo (Homepage):** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-homepage-Z3VUGp2G25ZCRLdiqZhFBW.png
+**URL Comprimida (WebP):** https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-homepage-FuPkRXpFuiBtZDMeKeTkQy.webp
 
 **Conteúdo:**
 - Perfil circular com iniciais "FB"

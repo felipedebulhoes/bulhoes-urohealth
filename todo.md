@@ -203,3 +203,7 @@
 - [x] Adicionar meta tags OG em VasectomiaSemBisturi.tsx (og-banner-vasectomia)
 - [x] Adicionar meta tags OG em AndrologiaPerformance.tsx (og-banner-andrologia)
 - [x] Adicionar meta tags OG em EsteticaIntimaMasculina.tsx (og-banner-estetica-intima)
+
+- [x] Criar banner Open Graph personalizado para homepage (og-banner-homepage)
+- [x] Adicionar meta tags OG no index.html com novo banner
+- [x] Atualizar SOCIAL_MEDIA_ASSETS.md com URL do novo banner

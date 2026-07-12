@@ -22,6 +22,7 @@ interface CampaignLayoutProps {
   accentColor?: string;
   metaTitle?: string;
   metaDescription?: string;
+  ogImage?: string; // URL do banner Open Graph
   medicalCondition?: string;
   trustBadges?: string[];
   children: React.ReactNode;
@@ -35,6 +36,7 @@ export default function CampaignLayout({
   accentColor = "#B87333",
   metaTitle,
   metaDescription,
+  ogImage,
   medicalCondition,
   trustBadges = ["Formado Instituto D'Or", "CRM-SP 202.291", "Atendimento Particular"],
   children,
@@ -55,12 +57,45 @@ export default function CampaignLayout({
     }
     metaTag.setAttribute("content", metaDesc);
 
+    // Open Graph meta tags
+    if (ogImage) {
+      const ogImageTag = document.querySelector('meta[property="og:image"]');
+      if (ogImageTag) {
+        ogImageTag.setAttribute("content", ogImage);
+      } else {
+        const newOgImageTag = document.createElement("meta");
+        newOgImageTag.setAttribute("property", "og:image");
+        newOgImageTag.setAttribute("content", ogImage);
+        document.head.appendChild(newOgImageTag);
+      }
+
+      const ogTitleTag = document.querySelector('meta[property="og:title"]');
+      if (ogTitleTag) {
+        ogTitleTag.setAttribute("content", pageTitle);
+      } else {
+        const newOgTitleTag = document.createElement("meta");
+        newOgTitleTag.setAttribute("property", "og:title");
+        newOgTitleTag.setAttribute("content", pageTitle);
+        document.head.appendChild(newOgTitleTag);
+      }
+
+      const ogDescTag = document.querySelector('meta[property="og:description"]');
+      if (ogDescTag) {
+        ogDescTag.setAttribute("content", metaDesc);
+      } else {
+        const newOgDescTag = document.createElement("meta");
+        newOgDescTag.setAttribute("property", "og:description");
+        newOgDescTag.setAttribute("content", metaDesc);
+        document.head.appendChild(newOgDescTag);
+      }
+    }
+
     trackEducationalPageView(title, window.location.pathname);
 
     return () => {
       document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";
     };
-  }, [title, description, metaTitle, metaDescription]);
+  }, [title, description, metaTitle, metaDescription, ogImage]);
 
   const handleDoctoraliaClick = () => {
     trackDoctoraliaClick(`campaign_${campaignSlug}`);

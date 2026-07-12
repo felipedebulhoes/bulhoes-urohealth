@@ -25,6 +25,7 @@ export default function AndrologiaPerformance() {
       campaignSlug="andrologia-performance-masculina"
       metaTitle="Andrologia e Performance Masculina em SP e Campinas | Dr. Felipe de Bulhões"
       metaDescription="Andrologia e saúde hormonal masculina com o Dr. Felipe de Bulhões. Avaliação individualizada, investigação hormonal e tratamento baseado em evidências. SP e Campinas."
+      ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-andrologia-5MNza8WeePLcioXt5hqUNr.png"
       medicalCondition="Hipogonadismo Masculino"
       trustBadges={["Formado Instituto D'Or", "Medicina Baseada em Evidências", "Atendimento Particular"]}
     >

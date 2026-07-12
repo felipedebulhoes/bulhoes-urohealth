@@ -198,3 +198,8 @@
 - [x] Criar variação do banner para landing page /estetica-intima-masculina
 - [ ] Publicar Stories Banners no Instagram (perfil + especialidades)
 - [ ] Monitorar performance de compartilhamentos em redes sociais
+
+- [x] Adicionar suporte a meta tags Open Graph no CampaignLayout (ogImage prop)
+- [x] Adicionar meta tags OG em VasectomiaSemBisturi.tsx (og-banner-vasectomia)
+- [x] Adicionar meta tags OG em AndrologiaPerformance.tsx (og-banner-andrologia)
+- [x] Adicionar meta tags OG em EsteticaIntimaMasculina.tsx (og-banner-estetica-intima)

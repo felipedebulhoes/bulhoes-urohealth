@@ -25,6 +25,7 @@ export default function EsteticaIntimaMasculina() {
       campaignSlug="estetica-intima-masculina"
       metaTitle="Estética Íntima Masculina em SP e Campinas | Dr. Felipe de Bulhões"
       metaDescription="Estética íntima masculina com urologista. Avaliação discreta, procedimentos seguros e expectativas realistas. Atendimento em São Paulo e Campinas."
+      ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-estetica-intima-9jXDPQ5y9xybYDDczDfBQY.png"
       medicalCondition="Estética Genital Masculina"
       trustBadges={["Formado Instituto D'Or", "Urologista Especialista", "Atendimento Particular"]}
     >

@@ -207,3 +207,7 @@
 - [x] Criar banner Open Graph personalizado para homepage (og-banner-homepage)
 - [x] Adicionar meta tags OG no index.html com novo banner
 - [x] Atualizar SOCIAL_MEDIA_ASSETS.md com URL do novo banner
+
+- [x] Criar favicon (192x192) com identidade visual (Azul do Nilo + Cobre, isotipo FB)
+- [x] Criar apple-touch-icon (180x180) para iOS home screen
+- [x] Atualizar meta tags de favicon no index.html com novas imagens

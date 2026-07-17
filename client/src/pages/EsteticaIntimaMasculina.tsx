@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ShieldCheck, Eye, UserCheck, AlertTriangle, Stethoscope } from "lucide-react";
 import CampaignLayout from "@/components/CampaignLayout";
 import { FaviconInjector } from "@/components/FaviconInjector";
+import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -21,6 +22,7 @@ export default function EsteticaIntimaMasculina() {
   return (
     <>
       <FaviconInjector />
+      <WhatsAppFloatingButton campaignName="estetica-intima-masculina" />
       <CampaignLayout
       title="Estética Íntima Masculina"
       subtitle="Procedimentos Urológicos Estéticos"

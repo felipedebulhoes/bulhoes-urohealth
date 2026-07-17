@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Clock, ShieldCheck, Stethoscope, Heart, AlertCircle, ChevronDown } from "lucide-react";
 import CampaignLayout from "@/components/CampaignLayout";
 import { FaviconInjector } from "@/components/FaviconInjector";
+import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -22,6 +23,7 @@ export default function VasectomiaSemBisturi() {
   return (
     <>
       <FaviconInjector />
+      <WhatsAppFloatingButton campaignName="vasectomia-sem-bisturi" />
       <CampaignLayout
       title="Vasectomia Sem Bisturi"
       subtitle="Contracepção Definitiva Masculina"

@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Activity, Brain, Beaker, ShieldCheck, TrendingUp } from "lucide-react";
 import CampaignLayout from "@/components/CampaignLayout";
 import { FaviconInjector } from "@/components/FaviconInjector";
+import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -21,6 +22,7 @@ export default function AndrologiaPerformance() {
   return (
     <>
       <FaviconInjector />
+      <WhatsAppFloatingButton campaignName="andrologia-performance-masculina" />
       <CampaignLayout
       title="Andrologia e Performance Masculina"
       subtitle="Saúde Hormonal e Sexual do Homem"

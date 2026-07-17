@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertCircle, CheckCircle, Clock, Shield, Users } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { FaviconInjector } from "@/components/FaviconInjector";
+import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 
 export default function EngrossamentoPeniano() {
   const faqItems = [
@@ -51,6 +52,7 @@ export default function EngrossamentoPeniano() {
   return (
     <>
       <FaviconInjector />
+      <WhatsAppFloatingButton campaignName="engrossamento-peniano" />
       <EducationalLayout
       title="Engrossamento Peniano com Ácido Hialurônico"
       subtitle="Abordagem Segura e Reversível para Aumento de Circunferência Peniana"

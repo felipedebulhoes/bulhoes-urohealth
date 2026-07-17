@@ -216,3 +216,7 @@
 - [x] Adicionar FaviconInjector em AndrologiaPerformance.tsx
 - [x] Adicionar FaviconInjector em EsteticaIntimaMasculina.tsx
 - [x] Adicionar FaviconInjector em EngrossamentoPeniano.tsx
+
+- [x] Implementar Schema.org (MedicalProcedure, LocalBusiness) nas landing pages para SEO (SchemaMarkup.tsx já existe)
+- [x] Adicionar animações de hover e transições suaves nos botões CTA (CTAButtonWithAnimation.tsx criado)
+- [x] Adicionar botão flutuante WhatsApp em todas as landing pages para agendamento rápido (WhatsAppFloatingButton adicionado em 4 landing pages)

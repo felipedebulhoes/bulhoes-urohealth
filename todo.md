@@ -211,3 +211,8 @@
 - [x] Criar favicon (192x192) com identidade visual (Azul do Nilo + Cobre, isotipo FB)
 - [x] Criar apple-touch-icon (180x180) para iOS home screen
 - [x] Atualizar meta tags de favicon no index.html com novas imagens
+
+- [x] Adicionar FaviconInjector em VasectomiaSemBisturi.tsx
+- [x] Adicionar FaviconInjector em AndrologiaPerformance.tsx
+- [x] Adicionar FaviconInjector em EsteticaIntimaMasculina.tsx
+- [x] Adicionar FaviconInjector em EngrossamentoPeniano.tsx

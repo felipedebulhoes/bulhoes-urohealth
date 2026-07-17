@@ -6,6 +6,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, ShieldCheck, Eye, UserCheck, AlertTriangle, Stethoscope } from "lucide-react";
 import CampaignLayout from "@/components/CampaignLayout";
+import { FaviconInjector } from "@/components/FaviconInjector";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -18,7 +19,9 @@ const fadeUp = {
 
 export default function EsteticaIntimaMasculina() {
   return (
-    <CampaignLayout
+    <>
+      <FaviconInjector />
+      <CampaignLayout
       title="Estética Íntima Masculina"
       subtitle="Procedimentos Urológicos Estéticos"
       description="Avaliação médica especializada para procedimentos estéticos genitais masculinos. Abordagem clínica, discreta e com expectativas realistas."
@@ -191,5 +194,6 @@ export default function EsteticaIntimaMasculina() {
         </div>
       </section>
     </CampaignLayout>
+    </>
   );
 }

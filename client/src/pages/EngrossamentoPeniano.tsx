@@ -2,6 +2,7 @@ import EducationalLayout from "@/components/EducationalLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertCircle, CheckCircle, Clock, Shield, Users } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { FaviconInjector } from "@/components/FaviconInjector";
 
 export default function EngrossamentoPeniano() {
   const faqItems = [
@@ -48,7 +49,9 @@ export default function EngrossamentoPeniano() {
   ];
 
   return (
-    <EducationalLayout
+    <>
+      <FaviconInjector />
+      <EducationalLayout
       title="Engrossamento Peniano com Ácido Hialurônico"
       subtitle="Abordagem Segura e Reversível para Aumento de Circunferência Peniana"
       description="Guia completo sobre engrossamento peniano com ácido hialurônico: técnica, segurança, eficácia e resultados baseados em evidências científicas."
@@ -486,5 +489,6 @@ export default function EngrossamentoPeniano() {
         </AlertDescription>
       </Alert>
     </EducationalLayout>
+    </>
   );
 }

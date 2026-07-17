@@ -7,6 +7,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Clock, ShieldCheck, Stethoscope, Heart, AlertCircle, ChevronDown } from "lucide-react";
 import CampaignLayout from "@/components/CampaignLayout";
+import { FaviconInjector } from "@/components/FaviconInjector";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -19,7 +20,9 @@ const fadeUp = {
 
 export default function VasectomiaSemBisturi() {
   return (
-    <CampaignLayout
+    <>
+      <FaviconInjector />
+      <CampaignLayout
       title="Vasectomia Sem Bisturi"
       subtitle="Contracepção Definitiva Masculina"
       description="Procedimento minimamente invasivo, sem cortes e sem pontos. Recuperação rápida, segurança comprovada e realizado em ambiente ambulatorial com anestesia local."
@@ -208,6 +211,7 @@ export default function VasectomiaSemBisturi() {
       {/* Seção: FAQ Expansível */}
       <VasectomiaFAQ />
     </CampaignLayout>
+    </>
   );
 }
 

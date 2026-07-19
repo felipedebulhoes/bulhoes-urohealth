@@ -133,10 +133,11 @@ export default function CampaignLayout({
           </Link>
           <div className="flex items-center gap-2">
             <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleWhatsAppClick}
+              href="#agendamento"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="hidden sm:block"
             >
               <Button variant="outline" className="text-white border-[#25D366]/40 hover:bg-[#25D366]/10 bg-transparent text-sm">
@@ -145,10 +146,12 @@ export default function CampaignLayout({
               </Button>
             </a>
             <a
-              href={doctoraliaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleDoctoraliaClick}
+              href="#agendamento"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' });
+                handleDoctoraliaClick();
+              }}
             >
               <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white text-sm">
                 <Calendar className="w-4 h-4 mr-1.5" />
@@ -199,7 +202,7 @@ export default function CampaignLayout({
       <main>{children}</main>
 
       {/* CTA Final — conversion-focused */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
+      <section id="agendamento" className="py-16 lg:py-20 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
         <div className="container text-center max-w-2xl">
           <h2 className="text-2xl lg:text-3xl text-white mb-3 font-serif">
             Agende sua avaliação

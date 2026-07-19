@@ -220,3 +220,5 @@
 - [x] Implementar Schema.org (MedicalProcedure, LocalBusiness) nas landing pages para SEO (SchemaMarkup.tsx já existe)
 - [x] Adicionar animações de hover e transições suaves nos botões CTA (CTAButtonWithAnimation.tsx criado)
 - [x] Adicionar botão flutuante WhatsApp em todas as landing pages para agendamento rápido (WhatsAppFloatingButton adicionado em 4 landing pages)
+
+- [x] Implementar smooth scroll nos botões CTA das landing pages para seção de agendamento (ID "agendamento" + scroll smooth no header)

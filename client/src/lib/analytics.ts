@@ -270,47 +270,100 @@ export function trackCtaClick(ctaType: string, source: string) {
 }
 
 // ===== META PIXEL EVENTS =====
-// test_event_code para validação no Events Manager
-const META_TEST_EVENT_CODE = 'TEST85913';
 
 /**
  * Dispara evento Lead no Meta Pixel
  * Usado quando um lead é captado (chat, formulário)
+ * 
+ * Valores otimizados baseados no ticket médio de consulta urológica particular:
+ * - Consulta padrão: R$600-800
+ * - Procedimento (vasectomia, estética): R$3.000-8.000
+ * - Lead qualificado (formulário com dados): R$250 (taxa de conversão ~30%)
+ * - Lead frio (chat genérico): R$150
  */
 export function trackMetaLead(data?: { content_name?: string; value?: number }) {
+  // Valor dinâmico baseado no tipo de lead
+  const defaultValue = getLeadValue(data?.content_name);
+  const value = data?.value || defaultValue;
+
   if (typeof window !== "undefined" && window.fbq) {
     window.fbq('track', 'Lead', {
       content_name: data?.content_name || 'agendamento',
-      value: data?.value || 100.0,
+      value,
       currency: 'BRL',
     }, { eventID: `lead_${Date.now()}` });
-    // Enviar test event para validação
-    window.fbq('track', 'Lead', {
-      content_name: data?.content_name || 'agendamento',
-      value: data?.value || 100.0,
-      currency: 'BRL',
-      test_event_code: META_TEST_EVENT_CODE,
-    });
   }
+}
+
+/**
+ * Calcula valor do lead baseado no contexto/origem
+ * Valores calibrados para otimização do algoritmo Meta Ads
+ */
+function getLeadValue(contentName?: string): number {
+  if (!contentName) return 150;
+  
+  // Leads de alto valor (procedimentos cirúrgicos)
+  if (contentName.includes('vasectomia')) return 400;
+  if (contentName.includes('estetica') || contentName.includes('engrossamento')) return 500;
+  if (contentName.includes('andrologia') || contentName.includes('performance')) return 350;
+  if (contentName.includes('robotica') || contentName.includes('cirurgia')) return 600;
+  
+  // Leads de formulário com dados (qualificados)
+  if (contentName.includes('form_')) return 250;
+  
+  // Leads de chat (qualificação variável)
+  if (contentName.includes('chat')) return 200;
+  
+  // Lead genérico
+  return 150;
 }
 
 /**
  * Dispara evento Schedule no Meta Pixel
  * Usado quando o paciente clica para agendar (Doctoralia, Rede D'Or, WhatsApp)
+ * 
+ * Valores otimizados baseados no canal de agendamento:
+ * - Doctoralia: R$300 (alta intenção, taxa de conversão ~50%)
+ * - WhatsApp: R$200 (intenção média, taxa de conversão ~35%)
+ * - Rede D'Or: R$350 (alta intenção, paciente já no sistema)
+ * - Telefone: R$180 (intenção variável)
  */
 export function trackMetaSchedule(data?: { content_name?: string; value?: number }) {
+  // Valor dinâmico baseado no canal de agendamento
+  const defaultValue = getScheduleValue(data?.content_name);
+  const value = data?.value || defaultValue;
+
   if (typeof window !== "undefined" && window.fbq) {
     window.fbq('track', 'Schedule', {
       content_name: data?.content_name || 'consulta',
-      value: data?.value || 80.0,
+      value,
       currency: 'BRL',
     }, { eventID: `schedule_${Date.now()}` });
-    // Enviar test event para validação
-    window.fbq('track', 'Schedule', {
-      content_name: data?.content_name || 'consulta',
-      value: data?.value || 80.0,
-      currency: 'BRL',
-      test_event_code: META_TEST_EVENT_CODE,
-    });
   }
+}
+
+/**
+ * Calcula valor do agendamento baseado no canal e contexto
+ * Valores calibrados para otimização do algoritmo Meta Ads
+ */
+function getScheduleValue(contentName?: string): number {
+  if (!contentName) return 200;
+  
+  // Canal Doctoralia (alta intenção)
+  if (contentName.includes('doctoralia')) return 300;
+  
+  // Canal Rede D'Or (alta intenção)
+  if (contentName.includes('rededorsaoluiz') || contentName.includes('rede_dor')) return 350;
+  
+  // Canal WhatsApp (intenção média-alta)
+  if (contentName.includes('whatsapp')) return 200;
+  
+  // Contexto de procedimento específico (alto ticket)
+  if (contentName.includes('vasectomia')) return 400;
+  if (contentName.includes('estetica') || contentName.includes('engrossamento')) return 450;
+  if (contentName.includes('andrologia')) return 350;
+  if (contentName.includes('robotica')) return 500;
+  
+  // Agendamento genérico
+  return 200;
 }

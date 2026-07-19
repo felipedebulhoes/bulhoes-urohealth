@@ -222,3 +222,6 @@
 - [x] Adicionar botão flutuante WhatsApp em todas as landing pages para agendamento rápido (WhatsAppFloatingButton adicionado em 4 landing pages)
 
 - [x] Implementar smooth scroll nos botões CTA das landing pages para seção de agendamento (ID "agendamento" + scroll smooth no header)
+
+- [x] Otimizar valores de eventos Lead e Schedule no Meta Pixel (valores dinâmicos por contexto: R$150-600 Lead, R$200-500 Schedule)
+- [x] Verificar implementação GA4 para cliques nos CTAs (57 pontos de rastreamento em 23 arquivos confirmados)

@@ -16,4 +16,4 @@ O Facebook Sharing Debugger autenticado reconheceu o novo banner, o título e a 
 
 ## Resultado esperado após publicação
 
-As páginas continuam acessíveis mesmo quando serviços externos falham. A regularização do host `www` depende de vinculá-lo ao projeto ou criar um redirecionamento permanente para o domínio principal.
+As páginas continuam acessíveis mesmo quando serviços externos falham. Em 29/08/2026, `https://www.felipebulhoes.com` foi vinculado e passou a responder HTTP 301 para `https://felipebulhoes.com/`. O destino retornou HTTP 200 tanto para um navegador comum quanto para o user agent `facebookexternalhit/1.1`, eliminando a causa reproduzível do alerta 503.

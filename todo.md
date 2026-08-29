@@ -230,7 +230,7 @@
 - [x] Tornar a página de agendamento resiliente quando o calendário Doctoralia não carregar
 - [x] Corrigir o carregamento do Google Maps e oferecer fallback quando o proxy estiver indisponível
 - [x] Substituir o logotipo antigo por um ativo permanente nas páginas públicas
-- [ ] Vincular ou redirecionar www.felipebulhoes.com para felipebulhoes.com, pois o host www responde HTTP 503
+- [x] Vincular e redirecionar www.felipebulhoes.com para felipebulhoes.com — HTTP 301 validado e destino responde 200 para navegador e crawler do Facebook
 - [x] Registrar e monitorar o preview Open Graph validado no Facebook Sharing Debugger (banner, título e descrição reconhecidos; procedimento documentado)
 - [x] Salvar evidência verificável do Facebook Sharing Debugger em armazenamento permanente e vinculá-la ao relatório
 - [x] Executar e registrar a primeira rotina de monitoramento social, com respostas do crawler e próxima data de revisão

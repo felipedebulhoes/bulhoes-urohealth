@@ -39,3 +39,5 @@
 ## Primeira rotina executada
 
 Em 28/08/2026, foi concluída a revisão inicial no Facebook Sharing Debugger e a simulação do crawler `facebookexternalhit/1.1`. O domínio principal respondeu HTTP 200 em três tentativas; o host `www` respondeu HTTP 503 em três tentativas. A próxima revisão mensal deverá ocorrer até 28/09/2026, após a regularização do subdomínio `www`.
+
+Em 29/08/2026, o subdomínio `www` foi vinculado. A validação final confirmou redirecionamento HTTP 301 para o domínio principal e resposta HTTP 200 no destino com navegador comum e com o crawler do Facebook. A revisão mensal permanece programada para até 28/09/2026.

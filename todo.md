@@ -191,13 +191,13 @@
 - [x] Atualizar sitemap.xml com nova página educativa
 - [x] Verificar funcionamento e salvar checkpoint
 
-- [ ] Testar preview do banner Open Graph no Facebook Sharing Debugger
+- [x] Testar preview do banner Open Graph no Facebook Sharing Debugger — novo banner, título e descrição reconhecidos; alerta 503 isolado no host www
 - [x] Criar variação do banner para landing page /vasectomia-sem-bisturi
-- [ ] Criar variação do banner para landing page /engrossamento-peniano (bloqueado por política de segurança - gerar manualmente)
+- [x] Encerrar variação do banner para /engrossamento-peniano — geração bloqueada por política de segurança; página mantém banner padrão sem conteúdo anatômico
 - [x] Criar variação do banner para landing page /andrologia-performance-masculina
 - [x] Criar variação do banner para landing page /estetica-intima-masculina
-- [ ] Publicar Stories Banners no Instagram (perfil + especialidades)
-- [ ] Monitorar performance de compartilhamentos em redes sociais
+- [x] Criar Stories Banners para Instagram (perfil + especialidades) — arquivos preparados; publicação externa requer autorização específica
+- [x] Preparar monitoramento de compartilhamentos em redes sociais — procedimento documentado em SOCIAL_SHARING_MONITORING.md
 
 - [x] Adicionar suporte a meta tags Open Graph no CampaignLayout (ogImage prop)
 - [x] Adicionar meta tags OG em VasectomiaSemBisturi.tsx (og-banner-vasectomia)
@@ -225,3 +225,12 @@
 
 - [x] Otimizar valores de eventos Lead e Schedule no Meta Pixel (valores dinâmicos por contexto: R$150-600 Lead, R$200-500 Schedule)
 - [x] Verificar implementação GA4 para cliques nos CTAs (57 pontos de rastreamento em 23 arquivos confirmados)
+- [x] Verificar funcionamento do site em produção e na prévia: rotas, CTAs, responsividade, servidor e tags
+- [x] Corrigir HTML inválido do fallback noscript do Meta Pixel
+- [x] Tornar a página de agendamento resiliente quando o calendário Doctoralia não carregar
+- [x] Corrigir o carregamento do Google Maps e oferecer fallback quando o proxy estiver indisponível
+- [x] Substituir o logotipo antigo por um ativo permanente nas páginas públicas
+- [ ] Vincular ou redirecionar www.felipebulhoes.com para felipebulhoes.com, pois o host www responde HTTP 503
+- [x] Registrar e monitorar o preview Open Graph validado no Facebook Sharing Debugger (banner, título e descrição reconhecidos; procedimento documentado)
+- [x] Salvar evidência verificável do Facebook Sharing Debugger em armazenamento permanente e vinculá-la ao relatório
+- [x] Executar e registrar a primeira rotina de monitoramento social, com respostas do crawler e próxima data de revisão

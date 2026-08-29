@@ -86,8 +86,8 @@ export default function EducationalLayout({
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <Link href="/">
-            <img loading="lazy"
-              src="/manus-storage/logo-landscape_be6628b3.svg"
+            <img loading="eager"
+              src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
               alt="Dr. Felipe de Bulhões - Urologista"
               className="h-12 lg:h-14 w-auto brightness-0 invert"
             />

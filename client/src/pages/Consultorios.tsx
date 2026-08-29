@@ -27,7 +27,7 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import InteractiveMap from "@/components/InteractiveMap";
 import { getWhatsAppUrl } from "@/lib/tracking";
 
-const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
+const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
 const CAMPINAS_IMG = "/manus-storage/campinas-day-hospital_47df2b14_d5a9cb24.webp";
 const CLINOVI_PAULISTA_IMG = "/manus-storage/clinovi-paulista_42fff2fa_cecba450.webp";
 const CLINOVI_MOEMA_IMG = "/manus-storage/clinovi-moema_b149b069_cd29f980.webp";

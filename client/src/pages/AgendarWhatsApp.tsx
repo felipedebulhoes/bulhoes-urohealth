@@ -89,7 +89,7 @@ export default function AgendarWhatsApp() {
       <div className="text-center max-w-md">
         {/* Logo */}
         <img
-          src="/manus-storage/logo-landscape_be6628b3.svg"
+          src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
           alt="Dr. Felipe de Bulhões"
           className="h-14 w-auto mx-auto mb-8 brightness-0 invert"
         />

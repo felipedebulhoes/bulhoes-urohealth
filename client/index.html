@@ -350,9 +350,6 @@
     fbq('init', '1730608694762791');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1730608694762791&ev=PageView&noscript=1"
-    /></noscript>
     <!-- End Meta Pixel Code -->
     <link rel="manifest" href="/site.webmanifest" />
     <!-- Google Analytics 4 -->
@@ -402,6 +399,11 @@
   </head>
 
   <body>
+    <!-- Meta Pixel fallback for browsers with JavaScript disabled -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1730608694762791&ev=PageView&noscript=1"
+    alt=""
+    /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script

@@ -3,7 +3,6 @@
  * Página real /agendamento — Widget Doctoralia integrado
  * Criada para resolver Soft 404 no Google Search Console
  */
-import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { motion } from "framer-motion";
@@ -24,48 +23,14 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import { trackDoctoraliaClick, trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
 
-const LOGO_URL = "/manus-storage/logo-landscape_be6628b3.svg";
-const DOCTORALIA_PROFILE = "felipe-de-bulhoes-ojeda-2";
-const WIDGET_SCRIPT_ID = "zl-widget-s";
-const WIDGET_SCRIPT_SRC = "//platform.docplanner.com/js/widget.js";
-
-function loadDoctoraliaScript() {
-  if (document.getElementById(WIDGET_SCRIPT_ID)) {
-    const existing = document.getElementById(WIDGET_SCRIPT_ID);
-    existing?.remove();
-  }
-  const script = document.createElement("script");
-  script.id = WIDGET_SCRIPT_ID;
-  script.src = WIDGET_SCRIPT_SRC;
-  script.async = true;
-  document.body.appendChild(script);
-}
+const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
 
 export default function Agendamento() {
-  const hasLoaded = useRef(false);
-
   usePageMeta({
     title: "Agendar Consulta",
     description: "Agende sua consulta com o Dr. Felipe de Bulhões, urologista em São Paulo e Campinas. Agendamento online pelo Doctoralia com confirmação imediata. Presencial ou teleconsulta.",
     canonical: "https://felipebulhoes.com/agendamento",
   });
-
-  useEffect(() => {
-    if (!hasLoaded.current) {
-      hasLoaded.current = true;
-      const timer = setTimeout(() => {
-        loadDoctoraliaScript();
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      const script = document.getElementById(WIDGET_SCRIPT_ID);
-      if (script) script.remove();
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-white dark:bg-card">
@@ -73,7 +38,7 @@ export default function Agendamento() {
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <Link href="/">
-            <img loading="lazy" src={LOGO_URL} alt="Dr. Felipe de Bulhões - Urologista" className="h-12 lg:h-14 w-auto brightness-0 invert" />
+            <img loading="eager" src={LOGO_URL} alt="Dr. Felipe de Bulhões - Urologista" className="h-12 lg:h-14 w-auto brightness-0 invert" />
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/">
@@ -138,7 +103,7 @@ export default function Agendamento() {
         </div>
       </section>
 
-      {/* Doctoralia Widget */}
+      {/* Doctoralia scheduling CTA */}
       <section className="py-16 lg:py-20">
         <div className="container">
           <motion.div
@@ -147,28 +112,28 @@ export default function Agendamento() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-3xl mx-auto"
           >
-            <div className="bg-white dark:bg-card rounded-2xl shadow-xl shadow-[#1C3D5A]/5 border border-[#1C3D5A]/5 p-4 sm:p-6 lg:p-8">
-              <a
-                id="zl-url"
-                className="zl-url"
-                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
-                rel="nofollow"
+            <div className="bg-white dark:bg-card rounded-2xl shadow-xl shadow-[#1C3D5A]/5 border border-[#1C3D5A]/5 p-8 sm:p-10 text-center">
+              <div className="w-14 h-14 rounded-full bg-[#B87333]/10 flex items-center justify-center mx-auto mb-5">
+                <CalendarCheck className="w-7 h-7 text-[#B87333]" />
+              </div>
+              <h2 className="text-2xl text-[#1C3D5A] dark:text-foreground font-serif mb-3">
+                Escolha seu horário na Doctoralia
+              </h2>
+              <p className="text-[#64748B] text-sm leading-relaxed max-w-xl mx-auto mb-6">
+                A agenda será aberta em uma página segura da Doctoralia, com os horários disponíveis para atendimento presencial e teleconsulta.
+              </p>
+              <Link
+                href="/agendar/doctoralia"
                 onClick={() => trackDoctoraliaClick("agendamento_page")}
-                data-zlw-doctor={DOCTORALIA_PROFILE}
-                data-zlw-type="big_with_calendar"
-                data-zlw-opinion="false"
-                data-zlw-hide-branding="true"
-                data-zlw-saas-only="true"
-                data-zlw-a11y-title="Widget de marcação de consultas médicas"
-                style={{ display: "block", textAlign: "center" }}
               >
-                <div className="py-12 flex flex-col items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#B87333]/10 flex items-center justify-center">
-                    <CalendarCheck className="w-6 h-6 text-[#B87333]" />
-                  </div>
-                  <p className="text-[#1C3D5A] dark:text-foreground/60 text-sm">Carregando calendário de agendamento...</p>
-                </div>
-              </a>
+                <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 px-7">
+                  <CalendarCheck className="w-5 h-5 mr-2" />
+                  Ver horários disponíveis
+                </Button>
+              </Link>
+              <p className="text-[#64748B] text-xs mt-4">
+                Se preferir, use o WhatsApp ou telefone nas opções abaixo.
+              </p>
             </div>
             <p className="text-center text-[#1C3D5A] dark:text-foreground/30 text-xs mt-6">
               Agendamento seguro via Doctoralia · CRM-SP 202291 · RQE 146538 / RQE 114019

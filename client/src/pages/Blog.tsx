@@ -23,7 +23,7 @@ export default function Blog() {
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img
-              src="/manus-storage/logo-landscape_be6628b3.svg"
+              src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
               alt="Dr. Felipe de Bulhões - Urologista"
               className="h-12 lg:h-14 w-auto brightness-0 invert"
             />

@@ -108,7 +108,7 @@ export default function Header() {
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group">
           <img
-            src="/manus-storage/logo-landscape_be6628b3.svg"
+            src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
             alt="Dr. Felipe de Bulhões - Urologista"
             className={`h-12 lg:h-14 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
           />

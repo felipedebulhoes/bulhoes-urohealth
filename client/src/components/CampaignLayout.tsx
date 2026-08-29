@@ -126,7 +126,7 @@ export default function CampaignLayout({
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img
-              src="/manus-storage/logo-landscape_be6628b3.svg"
+              src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
               alt="Dr. Felipe de Bulhões - Urologista"
               className="h-10 lg:h-12 w-auto brightness-0 invert"
             />

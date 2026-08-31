@@ -1,10 +1,12 @@
 import { FormEvent, useState } from "react";
-import { CheckCircle2, Loader2, LockKeyhole, Mail } from "lucide-react";
+import { CheckCircle2, Download, Loader2, LockKeyhole, Mail } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import { trackPrototypeEvent } from "@/lib/analytics";
 
 type LocationPreference = "sao-paulo" | "campinas" | "teleconsulta" | "nao-definido";
+
+const MEN_S_HEALTH_GUIDE_URL = "/manus-storage/main_2775651b.pdf";
 
 export default function PrototypeEmailContactForm() {
   const [name, setName] = useState("");
@@ -45,6 +47,20 @@ export default function PrototypeEmailContactForm() {
         <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
         <h3 className="mt-4 font-serif text-2xl">Solicitação recebida</h3>
         <p className="mt-2 text-sm leading-6">A equipe responderá pelo e-mail informado. Não envie exames, fotos ou detalhes clínicos por resposta automática.</p>
+        <div className="mt-6 rounded-2xl border border-emerald-200 bg-white p-5">
+          <p className="text-sm font-bold text-[#17364F]">Seu guia está pronto</p>
+          <p className="mt-1 text-sm leading-6 text-[#17364F]/70">Baixe o Guia prático de saúde masculina com orientações sobre prevenção, saúde sexual, urinária e reprodutiva.</p>
+          <a
+            href={MEN_S_HEALTH_GUIDE_URL}
+            download="guia-pratico-saude-masculina-dr-felipe-bulhoes.pdf"
+            onClick={() => trackPrototypeEvent("guide_download", "email_contact_success", "mens_health_pdf")}
+            className="mt-4 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#17364F] px-5 py-3 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#0F293D] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4 motion-reduce:transform-none"
+          >
+            <Download className="h-4 w-4" aria-hidden="true" />
+            Baixar guia em PDF
+          </a>
+          <p className="mt-3 text-xs leading-5 text-[#17364F]/60">Material educativo de 6 páginas. Não substitui consulta ou avaliação individual.</p>
+        </div>
       </div>
     );
   }

@@ -274,3 +274,8 @@
 - [x] Adicionar pesquisa instantânea no FAQ com correspondência por pergunta e resposta, contador e estado sem resultados
 - [x] Adicionar filtros por categoria no hub de Saúde do Homem com estado acessível e rastreamento sem dados pessoais
 - [x] Validar toast, busca e filtros em desktop/mobile, teclado, TypeScript, 87 testes de integridade e build
+- [x] Produzir um guia informativo em PDF sobre saúde masculina com linguagem acessível, fontes oficiais e aviso clínico
+- [x] Liberar o download do guia somente após envio bem-sucedido do formulário por e-mail, com rastreamento sem dados pessoais
+- [x] Adicionar bloco Dúvidas mais populares no topo do FAQ com acesso direto às perguntas destacadas
+- [x] Adicionar botão Limpar filtros no hub de Saúde do Homem e reforçar visualmente o filtro selecionado
+- [x] Validar PDF, download, privacidade, FAQ e filtros em desktop/mobile, TypeScript, 90 testes e build

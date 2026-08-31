@@ -253,4 +253,35 @@ describe("Integridade das páginas públicas", () => {
     expect(prototype).toContain('trackPrototypeEvent("mens_health_filter", "mens_health_content", category.id)');
     expect(analytics).toContain('| "mens_health_filter"');
   });
+
+  it("libera o guia PDF somente no estado de sucesso do contato por e-mail", () => {
+    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
+    const analytics = readFileSync(resolve(projectRoot, "client/src/lib/analytics.ts"), "utf8");
+
+    expect(form).toContain('const MEN_S_HEALTH_GUIDE_URL = "/manus-storage/main_2775651b.pdf"');
+    expect(form).toContain("if (submitted)");
+    expect(form).toContain("Baixar guia em PDF");
+    expect(form).toContain('download="guia-pratico-saude-masculina-dr-felipe-bulhoes.pdf"');
+    expect(form).toContain('trackPrototypeEvent("guide_download", "email_contact_success", "mens_health_pdf")');
+    expect(analytics).toContain('| "guide_download"');
+  });
+
+  it("destaca dúvidas populares antes da busca sem duplicar as respostas clínicas", () => {
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+
+    expect(prototype).toContain("Dúvidas mais populares");
+    expect(prototype).toContain('["faq_duration", "faq_risks", "faq_candidate"]');
+    expect(prototype).toContain('trackPrototypeEvent("faq_open", "girth_popular_faq", item.id)');
+    expect(prototype).toContain("setFaqSearch(item.title)");
+  });
+
+  it("permite limpar filtros e evidencia visualmente a categoria selecionada", () => {
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+
+    expect(prototype).toContain("Limpar filtros");
+    expect(prototype).toContain('disabled={activeCategory === "all"}');
+    expect(prototype).toContain('setActiveCategory("all")');
+    expect(prototype).toContain('trackPrototypeEvent("mens_health_filter", "mens_health_content", "clear_filters")');
+    expect(prototype).toContain('ring-2 ring-[#B87333]/35 ring-offset-2');
+  });
 });

@@ -31,6 +31,9 @@ O objetivo não é escolher cores ou detalhes decorativos. A revisão deve verif
 | Saúde do homem | Conteúdo fragmentado entre próstata, metabolismo e andrologia | Hub por fase de vida e quatro dimensões de saúde |
 | Agendamento | Acesso por múltiplos CTAs e canais | Página única que explica canal, privacidade e próximo passo |
 | Dúvidas sobre engrossamento | Respostas distribuídas na página | FAQ expansível sobre resultado, duração, recuperação, riscos, reversibilidade e seleção |
+| Dúvidas prioritárias | Sem destaque específico | Três dúvidas populares levam diretamente ao resultado correspondente no FAQ |
+| Material pós-contato | Sem material específico | Guia PDF de saúde masculina liberado apenas após confirmação do formulário por e-mail |
+| Filtros | Categorias selecionáveis | Categoria selecionada com ícone, contorno e sombra, além de ação separada para limpar filtros |
 | Fluidez | Seções estáticas | Transições de entrada no hub de Saúde do Homem, desativadas quando o usuário prefere movimento reduzido |
 | Analytics | Eventos de conteúdo e conversão | Eventos adicionais de validação com identificadores fixos e sem dados clínicos |
 
@@ -50,6 +53,9 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | Navegação longa | “Você terminou de explorar Saúde do Homem.” | Usar o botão Voltar ao topo depois de rolar a página |
 | Dúvida específica | “Você quer saber sobre recuperação ou duração.” | Pesquisar um termo no FAQ e identificar rapidamente as respostas correspondentes |
 | Interesse por tema | “Você quer ver apenas fertilidade ou saúde sexual.” | Usar os filtros do hub de Saúde do Homem e abrir um conteúdo da categoria selecionada |
+| Material educativo | “Você enviou o formulário por e-mail e quer continuar aprendendo.” | Encontrar o botão de download somente na confirmação de sucesso e reconhecer que o PDF não substitui consulta |
+| Dúvida popular | “Você quer entender riscos ou duração sem digitar na busca.” | Usar um destaque de Dúvidas mais populares e chegar ao item correspondente |
+| Limpeza de filtro | “Você quer voltar a ver todos os conteúdos.” | Identificar o filtro ativo e usar Limpar filtros |
 
 ## Perguntas após o teste
 
@@ -88,6 +94,7 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | `email_contact_submit` | Registrar somente o sucesso do pedido de retorno por e-mail, sem nome ou endereço eletrônico no analytics |
 | `faq_search` | Registrar somente se houve resultado, nunca o termo digitado |
 | `mens_health_filter` | Identificar a categoria selecionada por meio de identificadores fixos |
+| `guide_download` | Registrar o download do guia por um identificador fixo, sem nome, e-mail ou dado clínico |
 
 Os eventos registram apenas IDs fixos de componente e item, além da rota. Sintomas, diagnósticos, respostas e textos livres não são enviados.
 

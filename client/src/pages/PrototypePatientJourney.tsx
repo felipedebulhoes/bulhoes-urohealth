@@ -386,24 +386,38 @@ export function PrototypeMensHealth() {
               <h2 id="mens-health-content-title" className="font-serif text-3xl text-[#17364F] sm:text-4xl dark:text-foreground">Encontre conteúdos pela área de cuidado</h2>
               <p className="mt-4 max-w-2xl leading-7 text-[#17364F]/70 dark:text-foreground/70">Use os filtros para reduzir a lista sem precisar informar sintomas ou dados pessoais.</p>
             </div>
-            <div className="flex flex-wrap gap-2 lg:justify-end" role="group" aria-label="Filtrar conteúdos de Saúde do Homem">
-              {mensHealthCategories.map((category) => {
-                const active = activeCategory === category.id;
-                return (
-                  <button
-                    key={category.id}
-                    type="button"
-                    aria-pressed={active}
-                    onClick={() => {
-                      setActiveCategory(category.id);
-                      trackPrototypeEvent("mens_health_filter", "mens_health_content", category.id);
-                    }}
-                    className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 active:scale-[0.98] motion-reduce:transform-none ${active ? "border-[#17364F] bg-[#17364F] text-white" : "border-[#17364F]/15 bg-white text-[#17364F] hover:border-[#B87333]/50 hover:text-[#9D602A] dark:bg-background dark:text-foreground"}`}
-                  >
-                    {category.label}
-                  </button>
-                );
-              })}
+            <div className="lg:justify-self-end">
+              <div className="flex flex-wrap gap-2 lg:justify-end" role="group" aria-label="Filtrar conteúdos de Saúde do Homem">
+                {mensHealthCategories.map((category) => {
+                  const active = activeCategory === category.id;
+                  return (
+                    <button
+                      key={category.id}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => {
+                        setActiveCategory(category.id);
+                        trackPrototypeEvent("mens_health_filter", "mens_health_content", category.id);
+                      }}
+                      className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 active:scale-[0.98] motion-reduce:transform-none ${active ? "border-[#17364F] bg-[#17364F] text-white shadow-md ring-2 ring-[#B87333]/35 ring-offset-2" : "border-[#17364F]/15 bg-white text-[#17364F] hover:border-[#B87333]/50 hover:text-[#9D602A] dark:bg-background dark:text-foreground"}`}
+                    >
+                      {active && <CheckCircle2 className="h-4 w-4" aria-hidden="true" />}
+                      {category.label}
+                    </button>
+                  );
+                })}
+              </div>
+              <button
+                type="button"
+                disabled={activeCategory === "all"}
+                onClick={() => {
+                  setActiveCategory("all");
+                  trackPrototypeEvent("mens_health_filter", "mens_health_content", "clear_filters");
+                }}
+                className="mt-3 min-h-11 rounded-lg px-3 py-2 text-sm font-semibold text-[#9D602A] underline decoration-[#B87333]/35 underline-offset-4 transition hover:decoration-[#B87333] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:text-[#17364F]/40 disabled:no-underline dark:disabled:text-foreground/40 lg:ml-auto lg:block"
+              >
+                Limpar filtros
+              </button>
             </div>
           </div>
 
@@ -623,6 +637,9 @@ export function PrototypeGirthEnhancement() {
     { id: "faq_reversible", title: "É possível dissolver o produto?", answer: "Em algumas situações, preenchedores de ácido hialurônico podem ser tratados com hialuronidase. Isso não transforma o procedimento em isento de risco e a correção pode exigir mais de uma abordagem." },
     { id: "faq_candidate", title: "Quem pode não ser um bom candidato?", answer: "Infecção ativa, alterações locais não esclarecidas, contraindicações clínicas, expectativas incompatíveis ou sofrimento desproporcional com a imagem corporal podem indicar adiamento, investigação adicional ou a opção de não realizar o procedimento." },
   ];
+  const popularFaqItems = ["faq_duration", "faq_risks", "faq_candidate"]
+    .map((id) => faqItems.find((item) => item.id === id))
+    .filter((item): item is (typeof faqItems)[number] => Boolean(item));
   const normalizedFaqSearch = faqSearch.trim().toLocaleLowerCase("pt-BR");
   const filteredFaqItems = normalizedFaqSearch
     ? faqItems.filter((item) => `${item.title} ${item.answer}`.toLocaleLowerCase("pt-BR").includes(normalizedFaqSearch))
@@ -700,6 +717,26 @@ export function PrototypeGirthEnhancement() {
           <SectionLabel>Dúvidas frequentes</SectionLabel>
           <h2 id="girth-faq-title" className="font-serif text-3xl text-[#17364F] sm:text-4xl dark:text-foreground">Perguntas frequentes sobre o preenchimento com ácido hialurônico</h2>
           <p className="mt-4 max-w-3xl leading-7 text-[#17364F]/70 dark:text-foreground/70">As respostas resumem o que pode ser explicado antes da consulta. A indicação e o risco individual dependem de avaliação médica presencial.</p>
+          <div className="mt-7 rounded-2xl border border-[#B87333]/25 bg-[#FFF9F4] p-5 dark:bg-[#B87333]/10" aria-labelledby="popular-faq-title">
+            <h3 id="popular-faq-title" className="font-semibold text-[#17364F] dark:text-foreground">Dúvidas mais populares</h3>
+            <p className="mt-1 text-sm leading-6 text-[#17364F]/65 dark:text-foreground/65">Selecione uma pergunta para localizá-la rapidamente no FAQ.</p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              {popularFaqItems.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => {
+                    setFaqSearch(item.title);
+                    trackPrototypeEvent("faq_open", "girth_popular_faq", item.id);
+                    window.requestAnimationFrame(() => document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth", block: "center" }));
+                  }}
+                  className="min-h-20 rounded-xl border border-[#17364F]/10 bg-white p-4 text-left text-sm font-semibold leading-5 text-[#17364F] shadow-sm transition hover:-translate-y-0.5 hover:border-[#B87333]/50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 dark:bg-background dark:text-foreground motion-reduce:transform-none"
+                >
+                  {item.title}
+                </button>
+              ))}
+            </div>
+          </div>
           <label className="mt-7 block" htmlFor="girth-faq-search">
             <span className="text-sm font-semibold text-[#17364F] dark:text-foreground">Pesquisar uma dúvida</span>
             <span className="relative mt-2 block">

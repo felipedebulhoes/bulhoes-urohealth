@@ -33,8 +33,10 @@ O objetivo não é escolher cores ou detalhes decorativos. A revisão deve verif
 | Dúvidas sobre engrossamento | Respostas distribuídas na página | FAQ expansível sobre resultado, duração, recuperação, riscos, reversibilidade e seleção |
 | Dúvidas prioritárias | Sem destaque específico | Três dúvidas populares levam diretamente ao resultado correspondente no FAQ |
 | Material pós-contato | Sem material específico | Guia PDF de saúde masculina liberado apenas após confirmação do formulário por e-mail |
+| Prévia do material | Sem visualização | Miniatura otimizada da capa ao lado do download, exibida somente após o envio confirmado |
+| Feedback no FAQ | Sem sinal coletivo | Botão Útil com contagem exclusivamente de votos reais e bloqueio de repetição no mesmo navegador |
 | Filtros | Categorias selecionáveis | Categoria selecionada com ícone, contorno e sombra, além de ação separada para limpar filtros |
-| Fluidez | Seções estáticas | Transições de entrada no hub de Saúde do Homem, desativadas quando o usuário prefere movimento reduzido |
+| Fluidez | Seções estáticas | Transições de entrada, saída e reposicionamento na lista filtrada, desativadas quando o usuário prefere movimento reduzido |
 | Analytics | Eventos de conteúdo e conversão | Eventos adicionais de validação com identificadores fixos e sem dados clínicos |
 
 ## Cenários de teste
@@ -54,7 +56,9 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | Dúvida específica | “Você quer saber sobre recuperação ou duração.” | Pesquisar um termo no FAQ e identificar rapidamente as respostas correspondentes |
 | Interesse por tema | “Você quer ver apenas fertilidade ou saúde sexual.” | Usar os filtros do hub de Saúde do Homem e abrir um conteúdo da categoria selecionada |
 | Material educativo | “Você enviou o formulário por e-mail e quer continuar aprendendo.” | Encontrar o botão de download somente na confirmação de sucesso e reconhecer que o PDF não substitui consulta |
+| Prévia do guia | “Você quer avaliar o material antes de baixar.” | Reconhecer a capa, o tema e o formato antes de acionar o download |
 | Dúvida popular | “Você quer entender riscos ou duração sem digitar na busca.” | Usar um destaque de Dúvidas mais populares e chegar ao item correspondente |
+| Feedback útil | “Uma dúvida popular ajudou você.” | Marcar Útil uma única vez e compreender que o contador representa apenas interações reais |
 | Limpeza de filtro | “Você quer voltar a ver todos os conteúdos.” | Identificar o filtro ativo e usar Limpar filtros |
 
 ## Perguntas após o teste
@@ -95,6 +99,7 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | `faq_search` | Registrar somente se houve resultado, nunca o termo digitado |
 | `mens_health_filter` | Identificar a categoria selecionada por meio de identificadores fixos |
 | `guide_download` | Registrar o download do guia por um identificador fixo, sem nome, e-mail ou dado clínico |
+| `faq_helpful` | Registrar um voto por ID fixo de pergunta, sem texto clínico ou identificação do visitante |
 
 Os eventos registram apenas IDs fixos de componente e item, além da rota. Sintomas, diagnósticos, respostas e textos livres não são enviados.
 

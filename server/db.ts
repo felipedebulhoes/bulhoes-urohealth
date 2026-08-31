@@ -1,6 +1,6 @@
-import { and, desc, eq } from "drizzle-orm";
+import { and, desc, eq, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, InsertFile, FileRecord, InsertLead, Lead, users, files, leads, playbookLeads, InsertPlaybookLead, PlaybookLead } from "../drizzle/schema";
+import { InsertUser, InsertFile, FileRecord, InsertLead, Lead, users, files, leads, playbookLeads, InsertPlaybookLead, PlaybookLead, faqHelpfulCounts } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -187,4 +187,29 @@ export async function listPlaybookLeads(): Promise<PlaybookLead[]> {
   const db = await getDb();
   if (!db) return [];
   return db.select().from(playbookLeads).orderBy(desc(playbookLeads.createdAt));
+}
+
+// ── Aggregated FAQ helpful feedback ──
+
+export async function listFaqHelpfulCounts(): Promise<Record<string, number>> {
+  const db = await getDb();
+  if (!db) return {};
+  const rows = await db.select({ questionId: faqHelpfulCounts.questionId, helpfulCount: faqHelpfulCounts.helpfulCount }).from(faqHelpfulCounts);
+  return Object.fromEntries(rows.map((row) => [row.questionId, row.helpfulCount]));
+}
+
+export async function incrementFaqHelpfulCount(questionId: string): Promise<number> {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+
+  await db.insert(faqHelpfulCounts).values({ questionId, helpfulCount: 1 }).onDuplicateKeyUpdate({
+    set: { helpfulCount: sql`${faqHelpfulCounts.helpfulCount} + 1` },
+  });
+
+  const rows = await db
+    .select({ helpfulCount: faqHelpfulCounts.helpfulCount })
+    .from(faqHelpfulCounts)
+    .where(eq(faqHelpfulCounts.questionId, questionId))
+    .limit(1);
+  return rows[0]?.helpfulCount ?? 1;
 }

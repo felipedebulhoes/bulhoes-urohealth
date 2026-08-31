@@ -7,6 +7,7 @@ import { trackPrototypeEvent } from "@/lib/analytics";
 type LocationPreference = "sao-paulo" | "campinas" | "teleconsulta" | "nao-definido";
 
 const MEN_S_HEALTH_GUIDE_URL = "/manus-storage/main_2775651b.pdf";
+const MEN_S_HEALTH_GUIDE_COVER = "/manus-storage/guide-saude-masculina-capa_b385e7c7.jpg";
 
 export default function PrototypeEmailContactForm() {
   const [name, setName] = useState("");
@@ -47,19 +48,38 @@ export default function PrototypeEmailContactForm() {
         <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
         <h3 className="mt-4 font-serif text-2xl">Solicitação recebida</h3>
         <p className="mt-2 text-sm leading-6">A equipe responderá pelo e-mail informado. Não envie exames, fotos ou detalhes clínicos por resposta automática.</p>
-        <div className="mt-6 rounded-2xl border border-emerald-200 bg-white p-5">
-          <p className="text-sm font-bold text-[#17364F]">Seu guia está pronto</p>
-          <p className="mt-1 text-sm leading-6 text-[#17364F]/70">Baixe o Guia prático de saúde masculina com orientações sobre prevenção, saúde sexual, urinária e reprodutiva.</p>
+        <div className="mt-6 grid gap-5 rounded-2xl border border-emerald-200 bg-white p-5 sm:grid-cols-[104px_1fr] sm:items-center">
           <a
             href={MEN_S_HEALTH_GUIDE_URL}
             download="guia-pratico-saude-masculina-dr-felipe-bulhoes.pdf"
-            onClick={() => trackPrototypeEvent("guide_download", "email_contact_success", "mens_health_pdf")}
-            className="mt-4 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#17364F] px-5 py-3 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#0F293D] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4 motion-reduce:transform-none"
+            onClick={() => trackPrototypeEvent("guide_download", "email_contact_success", "mens_health_cover")}
+            className="group mx-auto block w-[104px] rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4 sm:mx-0"
+            aria-label="Baixar Guia prático de saúde masculina em PDF"
           >
-            <Download className="h-4 w-4" aria-hidden="true" />
-            Baixar guia em PDF
+            <img
+              src={MEN_S_HEALTH_GUIDE_COVER}
+              alt="Capa do Guia prático de saúde masculina"
+              width="104"
+              height="147"
+              loading="lazy"
+              decoding="async"
+              className="aspect-[480/679] w-full rounded-md border border-[#17364F]/10 object-cover shadow-md transition group-hover:-translate-y-0.5 group-hover:shadow-lg motion-reduce:transform-none"
+            />
           </a>
-          <p className="mt-3 text-xs leading-5 text-[#17364F]/60">Material educativo de 6 páginas. Não substitui consulta ou avaliação individual.</p>
+          <div>
+            <p className="text-sm font-bold text-[#17364F]">Seu guia está pronto</p>
+            <p className="mt-1 text-sm leading-6 text-[#17364F]/70">Baixe o Guia prático de saúde masculina com orientações sobre prevenção, saúde sexual, urinária e reprodutiva.</p>
+            <a
+              href={MEN_S_HEALTH_GUIDE_URL}
+              download="guia-pratico-saude-masculina-dr-felipe-bulhoes.pdf"
+              onClick={() => trackPrototypeEvent("guide_download", "email_contact_success", "mens_health_pdf")}
+              className="mt-4 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#17364F] px-5 py-3 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#0F293D] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4 motion-reduce:transform-none"
+            >
+              <Download className="h-4 w-4" aria-hidden="true" />
+              Baixar guia em PDF
+            </a>
+            <p className="mt-3 text-xs leading-5 text-[#17364F]/60">Material educativo de 6 páginas. Não substitui consulta ou avaliação individual.</p>
+          </div>
         </div>
       </div>
     );

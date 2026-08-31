@@ -284,4 +284,40 @@ describe("Integridade das páginas públicas", () => {
     expect(prototype).toContain('trackPrototypeEvent("mens_health_filter", "mens_health_content", "clear_filters")');
     expect(prototype).toContain('ring-2 ring-[#B87333]/35 ring-offset-2');
   });
+
+  it("mostra uma prévia otimizada da capa junto ao download pós-contato", () => {
+    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
+
+    expect(form).toContain('const MEN_S_HEALTH_GUIDE_COVER = "/manus-storage/guide-saude-masculina-capa_b385e7c7.jpg"');
+    expect(form).toContain('alt="Capa do Guia prático de saúde masculina"');
+    expect(form).toContain('width="104"');
+    expect(form).toContain('height="147"');
+    expect(form).toContain('loading="lazy"');
+  });
+
+  it("registra apenas votos úteis reais e bloqueia repetição no mesmo navegador", () => {
+    const component = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeFaqHelpfulButton.tsx"), "utf8");
+    const router = readFileSync(resolve(projectRoot, "server/routers/prototypeFeedback.ts"), "utf8");
+    const schema = readFileSync(resolve(projectRoot, "drizzle/schema.ts"), "utf8");
+
+    expect(schema).toContain('mysqlTable("faq_helpful_counts"');
+    expect(schema).toContain('questionId: varchar("questionId", { length: 64 }).notNull().unique()');
+    expect(router).toContain('z.enum(["faq_duration", "faq_risks", "faq_candidate"])');
+    expect(router).toContain("incrementFaqHelpfulCount(input.questionId)");
+    expect(component).toContain("window.localStorage.setItem(storageKey, \"1\")");
+    expect(component).toContain("window.localStorage.getItem(storageKey) === \"1\"");
+    expect(component).toContain("disabled={voted || helpfulMutation.isPending}");
+    expect(component).toContain('trackPrototypeEvent("faq_helpful", "girth_popular_faq", questionId)');
+    expect(component).not.toContain("email");
+    expect(component).not.toContain("symptom");
+  });
+
+  it("anima a lista filtrada e respeita a preferência de movimento reduzido", () => {
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+
+    expect(prototype).toContain('AnimatePresence mode="popLayout"');
+    expect(prototype).toContain("const shouldReduceMotion = useReducedMotion()");
+    expect(prototype).toContain("layout={!shouldReduceMotion}");
+    expect(prototype).toContain("duration: shouldReduceMotion ? 0 : 0.22");
+  });
 });

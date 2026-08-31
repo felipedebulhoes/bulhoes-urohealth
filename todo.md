@@ -279,3 +279,8 @@
 - [x] Adicionar bloco Dúvidas mais populares no topo do FAQ com acesso direto às perguntas destacadas
 - [x] Adicionar botão Limpar filtros no hub de Saúde do Homem e reforçar visualmente o filtro selecionado
 - [x] Validar PDF, download, privacidade, FAQ e filtros em desktop/mobile, TypeScript, 90 testes e build
+- [x] Criar miniatura otimizada da capa do guia e exibi-la no estado de sucesso ao lado do download
+- [x] Implementar feedback Útil nas dúvidas populares com contagem persistente exclusivamente de votos reais
+- [x] Impedir voto repetido por navegador, limitar abuso no servidor e não registrar dados clínicos ou pessoais no feedback
+- [x] Adicionar transição suave à lista do hub quando filtros forem selecionados ou limpos, respeitando prefers-reduced-motion
+- [x] Executar migração de banco, 93 testes, TypeScript, build e validação visual desktop/mobile

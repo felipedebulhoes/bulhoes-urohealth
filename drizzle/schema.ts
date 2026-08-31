@@ -215,3 +215,19 @@ export const playbookLeads = mysqlTable("playbook_leads", {
 
 export type PlaybookLead = typeof playbookLeads.$inferSelect;
 export type InsertPlaybookLead = typeof playbookLeads.$inferInsert;
+
+/**
+ * Aggregated helpful votes for prototype FAQ questions.
+ * Stores only a fixed question identifier and a real counter; no visitor,
+ * symptom, diagnosis, free text, IP address or other personal data is kept.
+ */
+export const faqHelpfulCounts = mysqlTable("faq_helpful_counts", {
+  id: int("id").autoincrement().primaryKey(),
+  questionId: varchar("questionId", { length: 64 }).notNull().unique(),
+  helpfulCount: int("helpfulCount").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FaqHelpfulCount = typeof faqHelpfulCounts.$inferSelect;
+export type InsertFaqHelpfulCount = typeof faqHelpfulCounts.$inferInsert;

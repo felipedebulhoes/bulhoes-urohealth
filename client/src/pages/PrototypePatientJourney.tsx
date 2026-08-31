@@ -1,5 +1,6 @@
 import { useState, type ComponentType, type ReactNode } from "react";
 import { Link } from "wouter";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   Activity,
   ArrowRight,
@@ -29,6 +30,7 @@ import PrototypeLayout, { PROTOTYPE_BASE } from "@/components/prototype/Prototyp
 import PrototypeMeta from "@/components/prototype/PrototypeMeta";
 import PrototypeEmailContactForm from "@/components/prototype/PrototypeEmailContactForm";
 import PrototypeBackToTop from "@/components/prototype/PrototypeBackToTop";
+import PrototypeFaqHelpfulButton, { type PopularFaqQuestionId } from "@/components/prototype/PrototypeFaqHelpfulButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { trackPrototypeEvent } from "@/lib/analytics";
 
@@ -358,6 +360,7 @@ export function PrototypePatientJourneyHome() {
 
 export function PrototypeMensHealth() {
   const [activeCategory, setActiveCategory] = useState<MensHealthCategory>("all");
+  const shouldReduceMotion = useReducedMotion();
   const stages = [
     { range: "18–39", title: "Construir uma base de saúde", topics: "Sexualidade, fertilidade, vacinação, sono, metabolismo e hábitos." },
     { range: "40–59", title: "Prevenir e investigar mudanças", topics: "Pressão, peso, risco cardiovascular, libido, ereção e próstata conforme risco." },
@@ -425,20 +428,31 @@ export function PrototypeMensHealth() {
             {filteredContent.length} {filteredContent.length === 1 ? "conteúdo encontrado" : "conteúdos encontrados"}
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {filteredContent.map(({ id, categoryLabel, title, description, href, Icon }) => (
-              <Link
-                key={id}
-                href={href}
-                onClick={() => trackPrototypeEvent("journey_entry_selected", "mens_health_filtered_content", id)}
-                className="group flex min-h-64 flex-col rounded-2xl border border-[#17364F]/10 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#B87333]/45 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4 dark:bg-background motion-reduce:transform-none"
-              >
-                <Icon className="h-6 w-6 text-[#B87333]" aria-hidden="true" />
-                <p className="mt-5 text-xs font-bold uppercase tracking-[0.12em] text-[#9D602A]">{categoryLabel}</p>
-                <h3 className="mt-2 text-lg font-semibold text-[#17364F] dark:text-foreground">{title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-6 text-[#17364F]/65 dark:text-foreground/65">{description}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#17364F] group-hover:text-[#9D602A] dark:text-foreground">Ler conteúdo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" /></span>
-              </Link>
-            ))}
+            <AnimatePresence mode="popLayout" initial={false}>
+              {filteredContent.map(({ id, categoryLabel, title, description, href, Icon }, index) => (
+                <motion.div
+                  key={id}
+                  layout={!shouldReduceMotion}
+                  initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -8 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.22, delay: shouldReduceMotion ? 0 : index * 0.025 }}
+                  className="h-full"
+                >
+                  <Link
+                    href={href}
+                    onClick={() => trackPrototypeEvent("journey_entry_selected", "mens_health_filtered_content", id)}
+                    className="group flex h-full min-h-64 flex-col rounded-2xl border border-[#17364F]/10 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#B87333]/45 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4 dark:bg-background motion-reduce:transform-none"
+                  >
+                    <Icon className="h-6 w-6 text-[#B87333]" aria-hidden="true" />
+                    <p className="mt-5 text-xs font-bold uppercase tracking-[0.12em] text-[#9D602A]">{categoryLabel}</p>
+                    <h3 className="mt-2 text-lg font-semibold text-[#17364F] dark:text-foreground">{title}</h3>
+                    <p className="mt-3 flex-1 text-sm leading-6 text-[#17364F]/65 dark:text-foreground/65">{description}</p>
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#17364F] group-hover:text-[#9D602A] dark:text-foreground">Ler conteúdo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" /></span>
+                  </Link>
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         </div>
       </section>
@@ -722,18 +736,20 @@ export function PrototypeGirthEnhancement() {
             <p className="mt-1 text-sm leading-6 text-[#17364F]/65 dark:text-foreground/65">Selecione uma pergunta para localizá-la rapidamente no FAQ.</p>
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               {popularFaqItems.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => {
-                    setFaqSearch(item.title);
-                    trackPrototypeEvent("faq_open", "girth_popular_faq", item.id);
-                    window.requestAnimationFrame(() => document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth", block: "center" }));
-                  }}
-                  className="min-h-20 rounded-xl border border-[#17364F]/10 bg-white p-4 text-left text-sm font-semibold leading-5 text-[#17364F] shadow-sm transition hover:-translate-y-0.5 hover:border-[#B87333]/50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 dark:bg-background dark:text-foreground motion-reduce:transform-none"
-                >
-                  {item.title}
-                </button>
+                <article key={item.id} className="rounded-xl border border-[#17364F]/10 bg-white p-4 text-sm text-[#17364F] shadow-sm transition hover:-translate-y-0.5 hover:border-[#B87333]/50 hover:shadow-md dark:bg-background dark:text-foreground motion-reduce:transform-none">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFaqSearch(item.title);
+                      trackPrototypeEvent("faq_open", "girth_popular_faq", item.id);
+                      window.requestAnimationFrame(() => document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth", block: "center" }));
+                    }}
+                    className="w-full min-h-12 text-left font-semibold leading-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4"
+                  >
+                    {item.title}
+                  </button>
+                  <PrototypeFaqHelpfulButton questionId={item.id as PopularFaqQuestionId} questionTitle={item.title} />
+                </article>
               ))}
             </div>
           </div>

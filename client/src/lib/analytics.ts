@@ -307,6 +307,7 @@ type PrototypeEventName =
   | "cta_whatsapp"
   | "email_contact_submit"
   | "guide_download"
+  | "faq_helpful"
   | "faq_search"
   | "mens_health_filter";
 

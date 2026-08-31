@@ -43,6 +43,13 @@
       "when": 1780776518158,
       "tag": "0005_flimsy_lady_deathstrike",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1788153529234,
+      "tag": "0006_neat_starfox",
+      "breakpoints": true
     }
   ]
 }

@@ -179,9 +179,9 @@ describe("Integridade das páginas públicas", () => {
     const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
 
     expect(prototype).toContain("Perguntas frequentes sobre o preenchimento com ácido hialurônico");
-    expect(prototype).toContain('id="faq_increase"');
-    expect(prototype).toContain('id="faq_risks"');
-    expect(prototype).toContain('id="faq_candidate"');
+    expect(prototype).toContain('id: "faq_increase"');
+    expect(prototype).toContain('id: "faq_risks"');
+    expect(prototype).toContain('id: "faq_candidate"');
     expect(prototype).toContain('trackPrototypeEvent("faq_open"');
   });
 
@@ -219,5 +219,38 @@ describe("Integridade das páginas públicas", () => {
     expect(backToTop).toContain("window.scrollY > 520");
     expect(backToTop).toContain('aria-label="Voltar ao topo da página"');
     expect(backToTop).toContain('matchMedia("(prefers-reduced-motion: reduce)")');
+  });
+
+  it("confirma o contato por e-mail com toast único e mensagem de próximo passo", () => {
+    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
+
+    expect(form).toContain('toast.success("Solicitação enviada com sucesso"');
+    expect(form).toContain('id: "prototype-email-contact-success"');
+    expect(form).toContain('description: "A equipe responderá pelo e-mail informado."');
+    expect(form).toContain("duration: 5000");
+  });
+
+  it("permite pesquisar no FAQ sem registrar o termo digitado no analytics", () => {
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+    const analytics = readFileSync(resolve(projectRoot, "client/src/lib/analytics.ts"), "utf8");
+
+    expect(prototype).toContain('id="girth-faq-search"');
+    expect(prototype).toContain('type="search"');
+    expect(prototype).toContain("filteredFaqItems.length");
+    expect(prototype).toContain("Nenhuma pergunta encontrada");
+    expect(prototype).toContain('trackPrototypeEvent("faq_search", "girth_faq_search", filteredFaqItems.length ? "results_found" : "no_results")');
+    expect(analytics).toContain('| "faq_search"');
+    expect(prototype).not.toContain('trackPrototypeEvent("faq_search", "girth_faq_search", faqSearch)');
+  });
+
+  it("filtra conteúdos do hub por categoria com estado acessível e eventos seguros", () => {
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+    const analytics = readFileSync(resolve(projectRoot, "client/src/lib/analytics.ts"), "utf8");
+
+    expect(prototype).toContain('aria-label="Filtrar conteúdos de Saúde do Homem"');
+    expect(prototype).toContain("aria-pressed={active}");
+    expect(prototype).toContain("filteredContent.length");
+    expect(prototype).toContain('trackPrototypeEvent("mens_health_filter", "mens_health_content", category.id)');
+    expect(analytics).toContain('| "mens_health_filter"');
   });
 });

@@ -48,6 +48,8 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | Agendamento | “Você decidiu conversar com o médico.” | Encontrar o fluxo e explicar o que acontece depois do clique; usar o WhatsApp somente se desejar contato real |
 | Preferência por e-mail | “Você prefere não usar WhatsApp.” | Encontrar o formulário abaixo do FAQ, entender quais dados serão usados e concluir sem relatar informações clínicas |
 | Navegação longa | “Você terminou de explorar Saúde do Homem.” | Usar o botão Voltar ao topo depois de rolar a página |
+| Dúvida específica | “Você quer saber sobre recuperação ou duração.” | Pesquisar um termo no FAQ e identificar rapidamente as respostas correspondentes |
+| Interesse por tema | “Você quer ver apenas fertilidade ou saúde sexual.” | Usar os filtros do hub de Saúde do Homem e abrir um conteúdo da categoria selecionada |
 
 ## Perguntas após o teste
 
@@ -84,6 +86,8 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | `cta_schedule` | Identificar momento de intenção de agendamento |
 | `cta_whatsapp` | Identificar preferência por conversa direta |
 | `email_contact_submit` | Registrar somente o sucesso do pedido de retorno por e-mail, sem nome ou endereço eletrônico no analytics |
+| `faq_search` | Registrar somente se houve resultado, nunca o termo digitado |
+| `mens_health_filter` | Identificar a categoria selecionada por meio de identificadores fixos |
 
 Os eventos registram apenas IDs fixos de componente e item, além da rota. Sintomas, diagnósticos, respostas e textos livres não são enviados.
 

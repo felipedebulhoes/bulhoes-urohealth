@@ -305,7 +305,9 @@ type PrototypeEventName =
   | "faq_open"
   | "cta_schedule"
   | "cta_whatsapp"
-  | "email_contact_submit";
+  | "email_contact_submit"
+  | "faq_search"
+  | "mens_health_filter";
 
 /**
  * Eventos de validação do protótipo. Envia apenas identificadores fixos de

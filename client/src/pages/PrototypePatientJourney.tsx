@@ -17,6 +17,7 @@ import {
   MessageCircle,
   Microscope,
   Phone,
+  Search,
   Scale,
   ShieldCheck,
   Sparkles,
@@ -34,6 +35,35 @@ import { trackPrototypeEvent } from "@/lib/analytics";
 type IconType = ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>;
 
 const portrait = "/manus-storage/felipe-portrait_0e0693e4_be070ac1.webp";
+
+type MensHealthCategory = "all" | "prevention" | "sexual" | "urological" | "reproductive";
+
+const mensHealthCategories: Array<{ id: MensHealthCategory; label: string }> = [
+  { id: "all", label: "Todos" },
+  { id: "prevention", label: "Prevenção" },
+  { id: "sexual", label: "Sexual e hormonal" },
+  { id: "urological", label: "Urológica" },
+  { id: "reproductive", label: "Reprodutiva" },
+];
+
+const mensHealthContent: Array<{
+  id: string;
+  category: Exclude<MensHealthCategory, "all">;
+  categoryLabel: string;
+  title: string;
+  description: string;
+  href: string;
+  Icon: IconType;
+}> = [
+  { id: "prostate-screening", category: "prevention", categoryLabel: "Prevenção", title: "Próstata e rastreamento", description: "Entenda como idade, histórico familiar e preferências orientam uma decisão individualizada.", href: "/educativo/cancer-de-prostata", Icon: ShieldCheck },
+  { id: "healthy-aging", category: "prevention", categoryLabel: "Prevenção", title: "Saúde integral ao longo da vida", description: "Organize fatores cardiovasculares, metabólicos, hábitos e prevenção em uma mesma avaliação.", href: `${PROTOTYPE_BASE}/agendamento`, Icon: HeartPulse },
+  { id: "erectile-health", category: "sexual", categoryLabel: "Sexual e hormonal", title: "Disfunção erétil", description: "Conheça causas possíveis, sinais associados e etapas de uma investigação responsável.", href: "/educativo/disfuncao-eretil", Icon: Activity },
+  { id: "male-performance", category: "sexual", categoryLabel: "Sexual e hormonal", title: "Performance masculina", description: "Diferencie energia, libido, função sexual e saúde hormonal sem promessas simplificadoras.", href: "/andrologia-performance-masculina", Icon: Sparkles },
+  { id: "urinary-symptoms", category: "urological", categoryLabel: "Urológica", title: "Sintomas urinários e próstata aumentada", description: "Veja como sintomas e impacto na rotina orientam investigação e opções de cuidado.", href: "/educativo/tratamentos-hpb", Icon: Stethoscope },
+  { id: "varicocele", category: "urological", categoryLabel: "Urológica", title: "Varicocele", description: "Saiba quando desconforto, alterações testiculares ou fertilidade merecem avaliação.", href: "/educativo/varicocele", Icon: Microscope },
+  { id: "male-fertility", category: "reproductive", categoryLabel: "Reprodutiva", title: "Fertilidade masculina", description: "Entenda a avaliação do casal, exames iniciais e fatores masculinos modificáveis.", href: "/educativo/infertilidade-masculina", Icon: UserRoundCheck },
+  { id: "vasectomy", category: "reproductive", categoryLabel: "Reprodutiva", title: "Vasectomia", description: "Conheça critérios legais, técnica, recuperação, eficácia e necessidade de espermograma.", href: "/educativo/vasectomia", Icon: BadgeCheck },
+];
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
@@ -327,11 +357,15 @@ export function PrototypePatientJourneyHome() {
 }
 
 export function PrototypeMensHealth() {
+  const [activeCategory, setActiveCategory] = useState<MensHealthCategory>("all");
   const stages = [
     { range: "18–39", title: "Construir uma base de saúde", topics: "Sexualidade, fertilidade, vacinação, sono, metabolismo e hábitos." },
     { range: "40–59", title: "Prevenir e investigar mudanças", topics: "Pressão, peso, risco cardiovascular, libido, ereção e próstata conforme risco." },
     { range: "60+", title: "Preservar função e autonomia", topics: "Sintomas urinários, ossos, massa muscular, sexualidade, continência e câncer." },
   ];
+  const filteredContent = activeCategory === "all"
+    ? mensHealthContent
+    : mensHealthContent.filter((item) => item.category === activeCategory);
 
   return (
     <PrototypeLayout breadcrumb="Saúde do homem">
@@ -341,6 +375,57 @@ export function PrototypeMensHealth() {
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#E3A66F]">Prevenção e cuidado integral</p>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight sm:text-5xl">Saúde do homem é mais do que próstata ou testosterona.</h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">É compreender riscos, hábitos, função sexual, fertilidade, metabolismo e envelhecimento para escolher o cuidado adequado em cada fase da vida.</p>
+        </div>
+      </section>
+
+      <section className="border-b border-[#17364F]/10 bg-[#F7FAFB] py-16 dark:bg-card" aria-labelledby="mens-health-content-title">
+        <div className="container">
+          <SectionLabel>Explore por objetivo</SectionLabel>
+          <div className="grid gap-5 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+            <div>
+              <h2 id="mens-health-content-title" className="font-serif text-3xl text-[#17364F] sm:text-4xl dark:text-foreground">Encontre conteúdos pela área de cuidado</h2>
+              <p className="mt-4 max-w-2xl leading-7 text-[#17364F]/70 dark:text-foreground/70">Use os filtros para reduzir a lista sem precisar informar sintomas ou dados pessoais.</p>
+            </div>
+            <div className="flex flex-wrap gap-2 lg:justify-end" role="group" aria-label="Filtrar conteúdos de Saúde do Homem">
+              {mensHealthCategories.map((category) => {
+                const active = activeCategory === category.id;
+                return (
+                  <button
+                    key={category.id}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => {
+                      setActiveCategory(category.id);
+                      trackPrototypeEvent("mens_health_filter", "mens_health_content", category.id);
+                    }}
+                    className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-2 active:scale-[0.98] motion-reduce:transform-none ${active ? "border-[#17364F] bg-[#17364F] text-white" : "border-[#17364F]/15 bg-white text-[#17364F] hover:border-[#B87333]/50 hover:text-[#9D602A] dark:bg-background dark:text-foreground"}`}
+                  >
+                    {category.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <p className="mt-8 text-sm font-medium text-[#17364F]/65 dark:text-foreground/65" aria-live="polite">
+            {filteredContent.length} {filteredContent.length === 1 ? "conteúdo encontrado" : "conteúdos encontrados"}
+          </p>
+          <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {filteredContent.map(({ id, categoryLabel, title, description, href, Icon }) => (
+              <Link
+                key={id}
+                href={href}
+                onClick={() => trackPrototypeEvent("journey_entry_selected", "mens_health_filtered_content", id)}
+                className="group flex min-h-64 flex-col rounded-2xl border border-[#17364F]/10 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#B87333]/45 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4 dark:bg-background motion-reduce:transform-none"
+              >
+                <Icon className="h-6 w-6 text-[#B87333]" aria-hidden="true" />
+                <p className="mt-5 text-xs font-bold uppercase tracking-[0.12em] text-[#9D602A]">{categoryLabel}</p>
+                <h3 className="mt-2 text-lg font-semibold text-[#17364F] dark:text-foreground">{title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-6 text-[#17364F]/65 dark:text-foreground/65">{description}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#17364F] group-hover:text-[#9D602A] dark:text-foreground">Ler conteúdo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" /></span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -528,6 +613,21 @@ export function PrototypeIntimateHealth() {
 }
 
 export function PrototypeGirthEnhancement() {
+  const [faqSearch, setFaqSearch] = useState("");
+  const faqItems = [
+    { id: "faq_increase", title: "Quanto a circunferência pode aumentar?", answer: "Estudos observacionais descrevem aumento médio mensurável em grupos selecionados, mas o resultado varia conforme anatomia, produto, volume, técnica e tempo de acompanhamento. Uma média publicada não deve ser interpretada como promessa individual." },
+    { id: "faq_length", title: "O procedimento aumenta o comprimento?", answer: "O objetivo do preenchimento é aumentar a circunferência, não o comprimento do pênis. Eventuais mudanças de aparência não equivalem a alongamento anatômico." },
+    { id: "faq_duration", title: "O resultado é definitivo?", answer: "Não. O ácido hialurônico é absorvível e o efeito tende a diminuir com o tempo. A duração varia e manutenções podem ser consideradas somente após nova avaliação." },
+    { id: "faq_recovery", title: "Como costuma ser a recuperação?", answer: "Edema, sensibilidade e pequenos hematomas podem ocorrer nos primeiros dias. O retorno a exercícios, atividade sexual e manipulação local deve seguir a orientação individual do profissional responsável." },
+    { id: "faq_risks", title: "Quais complicações precisam ser conhecidas?", answer: "Irregularidade, assimetria, nódulos, migração, infecção, alteração de sensibilidade, resultado insatisfatório e necessidade de dissolução ou correção são possíveis. Dor intensa, febre, mudança de cor ou piora rápida exigem avaliação imediata." },
+    { id: "faq_reversible", title: "É possível dissolver o produto?", answer: "Em algumas situações, preenchedores de ácido hialurônico podem ser tratados com hialuronidase. Isso não transforma o procedimento em isento de risco e a correção pode exigir mais de uma abordagem." },
+    { id: "faq_candidate", title: "Quem pode não ser um bom candidato?", answer: "Infecção ativa, alterações locais não esclarecidas, contraindicações clínicas, expectativas incompatíveis ou sofrimento desproporcional com a imagem corporal podem indicar adiamento, investigação adicional ou a opção de não realizar o procedimento." },
+  ];
+  const normalizedFaqSearch = faqSearch.trim().toLocaleLowerCase("pt-BR");
+  const filteredFaqItems = normalizedFaqSearch
+    ? faqItems.filter((item) => `${item.title} ${item.answer}`.toLocaleLowerCase("pt-BR").includes(normalizedFaqSearch))
+    : faqItems;
+
   return (
     <PrototypeLayout breadcrumb="Engrossamento peniano com ácido hialurônico">
       <PrototypeMeta title="Engrossamento peniano — protótipo educativo" pageId="prototype_girth" />
@@ -600,28 +700,37 @@ export function PrototypeGirthEnhancement() {
           <SectionLabel>Dúvidas frequentes</SectionLabel>
           <h2 id="girth-faq-title" className="font-serif text-3xl text-[#17364F] sm:text-4xl dark:text-foreground">Perguntas frequentes sobre o preenchimento com ácido hialurônico</h2>
           <p className="mt-4 max-w-3xl leading-7 text-[#17364F]/70 dark:text-foreground/70">As respostas resumem o que pode ser explicado antes da consulta. A indicação e o risco individual dependem de avaliação médica presencial.</p>
+          <label className="mt-7 block" htmlFor="girth-faq-search">
+            <span className="text-sm font-semibold text-[#17364F] dark:text-foreground">Pesquisar uma dúvida</span>
+            <span className="relative mt-2 block">
+              <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#17364F]/50" aria-hidden="true" />
+              <input
+                id="girth-faq-search"
+                type="search"
+                value={faqSearch}
+                onChange={(event) => setFaqSearch(event.target.value)}
+                onBlur={() => {
+                  if (normalizedFaqSearch) trackPrototypeEvent("faq_search", "girth_faq_search", filteredFaqItems.length ? "results_found" : "no_results");
+                }}
+                placeholder="Ex.: duração, recuperação, riscos"
+                autoComplete="off"
+                className="min-h-12 w-full rounded-xl border border-[#17364F]/15 bg-[#F7FAFB] py-3 pl-12 pr-4 text-[#17364F] outline-none transition placeholder:text-[#17364F]/45 focus:border-[#B87333] focus:ring-2 focus:ring-[#B87333]/20 dark:bg-card dark:text-foreground"
+              />
+            </span>
+          </label>
+          <p className="mt-3 text-sm text-[#17364F]/65 dark:text-foreground/65" role="status" aria-live="polite">
+            {filteredFaqItems.length} {filteredFaqItems.length === 1 ? "pergunta encontrada" : "perguntas encontradas"}
+          </p>
           <div className="mt-8 grid gap-4">
-            <Disclosure id="faq_increase" title="Quanto a circunferência pode aumentar?">
-              Estudos observacionais descrevem aumento médio mensurável em grupos selecionados, mas o resultado varia conforme anatomia, produto, volume, técnica e tempo de acompanhamento. Uma média publicada não deve ser interpretada como promessa individual.
-            </Disclosure>
-            <Disclosure id="faq_length" title="O procedimento aumenta o comprimento?">
-              O objetivo do preenchimento é aumentar a circunferência, não o comprimento do pênis. Eventuais mudanças de aparência não equivalem a alongamento anatômico.
-            </Disclosure>
-            <Disclosure id="faq_duration" title="O resultado é definitivo?">
-              Não. O ácido hialurônico é absorvível e o efeito tende a diminuir com o tempo. A duração varia e manutenções podem ser consideradas somente após nova avaliação.
-            </Disclosure>
-            <Disclosure id="faq_recovery" title="Como costuma ser a recuperação?">
-              Edema, sensibilidade e pequenos hematomas podem ocorrer nos primeiros dias. O retorno a exercícios, atividade sexual e manipulação local deve seguir a orientação individual do profissional responsável.
-            </Disclosure>
-            <Disclosure id="faq_risks" title="Quais complicações precisam ser conhecidas?">
-              Irregularidade, assimetria, nódulos, migração, infecção, alteração de sensibilidade, resultado insatisfatório e necessidade de dissolução ou correção são possíveis. Dor intensa, febre, mudança de cor ou piora rápida exigem avaliação imediata.
-            </Disclosure>
-            <Disclosure id="faq_reversible" title="É possível dissolver o produto?">
-              Em algumas situações, preenchedores de ácido hialurônico podem ser tratados com hialuronidase. Isso não transforma o procedimento em isento de risco e a correção pode exigir mais de uma abordagem.
-            </Disclosure>
-            <Disclosure id="faq_candidate" title="Quem pode não ser um bom candidato?">
-              Infecção ativa, alterações locais não esclarecidas, contraindicações clínicas, expectativas incompatíveis ou sofrimento desproporcional com a imagem corporal podem indicar adiamento, investigação adicional ou a opção de não realizar o procedimento.
-            </Disclosure>
+            {filteredFaqItems.map((item) => <Disclosure key={item.id} id={item.id} title={item.title}>{item.answer}</Disclosure>)}
+            {filteredFaqItems.length === 0 && (
+              <div className="rounded-2xl border border-dashed border-[#17364F]/20 bg-[#F7FAFB] p-7 text-center dark:bg-card" role="status">
+                <Search className="mx-auto h-6 w-6 text-[#B87333]" aria-hidden="true" />
+                <h3 className="mt-4 font-semibold text-[#17364F] dark:text-foreground">Nenhuma pergunta encontrada</h3>
+                <p className="mt-2 text-sm leading-6 text-[#17364F]/65 dark:text-foreground/65">Tente um termo mais geral ou limpe a pesquisa para ver todas as perguntas.</p>
+                <button type="button" onClick={() => setFaqSearch("")} className="mt-4 min-h-11 rounded-lg border border-[#17364F]/15 bg-white px-4 py-2 text-sm font-semibold text-[#17364F] hover:border-[#B87333]/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] dark:bg-background dark:text-foreground">Limpar pesquisa</button>
+              </div>
+            )}
           </div>
           <p className="mt-6 text-xs leading-5 text-[#17364F]/65 dark:text-foreground/65">Base clínica resumida: revisão sistemática e meta-análise de preenchedores injetáveis (Sexual Medicine Reviews, 2025) e posição da Sexual Medicine Society of North America sobre procedimentos cosméticos penianos (2024).</p>
           <PrototypeEmailContactForm />

@@ -21,7 +21,11 @@ export default function PrototypeEmailContactForm() {
       }
       setSubmitted(true);
       trackPrototypeEvent("email_contact_submit", "girth_faq", "success");
-      toast.success("Solicitação enviada por e-mail");
+      toast.success("Solicitação enviada com sucesso", {
+        id: "prototype-email-contact-success",
+        description: "A equipe responderá pelo e-mail informado.",
+        duration: 5000,
+      });
     },
     onError: () => toast.error("Não foi possível enviar agora. Tente novamente."),
   });

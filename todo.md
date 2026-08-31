@@ -270,3 +270,7 @@
 - [x] Implementar feedback visual de hover e foco nos itens expansíveis do FAQ
 - [x] Adicionar botão Voltar ao topo no hub de Saúde do Homem, visível após rolagem e acessível por teclado
 - [x] Validar formulário, FAQ e botão em desktop/mobile, TypeScript, cobertura de testes de integridade e build do checkpoint
+- [x] Confirmar o envio do formulário por e-mail com toast de sucesso acessível e evitar notificações duplicadas
+- [x] Adicionar pesquisa instantânea no FAQ com correspondência por pergunta e resposta, contador e estado sem resultados
+- [x] Adicionar filtros por categoria no hub de Saúde do Homem com estado acessível e rastreamento sem dados pessoais
+- [x] Validar toast, busca e filtros em desktop/mobile, teclado, TypeScript, 87 testes de integridade e build

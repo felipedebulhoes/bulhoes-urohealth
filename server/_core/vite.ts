@@ -9,7 +9,11 @@ import viteConfig from "../../vite.config";
 export async function setupVite(app: Express, server: Server) {
   const serverOptions = {
     middlewareMode: true,
-    hmr: { server },
+    // The preview is exposed through an HTTPS reverse proxy. Without an
+    // explicit client port, Vite injects `hostname:` when the public URL has
+    // no visible port, producing an invalid WebSocket endpoint. Port 443 keeps
+    // HMR on the same public origin while the HTTP server remains internal.
+    hmr: { server, clientPort: 443 },
     allowedHosts: true as const,
   };
 

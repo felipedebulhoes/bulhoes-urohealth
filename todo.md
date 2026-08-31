@@ -288,3 +288,6 @@
 - [x] Criar estado vazio amigável na lista do hub com botão para limpar filtros ativos
 - [x] Adicionar celebração visual discreta e toast de agradecimento ao voto Útil, respeitando prefers-reduced-motion
 - [x] Validar bullets, estado vazio e celebração em desktop/mobile, TypeScript, 96 testes e build
+- [x] Diagnosticar a falha de conexão WebSocket/HMR da prévia — cliente recebia porta vazia atrás do proxy HTTPS
+- [x] Corrigir a configuração de desenvolvimento para que o HMR use o host atual com porta pública 443 e protocolo WSS automático
+- [x] Reiniciar o servidor e validar HTTP 200, conexão pública do Vite, 97 testes, TypeScript e build

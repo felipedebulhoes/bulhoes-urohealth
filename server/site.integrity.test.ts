@@ -349,4 +349,11 @@ describe("Integridade das páginas públicas", () => {
     expect(component).toContain("Seu voto ajuda a priorizar dúvidas relevantes");
     expect(component).toContain("prototype-faq-helpful-${questionId}");
   });
+
+  it("mantém o HMR na porta pública HTTPS da prévia", () => {
+    const viteServer = readFileSync(resolve(projectRoot, "server/_core/vite.ts"), "utf8");
+
+    expect(viteServer).toContain("hmr: { server, clientPort: 443 }");
+    expect(viteServer).toContain("middlewareMode: true");
+  });
 });

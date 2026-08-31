@@ -284,3 +284,7 @@
 - [x] Impedir voto repetido por navegador, limitar abuso no servidor e não registrar dados clínicos ou pessoais no feedback
 - [x] Adicionar transição suave à lista do hub quando filtros forem selecionados ou limpos, respeitando prefers-reduced-motion
 - [x] Executar migração de banco, 93 testes, TypeScript, build e validação visual desktop/mobile
+- [x] Adicionar três benefícios objetivos em bullet points ao lado da miniatura do guia no estado pós-envio
+- [x] Criar estado vazio amigável na lista do hub com botão para limpar filtros ativos
+- [x] Adicionar celebração visual discreta e toast de agradecimento ao voto Útil, respeitando prefers-reduced-motion
+- [x] Validar bullets, estado vazio e celebração em desktop/mobile, TypeScript, 96 testes e build

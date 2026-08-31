@@ -429,7 +429,31 @@ export function PrototypeMensHealth() {
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <AnimatePresence mode="popLayout" initial={false}>
-              {filteredContent.map(({ id, categoryLabel, title, description, href, Icon }, index) => (
+              {filteredContent.length === 0 ? (
+                <motion.div
+                  key="empty-filter-state"
+                  initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -8 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.22 }}
+                  className="col-span-full rounded-2xl border border-dashed border-[#17364F]/20 bg-white px-6 py-10 text-center dark:bg-background"
+                  role="status"
+                >
+                  <BookOpen className="mx-auto h-7 w-7 text-[#B87333]" aria-hidden="true" />
+                  <h3 className="mt-4 font-serif text-2xl text-[#17364F] dark:text-foreground">Nenhum resultado encontrado</h3>
+                  <p className="mx-auto mt-2 max-w-lg text-sm leading-6 text-[#17364F]/65 dark:text-foreground/65">Não há conteúdos nesta combinação. Limpe o filtro para voltar a explorar todos os temas.</p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveCategory("all");
+                      trackPrototypeEvent("mens_health_filter", "mens_health_content", "empty_state_clear");
+                    }}
+                    className="mt-5 inline-flex min-h-11 items-center justify-center rounded-lg bg-[#17364F] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0F293D] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4"
+                  >
+                    Limpar filtros e mostrar todos
+                  </button>
+                </motion.div>
+              ) : filteredContent.map(({ id, categoryLabel, title, description, href, Icon }, index) => (
                 <motion.div
                   key={id}
                   layout={!shouldReduceMotion}

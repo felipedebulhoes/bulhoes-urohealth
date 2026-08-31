@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Check, Loader2, ThumbsUp } from "lucide-react";
+import { Check, Loader2, Sparkles, ThumbsUp } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import { trackPrototypeEvent } from "@/lib/analytics";
@@ -10,6 +11,8 @@ export default function PrototypeFaqHelpfulButton({ questionId, questionTitle }:
   const storageKey = `prototype-helpful-${questionId}`;
   const [voted, setVoted] = useState(false);
   const [confirmedCount, setConfirmedCount] = useState<number>();
+  const [celebrating, setCelebrating] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
   const countsQuery = trpc.prototypeFeedback.listHelpfulCounts.useQuery(undefined, { staleTime: 60_000 });
   const helpfulMutation = trpc.prototypeFeedback.markHelpful.useMutation({
     onSuccess: (result) => {
@@ -17,7 +20,15 @@ export default function PrototypeFaqHelpfulButton({ questionId, questionTitle }:
       setConfirmedCount(result.helpfulCount);
       window.localStorage.setItem(storageKey, "1");
       trackPrototypeEvent("faq_helpful", "girth_popular_faq", questionId);
-      toast.success("Obrigado pelo feedback", { description: "Seu voto foi contabilizado sem registrar dados clínicos." });
+      if (!shouldReduceMotion) {
+        setCelebrating(true);
+        window.setTimeout(() => setCelebrating(false), 900);
+      }
+      toast.success("Obrigado por compartilhar sua opinião", {
+        id: `prototype-faq-helpful-${questionId}`,
+        description: "Seu voto ajuda a priorizar dúvidas relevantes, sem registrar dados clínicos.",
+        duration: 4500,
+      });
     },
     onError: () => toast.error("Não foi possível registrar agora. Tente novamente."),
   });
@@ -29,7 +40,21 @@ export default function PrototypeFaqHelpfulButton({ questionId, questionTitle }:
   const count = confirmedCount ?? countsQuery.data?.[questionId] ?? 0;
 
   return (
-    <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#17364F]/10 pt-3">
+    <div className="relative mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#17364F]/10 pt-3">
+      <AnimatePresence>
+        {celebrating && (
+          <motion.span
+            initial={{ opacity: 0, scale: 0.6, y: 6 }}
+            animate={{ opacity: 1, scale: 1, y: -8 }}
+            exit={{ opacity: 0, scale: 0.8, y: -14 }}
+            transition={{ duration: 0.3 }}
+            className="pointer-events-none absolute -right-1 -top-7 inline-flex items-center gap-1 rounded-full bg-[#FFF8EF] px-2 py-1 text-[11px] font-bold text-[#9D602A] shadow-md"
+            aria-hidden="true"
+          >
+            <Sparkles className="h-3.5 w-3.5" /> Obrigado!
+          </motion.span>
+        )}
+      </AnimatePresence>
       <span className="text-xs text-[#17364F]/60 dark:text-foreground/60" aria-live="polite">
         {count > 0 ? `${count} ${count === 1 ? "pessoa marcou" : "pessoas marcaram"} como útil` : "Se esta dúvida ajudou, conte para nós."}
       </span>

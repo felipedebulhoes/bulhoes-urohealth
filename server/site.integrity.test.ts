@@ -320,4 +320,33 @@ describe("Integridade das páginas públicas", () => {
     expect(prototype).toContain("layout={!shouldReduceMotion}");
     expect(prototype).toContain("duration: shouldReduceMotion ? 0 : 0.22");
   });
+
+  it("resume o valor do guia em três tópicos objetivos no estado pós-envio", () => {
+    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
+
+    expect(form).toContain('aria-label="Principais conteúdos do guia"');
+    expect(form).toContain("Checklist de cuidados por fase da vida");
+    expect(form).toContain("Sinais de alerta e quando buscar avaliação");
+    expect(form).toContain("Saúde sexual, urinária e reprodutiva");
+  });
+
+  it("oferece recuperação rápida quando a lista filtrada não possui resultados", () => {
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+
+    expect(prototype).toContain("Nenhum resultado encontrado");
+    expect(prototype).toContain("Limpar filtros e mostrar todos");
+    expect(prototype).toContain('trackPrototypeEvent("mens_health_filter", "mens_health_content", "empty_state_clear")');
+    expect(prototype).toContain('key="empty-filter-state"');
+  });
+
+  it("agradece o voto útil com celebração discreta e movimento reduzido respeitado", () => {
+    const component = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeFaqHelpfulButton.tsx"), "utf8");
+
+    expect(component).toContain("const shouldReduceMotion = useReducedMotion()");
+    expect(component).toContain("if (!shouldReduceMotion)");
+    expect(component).toContain("setCelebrating(true)");
+    expect(component).toContain("Obrigado por compartilhar sua opinião");
+    expect(component).toContain("Seu voto ajuda a priorizar dúvidas relevantes");
+    expect(component).toContain("prototype-faq-helpful-${questionId}");
+  });
 });

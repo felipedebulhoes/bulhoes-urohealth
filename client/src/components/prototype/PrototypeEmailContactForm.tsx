@@ -69,6 +69,11 @@ export default function PrototypeEmailContactForm() {
           <div>
             <p className="text-sm font-bold text-[#17364F]">Seu guia está pronto</p>
             <p className="mt-1 text-sm leading-6 text-[#17364F]/70">Baixe o Guia prático de saúde masculina com orientações sobre prevenção, saúde sexual, urinária e reprodutiva.</p>
+            <ul className="mt-3 space-y-2 text-sm leading-5 text-[#17364F]/75" aria-label="Principais conteúdos do guia">
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B87333]" aria-hidden="true" /> Checklist de cuidados por fase da vida</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B87333]" aria-hidden="true" /> Sinais de alerta e quando buscar avaliação</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#B87333]" aria-hidden="true" /> Saúde sexual, urinária e reprodutiva</li>
+            </ul>
             <a
               href={MEN_S_HEALTH_GUIDE_URL}
               download="guia-pratico-saude-masculina-dr-felipe-bulhoes.pdf"

@@ -34,8 +34,10 @@ O objetivo não é escolher cores ou detalhes decorativos. A revisão deve verif
 | Dúvidas prioritárias | Sem destaque específico | Três dúvidas populares levam diretamente ao resultado correspondente no FAQ |
 | Material pós-contato | Sem material específico | Guia PDF de saúde masculina liberado apenas após confirmação do formulário por e-mail |
 | Prévia do material | Sem visualização | Miniatura otimizada da capa ao lado do download, exibida somente após o envio confirmado |
+| Valor do material | Descrição geral | Três tópicos escaneáveis antecipam checklist, sinais de alerta e áreas cobertas pelo guia |
 | Feedback no FAQ | Sem sinal coletivo | Botão Útil com contagem exclusivamente de votos reais e bloqueio de repetição no mesmo navegador |
 | Filtros | Categorias selecionáveis | Categoria selecionada com ícone, contorno e sombra, além de ação separada para limpar filtros |
+| Estado vazio | Sem recuperação contextual | Mensagem amigável com botão para limpar filtros e restaurar todos os conteúdos |
 | Fluidez | Seções estáticas | Transições de entrada, saída e reposicionamento na lista filtrada, desativadas quando o usuário prefere movimento reduzido |
 | Analytics | Eventos de conteúdo e conversão | Eventos adicionais de validação com identificadores fixos e sem dados clínicos |
 
@@ -59,7 +61,9 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | Prévia do guia | “Você quer avaliar o material antes de baixar.” | Reconhecer a capa, o tema e o formato antes de acionar o download |
 | Dúvida popular | “Você quer entender riscos ou duração sem digitar na busca.” | Usar um destaque de Dúvidas mais populares e chegar ao item correspondente |
 | Feedback útil | “Uma dúvida popular ajudou você.” | Marcar Útil uma única vez e compreender que o contador representa apenas interações reais |
+| Celebração do feedback | “Você acabou de marcar uma dúvida como útil.” | Perceber o agradecimento sem distração e sem animação quando movimento reduzido estiver ativo |
 | Limpeza de filtro | “Você quer voltar a ver todos os conteúdos.” | Identificar o filtro ativo e usar Limpar filtros |
+| Estado sem resultados | “Um filtro não encontrou conteúdo.” | Entender a mensagem e restaurar a lista pelo botão Limpar filtros e mostrar todos |
 
 ## Perguntas após o teste
 

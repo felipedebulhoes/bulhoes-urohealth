@@ -168,6 +168,59 @@ export const aiChatRouter = router({
     }),
 
   /**
+   * Public: quick contact for patients who prefer email.
+   * It intentionally accepts no free-text clinical field.
+   */
+  submitEmailContact: publicProcedure
+    .use(rateLimit({ windowMs: 60 * 60 * 1000, max: 4 }))
+    .input(
+      z.object({
+        name: z.string().trim().min(2).max(120),
+        email: z.string().trim().email().max(320),
+        preferredLocation: z.enum(["sao-paulo", "campinas", "teleconsulta", "nao-definido"]),
+        consent: z.literal(true),
+      })
+    )
+    .mutation(async ({ input }) => {
+      try {
+        const locationMap: Record<typeof input.preferredLocation, string> = {
+          "sao-paulo": "São Paulo",
+          campinas: "Campinas",
+          teleconsulta: "Teleconsulta",
+          "nao-definido": "Ainda não definido",
+        };
+        const locationLabel = locationMap[input.preferredLocation];
+
+        await insertLead({
+          name: input.name,
+          phone: "email-only",
+          email: input.email,
+          reason: "Solicitou retorno por e-mail; nenhum dado clínico coletado no formulário.",
+          preferredLocation: input.preferredLocation,
+          source: "prototype-email-contact",
+        });
+
+        await notifyOwner({
+          title: `Novo contato por e-mail: ${input.name}`,
+          content: `Um paciente solicitou retorno por e-mail no protótipo da jornada.\n\nNome: ${input.name}\nE-mail: ${input.email}\nPreferência: ${locationLabel}\n\nO formulário não coletou sintomas, diagnóstico ou mensagem clínica.`,
+        });
+
+        sendLeadNotificationEmail({
+          name: input.name,
+          phone: "Preferência: e-mail",
+          email: input.email,
+          reason: "Solicitou retorno por e-mail; nenhum dado clínico coletado no formulário.",
+          preferredLocation: locationLabel,
+        }).catch((err) => console.error("[Email Contact] Background send failed:", err));
+
+        return { success: true, message: "Solicitação recebida. A equipe responderá pelo e-mail informado." } as const;
+      } catch (error) {
+        console.error("[Email Contact] Submission error:", error);
+        return { success: false, message: "Não foi possível enviar agora. Tente novamente em alguns minutos." } as const;
+      }
+    }),
+
+  /**
    * List all leads (admin only).
    */
   listLeads: protectedProcedure

@@ -266,3 +266,7 @@
 - [x] Adicionar transições suaves entre as seções do hub de Saúde do Homem respeitando prefers-reduced-motion
 - [x] Validar as três melhorias em desktop e mobile, TypeScript, cobertura de testes de integridade e build do checkpoint
 - [x] Ocultar a splash screen nas rotas do protótipo para não bloquear testes, navegação ou o WhatsApp flutuante
+- [x] Adicionar formulário rápido por e-mail abaixo do FAQ com consentimento, validação, rate limit e sem campo clínico livre
+- [x] Implementar feedback visual de hover e foco nos itens expansíveis do FAQ
+- [x] Adicionar botão Voltar ao topo no hub de Saúde do Homem, visível após rolagem e acessível por teclado
+- [x] Validar formulário, FAQ e botão em desktop/mobile, TypeScript, cobertura de testes de integridade e build do checkpoint

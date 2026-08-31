@@ -194,4 +194,30 @@ describe("Integridade das páginas públicas", () => {
     expect(reveal).toContain('matchMedia("(prefers-reduced-motion: reduce)")');
     expect(app).toContain("!isPrototypeRoute && <SplashScreen />");
   });
+
+  it("oferece contato por e-mail sem campo clínico livre e com consentimento explícito", () => {
+    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
+    const router = readFileSync(resolve(projectRoot, "server/routers/aiChat.ts"), "utf8");
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+
+    expect(prototype).toContain("<PrototypeEmailContactForm />");
+    expect(form).toContain("submitEmailContact.useMutation");
+    expect(form).toContain("Política de Privacidade");
+    expect(form).not.toContain("textarea");
+    expect(router).toContain("submitEmailContact: publicProcedure");
+    expect(router).toContain("prototype-email-contact");
+    expect(router).toContain("rateLimit({ windowMs: 60 * 60 * 1000, max: 4 })");
+  });
+
+  it("indica visualmente o hover do FAQ e oferece Voltar ao topo acessível", () => {
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+    const backToTop = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeBackToTop.tsx"), "utf8");
+
+    expect(prototype).toContain("hover:border-[#B87333]/45");
+    expect(prototype).toContain("group-hover:text-[#9D602A]");
+    expect(prototype).toContain("<PrototypeBackToTop />");
+    expect(backToTop).toContain("window.scrollY > 520");
+    expect(backToTop).toContain('aria-label="Voltar ao topo da página"');
+    expect(backToTop).toContain('matchMedia("(prefers-reduced-motion: reduce)")');
+  });
 });

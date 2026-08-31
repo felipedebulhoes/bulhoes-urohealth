@@ -26,6 +26,8 @@ import {
 } from "lucide-react";
 import PrototypeLayout, { PROTOTYPE_BASE } from "@/components/prototype/PrototypeLayout";
 import PrototypeMeta from "@/components/prototype/PrototypeMeta";
+import PrototypeEmailContactForm from "@/components/prototype/PrototypeEmailContactForm";
+import PrototypeBackToTop from "@/components/prototype/PrototypeBackToTop";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { trackPrototypeEvent } from "@/lib/analytics";
 
@@ -144,14 +146,14 @@ function ConfidentialityNote() {
 function Disclosure({ title, children, id }: { title: string; children: ReactNode; id: string }) {
   return (
     <details
-      className="group rounded-2xl border border-[#17364F]/10 bg-white p-5 open:border-[#B87333]/35 dark:bg-card"
+      className="group rounded-2xl border border-[#17364F]/10 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#B87333]/45 hover:bg-[#FFF9F4] hover:shadow-md focus-within:border-[#B87333]/55 focus-within:ring-2 focus-within:ring-[#B87333]/15 open:border-[#B87333]/45 open:bg-[#FFF9F4] dark:bg-card dark:hover:bg-[#B87333]/10 motion-reduce:transform-none"
       onToggle={(event) => {
         if (event.currentTarget.open) trackPrototypeEvent("faq_open", "progressive_disclosure", id);
       }}
     >
-      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#17364F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] dark:text-foreground">
+      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 rounded-lg font-semibold text-[#17364F] transition-colors group-hover:text-[#9D602A] focus-visible:outline-none dark:text-foreground">
         {title}
-        <ChevronDown className="h-5 w-5 shrink-0 text-[#B87333] transition-transform group-open:rotate-180" aria-hidden="true" />
+        <ChevronDown className="h-5 w-5 shrink-0 text-[#B87333] transition-transform group-hover:translate-y-0.5 group-open:rotate-180 motion-reduce:transform-none" aria-hidden="true" />
       </summary>
       <div className="mt-4 border-t border-[#17364F]/8 pt-4 text-sm leading-7 text-[#17364F]/70 dark:text-foreground/70">{children}</div>
     </details>
@@ -404,6 +406,7 @@ export function PrototypeMensHealth() {
           </div>
         </ScrollReveal>
       </section>
+      <PrototypeBackToTop />
     </PrototypeLayout>
   );
 }
@@ -621,6 +624,7 @@ export function PrototypeGirthEnhancement() {
             </Disclosure>
           </div>
           <p className="mt-6 text-xs leading-5 text-[#17364F]/65 dark:text-foreground/65">Base clínica resumida: revisão sistemática e meta-análise de preenchedores injetáveis (Sexual Medicine Reviews, 2025) e posição da Sexual Medicine Society of North America sobre procedimentos cosméticos penianos (2024).</p>
+          <PrototypeEmailContactForm />
         </div>
       </section>
 

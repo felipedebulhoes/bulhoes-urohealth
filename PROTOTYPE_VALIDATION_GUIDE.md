@@ -46,6 +46,8 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | Engrossamento | “Você ouviu falar em ácido hialurônico e quer saber se é seguro.” | Identificar caráter eletivo, temporário, riscos e necessidade de avaliação |
 | Urologia geral | “Você procura cuidado para próstata ou cálculo renal.” | Confirmar que esses temas continuam visíveis na homepage |
 | Agendamento | “Você decidiu conversar com o médico.” | Encontrar o fluxo e explicar o que acontece depois do clique; usar o WhatsApp somente se desejar contato real |
+| Preferência por e-mail | “Você prefere não usar WhatsApp.” | Encontrar o formulário abaixo do FAQ, entender quais dados serão usados e concluir sem relatar informações clínicas |
+| Navegação longa | “Você terminou de explorar Saúde do Homem.” | Usar o botão Voltar ao topo depois de rolar a página |
 
 ## Perguntas após o teste
 
@@ -81,6 +83,7 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | `faq_open` | Localizar dúvidas que exigem aprofundamento |
 | `cta_schedule` | Identificar momento de intenção de agendamento |
 | `cta_whatsapp` | Identificar preferência por conversa direta |
+| `email_contact_submit` | Registrar somente o sucesso do pedido de retorno por e-mail, sem nome ou endereço eletrônico no analytics |
 
 Os eventos registram apenas IDs fixos de componente e item, além da rota. Sintomas, diagnósticos, respostas e textos livres não são enviados.
 

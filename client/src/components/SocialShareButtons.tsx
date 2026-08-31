@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Check, Copy, Facebook, Linkedin, Loader2, Share2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { trackSocialShare } from "@/lib/analytics";
+import { toast } from "sonner";
+import RelatedContentSection from "@/components/RelatedContentSection";
 
 interface SocialShareButtonsProps {
   title: string;
@@ -63,20 +65,34 @@ export default function SocialShareButtons({
   const copyLink = async () => {
     beginFeedback("copy");
     try {
-      await navigator.clipboard.writeText(shareUrl);
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(shareUrl);
+      } else {
+        const input = document.createElement("textarea");
+        input.value = shareUrl;
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+        document.body.appendChild(input);
+        input.select();
+        const copiedWithFallback = document.execCommand("copy");
+        input.remove();
+        if (!copiedWithFallback) throw new Error("Cópia não suportada");
+      }
+
+      setCopied(true);
+      trackSocialShare("copy", source);
+      toast.success("Link copiado com sucesso", {
+        description: "Agora você pode compartilhar esta página onde preferir.",
+        duration: 2800,
+      });
+      window.setTimeout(() => setCopied(false), 1800);
     } catch {
-      const input = document.createElement("textarea");
-      input.value = shareUrl;
-      input.style.position = "fixed";
-      input.style.opacity = "0";
-      document.body.appendChild(input);
-      input.select();
-      document.execCommand("copy");
-      input.remove();
+      setActiveMethod(null);
+      toast.error("Não foi possível copiar o link", {
+        description: "Selecione o endereço no navegador e copie manualmente.",
+        duration: 3500,
+      });
     }
-    setCopied(true);
-    trackSocialShare("copy", source);
-    window.setTimeout(() => setCopied(false), 1800);
   };
 
   const baseButton = cn(
@@ -91,8 +107,9 @@ export default function SocialShareButtons({
   const label = compact ? "" : "Compartilhar";
 
   return (
-    <section className={cn("flex flex-wrap items-center gap-2", className)} aria-label="Compartilhar esta página">
-      <button type="button" onClick={() => void shareNative()} className={baseButton} aria-busy={activeMethod === "native"}>
+    <div className={className}>
+      <section className="flex flex-wrap items-center gap-2" aria-label="Compartilhar esta página">
+        <button type="button" onClick={() => void shareNative()} className={baseButton} aria-busy={activeMethod === "native"}>
         {activeMethod === "native" ? <Loader2 className="h-4 w-4 motion-safe:animate-spin" /> : <Share2 className="h-4 w-4" />}
         {label || <span className="sr-only">Compartilhar</span>}
       </button>
@@ -133,7 +150,9 @@ export default function SocialShareButtons({
         )}
         {!compact && (copied ? "Copiado" : "Copiar link")}
         <span className="sr-only">{copied ? "Link copiado" : "Copiar link"}</span>
-      </button>
-    </section>
+        </button>
+      </section>
+      {!compact && <RelatedContentSection source={source} dark={dark} />}
+    </div>
   );
 }

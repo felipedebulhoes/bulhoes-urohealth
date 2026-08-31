@@ -24,6 +24,8 @@ export default function Blog() {
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img
+              loading="eager"
+              decoding="async"
               src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
               alt="Dr. Felipe de Bulhões - Urologista"
               className="h-12 lg:h-14 w-auto brightness-0 invert"
@@ -79,7 +81,7 @@ export default function Blog() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, i) => (
               <motion.article
-                key={post.id}
+                key={post.slug}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -90,6 +92,8 @@ export default function Blog() {
                     {/* Cover image */}
                     <div className="relative overflow-hidden aspect-[16/9]">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={post.coverImage}
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

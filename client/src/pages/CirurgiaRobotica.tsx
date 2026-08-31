@@ -95,6 +95,8 @@ export default function CirurgiaRobotica() {
             {/* Imagem ilustrativa */}
             <div className="rounded-2xl overflow-hidden mb-8 shadow-lg">
               <img
+                loading="lazy"
+                decoding="async"
                 src="/manus-storage/cirurgia-robotica-hero_bc9b9ac6_4e08d375.webp"
                 alt="Sistema robótico Da Vinci Xi em sala cirúrgica — cirurgia robótica urológica"
                 className="w-full h-auto"

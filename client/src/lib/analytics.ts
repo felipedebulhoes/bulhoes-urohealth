@@ -283,6 +283,20 @@ export function trackSocialShare(platform: string, source: string) {
   });
 }
 
+/**
+ * Rastreia a seleção de um conteúdo relacionado sem enviar títulos, termos
+ * clínicos digitados ou qualquer dado identificável do visitante.
+ */
+export function trackRelatedContentClick(source: string, destinationPath: string) {
+  trackEvent("select_content", {
+    event_category: "engagement",
+    content_type: "related_content",
+    content_source: source,
+    item_id: destinationPath,
+    page_path: typeof window !== "undefined" ? window.location.pathname : "",
+  });
+}
+
 // ===== META PIXEL EVENTS =====
 
 /**

@@ -1,8 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
 const projectRoot = resolve(import.meta.dirname, "..");
+
+function collectTsxFiles(directory: string): string[] {
+  return readdirSync(directory).flatMap(entry => {
+    const path = resolve(directory, entry);
+    return statSync(path).isDirectory()
+      ? collectTsxFiles(path)
+      : path.endsWith(".tsx")
+        ? [path]
+        : [];
+  });
+}
 
 describe("Integridade das páginas públicas", () => {
   it("mantém o fallback noscript do Meta Pixel dentro do body", () => {
@@ -73,5 +84,40 @@ describe("Integridade das páginas públicas", () => {
     expect(share).toContain("navigator.share");
     expect(share).toContain("trackSocialShare");
     expect(analytics).toContain('trackEvent("share_content"');
+  });
+
+  it("confirma a cópia do link com toast de sucesso e apresenta fallback de erro", () => {
+    const share = readFileSync(resolve(projectRoot, "client/src/components/SocialShareButtons.tsx"), "utf8");
+
+    expect(share).toContain('toast.success("Link copiado com sucesso"');
+    expect(share).toContain('toast.error("Não foi possível copiar o link"');
+    expect(share).toContain('navigator.clipboard?.writeText');
+  });
+
+  it("classifica todas as imagens como lazy ou eager e prioriza a imagem LCP da homepage", () => {
+    const files = collectTsxFiles(resolve(projectRoot, "client/src"));
+
+    for (const file of files) {
+      const source = readFileSync(file, "utf8");
+      const imageTags = source.match(/<img[\s\S]*?\/>/g) ?? [];
+      for (const imageTag of imageTags) {
+        expect(imageTag).toMatch(/loading="(?:lazy|eager)"/);
+      }
+    }
+
+    const hero = readFileSync(resolve(projectRoot, "client/src/components/HeroSection.tsx"), "utf8");
+    expect(hero).toContain('fetchPriority="high"');
+    expect(hero).toContain('loading="eager"');
+  });
+
+  it("exibe conteúdos relacionados abaixo do compartilhamento e rastreia a seleção no GA4", () => {
+    const share = readFileSync(resolve(projectRoot, "client/src/components/SocialShareButtons.tsx"), "utf8");
+    const related = readFileSync(resolve(projectRoot, "client/src/components/RelatedContentSection.tsx"), "utf8");
+    const analytics = readFileSync(resolve(projectRoot, "client/src/lib/analytics.ts"), "utf8");
+
+    expect(share).toContain("<RelatedContentSection");
+    expect(related).toContain("Conteúdos relacionados");
+    expect(related).toContain("trackRelatedContentClick");
+    expect(analytics).toContain('trackEvent("select_content"');
   });
 });

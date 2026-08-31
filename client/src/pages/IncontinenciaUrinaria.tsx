@@ -249,6 +249,8 @@ export default function IncontinenciaUrinaria() {
             className="rounded-2xl overflow-hidden shadow-lg"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src="/manus-storage/incontinencia-urinaria-tipos_62186555_abc470ac.webp"
               alt="Tipos de incontinência urinária masculina"
               className="w-full h-auto"

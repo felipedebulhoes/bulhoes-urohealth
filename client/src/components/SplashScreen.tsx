@@ -121,6 +121,8 @@ export default function SplashScreen() {
         {/* Fallback: poster estático se vídeo não carregar */}
         {!videoLoaded && (
           <img
+            loading="eager"
+            decoding="async"
             src="/manus-storage/splash-poster_0d71c137.png"
             alt="Animação de abertura Dr. Felipe de Bulhões Urologista"
             className="splash-poster-fallback"

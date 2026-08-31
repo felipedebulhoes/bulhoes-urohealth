@@ -294,6 +294,8 @@ export default function Varicocele() {
               </div>
               <div className="bg-gray-50 dark:bg-card rounded-2xl p-6 border border-gray-200 dark:border-border">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/edu-varicocele-hero-599XQPQfjE7X8GrKiTmeJT.webp"
                   alt="Ilustração anatômica da varicocele"
                   className="w-full rounded-xl"

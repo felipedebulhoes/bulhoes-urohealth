@@ -356,6 +356,8 @@ export default function DoencaPeyronie() {
             className="rounded-2xl overflow-hidden shadow-lg"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/peyronie-hero-PZ4avfGPN6TNxMX6qqECke.webp"
               alt="Doença de Peyronie — tratamento e correção da curvatura peniana"
               className="w-full h-auto"

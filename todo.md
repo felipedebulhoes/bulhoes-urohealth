@@ -240,3 +240,9 @@
 - [x] Implementar componente reutilizável de compartilhamento social nas páginas principais, com Web Share API e fallbacks
 - [x] Rastrear ações de compartilhamento no GA4 sem expor dados pessoais
 - [x] Comparar os bundles antes e depois, executar testes, TypeScript, build e validação visual responsiva
+- [x] Adicionar toast acessível de sucesso e erro ao copiar links de compartilhamento
+- [x] Auditar imagens públicas e aplicar lazy loading seletivo, mantendo imagens LCP em carregamento prioritário
+- [x] Definir e implementar conteúdos relacionados contextuais abaixo dos blocos de compartilhamento
+- [x] Rastrear cliques em conteúdos relacionados no GA4 sem registrar dados pessoais
+- [x] Validar as melhorias com 75 testes, TypeScript, build, responsividade e inspeção de atributos das imagens
+- [x] Corrigir chaves React duplicadas na grade do Blog identificadas na validação visual

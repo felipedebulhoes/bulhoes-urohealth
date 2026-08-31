@@ -49,6 +49,8 @@ export default function PageTransition() {
     >
       <div className="page-transition-logo">
         <img
+          loading="eager"
+          decoding="async"
           src="/manus-storage/isotipo-fb_b21c0959.svg"
           alt="Logotipo Dr. Felipe de Bulhões"
           className="page-transition-icon"

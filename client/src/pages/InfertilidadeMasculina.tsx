@@ -306,6 +306,8 @@ export default function InfertilidadeMasculina() {
             className="rounded-2xl overflow-hidden shadow-lg"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/infertilidade-masculina-hero-EmAjCVccuojobY99U9Eo5t.webp"
               alt="Infertilidade masculina — diagnóstico e tratamento"
               className="w-full h-auto"

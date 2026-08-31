@@ -83,6 +83,8 @@ export default function BlogPost() {
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img
+              loading="eager"
+              decoding="async"
               src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
               alt="Dr. Felipe de Bulhões - Urologista"
               className="h-12 lg:h-14 w-auto brightness-0 invert"
@@ -107,6 +109,9 @@ export default function BlogPost() {
         className="relative h-[40vh] lg:h-[50vh] overflow-hidden"
       >
         <img
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           src={post.coverImage}
           alt={post.title}
           className="w-full h-full object-cover"
@@ -139,6 +144,8 @@ export default function BlogPost() {
             >
               <div className="flex items-center gap-4">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={post.author.avatar}
                   alt={post.author.name}
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#B87333]/20"

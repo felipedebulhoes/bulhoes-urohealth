@@ -126,6 +126,9 @@ export default function HeroSection() {
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-[#B87333]/40 rounded-br-2xl" />
 
             <img
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               src={HERO_PORTRAIT}
               alt="Dr. Felipe de Bulhões - Urologista"
               className="relative z-10 w-[300px] sm:w-[360px] lg:w-[400px] xl:w-[440px] h-auto object-cover rounded-xl shadow-2xl shadow-black/30"

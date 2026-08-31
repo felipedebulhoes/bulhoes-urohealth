@@ -277,6 +277,8 @@ export default function AdminFiles() {
                   <div className="flex-shrink-0">
                     {file.mimeType.startsWith("image/") ? (
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={file.url}
                         alt={file.filename}
                         className="w-12 h-12 rounded-lg object-cover border"

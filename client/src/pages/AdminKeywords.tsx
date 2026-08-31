@@ -47,7 +47,7 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import { Link } from "wouter";
-import { Streamdown } from "streamdown";
+import LightMarkdown from "@/components/LightMarkdown";
 
 type Category = "urologia" | "robotica" | "andrologia" | "all";
 type SortField = "keyword" | "volume" | "difficulty" | "cpc" | "category";
@@ -982,7 +982,7 @@ export default function AdminKeywords() {
                               </div>
                               {editPreview ? (
                                 <div className="p-4 border rounded-md bg-muted/10 max-h-[500px] overflow-y-auto prose prose-sm dark:prose-invert max-w-none">
-                                  <Streamdown>{editContent}</Streamdown>
+                                  <LightMarkdown>{editContent}</LightMarkdown>
                                 </div>
                               ) : (
                                 <div>
@@ -1032,7 +1032,7 @@ export default function AdminKeywords() {
                             </div>
                           ) : (
                             <div className="p-4 bg-muted/10 max-h-[500px] overflow-y-auto prose prose-sm dark:prose-invert max-w-none">
-                              <Streamdown>{draft.content}</Streamdown>
+                              <LightMarkdown>{draft.content}</LightMarkdown>
                             </div>
                           )}
                         </div>

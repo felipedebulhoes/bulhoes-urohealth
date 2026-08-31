@@ -234,3 +234,9 @@
 - [x] Registrar e monitorar o preview Open Graph validado no Facebook Sharing Debugger (banner, título e descrição reconhecidos; procedimento documentado)
 - [x] Salvar evidência verificável do Facebook Sharing Debugger em armazenamento permanente e vinculá-la ao relatório
 - [x] Executar e registrar a primeira rotina de monitoramento social, com respostas do crawler e próxima data de revisão
+- [x] Medir o tamanho inicial dos bundles JavaScript e identificar dependências carregadas desnecessariamente na entrada
+- [x] Implementar divisão de código por rota e carregamento sob demanda sem regressão na navegação
+- [x] Adicionar estados de carregamento suaves e acessíveis aos botões principais de agendamento e contato
+- [x] Implementar componente reutilizável de compartilhamento social nas páginas principais, com Web Share API e fallbacks
+- [x] Rastrear ações de compartilhamento no GA4 sem expor dados pessoais
+- [x] Comparar os bundles antes e depois, executar testes, TypeScript, build e validação visual responsiva

@@ -8,6 +8,7 @@ import { blogPosts } from "@/lib/blogData";
 import { Calendar, Clock, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import SocialShareButtons from "@/components/SocialShareButtons";
 
 export default function Blog() {
   usePageMeta({
@@ -60,6 +61,14 @@ export default function Blog() {
               Artigos baseados em evidências científicas sobre prevenção, diagnóstico e
               tratamento das principais condições urológicas.
             </p>
+            <SocialShareButtons
+              title="Blog de Urologia — Dr. Felipe de Bulhões"
+              text="Artigos baseados em evidências sobre saúde urológica e saúde do homem."
+              url="https://felipebulhoes.com/blog"
+              source="blog_index"
+              dark
+              className="mt-7"
+            />
           </motion.div>
         </div>
       </section>

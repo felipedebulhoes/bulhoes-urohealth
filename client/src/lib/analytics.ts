@@ -12,6 +12,7 @@
  * - chat_open: quando o chat é aberto
  * - page_view_educational: visualização de página educativa
  * - cta_click: clique em qualquer CTA de agendamento
+ * - share_content: compartilhamento de conteúdo por plataforma
  */
 
 // Tipagem global para gtag e Meta Pixel
@@ -267,6 +268,19 @@ export function trackCtaClick(ctaType: string, source: string) {
     cta_source: source,
   });
   trackGoogleAdsConversion(30.0);
+}
+
+/**
+ * Rastreia compartilhamentos sem enviar título, texto clínico ou dados pessoais.
+ */
+export function trackSocialShare(platform: string, source: string) {
+  trackEvent("share_content", {
+    event_category: "engagement",
+    method: platform,
+    content_type: "website_content",
+    content_source: source,
+    page_path: typeof window !== "undefined" ? window.location.pathname : "",
+  });
 }
 
 // ===== META PIXEL EVENTS =====

@@ -13,6 +13,8 @@ import MobileBottomBar from "./MobileBottomBar";
 import { trackEducationalPageView, trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { MedicalPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
+import SocialShareButtons from "@/components/SocialShareButtons";
 
 interface CampaignLayoutProps {
   title: string;
@@ -201,6 +203,16 @@ export default function CampaignLayout({
       {/* Content */}
       <main>{children}</main>
 
+      <section className="border-t border-[#1C3D5A]/8 bg-[#F7F8F8] py-8 dark:bg-card">
+        <div className="container flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <div>
+            <h2 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">Este conteúdo pode ajudar alguém</h2>
+            <p className="mt-1 text-sm text-[#1C3D5A]/55 dark:text-foreground/55">Compartilhe esta página com segurança.</p>
+          </div>
+          <SocialShareButtons title={title} text={description} source={`campaign_${campaignSlug}`} />
+        </div>
+      </section>
+
       {/* CTA Final — conversion-focused */}
       <section id="agendamento" className="py-16 lg:py-20 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
         <div className="container text-center max-w-2xl">
@@ -212,28 +224,29 @@ export default function CampaignLayout({
             Consulta presencial ou teleconsulta — escolha o formato mais conveniente.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
+            <CTAButtonWithAnimation
               href={doctoraliaUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleDoctoraliaClick}
+              loadingText="Abrindo agenda…"
+              icon={<Calendar className="w-5 h-5" />}
+              className="px-8 h-12 text-base"
             >
-              <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white px-8 h-12 text-base">
-                <Calendar className="w-5 h-5 mr-2" />
-                Agendar pelo Doctoralia
-              </Button>
-            </a>
-            <a
+              Agendar pelo Doctoralia
+            </CTAButtonWithAnimation>
+            <CTAButtonWithAnimation
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleWhatsAppClick}
+              loadingText="Abrindo WhatsApp…"
+              icon={<Phone className="w-5 h-5" />}
+              variant="outline"
+              className="border-[#25D366]/30 text-white hover:bg-[#25D366]/10 hover:text-white px-8 h-12 text-base"
             >
-              <Button variant="outline" className="text-white border-[#25D366]/30 hover:bg-[#25D366]/10 bg-transparent px-8 h-12 text-base">
-                <Phone className="w-5 h-5 mr-2" />
-                WhatsApp
-              </Button>
-            </a>
+              WhatsApp
+            </CTAButtonWithAnimation>
           </div>
           <p className="text-white/30 text-xs mt-6">
             Atendimento particular · Campinas Day Hospital · Clinovi SP (Paulista, Moema, Pinheiros, SBC) · Teleconsulta

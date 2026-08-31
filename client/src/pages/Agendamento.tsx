@@ -22,6 +22,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import { trackDoctoraliaClick, trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
+import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 
 const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
 
@@ -122,15 +123,15 @@ export default function Agendamento() {
               <p className="text-[#64748B] text-sm leading-relaxed max-w-xl mx-auto mb-6">
                 A agenda será aberta em uma página segura da Doctoralia, com os horários disponíveis para atendimento presencial e teleconsulta.
               </p>
-              <Link
+              <CTAButtonWithAnimation
                 href="/agendar/doctoralia"
                 onClick={() => trackDoctoraliaClick("agendamento_page")}
+                loadingText="Abrindo agenda…"
+                icon={<CalendarCheck className="w-5 h-5" />}
+                className="h-12 px-7"
               >
-                <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 px-7">
-                  <CalendarCheck className="w-5 h-5 mr-2" />
-                  Ver horários disponíveis
-                </Button>
-              </Link>
+                Ver horários disponíveis
+              </CTAButtonWithAnimation>
               <p className="text-[#64748B] text-xs mt-4">
                 Se preferir, use o WhatsApp ou telefone nas opções abaixo.
               </p>

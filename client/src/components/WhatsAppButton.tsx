@@ -5,7 +5,8 @@
  * Inclui origem do tráfego (UTM) na mensagem quando disponível
  */
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { Loader2, MessageCircle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { trackWhatsAppClick } from "@/lib/analytics";
 import { getAttribution } from "@/lib/tracking";
 
@@ -39,7 +40,16 @@ function buildTrafficOriginTag(): string {
 }
 
 export default function WhatsAppButton({ message, source }: WhatsAppButtonProps = {}) {
+  const [isOpening, setIsOpening] = useState(false);
+  const resetTimerRef = useRef<number | null>(null);
+
+  useEffect(() => () => {
+    if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
+  }, []);
+
   const handleClick = () => {
+    if (isOpening) return;
+    setIsOpening(true);
     trackWhatsAppClick(source || "educational_page");
     
     const baseMessage = message || DEFAULT_MESSAGE;
@@ -48,18 +58,25 @@ export default function WhatsAppButton({ message, source }: WhatsAppButtonProps 
     const encodedMessage = encodeURIComponent(fullMessage);
     
     window.open(`https://wa.me/5511981124455?text=${encodedMessage}`, "_blank");
+    resetTimerRef.current = window.setTimeout(() => setIsOpening(false), 1400);
   };
 
   return (
     <motion.button
       onClick={handleClick}
+      disabled={isOpening}
+      aria-busy={isOpening}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, type: "spring", stiffness: 200 }}
       className="hidden md:flex fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] rounded-full items-center justify-center shadow-lg shadow-green-900/30 transition-colors cursor-pointer"
-      aria-label="Contato via WhatsApp"
+      aria-label={isOpening ? "Abrindo WhatsApp" : "Contato via WhatsApp"}
     >
-      <MessageCircle className="w-6 h-6 text-white" />
+      {isOpening ? (
+        <Loader2 className="w-6 h-6 text-white motion-safe:animate-spin" aria-hidden="true" />
+      ) : (
+        <MessageCircle className="w-6 h-6 text-white" aria-hidden="true" />
+      )}
     </motion.button>
   );
 }

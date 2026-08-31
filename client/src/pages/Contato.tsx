@@ -27,6 +27,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import { trackWhatsAppClick, trackPhoneClick, trackDoctoraliaClick, fireFormConversionEvents } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
+import SocialShareButtons from "@/components/SocialShareButtons";
+import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 
 const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
 
@@ -136,12 +138,18 @@ export default function Contato() {
                 Voltar
               </Button>
             </Link>
-            <a href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=page&utm_campaign=contato" target="_blank" rel="noopener noreferrer" className="hidden sm:block" onClick={() => trackDoctoraliaClick("contato")}>
-              <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white">
-                <Phone className="w-4 h-4 mr-2" />
-                Agendar Consulta
-              </Button>
-            </a>
+            <CTAButtonWithAnimation
+              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=page&utm_campaign=contato"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex"
+              onClick={() => trackDoctoraliaClick("contato")}
+              loadingText="Abrindo agenda…"
+              size="sm"
+              icon={<Phone className="w-4 h-4" />}
+            >
+              Agendar Consulta
+            </CTAButtonWithAnimation>
           </div>
         </div>
       </header>
@@ -398,6 +406,21 @@ export default function Contato() {
         </div>
       </section>
 
+      <section className="border-t border-[#1C3D5A]/8 bg-[#F7F8F8] py-9 dark:bg-card">
+        <div className="container flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <div>
+            <h2 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">Compartilhe nossos contatos</h2>
+            <p className="mt-1 text-sm text-[#1C3D5A]/55 dark:text-foreground/55">Facilite o acesso de familiares e amigos aos canais oficiais.</p>
+          </div>
+          <SocialShareButtons
+            title="Contato — Dr. Felipe de Bulhões"
+            text="Telefones, WhatsApp e locais de atendimento em São Paulo e Campinas."
+            url="https://felipebulhoes.com/contato"
+            source="contato"
+          />
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
         <div className="container text-center">
@@ -405,11 +428,9 @@ export default function Contato() {
           <p className="text-white/50 text-sm mb-6 max-w-lg mx-auto">
             Use o calendário do Doctoralia para escolher o melhor dia e horário. Confirmação imediata.
           </p>
-          <Link href="/agendamento">
-            <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white px-6 h-11">
-              Agendar pelo Doctoralia
-            </Button>
-          </Link>
+          <CTAButtonWithAnimation href="/agendamento" loadingText="Abrindo agendamento…" className="px-6 h-11">
+            Agendar pelo Doctoralia
+          </CTAButtonWithAnimation>
         </div>
       </section>
 

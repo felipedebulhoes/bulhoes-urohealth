@@ -3,11 +3,12 @@
  * Melhora experiência do usuário e engajamento
  */
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { Loader2 } from 'lucide-react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 interface CTAButtonWithAnimationProps {
   children: ReactNode;
-  onClick?: () => void;
+  onClick?: () => void | Promise<void>;
   href?: string;
   target?: string;
   rel?: string;
@@ -17,6 +18,9 @@ interface CTAButtonWithAnimationProps {
   className?: string;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
+  loading?: boolean;
+  loadingText?: ReactNode;
+  autoLoading?: boolean;
 }
 
 export function CTAButtonWithAnimation({
@@ -31,7 +35,29 @@ export function CTAButtonWithAnimation({
   className = '',
   disabled = false,
   type = 'button',
+  loading = false,
+  loadingText = 'Abrindo…',
+  autoLoading = true,
 }: CTAButtonWithAnimationProps) {
+  const [internalLoading, setInternalLoading] = useState(false);
+  const resetTimerRef = useRef<number | null>(null);
+  const isLoading = loading || internalLoading;
+
+  useEffect(() => () => {
+    if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
+  }, []);
+
+  const beginFeedback = () => {
+    if (!autoLoading || loading) return;
+    setInternalLoading(true);
+    resetTimerRef.current = window.setTimeout(() => setInternalLoading(false), 1800);
+  };
+
+  const handleClick = async () => {
+    if (disabled || isLoading) return;
+    beginFeedback();
+    await onClick?.();
+  };
   // Estilos base por variante
   const variantStyles = {
     primary: 'bg-[#B87333] hover:bg-[#A0632A] text-white',
@@ -49,8 +75,9 @@ export function CTAButtonWithAnimation({
   const baseClasses = `
     inline-flex items-center justify-center gap-2 rounded-lg font-medium
     transition-all duration-300 ease-out
-    disabled:opacity-50 disabled:cursor-not-allowed
+    disabled:opacity-50 disabled:cursor-not-allowed aria-disabled:opacity-60
     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B87333]
+    active:scale-[0.97]
     ${variantStyles[variant]}
     ${sizeStyles[size]}
     ${className}
@@ -58,8 +85,12 @@ export function CTAButtonWithAnimation({
 
   const buttonContent = (
     <>
-      {icon && <span className="flex items-center justify-center">{icon}</span>}
-      <span>{children}</span>
+      {isLoading ? (
+        <Loader2 className="h-4 w-4 motion-safe:animate-spin" aria-hidden="true" />
+      ) : icon ? (
+        <span className="flex items-center justify-center">{icon}</span>
+      ) : null}
+      <span aria-live="polite">{isLoading ? loadingText : children}</span>
     </>
   );
 
@@ -84,6 +115,15 @@ export function CTAButtonWithAnimation({
         href={href}
         target={target}
         rel={rel}
+        onClick={(event) => {
+          if (disabled || isLoading) {
+            event.preventDefault();
+            return;
+          }
+          void handleClick();
+        }}
+        aria-busy={isLoading}
+        aria-disabled={disabled || isLoading}
         className={baseClasses}
         variants={buttonVariants}
         initial="rest"
@@ -99,8 +139,9 @@ export function CTAButtonWithAnimation({
   return (
     <motion.button
       type={type}
-      onClick={onClick}
-      disabled={disabled}
+      onClick={() => void handleClick()}
+      disabled={disabled || isLoading}
+      aria-busy={isLoading}
       className={baseClasses}
       variants={buttonVariants}
       initial="rest"

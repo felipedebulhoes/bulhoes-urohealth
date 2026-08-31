@@ -18,6 +18,9 @@ import {
 import { Link } from "wouter";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { getWhatsAppUrl } from "@/lib/tracking";
+import SocialShareButtons from "@/components/SocialShareButtons";
+import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
+import { trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -261,6 +264,21 @@ export default function SobreDrFelipe() {
         </div>
       </section>
 
+      <section className="border-t border-[#1C3D5A]/8 bg-[#F7F8F8] py-9 dark:bg-card">
+        <div className="container max-w-4xl flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <div>
+            <h2 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">Compartilhe este perfil profissional</h2>
+            <p className="mt-1 text-sm text-[#1C3D5A]/55 dark:text-foreground/55">Envie formação, áreas de atuação e locais de atendimento.</p>
+          </div>
+          <SocialShareButtons
+            title="Dr. Felipe de Bulhões — Urologista"
+            text="Conheça a formação e as áreas de atuação do Dr. Felipe de Bulhões."
+            url="https://felipebulhoes.com/sobre"
+            source="sobre"
+          />
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-[#1C3D5A]">
         <div className="container max-w-4xl text-center">
@@ -271,25 +289,25 @@ export default function SobreDrFelipe() {
               Cuide da sua saúde com um urologista especializado. Atendimento presencial em Campinas e São Paulo, ou teleconsulta para todo o Brasil.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/"
-                onClick={() => {
-                  setTimeout(() => {
-                    document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
-                  }, 500);
-                }}
-                className="bg-[#B87333] hover:bg-[#0B8276] text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              <CTAButtonWithAnimation
+                href="/agendar/doctoralia"
+                onClick={() => trackDoctoraliaClick("sobre")}
+                loadingText="Abrindo agenda…"
+                className="px-8 py-3"
               >
                 Agendar pelo Doctoralia
-              </Link>
-              <a
+              </CTAButtonWithAnimation>
+              <CTAButtonWithAnimation
                 href={getWhatsAppUrl({ page: "sobre" })}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+                onClick={() => trackWhatsAppClick("sobre")}
+                loadingText="Abrindo WhatsApp…"
+                variant="outline"
+                className="border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-3"
               >
                 WhatsApp (11) 98112-4455 — apenas mensagens
-              </a>
+              </CTAButtonWithAnimation>
             </div>
           </motion.div>
         </div>

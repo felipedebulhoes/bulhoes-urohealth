@@ -9,9 +9,11 @@ import { ArrowLeft, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "./WhatsAppButton";
 import MobileBottomBar from "./MobileBottomBar";
-import { trackEducationalPageView, trackDoctoraliaClick } from "@/lib/analytics";
+import { trackEducationalPageView, trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { MedicalPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import SocialShareButtons from "@/components/SocialShareButtons";
+import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 
 interface EducationalLayoutProps {
   title: string;
@@ -99,18 +101,18 @@ export default function EducationalLayout({
                 Voltar
               </Button>
             </Link>
-            <a
+            <CTAButtonWithAnimation
               href={doctoraliaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:block"
+              className="hidden sm:inline-flex"
               onClick={handleDoctoraliaClick}
+              loadingText="Abrindo agenda…"
+              size="sm"
+              icon={<Phone className="w-4 h-4" />}
             >
-              <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white">
-                <Phone className="w-4 h-4 mr-2" />
-                Agendar Consulta
-              </Button>
-            </a>
+              Agendar Consulta
+            </CTAButtonWithAnimation>
           </div>
         </div>
       </header>
@@ -144,6 +146,16 @@ export default function EducationalLayout({
       {/* Content */}
       <main>{children}</main>
 
+      <section className="border-y border-[#1C3D5A]/8 bg-[#F7F8F8] py-8 dark:bg-card">
+        <div className="container flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <div>
+            <h2 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">Compartilhe informação confiável</h2>
+            <p className="mt-1 text-sm text-[#1C3D5A]/55 dark:text-foreground/55">Ajude outras pessoas a encontrar conteúdo médico educativo.</p>
+          </div>
+          <SocialShareButtons title={title} text={description} source={`educational_${pageSlug}`} />
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
         <div className="container text-center">
@@ -156,25 +168,27 @@ export default function EducationalLayout({
             teleconsulta.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
+            <CTAButtonWithAnimation
               href={doctoraliaUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleDoctoraliaClick}
+              loadingText="Abrindo agenda…"
+              className="px-6 h-11"
             >
-              <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white px-6 h-11">
-                Agendar Consulta
-              </Button>
-            </a>
-            <a
+              Agendar Consulta
+            </CTAButtonWithAnimation>
+            <CTAButtonWithAnimation
               href={whatsappCtaUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(`educational_${pageSlug}`)}
+              loadingText="Abrindo WhatsApp…"
+              variant="outline"
+              className="border-white/20 text-white hover:bg-white/10 hover:text-white px-6 h-11"
             >
-              <Button variant="outline" className="text-white border-white/20 hover:bg-white/10 bg-transparent px-6 h-11">
-                WhatsApp
-              </Button>
-            </a>
+              WhatsApp
+            </CTAButtonWithAnimation>
           </div>
         </div>
       </section>

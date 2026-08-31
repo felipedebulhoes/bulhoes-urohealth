@@ -2,7 +2,7 @@
  * Design: Clinical Precision — Swiss Medical Design
  * AI Chat Widget — Assistente Virtual Urológico com Coleta de Leads
  */
-import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Bot,
@@ -22,12 +22,7 @@ import {
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { trackLeadGenerated, trackChatOpen } from "@/lib/analytics";
-// Streamdown (+ its markdown/syntax-highlighting/diagram deps) is lazy-loaded so it never
-// ships in the initial Home bundle - it is only fetched once the visitor opens the chat
-// and the first assistant reply needs to be rendered.
-const LazyStreamdown = lazy(() =>
-  import("streamdown").then((mod) => ({ default: mod.Streamdown }))
-);
+import LightMarkdown from "@/components/LightMarkdown";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -318,9 +313,7 @@ export default function AIChatWidget() {
                           >
                             {msg.role === "assistant" ? (
                               <div className="prose prose-sm max-w-none text-[#334155] [&_p]:text-sm [&_p]:leading-relaxed [&_li]:text-sm [&_a]:text-[#B87333]">
-                                <Suspense fallback={<p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</p>}>
-                                  <LazyStreamdown>{msg.content}</LazyStreamdown>
-                                </Suspense>
+                                <LightMarkdown>{msg.content}</LightMarkdown>
                               </div>
                             ) : (
                               <p className="text-sm leading-relaxed whitespace-pre-wrap">

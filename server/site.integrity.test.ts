@@ -163,4 +163,35 @@ describe("Integridade das páginas públicas", () => {
     expect(report).toContain("Arquitetura de informação proposta");
     expect(report).toContain("Mapa de jornadas");
   });
+
+  it("oferece WhatsApp confidencial no protótipo com atribuição e rastreamento centralizados", () => {
+    const layout = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeLayout.tsx"), "utf8");
+    const whatsapp = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeWhatsAppButton.tsx"), "utf8");
+
+    expect(layout).toContain("<PrototypeWhatsAppButton />");
+    expect(whatsapp).toContain("getWhatsAppUrl");
+    expect(whatsapp).toContain("trackWhatsAppClick");
+    expect(whatsapp).toContain("Prefiro explicar os detalhes durante o atendimento");
+    expect(whatsapp).toContain('rel="noopener noreferrer"');
+  });
+
+  it("inclui FAQ expansível rastreado na página de engrossamento do protótipo", () => {
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+
+    expect(prototype).toContain("Perguntas frequentes sobre o preenchimento com ácido hialurônico");
+    expect(prototype).toContain('id="faq_increase"');
+    expect(prototype).toContain('id="faq_risks"');
+    expect(prototype).toContain('id="faq_candidate"');
+    expect(prototype).toContain('trackPrototypeEvent("faq_open"');
+  });
+
+  it("anima as seções de Saúde do Homem e respeita movimento reduzido", () => {
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+    const reveal = readFileSync(resolve(projectRoot, "client/src/components/ScrollReveal.tsx"), "utf8");
+    const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
+
+    expect(prototype.match(/<ScrollReveal threshold=\{0\.08\}>/g)?.length).toBeGreaterThanOrEqual(3);
+    expect(reveal).toContain('matchMedia("(prefers-reduced-motion: reduce)")');
+    expect(app).toContain("!isPrototypeRoute && <SplashScreen />");
+  });
 });

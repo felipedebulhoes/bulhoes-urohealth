@@ -261,3 +261,8 @@
 - [x] Corrigir a legibilidade da marca no cabeçalho do protótipo em fundo claro
 - [x] Blindar a detecção da homepage no Header contra ambientes sem window e navegação inconsistente
 - [x] Verificar imagens públicas apontadas na revisão final — todas já classificadas com loading lazy/eager e decoding quando aplicável
+- [x] Adicionar botão flutuante de agendamento via WhatsApp ao protótipo com mensagem confidencial e tracking sem dados clínicos
+- [x] Implementar FAQ expansível baseado em evidências na página de engrossamento peniano do protótipo
+- [x] Adicionar transições suaves entre as seções do hub de Saúde do Homem respeitando prefers-reduced-motion
+- [x] Validar as três melhorias em desktop e mobile, TypeScript, cobertura de testes de integridade e build do checkpoint
+- [x] Ocultar a splash screen nas rotas do protótipo para não bloquear testes, navegação ou o WhatsApp flutuante

@@ -4,6 +4,8 @@
 
 O protótipo está disponível em `/prototipo-jornada-paciente`. As cinco rotas usam metatag e cabeçalho HTTP `X-Robots-Tag` com `noindex, nofollow, noarchive, nosnippet`. Elas não foram adicionadas ao menu público, ao sitemap ou aos conteúdos relacionados.
 
+O botão flutuante de WhatsApp é o único elemento que abre um canal real. A mensagem inicial informa apenas a intenção de agendar uma avaliação confidencial e orienta que detalhes sejam explicados durante o atendimento. Os cartões da página de agendamento continuam sendo simulações.
+
 ## O que deve ser avaliado
 
 O objetivo não é escolher cores ou detalhes decorativos. A revisão deve verificar se um paciente encontra seu caminho, entende a proposta clínica, percebe privacidade e consegue identificar o próximo passo sem ser pressionado.
@@ -28,6 +30,8 @@ O objetivo não é escolher cores ou detalhes decorativos. A revisão deve verif
 | Engrossamento | Página longa, majoritariamente explicativa | Resumo decisório e divulgação progressiva: evidência, incerteza, riscos e alternativas |
 | Saúde do homem | Conteúdo fragmentado entre próstata, metabolismo e andrologia | Hub por fase de vida e quatro dimensões de saúde |
 | Agendamento | Acesso por múltiplos CTAs e canais | Página única que explica canal, privacidade e próximo passo |
+| Dúvidas sobre engrossamento | Respostas distribuídas na página | FAQ expansível sobre resultado, duração, recuperação, riscos, reversibilidade e seleção |
+| Fluidez | Seções estáticas | Transições de entrada no hub de Saúde do Homem, desativadas quando o usuário prefere movimento reduzido |
 | Analytics | Eventos de conteúdo e conversão | Eventos adicionais de validação com identificadores fixos e sem dados clínicos |
 
 ## Cenários de teste
@@ -41,7 +45,7 @@ Cada participante deve realizar as tarefas sem orientação. O moderador registr
 | Estética íntima | “Você quer informação sobre aparência genital com discrição.” | Encontrar Saúde Íntima e perceber linguagem não julgadora |
 | Engrossamento | “Você ouviu falar em ácido hialurônico e quer saber se é seguro.” | Identificar caráter eletivo, temporário, riscos e necessidade de avaliação |
 | Urologia geral | “Você procura cuidado para próstata ou cálculo renal.” | Confirmar que esses temas continuam visíveis na homepage |
-| Agendamento | “Você decidiu conversar com o médico.” | Encontrar o fluxo e explicar o que acontece depois do clique |
+| Agendamento | “Você decidiu conversar com o médico.” | Encontrar o fluxo e explicar o que acontece depois do clique; usar o WhatsApp somente se desejar contato real |
 
 ## Perguntas após o teste
 

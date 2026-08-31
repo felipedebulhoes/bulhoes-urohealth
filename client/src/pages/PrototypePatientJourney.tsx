@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import PrototypeLayout, { PROTOTYPE_BASE } from "@/components/prototype/PrototypeLayout";
 import PrototypeMeta from "@/components/prototype/PrototypeMeta";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { trackPrototypeEvent } from "@/lib/analytics";
 
 type IconType = ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>;
@@ -342,23 +343,26 @@ export function PrototypeMensHealth() {
       </section>
 
       <section className="py-20">
-        <div className="container">
-          <SectionLabel>Cuidado ao longo da vida</SectionLabel>
-          <h2 className="max-w-2xl font-serif text-3xl text-[#17364F] sm:text-4xl dark:text-foreground">Por onde começar em cada fase?</h2>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {stages.map((stage) => (
-              <article key={stage.range} className="rounded-2xl border border-[#17364F]/10 bg-white p-6 dark:bg-card">
-                <span className="inline-flex rounded-full bg-[#17364F] px-3 py-1 text-sm font-bold text-white">{stage.range} anos</span>
-                <h3 className="mt-5 font-serif text-2xl text-[#17364F] dark:text-foreground">{stage.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#17364F]/65 dark:text-foreground/65">{stage.topics}</p>
-              </article>
-            ))}
+        <ScrollReveal threshold={0.08}>
+          <div className="container">
+            <SectionLabel>Cuidado ao longo da vida</SectionLabel>
+            <h2 className="max-w-2xl font-serif text-3xl text-[#17364F] sm:text-4xl dark:text-foreground">Por onde começar em cada fase?</h2>
+            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+              {stages.map((stage) => (
+                <article key={stage.range} className="rounded-2xl border border-[#17364F]/10 bg-white p-6 dark:bg-card">
+                  <span className="inline-flex rounded-full bg-[#17364F] px-3 py-1 text-sm font-bold text-white">{stage.range} anos</span>
+                  <h3 className="mt-5 font-serif text-2xl text-[#17364F] dark:text-foreground">{stage.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#17364F]/65 dark:text-foreground/65">{stage.topics}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <section className="bg-[#EAF0F3] py-20 dark:bg-card">
-        <div className="container grid gap-10 lg:grid-cols-[1fr_0.9fr]">
+        <ScrollReveal threshold={0.08}>
+          <div className="container grid gap-10 lg:grid-cols-[1fr_0.9fr]">
           <div>
             <SectionLabel>Quatro dimensões</SectionLabel>
             <h2 className="font-serif text-3xl text-[#17364F] sm:text-4xl dark:text-foreground">Uma avaliação que conecta sintomas e saúde global</h2>
@@ -388,14 +392,17 @@ export function PrototypeMensHealth() {
               Entender performance masculina <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </section>
 
       <section className="bg-white py-20 dark:bg-background">
-        <div className="container max-w-3xl">
-          <ConfidentialityNote />
-          <div className="mt-8 text-center"><PrototypeLink href={`${PROTOTYPE_BASE}/agendamento`} source="mens_health_final" item="schedule">Ver como agendar uma avaliação integral</PrototypeLink></div>
-        </div>
+        <ScrollReveal threshold={0.08}>
+          <div className="container max-w-3xl">
+            <ConfidentialityNote />
+            <div className="mt-8 text-center"><PrototypeLink href={`${PROTOTYPE_BASE}/agendamento`} source="mens_health_final" item="schedule">Ver como agendar uma avaliação integral</PrototypeLink></div>
+          </div>
+        </ScrollReveal>
       </section>
     </PrototypeLayout>
   );
@@ -585,6 +592,38 @@ export function PrototypeGirthEnhancement() {
         </div>
       </section>
 
+      <section className="bg-white py-20 dark:bg-background" aria-labelledby="girth-faq-title">
+        <div className="container max-w-4xl">
+          <SectionLabel>Dúvidas frequentes</SectionLabel>
+          <h2 id="girth-faq-title" className="font-serif text-3xl text-[#17364F] sm:text-4xl dark:text-foreground">Perguntas frequentes sobre o preenchimento com ácido hialurônico</h2>
+          <p className="mt-4 max-w-3xl leading-7 text-[#17364F]/70 dark:text-foreground/70">As respostas resumem o que pode ser explicado antes da consulta. A indicação e o risco individual dependem de avaliação médica presencial.</p>
+          <div className="mt-8 grid gap-4">
+            <Disclosure id="faq_increase" title="Quanto a circunferência pode aumentar?">
+              Estudos observacionais descrevem aumento médio mensurável em grupos selecionados, mas o resultado varia conforme anatomia, produto, volume, técnica e tempo de acompanhamento. Uma média publicada não deve ser interpretada como promessa individual.
+            </Disclosure>
+            <Disclosure id="faq_length" title="O procedimento aumenta o comprimento?">
+              O objetivo do preenchimento é aumentar a circunferência, não o comprimento do pênis. Eventuais mudanças de aparência não equivalem a alongamento anatômico.
+            </Disclosure>
+            <Disclosure id="faq_duration" title="O resultado é definitivo?">
+              Não. O ácido hialurônico é absorvível e o efeito tende a diminuir com o tempo. A duração varia e manutenções podem ser consideradas somente após nova avaliação.
+            </Disclosure>
+            <Disclosure id="faq_recovery" title="Como costuma ser a recuperação?">
+              Edema, sensibilidade e pequenos hematomas podem ocorrer nos primeiros dias. O retorno a exercícios, atividade sexual e manipulação local deve seguir a orientação individual do profissional responsável.
+            </Disclosure>
+            <Disclosure id="faq_risks" title="Quais complicações precisam ser conhecidas?">
+              Irregularidade, assimetria, nódulos, migração, infecção, alteração de sensibilidade, resultado insatisfatório e necessidade de dissolução ou correção são possíveis. Dor intensa, febre, mudança de cor ou piora rápida exigem avaliação imediata.
+            </Disclosure>
+            <Disclosure id="faq_reversible" title="É possível dissolver o produto?">
+              Em algumas situações, preenchedores de ácido hialurônico podem ser tratados com hialuronidase. Isso não transforma o procedimento em isento de risco e a correção pode exigir mais de uma abordagem.
+            </Disclosure>
+            <Disclosure id="faq_candidate" title="Quem pode não ser um bom candidato?">
+              Infecção ativa, alterações locais não esclarecidas, contraindicações clínicas, expectativas incompatíveis ou sofrimento desproporcional com a imagem corporal podem indicar adiamento, investigação adicional ou a opção de não realizar o procedimento.
+            </Disclosure>
+          </div>
+          <p className="mt-6 text-xs leading-5 text-[#17364F]/65 dark:text-foreground/65">Base clínica resumida: revisão sistemática e meta-análise de preenchedores injetáveis (Sexual Medicine Reviews, 2025) e posição da Sexual Medicine Society of North America sobre procedimentos cosméticos penianos (2024).</p>
+        </div>
+      </section>
+
       <section className="bg-white py-20 dark:bg-background">
         <div className="container max-w-4xl">
           <div className="rounded-3xl border border-[#B87333]/30 bg-[#FFF9F4] p-7 text-center dark:bg-[#B87333]/10 sm:p-10">
@@ -615,7 +654,7 @@ export function PrototypeScheduling() {
         <div className="container max-w-4xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#E3A66F]">Próximo passo claro</p>
           <h1 className="mt-4 font-serif text-4xl sm:text-5xl">Escolha como prefere iniciar o contato.</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">Este protótipo não envia dados nem abre serviços externos. Na versão pública, cada opção explicará o que acontece depois do clique.</p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">Os cartões abaixo simulam a escolha de canal sem enviar dados. O botão flutuante de WhatsApp é o único contato real e abre uma mensagem inicial sem detalhes clínicos.</p>
         </div>
       </section>
 

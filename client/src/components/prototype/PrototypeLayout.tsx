@@ -2,6 +2,7 @@ import { useState, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
 import { CalendarCheck, ChevronRight, Menu, ShieldCheck, X } from "lucide-react";
 import { trackPrototypeEvent } from "@/lib/analytics";
+import PrototypeWhatsAppButton from "@/components/prototype/PrototypeWhatsAppButton";
 
 const BASE = "/prototipo-jornada-paciente";
 
@@ -135,11 +136,13 @@ export default function PrototypeLayout({ children, breadcrumb }: PrototypeLayou
 
       <main id="conteudo-prototipo">{children}</main>
 
+      <PrototypeWhatsAppButton />
+
       <footer className="border-t border-white/10 bg-[#112F47] py-10 text-white">
         <div className="container grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <p className="font-serif text-xl">Cuidado urológico com clareza e discrição</p>
-            <p className="mt-2 max-w-xl text-sm text-white/75">Este ambiente demonstra uma possível nova jornada. Nenhuma solicitação de consulta é enviada a partir do protótipo.</p>
+            <p className="mt-2 max-w-xl text-sm text-white/75">Este ambiente demonstra uma possível nova jornada. Somente o botão flutuante de WhatsApp abre um canal real de contato, sem incluir detalhes clínicos na mensagem inicial.</p>
           </div>
           <div className="flex items-center gap-2 text-sm text-white/70">
             <ShieldCheck className="h-5 w-5 text-[#D99A61]" aria-hidden="true" />

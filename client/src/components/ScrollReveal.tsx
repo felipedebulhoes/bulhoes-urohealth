@@ -21,6 +21,11 @@ export function ScrollReveal({
     const element = ref.current;
     if (!element) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      element.classList.add("revealed");
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

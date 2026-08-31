@@ -256,6 +256,8 @@
 - [x] Prototipar página de engrossamento peniano com divulgação progressiva, riscos, limites e decisão compartilhada
 - [x] Prototipar jornada de agendamento confidencial com CTAs simulados e sem envio de dados reais
 - [x] Adicionar eventos de validação do protótipo sem registrar sintomas, diagnósticos ou dados pessoais
-- [ ] Validar o protótipo em desktop e mobile, teclado, contraste, zoom, movimento reduzido, testes, TypeScript e build
+- [x] Validar o protótipo em desktop e mobile, teclado, contraste, zoom/reflow, movimento reduzido, cobertura de testes, TypeScript e build do checkpoint
 - [x] Entregar comparação antes/depois e backlog priorizado para eventual implementação pública
 - [x] Corrigir a legibilidade da marca no cabeçalho do protótipo em fundo claro
+- [x] Blindar a detecção da homepage no Header contra ambientes sem window e navegação inconsistente
+- [x] Verificar imagens públicas apontadas na revisão final — todas já classificadas com loading lazy/eager e decoding quando aplicável

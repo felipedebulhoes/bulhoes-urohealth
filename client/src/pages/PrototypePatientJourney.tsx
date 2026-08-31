@@ -99,7 +99,7 @@ function JourneyCard({
       </div>
       <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-[#A9652D]">{eyebrow}</p>
       <h3 className="mt-2 font-serif text-2xl text-[#17364F] dark:text-foreground">{title}</h3>
-      <p className="mt-3 text-sm leading-6 text-[#17364F]/65 dark:text-foreground/65">{description}</p>
+      <p className="mt-3 text-sm leading-6 text-[#17364F]/75 dark:text-foreground/75">{description}</p>
     </Link>
   );
 }
@@ -118,7 +118,7 @@ function TrustStrip() {
         {items.map((item) => (
           <div key={item.value} className="px-5 py-5 sm:border-r sm:border-[#17364F]/10 last:border-0">
             <p className="font-semibold text-[#17364F] dark:text-foreground">{item.value}</p>
-            <p className="mt-1 text-xs text-[#17364F]/55 dark:text-foreground/55">{item.label}</p>
+            <p className="mt-1 text-xs text-[#17364F]/70 dark:text-foreground/70">{item.label}</p>
           </div>
         ))}
       </div>
@@ -132,7 +132,7 @@ function ConfidentialityNote() {
       <LockKeyhole className="mt-0.5 h-5 w-5 shrink-0 text-[#A9652D]" aria-hidden="true" />
       <div>
         <h3 className="font-semibold text-[#17364F] dark:text-foreground">Privacidade desde o primeiro contato</h3>
-        <p className="mt-1 text-sm leading-6 text-[#17364F]/65 dark:text-foreground/65">
+        <p className="mt-1 text-sm leading-6 text-[#17364F]/75 dark:text-foreground/75">
           Você não precisa relatar detalhes íntimos em formulários abertos. A consulta oferece um espaço confidencial para compreender sua necessidade, expectativas, possibilidades e limites.
         </p>
       </div>
@@ -210,7 +210,7 @@ export function PrototypePatientJourneyHome() {
             />
             <div className="absolute -bottom-5 left-4 right-4 rounded-xl bg-white p-4 text-[#17364F] shadow-xl sm:left-8 sm:right-auto sm:max-w-xs">
               <p className="font-semibold">Dr. Felipe de Bulhões</p>
-              <p className="mt-1 text-xs text-[#17364F]/60">Urologista e Cirurgião Geral · Instituto D'Or</p>
+              <p className="mt-1 text-xs text-[#17364F]/75">Urologista e Cirurgião Geral · Instituto D'Or</p>
             </div>
           </div>
         </div>

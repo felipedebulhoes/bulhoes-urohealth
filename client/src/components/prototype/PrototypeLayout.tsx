@@ -46,7 +46,7 @@ export default function PrototypeLayout({ children, breadcrumb }: PrototypeLayou
             </span>
             <span className="hidden sm:block">
               <span className="block font-serif text-base leading-none text-[#17364F] dark:text-foreground">Dr. Felipe de Bulhões</span>
-              <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.12em] text-[#17364F]/55 dark:text-foreground/55">Urologia e saúde do homem</span>
+              <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.12em] text-[#17364F]/75 dark:text-foreground/75">Urologia e saúde do homem</span>
             </span>
           </Link>
 
@@ -126,7 +126,7 @@ export default function PrototypeLayout({ children, breadcrumb }: PrototypeLayou
       </header>
 
       {breadcrumb && (
-        <div className="container py-4 text-sm text-[#17364F]/60 dark:text-foreground/60">
+        <div className="container py-4 text-sm text-[#17364F]/75 dark:text-foreground/75">
           <Link href={BASE} className="underline-offset-4 hover:underline">Protótipo</Link>
           <span aria-hidden="true"> / </span>
           <span>{breadcrumb}</span>
@@ -139,7 +139,7 @@ export default function PrototypeLayout({ children, breadcrumb }: PrototypeLayou
         <div className="container grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <p className="font-serif text-xl">Cuidado urológico com clareza e discrição</p>
-            <p className="mt-2 max-w-xl text-sm text-white/65">Este ambiente demonstra uma possível nova jornada. Nenhuma solicitação de consulta é enviada a partir do protótipo.</p>
+            <p className="mt-2 max-w-xl text-sm text-white/75">Este ambiente demonstra uma possível nova jornada. Nenhuma solicitação de consulta é enviada a partir do protótipo.</p>
           </div>
           <div className="flex items-center gap-2 text-sm text-white/70">
             <ShieldCheck className="h-5 w-5 text-[#D99A61]" aria-hidden="true" />

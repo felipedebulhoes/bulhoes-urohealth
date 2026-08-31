@@ -76,7 +76,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const isHomePage = window.location.pathname === "/";
+  const isHomePage = typeof window !== "undefined" && window.location.pathname === "/";
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);

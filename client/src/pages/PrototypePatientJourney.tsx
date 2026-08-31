@@ -750,7 +750,7 @@ export function PrototypeGirthEnhancement() {
         </div>
       </section>
 
-      <section className="bg-white py-20 dark:bg-background" aria-labelledby="girth-faq-title">
+      <section id="faq-engrossamento" className="scroll-mt-28 bg-white py-20 dark:bg-background" aria-labelledby="girth-faq-title">
         <div className="container max-w-4xl">
           <SectionLabel>Dúvidas frequentes</SectionLabel>
           <h2 id="girth-faq-title" className="font-serif text-3xl text-[#17364F] sm:text-4xl dark:text-foreground">Perguntas frequentes sobre o preenchimento com ácido hialurônico</h2>

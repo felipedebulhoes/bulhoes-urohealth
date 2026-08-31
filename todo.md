@@ -291,3 +291,7 @@
 - [x] Diagnosticar a falha de conexão WebSocket/HMR da prévia — cliente recebia porta vazia atrás do proxy HTTPS
 - [x] Corrigir a configuração de desenvolvimento para que o HMR use o host atual com porta pública 443 e protocolo WSS automático
 - [x] Reiniciar o servidor e validar HTTP 200, conexão pública do Vite, 97 testes, TypeScript e build
+- [x] Adicionar navegação inferior fixa no protótipo mobile com atalhos para WhatsApp, FAQ e formulário por e-mail
+- [x] Criar âncoras acessíveis e rolagem com compensação para os destinos FAQ e contato
+- [x] Evitar conflito entre bottom navigation, WhatsApp flutuante, botão Voltar ao topo e área segura do dispositivo
+- [x] Validar a navegação inferior em mobile, teclado, movimento reduzido, TypeScript, 98 testes e build

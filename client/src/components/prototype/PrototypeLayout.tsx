@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { CalendarCheck, ChevronRight, Menu, ShieldCheck, X } from "lucide-react";
 import { trackPrototypeEvent } from "@/lib/analytics";
 import PrototypeWhatsAppButton from "@/components/prototype/PrototypeWhatsAppButton";
+import PrototypeMobileBottomNav from "@/components/prototype/PrototypeMobileBottomNav";
 
 const BASE = "/prototipo-jornada-paciente";
 
@@ -23,7 +24,7 @@ export default function PrototypeLayout({ children, breadcrumb }: PrototypeLayou
   const [location] = useLocation();
 
   return (
-    <div className="min-h-screen bg-[#F7F8F8] text-[#17364F] dark:bg-background dark:text-foreground">
+    <div className="min-h-screen bg-[#F7F8F8] pb-[calc(5rem+env(safe-area-inset-bottom))] text-[#17364F] md:pb-0 dark:bg-background dark:text-foreground">
       <a
         href="#conteudo-prototipo"
         className="sr-only z-[100] rounded-md bg-white px-4 py-3 font-semibold text-[#17364F] focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
@@ -137,6 +138,7 @@ export default function PrototypeLayout({ children, breadcrumb }: PrototypeLayou
       <main id="conteudo-prototipo">{children}</main>
 
       <PrototypeWhatsAppButton />
+      <PrototypeMobileBottomNav />
 
       <footer className="border-t border-white/10 bg-[#112F47] py-10 text-white">
         <div className="container grid gap-6 md:grid-cols-[1fr_auto] md:items-center">

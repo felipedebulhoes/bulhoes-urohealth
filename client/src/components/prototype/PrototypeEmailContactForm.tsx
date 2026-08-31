@@ -44,7 +44,7 @@ export default function PrototypeEmailContactForm() {
 
   if (submitted) {
     return (
-      <div className="mt-12 rounded-3xl border border-emerald-200 bg-emerald-50 p-7 text-emerald-950" role="status" aria-live="polite">
+      <div id="contato-email" className="mt-12 scroll-mt-28 rounded-3xl border border-emerald-200 bg-emerald-50 p-7 text-emerald-950" role="status" aria-live="polite">
         <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
         <h3 className="mt-4 font-serif text-2xl">Solicitação recebida</h3>
         <p className="mt-2 text-sm leading-6">A equipe responderá pelo e-mail informado. Não envie exames, fotos ou detalhes clínicos por resposta automática.</p>
@@ -91,7 +91,7 @@ export default function PrototypeEmailContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-12 rounded-3xl border border-[#17364F]/10 bg-[#F7FAFB] p-6 dark:bg-card sm:p-8" aria-labelledby="email-contact-title">
+    <form id="contato-email" onSubmit={handleSubmit} className="mt-12 scroll-mt-28 rounded-3xl border border-[#17364F]/10 bg-[#F7FAFB] p-6 dark:bg-card sm:p-8" aria-labelledby="email-contact-title">
       <div className="flex items-start gap-3">
         <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#17364F] text-white" aria-hidden="true"><Mail className="h-5 w-5" /></span>
         <div>

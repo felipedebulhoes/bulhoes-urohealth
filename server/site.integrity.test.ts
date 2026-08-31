@@ -356,4 +356,22 @@ describe("Integridade das páginas públicas", () => {
     expect(viteServer).toContain("hmr: { server, clientPort: 443 }");
     expect(viteServer).toContain("middlewareMode: true");
   });
+
+  it("oferece navegação inferior mobile para WhatsApp, FAQ e contato", () => {
+    const navigation = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeMobileBottomNav.tsx"), "utf8");
+    const layout = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeLayout.tsx"), "utf8");
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+    const emailForm = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
+    const floatingWhatsApp = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeWhatsAppButton.tsx"), "utf8");
+
+    expect(navigation).toContain('aria-label="Atalhos de contato do protótipo"');
+    expect(navigation).toContain('destination("faq-engrossamento")');
+    expect(navigation).toContain('destination("contato-email")');
+    expect(navigation).toContain('pb-[max(env(safe-area-inset-bottom),0.5rem)]');
+    expect(navigation).toContain('trackWhatsAppClick("prototype_patient_journey_mobile_bottom_nav")');
+    expect(layout).toContain("<PrototypeMobileBottomNav />");
+    expect(prototype).toContain('id="faq-engrossamento"');
+    expect(emailForm.match(/id="contato-email"/g)).toHaveLength(2);
+    expect(floatingWhatsApp).toContain("md:flex");
+  });
 });

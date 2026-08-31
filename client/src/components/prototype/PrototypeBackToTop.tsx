@@ -36,7 +36,7 @@ export default function PrototypeBackToTop() {
       aria-label="Voltar ao topo da página"
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
-      className={`fixed bottom-20 right-4 z-40 inline-flex min-h-11 items-center gap-2 rounded-full border border-[#17364F]/15 bg-white px-3 py-2 text-sm font-semibold text-[#17364F] shadow-xl transition duration-200 hover:-translate-y-0.5 hover:border-[#B87333]/45 hover:text-[#9D602A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4 motion-reduce:transform-none sm:bottom-24 sm:right-7 ${
+      className={`fixed bottom-24 right-4 z-40 inline-flex min-h-11 items-center gap-2 rounded-full border border-[#17364F]/15 bg-white px-3 py-2 text-sm font-semibold text-[#17364F] shadow-xl transition duration-200 hover:-translate-y-0.5 hover:border-[#B87333]/45 hover:text-[#9D602A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B87333] focus-visible:ring-offset-4 motion-reduce:transform-none sm:right-7 ${
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}
     >

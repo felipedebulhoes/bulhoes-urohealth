@@ -120,4 +120,47 @@ describe("Integridade das páginas públicas", () => {
     expect(related).toContain("trackRelatedContentClick");
     expect(analytics).toContain('trackEvent("select_content"');
   });
+
+  it("mantém o protótipo em rotas isoladas e carregadas sob demanda", () => {
+    const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
+
+    expect(app).toContain('lazy(() => import("./pages/PrototypePatientJourney"))');
+    expect(app).toContain('/prototipo-jornada-paciente/saude-do-homem');
+    expect(app).toContain('/prototipo-jornada-paciente/saude-intima-performance');
+    expect(app).toContain('/prototipo-jornada-paciente/engrossamento-peniano');
+    expect(app).toContain('/prototipo-jornada-paciente/agendamento');
+  });
+
+  it("impede indexação do protótipo e restaura a configuração ao sair", () => {
+    const meta = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeMeta.tsx"), "utf8");
+    const server = readFileSync(resolve(projectRoot, "server/_core/index.ts"), "utf8");
+
+    expect(meta).toContain('noindex, nofollow, noarchive, nosnippet');
+    expect(meta).toContain("robots.remove()");
+    expect(meta).toContain("previousRobots");
+    expect(server).toContain('req.path.startsWith("/prototipo-jornada-paciente")');
+    expect(server).toContain('res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet")');
+  });
+
+  it("rastreia o protótipo somente com identificadores fixos de interface", () => {
+    const analytics = readFileSync(resolve(projectRoot, "client/src/lib/analytics.ts"), "utf8");
+    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
+
+    expect(analytics).toContain("trackPrototypeEvent");
+    expect(analytics).toContain('event_category: "prototype_validation"');
+    expect(analytics).not.toContain("prototype_symptom");
+    expect(prototype).toContain("Nenhum dado foi enviado");
+    expect(prototype).not.toContain("wa.me/");
+    expect(prototype).not.toContain("doctoralia.com.br");
+  });
+
+  it("documenta a pesquisa e referencia padrões clínicos, regulatórios e de acessibilidade", () => {
+    const report = readFileSync(resolve(projectRoot, "PATIENT_JOURNEY_RESEARCH.md"), "utf8");
+
+    expect(report).toContain("WCAG 2.2");
+    expect(report).toContain("Resolução CFM nº 2.336/2023");
+    expect(report).toContain("SMSNA");
+    expect(report).toContain("Arquitetura de informação proposta");
+    expect(report).toContain("Mapa de jornadas");
+  });
 });

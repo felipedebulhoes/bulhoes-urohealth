@@ -44,6 +44,15 @@ async function startServer() {
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
     next();
   });
+
+  // O protótipo é uma área privada de validação e não deve aparecer em busca,
+  // cache ou snippets, mesmo para crawlers que não executam JavaScript.
+  app.use((req, res, next) => {
+    if (req.path.startsWith("/prototipo-jornada-paciente")) {
+      res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
+    }
+    next();
+  });
   // SEO: 301 redirect — domain consolidation
   // Redirect bulhoesurohealth.com → felipebulhoes.com (canonical domain)
   app.use((req, res, next) => {

@@ -61,6 +61,11 @@ const EngrossamentoPeniano = lazy(() => import("./pages/EngrossamentoPeniano"));
 const InstagramCarousel = lazy(() => import("./pages/InstagramCarousel"));
 const AgendarDoctoralia = lazy(() => import("./pages/AgendarDoctoralia"));
 const AgendarWhatsApp = lazy(() => import("./pages/AgendarWhatsApp"));
+const PrototypePatientJourneyHome = lazy(() => import("./pages/PrototypePatientJourney"));
+const PrototypeMensHealth = lazy(() => import("./pages/PrototypePatientJourney").then((m) => ({ default: m.PrototypeMensHealth })));
+const PrototypeIntimateHealth = lazy(() => import("./pages/PrototypePatientJourney").then((m) => ({ default: m.PrototypeIntimateHealth })));
+const PrototypeGirthEnhancement = lazy(() => import("./pages/PrototypePatientJourney").then((m) => ({ default: m.PrototypeGirthEnhancement })));
+const PrototypeScheduling = lazy(() => import("./pages/PrototypePatientJourney").then((m) => ({ default: m.PrototypeScheduling })));
 
 import { captureAttribution, initGlobalContactListener, initEngagementTracking } from "@/lib/tracking";
 import CanonicalTag from "./components/CanonicalTag";
@@ -133,6 +138,11 @@ function Router() {
         <Route path={"/agendar/whatsapp"} component={AgendarWhatsApp} />
         <Route path={"/canetas-emagrecedoras"} component={GuiaGLP1} />
         <Route path={"/privacidade"} component={PrivacyPolicy} />
+        <Route path={"/prototipo-jornada-paciente"} component={PrototypePatientJourneyHome} />
+        <Route path={"/prototipo-jornada-paciente/saude-do-homem"} component={PrototypeMensHealth} />
+        <Route path={"/prototipo-jornada-paciente/saude-intima-performance"} component={PrototypeIntimateHealth} />
+        <Route path={"/prototipo-jornada-paciente/engrossamento-peniano"} component={PrototypeGirthEnhancement} />
+        <Route path={"/prototipo-jornada-paciente/agendamento"} component={PrototypeScheduling} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />

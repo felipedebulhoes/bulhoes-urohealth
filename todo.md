@@ -246,3 +246,16 @@
 - [x] Rastrear cliques em conteúdos relacionados no GA4 sem registrar dados pessoais
 - [x] Validar as melhorias com 75 testes, TypeScript, build, responsividade e inspeção de atributos das imagens
 - [x] Corrigir chaves React duplicadas na grade do Blog identificadas na validação visual
+
+- [x] Produzir relatório de pesquisa sobre acessibilidade, linguagem clara, engajamento, ética médica e jornada digital do paciente
+- [x] Auditar a arquitetura atual do site e comparar referências brasileiras e internacionais de urologia e experiência em saúde
+- [x] Definir mapa de jornadas e nova arquitetura de informação orientada às necessidades do paciente
+- [x] Criar protótipo navegável não indexável em /prototipo-jornada-paciente sem alterar as páginas públicas
+- [x] Prototipar homepage alternativa com entrada por saúde do homem, performance, saúde íntima/estética e urologia geral
+- [x] Prototipar hubs de Saúde do Homem e Saúde Íntima e Performance
+- [x] Prototipar página de engrossamento peniano com divulgação progressiva, riscos, limites e decisão compartilhada
+- [x] Prototipar jornada de agendamento confidencial com CTAs simulados e sem envio de dados reais
+- [x] Adicionar eventos de validação do protótipo sem registrar sintomas, diagnósticos ou dados pessoais
+- [ ] Validar o protótipo em desktop e mobile, teclado, contraste, zoom, movimento reduzido, testes, TypeScript e build
+- [x] Entregar comparação antes/depois e backlog priorizado para eventual implementação pública
+- [x] Corrigir a legibilidade da marca no cabeçalho do protótipo em fundo claro

@@ -297,6 +297,32 @@ export function trackRelatedContentClick(source: string, destinationPath: string
   });
 }
 
+type PrototypeEventName =
+  | "prototype_page_view"
+  | "journey_entry_selected"
+  | "topic_hub_open"
+  | "prototype_section_view"
+  | "faq_open"
+  | "cta_schedule"
+  | "cta_whatsapp";
+
+/**
+ * Eventos de validação do protótipo. Envia apenas identificadores fixos de
+ * interface; nunca respostas, sintomas, diagnósticos ou texto digitado.
+ */
+export function trackPrototypeEvent(
+  eventName: PrototypeEventName,
+  componentId: string,
+  itemId: string = "not_applicable"
+) {
+  trackEvent(eventName, {
+    event_category: "prototype_validation",
+    component_id: componentId,
+    item_id: itemId,
+    page_path: typeof window !== "undefined" ? window.location.pathname : "",
+  });
+}
+
 // ===== META PIXEL EVENTS =====
 
 /**

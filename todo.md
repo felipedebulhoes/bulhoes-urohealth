@@ -295,8 +295,13 @@
 - [x] Criar âncoras acessíveis e rolagem com compensação para os destinos FAQ e contato
 - [x] Evitar conflito entre bottom navigation, WhatsApp flutuante, botão Voltar ao topo e área segura do dispositivo
 - [x] Validar a navegação inferior em mobile, teclado, movimento reduzido, TypeScript, 98 testes e build
-- [ ] Verificar disponibilidade e titularidade de drfelipebulhoes.com.br
-- [ ] Confirmar preço, período de registro e autorização antes de qualquer cobrança do domínio
+- [x] Confirmar no Registro.br por que drfelipebulhoes.com.br ainda não está liberado — WHOIS oficial informa “release process: waiting”
+- [x] Confirmar preço, período de registro e autorização antes de qualquer cobrança do domínio — 1 ano por R$ 40 autorizado pelo usuário
+- [x] Verificar se drfelipebulhoes.com.br está em processo competitivo de liberação, quarentena ou restrição administrativa — aguardando processo de liberação, sem fase competitiva ativa
+- [x] Identificar a próxima janela oficial de liberação — lista em 12/10/2026 e processo em 14/10/2026; janela seguinte em 11/11/2026
+- [x] Configurar lembrete único para 12/10/2026 às 09h para verificar a lista oficial de liberação — criado no Google Calendar
+- [x] Criar evento único em 12/10/2026 às 09h no Google Calendar de drfelipebulhoes@gmail.com — evento k2iqorr91ifm6brltalrjp5r24 confirmado
+- [x] Manter compra, candidatura e pagamento bloqueados até confirmação específica do usuário após a nova consulta
 - [ ] Registrar drfelipebulhoes.com.br no provedor apropriado
 - [ ] Vincular drfelipebulhoes.com.br e www.drfelipebulhoes.com.br ao site, configurando DNS e HTTPS
 - [ ] Definir domínio canônico e redirecionamentos sem prejudicar o SEO existente

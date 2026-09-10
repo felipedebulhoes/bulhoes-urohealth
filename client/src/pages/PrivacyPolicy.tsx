@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
           {/* Introdução */}
           <section>
             <p className="text-lg leading-relaxed">
-              O <strong>Dr. Felipe de Bulhões Ojeda</strong> (CRM-SP 000000), doravante denominado "Controlador", 
+              O <strong>Dr. Felipe de Bulhões Ojeda</strong> (CRM-SP 202291), doravante denominado "Controlador", 
               compromete-se com a proteção dos dados pessoais dos usuários deste site, em conformidade com a 
               <strong> Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)</strong>, o 
               Código de Defesa do Consumidor (Lei nº 8.078/1990) e as resoluções do Conselho Federal de Medicina (CFM).

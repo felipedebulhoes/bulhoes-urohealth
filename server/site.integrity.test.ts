@@ -374,4 +374,11 @@ describe("Integridade das páginas públicas", () => {
     expect(emailForm.match(/id="contato-email"/g)).toHaveLength(2);
     expect(floatingWhatsApp).toContain("md:flex");
   });
+
+  it("exibe o CRM correto na Política de Privacidade", () => {
+    const privacyPolicy = readFileSync(resolve(projectRoot, "client/src/pages/PrivacyPolicy.tsx"), "utf8");
+
+    expect(privacyPolicy).toContain("CRM-SP 202291");
+    expect(privacyPolicy).not.toContain("CRM-SP 000000");
+  });
 });

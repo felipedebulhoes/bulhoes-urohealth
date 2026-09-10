@@ -295,3 +295,12 @@
 - [x] Criar âncoras acessíveis e rolagem com compensação para os destinos FAQ e contato
 - [x] Evitar conflito entre bottom navigation, WhatsApp flutuante, botão Voltar ao topo e área segura do dispositivo
 - [x] Validar a navegação inferior em mobile, teclado, movimento reduzido, TypeScript, 98 testes e build
+- [ ] Verificar disponibilidade e titularidade de drfelipebulhoes.com.br
+- [ ] Confirmar preço, período de registro e autorização antes de qualquer cobrança do domínio
+- [ ] Registrar drfelipebulhoes.com.br no provedor apropriado
+- [ ] Vincular drfelipebulhoes.com.br e www.drfelipebulhoes.com.br ao site, configurando DNS e HTTPS
+- [ ] Definir domínio canônico e redirecionamentos sem prejudicar o SEO existente
+- [ ] Validar respostas HTTP, certificado, preview social e rastreamento após a propagação
+- [x] Localizar e corrigir todas as ocorrências públicas de CRM 000000 para CRM-SP 202291
+- [x] Adicionar teste de regressão para impedir novo CRM fictício na Política de Privacidade
+- [x] Validar a página /privacidade, TypeScript, 99 testes e build antes de publicar

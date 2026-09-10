@@ -380,5 +380,10 @@ describe("Integridade das páginas públicas", () => {
 
     expect(privacyPolicy).toContain("CRM-SP 202291");
     expect(privacyPolicy).not.toContain("CRM-SP 000000");
+    expect(privacyPolicy).toContain("TikTok Ads");
+    expect(privacyPolicy).toContain("Não compartilhamos dados de saúde com plataformas de publicidade");
+    expect(privacyPolicy).toContain("Leads que não resultem em agendamento");
+    expect(privacyPolicy).toContain("Resolução CD/ANPD nº 19/2024");
+    expect(privacyPolicy).not.toContain("Privacy Shield");
   });
 });

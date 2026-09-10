@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
             Política de Privacidade
           </h1>
           <p className="text-[#C4C4C4] mt-3 text-sm">
-            Última atualização: 22 de maio de 2026
+            Última atualização: 10 de setembro de 2026
           </p>
         </div>
       </div>
@@ -40,7 +40,8 @@ export default function PrivacyPolicy() {
             </p>
             <p className="leading-relaxed">
               Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos 
-              suas informações pessoais ao acessar nosso site e utilizar nossos serviços.
+              suas informações pessoais ao acessar nosso site, preencher formulários em plataformas de publicidade,
+              solicitar contato, utilizar nossos canais de comunicação ou agendar atendimento.
             </p>
           </section>
 
@@ -56,9 +57,14 @@ export default function PrivacyPolicy() {
               <li>Nome completo</li>
               <li>Endereço de e-mail</li>
               <li>Número de telefone/WhatsApp</li>
+              <li>Preferências administrativas de contato, local, modalidade e período de atendimento</li>
               <li>Mensagens enviadas via formulário de contato ou chat</li>
-              <li>Informações sobre sintomas ou condições de saúde (quando informadas voluntariamente no chat)</li>
             </ul>
+            <p className="mt-4 leading-relaxed">
+              Formulários de captação em plataformas de publicidade, como o TikTok Ads, destinam-se somente a
+              contato e agendamento. <strong>Não envie sintomas, diagnósticos, exames, medicamentos, fotografias
+              ou outras informações de saúde nesses formulários.</strong>
+            </p>
 
             <h3 className="text-xl text-[#1C3D5A] dark:text-gray-100 mt-4">1.2 Dados coletados automaticamente</h3>
             <ul className="list-disc pl-6 space-y-2">
@@ -68,6 +74,7 @@ export default function PrivacyPolicy() {
               <li>Origem do acesso (referrer)</li>
               <li>Cookies e identificadores de sessão</li>
               <li>Dados de geolocalização aproximada (cidade/estado)</li>
+              <li>Campanha, anúncio e página de origem do acesso</li>
             </ul>
           </section>
 
@@ -79,9 +86,11 @@ export default function PrivacyPolicy() {
             <p className="leading-relaxed">Utilizamos seus dados pessoais para as seguintes finalidades:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Agendamento de consultas:</strong> facilitar o contato e agendamento de atendimentos médicos</li>
-              <li><strong>Comunicação:</strong> responder dúvidas, enviar confirmações e informações relevantes sobre saúde</li>
+              <li><strong>Atendimento administrativo:</strong> responder solicitações sobre horários, locais, modalidades e funcionamento da consulta</li>
+              <li><strong>Comunicação transacional:</strong> enviar confirmações e informações relacionadas à solicitação feita pelo titular</li>
               <li><strong>Melhoria do site:</strong> analisar padrões de uso para aprimorar a experiência do usuário</li>
-              <li><strong>Marketing (com consentimento):</strong> enviar conteúdos educativos sobre saúde urológica</li>
+              <li><strong>Mensuração de campanhas:</strong> avaliar o desempenho da publicidade sem transmitir dados de saúde às plataformas</li>
+              <li><strong>Marketing opcional:</strong> enviar conteúdos educativos e informações sobre serviços somente quando houver escolha específica do titular</li>
               <li><strong>Obrigações legais:</strong> cumprir exigências regulatórias e do CFM</li>
               <li><strong>Segurança:</strong> prevenir fraudes e proteger a integridade do site</li>
             </ul>
@@ -92,13 +101,14 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl text-[#1C3D5A] dark:text-white border-b border-[#C4C4C4] pb-2">
               3. Base Legal para o Tratamento
             </h2>
-            <p className="leading-relaxed">O tratamento de dados pessoais é realizado com base nas seguintes hipóteses legais (Art. 7º da LGPD):</p>
+            <p className="leading-relaxed">A hipótese legal é definida de acordo com cada finalidade. As principais hipóteses utilizadas são:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Consentimento (Art. 7º, I):</strong> para envio de comunicações de marketing e uso de cookies não essenciais</li>
-              <li><strong>Execução de contrato (Art. 7º, V):</strong> para agendamento e prestação de serviços médicos</li>
+              <li><strong>Procedimentos preliminares a pedido do titular e execução de contrato (Art. 7º, V):</strong> para responder a pedidos de contato, organizar agendamentos e prestar serviços solicitados</li>
+              <li><strong>Cumprimento de obrigação legal ou regulatória (Art. 7º, II):</strong> quando o tratamento for exigido pela legislação aplicável</li>
               <li><strong>Exercício regular de direitos (Art. 7º, VI):</strong> para defesa em processos judiciais ou administrativos</li>
-              <li><strong>Legítimo interesse (Art. 7º, IX):</strong> para melhoria dos serviços e segurança do site</li>
-              <li><strong>Tutela da saúde (Art. 7º, VIII):</strong> quando necessário para proteção da vida ou incolumidade física do titular</li>
+              <li><strong>Legítimo interesse (Art. 7º, IX):</strong> para segurança, prevenção de fraude e melhoria dos serviços, após avaliação de necessidade, expectativa e salvaguardas, sem aplicação a dados de saúde</li>
+              <li><strong>Tutela da saúde (Art. 11, II, “f”):</strong> para dados de saúde indispensáveis a procedimento realizado por profissional ou serviço de saúde, em fluxo assistencial separado da captação publicitária</li>
             </ul>
           </section>
 
@@ -131,7 +141,7 @@ export default function PrivacyPolicy() {
                   </tr>
                   <tr className="dark:bg-[#1a3a52]">
                     <td className="border border-[#C4C4C4] p-3 font-semibold">Marketing</td>
-                    <td className="border border-[#C4C4C4] p-3">Google Ads — mensuração de conversões e remarketing</td>
+                    <td className="border border-[#C4C4C4] p-3">Google Ads e Meta Pixel — mensuração de campanhas e remarketing, quando autorizados</td>
                     <td className="border border-[#C4C4C4] p-3">Necessário</td>
                   </tr>
                 </tbody>
@@ -152,10 +162,18 @@ export default function PrivacyPolicy() {
             <p className="leading-relaxed">Seus dados pessoais podem ser compartilhados com:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Google LLC:</strong> para serviços de analytics e publicidade (Google Analytics, Google Ads)</li>
+              <li><strong>Meta Platforms:</strong> para mensuração de campanhas por meio do Meta Pixel, conforme as preferências de cookies</li>
+              <li><strong>TikTok Ads:</strong> quando você preenche um formulário instantâneo, para receber e encaminhar os dados administrativos necessários à solicitação de contato</li>
               <li><strong>Plataformas de agendamento:</strong> Doctoralia e Rede D'Or para marcação de consultas</li>
-              <li><strong>Serviços de comunicação:</strong> para envio de e-mails e mensagens</li>
+              <li><strong>Serviços de comunicação:</strong> WhatsApp, e-mail e telefonia para responder à solicitação pelo canal escolhido</li>
+              <li><strong>Hospedagem, banco de dados e CRM:</strong> prestadores estritamente necessários à operação, segurança e registro do contato</li>
               <li><strong>Autoridades competentes:</strong> quando exigido por lei ou ordem judicial</li>
             </ul>
+            <p className="mt-4 leading-relaxed">
+              Não compartilhamos dados de saúde com plataformas de publicidade para segmentação, criação de públicos,
+              remarketing ou mensuração. O preenchimento de um formulário de contato não autoriza automaticamente o
+              envio de marketing; essa escolha, quando oferecida, é apresentada separadamente e pode ser revogada.
+            </p>
             <p className="mt-4 leading-relaxed">
               <strong>Não vendemos, alugamos ou cedemos</strong> seus dados pessoais a terceiros para fins comerciais.
             </p>
@@ -178,8 +196,17 @@ export default function PrivacyPolicy() {
               <li>Backups regulares</li>
             </ul>
             <p className="mt-4 leading-relaxed">
-              Os dados são retidos pelo período necessário para cumprir as finalidades descritas nesta política 
-              ou conforme exigido por lei (prontuários médicos: mínimo 20 anos, conforme Resolução CFM nº 1.821/2007).
+              Aplicamos prazos de retenção conforme a finalidade. Leads que não resultem em agendamento são mantidos
+              por até 180 dias após o último contato relevante e depois eliminados ou anonimizados, salvo obrigação
+              legal ou necessidade de exercício regular de direitos. Registros de consentimento para marketing são
+              mantidos enquanto a autorização estiver ativa e pelo período necessário para demonstrar sua gestão;
+              a revogação interrompe novos envios promocionais.
+            </p>
+            <p className="mt-4 leading-relaxed">
+              O TikTok informa que leads ficam disponíveis em seu Ads Manager por até 90 dias. Esse prazo operacional
+              não amplia a retenção adotada pelo Controlador. Dados que passem a integrar prontuário médico seguem
+              regras assistenciais e legais próprias, distintas das aplicáveis a um lead de campanha, incluindo a
+              Lei nº 13.787/2018.
             </p>
           </section>
 
@@ -197,6 +224,8 @@ export default function PrivacyPolicy() {
               <li><strong>Portabilidade</strong> dos dados a outro fornecedor de serviço</li>
               <li><strong>Eliminação</strong> dos dados tratados com base no consentimento</li>
               <li><strong>Informação</strong> sobre entidades com as quais compartilhamos seus dados</li>
+              <li><strong>Informação</strong> sobre a possibilidade de não fornecer consentimento e suas consequências</li>
+              <li><strong>Oposição</strong> ao tratamento realizado em desconformidade com a LGPD</li>
               <li><strong>Revogação</strong> do consentimento a qualquer momento</li>
             </ul>
             <p className="mt-4 leading-relaxed">
@@ -213,10 +242,11 @@ export default function PrivacyPolicy() {
               8. Dados Sensíveis de Saúde
             </h2>
             <p className="leading-relaxed">
-              Informações sobre saúde são consideradas dados pessoais sensíveis pela LGPD (Art. 5º, II). 
-              Quando você compartilha informações sobre sintomas ou condições de saúde através do nosso chat 
-              ou formulários, esses dados são tratados com base na <strong>tutela da saúde</strong> (Art. 11, II, "f") 
-              e com as seguintes garantias adicionais:
+              Informações sobre saúde e vida sexual são dados pessoais sensíveis pela LGPD (Art. 5º, II).
+              Elas não devem ser enviadas em formulários de publicidade, comentários de redes sociais ou canais
+              administrativos de agendamento. Quando um dado de saúde for necessário ao atendimento, sua coleta
+              ocorrerá em canal assistencial apropriado, com finalidade definida e uma hipótese do Art. 11 da LGPD,
+              incluindo a <strong>tutela da saúde</strong> (Art. 11, II, "f") quando aplicável.
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Acesso restrito apenas ao profissional de saúde responsável</li>
@@ -244,14 +274,15 @@ export default function PrivacyPolicy() {
               10. Transferência Internacional de Dados
             </h2>
             <p className="leading-relaxed">
-              Alguns de nossos prestadores de serviço (como Google e plataformas de hospedagem) podem 
-              armazenar dados em servidores localizados fora do Brasil. Nesses casos, garantimos que 
-              a transferência ocorre em conformidade com o Art. 33 da LGPD, mediante:
+              Alguns prestadores, incluindo plataformas de publicidade, comunicação, analytics e hospedagem,
+              podem tratar dados fora do Brasil. Quando houver transferência internacional, adotamos um mecanismo
+              previsto no Art. 33 da LGPD e na Resolução CD/ANPD nº 19/2024, conforme o fluxo e o fornecedor,
+              além de medidas de transparência, necessidade e segurança.
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Cláusulas contratuais padrão de proteção de dados</li>
-              <li>Certificações reconhecidas (ex.: Privacy Shield, SOC 2)</li>
-              <li>Garantia de nível adequado de proteção pelo país destinatário</li>
+              <li>Decisão de adequação, quando aplicável</li>
+              <li>Cláusulas-padrão contratuais ou cláusulas específicas aprovadas pela ANPD</li>
+              <li>Outros mecanismos legalmente válidos para a transferência concreta</li>
             </ul>
           </section>
 
@@ -270,11 +301,11 @@ export default function PrivacyPolicy() {
           {/* 12. Contato */}
           <section>
             <h2 className="text-2xl text-[#1C3D5A] dark:text-white border-b border-[#C4C4C4] pb-2">
-              12. Contato do Encarregado (DPO)
+              12. Canal de Privacidade
             </h2>
             <p className="leading-relaxed">
-              Para questões relacionadas à proteção de dados pessoais, entre em contato com nosso 
-              Encarregado de Proteção de Dados:
+              Para exercer direitos ou esclarecer questões relacionadas à proteção de dados pessoais,
+              entre em contato com o canal abaixo:
             </p>
             <div className="bg-gray-50 dark:bg-[#1a3a52] p-6 rounded-lg mt-4 border border-[#C4C4C4]/30">
               <p className="font-semibold text-[#1C3D5A] dark:text-white">Dr. Felipe de Bulhões Ojeda</p>

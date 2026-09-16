@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   getCanonicalUrl,
+  getRequestHostname,
   getSeoRedirectTarget,
   injectCanonicalMetadata,
 } from "./_core/seo";
@@ -36,6 +37,24 @@ describe("SEO URL consolidation", () => {
   it("does not redirect valid canonical-host requests", () => {
     expect(getSeoRedirectTarget("felipebulhoes.com", "/sobre")).toBeNull();
     expect(getSeoRedirectTarget("localhost:3000", "/sobre")).toBeNull();
+  });
+
+  it("prefers the original hostname forwarded by the deployment proxy", () => {
+    expect(
+      getRequestHostname(
+        {
+          host: "internal-service.run.app",
+          "x-forwarded-host": "felipebulhoes.com.br, internal-proxy",
+        },
+        "internal-service.run.app"
+      )
+    ).toBe("felipebulhoes.com.br");
+  });
+
+  it("falls back to the direct host when proxy headers are absent", () => {
+    expect(getRequestHostname({ host: "felipebulhoes.com:443" })).toBe(
+      "felipebulhoes.com"
+    );
   });
 
   it("builds clean route-specific canonicals without query strings", () => {

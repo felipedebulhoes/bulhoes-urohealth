@@ -7,7 +7,7 @@ import { registerOAuthRoutes } from "./oauth";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
-import { getSeoRedirectTarget } from "./seo";
+import { getRequestHostname, getSeoRedirectTarget } from "./seo";
 import { serveStatic, setupVite } from "./vite";
 
 function isPortAvailable(port: number): Promise<boolean> {
@@ -56,7 +56,7 @@ async function startServer() {
   });
   // SEO: consolidate alternate domains and known malformed URLs in one hop.
   app.use((req, res, next) => {
-    const host = req.headers.host || req.hostname;
+    const host = getRequestHostname(req.headers, req.hostname);
     const target = getSeoRedirectTarget(host, req.originalUrl);
     if (target) {
       return res.redirect(301, target);

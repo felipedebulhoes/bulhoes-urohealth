@@ -18,6 +18,23 @@ function normalizeHostname(host: string | undefined): string {
     .replace(/\.$/, "");
 }
 
+export function getRequestHostname(
+  headers: Record<string, string | string[] | undefined>,
+  fallback?: string
+): string {
+  const forwardedHost = headers["x-forwarded-host"];
+  const originalHost = headers["x-original-host"];
+  const directHost = headers.host;
+  const candidate = Array.isArray(forwardedHost)
+    ? forwardedHost[0]
+    : forwardedHost?.split(",")[0] ||
+      (Array.isArray(originalHost) ? originalHost[0] : originalHost) ||
+      (Array.isArray(directHost) ? directHost[0] : directHost) ||
+      fallback;
+
+  return normalizeHostname(candidate);
+}
+
 /**
  * Returns the one-step SEO redirect for alternate domains and known malformed
  * URLs. A relative target keeps local development on the current host, while

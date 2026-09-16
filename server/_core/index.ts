@@ -7,6 +7,7 @@ import { registerOAuthRoutes } from "./oauth";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
+import { getSeoRedirectTarget } from "./seo";
 import { serveStatic, setupVite } from "./vite";
 
 function isPortAvailable(port: number): Promise<boolean> {
@@ -53,12 +54,11 @@ async function startServer() {
     }
     next();
   });
-  // SEO: 301 redirect — domain consolidation
-  // Redirect bulhoesurohealth.com → felipebulhoes.com (canonical domain)
+  // SEO: consolidate alternate domains and known malformed URLs in one hop.
   app.use((req, res, next) => {
-    const host = req.hostname || req.headers.host || "";
-    if (host.includes("bulhoesurohealth.com")) {
-      const target = `https://felipebulhoes.com${req.originalUrl}`;
+    const host = req.headers.host || req.hostname;
+    const target = getSeoRedirectTarget(host, req.originalUrl);
+    if (target) {
       return res.redirect(301, target);
     }
     next();

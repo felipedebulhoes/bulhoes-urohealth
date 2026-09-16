@@ -15,9 +15,10 @@ export default function CanonicalTag() {
   const [location] = useLocation();
 
   useEffect(() => {
-    const canonicalUrl = location === "/"
-      ? CANONICAL_DOMAIN
-      : `${CANONICAL_DOMAIN}${location}`;
+    const pathname = window.location.pathname === "/"
+      ? "/"
+      : window.location.pathname.replace(/\/+$/, "");
+    const canonicalUrl = `${CANONICAL_DOMAIN}${pathname}`;
 
     // Remove ALL existing canonical tags (including those injected by runtime)
     const existingCanonicals = document.querySelectorAll('link[rel="canonical"]');

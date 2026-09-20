@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 export default function PrivacyPolicy() {
   usePageMeta({
@@ -13,6 +14,7 @@ export default function PrivacyPolicy() {
       {/* Header */}
       <div className="bg-[#1C3D5A] py-16">
         <div className="container max-w-4xl mx-auto px-4">
+          <PageBreadcrumbs className="mb-5" />
           <Link href="/" className="text-[#C4C4C4] hover:text-white text-sm mb-4 inline-flex items-center gap-1 transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
             Voltar ao início

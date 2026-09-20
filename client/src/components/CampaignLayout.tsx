@@ -12,9 +12,10 @@ import WhatsAppButton from "./WhatsAppButton";
 import MobileBottomBar from "./MobileBottomBar";
 import { trackEducationalPageView, trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
-import { MedicalPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { MedicalPageSchema } from "@/components/SchemaMarkup";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import SocialShareButtons from "@/components/SocialShareButtons";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 interface CampaignLayoutProps {
   title: string;
@@ -116,12 +117,6 @@ export default function CampaignLayout({
         path={typeof window !== "undefined" ? window.location.pathname : ""}
         medicalCondition={medicalCondition || title}
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Início", url: "/" },
-          { name: title, url: typeof window !== "undefined" ? window.location.pathname : "" },
-        ]}
-      />
 
       {/* Header — minimal, focused on conversion */}
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50 border-b border-white/5">
@@ -169,6 +164,7 @@ export default function CampaignLayout({
       {/* Hero — editorial, high-impact */}
       <section className="bg-gradient-to-b from-[#1C3D5A] via-[#0F3460] to-[#0D2847] py-16 lg:py-24">
         <div className="container">
+          <PageBreadcrumbs className="mb-7" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

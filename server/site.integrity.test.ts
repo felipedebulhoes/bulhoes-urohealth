@@ -53,6 +53,31 @@ describe("Integridade das páginas públicas", () => {
     expect(robots).toContain("Sitemap: https://felipebulhoes.com/sitemap.xml");
   });
 
+  it("oferece página 404 personalizada com busca local e rotas úteis", () => {
+    const page = readFileSync(resolve(projectRoot, "client/src/pages/NotFound.tsx"), "utf8");
+
+    expect(page).toContain('role="search"');
+    expect(page).toContain('id="not-found-search"');
+    expect(page).toContain('type="search"');
+    expect(page).toContain("useMemo");
+    expect(page).toContain('href: "/agendamento"');
+    expect(page).toContain('href: "/consultorios"');
+    expect(page).toContain('href: "/contato"');
+    expect(page).toContain('aria-live="polite"');
+  });
+
+  it("centraliza breadcrumbs visíveis e JSON-LD em um único componente", () => {
+    const breadcrumbs = readFileSync(resolve(projectRoot, "client/src/components/PageBreadcrumbs.tsx"), "utf8");
+    const educationalLayout = readFileSync(resolve(projectRoot, "client/src/components/EducationalLayout.tsx"), "utf8");
+    const campaignLayout = readFileSync(resolve(projectRoot, "client/src/components/CampaignLayout.tsx"), "utf8");
+
+    expect(breadcrumbs).toContain("getBreadcrumbItems");
+    expect(breadcrumbs).toContain("<BreadcrumbSchema items={items} />");
+    expect(breadcrumbs).toContain('aria-label="Caminho de navegação"');
+    expect(educationalLayout).toContain("<PageBreadcrumbs");
+    expect(campaignLayout).toContain("<PageBreadcrumbs");
+  });
+
   it("não mantém referências ao arquivo antigo do logotipo", () => {
     const files = [
       "client/src/components/Header.tsx",

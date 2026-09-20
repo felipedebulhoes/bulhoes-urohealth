@@ -21,6 +21,7 @@ import { getWhatsAppUrl } from "@/lib/tracking";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import { trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -49,6 +50,7 @@ export default function SobreDrFelipe() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1C3D5A] via-[#0F3460] to-[#1C3D5A] text-white pt-28 pb-20">
         <div className="container max-w-6xl">
+          <PageBreadcrumbs className="mb-7" />
           <div className="grid lg:grid-cols-5 gap-12 items-center">
             <motion.div
               className="lg:col-span-3"

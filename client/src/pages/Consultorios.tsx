@@ -6,7 +6,7 @@ import { trackDoctoraliaClick } from "@/lib/analytics";
  */
 import { Link } from "wouter";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { BreadcrumbSchema } from "@/components/SchemaMarkup";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -131,10 +131,6 @@ export default function Consultorios() {
 
   return (
     <>
-    <BreadcrumbSchema items={[
-      { name: "Início", url: "/" },
-      { name: "Consultórios", url: "/consultorios" },
-    ]} />
     <div className="min-h-screen bg-white dark:bg-card">
       {/* Header */}
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
@@ -162,6 +158,7 @@ export default function Consultorios() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] py-16 lg:py-24">
         <div className="container">
+          <PageBreadcrumbs className="mb-7" />
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-10 bg-[#B87333]" />

@@ -313,3 +313,7 @@
 - [x] Centralizar a política index/noindex das rotas e remover links internos para a página intermediária da Doctoralia
 - [x] Validar 53 URLs canônicas do sitemap, 122 testes, TypeScript e build de produção
 - **Monitoramento externo:** após novo rastreamento do Google, confirmar a validação do soft 404 no Search Console e arquivar a exclusão histórica por redirecionamento.
+- [x] Implementar metadados Open Graph e Twitter Card dinâmicos no HTML servido por rota, incluindo campanhas e artigos
+- [x] Centralizar breadcrumbs visíveis e JSON-LD em páginas institucionais, educativas, campanhas, locais e artigos
+- [x] Criar página 404 com busca local acessível, atalhos úteis e recuperação por teclado sem coletar termos
+- [x] Validar metadados, imagens sociais, responsividade, busca 404, TypeScript, 128 testes e build de produção

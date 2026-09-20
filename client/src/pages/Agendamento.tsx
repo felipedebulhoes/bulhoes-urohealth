@@ -23,6 +23,7 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import { trackDoctoraliaClick, trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
 
@@ -61,6 +62,7 @@ export default function Agendamento() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] py-16 lg:py-20">
         <div className="container">
+          <PageBreadcrumbs className="mb-7" />
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="h-px w-10 bg-[#B87333]" />

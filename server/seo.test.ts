@@ -9,6 +9,7 @@ import {
   injectCanonicalMetadata,
 } from "./_core/seo";
 import { isIndexableSitePath } from "../shared/siteRoutes";
+import { getBreadcrumbItems, getPageMetadata } from "../shared/pageMetadata";
 
 describe("SEO URL consolidation", () => {
   it("redirects the malformed /$ URL to the homepage", () => {
@@ -75,14 +76,22 @@ describe("SEO URL consolidation", () => {
 
   it("replaces duplicate metadata with one route-specific canonical", () => {
     const html = `<!doctype html><html><head>
+      <title>Old title</title>
+      <meta name="description" content="old description" />
       <link rel="canonical" href="https://example.com/old" />
       <link rel="canonical" href="https://example.com/duplicate" />
       <meta property="og:url" content="https://example.com/old" />
+      <meta property="og:title" content="old title" />
+      <meta property="og:image" content="https://example.com/old.png" />
+      <meta name="twitter:title" content="old title" />
     </head><body></body></html>`;
     const result = injectCanonicalMetadata(html, "/sobre?utm_source=test");
 
     expect(result.match(/rel="canonical"/g)).toHaveLength(1);
     expect(result.match(/property="og:url"/g)).toHaveLength(1);
+    expect(result.match(/property="og:title"/g)).toHaveLength(1);
+    expect(result.match(/property="og:image"/g)).toHaveLength(1);
+    expect(result.match(/name="twitter:title"/g)).toHaveLength(1);
     expect(result).toContain(
       '<link rel="canonical" href="https://felipebulhoes.com/sobre" />'
     );
@@ -90,6 +99,61 @@ describe("SEO URL consolidation", () => {
       '<meta property="og:url" content="https://felipebulhoes.com/sobre" />'
     );
     expect(result).toContain('<meta name="robots" content="index, follow" />');
+    expect(result).toContain('<meta property="og:type" content="website" />');
+    expect(result).toContain('<meta property="og:locale" content="pt_BR" />');
+    expect(result).toContain('<meta name="twitter:card" content="summary_large_image" />');
+    expect(result).toContain("Sobre o Dr. Felipe de Bulhões");
+  });
+
+  it("emits campaign-specific social images before the client application loads", () => {
+    const html = "<!doctype html><html><head></head><body></body></html>";
+    const result = injectCanonicalMetadata(html, "/vasectomia-sem-bisturi");
+
+    expect(result).toContain("og-banner-vasectomia");
+    expect(result).toContain("Vasectomia Sem Bisturi em SP e Campinas");
+    expect(result).toContain('<meta property="og:type" content="website" />');
+  });
+
+  it("uses article Open Graph type for published blog URLs", () => {
+    const html = "<!doctype html><html><head></head><body></body></html>";
+    const result = injectCanonicalMetadata(html, "/blog/quando-procurar-urologista");
+
+    expect(result).toContain('<meta property="og:type" content="article" />');
+    expect(result).toContain("10 sinais de que você deve procurar um urologista");
+  });
+
+  it("derives a useful breadcrumb trail for blog, location and educational pages", () => {
+    expect(getBreadcrumbItems("/blog/quando-procurar-urologista")).toEqual([
+      { name: "Início", url: "/" },
+      { name: "Blog", url: "/blog" },
+      { name: "10 sinais de que você deve procurar um urologista", url: "/blog/quando-procurar-urologista" },
+    ]);
+    expect(getBreadcrumbItems("/local/clinovi-paulista")).toEqual([
+      { name: "Início", url: "/" },
+      { name: "Consultórios", url: "/consultorios" },
+      { name: "Clinovi Paulista", url: "/local/clinovi-paulista" },
+    ]);
+    expect(getBreadcrumbItems("/educativo/vasectomia")).toEqual([
+      { name: "Início", url: "/" },
+      { name: "Vasectomia", url: "/educativo/vasectomia" },
+    ]);
+    expect(getBreadcrumbItems("/admin/leads")).toEqual([]);
+  });
+
+  it("provides non-empty social metadata for every canonical sitemap URL", () => {
+    const sitemap = readFileSync(
+      resolve(import.meta.dirname, "../client/public/sitemap.xml"),
+      "utf8"
+    );
+    const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+
+    for (const url of urls) {
+      const metadata = getPageMetadata(new URL(url).pathname);
+      expect(metadata.title, url).not.toHaveLength(0);
+      expect(metadata.description, url).not.toHaveLength(0);
+      expect(metadata.image, url).toMatch(/^https:\/\//);
+      expect(metadata.imageAlt, url).not.toHaveLength(0);
+    }
   });
 
   it("returns a real 404 policy and noindex metadata for unknown URLs", () => {
@@ -105,6 +169,7 @@ describe("SEO URL consolidation", () => {
     expect(result).toContain(
       '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />'
     );
+    expect(result).toContain("<title>Página não encontrada | Dr. Felipe de Bulhões</title>");
     expect(result).not.toContain('rel="canonical"');
     expect(result).not.toContain('property="og:url"');
   });

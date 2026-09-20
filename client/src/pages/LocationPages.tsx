@@ -19,8 +19,9 @@ import {
   CreditCard,
 } from "lucide-react";
 import { Link } from "wouter";
-import { MedicalClinicSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { MedicalClinicSchema } from "@/components/SchemaMarkup";
 import { getWhatsAppUrl } from "@/lib/tracking";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -208,16 +209,10 @@ function LocationPage({ slug }: { slug: string }) {
         hours={loc.hours}
         paymentMethods={loc.payment}
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Início", url: "/" },
-          { name: "Consultórios", url: "/consultorios" },
-          { name: loc.fullName, url: `/local/${slug}` },
-        ]}
-      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1C3D5A] via-[#0F3460] to-[#1C3D5A] text-white pt-28 pb-16">
         <div className="container max-w-4xl">
+          <PageBreadcrumbs className="mb-7" />
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <Link href="/" className="text-white/60 hover:text-white text-sm flex items-center gap-1 mb-6 transition-colors">
               <ChevronRight className="w-4 h-4 rotate-180" /> Voltar ao início

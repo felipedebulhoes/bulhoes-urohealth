@@ -10,10 +10,11 @@ import { getPostBySlug } from "@/lib/blogData";
 import { Calendar, Clock, ArrowLeft, CalendarCheck, MessageCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LightMarkdown from "@/components/LightMarkdown";
-import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { ArticleSchema } from "@/components/SchemaMarkup";
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import SocialShareButtons from "@/components/SocialShareButtons";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
@@ -70,13 +71,6 @@ export default function BlogPost() {
         readTime={post.readTime}
         category={post.category}
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Início", url: "/" },
-          { name: "Blog", url: "/blog" },
-          { name: post.title, url: `/blog/${params.slug}` },
-        ]}
-      />
 
       {/* Header bar */}
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
@@ -121,6 +115,7 @@ export default function BlogPost() {
         {/* Title overlay */}
         <div className="absolute bottom-0 left-0 right-0 pb-10 lg:pb-14">
           <div className="container">
+            <PageBreadcrumbs className="mb-6" />
             <span className="inline-block bg-[#B87333] text-white text-xs font-semibold px-3 py-1.5 rounded-md mb-4">
               {post.category}
             </span>

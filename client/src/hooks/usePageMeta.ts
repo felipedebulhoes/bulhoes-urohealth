@@ -6,6 +6,17 @@ interface PageMetaOptions {
   canonical?: string;
 }
 
+function setMetaTag(attribute: "name" | "property", key: string, content: string) {
+  const selector = `meta[${attribute}="${key}"]`;
+  let tag = document.querySelector(selector) as HTMLMetaElement | null;
+  if (!tag) {
+    tag = document.createElement("meta");
+    tag.setAttribute(attribute, key);
+    document.head.appendChild(tag);
+  }
+  tag.content = content;
+}
+
 /**
  * Hook reutilizável para definir meta tags de SEO por página.
  * Define document.title e meta description, e restaura ao desmontar.
@@ -15,22 +26,14 @@ export function usePageMeta({ title, description, canonical }: PageMetaOptions) 
     const fullTitle = `${title} | Dr. Felipe de Bulhões`;
     document.title = fullTitle;
 
-    let metaTag = document.querySelector('meta[name="description"]');
-    if (metaTag) {
-      metaTag.setAttribute("content", description);
-    } else {
-      metaTag = document.createElement("meta");
-      metaTag.setAttribute("name", "description");
-      metaTag.setAttribute("content", description);
-      document.head.appendChild(metaTag);
-    }
+    setMetaTag("name", "description", description);
 
-    // Open Graph
-    let ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", fullTitle);
-
-    let ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute("content", description);
+    // Open Graph and Twitter mirrors keep browser-side navigation consistent
+    // with the crawler-visible metadata emitted by the server.
+    setMetaTag("property", "og:title", fullTitle);
+    setMetaTag("property", "og:description", description);
+    setMetaTag("name", "twitter:title", fullTitle);
+    setMetaTag("name", "twitter:description", description);
 
     // Canonical
     if (canonical) {
@@ -42,9 +45,6 @@ export function usePageMeta({ title, description, canonical }: PageMetaOptions) 
 
     return () => {
       document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";
-      if (metaTag) {
-        metaTag.setAttribute("content", "Dr. Felipe de Bulhões — Urologista em São Paulo e Campinas. Cirurgia robótica, endourologia e saúde do homem. Agende sua consulta.");
-      }
     };
   }, [title, description, canonical]);
 }

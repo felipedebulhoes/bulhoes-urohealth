@@ -9,6 +9,7 @@ import { Calendar, Clock, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import SocialShareButtons from "@/components/SocialShareButtons";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 export default function Blog() {
   usePageMeta({
@@ -43,6 +44,7 @@ export default function Blog() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] py-16 lg:py-24">
         <div className="container">
+          <PageBreadcrumbs className="mb-7" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

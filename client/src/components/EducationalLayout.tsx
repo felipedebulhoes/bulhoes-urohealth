@@ -11,9 +11,10 @@ import WhatsAppButton from "./WhatsAppButton";
 import MobileBottomBar from "./MobileBottomBar";
 import { trackEducationalPageView, trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
-import { MedicalPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { MedicalPageSchema } from "@/components/SchemaMarkup";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
 interface EducationalLayoutProps {
   title: string;
@@ -76,13 +77,6 @@ export default function EducationalLayout({
         path={typeof window !== "undefined" ? window.location.pathname : ""}
         medicalCondition={medicalCondition || title}
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Início", url: "/" },
-          { name: "Conteúdo Educativo", url: "/" },
-          { name: title, url: typeof window !== "undefined" ? window.location.pathname : "" },
-        ]}
-      />
 
       {/* Header */}
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
@@ -120,6 +114,7 @@ export default function EducationalLayout({
       {/* Hero */}
       <section className="bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] py-16 lg:py-24">
         <div className="container">
+          <PageBreadcrumbs className="mb-7" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

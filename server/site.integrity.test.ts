@@ -28,9 +28,29 @@ describe("Integridade das páginas públicas", () => {
   it("oferece um CTA rastreado para a agenda da Doctoralia sem iframe incorporado", () => {
     const page = readFileSync(resolve(projectRoot, "client/src/pages/Agendamento.tsx"), "utf8");
 
-    expect(page).toContain('href="/agendar/doctoralia"');
+    expect(page).toContain('href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=agendamento&utm_campaign=agendamento_page"');
+    expect(page).toContain('target="_blank"');
+    expect(page).toContain('rel="noopener noreferrer"');
     expect(page).toContain('trackDoctoraliaClick("agendamento_page")');
     expect(page).not.toContain("data-zlw-type");
+  });
+
+  it("não expõe links internos para páginas intermediárias de redirecionamento", () => {
+    const files = collectTsxFiles(resolve(projectRoot, "client/src"));
+    const linkedSources = files.filter(file => !file.endsWith("App.tsx") && !file.endsWith("AgendarDoctoralia.tsx") && !file.endsWith("AgendarWhatsApp.tsx"));
+
+    for (const file of linkedSources) {
+      const source = readFileSync(file, "utf8");
+      expect(source).not.toContain('href="/agendar/doctoralia"');
+      expect(source).not.toContain('href="/agendar/whatsapp"');
+    }
+  });
+
+  it("permite rastrear páginas ausentes para que o servidor confirme o status 404", () => {
+    const robots = readFileSync(resolve(projectRoot, "client/public/robots.txt"), "utf8");
+
+    expect(robots).not.toContain("Disallow: /404");
+    expect(robots).toContain("Sitemap: https://felipebulhoes.com/sitemap.xml");
   });
 
   it("não mantém referências ao arquivo antigo do logotipo", () => {

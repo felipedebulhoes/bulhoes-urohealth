@@ -8,6 +8,7 @@
  */
 import { useEffect } from "react";
 import { useLocation } from "wouter";
+import { isIndexableSitePath, normalizeSitePath } from "@shared/siteRoutes";
 
 const CANONICAL_DOMAIN = "https://felipebulhoes.com";
 
@@ -15,14 +16,26 @@ export default function CanonicalTag() {
   const [location] = useLocation();
 
   useEffect(() => {
-    const pathname = window.location.pathname === "/"
-      ? "/"
-      : window.location.pathname.replace(/\/+$/, "");
+    const pathname = normalizeSitePath(window.location.pathname);
     const canonicalUrl = `${CANONICAL_DOMAIN}${pathname}`;
+    const isIndexable = isIndexableSitePath(pathname);
 
     // Remove ALL existing canonical tags (including those injected by runtime)
     const existingCanonicals = document.querySelectorAll('link[rel="canonical"]');
     existingCanonicals.forEach((el) => el.remove());
+
+    const robots = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null
+      ?? document.createElement("meta");
+    robots.name = "robots";
+    robots.content = isIndexable
+      ? "index, follow"
+      : "noindex, nofollow, noarchive, nosnippet";
+    if (!robots.isConnected) document.head.appendChild(robots);
+
+    if (!isIndexable) {
+      document.querySelectorAll('meta[property="og:url"]').forEach((el) => el.remove());
+      return;
+    }
 
     // Create and insert the correct canonical tag
     const link = document.createElement("link");

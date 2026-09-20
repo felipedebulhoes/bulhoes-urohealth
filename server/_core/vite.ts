@@ -1,11 +1,20 @@
-import express, { type Express } from "express";
+import express, { type Express, type Response } from "express";
 import fs from "fs";
 import { type Server } from "http";
 import { nanoid } from "nanoid";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import viteConfig from "../../vite.config";
-import { injectCanonicalMetadata } from "./seo";
+import { getSpaResponseStatus, injectCanonicalMetadata } from "./seo";
+import { isIndexableSitePath } from "../../shared/siteRoutes";
+
+function sendSpaHtml(res: Response, page: string, requestPath: string) {
+  const status = getSpaResponseStatus(requestPath);
+  if (!isIndexableSitePath(requestPath)) {
+    res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
+  }
+  res.status(status).set({ "Content-Type": "text/html" }).end(page);
+}
 
 export async function setupVite(app: Express, server: Server) {
   const serverOptions = {
@@ -45,7 +54,7 @@ export async function setupVite(app: Express, server: Server) {
       );
       const transformedPage = await vite.transformIndexHtml(url, template);
       const page = injectCanonicalMetadata(transformedPage, req.originalUrl);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      sendSpaHtml(res, page, req.originalUrl);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -74,7 +83,7 @@ export function serveStatic(app: Express) {
         "utf-8"
       );
       const page = injectCanonicalMetadata(template, req.originalUrl);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      sendSpaHtml(res, page, req.originalUrl);
     } catch (error) {
       next(error);
     }

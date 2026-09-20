@@ -1,10 +1,14 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import {
   getCanonicalUrl,
   getRequestHostname,
   getSeoRedirectTarget,
+  getSpaResponseStatus,
   injectCanonicalMetadata,
 } from "./_core/seo";
+import { isIndexableSitePath } from "../shared/siteRoutes";
 
 describe("SEO URL consolidation", () => {
   it("redirects the malformed /$ URL to the homepage", () => {
@@ -18,6 +22,11 @@ describe("SEO URL consolidation", () => {
         "/blog?q=%7Bsearch_term_string%7D"
       )
     ).toBe("/blog");
+  });
+
+  it("redirects a trailing slash only when the normalized route exists", () => {
+    expect(getSeoRedirectTarget("felipebulhoes.com", "/sobre/")).toBe("/sobre");
+    expect(getSeoRedirectTarget("felipebulhoes.com", "/rota-inexistente/")).toBeNull();
   });
 
   it.each([
@@ -80,5 +89,48 @@ describe("SEO URL consolidation", () => {
     expect(result).toContain(
       '<meta property="og:url" content="https://felipebulhoes.com/sobre" />'
     );
+    expect(result).toContain('<meta name="robots" content="index, follow" />');
+  });
+
+  it("returns a real 404 policy and noindex metadata for unknown URLs", () => {
+    const html = `<!doctype html><html><head>
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://felipebulhoes.com/" />
+      <meta property="og:url" content="https://felipebulhoes.com/" />
+    </head><body></body></html>`;
+    const result = injectCanonicalMetadata(html, "/rota-inexistente");
+
+    expect(getSpaResponseStatus("/rota-inexistente")).toBe(404);
+    expect(getSpaResponseStatus("/blog/artigo-inexistente")).toBe(404);
+    expect(result).toContain(
+      '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />'
+    );
+    expect(result).not.toContain('rel="canonical"');
+    expect(result).not.toContain('property="og:url"');
+  });
+
+  it("keeps valid public, blog and intentional noindex routes available", () => {
+    expect(getSpaResponseStatus("/sobre")).toBe(200);
+    expect(getSpaResponseStatus("/blog/quando-procurar-urologista")).toBe(200);
+    expect(getSpaResponseStatus("/prototipo-jornada-paciente")).toBe(200);
+    expect(getSpaResponseStatus("/admin/leads")).toBe(200);
+    expect(isIndexableSitePath("/prototipo-jornada-paciente")).toBe(false);
+    expect(isIndexableSitePath("/admin/leads")).toBe(false);
+  });
+
+  it("keeps every sitemap URL canonical and indexable", () => {
+    const sitemap = readFileSync(
+      resolve(import.meta.dirname, "../client/public/sitemap.xml"),
+      "utf8"
+    );
+    const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+
+    expect(urls.length).toBeGreaterThan(0);
+    for (const url of urls) {
+      const pathname = new URL(url).pathname;
+      expect(getSpaResponseStatus(pathname), pathname).toBe(200);
+      expect(isIndexableSitePath(pathname), pathname).toBe(true);
+      expect(getCanonicalUrl(pathname), pathname).toBe(url.replace(/\/$/, pathname === "/" ? "/" : ""));
+    }
   });
 });

@@ -1,3 +1,9 @@
+import {
+  isIndexableSitePath,
+  isKnownSitePath,
+  normalizeSitePath,
+} from "../../shared/siteRoutes";
+
 export const CANONICAL_ORIGIN = "https://felipebulhoes.com";
 
 const ALTERNATE_HOSTNAMES = new Set([
@@ -67,6 +73,16 @@ export function getSeoRedirectTarget(
     hasPathFix = true;
   }
 
+  const pathWithoutTrailingSlash = normalizeSitePath(normalizedPath);
+  if (
+    normalizedPath !== "/" &&
+    normalizedPath !== pathWithoutTrailingSlash &&
+    isKnownSitePath(pathWithoutTrailingSlash)
+  ) {
+    normalizedPath = pathWithoutTrailingSlash;
+    hasPathFix = true;
+  }
+
   if (!isAlternateHost && !hasPathFix) return null;
 
   const target = `${normalizedPath}${normalizedSearch}`;
@@ -84,17 +100,26 @@ export function getCanonicalUrl(requestPath: string): string {
   return `${CANONICAL_ORIGIN}${pathname}`;
 }
 
-/** Injects one canonical and one og:url into server-delivered HTML. */
+export function getSpaResponseStatus(requestPath: string): 200 | 404 {
+  if (normalizeSitePath(requestPath) === "/404") return 404;
+  return isKnownSitePath(requestPath) ? 200 : 404;
+}
+
+/** Injects canonical metadata for public pages and noindex for utility/404 pages. */
 export function injectCanonicalMetadata(html: string, requestPath: string): string {
   const canonicalUrl = getCanonicalUrl(requestPath);
   const withoutExistingTags = html
     .replace(/<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>\s*/gi, "")
-    .replace(/<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*>\s*/gi, "");
+    .replace(/<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*>\s*/gi, "")
+    .replace(/<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>\s*/gi, "");
 
-  const tags = [
-    `    <link rel="canonical" href="${canonicalUrl}" />`,
-    `    <meta property="og:url" content="${canonicalUrl}" />`,
-  ].join("\n");
+  const tags = isIndexableSitePath(requestPath)
+    ? [
+        '    <meta name="robots" content="index, follow" />',
+        `    <link rel="canonical" href="${canonicalUrl}" />`,
+        `    <meta property="og:url" content="${canonicalUrl}" />`,
+      ].join("\n")
+    : '    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />';
 
   return withoutExistingTags.replace(/\s*<\/head>/i, `\n${tags}\n  </head>`);
 }

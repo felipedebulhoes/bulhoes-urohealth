@@ -309,3 +309,9 @@
 - [x] Localizar e corrigir todas as ocorrências públicas de CRM 000000 para CRM-SP 202291
 - [x] Adicionar teste de regressão para impedir novo CRM fictício na Política de Privacidade
 - [x] Validar a página /privacidade, TypeScript, 99 testes e build antes de publicar
+
+- [x] Analisar o relatório de cobertura do Search Console de 20/09/2026 — 33 indexadas, 1 soft 404 e 1 página com redirecionamento
+- [x] Corrigir o fallback SPA para retornar HTTP 404 real, noindex e nenhuma canônica em URLs inexistentes
+- [x] Centralizar a política index/noindex das rotas e remover links internos para a página intermediária da Doctoralia
+- [x] Validar 53 URLs canônicas do sitemap, 122 testes, TypeScript e build de produção
+- [ ] Após novo rastreamento do Google, confirmar a validação do soft 404 no Search Console e arquivar a exclusão histórica por redirecionamento

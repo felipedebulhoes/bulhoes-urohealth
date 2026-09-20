@@ -107,4 +107,28 @@ describe("SEO Redirects & Real Pages", () => {
       });
     }
   });
+
+  describe("Real 404 responses", () => {
+    const missingRoutes = [
+      "/404",
+      "/esta-url-nao-existe-auditoria",
+      "/blog/artigo-inexistente",
+    ];
+
+    for (const route of missingRoutes) {
+      it.skipIf(!serverReachable)(`${route} returns 404 with noindex`, async () => {
+        const res = await fetch(`${BASE_URL}${route}`, { redirect: "manual" });
+        const html = await res.text();
+
+        expect(res.status).toBe(404);
+        expect(res.headers.get("x-robots-tag")).toBe(
+          "noindex, nofollow, noarchive, nosnippet"
+        );
+        expect(html).toContain(
+          '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />'
+        );
+        expect(html).not.toContain('rel="canonical"');
+      });
+    }
+  });
 });

@@ -124,7 +124,9 @@ export default function Agendamento() {
                 A agenda será aberta em uma página segura da Doctoralia, com os horários disponíveis para atendimento presencial e teleconsulta.
               </p>
               <CTAButtonWithAnimation
-                href="/agendar/doctoralia"
+                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=agendamento&utm_campaign=agendamento_page"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => trackDoctoraliaClick("agendamento_page")}
                 loadingText="Abrindo agenda…"
                 icon={<CalendarCheck className="w-5 h-5" />}

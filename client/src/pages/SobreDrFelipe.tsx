@@ -290,7 +290,9 @@ export default function SobreDrFelipe() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <CTAButtonWithAnimation
-                href="/agendar/doctoralia"
+                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=sobre&utm_campaign=perfil_profissional"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => trackDoctoraliaClick("sobre")}
                 loadingText="Abrindo agenda…"
                 className="px-8 py-3"

@@ -302,10 +302,8 @@
 - [x] Configurar lembrete único para 12/10/2026 às 09h para verificar a lista oficial de liberação — criado no Google Calendar
 - [x] Criar evento único em 12/10/2026 às 09h no Google Calendar de drfelipebulhoes@gmail.com — evento k2iqorr91ifm6brltalrjp5r24 confirmado
 - [x] Manter compra, candidatura e pagamento bloqueados até confirmação específica do usuário após a nova consulta
-- [ ] Registrar drfelipebulhoes.com.br no provedor apropriado
-- [ ] Vincular drfelipebulhoes.com.br e www.drfelipebulhoes.com.br ao site, configurando DNS e HTTPS
-- [ ] Definir domínio canônico e redirecionamentos sem prejudicar o SEO existente
-- [ ] Validar respostas HTTP, certificado, preview social e rastreamento após a propagação
+- **Bloqueado externamente:** registrar `drfelipebulhoes.com.br` quando o Registro.br liberar o domínio e o usuário der nova autorização específica.
+- **Dependência futura:** após o registro, vincular raiz e `www`, configurar DNS/HTTPS, definir redirecionamentos e validar HTTP, certificado, preview social e rastreamento.
 - [x] Localizar e corrigir todas as ocorrências públicas de CRM 000000 para CRM-SP 202291
 - [x] Adicionar teste de regressão para impedir novo CRM fictício na Política de Privacidade
 - [x] Validar a página /privacidade, TypeScript, 99 testes e build antes de publicar
@@ -314,4 +312,4 @@
 - [x] Corrigir o fallback SPA para retornar HTTP 404 real, noindex e nenhuma canônica em URLs inexistentes
 - [x] Centralizar a política index/noindex das rotas e remover links internos para a página intermediária da Doctoralia
 - [x] Validar 53 URLs canônicas do sitemap, 122 testes, TypeScript e build de produção
-- [ ] Após novo rastreamento do Google, confirmar a validação do soft 404 no Search Console e arquivar a exclusão histórica por redirecionamento
+- **Monitoramento externo:** após novo rastreamento do Google, confirmar a validação do soft 404 no Search Console e arquivar a exclusão histórica por redirecionamento.

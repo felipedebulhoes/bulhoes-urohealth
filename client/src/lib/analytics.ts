@@ -15,12 +15,11 @@
  * - share_content: compartilhamento de conteúdo por plataforma
  */
 
-// Tipagem global para gtag e Meta Pixel
+// Tipagem global para Google tags.
 declare global {
   interface Window {
     gtag: (...args: any[]) => void;
     dataLayer: any[];
-    fbq: (...args: any[]) => void;
   }
 }
 
@@ -76,7 +75,8 @@ export function setUserDataForOptimizedConversions(data: {
  * - user_data para Conversões Otimizadas
  * - conversion Google Ads
  * - lead_form_submit, contact_whatsapp, lead_whatsapp
- * - Meta Lead
+ * Não envia evento ao Meta Pixel: uma solicitação de contato em contexto de
+ * saúde pode refletir interesse em atendimento médico.
  * Retorna uma Promise que resolve após o delay técnico (800ms).
  */
 export function fireFormConversionEvents(data: {
@@ -110,10 +110,7 @@ export function fireFormConversionEvents(data: {
       });
     }
 
-    // 4. Meta Lead
-    trackMetaLead({ content_name: "form_whatsapp" });
-
-    // 5. Aguardar janela técnica antes do redirecionamento
+    // 4. Aguardar janela técnica antes do redirecionamento
     setTimeout(resolve, 800);
   });
 }
@@ -146,7 +143,7 @@ export function trackGoogleAdsConversion(value: number = 100.0) {
 
 /**
  * Rastreia a captação de um lead pelo chat
- * Dispara conversão no GA4 E no Google Ads
+ * Dispara conversão no GA4 e no Google Ads. A origem clínica não é enviada ao Meta.
  */
 export function trackLeadGenerated(data: {
   name: string;
@@ -162,13 +159,11 @@ export function trackLeadGenerated(data: {
   });
   // Dispara conversão no Google Ads (lead = conversão principal)
   trackGoogleAdsConversion(100.0);
-  // Dispara Lead no Meta Pixel
-  trackMetaLead({ content_name: data.reason || 'chat_lead' });
 }
 
 /**
  * Rastreia clique no WhatsApp
- * Dispara conversão no GA4 (contact_whatsapp + lead_whatsapp) + Google Ads + Meta Pixel
+ * Dispara conversão no GA4 (contact_whatsapp + lead_whatsapp) e no Google Ads.
  */
 export function trackWhatsAppClick(source: string) {
   trackEvent("contact_whatsapp", {
@@ -182,12 +177,11 @@ export function trackWhatsAppClick(source: string) {
     contact_method: "whatsapp",
   });
   trackGoogleAdsConversion(50.0);
-  trackMetaSchedule({ content_name: `whatsapp_${source}` });
 }
 
 /**
  * Rastreia clique na Doctoralia
- * Dispara conversão no GA4 (contact_doctoralia + lead_doctoralia) + Google Ads + Meta Pixel
+ * Dispara conversão no GA4 (contact_doctoralia + lead_doctoralia) e no Google Ads.
  */
 export function trackDoctoraliaClick(source: string) {
   trackEvent("contact_doctoralia", {
@@ -201,7 +195,6 @@ export function trackDoctoraliaClick(source: string) {
     contact_method: "doctoralia",
   });
   trackGoogleAdsConversion(80.0);
-  trackMetaSchedule({ content_name: source });
 }
 
 /**
@@ -326,103 +319,4 @@ export function trackPrototypeEvent(
     item_id: itemId,
     page_path: typeof window !== "undefined" ? window.location.pathname : "",
   });
-}
-
-// ===== META PIXEL EVENTS =====
-
-/**
- * Dispara evento Lead no Meta Pixel
- * Usado quando um lead é captado (chat, formulário)
- * 
- * Valores otimizados baseados no ticket médio de consulta urológica particular:
- * - Consulta padrão: R$600-800
- * - Procedimento (vasectomia, estética): R$3.000-8.000
- * - Lead qualificado (formulário com dados): R$250 (taxa de conversão ~30%)
- * - Lead frio (chat genérico): R$150
- */
-export function trackMetaLead(data?: { content_name?: string; value?: number }) {
-  // Valor dinâmico baseado no tipo de lead
-  const defaultValue = getLeadValue(data?.content_name);
-  const value = data?.value || defaultValue;
-
-  if (typeof window !== "undefined" && window.fbq) {
-    window.fbq('track', 'Lead', {
-      content_name: data?.content_name || 'agendamento',
-      value,
-      currency: 'BRL',
-    }, { eventID: `lead_${Date.now()}` });
-  }
-}
-
-/**
- * Calcula valor do lead baseado no contexto/origem
- * Valores calibrados para otimização do algoritmo Meta Ads
- */
-function getLeadValue(contentName?: string): number {
-  if (!contentName) return 150;
-  
-  // Leads de alto valor (procedimentos cirúrgicos)
-  if (contentName.includes('vasectomia')) return 400;
-  if (contentName.includes('estetica') || contentName.includes('engrossamento')) return 500;
-  if (contentName.includes('andrologia') || contentName.includes('performance')) return 350;
-  if (contentName.includes('robotica') || contentName.includes('cirurgia')) return 600;
-  
-  // Leads de formulário com dados (qualificados)
-  if (contentName.includes('form_')) return 250;
-  
-  // Leads de chat (qualificação variável)
-  if (contentName.includes('chat')) return 200;
-  
-  // Lead genérico
-  return 150;
-}
-
-/**
- * Dispara evento Schedule no Meta Pixel
- * Usado quando o paciente clica para agendar (Doctoralia, Rede D'Or, WhatsApp)
- * 
- * Valores otimizados baseados no canal de agendamento:
- * - Doctoralia: R$300 (alta intenção, taxa de conversão ~50%)
- * - WhatsApp: R$200 (intenção média, taxa de conversão ~35%)
- * - Rede D'Or: R$350 (alta intenção, paciente já no sistema)
- * - Telefone: R$180 (intenção variável)
- */
-export function trackMetaSchedule(data?: { content_name?: string; value?: number }) {
-  // Valor dinâmico baseado no canal de agendamento
-  const defaultValue = getScheduleValue(data?.content_name);
-  const value = data?.value || defaultValue;
-
-  if (typeof window !== "undefined" && window.fbq) {
-    window.fbq('track', 'Schedule', {
-      content_name: data?.content_name || 'consulta',
-      value,
-      currency: 'BRL',
-    }, { eventID: `schedule_${Date.now()}` });
-  }
-}
-
-/**
- * Calcula valor do agendamento baseado no canal e contexto
- * Valores calibrados para otimização do algoritmo Meta Ads
- */
-function getScheduleValue(contentName?: string): number {
-  if (!contentName) return 200;
-  
-  // Canal Doctoralia (alta intenção)
-  if (contentName.includes('doctoralia')) return 300;
-  
-  // Canal Rede D'Or (alta intenção)
-  if (contentName.includes('rededorsaoluiz') || contentName.includes('rede_dor')) return 350;
-  
-  // Canal WhatsApp (intenção média-alta)
-  if (contentName.includes('whatsapp')) return 200;
-  
-  // Contexto de procedimento específico (alto ticket)
-  if (contentName.includes('vasectomia')) return 400;
-  if (contentName.includes('estetica') || contentName.includes('engrossamento')) return 450;
-  if (contentName.includes('andrologia')) return 350;
-  if (contentName.includes('robotica')) return 500;
-  
-  // Agendamento genérico
-  return 200;
 }

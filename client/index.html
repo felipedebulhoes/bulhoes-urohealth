@@ -333,20 +333,42 @@
     <meta name="theme-color" content="#1C3D5A" />
     <!-- Facebook Domain Verification -->
     <meta name="facebook-domain-verification" content="hiwn6ax4235x1ih4bwhnsbtme1cb82" />
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel: somente domínio público e rotas institucionais. Não carregar
+         em prévias *.manus.computer, localhost, páginas clínicas ou protótipos. -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1730608694762791');
-    fbq('track', 'PageView');
+    (function(f,b,e,v,n,t,s) {
+      var allowedHosts = {
+        'felipebulhoes.com': true,
+        'www.felipebulhoes.com': true,
+        'felipebulhoes.com.br': true,
+        'www.felipebulhoes.com.br': true,
+        'bulhoesurohealth.com': true,
+        'www.bulhoesurohealth.com': true,
+        'drfelipebulhoesurologia.com.br': true,
+        'www.drfelipebulhoesurologia.com.br': true
+      };
+      var institutionalPaths = {
+        '/': true,
+        '/sobre': true,
+        '/contato': true,
+        '/agendamento': true,
+        '/consultorios': true,
+        '/privacidade': true
+      };
+      var pathname = f.location.pathname.replace(/\/+$/, '') || '/';
+      if (!allowedHosts[f.location.hostname] || !institutionalPaths[pathname]) return;
+
+      if (f.fbq) return;
+      n=f.fbq=function(){n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)};
+      if(!f._fbq) f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+      f.fbq('init', '1730608694762791');
+      f.fbq('track', 'PageView');
+    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     </script>
-    <!-- End Meta Pixel Code -->
+    <!-- Não há fallback noscript: ele não permite bloquear prévias ou rotas clínicas. -->
     <link rel="manifest" href="/site.webmanifest" />
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJHFGVQPS6"></script>
@@ -395,11 +417,6 @@
   </head>
 
   <body>
-    <!-- Meta Pixel fallback for browsers with JavaScript disabled -->
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1730608694762791&ev=PageView&noscript=1"
-    alt=""
-    /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script

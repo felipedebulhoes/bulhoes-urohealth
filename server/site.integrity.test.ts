@@ -16,13 +16,21 @@ function collectTsxFiles(directory: string): string[] {
 }
 
 describe("Integridade das páginas públicas", () => {
-  it("mantém o fallback noscript do Meta Pixel dentro do body", () => {
+  it("minimiza o Meta Pixel em saúde e bloqueia prévias, rotas clínicas e eventos de conversão", () => {
     const html = readFileSync(resolve(projectRoot, "client/index.html"), "utf8");
-    const head = html.match(/<head>[\s\S]*?<\/head>/)?.[0] ?? "";
-    const body = html.match(/<body>[\s\S]*?<\/body>/)?.[0] ?? "";
+    const analytics = readFileSync(resolve(projectRoot, "client/src/lib/analytics.ts"), "utf8");
 
-    expect(head).not.toContain("<noscript>");
-    expect(body).toContain("facebook.com/tr?id=1730608694762791");
+    expect(html).toContain("allowedHosts");
+    expect(html).toContain("'felipebulhoes.com': true");
+    expect(html).toContain("institutionalPaths");
+    expect(html).toContain("'/agendamento': true");
+    expect(html).toContain("if (!allowedHosts[f.location.hostname] || !institutionalPaths[pathname]) return");
+    expect(html).not.toContain("manus.computer': true");
+    expect(html).not.toContain("facebook.com/tr?id=");
+    expect(analytics).not.toContain("trackMetaLead");
+    expect(analytics).not.toContain("trackMetaSchedule");
+    expect(analytics).not.toContain("content_name");
+    expect(analytics).not.toContain("window.fbq");
   });
 
   it("oferece um CTA rastreado para a agenda da Doctoralia sem iframe incorporado", () => {

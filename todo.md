@@ -324,3 +324,7 @@
 - [x] Criar histórico persistente e deduplicado de versões técnicas de Open Graph por página
 - [x] Implementar auditoria servidor-side de tamanho, formato e dimensões das imagens Open Graph com limite de 8 MB
 - [x] Aplicar migração social_metadata_history e validar TypeScript, 139 testes, build e interfaces desktop/mobile
+- [x] Adicionar corte automático por foco visual para converter a imagem Open Graph atual em JPEG 1200×630
+- [x] Criar gerador de banner tipográfico 1200×630 por título público para novos artigos
+- [x] Hospedar as saídas em armazenamento permanente e impedir alteração automática dos metadados públicos sem revisão
+- [x] Validar integração com arquivos reais, TypeScript, 142 testes, build e revisão desktop/mobile

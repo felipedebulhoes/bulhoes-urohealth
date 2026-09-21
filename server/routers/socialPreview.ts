@@ -9,8 +9,14 @@ import {
 } from "../db";
 import { adminProcedure, router } from "../_core/trpc";
 import { auditSocialImage } from "../socialImageAudit";
-
+import {
+  createArticleOpenGraphImage,
+  createCroppedOpenGraphImage,
+} from "../socialImageBuilder";
 const pathInput = z.object({ path: z.string().min(1).max(512) });
+const articleTitleInput = z.object({
+  title: z.string().trim().min(8).max(140),
+});
 
 export function buildSocialMetadataSnapshot(inputPath: string, actorUserId: number) {
   const preview = getSocialPreviewData(inputPath);
@@ -60,5 +66,23 @@ export const socialPreviewRouter = router({
     // The URL comes exclusively from the server-side public metadata catalog;
     // it is never accepted from the browser, preventing arbitrary URL fetches.
     return auditSocialImage(preview.metadata.image);
+  }),
+
+  cropImage: adminProcedure.input(pathInput).mutation(async ({ input }) => {
+    const preview = getSocialPreviewData(input.path);
+    if (!preview) {
+      throw new TRPCError({
+        code: "BAD_REQUEST",
+        message: "Selecione uma URL pública indexável para criar o corte.",
+      });
+    }
+
+    // The crop source is exclusively the catalogued public OG image, never a
+    // browser-supplied URL. This keeps the image processor out of arbitrary SSRF.
+    return createCroppedOpenGraphImage(preview.metadata.image);
+  }),
+
+  generateArticleImage: adminProcedure.input(articleTitleInput).mutation(async ({ input }) => {
+    return createArticleOpenGraphImage(input.title);
   }),
 });

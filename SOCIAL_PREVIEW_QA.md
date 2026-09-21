@@ -27,3 +27,15 @@ Após acrescentar suporte ao cabeçalho WebP VP8, a auditoria leu corretamente o
 ## Mobile (390×844) — expansão
 
 A auditoria, o histórico e os cards de rede social foram exibidos em uma única coluna, sem sobreposição ou rolagem horizontal. Os estados de aviso permanecem legíveis, os controles de atualizar e abrir o depurador têm área de toque adequada e o histórico mostra a imagem e os campos técnicos de forma sequencial.
+
+## Criador de imagens Open Graph — desktop
+
+O painel de criação foi inserido abaixo da auditoria de imagem, com dois fluxos visivelmente separados: **Corte automático da imagem atual** e **Imagem padrão para novo artigo**. Ambos mantêm o padrão visual do painel, mostram estado de carregamento previsto, descrevem o recorte de bordas e deixam explícito que a URL gerada precisa de revisão antes de atualizar os metadados públicos.
+
+## Validação de integração dos arquivos gerados
+
+A integração criou e hospedou dois arquivos reais, ambos com **1200 × 630 px**: um crop JPEG de 128 KB do banner de vasectomia e um template PNG de 96 KB para o título “Como se preparar para a primeira consulta urológica”. A revisão visual confirmou que o crop preserva a mensagem e a marca em formato Open Graph, enquanto o template exibe tipografia legível, texto fiel ao título e identidade azul-marinho/dourada consistente.
+
+## Criador de imagens Open Graph — mobile (390×844)
+
+No viewport mobile, os dois fluxos de criação permanecem sequenciais e legíveis; o botão de corte e o campo de título com o botão de gerar banner mantêm alvos de toque adequados. Nenhum conteúdo apresentou rolagem horizontal ou sobreposição com os cards de auditoria, histórico e prévia social.

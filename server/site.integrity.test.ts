@@ -96,6 +96,12 @@ describe("Integridade das páginas públicas", () => {
     expect(page).toContain("Histórico de versões");
     expect(page).toContain("imageAudit.useQuery");
     expect(page).toContain("history.useQuery");
+    expect(page).toContain("SocialImageCreatorPanel");
+    const creator = readFileSync(resolve(projectRoot, "client/src/components/SocialImageCreatorPanel.tsx"), "utf8");
+    expect(creator).toContain("cropImage.useMutation");
+    expect(creator).toContain("generateArticleImage.useMutation");
+    expect(creator).toContain("1200 × 630");
+    expect(creator).not.toContain("globalThis.fetch(");
     expect(app).toContain('const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"))');
     expect(app).toContain('/admin/social-preview');
     expect(app).toContain('!isInternalRoute && <GoogleTagManager />');

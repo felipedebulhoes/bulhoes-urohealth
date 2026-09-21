@@ -45,5 +45,7 @@ describe("social preview router", () => {
   it("rejects unauthenticated and regular users before image or history work", async () => {
     await expect(appRouter.createCaller(contextFor(null)).socialPreview.history({ path: "/" })).rejects.toThrow();
     await expect(appRouter.createCaller(contextFor("user")).socialPreview.imageAudit({ path: "/" })).rejects.toThrow();
+    await expect(appRouter.createCaller(contextFor(null)).socialPreview.cropImage({ path: "/" })).rejects.toThrow();
+    await expect(appRouter.createCaller(contextFor("user")).socialPreview.generateArticleImage({ title: "Novo artigo de urologia" })).rejects.toThrow();
   });
 });

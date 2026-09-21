@@ -15,3 +15,15 @@ Em navegador isolado sem sessão autenticada, a abertura de `/admin/social-previ
 ## Mobile (390×844)
 
 No viewport mobile, o cabeçalho mantém o indicador de acesso interno, a hero permanece legível e o formulário de URL ocupa a largura disponível sem rolagem horizontal. Os atalhos de páginas quebram em duas linhas de forma previsível e o cartão de metadados inicia logo após os controles. A hierarquia permanece clara para uso em tela pequena.
+
+## Expansão do painel — desktop
+
+A revisão full-page confirmou a integração do botão **Facebook Sharing Debugger**, da seção de auditoria e do histórico técnico. O histórico registrou a primeira versão da página de vasectomia e exibiu título, descrição, imagem e tipo Open Graph. O layout desktop preservou boa hierarquia. A auditoria alcançou o arquivo e registrou seu tamanho, mas não leu suas dimensões porque a imagem retornou um formato ainda não reconhecido pelo parser; esse comportamento foi identificado durante o QA e será corrigido antes da entrega.
+
+## Auditoria de imagem corrigida
+
+Após acrescentar suporte ao cabeçalho WebP VP8, a auditoria leu corretamente o banner de vasectomia entregue pelo CDN: **2560 × 1440 px**, **689,7 KB**, formato **WebP**. O arquivo está dentro do limite operacional de 8 MB. O painel o sinaliza como **Revisar / Fora do padrão**, pois ele não corresponde ao padrão operacional declarado de 1200 × 630 px; trata-se de um aviso técnico útil, e não de bloqueio de publicação.
+
+## Mobile (390×844) — expansão
+
+A auditoria, o histórico e os cards de rede social foram exibidos em uma única coluna, sem sobreposição ou rolagem horizontal. Os estados de aviso permanecem legíveis, os controles de atualizar e abrir o depurador têm área de toque adequada e o histórico mostra a imagem e os campos técnicos de forma sequencial.

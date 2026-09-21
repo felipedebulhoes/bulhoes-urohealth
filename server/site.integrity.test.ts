@@ -84,11 +84,18 @@ describe("Integridade das páginas públicas", () => {
     const server = readFileSync(resolve(projectRoot, "server/_core/index.ts"), "utf8");
 
     expect(page).toContain('getSocialPreviewData');
-    expect(page).toContain('user?.role !== "admin"');
+    expect(page).toContain('const isAdmin = isAuthenticated && user?.role === "admin"');
+    expect(page).toContain("if (!isAdmin) return <AccessDenied />");
     expect(page).toContain('aria-pressed={normalizedPath === item.path}');
     expect(page).toContain('target="_blank"');
-    expect(page).not.toContain("fetch(");
+    expect(page).not.toContain("globalThis.fetch(");
+    expect(page).not.toContain("window.fetch(");
     expect(page).not.toContain("axios");
+    expect(page).toContain("Facebook Sharing Debugger");
+    expect(page).toContain("developers.facebook.com/tools/debug/");
+    expect(page).toContain("Histórico de versões");
+    expect(page).toContain("imageAudit.useQuery");
+    expect(page).toContain("history.useQuery");
     expect(app).toContain('const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"))');
     expect(app).toContain('/admin/social-preview');
     expect(app).toContain('!isInternalRoute && <GoogleTagManager />');

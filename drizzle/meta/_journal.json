@@ -50,6 +50,13 @@
       "when": 1788153529234,
       "tag": "0006_neat_starfox",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1789950351484,
+      "tag": "0007_peaceful_lorna_dane",
+      "breakpoints": true
     }
   ]
 }

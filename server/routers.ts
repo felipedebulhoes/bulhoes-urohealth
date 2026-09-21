@@ -7,6 +7,7 @@ import { aiChatRouter } from "./routers/aiChat";
 import { keywordsRouter } from "./routers/keywords";
 import { playbookRouter } from "./routers/playbook";
 import { prototypeFeedbackRouter } from "./routers/prototypeFeedback";
+import { socialPreviewRouter } from "./routers/socialPreview";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -27,6 +28,7 @@ export const appRouter = router({
   keywords: keywordsRouter,
   playbook: playbookRouter,
   prototypeFeedback: prototypeFeedbackRouter,
+  socialPreview: socialPreviewRouter,
 });
 
 export type AppRouter = typeof appRouter;

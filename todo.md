@@ -320,3 +320,7 @@
 - [x] Criar ferramenta administrativa de prévia Open Graph/Twitter Card baseada no mesmo catálogo entregue pelo servidor
 - [x] Proteger a ferramenta por autenticação de administrador, noindex/meta/header e excluir splash, cookies e analytics públicos
 - [x] Validar rota HTTP, consistência de metadados, desktop/mobile, TypeScript, 131 testes e build de produção
+- [x] Adicionar atalho seguro ao Facebook Sharing Debugger com a URL canônica selecionada
+- [x] Criar histórico persistente e deduplicado de versões técnicas de Open Graph por página
+- [x] Implementar auditoria servidor-side de tamanho, formato e dimensões das imagens Open Graph com limite de 8 MB
+- [x] Aplicar migração social_metadata_history e validar TypeScript, 139 testes, build e interfaces desktop/mobile

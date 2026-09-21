@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -231,3 +231,30 @@ export const faqHelpfulCounts = mysqlTable("faq_helpful_counts", {
 
 export type FaqHelpfulCount = typeof faqHelpfulCounts.$inferSelect;
 export type InsertFaqHelpfulCount = typeof faqHelpfulCounts.$inferInsert;
+
+/**
+ * Versioned Open Graph snapshots captured by the internal social preview tool.
+ * The table contains only public technical metadata; it never stores visitor
+ * data, patient information, search terms or the full page content.
+ */
+export const socialMetadataHistory = mysqlTable(
+  "social_metadata_history",
+  {
+    id: int("id").autoincrement().primaryKey(),
+    path: varchar("path", { length: 512 }).notNull(),
+    title: text("title").notNull(),
+    description: text("description").notNull(),
+    image: text("image").notNull(),
+    imageAlt: text("imageAlt").notNull(),
+    type: varchar("type", { length: 32 }).notNull(),
+    contentHash: varchar("contentHash", { length: 64 }).notNull(),
+    createdByUserId: int("createdByUserId"),
+    createdAt: timestamp("createdAt").defaultNow().notNull(),
+  },
+  table => ({
+    pathHashUnique: uniqueIndex("social_metadata_history_path_hash_unique").on(table.path, table.contentHash),
+  })
+);
+
+export type SocialMetadataHistory = typeof socialMetadataHistory.$inferSelect;
+export type InsertSocialMetadataHistory = typeof socialMetadataHistory.$inferInsert;

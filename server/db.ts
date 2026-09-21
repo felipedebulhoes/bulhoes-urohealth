@@ -1,6 +1,6 @@
 import { and, desc, eq, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, InsertFile, FileRecord, InsertLead, Lead, users, files, leads, playbookLeads, InsertPlaybookLead, PlaybookLead, faqHelpfulCounts } from "../drizzle/schema";
+import { InsertUser, InsertFile, FileRecord, InsertLead, Lead, users, files, leads, playbookLeads, InsertPlaybookLead, PlaybookLead, faqHelpfulCounts, InsertSocialMetadataHistory, SocialMetadataHistory, socialMetadataHistory } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -212,4 +212,34 @@ export async function incrementFaqHelpfulCount(questionId: string): Promise<numb
     .where(eq(faqHelpfulCounts.questionId, questionId))
     .limit(1);
   return rows[0]?.helpfulCount ?? 1;
+}
+
+// ── Social metadata history ──
+
+export async function createSocialMetadataHistorySnapshot(
+  snapshot: InsertSocialMetadataHistory
+): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+
+  await db.insert(socialMetadataHistory).values(snapshot).onDuplicateKeyUpdate({
+    // A snapshot is immutable: an already recorded content hash is intentionally
+    // left unchanged rather than creating duplicate history entries.
+    set: { contentHash: sql`${socialMetadataHistory.contentHash}` },
+  });
+}
+
+export async function listSocialMetadataHistory(
+  path: string,
+  limit = 10
+): Promise<SocialMetadataHistory[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  return db
+    .select()
+    .from(socialMetadataHistory)
+    .where(eq(socialMetadataHistory.path, path))
+    .orderBy(desc(socialMetadataHistory.createdAt), desc(socialMetadataHistory.id))
+    .limit(limit);
 }

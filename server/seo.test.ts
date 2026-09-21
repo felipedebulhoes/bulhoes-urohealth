@@ -9,7 +9,7 @@ import {
   injectCanonicalMetadata,
 } from "./_core/seo";
 import { isIndexableSitePath } from "../shared/siteRoutes";
-import { getBreadcrumbItems, getPageMetadata } from "../shared/pageMetadata";
+import { getBreadcrumbItems, getPageMetadata, getSocialPreviewData } from "../shared/pageMetadata";
 
 describe("SEO URL consolidation", () => {
   it("redirects the malformed /$ URL to the homepage", () => {
@@ -122,6 +122,25 @@ describe("SEO URL consolidation", () => {
     expect(result).toContain("10 sinais de que você deve procurar um urologista");
   });
 
+  it("derives the internal social preview from the same public metadata catalog", () => {
+    expect(getSocialPreviewData("/vasectomia-sem-bisturi?utm_source=preview")).toMatchObject({
+      pathname: "/vasectomia-sem-bisturi",
+      canonicalUrl: "https://felipebulhoes.com/vasectomia-sem-bisturi",
+      metadata: {
+        type: "website",
+        title: "Vasectomia Sem Bisturi em SP e Campinas | Dr. Felipe de Bulhões",
+      },
+    });
+    expect(getSocialPreviewData("/blog/quando-procurar-urologista")?.metadata.type).toBe("article");
+  });
+
+  it("does not offer social previews for internal, prototype, redirect or unknown paths", () => {
+    expect(getSocialPreviewData("/admin/social-preview")).toBeNull();
+    expect(getSocialPreviewData("/prototipo-jornada-paciente")).toBeNull();
+    expect(getSocialPreviewData("/agendar/doctoralia")).toBeNull();
+    expect(getSocialPreviewData("/rota-inexistente")).toBeNull();
+  });
+
   it("derives a useful breadcrumb trail for blog, location and educational pages", () => {
     expect(getBreadcrumbItems("/blog/quando-procurar-urologista")).toEqual([
       { name: "Início", url: "/" },
@@ -179,8 +198,10 @@ describe("SEO URL consolidation", () => {
     expect(getSpaResponseStatus("/blog/quando-procurar-urologista")).toBe(200);
     expect(getSpaResponseStatus("/prototipo-jornada-paciente")).toBe(200);
     expect(getSpaResponseStatus("/admin/leads")).toBe(200);
+    expect(getSpaResponseStatus("/admin/social-preview")).toBe(200);
     expect(isIndexableSitePath("/prototipo-jornada-paciente")).toBe(false);
     expect(isIndexableSitePath("/admin/leads")).toBe(false);
+    expect(isIndexableSitePath("/admin/social-preview")).toBe(false);
   });
 
   it("keeps every sitemap URL canonical and indexable", () => {

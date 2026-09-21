@@ -78,6 +78,24 @@ describe("Integridade das páginas públicas", () => {
     expect(campaignLayout).toContain("<PageBreadcrumbs");
   });
 
+  it("mantém a prévia social como ferramenta administrativa, noindex e livre de chamadas externas", () => {
+    const page = readFileSync(resolve(projectRoot, "client/src/pages/AdminSocialPreview.tsx"), "utf8");
+    const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
+    const server = readFileSync(resolve(projectRoot, "server/_core/index.ts"), "utf8");
+
+    expect(page).toContain('getSocialPreviewData');
+    expect(page).toContain('user?.role !== "admin"');
+    expect(page).toContain('aria-pressed={normalizedPath === item.path}');
+    expect(page).toContain('target="_blank"');
+    expect(page).not.toContain("fetch(");
+    expect(page).not.toContain("axios");
+    expect(app).toContain('const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"))');
+    expect(app).toContain('/admin/social-preview');
+    expect(app).toContain('!isInternalRoute && <GoogleTagManager />');
+    expect(app).toContain('!isPrototypeRoute && !isInternalRoute && <SplashScreen />');
+    expect(server).toContain('req.path.startsWith("/admin/")');
+  });
+
   it("não mantém referências ao arquivo antigo do logotipo", () => {
     const files = [
       "client/src/components/Header.tsx",
@@ -237,7 +255,7 @@ describe("Integridade das páginas públicas", () => {
 
     expect(prototype.match(/<ScrollReveal threshold=\{0\.08\}>/g)?.length).toBeGreaterThanOrEqual(3);
     expect(reveal).toContain('matchMedia("(prefers-reduced-motion: reduce)")');
-    expect(app).toContain("!isPrototypeRoute && <SplashScreen />");
+    expect(app).toContain("!isPrototypeRoute && !isInternalRoute && <SplashScreen />");
   });
 
   it("oferece contato por e-mail sem campo clínico livre e com consentimento explícito", () => {

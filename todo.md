@@ -317,3 +317,6 @@
 - [x] Centralizar breadcrumbs visíveis e JSON-LD em páginas institucionais, educativas, campanhas, locais e artigos
 - [x] Criar página 404 com busca local acessível, atalhos úteis e recuperação por teclado sem coletar termos
 - [x] Validar metadados, imagens sociais, responsividade, busca 404, TypeScript, 128 testes e build de produção
+- [x] Criar ferramenta administrativa de prévia Open Graph/Twitter Card baseada no mesmo catálogo entregue pelo servidor
+- [x] Proteger a ferramenta por autenticação de administrador, noindex/meta/header e excluir splash, cookies e analytics públicos
+- [x] Validar rota HTTP, consistência de metadados, desktop/mobile, TypeScript, 131 testes e build de produção

@@ -19,6 +19,12 @@ export interface SiteBreadcrumb {
   url: string;
 }
 
+export interface SocialPreviewData {
+  pathname: string;
+  canonicalUrl: string;
+  metadata: PageMetadata;
+}
+
 const DEFAULT_METADATA: PageMetadata = {
   title: "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas",
   description:
@@ -272,6 +278,22 @@ export function getPageMetadata(input: string): PageMetadata {
   }
 
   return DEFAULT_METADATA;
+}
+
+/**
+ * Returns only the public, indexable metadata that is emitted in the server
+ * response. Internal tools use this to preview social cards without loading a
+ * remote crawler or accidentally offering previews for noindex routes.
+ */
+export function getSocialPreviewData(input: string): SocialPreviewData | null {
+  const pathname = normalizeSitePath(input);
+  if (!isIndexableSitePath(pathname)) return null;
+
+  return {
+    pathname,
+    canonicalUrl: `${SITE_ORIGIN}${pathname}`,
+    metadata: getPageMetadata(pathname),
+  };
 }
 
 /** Returns visual and JSON-LD breadcrumb items only for indexable public pages. */

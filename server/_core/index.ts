@@ -46,10 +46,14 @@ async function startServer() {
     next();
   });
 
-  // O protótipo é uma área privada de validação e não deve aparecer em busca,
-  // cache ou snippets, mesmo para crawlers que não executam JavaScript.
+  // Protótipos e ferramentas administrativas são áreas privadas de validação e
+  // não devem aparecer em busca, cache ou snippets, mesmo para crawlers que
+  // não executam JavaScript.
   app.use((req, res, next) => {
-    if (req.path.startsWith("/prototipo-jornada-paciente")) {
+    if (
+      req.path.startsWith("/prototipo-jornada-paciente") ||
+      req.path.startsWith("/admin/")
+    ) {
       res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
     }
     next();

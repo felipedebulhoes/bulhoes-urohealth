@@ -49,6 +49,7 @@ const CemedSaoLuizCampinas = lazy(() => import("./pages/LocationPages").then((m)
 const AdminFiles = lazy(() => import("./pages/AdminFiles"));
 const AdminLeads = lazy(() => import("./pages/AdminLeads"));
 const AdminKeywords = lazy(() => import("./pages/AdminKeywords"));
+const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"));
 const Consultorios = lazy(() => import("./pages/Consultorios"));
 const Contato = lazy(() => import("./pages/Contato"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
@@ -128,6 +129,7 @@ function Router() {
         <Route path={"/admin/files"} component={AdminFiles} />
         <Route path={"/admin/leads"} component={AdminLeads} />
         <Route path={"/admin/keywords"} component={AdminKeywords} />
+        <Route path={"/admin/social-preview"} component={AdminSocialPreview} />
         <Route path={"/guia-glp1"} component={GuiaGLP1} />
         <Route path={"/vasectomia-sem-bisturi"} component={VasectomiaSemBisturi} />
         <Route path={"/andrologia-performance-masculina"} component={AndrologiaPerformance} />
@@ -154,12 +156,14 @@ function Router() {
 function App() {
   const [location] = useLocation();
   const isPrototypeRoute = location.startsWith("/prototipo-jornada-paciente");
+  const isInternalRoute = location.startsWith("/admin/");
 
   useEffect(() => {
+    if (isInternalRoute) return;
     captureAttribution();
     initGlobalContactListener();
     initEngagementTracking();
-  }, []);
+  }, [isInternalRoute]);
 
   return (
     <ErrorBoundary>
@@ -170,11 +174,11 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <CanonicalTag />
-          {!isPrototypeRoute && <SplashScreen />}
+          {!isPrototypeRoute && !isInternalRoute && <SplashScreen />}
           <PageTransition />
           <Router />
-          <CookieBanner />
-          <GoogleTagManager />
+          {!isInternalRoute && <CookieBanner />}
+          {!isInternalRoute && <GoogleTagManager />}
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

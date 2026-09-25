@@ -74,6 +74,22 @@ describe("Integridade das páginas públicas", () => {
     expect(page).toContain('aria-live="polite"');
   });
 
+  it("inicializa o mapa apenas após o callback da API e exibe os quatro locais ativos", () => {
+    const map = readFileSync(resolve(projectRoot, "client/src/components/Map.tsx"), "utf8");
+    const interactiveMap = readFileSync(resolve(projectRoot, "client/src/components/InteractiveMap.tsx"), "utf8");
+    const consultorios = readFileSync(resolve(projectRoot, "client/src/pages/Consultorios.tsx"), "utf8");
+
+    expect(map).toContain('__felipeBulhoesMapsReady');
+    expect(map).toContain('callback=${callbackName}');
+    expect(map).toContain('libraries=marker,places,geocoding,geometry');
+    expect(map).toContain('fallback?: ReactNode');
+    expect(interactiveMap).toContain('onMapError={() => setMapLoadFailed(true)}');
+    expect(interactiveMap).toContain('https://www.google.com/maps?q=${fallbackMapQuery}&output=embed');
+    expect(interactiveMap).toContain('title={`Mapa de ${fallbackClinic.name}`}');
+    expect(consultorios).toContain('Atendimento presencial em quatro locais ativos');
+    expect(consultorios).not.toContain('Atendimento presencial em 6 locais');
+  });
+
   it("centraliza breadcrumbs visíveis e JSON-LD em um único componente", () => {
     const breadcrumbs = readFileSync(resolve(projectRoot, "client/src/components/PageBreadcrumbs.tsx"), "utf8");
     const educationalLayout = readFileSync(resolve(projectRoot, "client/src/components/EducationalLayout.tsx"), "utf8");

@@ -76,13 +76,14 @@
 
 /// <reference types="@types/google.maps" />
 
-import { useEffect, useRef, useState } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import { usePersistFn } from "@/hooks/usePersistFn";
 import { cn } from "@/lib/utils";
 
 declare global {
   interface Window {
     google?: typeof google;
+    __felipeBulhoesMapsReady?: () => void;
   }
 }
 
@@ -99,20 +100,25 @@ function loadMapScript(): Promise<void> {
   if (mapScriptPromise) return mapScriptPromise;
 
   mapScriptPromise = new Promise((resolve, reject) => {
+    const callbackName = "__felipeBulhoesMapsReady";
     const script = document.createElement("script");
-    script.src = `${MAPS_PROXY_URL}/maps/api/js?key=${API_KEY}&v=weekly&loading=async&libraries=marker,places,geocoding,geometry`;
+    window[callbackName] = () => {
+      if (window.google?.maps) {
+        delete window[callbackName];
+        resolve();
+        return;
+      }
+
+      mapScriptPromise = null;
+      delete window[callbackName];
+      reject(new Error("A API do Google Maps não ficou disponível após o callback de carregamento."));
+    };
+    script.src = `${MAPS_PROXY_URL}/maps/api/js?key=${API_KEY}&v=weekly&loading=async&callback=${callbackName}&libraries=marker,places,geocoding,geometry`;
     script.async = true;
     script.defer = true;
-    script.onload = () => {
-      if (window.google?.maps) {
-        resolve();
-      } else {
-        mapScriptPromise = null;
-        reject(new Error("A API do Google Maps não ficou disponível após o carregamento."));
-      }
-    };
     script.onerror = () => {
       mapScriptPromise = null;
+      delete window[callbackName];
       reject(new Error("Não foi possível carregar o Google Maps."));
     };
     document.head.appendChild(script);
@@ -126,6 +132,8 @@ interface MapViewProps {
   initialCenter?: google.maps.LatLngLiteral;
   initialZoom?: number;
   onMapReady?: (map: google.maps.Map) => void;
+  onMapError?: () => void;
+  fallback?: ReactNode;
 }
 
 export function MapView({
@@ -133,6 +141,8 @@ export function MapView({
   initialCenter = { lat: 37.7749, lng: -122.4194 },
   initialZoom = 12,
   onMapReady,
+  onMapError,
+  fallback,
 }: MapViewProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<google.maps.Map | null>(null);
@@ -157,6 +167,7 @@ export function MapView({
     } catch (error) {
       console.warn("Google Maps indisponível; exibindo fallback.", error);
       setLoadError(true);
+      onMapError?.();
     }
   });
 
@@ -165,6 +176,8 @@ export function MapView({
   }, [init]);
 
   if (loadError) {
+    if (fallback) return <>{fallback}</>;
+
     return (
       <div className={cn("w-full h-[500px] bg-[#F8FAFB] flex items-center justify-center p-6 text-center", className)}>
         <div>

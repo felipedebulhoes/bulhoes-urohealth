@@ -83,6 +83,7 @@ const DEFAULT_ZOOM = 9;
 
 export default function InteractiveMap() {
   const [activeClinic, setActiveClinic] = useState<string | null>(null);
+  const [mapLoadFailed, setMapLoadFailed] = useState(false);
   const mapRef = useRef<google.maps.Map | null>(null);
   const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
@@ -212,6 +213,11 @@ export default function InteractiveMap() {
     }
   };
 
+  const fallbackClinic = clinics.find((clinic) => clinic.id === activeClinic) ?? clinics[0];
+  const fallbackMapQuery = encodeURIComponent(
+    `${fallbackClinic.name}, ${fallbackClinic.address}, ${fallbackClinic.neighborhood}`,
+  );
+
   return (
     <div className="space-y-4">
       {/* Location selector tabs */}
@@ -250,6 +256,24 @@ export default function InteractiveMap() {
           initialCenter={DEFAULT_CENTER}
           initialZoom={DEFAULT_ZOOM}
           onMapReady={handleMapReady}
+          onMapError={() => setMapLoadFailed(true)}
+          fallback={
+            <div className="relative h-[380px] lg:h-[450px] overflow-hidden bg-[#F1F5F9]" aria-live="polite">
+              <iframe
+                key={fallbackClinic.id}
+                title={`Mapa de ${fallbackClinic.name}`}
+                src={`https://www.google.com/maps?q=${fallbackMapQuery}&output=embed`}
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="absolute bottom-3 left-3 rounded-lg bg-white/95 px-3 py-2 text-xs text-[#1C3D5A] shadow-sm backdrop-blur">
+                {mapLoadFailed
+                  ? `Exibindo ${fallbackClinic.name}. Selecione outro local acima para atualizar o mapa.`
+                  : "Carregando mapa"}
+              </div>
+            </div>
+          }
         />
       </div>
 

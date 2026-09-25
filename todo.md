@@ -328,3 +328,8 @@
 - [x] Criar gerador de banner tipográfico 1200×630 por título público para novos artigos
 - [x] Hospedar as saídas em armazenamento permanente e impedir alteração automática dos metadados públicos sem revisão
 - [x] Validar integração com arquivos reais, TypeScript, 142 testes, build e revisão desktop/mobile
+
+- [x] Remover Clinovi Moema e Clinovi SBC do conteúdo público, rotas indexáveis, schemas, sitemap e assistente de contato; preservar 301 para `/consultorios`.
+- [x] Corrigir a cópia residual para declarar quatro locais ativos: dois em Campinas e dois em São Paulo.
+- [x] Recuperar o mapa de consultórios com inicialização por callback da API e fallback incorporado do Google Maps por local selecionado.
+- [x] Validar a recuperação do mapa, a troca de local, TypeScript, 146 testes e build de produção.

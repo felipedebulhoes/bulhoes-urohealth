@@ -132,7 +132,7 @@ export default function Consultorios() {
               Consultórios e Locais de Atendimento
             </h1>
             <p className="text-white/60 text-lg leading-relaxed">
-              Atendimento presencial em Campinas e São Paulo, além de teleconsulta por vídeo para todo o Brasil. Escolha o local mais conveniente para você.
+              Atendimento presencial em quatro locais ativos — dois em Campinas e dois em São Paulo — além de teleconsulta por vídeo para todo o Brasil. Escolha o local mais conveniente para você.
             </p>
           </motion.div>
         </div>

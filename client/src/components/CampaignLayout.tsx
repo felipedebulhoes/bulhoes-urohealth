@@ -247,7 +247,7 @@ export default function CampaignLayout({
             </CTAButtonWithAnimation>
           </div>
           <p className="text-white/30 text-xs mt-6">
-            Atendimento particular · Campinas Day Hospital · Clinovi SP (Paulista, Moema, Pinheiros, SBC) · Teleconsulta
+            Atendimento particular · Campinas Day Hospital · Clinovi SP (Paulista e Pinheiros) · Teleconsulta
           </p>
         </div>
       </section>

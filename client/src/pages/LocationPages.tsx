@@ -98,25 +98,6 @@ const locations: Record<string, LocationData> = {
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
     accentColor: "#B87333",
   },
-  "clinovi-moema": {
-    name: "Clinovi Moema",
-    fullName: "Clinovi — Moema",
-    address: "Moema",
-    city: "São Paulo, SP",
-    type: "particular",
-    typeLabel: "Particular",
-    phone: "(11) 3382-1529",
-    mapUrl: "https://maps.google.com/?q=Clinovi+Moema+São+Paulo",
-    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.0!2d-46.66!3d-23.60!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM2JzAwLjAiUyA0NsKwMzknMzYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1",
-    hours: ["Segunda a Sábado", "Horários variáveis — consulte a agenda no Doctoralia"],
-    services: ["Consultas", "Teleconsulta", "Procedimentos ambulatoriais", "Acompanhamento pós-operatório"],
-    parking: "Estacionamentos conveniados na região",
-    description: "A Clinovi Moema está localizada em um dos bairros mais nobres de São Paulo, com fácil acesso pelo Aeroporto de Congonhas e estações de metrô. Oferece atendimento particular em ambiente sofisticado e confortável, ideal para pacientes que buscam privacidade e conveniência. Pagamento no local via PIX, cartão de crédito ou débito.",
-    metaTitle: "Urologista em Moema — Clinovi | Dr. Felipe de Bulhões",
-    metaDescription: "Urologista em Moema, São Paulo. Atendimento particular na Clinovi. Consultas, teleconsulta e procedimentos ambulatoriais.",
-    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
-    accentColor: "#7C3AED",
-  },
   "clinovi-pinheiros": {
     name: "Clinovi Pinheiros",
     fullName: "Clinovi — Pinheiros",
@@ -135,24 +116,6 @@ const locations: Record<string, LocationData> = {
     metaDescription: "Urologista em Pinheiros, São Paulo. Atendimento particular na Clinovi. Consultas, teleconsulta e procedimentos ambulatoriais na Av. Rebouças.",
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
     accentColor: "#D97706",
-  },  "clinovi-sbc": {
-    name: "Clinovi SBC",
-    fullName: "Clinovi — São Bernardo do Campo",
-    address: "Av. Pereira Barreto, 1479",
-    city: "São Bernardo do Campo, SP",
-    type: "particular",
-    typeLabel: "Particular",
-    phone: "(11) 3382-1529",
-    mapUrl: "https://maps.google.com/?q=Av.+Pereira+Barreto+1479+S%C3%A3o+Bernardo+do+Campo",
-    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.0!2d-46.565!3d-23.696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQxJzQ1LjAiUyA0NsKwMzMnNTQuMCJX!5e0!3m2!1spt-BR!2sbr!4v1",
-    hours: ["Segunda a Sábado", "Horários variáveis — consulte a agenda no Doctoralia"],
-    services: ["Consultas", "Teleconsulta", "Procedimentos ambulatoriais", "Acompanhamento pós-operatório"],
-    parking: "Estacionamento no Edifício Helbor Trilogy",
-    description: "A Clinovi SBC está localizada no Edifício Helbor Trilogy, em São Bernardo do Campo, na divisa entre Santo André e São Caetano do Sul. Conta com mais de 1.000m² de infraestrutura completa e mais de 30 consultórios. Atendimento particular com pagamento via PIX, cartão de crédito ou débito.",
-    metaTitle: "Urologista em São Bernardo do Campo — Clinovi SBC | Dr. Felipe de Bulhões",
-    metaDescription: "Urologista em São Bernardo do Campo (ABC). Atendimento particular na Clinovi SBC. Consultas, teleconsulta e procedimentos ambulatoriais.",
-    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
-    accentColor: "#DC2626",
   },
   "cemed-sao-luiz-campinas": {
     name: "CEMED - Rede D'Or - São Luiz Campinas",
@@ -387,16 +350,8 @@ export function ClinoviPaulista() {
   return <LocationPage slug="clinovi-paulista" />;
 }
 
-export function ClinoviMoema() {
-  return <LocationPage slug="clinovi-moema" />;
-}
-
 export function ClinoviPinheiros() {
   return <LocationPage slug="clinovi-pinheiros" />;
-}
-
-export function ClinoviSBC() {
-  return <LocationPage slug="clinovi-sbc" />;
 }
 
 export function CemedSaoLuizCampinas() {

@@ -1,6 +1,6 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
- * Footer: Clean, minimal with essential info — 5 locations + teleconsulta
+ * Footer: Clean, minimal with essential info — active locations + teleconsulta
  */
 import { Instagram, ExternalLink, MapPin, Phone, Mail, Monitor } from "lucide-react";
 
@@ -68,27 +68,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Clinovi Moema */}
-          <div>
-            <h4 className="text-sm font-semibold text-white font-sans mb-3">Clinovi Moema</h4>
-            <span className="inline-block text-[10px] uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded mb-3">
-              Particular
-            </span>
-            <div className="space-y-2">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
-                <span className="text-xs font-sans">
-                  Av. Ibirapuera, 1835, 2° andar<br />
-                  Moema, São Paulo - SP
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                <span className="text-xs font-sans">(11) 3382-1529</span>
-              </div>
-            </div>
-          </div>
-
           {/* Clinovi Pinheiros */}
           <div>
             <h4 className="text-sm font-semibold text-white font-sans mb-3">Clinovi Pinheiros</h4>
@@ -101,27 +80,6 @@ export default function Footer() {
                 <span className="text-xs font-sans">
                   Av. Rebouças, 2636<br />
                   Pinheiros, São Paulo - SP
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                <span className="text-xs font-sans">(11) 3382-1529</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Clinovi SBC */}
-          <div>
-            <h4 className="text-sm font-semibold text-white font-sans mb-3">Clinovi SBC</h4>
-            <span className="inline-block text-[10px] uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded mb-3">
-              Particular
-            </span>
-            <div className="space-y-2">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
-                <span className="text-xs font-sans">
-                  Av. Pereira Barreto, 1479<br />
-                  São Bernardo do Campo - SP
                 </span>
               </div>
               <div className="flex items-center gap-2">

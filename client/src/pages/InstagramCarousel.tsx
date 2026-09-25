@@ -101,18 +101,16 @@ export default function InstagramCarousel() {
       ),
     },
     {
-      title: "6 Locais de Atendimento",
+      title: "4 Locais de Atendimento",
       component: (
         <div className="w-full h-full bg-gradient-to-b from-[#1C3D5A] to-[#0f2438] p-6 flex flex-col justify-between text-white">
-          <h2 className="text-3xl font-bold font-serif text-[#B87333] text-center mb-4">6 Locais de Atendimento</h2>
+          <h2 className="text-3xl font-bold font-serif text-[#B87333] text-center mb-4">4 Locais de Atendimento</h2>
 
           <div className="grid grid-cols-2 gap-3 flex-1 overflow-y-auto">
             {[
               { name: "Campinas Day Hospital", city: "Campinas" },
               { name: "Clinovi Paulista", city: "São Paulo" },
-              { name: "Clinovi Moema", city: "São Paulo" },
               { name: "Clinovi Pinheiros", city: "São Paulo" },
-              { name: "Clinovi SBC", city: "Santo André" },
               { name: "CEMED - Rede D'Or", city: "Campinas" },
             ].map((local, i) => (
               <div key={i} className="bg-white/10 rounded-lg p-3 text-center">

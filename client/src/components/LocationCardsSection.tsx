@@ -23,7 +23,7 @@ import { getWhatsAppUrl } from "@/lib/tracking";
 interface LocationData {
   name: string;
   shortName: string;
-  region: "sao-paulo" | "abc" | "campinas";
+  region: "sao-paulo" | "campinas";
   regionLabel: string;
   type: "particular";
   typeLabel: string;
@@ -42,9 +42,8 @@ interface LocationData {
 }
 
 const regions = [
-  { id: "todos", label: "Todos", count: 6 },
-  { id: "sao-paulo", label: "São Paulo", count: 3 },
-  { id: "abc", label: "ABC Paulista", count: 1 },
+  { id: "todos", label: "Todos", count: 4 },
+  { id: "sao-paulo", label: "São Paulo", count: 2 },
   { id: "campinas", label: "Campinas", count: 2 },
 ] as const;
 
@@ -69,25 +68,6 @@ const locations: LocationData[] = [
     slug: "clinovi-paulista",
   },
   {
-    name: "Clinovi Moema",
-    shortName: "Moema",
-    region: "sao-paulo",
-    regionLabel: "São Paulo",
-    type: "particular",
-    typeLabel: "Particular",
-    image: "/manus-storage/clinovi-moema_b149b069_cd29f980.webp",
-    address: "Av. Ibirapuera, 1835, 2° andar",
-    neighborhood: "Moema, São Paulo - SP",
-    phone: "(11) 3382-1529",
-    hours: "Seg a Sáb — consulte horários",
-    highlight: "1.040m², próximo ao Metrô Moema",
-    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
-    bookingUrl: "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas",
-    bookingLabel: "Agendar via Doctoralia",
-    mapUrl: "https://maps.google.com/?q=Av.+Ibirapuera+1835+Moema+São+Paulo",
-    slug: "clinovi-moema",
-  },
-  {
     name: "Clinovi Pinheiros",
     shortName: "Pinheiros",
     region: "sao-paulo",
@@ -105,25 +85,6 @@ const locations: LocationData[] = [
     bookingLabel: "Agendar via Doctoralia",
     mapUrl: "https://maps.google.com/?q=Av.+Rebouças+2636+Pinheiros+São+Paulo",
     slug: "clinovi-pinheiros",
-  },
-  {
-    name: "Clinovi SBC",
-    shortName: "ABC",
-    region: "abc",
-    regionLabel: "ABC Paulista",
-    type: "particular",
-    typeLabel: "Particular",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp",
-    address: "Av. Pereira Barreto, 1479",
-    neighborhood: "São Bernardo do Campo - SP",
-    phone: "(11) 3382-1529",
-    hours: "Seg a Sáb — consulte horários",
-    highlight: "Edifício Helbor Trilogy, 1.000m²+",
-    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
-    bookingUrl: "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas",
-    bookingLabel: "Agendar via Doctoralia",
-    mapUrl: "https://maps.google.com/?q=Av.+Pereira+Barreto+1479+São+Bernardo+do+Campo",
-    slug: "clinovi-sbc",
   },
   {
     name: "CEMED São Luiz Campinas",

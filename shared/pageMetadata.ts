@@ -58,7 +58,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
   "/consultorios": {
     title: "Consultórios e Locais de Atendimento | Dr. Felipe de Bulhões",
     description:
-      "Conheça os locais de atendimento do Dr. Felipe de Bulhões em São Paulo, Campinas e ABC Paulista, além das opções de teleconsulta.",
+      "Conheça os locais de atendimento do Dr. Felipe de Bulhões em São Paulo e Campinas, além das opções de teleconsulta.",
     image: DEFAULT_OG_IMAGE,
     imageAlt: "Locais de atendimento do Dr. Felipe de Bulhões",
     type: "website",
@@ -172,9 +172,7 @@ const EDUCATIONAL_LABELS: Record<string, string> = {
 const LOCATION_LABELS: Record<string, string> = {
   "/local/campinas-day-hospital": "Campinas Day Hospital",
   "/local/clinovi-paulista": "Clinovi Paulista",
-  "/local/clinovi-moema": "Clinovi Moema",
   "/local/clinovi-pinheiros": "Clinovi Pinheiros",
-  "/local/clinovi-sbc": "Clinovi São Bernardo do Campo",
   "/local/cemed-sao-luiz-campinas": "CEMED Rede D'Or São Luiz Campinas",
 };
 
@@ -190,9 +188,7 @@ const BLOG_TITLES: Record<string, string> = {
   "incontinencia-urinaria-pos-prostatectomia": "Incontinência urinária pós-prostatectomia",
   "psa-rastreamento-cancer-prostata-2026": "PSA e rastreamento do câncer de próstata",
   "hiperplasia-prostatica-benigna-tratamentos-modernos": "HPB: tratamentos modernos",
-  "urologista-sao-paulo-paulista-moema": "Urologista em São Paulo",
   "urologista-pinheiros-zona-oeste-sp": "Urologista em Pinheiros",
-  "urologista-abc-sao-bernardo-santo-andre": "Urologista no ABC Paulista",
 };
 
 const BLOG_IMAGES: Record<string, string> = {
@@ -218,12 +214,8 @@ const BLOG_IMAGES: Record<string, string> = {
     "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-psa-rastreamento-prostata-agLu4YHQhYamRq3TyanvEp.webp",
   "hiperplasia-prostatica-benigna-tratamentos-modernos":
     "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-hpb-tratamento-moderno-mQ7cu73ouQGoVjsg6ysiRu.webp",
-  "urologista-sao-paulo-paulista-moema":
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-urologista-sao-paulo-7LHFJjdMynXArAzkHbTUti.webp",
   "urologista-pinheiros-zona-oeste-sp":
     "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp",
-  "urologista-abc-sao-bernardo-santo-andre":
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp",
 };
 
 function genericEducationalMetadata(label: string): PageMetadata {

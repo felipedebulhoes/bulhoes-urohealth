@@ -1,6 +1,6 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
- * Location: 3 clinics + teleconsulta + interactive Google Map with all markers
+ * Location: active clinics + teleconsulta + interactive Google Map with all markers
  */
 import { motion, useInView } from "framer-motion";
 import { getWhatsAppUrl } from "@/lib/tracking";
@@ -10,9 +10,7 @@ import InteractiveMap from "@/components/InteractiveMap";
 
 const CAMPINAS_IMG = "/manus-storage/campinas-day-hospital_47df2b14_d5a9cb24.webp";
 const CLINOVI_PAULISTA_IMG = "/manus-storage/clinovi-paulista_42fff2fa_cecba450.webp";
-const CLINOVI_MOEMA_IMG = "/manus-storage/clinovi-moema_b149b069_cd29f980.webp";
 const CLINOVI_PINHEIROS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp";
-const CLINOVI_SBC_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp";
 const SAO_LUIZ_CAMPINAS_IMG = "/manus-storage/sao-luiz-campinas-fachada_a326a12f.webp";
 
 const locations = [
@@ -46,20 +44,6 @@ const locations = [
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
   {
-    name: "Clinovi Moema",
-    type: "Particular",
-    typeColor: "text-amber-400 bg-amber-400/10",
-    image: CLINOVI_MOEMA_IMG,
-    address: "Av. Ibirapuera, 1835, 2° andar",
-    neighborhood: "Moema, São Paulo - SP",
-    cep: "",
-    phone: "(11) 3382-1529",
-    hours: "Seg a Sáb — consulte horários no Doctoralia",
-    highlight: "Próximo ao metrô Moema",
-    insurances: null,
-    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
-  },
-  {
     name: "Clinovi Pinheiros",
     type: "Particular",
     typeColor: "text-amber-400 bg-amber-400/10",
@@ -70,20 +54,6 @@ const locations = [
     phone: "(11) 3382-1529",
     hours: "Seg a Sáb — consulte horários no Doctoralia",
     highlight: "Espaço moderno no ComVem Rebouças",
-    insurances: null,
-    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
-  },
-  {
-    name: "Clinovi SBC",
-    type: "Particular",
-    typeColor: "text-amber-400 bg-amber-400/10",
-    image: CLINOVI_SBC_IMG,
-    address: "Av. Pereira Barreto, 1479",
-    neighborhood: "São Bernardo do Campo - SP",
-    cep: "",
-    phone: "(11) 3382-1529",
-    hours: "Seg a Sáb — consulte horários no Doctoralia",
-    highlight: "Edifício Helbor Trilogy",
     insurances: null,
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
@@ -126,7 +96,7 @@ export default function LocationSection() {
             Consultórios e Atendimento
           </h2>
           <p className="text-[#1C3D5A] dark:text-foreground/50 font-sans mt-3 max-w-2xl text-base">
-            Atendimento presencial em 6 locais — Campinas, São Paulo e ABC — além de teleconsulta por vídeo.
+            Atendimento presencial em quatro locais — Campinas e São Paulo — além de teleconsulta por vídeo.
           </p>
         </motion.div>
 

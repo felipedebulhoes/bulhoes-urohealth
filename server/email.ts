@@ -41,7 +41,7 @@ export async function sendLeadNotificationEmail(lead: LeadEmailData): Promise<bo
   const locationMap: Record<string, string> = {
     campinas: "Campinas Day Hospital",
     "sp-paulista": "Clinovi Paulista (Av. Paulista)",
-    "sp-moema": "Clinovi Moema",
+    "sp-moema": "Local descontinuado",
   };
   const locationLabel = lead.preferredLocation
     ? locationMap[lead.preferredLocation] || lead.preferredLocation

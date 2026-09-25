@@ -197,7 +197,7 @@ export default function VasectomiaSemBisturi() {
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-[#F8FAFB] rounded-xl p-6 border border-[#1C3D5A]/6">
                 <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-2">São Paulo</h3>
-                <p className="text-sm text-[#64748B]">Clinovi — Av. Paulista, Moema, Pinheiros e SBC</p>
+                <p className="text-sm text-[#64748B]">Clinovi — Av. Paulista e Pinheiros</p>
                 <p className="text-xs text-[#B87333] mt-2">Consultas e procedimentos ambulatoriais</p>
               </div>
               <div className="bg-[#F8FAFB] rounded-xl p-6 border border-[#1C3D5A]/6">

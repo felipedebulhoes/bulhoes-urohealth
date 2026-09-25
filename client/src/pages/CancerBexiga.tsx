@@ -659,7 +659,7 @@ export default function CancerBexiga() {
             <div className="bg-white dark:bg-card rounded-lg p-4 shadow-sm">
               <h4 className="font-semibold text-gray-900 dark:text-foreground mb-2 flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-purple-600" />
-                Clinovi Paulista / Clinovi Moema
+                Clinovi Paulista e Clinovi Pinheiros
               </h4>
               <p className="text-sm text-gray-600 dark:text-muted-foreground">
                 Atendimento ambulatorial em São Paulo<br />

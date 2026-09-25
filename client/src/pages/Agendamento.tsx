@@ -159,7 +159,7 @@ export default function Agendamento() {
               <Phone className="w-6 h-6 text-[#B87333] mx-auto mb-2" />
               <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Clinovi (SP)</h3>
               <p className="text-[#B87333] font-bold">(11) 3382-1529</p>
-              <p className="text-xs text-[#64748B] mt-1">Paulista, Moema, Pinheiros e SBC</p>
+              <p className="text-xs text-[#64748B] mt-1">Paulista e Pinheiros</p>
             </a>
             <a
               href="tel:+551921272900" onClick={() => trackPhoneClick("agendamento_campinas")}
@@ -203,22 +203,10 @@ export default function Agendamento() {
               <p className="text-xs text-[#64748B]">Bela Vista, São Paulo - SP</p>
               <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-400">Particular</span>
             </Link>
-            <Link href="/local/clinovi-moema" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all block">
-              <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
-              <h3 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Clinovi Moema</h3>
-              <p className="text-xs text-[#64748B]">Moema, São Paulo - SP</p>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-400">Particular</span>
-            </Link>
             <Link href="/local/clinovi-pinheiros" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all block">
               <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
               <h3 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Clinovi Pinheiros</h3>
               <p className="text-xs text-[#64748B]">Pinheiros, São Paulo - SP</p>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-400">Particular</span>
-            </Link>
-            <Link href="/local/clinovi-sbc" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all block">
-              <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
-              <h3 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Clinovi SBC</h3>
-              <p className="text-xs text-[#64748B]">São Bernardo do Campo - SP</p>
               <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-400">Particular</span>
             </Link>
             <Link href="/local/cemed-sao-luiz-campinas" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all block">

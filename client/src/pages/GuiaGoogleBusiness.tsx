@@ -10,12 +10,12 @@ const steps = [
   {
     icon: MapPin,
     title: "1. Crie ou Reivindique seu Perfil",
-    description: "Acesse business.google.com e crie um perfil para cada local de atendimento (Campinas Day Hospital, Clinovi Paulista, Clinovi Moema).",
+    description: "Acesse business.google.com e mantenha um perfil atualizado para cada local de atendimento ativo.",
     tips: [
       "Use o nome exato: 'Dr. Felipe de Bulhões — Urologista'",
       "Categoria principal: 'Urologista'",
       "Categorias secundárias: 'Cirurgião', 'Médico'",
-      "Adicione todos os 3 endereços como locais separados",
+      "Adicione cada endereço ativo como local separado",
     ],
   },
   {

@@ -68,10 +68,20 @@ async function startServer() {
     next();
   });
 
-  // SEO: 301 redirect for removed/renamed location pages
-  app.get("/local/clinovi-campinas", (_req, res) => {
-    res.redirect(301, "/local/campinas-day-hospital");
-  });
+  // SEO: 301 redirects for removed or renamed location and local-content pages.
+  const removedPageRedirects: Record<string, string> = {
+    "/local/clinovi-campinas": "/local/campinas-day-hospital",
+    "/local/clinovi-moema": "/consultorios",
+    "/local/clinovi-sbc": "/consultorios",
+    "/blog/urologista-sao-paulo-paulista-moema": "/consultorios",
+    "/blog/urologista-abc-sao-bernardo-santo-andre": "/consultorios",
+  };
+
+  for (const [from, to] of Object.entries(removedPageRedirects)) {
+    app.get(from, (_req, res) => {
+      res.redirect(301, to);
+    });
+  }
 
   // SEO: 301 redirects for homepage anchor sections that have no standalone page
   // /consultorios, /contato, /agendamento now have real pages — no redirect needed

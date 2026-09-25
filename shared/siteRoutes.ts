@@ -10,9 +10,7 @@ export const BLOG_SLUGS = [
   "incontinencia-urinaria-pos-prostatectomia",
   "psa-rastreamento-cancer-prostata-2026",
   "hiperplasia-prostatica-benigna-tratamentos-modernos",
-  "urologista-sao-paulo-paulista-moema",
   "urologista-pinheiros-zona-oeste-sp",
-  "urologista-abc-sao-bernardo-santo-andre",
 ] as const;
 
 export const PUBLIC_STATIC_PATHS = [
@@ -49,9 +47,7 @@ export const PUBLIC_STATIC_PATHS = [
   "/sobre",
   "/local/campinas-day-hospital",
   "/local/clinovi-paulista",
-  "/local/clinovi-moema",
   "/local/clinovi-pinheiros",
-  "/local/clinovi-sbc",
   "/local/cemed-sao-luiz-campinas",
   "/primeira-consulta",
   "/guia-glp1",

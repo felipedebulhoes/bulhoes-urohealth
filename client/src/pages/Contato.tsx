@@ -38,7 +38,7 @@ const contactChannels = [
     title: "Clinovi (São Paulo)",
     phone: "(11) 3382-1529",
     phoneLink: "tel:+551133821529",
-    description: "Unidades Paulista e Moema — agendamento e informações",
+    description: "Unidades Paulista e Pinheiros — agendamento e informações",
     icon: Phone,
   },
   {
@@ -76,12 +76,6 @@ const offices = [
     address: "Av. Paulista, 1048, 18° andar — Bela Vista, São Paulo - SP",
     type: "Particular",
     link: "/local/clinovi-paulista",
-  },
-  {
-    name: "Clinovi Moema",
-    address: "Av. Ibirapuera, 1835, 2° andar — Moema, São Paulo - SP",
-    type: "Particular",
-    link: "/local/clinovi-moema",
   },
 ];
 
@@ -263,7 +257,7 @@ export default function Contato() {
                   <div>
                     <p className="font-semibold text-[#1C3D5A] dark:text-foreground">Horário de atendimento</p>
                     <p>Campinas Day Hospital: Sextas, 8h às 12h</p>
-                    <p>Clinovi (Paulista e Moema): Segunda a Sábado — consulte horários no Doctoralia</p>
+                    <p>Clinovi (Paulista e Pinheiros): Segunda a Sábado — consulte horários no Doctoralia</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

@@ -42,9 +42,7 @@ const HiperplasiaProstática = lazy(() => import("./pages/HiperplasiaProstática
 const SobreDrFelipe = lazy(() => import("./pages/SobreDrFelipe"));
 const CampinasDayHospital = lazy(() => import("./pages/LocationPages").then((m) => ({ default: m.CampinasDayHospital })));
 const ClinoviPaulista = lazy(() => import("./pages/LocationPages").then((m) => ({ default: m.ClinoviPaulista })));
-const ClinoviMoema = lazy(() => import("./pages/LocationPages").then((m) => ({ default: m.ClinoviMoema })));
 const ClinoviPinheiros = lazy(() => import("./pages/LocationPages").then((m) => ({ default: m.ClinoviPinheiros })));
-const ClinoviSBC = lazy(() => import("./pages/LocationPages").then((m) => ({ default: m.ClinoviSBC })));
 const CemedSaoLuizCampinas = lazy(() => import("./pages/LocationPages").then((m) => ({ default: m.CemedSaoLuizCampinas })));
 const AdminFiles = lazy(() => import("./pages/AdminFiles"));
 const AdminLeads = lazy(() => import("./pages/AdminLeads"));
@@ -120,9 +118,7 @@ function Router() {
         <Route path={"/sobre"} component={SobreDrFelipe} />
         <Route path={"/local/campinas-day-hospital"} component={CampinasDayHospital} />
         <Route path={"/local/clinovi-paulista"} component={ClinoviPaulista} />
-        <Route path={"/local/clinovi-moema"} component={ClinoviMoema} />
         <Route path={"/local/clinovi-pinheiros"} component={ClinoviPinheiros} />
-        <Route path={"/local/clinovi-sbc"} component={ClinoviSBC} />
         <Route path={"/local/cemed-sao-luiz-campinas"} component={CemedSaoLuizCampinas} />
         <Route path={"/primeira-consulta"} component={PrimeiraConsulta} />
         <Route path={"/guia-google-business"} component={GuiaGoogleBusiness} />

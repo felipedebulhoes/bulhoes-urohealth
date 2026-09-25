@@ -30,9 +30,7 @@ import { getWhatsAppUrl } from "@/lib/tracking";
 const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
 const CAMPINAS_IMG = "/manus-storage/campinas-day-hospital_47df2b14_d5a9cb24.webp";
 const CLINOVI_PAULISTA_IMG = "/manus-storage/clinovi-paulista_42fff2fa_cecba450.webp";
-const CLINOVI_MOEMA_IMG = "/manus-storage/clinovi-moema_b149b069_cd29f980.webp";
 const CLINOVI_PINHEIROS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp";
-const CLINOVI_SBC_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-sbc_c192552c.webp";
 
 const locations = [
   {
@@ -70,23 +68,6 @@ const locations = [
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
   {
-    name: "Clinovi Moema",
-    slug: "clinovi-moema",
-    type: "Particular",
-    typeColor: "text-amber-400 bg-amber-400/10",
-    image: CLINOVI_MOEMA_IMG,
-    address: "Av. Ibirapuera, 1835, 2° andar",
-    neighborhood: "Moema, São Paulo - SP",
-    cep: "",
-    phone: "(11) 3382-1529",
-    whatsapp: null,
-    hours: "Seg a Sáb — consulte horários no Doctoralia",
-    highlight: "Próximo ao metrô Moema",
-    description: "Localizada em um dos bairros mais nobres de São Paulo, com fácil acesso pelo Aeroporto de Congonhas e estações de metrô. Ambiente sofisticado e confortável.",
-    insurances: null,
-    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
-  },
-  {
     name: "Clinovi Pinheiros",
     slug: "clinovi-pinheiros",
     type: "Particular",
@@ -103,29 +84,12 @@ const locations = [
     insurances: null,
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
   },
-  {
-    name: "Clinovi SBC",
-    slug: "clinovi-sbc",
-    type: "Particular",
-    typeColor: "text-amber-400 bg-amber-400/10",
-    image: CLINOVI_SBC_IMG,
-    address: "Av. Pereira Barreto, 1479",
-    neighborhood: "São Bernardo do Campo - SP",
-    cep: "",
-    phone: "(11) 3382-1529",
-    whatsapp: null,
-    hours: "Seg a Sáb — consulte horários no Doctoralia",
-    highlight: "Edifício Helbor Trilogy",
-    description: "Localizada no Edifício Helbor Trilogy, em São Bernardo do Campo. Mais de 1.000m² de infraestrutura completa na divisão entre Santo André e São Caetano do Sul.",
-    insurances: null,
-    payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
-  },
 ];
 
 export default function Consultorios() {
   usePageMeta({
     title: "Consultórios e Locais de Atendimento",
-    description: "Conheça os consultórios do Dr. Felipe de Bulhões: Campinas Day Hospital, São Luiz Campinas, Clinovi Paulista, Moema, Pinheiros e SBC. Atendimento presencial e teleconsulta.",
+    description: "Conheça os locais de atendimento do Dr. Felipe de Bulhões em Campinas e São Paulo, além das opções de teleconsulta.",
     canonical: "https://felipebulhoes.com/consultorios",
   });
 
@@ -168,7 +132,7 @@ export default function Consultorios() {
               Consultórios e Locais de Atendimento
             </h1>
             <p className="text-white/60 text-lg leading-relaxed">
-              Atendimento presencial em 5 locais — Campinas, São Paulo e ABC Paulista — além de teleconsulta por vídeo para todo o Brasil. Escolha o consultório mais conveniente para você.
+              Atendimento presencial em Campinas e São Paulo, além de teleconsulta por vídeo para todo o Brasil. Escolha o local mais conveniente para você.
             </p>
           </motion.div>
         </div>

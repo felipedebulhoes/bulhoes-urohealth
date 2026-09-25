@@ -24,12 +24,12 @@ describe("Email notification module", () => {
     const locationMap: Record<string, string> = {
       campinas: "Campinas Day Hospital",
       "sp-paulista": "Clinovi Paulista (Av. Paulista)",
-      "sp-moema": "Clinovi Moema",
+      "sp-moema": "Local descontinuado",
     };
 
     expect(locationMap["campinas"]).toBe("Campinas Day Hospital");
     expect(locationMap["sp-paulista"]).toBe("Clinovi Paulista (Av. Paulista)");
-    expect(locationMap["sp-moema"]).toBe("Clinovi Moema");
+    expect(locationMap["sp-moema"]).toBe("Local descontinuado");
     expect(locationMap["unknown"]).toBeUndefined();
   });
 });

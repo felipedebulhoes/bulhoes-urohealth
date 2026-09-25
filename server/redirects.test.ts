@@ -79,13 +79,22 @@ describe("SEO Redirects & Real Pages", () => {
     });
   });
 
-  describe("Removed location page redirects", () => {
-    it.skipIf(!serverReachable)("redirects /local/clinovi-campinas → /local/campinas-day-hospital with 301", async () => {
-      const res = await fetch(`${BASE_URL}/local/clinovi-campinas`, { redirect: "manual" });
-      expect(res.status).toBe(301);
-      const location = res.headers.get("location");
-      expect(location).toBe("/local/campinas-day-hospital");
-    });
+  describe("Removed location and local-content page redirects", () => {
+    const removedRedirects = [
+      { from: "/local/clinovi-campinas", to: "/local/campinas-day-hospital" },
+      { from: "/local/clinovi-moema", to: "/consultorios" },
+      { from: "/local/clinovi-sbc", to: "/consultorios" },
+      { from: "/blog/urologista-sao-paulo-paulista-moema", to: "/consultorios" },
+      { from: "/blog/urologista-abc-sao-bernardo-santo-andre", to: "/consultorios" },
+    ];
+
+    for (const { from, to } of removedRedirects) {
+      it.skipIf(!serverReachable)(`redirects ${from} → ${to} with 301`, async () => {
+        const res = await fetch(`${BASE_URL}${from}`, { redirect: "manual" });
+        expect(res.status).toBe(301);
+        expect(res.headers.get("location")).toBe(to);
+      });
+    }
   });
 
   describe("Other real routes still return 200", () => {
@@ -97,7 +106,6 @@ describe("SEO Redirects & Real Pages", () => {
       "/blog",
       "/local/campinas-day-hospital",
       "/local/clinovi-paulista",
-      "/local/clinovi-moema",
     ];
 
     for (const route of validRoutes) {

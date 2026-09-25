@@ -1,6 +1,6 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
- * Interactive Google Map with 3 clinic markers, custom info windows, and location selector
+ * Interactive Google Map with active clinic markers, custom info windows, and location selector
  */
 import { useState, useCallback, useRef } from "react";
 import { MapView } from "@/components/Map";
@@ -50,19 +50,6 @@ const clinics: ClinicLocation[] = [
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Paulista+1048+São+Paulo+SP",
   },
   {
-    id: "moema",
-    name: "Clinovi Moema",
-    shortName: "Moema",
-    address: "Av. Ibirapuera, 1835, 2° andar",
-    neighborhood: "Moema, São Paulo - SP",
-    phone: "(11) 3382-1529",
-    hours: "Seg a Sáb",
-    type: "Particular",
-    lat: -23.6000,
-    lng: -46.6600,
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Ibirapuera+1835+S%C3%A3o+Paulo+SP",
-  },
-  {
     id: "pinheiros",
     name: "Clinovi Pinheiros",
     shortName: "Pinheiros",
@@ -74,19 +61,6 @@ const clinics: ClinicLocation[] = [
     lat: -23.5618,
     lng: -46.6780,
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Rebou%C3%A7as+2636+S%C3%A3o+Paulo+SP",
-  },
-  {
-    id: "sbc",
-    name: "Clinovi SBC",
-    shortName: "SBC",
-    address: "Av. Pereira Barreto, 1479",
-    neighborhood: "São Bernardo do Campo - SP",
-    phone: "(11) 3382-1529",
-    hours: "Seg a Sáb",
-    type: "Particular",
-    lat: -23.6960,
-    lng: -46.5650,
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Pereira+Barreto+1479+S%C3%A3o+Bernardo+do+Campo+SP",
   },
   {
     id: "cemed-campinas",
@@ -103,7 +77,7 @@ const clinics: ClinicLocation[] = [
   },
 ];
 
-// Center point that shows all 5 locations (between Campinas and SP/ABC)
+// Center point that shows all active locations in Campinas and São Paulo
 const DEFAULT_CENTER = { lat: -23.25, lng: -46.86 };
 const DEFAULT_ZOOM = 9;
 

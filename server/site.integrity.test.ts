@@ -151,6 +151,8 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain("--espresso-deep: #2E2520");
     expect(styles).toContain("--espresso-off-white: #F7F5F2");
     expect(styles).not.toContain('.brand-preview-espresso h1');
+    expect(styles).toContain("linear-gradient(122deg, var(--espresso-cafe) 0%, var(--espresso-deep) 52%, var(--espresso-cafe) 100%)");
+    expect(styles).toContain(".brand-preview-espresso .brand-espresso-hero h1");
     expect(routes).toContain('"/preview-paleta"');
     expect(server).toContain('req.path === "/preview-paleta"');
   });

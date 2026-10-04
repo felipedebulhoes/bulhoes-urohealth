@@ -194,29 +194,29 @@ const BLOG_TITLES: Record<string, string> = {
 
 const BLOG_IMAGES: Record<string, string> = {
   "importancia-saude-urologica-preventiva":
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-preventive-health-eERcqbP5UDxHnJ5CDuPzr6.webp",
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-importancia-saude-urologica-preventiva-marrom-neutro_feefe8de.png`,
   "urologista-medico-do-homem-desde-jovem":
-    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=85",
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-urologista-medico-do-homem-desde-jovem-marrom-neutro_84182cb0.png`,
   "pedra-no-rim-o-que-fazer":
-    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&q=85",
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-pedra-no-rim-o-que-fazer-marrom-neutro_dde4e1b4.png`,
   "quando-procurar-urologista":
-    "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1200&q=85",
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-quando-procurar-urologista-marrom-neutro_79078219.png`,
   "cirurgia-robotica-urologica":
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-robotic-surgery-cover-E6WUHbvNsLa775YuR9Rt6F.webp",
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-cirurgia-robotica-urologica-marrom-neutro_48c2742e.png`,
   "urologista-campinas-quando-procurar":
-    `${SITE_ORIGIN}/manus-storage/blog-urologista-campinas-cover_ba932b43_ec3a9955.webp`,
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-urologista-campinas-quando-procurar-marrom-neutro_40197d20.png`,
   "vasectomia-campinas-guia-completo":
-    `${SITE_ORIGIN}/manus-storage/vasectomia-blog-cover_a51a156f_1918def0.webp`,
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-vasectomia-campinas-guia-completo-marrom-neutro_9beca3d7.png`,
   "cirurgia-robotica-urologia-campinas":
-    `${SITE_ORIGIN}/manus-storage/cirurgia-robotica-blog_7b6f2d98_4694f840.webp`,
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-cirurgia-robotica-urologia-campinas-marrom-neutro_3fb671ac.png`,
   "incontinencia-urinaria-pos-prostatectomia":
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-incontinencia-pos-prostatectomia-KjcAV6cZhjVNVnCoLtrhUq.webp",
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-incontinencia-urinaria-pos-prostatectomia-marrom-neutro_390dc58f.png`,
   "psa-rastreamento-cancer-prostata-2026":
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-psa-rastreamento-prostata-agLu4YHQhYamRq3TyanvEp.webp",
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-psa-rastreamento-cancer-prostata-2026-marrom-neutro_48bbf9f6.png`,
   "hiperplasia-prostatica-benigna-tratamentos-modernos":
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-hpb-tratamento-moderno-mQ7cu73ouQGoVjsg6ysiRu.webp",
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-hiperplasia-prostatica-benigna-tratamentos-modernos-marrom-neutro_8a3fc8ef.png`,
   "urologista-pinheiros-zona-oeste-sp":
-    "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp",
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-urologista-pinheiros-zona-oeste-sp-marrom-neutro_97d3fdbf.png`,
 };
 
 function genericEducationalMetadata(label: string): PageMetadata {

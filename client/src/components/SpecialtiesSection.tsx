@@ -18,41 +18,49 @@ import {
 const specialties = [
   {
     icon: Shield,
+    iconColor: "#D9C58A",
     title: "Saúde da Próstata",
     desc: "Rastreio, diagnóstico e tratamento de hiperplasia prostática benigna (HPB) e câncer de próstata com técnicas minimamente invasivas.",
   },
   {
     icon: Zap,
+    iconColor: "#E1B58A",
     title: "Cálculos Renais",
     desc: "Tratamento de litíase urinária com litotripsia, ureteroscopia flexível e cirurgia percutânea. Abordagem minimamente invasiva.",
   },
   {
     icon: Microscope,
+    iconColor: "#C9B6A3",
     title: "Cirurgia Robótica & Laparoscópica",
     desc: "Prostatectomia, nefrectomia e outras cirurgias urológicas com tecnologia robótica e videolaparoscópica para menor tempo de recuperação.",
   },
   {
     icon: Heart,
+    iconColor: "#D8A5A5",
     title: "Saúde do Homem",
     desc: "Check-up masculino completo com bioimpedância, avaliação hormonal, reposição de testosterona (TRH) e acompanhamento de performance.",
   },
   {
     icon: Activity,
+    iconColor: "#B7C0A1",
     title: "Urodinâmica",
     desc: "Exame funcional do trato urinário inferior para diagnóstico preciso de incontinência, bexiga hiperativa e obstrução prostática.",
   },
   {
     icon: Syringe,
+    iconColor: "#C7A9C8",
     title: "Vasectomia & Postectomia",
     desc: "Procedimentos ambulatoriais realizados com refinamento técnico para garantir mínimo desconforto e rápida recuperação.",
   },
   {
     icon: Scan,
+    iconColor: "#AFC1D0",
     title: "Uro-oncologia",
     desc: "Diagnóstico e tratamento cirúrgico de tumores renais, vesicais, testiculares e de próstata seguindo protocolos internacionais.",
   },
   {
     icon: Pill,
+    iconColor: "#D5B18D",
     title: "Andrologia & ISTs",
     desc: "Tratamento de disfunção erétil, curvatura peniana, infertilidade masculina e infecções sexualmente transmissíveis.",
   },
@@ -106,7 +114,7 @@ export default function SpecialtiesSection() {
               className="group specialty-card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-5 hover:bg-white/10 hover:border-[#B87333]/30"
             >
               <div className="w-10 h-10 rounded-md bg-[#B87333]/15 flex items-center justify-center mb-4 group-hover:bg-[#B87333]/25 transition-colors">
-                <spec.icon className="w-5 h-5 text-[#D4884A]" />
+                <spec.icon className="w-5 h-5" style={{ color: spec.iconColor }} />
               </div>
               <h3 className="text-base font-semibold text-white font-sans mb-2">
                 {spec.title}

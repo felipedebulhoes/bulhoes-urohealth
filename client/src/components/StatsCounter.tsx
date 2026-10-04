@@ -9,6 +9,7 @@ import { Users, Award, Stethoscope, Star, Clock, MapPin } from "lucide-react";
 
 interface Stat {
   icon: typeof Users;
+  iconColor: string;
   value: number;
   suffix: string;
   label: string;
@@ -18,6 +19,7 @@ interface Stat {
 const stats: Stat[] = [
   {
     icon: Users,
+    iconColor: "#C9B6A3",
     value: 5000,
     suffix: "+",
     label: "Pacientes Atendidos",
@@ -25,6 +27,7 @@ const stats: Stat[] = [
   },
   {
     icon: Stethoscope,
+    iconColor: "#D8B4A0",
     value: 1500,
     suffix: "+",
     label: "Procedimentos Cirúrgicos",
@@ -32,6 +35,7 @@ const stats: Stat[] = [
   },
   {
     icon: Award,
+    iconColor: "#E1C79F",
     value: 1,
     suffix: "",
     label: "Título de Especialista",
@@ -39,6 +43,7 @@ const stats: Stat[] = [
   },
   {
     icon: Star,
+    iconColor: "#D9C58A",
     value: 5.0,
     suffix: "",
     label: "Nota no Doctoralia",
@@ -46,6 +51,7 @@ const stats: Stat[] = [
   },
   {
     icon: Clock,
+    iconColor: "#BFAE9A",
     value: 8,
     suffix: "+",
     label: "Anos de Experiência",
@@ -53,6 +59,7 @@ const stats: Stat[] = [
   },
   {
     icon: MapPin,
+    iconColor: "#C89F9C",
     value: 3,
     suffix: "",
     label: "Locais de Atendimento",
@@ -124,11 +131,11 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
       className="text-center group"
     >
       <div className="inline-flex items-center justify-center w-14 h-14 bg-white/10 rounded-xl mb-4 group-hover:bg-white/20 transition-colors">
-        <Icon className="w-7 h-7 text-[#B87333]" />
+        <Icon className="w-7 h-7" style={{ color: stat.iconColor }} />
       </div>
       <div className="text-4xl md:text-5xl font-bold text-white mb-1" style={{ fontFamily: "'DM Serif Display', serif" }}>
         {displayValue}
-        <span className="text-[#B87333]">{stat.suffix}</span>
+        <span style={{ color: stat.iconColor }}>{stat.suffix}</span>
       </div>
       <div className="text-white font-semibold text-sm mb-1">{stat.label}</div>
       <div className="text-white/60 text-xs">{stat.description}</div>
@@ -138,7 +145,7 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
 
 export default function StatsCounter() {
   return (
-    <section className="py-20 bg-[#1C3D5A] relative overflow-hidden">
+    <section id="numeros-compromisso" className="brand-stats-section py-20 bg-[#4A3A30] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

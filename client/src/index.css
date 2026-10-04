@@ -818,6 +818,32 @@ html {
   background-color: var(--espresso-off-white) !important;
 }
 
+/* Correções das seções revisadas no mobile: fundo escuro nunca recebe texto claro
+   sobre uma camada clara, e os ícones mantêm acentos cromáticos individuais. */
+.brand-site .brand-stats-section {
+  background: linear-gradient(135deg, var(--espresso-cafe), var(--espresso-deep)) !important;
+  color: var(--espresso-off-white);
+}
+.brand-site .brand-stats-section h2,
+.brand-site .brand-stats-section p,
+.brand-site .brand-stats-section .text-white {
+  color: var(--espresso-off-white);
+}
+.brand-site .brand-stats-section .text-white\/60 {
+  color: rgb(247 245 242 / 0.72);
+}
+.brand-site .brand-events-panel {
+  color: var(--espresso-deep);
+  background: linear-gradient(110deg, var(--espresso-mist), var(--espresso-off-white)) !important;
+}
+.brand-site .brand-events-panel h3,
+.brand-site .brand-events-panel li span:last-child {
+  color: var(--espresso-deep) !important;
+}
+.brand-site .brand-playbook-section {
+  color: var(--espresso-off-white);
+}
+
 .brand-site .card-hover:hover,
 .brand-site .specialty-card-hover:hover {
   box-shadow: 0 16px 40px rgb(74 58 48 / 0.16) !important;

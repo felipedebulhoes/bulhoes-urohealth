@@ -93,7 +93,7 @@ export default function ResearchSection() {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-[#B87333]/10 flex items-center justify-center">
-                <BookOpen className="w-5 h-5 text-[#B87333]" />
+                <BookOpen className="w-5 h-5 text-[#C9B6A3]" />
               </div>
               <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">
                 Periódicos
@@ -125,7 +125,7 @@ export default function ResearchSection() {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-[#B87333]/10 flex items-center justify-center">
-                <Award className="w-5 h-5 text-[#B87333]" />
+                <Award className="w-5 h-5 text-[#D9C58A]" />
               </div>
               <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">
                 Capítulos de Livros
@@ -157,7 +157,7 @@ export default function ResearchSection() {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-[#B87333]/10 flex items-center justify-center">
-                <Globe className="w-5 h-5 text-[#B87333]" />
+                <Globe className="w-5 h-5 text-[#AFC1D0]" />
               </div>
               <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">
                 Congressos
@@ -186,7 +186,7 @@ export default function ResearchSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="p-8 rounded-lg bg-gradient-to-r from-[#1C3D5A]/5 to-[#B87333]/5 border border-[#B87333]/20"
+          className="brand-events-panel p-8 rounded-lg bg-gradient-to-r from-[#E7E1DA] to-[#F7F5F2] border border-[#C9B6A3]/70"
         >
           <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-4">
             Participação em Eventos

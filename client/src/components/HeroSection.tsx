@@ -12,9 +12,9 @@ import { trackCtaClick } from "@/lib/analytics";
 const HERO_PORTRAIT = "/manus-storage/felipe-portrait_0e0693e4_be070ac1.webp";
 
 const stats = [
-  { icon: Award, value: "TCBC", label: "Membro Titular CBC" },
-  { icon: ShieldCheck, value: "AUA · EAU · SBU", label: "Sociedades" },
-  { icon: Users, value: "1500+", label: "Pacientes atendidos" },
+  { icon: Award, iconColor: "#D9C58A", value: "TCBC", label: "Membro Titular CBC" },
+  { icon: ShieldCheck, iconColor: "#AFC1D0", value: "AUA · EAU · SBU", label: "Sociedades" },
+  { icon: Users, iconColor: "#E1B58A", value: "1500+", label: "Pacientes atendidos" },
 ];
 
 interface HeroSectionProps {
@@ -111,7 +111,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
             {stats.map((stat) => (
               <div key={stat.label} className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
-                  <stat.icon className="brand-espresso-hero-icon w-5 h-5 text-[#B87333]" />
+                  <stat.icon className="brand-espresso-hero-icon w-5 h-5" style={{ color: stat.iconColor }} />
                 </div>
                 <div>
                   <p className="text-base font-bold text-white leading-tight" style={{ fontStyle: 'normal' }}>{stat.value}</p>

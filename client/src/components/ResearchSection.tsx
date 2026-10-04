@@ -92,8 +92,8 @@ export default function ResearchSection() {
             className="lg:col-span-1"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-[#B87333]/10 flex items-center justify-center">
-                <BookOpen className="w-5 h-5 text-[#C9B6A3]" />
+              <div className="w-10 h-10 rounded-lg bg-[#AFC1D0]/15 flex items-center justify-center">
+                <BookOpen className="w-5 h-5" style={{ color: "#AFC1D0" }} />
               </div>
               <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">
                 Periódicos
@@ -124,8 +124,8 @@ export default function ResearchSection() {
             className="lg:col-span-1"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-[#B87333]/10 flex items-center justify-center">
-                <Award className="w-5 h-5 text-[#D9C58A]" />
+              <div className="w-10 h-10 rounded-lg bg-[#D9C58A]/15 flex items-center justify-center">
+                <Award className="w-5 h-5" style={{ color: "#D9C58A" }} />
               </div>
               <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">
                 Capítulos de Livros
@@ -156,8 +156,8 @@ export default function ResearchSection() {
             className="lg:col-span-1"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-[#B87333]/10 flex items-center justify-center">
-                <Globe className="w-5 h-5 text-[#AFC1D0]" />
+              <div className="w-10 h-10 rounded-lg bg-[#E1B58A]/15 flex items-center justify-center">
+                <Globe className="w-5 h-5" style={{ color: "#E1B58A" }} />
               </div>
               <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">
                 Congressos

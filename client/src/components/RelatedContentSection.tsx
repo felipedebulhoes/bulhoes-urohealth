@@ -9,6 +9,7 @@ type RelatedItem = {
   href: string;
   label: string;
   icon: typeof BookOpen;
+  iconColor: string;
 };
 
 const content: Record<string, RelatedItem> = {
@@ -18,6 +19,7 @@ const content: Record<string, RelatedItem> = {
     href: "/educativo/hiperplasia-prostatica",
     label: "Saúde da próstata",
     icon: Stethoscope,
+    iconColor: "#D9C58A",
   },
   robotic: {
     title: "Cirurgia robótica em urologia",
@@ -25,6 +27,7 @@ const content: Record<string, RelatedItem> = {
     href: "/educativo/cirurgia-robotica",
     label: "Tecnologia cirúrgica",
     icon: Stethoscope,
+    iconColor: "#AFC1D0",
   },
   vasectomy: {
     title: "Vasectomia: guia completo",
@@ -32,6 +35,7 @@ const content: Record<string, RelatedItem> = {
     href: "/educativo/vasectomia",
     label: "Planejamento familiar",
     icon: BookOpen,
+    iconColor: "#B7C0A1",
   },
   stones: {
     title: "Cálculos renais",
@@ -39,6 +43,7 @@ const content: Record<string, RelatedItem> = {
     href: "/educativo/calculos-renais",
     label: "Urologia geral",
     icon: BookOpen,
+    iconColor: "#E1B58A",
   },
   sexualHealth: {
     title: "Disfunção erétil",
@@ -46,6 +51,7 @@ const content: Record<string, RelatedItem> = {
     href: "/educativo/disfuncao-eretil",
     label: "Saúde sexual",
     icon: BookOpen,
+    iconColor: "#D8A5A5",
   },
   fertility: {
     title: "Infertilidade masculina",
@@ -53,6 +59,7 @@ const content: Record<string, RelatedItem> = {
     href: "/educativo/infertilidade-masculina",
     label: "Fertilidade",
     icon: BookOpen,
+    iconColor: "#D8A5A5",
   },
   peyronie: {
     title: "Doença de Peyronie",
@@ -60,6 +67,7 @@ const content: Record<string, RelatedItem> = {
     href: "/educativo/doenca-peyronie",
     label: "Andrologia",
     icon: BookOpen,
+    iconColor: "#C7A9C8",
   },
   firstVisit: {
     title: "Como funciona a primeira consulta",
@@ -67,6 +75,7 @@ const content: Record<string, RelatedItem> = {
     href: "/primeira-consulta",
     label: "Sua consulta",
     icon: CalendarCheck,
+    iconColor: "#D9C58A",
   },
   offices: {
     title: "Locais de atendimento",
@@ -74,6 +83,7 @@ const content: Record<string, RelatedItem> = {
     href: "/consultorios",
     label: "Consultórios",
     icon: MapPin,
+    iconColor: "#B7C0A1",
   },
   blog: {
     title: "Blog de urologia",
@@ -81,6 +91,7 @@ const content: Record<string, RelatedItem> = {
     href: "/blog",
     label: "Conteúdo educativo",
     icon: BookOpen,
+    iconColor: "#AFC1D0",
   },
 };
 
@@ -148,8 +159,8 @@ export default function RelatedContentSection({ source, currentPath, dark = fals
               )}
             >
               <div className="flex items-start justify-between gap-3">
-                <span className={cn("inline-flex h-9 w-9 items-center justify-center rounded-lg", dark ? "bg-white/10 text-[#D49A6A]" : "bg-[#B87333]/10 text-[#B87333]")}> 
-                  <Icon className="h-4 w-4" aria-hidden="true" />
+                <span className={cn("inline-flex h-9 w-9 items-center justify-center rounded-lg", dark ? "bg-white/10" : "bg-[#B87333]/15")}>
+                  <Icon className="h-4 w-4" style={{ color: item.iconColor }} aria-hidden="true" />
                 </span>
                 <ArrowUpRight className={cn("h-4 w-4 motion-safe:transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5", dark ? "text-white/35" : "text-[#1C3D5A]/35")} aria-hidden="true" />
               </div>

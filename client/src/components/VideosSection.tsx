@@ -22,11 +22,11 @@ interface VideoItem {
 }
 
 const categories = [
-  { id: "todos", label: "Todos", icon: Video },
-  { id: "calculos", label: "Cálculos Renais", icon: Microscope },
-  { id: "robotica", label: "Cirurgia Robótica", icon: Cpu },
-  { id: "prostata", label: "Próstata", icon: ShieldCheck },
-  { id: "andrologia", label: "Andrologia", icon: Heart },
+  { id: "todos", label: "Todos", icon: Video, iconColor: "#C9B6A3" },
+  { id: "calculos", label: "Cálculos Renais", icon: Microscope, iconColor: "#E1B58A" },
+  { id: "robotica", label: "Cirurgia Robótica", icon: Cpu, iconColor: "#AFC1D0" },
+  { id: "prostata", label: "Próstata", icon: ShieldCheck, iconColor: "#D9C58A" },
+  { id: "andrologia", label: "Andrologia", icon: Heart, iconColor: "#D8A5A5" },
 ];
 
 const videos: VideoItem[] = [
@@ -169,7 +169,7 @@ export default function VideosSection() {
                     : "bg-white text-[#1C3D5A] dark:text-foreground/60 border border-[#1C3D5A]/8 hover:border-[#B87333]/30 hover:text-[#1C3D5A] dark:text-foreground"
                 }`}
               >
-                <cat.icon className="w-4 h-4" />
+                <cat.icon className="w-4 h-4" style={{ color: cat.iconColor }} />
                 {cat.label}
               </button>
             ))}

@@ -1,0 +1,104 @@
+# Git
+.git
+.gitignore
+.gitattributes
+.github
+
+# Dependencies
+**/node_modules
+.pnpm-store/
+jspm_packages/
+
+# Build outputs
+dist/
+build/
+*.dist
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Docker files
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.manus-logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+*.bak
+
+# Testing and coverage
+coverage/
+*.lcov
+.nyc_output
+vitest.config.ts
+
+# Documentation and notes
+*.md
+references/
+audit/
+
+# TypeScript & tool caches
+*.tsbuildinfo
+.npm
+.eslintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.node_repl_history
+*.tgz
+.yarn-integrity
+.cache
+.parcel-cache
+
+# Framework build artifacts
+.next
+.nuxt
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Webdev / Manus artifacts
+.webdev/
+client/public/__manus__/version.json
+.project-config.json

@@ -256,8 +256,8 @@ export default function AIChatWidget() {
                     <div className="space-y-4">
                       {/* Welcome message */}
                       <div className="flex items-start gap-2">
-                        <div className="w-7 h-7 shrink-0 bg-[#B87333]/10 rounded-full flex items-center justify-center mt-0.5">
-                          <Bot className="w-3.5 h-3.5 text-[#B87333]" />
+                        <div className="w-7 h-7 shrink-0 bg-[#B87333]/15 rounded-md flex items-center justify-center mt-0.5">
+                          <Bot className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
                         </div>
                         <div className="bg-white dark:bg-card rounded-xl rounded-tl-sm p-3 shadow-sm border border-gray-100 max-w-[85%]">
                           <p className="text-sm text-[#334155] leading-relaxed">
@@ -296,8 +296,8 @@ export default function AIChatWidget() {
                           className={`flex items-start gap-2 ${msg.role === "user" ? "flex-row-reverse" : ""}`}
                         >
                           {msg.role === "assistant" ? (
-                            <div className="w-7 h-7 shrink-0 bg-[#B87333]/10 rounded-full flex items-center justify-center mt-0.5">
-                              <Bot className="w-3.5 h-3.5 text-[#B87333]" />
+                            <div className="w-7 h-7 shrink-0 bg-[#B87333]/15 rounded-md flex items-center justify-center mt-0.5">
+                              <Bot className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
                             </div>
                           ) : (
                             <div className="w-7 h-7 shrink-0 bg-[#1C3D5A]/10 rounded-full flex items-center justify-center mt-0.5">
@@ -327,8 +327,8 @@ export default function AIChatWidget() {
                       {/* Loading indicator */}
                       {chatMutation.isPending && (
                         <div className="flex items-start gap-2">
-                          <div className="w-7 h-7 shrink-0 bg-[#B87333]/10 rounded-full flex items-center justify-center mt-0.5">
-                            <Bot className="w-3.5 h-3.5 text-[#B87333]" />
+                          <div className="w-7 h-7 shrink-0 bg-[#B87333]/15 rounded-md flex items-center justify-center mt-0.5">
+                            <Bot className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
                           </div>
                           <div className="bg-white dark:bg-card rounded-xl rounded-tl-sm p-3 shadow-sm border border-gray-100">
                             <div className="flex items-center gap-2">
@@ -440,7 +440,7 @@ export default function AIChatWidget() {
                   {/* Name */}
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-medium text-[#334155] mb-1">
-                      <UserCircle className="w-3.5 h-3.5 text-[#B87333]" />
+                      <UserCircle className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
                       Nome completo <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -456,7 +456,7 @@ export default function AIChatWidget() {
                   {/* Phone */}
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-medium text-[#334155] mb-1">
-                      <Phone className="w-3.5 h-3.5 text-[#B87333]" />
+                      <Phone className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
                       Telefone / WhatsApp <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -474,7 +474,7 @@ export default function AIChatWidget() {
                   {/* Email (optional) */}
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-medium text-[#334155] mb-1">
-                      <Mail className="w-3.5 h-3.5 text-[#B87333]" />
+                      <Mail className="w-3.5 h-3.5" style={{ color: "#E1B58A" }} />
                       E-mail <span className="text-[#94A3B8] text-[10px]">(opcional)</span>
                     </label>
                     <input
@@ -489,7 +489,7 @@ export default function AIChatWidget() {
                   {/* Preferred Location */}
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-medium text-[#334155] mb-1">
-                      <MapPin className="w-3.5 h-3.5 text-[#B87333]" />
+                      <MapPin className="w-3.5 h-3.5" style={{ color: "#B7C0A1" }} />
                       Local de preferência
                     </label>
                     <select
@@ -510,7 +510,7 @@ export default function AIChatWidget() {
                   {/* Reason */}
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-medium text-[#334155] mb-1">
-                      <FileText className="w-3.5 h-3.5 text-[#B87333]" />
+                      <FileText className="w-3.5 h-3.5" style={{ color: "#D8A5A5" }} />
                       Motivo da consulta{" "}
                       <span className="text-[#94A3B8] text-[10px]">(opcional)</span>
                     </label>

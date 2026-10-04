@@ -14,21 +14,25 @@ const ABOUT_IMG = "/manus-storage/jornada-idor_cd58a6fe_2866b20d.webp";
 const credentials = [
   {
     icon: GraduationCap,
+    iconColor: "#D9C58A",
     title: "Formação de Excelência",
     desc: "Medicina pela Universidade Federal Fluminense (UFF), Cirurgia Geral pela Faculdade de Medicina do ABC (FMABC) e Urologia pelo Instituto D'Or de Pesquisa e Ensino (IDOR) — Hospital Rede D'Or São Luiz Jabaquara",
   },
   {
     icon: Stethoscope,
+    iconColor: "#AFC1D0",
     title: "Título de Especialista",
     desc: "Membro Titular do Colégio Brasileiro de Cirurgiões (TCBC). Membro da Sociedade Brasileira de Urologia (SBU), American Urological Association (AUA) e European Association of Urology (EAU)",
   },
   {
     icon: Globe,
+    iconColor: "#B7C0A1",
     title: "Afiliações Internacionais",
     desc: "Membro da SBU, AUA e EAU",
   },
   {
     icon: BookOpen,
+    iconColor: "#C7A9C8",
     title: "Pesquisa & Ensino",
     desc: "Pesquisa clínica (PPCR - Harvard), publicações em periódicos e congressos nacionais/internacionais, coautoria em capítulo do Tratado de Urologia da SBU",
   },
@@ -120,8 +124,8 @@ export default function AboutSection() {
                   transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
                   className="flex gap-3"
                 >
-                  <div className="w-9 h-9 rounded-md bg-[#B87333]/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <cred.icon className="w-4 h-4 text-[#B87333]" />
+                  <div className="w-9 h-9 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <cred.icon className="w-4 h-4" style={{ color: cred.iconColor }} />
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground font-sans mb-1">{cred.title}</h4>

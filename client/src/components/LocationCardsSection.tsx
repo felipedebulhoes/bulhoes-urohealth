@@ -185,7 +185,9 @@ function LocationCard({ loc, index, isInView }: { loc: LocationData; index: numb
         {/* Address & details */}
         <div className="space-y-2.5 mb-4">
           <div className="flex items-start gap-2.5">
-            <MapPin className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
+            <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0 mt-0.5">
+              <MapPin className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
+            </div>
             <div>
               <p className="text-sm text-[#1C3D5A] dark:text-foreground font-medium font-sans">{loc.address}</p>
               <p className="text-xs text-[#1C3D5A]/60 dark:text-foreground/50 font-sans">{loc.neighborhood}</p>
@@ -193,12 +195,16 @@ function LocationCard({ loc, index, isInView }: { loc: LocationData; index: numb
           </div>
 
           <div className="flex items-center gap-2.5">
-            <Clock className="w-4 h-4 text-[#B87333] shrink-0" />
+            <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+              <Clock className="w-3.5 h-3.5" style={{ color: "#B7C0A1" }} />
+            </div>
             <span className="text-xs text-[#1C3D5A]/70 dark:text-foreground/60 font-sans">{loc.hours}</span>
           </div>
 
           <div className="flex items-center gap-2.5">
-            <Phone className="w-4 h-4 text-[#B87333] shrink-0" />
+            <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+              <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
+            </div>
             <a href={`tel:${loc.phone.replace(/[^0-9]/g, '')}`} className="text-sm text-[#1C3D5A]/70 dark:text-foreground/60 font-sans hover:text-[#B87333] transition-colors">
               {loc.phone}
             </a>
@@ -209,8 +215,10 @@ function LocationCard({ loc, index, isInView }: { loc: LocationData; index: numb
 
         {loc.payment && (
           <div className="mb-4 pb-4 border-b border-[#1C3D5A]/6">
-            <div className="flex items-center gap-1.5 mb-2">
-              <CreditCard className="w-3.5 h-3.5 text-[#B87333]" />
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-6 h-6 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                <CreditCard className="w-3.5 h-3.5" style={{ color: "#E1B58A" }} />
+              </div>
               <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A]/50 dark:text-foreground/40 font-semibold">Pagamento</span>
             </div>
             <div className="flex flex-wrap gap-1">

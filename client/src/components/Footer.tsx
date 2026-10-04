@@ -28,20 +28,31 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white font-sans mb-3">Campinas Day Hospital</h4>
 
-            <div className="space-y-2">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
-                <span className="text-xs font-sans">
+            <div className="space-y-3">
+              <div className="flex items-start gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
+                </div>
+                <span className="text-xs font-sans text-white/70 leading-relaxed">
                   Av. Benjamin Constant, 1991<br />
                   Cambuí, Campinas - SP
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                <span className="text-xs font-sans">(19) 2127-2900</span>
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                  <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
+                </div>
+                <span className="text-xs font-sans text-white/70">(19) 2127-2900</span>
               </div>
-              <a href="https://wa.me/5519998559890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/60 hover:text-[#25D366] transition-colors">
-                <Phone className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
+              <a
+                href="https://wa.me/5519998559890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors group"
+              >
+                <div className="w-7 h-7 rounded-md bg-[#25D366]/15 group-hover:bg-[#25D366]/25 flex items-center justify-center shrink-0 transition-colors">
+                  <Phone className="w-3.5 h-3.5 text-[#25D366]" />
+                </div>
                 <span className="text-xs font-sans">WhatsApp: (19) 99855-9890</span>
               </a>
             </div>
@@ -53,17 +64,21 @@ export default function Footer() {
             <span className="inline-block text-[10px] uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded mb-3">
               Particular
             </span>
-            <div className="space-y-2">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
-                <span className="text-xs font-sans">
+            <div className="space-y-3">
+              <div className="flex items-start gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
+                </div>
+                <span className="text-xs font-sans text-white/70 leading-relaxed">
                   Av. Paulista, 1048, 18° andar<br />
                   Bela Vista, São Paulo - SP
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                <span className="text-xs font-sans">(11) 3382-1529</span>
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                  <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
+                </div>
+                <span className="text-xs font-sans text-white/70">(11) 3382-1529</span>
               </div>
             </div>
           </div>
@@ -74,17 +89,21 @@ export default function Footer() {
             <span className="inline-block text-[10px] uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded mb-3">
               Particular
             </span>
-            <div className="space-y-2">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
-                <span className="text-xs font-sans">
+            <div className="space-y-3">
+              <div className="flex items-start gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
+                </div>
+                <span className="text-xs font-sans text-white/70 leading-relaxed">
                   Av. Rebouças, 2636<br />
                   Pinheiros, São Paulo - SP
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                <span className="text-xs font-sans">(11) 3382-1529</span>
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                  <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
+                </div>
+                <span className="text-xs font-sans text-white/70">(11) 3382-1529</span>
               </div>
             </div>
           </div>
@@ -93,17 +112,21 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white font-sans mb-3">São Luiz Campinas</h4>
 
-            <div className="space-y-2">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#B87333] mt-0.5 shrink-0" />
-                <span className="text-xs font-sans">
+            <div className="space-y-3">
+              <div className="flex items-start gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
+                </div>
+                <span className="text-xs font-sans text-white/70 leading-relaxed">
                   Av. Andrade Neves, 863<br />
                   Centro, Campinas - SP
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#B87333] shrink-0" />
-                <span className="text-xs font-sans">(19) 3014-3000</span>
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                  <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
+                </div>
+                <span className="text-xs font-sans text-white/70">(19) 3014-3000</span>
               </div>
             </div>
           </div>
@@ -116,28 +139,39 @@ export default function Footer() {
                 href="https://www.instagram.com/drfelipebulhoes/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#D4884A] transition-colors"
+                className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors group"
               >
-                <Instagram className="w-4 h-4" />
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 group-hover:bg-[#B87333]/25 flex items-center justify-center shrink-0 transition-colors">
+                  <Instagram className="w-3.5 h-3.5" style={{ color: "#D8A5A5" }} />
+                </div>
                 <span className="text-xs font-sans">@drfelipebulhoes</span>
               </a>
               <a
                 href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=footer&utm_campaign=footer"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#D4884A] transition-colors"
+                className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors group"
               >
-                <ExternalLink className="w-4 h-4" />
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 group-hover:bg-[#B87333]/25 flex items-center justify-center shrink-0 transition-colors">
+                  <ExternalLink className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
+                </div>
                 <span className="text-xs font-sans">Doctoralia</span>
               </a>
-              <div className="flex items-center gap-2 text-white/50">
-                <Monitor className="w-4 h-4 text-[#B87333]" />
+              <div className="flex items-center gap-2.5 text-white/70">
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                  <Monitor className="w-3.5 h-3.5" style={{ color: "#B7C0A1" }} />
+                </div>
                 <span className="text-xs font-sans">Teleconsulta disponível</span>
               </div>
-              <div className="flex items-center gap-2 text-white/50">
-                <Mail className="w-4 h-4 text-[#B87333]" />
-                <span className="text-xs font-sans">drfelipebulhoes@bulhoesurohealth.com</span>
-              </div>
+              <a
+                href="mailto:drfelipebulhoes@bulhoesurohealth.com"
+                className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors group"
+              >
+                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 group-hover:bg-[#B87333]/25 flex items-center justify-center shrink-0 transition-colors">
+                  <Mail className="w-3.5 h-3.5" style={{ color: "#E1B58A" }} />
+                </div>
+                <span className="text-xs font-sans break-all">drfelipebulhoes@bulhoesurohealth.com</span>
+              </a>
             </div>
           </div>
         </div>

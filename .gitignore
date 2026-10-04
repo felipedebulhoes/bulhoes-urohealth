@@ -112,3 +112,9 @@ temp/
 # Manus version file (auto-generated, not part of source)
 client/public/__manus__/version.json
 .project-config.json
+
+# Local subprojects and worktrees
+bulhoes-urohealth/
+copilot-worktrees/
+protocolos-app/
+uro-docs/

@@ -23,9 +23,9 @@ const services = [
 ];
 
 const features = [
-  { icon: Monitor, text: "Teleconsulta disponível" },
-  { icon: MapPin, text: "São Paulo & Campinas" },
-  { icon: CreditCard, text: "PIX, crédito e débito" },
+  { icon: Monitor, iconColor: "#AFC1D0", text: "Teleconsulta disponível" },
+  { icon: MapPin, iconColor: "#E1B58A", text: "São Paulo & Campinas" },
+  { icon: CreditCard, iconColor: "#B7C0A1", text: "PIX, crédito e débito" },
 ];
 
 export default function ServicesSection() {
@@ -56,7 +56,7 @@ export default function ServicesSection() {
                   key={feat.text}
                   className="flex items-center gap-2 bg-[#1C3D5A]/5 rounded-md px-4 py-2.5"
                 >
-                  <feat.icon className="w-4 h-4 text-[#B87333]" />
+                  <feat.icon className="w-4 h-4" style={{ color: feat.iconColor }} />
                   <span className="text-sm font-medium text-[#1C3D5A] dark:text-foreground/70 font-sans">
                     {feat.text}
                   </span>

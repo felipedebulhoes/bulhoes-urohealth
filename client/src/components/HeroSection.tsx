@@ -86,7 +86,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
                 document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <Button className={`${isEspressoPalette ? "brand-espresso-hero-cta " : ""}bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-[#B87333]/30 transition-all hover:shadow-xl hover:shadow-[#B87333]/40 hover:-translate-y-0.5`}>
+              <Button className={`${isEspressoPalette ? "brand-espresso-hero-cta brand-espresso-primary-cta " : ""}bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-[#B87333]/30 transition-all hover:shadow-xl hover:shadow-[#B87333]/40 hover:-translate-y-0.5`}>
                 <CalendarCheck className="w-5 h-5 mr-2" />
                 Agendar Consulta
               </Button>
@@ -94,7 +94,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
             <a href="#sobre">
               <Button
                 variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 h-13 px-8 text-base font-medium rounded-lg"
+                className={`${isEspressoPalette ? "brand-espresso-secondary-cta " : ""}border-white/20 text-white hover:bg-white/10 h-13 px-8 text-base font-medium rounded-lg`}
               >
                 Conheça o Dr. Felipe
               </Button>

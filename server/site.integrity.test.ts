@@ -137,6 +137,7 @@ describe("Integridade das páginas públicas", () => {
     const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
     const home = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
     const header = readFileSync(resolve(projectRoot, "client/src/components/Header.tsx"), "utf8");
+    const hero = readFileSync(resolve(projectRoot, "client/src/components/HeroSection.tsx"), "utf8");
     const preview = readFileSync(resolve(projectRoot, "client/src/pages/BrandPalettePreview.tsx"), "utf8");
     const styles = readFileSync(resolve(projectRoot, "client/src/index.css"), "utf8");
     const routes = readFileSync(resolve(projectRoot, "shared/siteRoutes.ts"), "utf8");
@@ -151,6 +152,7 @@ describe("Integridade das páginas públicas", () => {
     expect(preview).not.toContain("fonts.googleapis.com");
     expect(styles).toContain(".brand-preview-espresso");
     expect(styles).toContain("--espresso-deep: #2E2520");
+    expect(styles).toContain("--espresso-taupe: #A39484");
     expect(styles).toContain("--espresso-off-white: #F7F5F2");
     expect(styles).not.toContain('.brand-preview-espresso h1');
     expect(styles).toContain("linear-gradient(122deg, var(--espresso-cafe) 0%, var(--espresso-deep) 52%, var(--espresso-cafe) 100%)");
@@ -159,8 +161,15 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain("#especialidades > .absolute.bg-\\[\\#1C3D5A\\]");
     expect(styles).toContain("#educativo .card-hover");
     expect(styles).toContain("background-color: var(--espresso-taupe) !important");
+    expect(styles).toContain(".brand-espresso-primary-cta:active");
+    expect(styles).toContain("scale(0.975)");
+    expect(styles).toContain("prefers-reduced-motion: reduce");
+    expect(styles).toContain("@media (min-width: 641px)");
+    expect(styles).toContain(".brand-preview-ribbon { top: 7rem; }");
     expect(styles).toContain("#especialidades .specialty-card-hover:focus-within");
     expect(styles).toContain('header img[alt="Dr. Felipe de Bulhões - Urologista"]');
+    expect(header).toContain('previewMode ? "brand-espresso-primary-cta " : ""');
+    expect(hero).toContain("brand-espresso-secondary-cta");
     expect(styles).toContain("@media (max-width: 640px)");
     expect(styles).toContain("background-image: linear-gradient(180deg");
     expect(routes).toContain('"/preview-paleta"');

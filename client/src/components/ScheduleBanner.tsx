@@ -48,8 +48,8 @@ export default function ScheduleBanner() {
             </button>
 
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#B87333]/10 flex items-center justify-center shrink-0">
-                <Calendar className="w-5 h-5 text-[#B87333]" />
+              <div className="w-10 h-10 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                <Calendar className="w-5 h-5" style={{ color: "#D9C58A" }} />
               </div>
               <div className="flex-1 pr-4">
                 <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-0.5">

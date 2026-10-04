@@ -131,7 +131,9 @@ export default function LocationSection() {
 
                 <div className="space-y-3">
                   <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-[#B87333] mt-0.5 shrink-0" />
+                    <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0 mt-0.5">
+                      <MapPin className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
+                    </div>
                     <div>
                       <p className="text-sm text-[#1C3D5A] dark:text-foreground font-sans font-medium">{loc.address}</p>
                       <p className="text-xs text-[#1C3D5A] dark:text-foreground/50 font-sans">{loc.neighborhood}</p>
@@ -140,25 +142,33 @@ export default function LocationSection() {
 
                   {loc.phone && (
                     <div className="flex items-center gap-2.5">
-                      <Phone className="w-4 h-4 text-[#B87333] shrink-0" />
+                      <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                        <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
+                      </div>
                       <span className="text-sm text-[#1C3D5A] dark:text-foreground/70 font-sans">{loc.phone}</span>
                     </div>
                   )}
 
                   {loc.whatsapp && (
                     <a href={`https://wa.me/55${loc.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                      <Phone className="w-4 h-4 text-[#25D366] shrink-0" />
+                      <div className="w-7 h-7 rounded-md bg-[#25D366]/15 flex items-center justify-center shrink-0">
+                        <Phone className="w-3.5 h-3.5 text-[#25D366]" />
+                      </div>
                       <span className="text-sm text-[#25D366] font-sans">WhatsApp: {loc.whatsapp}</span>
                     </a>
                   )}
 
                   <div className="flex items-center gap-2.5">
-                    <Clock className="w-4 h-4 text-[#B87333] shrink-0" />
+                    <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                      <Clock className="w-3.5 h-3.5" style={{ color: "#B7C0A1" }} />
+                    </div>
                     <span className="text-xs text-[#1C3D5A] dark:text-foreground/50 font-sans">{loc.hours}</span>
                   </div>
 
                   <div className="flex items-center gap-2.5">
-                    <Building2 className="w-4 h-4 text-[#B87333] shrink-0" />
+                    <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                      <Building2 className="w-3.5 h-3.5" style={{ color: "#E1B58A" }} />
+                    </div>
                     <span className="text-xs text-[#B87333] font-semibold font-sans">{loc.highlight}</span>
                   </div>
                 </div>
@@ -167,7 +177,9 @@ export default function LocationSection() {
                 {loc.payment && (
                   <div className="mt-4 pt-4 border-t border-[#1C3D5A]/6">
                     <div className="flex items-center gap-2 mb-2">
-                      <CreditCard className="w-3.5 h-3.5 text-[#B87333]" />
+                      <div className="w-6 h-6 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                        <CreditCard className="w-3.5 h-3.5" style={{ color: "#D5B18D" }} />
+                      </div>
                       <span className="text-[10px] uppercase tracking-wider text-[#1C3D5A] dark:text-foreground/40 font-semibold">Formas de pagamento</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">

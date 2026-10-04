@@ -53,28 +53,28 @@ export default function ContactSection() {
 
           {/* Locais resumidos */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-            <div className="flex items-center gap-2 text-white/40">
-              <MapPin className="w-3.5 h-3.5 text-[#D4884A]" />
+            <div className="flex items-center gap-2 text-white/60">
+              <MapPin className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
               <span className="text-xs font-sans">Campinas Day Hospital</span>
             </div>
             <div className="w-px h-3 bg-white/15" />
-            <div className="flex items-center gap-2 text-white/40">
-              <MapPin className="w-3.5 h-3.5 text-[#D4884A]" />
+            <div className="flex items-center gap-2 text-white/60">
+              <MapPin className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
               <span className="text-xs font-sans">Clinovi Paulista</span>
             </div>
             <div className="w-px h-3 bg-white/15" />
-            <div className="flex items-center gap-2 text-white/40">
-              <MapPin className="w-3.5 h-3.5 text-[#D4884A]" />
+            <div className="flex items-center gap-2 text-white/60">
+              <MapPin className="w-3.5 h-3.5" style={{ color: "#E1B58A" }} />
               <span className="text-xs font-sans">Clinovi Pinheiros</span>
             </div>
             <div className="w-px h-3 bg-white/15" />
-            <div className="flex items-center gap-2 text-white/40">
-              <MapPin className="w-3.5 h-3.5 text-[#D4884A]" />
+            <div className="flex items-center gap-2 text-white/60">
+              <MapPin className="w-3.5 h-3.5" style={{ color: "#C9B6A3" }} />
               <span className="text-xs font-sans">CEMED - Rede D'Or</span>
             </div>
             <div className="w-px h-3 bg-white/15" />
-            <div className="flex items-center gap-2 text-white/40">
-              <Monitor className="w-3.5 h-3.5 text-[#D4884A]" />
+            <div className="flex items-center gap-2 text-white/60">
+              <Monitor className="w-3.5 h-3.5" style={{ color: "#B7C0A1" }} />
               <span className="text-xs font-sans">Teleconsulta</span>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function ContactSection() {
               }}
             >
               <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white h-13 px-8 text-base font-semibold rounded-md shadow-lg shadow-amber-900/30">
-                <CalendarCheck className="w-5 h-5 mr-2" />
+                <CalendarCheck className="w-5 h-5 mr-2" style={{ color: "#D9C58A" }} />
                 Agendar Consulta
               </Button>
             </a>
@@ -103,7 +103,7 @@ export default function ContactSection() {
                 variant="outline"
                 className="border-white/20 text-white hover:bg-white/10 h-13 px-8 text-base font-medium rounded-md"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
+                <MessageCircle className="w-5 h-5 mr-2 text-[#25D366]" />
                 WhatsApp
               </Button>
             </a>
@@ -115,19 +115,23 @@ export default function ContactSection() {
               href="https://www.instagram.com/drfelipebulhoes/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white/50 hover:text-[#D4884A] transition-colors"
+              className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors group"
             >
-              <Instagram className="w-5 h-5" />
+              <div className="w-7 h-7 rounded-md bg-[#B87333]/15 group-hover:bg-[#B87333]/25 flex items-center justify-center shrink-0 transition-colors">
+                <Instagram className="w-3.5 h-3.5" style={{ color: "#D8A5A5" }} />
+              </div>
               <span className="text-sm font-sans">@drfelipebulhoes</span>
             </a>
             <a
               href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=homepage&utm_campaign=contact-section"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white/50 hover:text-[#D4884A] transition-colors"
+              className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors group"
               onClick={() => trackDoctoraliaClick("contact_section")}
             >
-              <ExternalLink className="w-4 h-4" />
+              <div className="w-7 h-7 rounded-md bg-[#B87333]/15 group-hover:bg-[#B87333]/25 flex items-center justify-center shrink-0 transition-colors">
+                <ExternalLink className="w-3.5 h-3.5" style={{ color: "#AFC1D0" }} />
+              </div>
               <span className="text-sm font-sans">Doctoralia</span>
             </a>
           </div>

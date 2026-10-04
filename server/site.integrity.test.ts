@@ -146,9 +146,11 @@ describe("Integridade das páginas públicas", () => {
     expect(home).toContain('data-brand-palette={isBrandPalettePreview ? "espresso" : undefined}');
     expect(home).toContain("brand-preview-ribbon");
     expect(preview).toContain("return <Home isBrandPalettePreview />");
+    expect(preview).not.toContain("fonts.googleapis.com");
     expect(styles).toContain(".brand-preview-espresso");
     expect(styles).toContain("--espresso-deep: #2E2520");
     expect(styles).toContain("--espresso-off-white: #F7F5F2");
+    expect(styles).not.toContain('.brand-preview-espresso h1');
     expect(routes).toContain('"/preview-paleta"');
     expect(server).toContain('req.path === "/preview-paleta"');
   });

@@ -579,16 +579,6 @@ html {
   --ring: oklch(0.515 0.027 60.5);
   background: var(--espresso-off-white);
   color: var(--espresso-deep);
-  font-family: "Lato", "Roboto", system-ui, sans-serif;
-}
-
-.brand-preview-espresso h1,
-.brand-preview-espresso h2,
-.brand-preview-espresso h3,
-.brand-preview-espresso h4 {
-  font-family: "Cinzel", "Optima", Georgia, serif;
-  font-style: normal;
-  letter-spacing: 0.025em;
 }
 
 .brand-preview-espresso [class*="bg-[#1C3D5A]/"] { background-color: rgb(46 37 32 / 0.10) !important; }
@@ -655,7 +645,6 @@ html {
   background: rgb(46 37 32 / 0.96);
   color: var(--espresso-off-white);
   box-shadow: 0 10px 28px rgb(46 37 32 / 0.2);
-  font-family: "Lato", "Roboto", sans-serif;
   font-size: 0.75rem;
   line-height: 1.2;
   backdrop-filter: blur(12px);

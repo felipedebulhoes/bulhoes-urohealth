@@ -64,6 +64,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
   const [eduOpen, setEduOpen] = useState(false);
   const [mobileEduOpen, setMobileEduOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const usesSolidSurface = scrolled || previewMode;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -104,7 +105,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
   return (
     <header
       className={`fixed ${previewMode ? "top-10 sm:top-0" : "top-0"} left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        usesSolidSurface
           ? "bg-white/95 dark:bg-card/95 backdrop-blur-md shadow-sm border-b border-[#C4C4C4]/30"
           : "bg-transparent"
       }`}
@@ -117,7 +118,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
             decoding="async"
             src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
             alt="Dr. Felipe de Bulhões - Urologista"
-            className={`h-12 lg:h-14 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
+            className={`h-12 lg:h-14 w-auto transition-all duration-300 ${usesSolidSurface ? '' : 'brightness-0 invert'}`}
           />
         </a>
 
@@ -129,7 +130,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
               href={link.href}
               onClick={() => handleNavClick(link.href)}
               className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
-                scrolled
+                usesSolidSurface
                   ? "text-[#1C3D5A] dark:text-foreground/70 hover:text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
@@ -144,7 +145,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
               onClick={() => setEduOpen(!eduOpen)}
               onMouseEnter={() => setEduOpen(true)}
               className={`flex items-center gap-1 px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
-                scrolled
+                usesSolidSurface
                   ? "text-[#1C3D5A] dark:text-foreground/70 hover:text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
@@ -183,7 +184,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
             link.href.startsWith("/") ? (
               <Link key={link.href} href={link.href}>
                 <span className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md cursor-pointer ${
-                  scrolled
+                  usesSolidSurface
                     ? "text-[#B87333] hover:text-[#8B5A2B] hover:bg-[#B87333]/5"
                     : "text-[#D4884A] hover:text-white hover:bg-white/10"
                 }`}>
@@ -196,7 +197,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
                 href={link.href}
                 onClick={() => handleNavClick(link.href)}
                 className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
-                  scrolled
+                  usesSolidSurface
                     ? "text-[#1C3D5A] dark:text-foreground/70 hover:text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5"
                     : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
@@ -212,7 +213,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
               href={link.href.startsWith("/") ? link.href : link.href}
               onClick={() => handleNavClick(link.href)}
               className={`px-2.5 py-2 text-[13px] font-medium transition-colors rounded-md ${
-                scrolled
+                usesSolidSurface
                   ? "text-[#1C3D5A] dark:text-foreground/70 hover:text-[#1C3D5A] dark:text-foreground hover:bg-[#1C3D5A]/5"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`}

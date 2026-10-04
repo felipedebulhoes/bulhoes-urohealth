@@ -633,6 +633,12 @@ html {
 }
 .brand-preview-espresso .brand-espresso-hero-cta:hover { background-color: var(--espresso-beige) !important; }
 
+/* O arquivo de logo claro ganha contraste no cabeçalho off-white da prévia. */
+.brand-preview-espresso header img[alt="Dr. Felipe de Bulhões - Urologista"] {
+  filter: brightness(0) saturate(100%) !important;
+  opacity: 0.88;
+}
+
 /* Camadas de conteúdo: leitura leve entre blocos e marrom reservado aos destaques. */
 .brand-preview-espresso main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
   background-color: var(--espresso-mist) !important;
@@ -654,6 +660,53 @@ html {
 .brand-preview-espresso .card-hover:hover,
 .brand-preview-espresso .specialty-card-hover:hover {
   box-shadow: 0 16px 40px rgb(74 58 48 / 0.16) !important;
+}
+
+/* Conteúdo educativo em taupe: uma camada sofisticada, com leitura clara. */
+.brand-preview-espresso #educativo .card-hover {
+  border-color: rgb(247 245 242 / 0.34) !important;
+  background-color: var(--espresso-taupe) !important;
+  box-shadow: 0 8px 20px rgb(46 37 32 / 0.10);
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease,
+    box-shadow 280ms ease,
+    background-color 280ms ease;
+}
+
+.brand-preview-espresso #educativo .card-hover h3 { color: var(--espresso-off-white) !important; }
+.brand-preview-espresso #educativo .card-hover p { color: var(--espresso-mist) !important; }
+.brand-preview-espresso #educativo .card-hover > div:first-child {
+  background-color: rgb(247 245 242 / 0.14) !important;
+  color: var(--espresso-off-white) !important;
+}
+.brand-preview-espresso #educativo .card-hover > div:first-child svg { color: inherit !important; }
+.brand-preview-espresso #educativo .card-hover > div:last-child { color: var(--espresso-beige) !important; }
+
+.brand-preview-espresso #educativo .card-hover:hover,
+.brand-preview-espresso #educativo .card-hover:focus-within {
+  transform: translateY(-5px);
+  border-color: var(--espresso-beige) !important;
+  background-color: var(--espresso-cafe) !important;
+  box-shadow: 0 18px 32px rgb(46 37 32 / 0.25) !important;
+}
+
+/* Especialidades: resposta tátil suave para ponteiro e teclado. */
+.brand-preview-espresso #especialidades .specialty-card-hover {
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease,
+    box-shadow 280ms ease,
+    background-color 280ms ease;
+}
+.brand-preview-espresso #especialidades .specialty-card-hover:hover,
+.brand-preview-espresso #especialidades .specialty-card-hover:focus-within {
+  transform: translateY(-6px) scale(1.012);
+  border-color: var(--espresso-beige) !important;
+  background-color: rgb(201 182 163 / 0.18) !important;
+  box-shadow: 0 20px 34px rgb(46 37 32 / 0.32) !important;
+}
+.brand-preview-espresso #especialidades .specialty-card-hover:hover > div:first-child,
+.brand-preview-espresso #especialidades .specialty-card-hover:focus-within > div:first-child {
+  background-color: rgb(231 225 218 / 0.20) !important;
 }
 
 .brand-preview-ribbon {
@@ -690,6 +743,29 @@ html {
 .brand-preview-current-link { color: var(--espresso-mist); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2rem; }
 
 @media (max-width: 640px) {
+  .brand-preview-espresso main > *:not(#inicio) {
+    position: relative;
+    margin-top: -1px;
+  }
+  .brand-preview-espresso main > *:not(#inicio) section:not(#inicio) {
+    position: relative;
+    overflow: clip;
+    box-shadow: inset 0 24px 32px -36px rgb(46 37 32 / 0.30),
+      inset 0 -20px 26px -34px rgb(141 123 107 / 0.34);
+    transition: background-color 360ms ease, box-shadow 360ms ease;
+  }
+  .brand-preview-espresso main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
+    background-image: linear-gradient(180deg, rgb(247 245 242 / 0.40), transparent 68px);
+  }
+  .brand-preview-espresso main > *:not(#inicio):nth-child(even) section:not(#inicio) {
+    background-image: linear-gradient(180deg, rgb(201 182 163 / 0.16), transparent 68px);
+  }
+  .brand-preview-espresso #educativo .card-hover:hover,
+  .brand-preview-espresso #educativo .card-hover:focus-within,
+  .brand-preview-espresso #especialidades .specialty-card-hover:hover,
+  .brand-preview-espresso #especialidades .specialty-card-hover:focus-within {
+    transform: translateY(-3px);
+  }
   .brand-preview-ribbon {
     position: relative;
     z-index: 1;

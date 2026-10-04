@@ -335,3 +335,5 @@
 - [x] Validar a recuperação do mapa, a troca de local, TypeScript, 146 testes e build de produção.
 
 - [x] Criar e validar a prévia privada da nova paleta marrom/neutra em `/preview-paleta`, com tipografia, responsividade e noindex; nenhuma alteração foi aplicada ao site público.
+
+- [x] Refinar a prévia privada da paleta: transições mobile suaves entre seções, cards educativos em taupe, hover/foco elevado nas especialidades e cabeçalho de alto contraste durante a rolagem; sem alterar o site público.

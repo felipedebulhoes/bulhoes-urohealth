@@ -136,6 +136,7 @@ describe("Integridade das páginas públicas", () => {
   it("oferece uma prévia isolada da paleta marrom/neutra sem afetar o site público", () => {
     const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
     const home = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
+    const header = readFileSync(resolve(projectRoot, "client/src/components/Header.tsx"), "utf8");
     const preview = readFileSync(resolve(projectRoot, "client/src/pages/BrandPalettePreview.tsx"), "utf8");
     const styles = readFileSync(resolve(projectRoot, "client/src/index.css"), "utf8");
     const routes = readFileSync(resolve(projectRoot, "shared/siteRoutes.ts"), "utf8");
@@ -144,6 +145,7 @@ describe("Integridade das páginas públicas", () => {
     expect(app).toContain('const BrandPalettePreview = lazy(() => import("./pages/BrandPalettePreview"))');
     expect(app).toContain('path={"/preview-paleta"}');
     expect(home).toContain('data-brand-palette={isBrandPalettePreview ? "espresso" : undefined}');
+    expect(header).toContain("const usesSolidSurface = scrolled || previewMode");
     expect(home).toContain("brand-preview-ribbon");
     expect(preview).toContain("return <Home isBrandPalettePreview />");
     expect(preview).not.toContain("fonts.googleapis.com");
@@ -155,6 +157,12 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain(".brand-preview-espresso .brand-espresso-hero h1");
     expect(styles).toContain("main > *:not(#inicio):nth-child(odd) section:not(#inicio)");
     expect(styles).toContain("#especialidades > .absolute.bg-\\[\\#1C3D5A\\]");
+    expect(styles).toContain("#educativo .card-hover");
+    expect(styles).toContain("background-color: var(--espresso-taupe) !important");
+    expect(styles).toContain("#especialidades .specialty-card-hover:focus-within");
+    expect(styles).toContain('header img[alt="Dr. Felipe de Bulhões - Urologista"]');
+    expect(styles).toContain("@media (max-width: 640px)");
+    expect(styles).toContain("background-image: linear-gradient(180deg");
     expect(routes).toContain('"/preview-paleta"');
     expect(server).toContain('req.path === "/preview-paleta"');
   });

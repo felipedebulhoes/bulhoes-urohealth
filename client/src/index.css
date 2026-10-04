@@ -864,9 +864,7 @@ html {
 .brand-site #educativo .card-hover p { color: var(--espresso-deep) !important; }
 .brand-site #educativo .card-hover > div:first-child {
   background-color: rgb(46 37 32 / 0.12) !important;
-  color: var(--espresso-deep) !important;
 }
-.brand-site #educativo .card-hover > div:first-child svg { color: inherit !important; }
 .brand-site #educativo .card-hover > div:last-child { color: var(--espresso-deep) !important; }
 
 .brand-site #educativo .card-hover:hover,

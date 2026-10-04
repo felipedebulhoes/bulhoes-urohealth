@@ -337,3 +337,7 @@
 - [x] Criar e validar a prévia privada da nova paleta marrom/neutra em `/preview-paleta`, com tipografia, responsividade e noindex; nenhuma alteração foi aplicada ao site público.
 
 - [x] Refinar a prévia privada da paleta: transições mobile suaves entre seções, cards educativos em taupe, hover/foco elevado nas especialidades e cabeçalho de alto contraste durante a rolagem; sem alterar o site público.
+
+- [x] Clarear o taupe dos cards educativos na prévia para `#A39484`, mantendo texto marrom profundo com contraste adequado
+- [x] Harmonizar CTAs da prévia com gradiente taupe/bege, foco visível, hover e resposta de clique; respeita movimento reduzido
+- [x] Reposicionar o selo de prévia no desktop para não cobrir o CTA do cabeçalho; validar desktop/mobile, TypeScript, 147 testes e build

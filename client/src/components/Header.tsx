@@ -53,7 +53,12 @@ const educationalLinks = [
   { label: "Canetas Emagrecedoras (GLP-1)", href: "/guia-glp1" },
 ];
 
-export default function Header() {
+interface HeaderProps {
+  /** Mantém as âncoras na própria página durante a avaliação visual privada. */
+  previewMode?: boolean;
+}
+
+export default function Header({ previewMode = false }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [eduOpen, setEduOpen] = useState(false);
@@ -81,7 +86,7 @@ export default function Header() {
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
     if (href.startsWith("#")) {
-      if (!isHomePage) {
+      if (!isHomePage && !previewMode) {
         window.location.href = "/" + href;
         return;
       }
@@ -98,7 +103,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed ${previewMode ? "top-10 sm:top-0" : "top-0"} left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/95 dark:bg-card/95 backdrop-blur-md shadow-sm border-b border-[#C4C4C4]/30"
           : "bg-transparent"
@@ -106,7 +111,7 @@ export default function Header() {
     >
       <div className="container flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group">
+          <a href={previewMode ? "/preview-paleta" : "/"} className="flex items-center gap-2 group">
           <img
             loading="eager"
             decoding="async"

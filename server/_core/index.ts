@@ -52,7 +52,8 @@ async function startServer() {
   app.use((req, res, next) => {
     if (
       req.path.startsWith("/prototipo-jornada-paciente") ||
-      req.path.startsWith("/admin/")
+      req.path.startsWith("/admin/") ||
+      req.path === "/preview-paleta"
     ) {
       res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
     }

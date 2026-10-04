@@ -128,9 +128,29 @@ describe("Integridade das páginas públicas", () => {
     expect(creator).not.toContain("globalThis.fetch(");
     expect(app).toContain('const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"))');
     expect(app).toContain('/admin/social-preview');
-    expect(app).toContain('!isInternalRoute && <GoogleTagManager />');
-    expect(app).toContain('!isPrototypeRoute && !isInternalRoute && <SplashScreen />');
+    expect(app).toContain('!isInternalRoute && !isBrandPalettePreview && <GoogleTagManager />');
+    expect(app).toContain('!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && <SplashScreen />');
     expect(server).toContain('req.path.startsWith("/admin/")');
+  });
+
+  it("oferece uma prévia isolada da paleta marrom/neutra sem afetar o site público", () => {
+    const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
+    const home = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
+    const preview = readFileSync(resolve(projectRoot, "client/src/pages/BrandPalettePreview.tsx"), "utf8");
+    const styles = readFileSync(resolve(projectRoot, "client/src/index.css"), "utf8");
+    const routes = readFileSync(resolve(projectRoot, "shared/siteRoutes.ts"), "utf8");
+    const server = readFileSync(resolve(projectRoot, "server/_core/index.ts"), "utf8");
+
+    expect(app).toContain('const BrandPalettePreview = lazy(() => import("./pages/BrandPalettePreview"))');
+    expect(app).toContain('path={"/preview-paleta"}');
+    expect(home).toContain('data-brand-palette={isBrandPalettePreview ? "espresso" : undefined}');
+    expect(home).toContain("brand-preview-ribbon");
+    expect(preview).toContain("return <Home isBrandPalettePreview />");
+    expect(styles).toContain(".brand-preview-espresso");
+    expect(styles).toContain("--espresso-deep: #2E2520");
+    expect(styles).toContain("--espresso-off-white: #F7F5F2");
+    expect(routes).toContain('"/preview-paleta"');
+    expect(server).toContain('req.path === "/preview-paleta"');
   });
 
   it("não mantém referências ao arquivo antigo do logotipo", () => {
@@ -292,7 +312,7 @@ describe("Integridade das páginas públicas", () => {
 
     expect(prototype.match(/<ScrollReveal threshold=\{0\.08\}>/g)?.length).toBeGreaterThanOrEqual(3);
     expect(reveal).toContain('matchMedia("(prefers-reduced-motion: reduce)")');
-    expect(app).toContain("!isPrototypeRoute && !isInternalRoute && <SplashScreen />");
+    expect(app).toContain("!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && <SplashScreen />");
   });
 
   it("oferece contato por e-mail sem campo clínico livre e com consentimento explícito", () => {

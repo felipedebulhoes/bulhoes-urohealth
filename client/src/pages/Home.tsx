@@ -33,18 +33,35 @@ const DoctoraliaWidget = lazy(() => import("@/components/DoctoraliaWidget"));
 const AIChatWidget = lazy(() => import("@/components/AIChatWidget"));
 const SocialShareButtons = lazy(() => import("@/components/SocialShareButtons"));
 
-export default function Home() {
+interface HomeProps {
+  /** Habilita uma apresentação privada da paleta marrom/neutra, sem publicar a mudança. */
+  isBrandPalettePreview?: boolean;
+}
+
+export default function Home({ isBrandPalettePreview = false }: HomeProps) {
   usePageMeta({
-    title: "Urologista em São Paulo e Campinas",
-    description: "Dr. Felipe de Bulhões — Urologista em São Paulo e Campinas. Cirurgia robótica, endourologia e saúde do homem. Atendimento particular. Formado Instituto D'Or. Agende.",
-    canonical: "https://felipebulhoes.com/",
+    title: isBrandPalettePreview ? "Prévia da nova paleta" : "Urologista em São Paulo e Campinas",
+    description: isBrandPalettePreview
+      ? "Prévia privada da nova paleta visual do site do Dr. Felipe de Bulhões."
+      : "Dr. Felipe de Bulhões — Urologista em São Paulo e Campinas. Cirurgia robótica, endourologia e saúde do homem. Atendimento particular. Formado Instituto D'Or. Agende.",
+    canonical: isBrandPalettePreview ? undefined : "https://felipebulhoes.com/",
   });
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <div
+      className={`min-h-screen flex flex-col${isBrandPalettePreview ? " brand-preview-espresso" : ""}`}
+      data-brand-palette={isBrandPalettePreview ? "espresso" : undefined}
+    >
+      {isBrandPalettePreview && (
+        <aside className="brand-preview-ribbon" aria-label="Aviso de prévia de identidade visual">
+          <span>Prévia privada</span>
+          <strong>Nova paleta • Marrom profundo, café, taupe e off white</strong>
+          <a href="/" className="brand-preview-current-link">Ver site atual</a>
+        </aside>
+      )}
+      <Header previewMode={isBrandPalettePreview} />
       <main>
-        <HeroSection />
+        <HeroSection palette={isBrandPalettePreview ? "espresso" : "current"} />
         <ScrollReveal>
           <DoctoraliaBadge />
         </ScrollReveal>

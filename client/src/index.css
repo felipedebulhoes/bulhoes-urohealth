@@ -545,3 +545,150 @@ html {
     padding-bottom: 5rem;
   }
 }
+
+/* ===== Prévia privada — identidade marrom/neutra =====
+   Fonte: guia de marca fornecido em 04/10/2026.
+   Paleta: #2E2520, #4A3A30, #8D7B6B, #C9B6A3, #E7E1DA, #F7F5F2.
+   Os seletores permanecem restritos a [data-brand-palette="espresso"],
+   portanto não alteram o site público enquanto a decisão estiver em avaliação. */
+.brand-preview-espresso {
+  --espresso-deep: #2E2520;
+  --espresso-cafe: #4A3A30;
+  --espresso-taupe: #8D7B6B;
+  --espresso-beige: #C9B6A3;
+  --espresso-mist: #E7E1DA;
+  --espresso-off-white: #F7F5F2;
+  --primary: oklch(0.205 0.024 57.5);
+  --primary-foreground: oklch(0.975 0.008 81.5);
+  --accent: oklch(0.338 0.024 57.5);
+  --accent-foreground: oklch(0.975 0.008 81.5);
+  --copper: oklch(0.338 0.024 57.5);
+  --copper-foreground: oklch(0.975 0.008 81.5);
+  --background: oklch(0.975 0.008 81.5);
+  --foreground: oklch(0.205 0.024 57.5);
+  --card: oklch(0.975 0.008 81.5);
+  --card-foreground: oklch(0.205 0.024 57.5);
+  --popover: oklch(0.975 0.008 81.5);
+  --popover-foreground: oklch(0.205 0.024 57.5);
+  --secondary: oklch(0.912 0.012 79.5);
+  --secondary-foreground: oklch(0.205 0.024 57.5);
+  --muted: oklch(0.912 0.012 79.5);
+  --muted-foreground: oklch(0.515 0.027 60.5);
+  --border: oklch(0.865 0.012 79.5);
+  --input: oklch(0.865 0.012 79.5);
+  --ring: oklch(0.515 0.027 60.5);
+  background: var(--espresso-off-white);
+  color: var(--espresso-deep);
+  font-family: "Lato", "Roboto", system-ui, sans-serif;
+}
+
+.brand-preview-espresso h1,
+.brand-preview-espresso h2,
+.brand-preview-espresso h3,
+.brand-preview-espresso h4 {
+  font-family: "Cinzel", "Optima", Georgia, serif;
+  font-style: normal;
+  letter-spacing: 0.025em;
+}
+
+.brand-preview-espresso [class*="bg-[#1C3D5A]/"] { background-color: rgb(46 37 32 / 0.10) !important; }
+.brand-preview-espresso [class*="bg-[#1C3D5A]"]:not([class*="/"]) { background-color: var(--espresso-deep) !important; }
+.brand-preview-espresso [class*="text-[#1C3D5A]"] { color: var(--espresso-deep) !important; }
+.brand-preview-espresso [class*="border-[#1C3D5A]"] { border-color: var(--espresso-deep) !important; }
+.brand-preview-espresso [class*="shadow-[#1C3D5A]"] { --tw-shadow-color: rgb(46 37 32 / 0.24) !important; }
+
+.brand-preview-espresso [class*="bg-[#B87333]/"],
+.brand-preview-espresso [class*="bg-[#D4884A]/"] { background-color: rgb(74 58 48 / 0.10) !important; }
+.brand-preview-espresso [class*="bg-[#B87333]"]:not([class*="/"]),
+.brand-preview-espresso [class*="bg-[#D4884A]"]:not([class*="/"]) { background-color: var(--espresso-cafe) !important; }
+.brand-preview-espresso [class*="text-[#B87333]"],
+.brand-preview-espresso [class*="text-[#D4884A]"],
+.brand-preview-espresso [class*="text-[#9D602A]"] { color: var(--espresso-cafe) !important; }
+.brand-preview-espresso [class*="border-[#B87333]"],
+.brand-preview-espresso [class*="border-[#D4884A]"] { border-color: var(--espresso-cafe) !important; }
+.brand-preview-espresso [class*="shadow-[#B87333]"],
+.brand-preview-espresso [class*="shadow-[#D4884A]"] { --tw-shadow-color: rgb(74 58 48 / 0.28) !important; }
+.brand-preview-espresso [class*="bg-[#F7F8F8]"] { background-color: var(--espresso-mist) !important; }
+
+.brand-preview-espresso .brand-espresso-hero {
+  background:
+    radial-gradient(circle at 78% 22%, rgb(201 182 163 / 0.16), transparent 24rem),
+    radial-gradient(circle at 12% 86%, rgb(141 123 107 / 0.22), transparent 28rem),
+    linear-gradient(122deg, var(--espresso-deep) 0%, #251C18 50%, #3B2B23 100%) !important;
+}
+
+.brand-preview-espresso .brand-espresso-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.34;
+  background-image:
+    linear-gradient(45deg, rgb(247 245 242 / 0.025) 25%, transparent 25%),
+    linear-gradient(-45deg, rgb(247 245 242 / 0.025) 25%, transparent 25%);
+  background-size: 8px 8px;
+}
+
+.brand-preview-espresso .brand-espresso-hero > * { z-index: 1; }
+.brand-preview-espresso .brand-espresso-hero-accent,
+.brand-preview-espresso .brand-espresso-hero-icon { color: var(--espresso-beige) !important; }
+.brand-preview-espresso .brand-espresso-hero-cta {
+  background-color: var(--espresso-beige) !important;
+  color: var(--espresso-deep) !important;
+  box-shadow: 0 12px 28px rgb(0 0 0 / 0.24) !important;
+}
+.brand-preview-espresso .brand-espresso-hero-cta:hover { background-color: var(--espresso-mist) !important; }
+
+.brand-preview-ribbon {
+  position: fixed;
+  z-index: 60;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgb(201 182 163 / 0.6);
+  border-radius: 999px;
+  background: rgb(46 37 32 / 0.96);
+  color: var(--espresso-off-white);
+  box-shadow: 0 10px 28px rgb(46 37 32 / 0.2);
+  font-family: "Lato", "Roboto", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  backdrop-filter: blur(12px);
+}
+
+.brand-preview-ribbon > span {
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  background: var(--espresso-beige);
+  color: var(--espresso-deep);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.brand-preview-ribbon strong { font-weight: 400; }
+.brand-preview-current-link { color: var(--espresso-mist); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2rem; }
+
+@media (max-width: 640px) {
+  .brand-preview-ribbon {
+    position: relative;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    align-self: stretch;
+    max-width: none;
+    margin: 0;
+    justify-content: center;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    text-align: center;
+  }
+  .brand-preview-ribbon strong { display: none; }
+}

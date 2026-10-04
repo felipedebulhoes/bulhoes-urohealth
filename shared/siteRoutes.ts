@@ -63,6 +63,7 @@ export const NOINDEX_STATIC_PATHS = [
   "/admin/leads",
   "/admin/keywords",
   "/admin/social-preview",
+  "/preview-paleta",
   "/guia-google-business",
   "/instagram-carousel",
   "/agendar/doctoralia",

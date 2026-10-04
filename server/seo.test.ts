@@ -199,9 +199,11 @@ describe("SEO URL consolidation", () => {
     expect(getSpaResponseStatus("/prototipo-jornada-paciente")).toBe(200);
     expect(getSpaResponseStatus("/admin/leads")).toBe(200);
     expect(getSpaResponseStatus("/admin/social-preview")).toBe(200);
+    expect(getSpaResponseStatus("/preview-paleta")).toBe(200);
     expect(isIndexableSitePath("/prototipo-jornada-paciente")).toBe(false);
     expect(isIndexableSitePath("/admin/leads")).toBe(false);
     expect(isIndexableSitePath("/admin/social-preview")).toBe(false);
+    expect(isIndexableSitePath("/preview-paleta")).toBe(false);
   });
 
   it("keeps every sitemap URL canonical and indexable", () => {

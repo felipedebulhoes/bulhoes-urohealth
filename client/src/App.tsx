@@ -48,6 +48,7 @@ const AdminFiles = lazy(() => import("./pages/AdminFiles"));
 const AdminLeads = lazy(() => import("./pages/AdminLeads"));
 const AdminKeywords = lazy(() => import("./pages/AdminKeywords"));
 const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"));
+const BrandPalettePreview = lazy(() => import("./pages/BrandPalettePreview"));
 const Consultorios = lazy(() => import("./pages/Consultorios"));
 const Contato = lazy(() => import("./pages/Contato"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
@@ -80,12 +81,16 @@ function RouteFallback() {
   return null;
 }
 
+function PublicHomeRoute() {
+  return <Home />;
+}
+
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Suspense fallback={<RouteFallback />}>
       <Switch>
-        <Route path={"/"} component={Home} />
+        <Route path={"/"} component={PublicHomeRoute} />
         <Route path={"/blog"} component={Blog} />
         <Route path={"/blog/:slug"} component={BlogPost} />
         <Route path={"/educativo/tratamentos-hpb"} component={TratamentosHPB} />
@@ -126,6 +131,7 @@ function Router() {
         <Route path={"/admin/leads"} component={AdminLeads} />
         <Route path={"/admin/keywords"} component={AdminKeywords} />
         <Route path={"/admin/social-preview"} component={AdminSocialPreview} />
+        <Route path={"/preview-paleta"} component={BrandPalettePreview} />
         <Route path={"/guia-glp1"} component={GuiaGLP1} />
         <Route path={"/vasectomia-sem-bisturi"} component={VasectomiaSemBisturi} />
         <Route path={"/andrologia-performance-masculina"} component={AndrologiaPerformance} />
@@ -153,13 +159,14 @@ function App() {
   const [location] = useLocation();
   const isPrototypeRoute = location.startsWith("/prototipo-jornada-paciente");
   const isInternalRoute = location.startsWith("/admin/");
+  const isBrandPalettePreview = location === "/preview-paleta";
 
   useEffect(() => {
-    if (isInternalRoute) return;
+    if (isInternalRoute || isBrandPalettePreview) return;
     captureAttribution();
     initGlobalContactListener();
     initEngagementTracking();
-  }, [isInternalRoute]);
+  }, [isBrandPalettePreview, isInternalRoute]);
 
   return (
     <ErrorBoundary>
@@ -170,11 +177,11 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <CanonicalTag />
-          {!isPrototypeRoute && !isInternalRoute && <SplashScreen />}
-          <PageTransition />
+          {!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && <SplashScreen />}
+          {!isBrandPalettePreview && <PageTransition />}
           <Router />
-          {!isInternalRoute && <CookieBanner />}
-          {!isInternalRoute && <GoogleTagManager />}
+          {!isInternalRoute && !isBrandPalettePreview && <CookieBanner />}
+          {!isInternalRoute && !isBrandPalettePreview && <GoogleTagManager />}
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

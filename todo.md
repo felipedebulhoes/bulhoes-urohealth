@@ -333,3 +333,5 @@
 - [x] Corrigir a cópia residual para declarar quatro locais ativos: dois em Campinas e dois em São Paulo.
 - [x] Recuperar o mapa de consultórios com inicialização por callback da API e fallback incorporado do Google Maps por local selecionado.
 - [x] Validar a recuperação do mapa, a troca de local, TypeScript, 146 testes e build de produção.
+
+- [x] Criar e validar a prévia privada da nova paleta marrom/neutra em `/preview-paleta`, com tipografia, responsividade e noindex; nenhuma alteração foi aplicada ao site público.

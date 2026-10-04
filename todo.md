@@ -341,3 +341,8 @@
 - [x] Clarear o taupe dos cards educativos na prévia para `#A39484`, mantendo texto marrom profundo com contraste adequado
 - [x] Harmonizar CTAs da prévia com gradiente taupe/bege, foco visível, hover e resposta de clique; respeita movimento reduzido
 - [x] Reposicionar o selo de prévia no desktop para não cobrir o CTA do cabeçalho; validar desktop/mobile, TypeScript, 147 testes e build
+
+- [x] Migrar o site público para a paleta marrom/neutra da marca, mantendo a tipografia existente
+- [x] Promover CTAs, cabeçalhos, gradientes, cards, mapas, sombras e transições nos layouts público, educativo e de campanha
+- [x] Manter protótipo e áreas administrativas isolados; preservar `/preview-paleta` como referência não indexável
+- [x] Validar homepage desktop/mobile e landing page, TypeScript, 147 testes, build e checagem de whitespace

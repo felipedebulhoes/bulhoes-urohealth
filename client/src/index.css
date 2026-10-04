@@ -206,22 +206,22 @@
     }
   }
 
-  /* Copper button utility */
+  /* Botão de destaque — marrom/café da identidade atual. */
   .btn-copper {
-    background-color: oklch(0.618 0.117 60.4);
-    color: oklch(0.997 0.000 263.3);
+    background-color: #4A3A30;
+    color: #F7F5F2;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgba(184, 115, 51, 0.2);
+    box-shadow: 0 2px 8px rgb(74 58 48 / 0.20);
   }
   .btn-copper:hover {
-    background-color: oklch(0.693 0.121 58.0);
+    background-color: #2E2520;
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 20px rgba(184, 115, 51, 0.35);
+    box-shadow: 0 6px 20px rgb(46 37 32 / 0.32);
   }
   .btn-copper:active {
-    background-color: oklch(0.512 0.090 62.2);
+    background-color: #2E2520;
     transform: translateY(0) scale(0.98);
-    box-shadow: 0 2px 6px rgba(184, 115, 51, 0.2);
+    box-shadow: 0 2px 6px rgb(46 37 32 / 0.20);
   }
 }
 
@@ -235,14 +235,14 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: oklch(0.950 0.000 263.3);
+  background: #E7E1DA;
 }
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.820 0.000 263.3);
+  background: #A39484;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.618 0.117 60.4);
+  background: #4A3A30;
 }
 
 /* ===== Scroll Reveal Animations ===== */
@@ -333,13 +333,13 @@ html {
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(28, 61, 90, 0.12),
-              0 4px 12px rgba(184, 115, 51, 0.08);
+  box-shadow: 0 12px 40px rgb(46 37 32 / 0.12),
+              0 4px 12px rgb(74 58 48 / 0.08);
 }
 
 .card-hover:active {
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(28, 61, 90, 0.08);
+  box-shadow: 0 4px 16px rgb(46 37 32 / 0.08);
 }
 
 /* Specialty cards with border glow */
@@ -352,9 +352,9 @@ html {
 
 .specialty-card-hover:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 16px 48px rgba(28, 61, 90, 0.15),
-              0 4px 12px rgba(184, 115, 51, 0.1);
-  border-color: rgba(184, 115, 51, 0.3);
+  box-shadow: 0 16px 48px rgb(46 37 32 / 0.15),
+              0 4px 12px rgb(74 58 48 / 0.10);
+  border-color: rgb(201 182 163 / 0.74);
 }
 
 /* Testimonial cards */
@@ -365,8 +365,8 @@ html {
 
 .testimonial-card-hover:hover {
   transform: translateY(-3px) scale(1.005);
-  box-shadow: 0 8px 32px rgba(28, 61, 90, 0.1),
-              0 2px 8px rgba(184, 115, 51, 0.06);
+  box-shadow: 0 8px 32px rgb(46 37 32 / 0.10),
+              0 2px 8px rgb(74 58 48 / 0.06);
 }
 
 /* ===== Page Transition Animation ===== */
@@ -377,7 +377,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(28, 61, 90, 0.92);
+  background: rgb(46 37 32 / 0.94);
   backdrop-filter: blur(8px);
   pointer-events: none;
   opacity: 0;
@@ -412,7 +412,7 @@ html {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 2px solid rgba(184, 115, 51, 0.6);
+  border: 2px solid rgb(201 182 163 / 0.72);
   animation: transitionPulse 0.8s cubic-bezier(0, 0, 0.2, 1) forwards;
 }
 
@@ -446,7 +446,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0F2A3F;
+  background: #2E2520;
   opacity: 1;
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -463,6 +463,19 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  isolation: isolate;
+}
+
+/* Mantém a animação clínica existente, com acabamento cromático coerente à nova marca. */
+.splash-video-container::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  background: #4A3A30;
+  mix-blend-mode: color;
+  opacity: 0.62;
 }
 
 .splash-video {
@@ -471,6 +484,7 @@ html {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.3s ease;
+  filter: sepia(0.52) saturate(0.70) contrast(0.96) brightness(0.86);
 }
 
 .splash-video.splash-video-visible {
@@ -483,6 +497,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: sepia(0.52) saturate(0.70) contrast(0.96) brightness(0.86);
 }
 
 /* Botão Pular da Splash Screen */
@@ -546,14 +561,14 @@ html {
   }
 }
 
-/* ===== Prévia privada — identidade marrom/neutra =====
+/* ===== Identidade pública — marrom/neutra =====
    Fonte: guia de marca fornecido em 04/10/2026.
    Paleta: #2E2520, #4A3A30, #8D7B6B, #C9B6A3, #E7E1DA, #F7F5F2.
    O taupe dos cards usa #A39484, uma variação mais clara do tom-base para
    preservar leitura confortável com texto marrom profundo.
-   Os seletores permanecem restritos a [data-brand-palette="espresso"],
-   portanto não alteram o site público enquanto a decisão estiver em avaliação. */
-.brand-preview-espresso {
+   A camada é aplicada ao site público pela classe `.brand-site`;
+   protótipo e áreas administrativas continuam isolados. */
+.brand-site {
   --espresso-deep: #2E2520;
   --espresso-cafe: #4A3A30;
   --espresso-taupe: #A39484;
@@ -583,33 +598,71 @@ html {
   color: var(--espresso-deep);
 }
 
-.brand-preview-espresso [class*="bg-[#1C3D5A]/"] { background-color: rgb(46 37 32 / 0.10) !important; }
-.brand-preview-espresso [class*="bg-[#1C3D5A]"]:not([class*="/"]) { background-color: var(--espresso-deep) !important; }
-.brand-preview-espresso [class*="text-[#1C3D5A]"] { color: var(--espresso-deep) !important; }
-.brand-preview-espresso [class*="border-[#1C3D5A]"] { border-color: var(--espresso-deep) !important; }
-.brand-preview-espresso [class*="shadow-[#1C3D5A]"] { --tw-shadow-color: rgb(46 37 32 / 0.24) !important; }
+.brand-site [class*="bg-[#1C3D5A]/"] { background-color: rgb(46 37 32 / 0.10) !important; }
+.brand-site [class*="bg-[#1C3D5A]"]:not([class*="/"]) { background-color: var(--espresso-deep) !important; }
+.brand-site [class*="text-[#1C3D5A]"] { color: var(--espresso-deep) !important; }
+.brand-site [class*="border-[#1C3D5A]"] { border-color: var(--espresso-deep) !important; }
+.brand-site [class*="shadow-[#1C3D5A]"] { --tw-shadow-color: rgb(46 37 32 / 0.24) !important; }
 
-.brand-preview-espresso [class*="bg-[#B87333]/"],
-.brand-preview-espresso [class*="bg-[#D4884A]/"] { background-color: rgb(74 58 48 / 0.10) !important; }
-.brand-preview-espresso [class*="bg-[#B87333]"]:not([class*="/"]),
-.brand-preview-espresso [class*="bg-[#D4884A]"]:not([class*="/"]) { background-color: var(--espresso-cafe) !important; }
-.brand-preview-espresso [class*="text-[#B87333]"],
-.brand-preview-espresso [class*="text-[#D4884A]"],
-.brand-preview-espresso [class*="text-[#9D602A]"] { color: var(--espresso-cafe) !important; }
-.brand-preview-espresso [class*="border-[#B87333]"],
-.brand-preview-espresso [class*="border-[#D4884A]"] { border-color: var(--espresso-cafe) !important; }
-.brand-preview-espresso [class*="shadow-[#B87333]"],
-.brand-preview-espresso [class*="shadow-[#D4884A]"] { --tw-shadow-color: rgb(74 58 48 / 0.28) !important; }
-.brand-preview-espresso [class*="bg-[#F7F8F8]"] { background-color: var(--espresso-mist) !important; }
+.brand-site [class*="bg-[#B87333]/"],
+.brand-site [class*="bg-[#D4884A]/"] { background-color: rgb(74 58 48 / 0.10) !important; }
+.brand-site [class*="bg-[#B87333]"]:not([class*="/"]),
+.brand-site [class*="bg-[#D4884A]"]:not([class*="/"]) { background-color: var(--espresso-cafe) !important; }
+.brand-site [class*="text-[#B87333]"],
+.brand-site [class*="text-[#D4884A]"],
+.brand-site [class*="text-[#9D602A]"] { color: var(--espresso-cafe) !important; }
+.brand-site [class*="border-[#B87333]"],
+.brand-site [class*="border-[#D4884A]"] { border-color: var(--espresso-cafe) !important; }
+.brand-site [class*="shadow-[#B87333]"],
+.brand-site [class*="shadow-[#D4884A]"] { --tw-shadow-color: rgb(74 58 48 / 0.28) !important; }
+.brand-site [class*="bg-[#F7F8F8]"] { background-color: var(--espresso-mist) !important; }
+.brand-site [class*="bg-[#0F2A3F]"],
+.brand-site [class*="bg-[#0F3460]"],
+.brand-site [class*="bg-[#0D2847]"],
+.brand-site [class*="bg-[#09243D]"] { background-color: var(--espresso-deep) !important; }
 
-.brand-preview-espresso .brand-espresso-hero {
+/* Gradientes clínicos históricos assumem a mesma profundidade, agora em café/marrom. */
+.brand-site [class*="from-[#1C3D5A]"],
+.brand-site [class*="from-[#0F3460]"],
+.brand-site [class*="from-[#0D3B5C]"],
+.brand-site [class*="from-[#0D3B66]"],
+.brand-site [class*="from-[#0D2D4A]"] {
+  background-image: linear-gradient(135deg, var(--espresso-cafe), var(--espresso-deep)) !important;
+}
+.brand-site [class*="via-[#0F3460]"],
+.brand-site [class*="via-[#0D2D4A]"],
+.brand-site [class*="to-[#0F3460]"],
+.brand-site [class*="to-[#0D2847]"],
+.brand-site [class*="to-[#0D3B5C]"],
+.brand-site [class*="to-[#0D3B66]"],
+.brand-site [class*="to-[#09243D]"] {
+  background-image: linear-gradient(135deg, var(--espresso-cafe), var(--espresso-deep)) !important;
+}
+.brand-site [class*="from-[#1C3D5A]"][class*="to-transparent"] {
+  background-image: linear-gradient(to top, rgb(46 37 32 / 0.96), rgb(46 37 32 / 0.36), transparent) !important;
+}
+
+.brand-site .brand-campaign-header {
+  background-color: var(--espresso-off-white) !important;
+  color: var(--espresso-deep);
+  box-shadow: 0 8px 22px rgb(46 37 32 / 0.06);
+}
+.brand-site .brand-campaign-header img[alt="Dr. Felipe de Bulhões - Urologista"] {
+  filter: brightness(0) saturate(100%) !important;
+  opacity: 0.88;
+}
+.brand-site .brand-campaign-outline:hover {
+  color: var(--espresso-deep) !important;
+}
+
+.brand-site .brand-espresso-hero {
   background:
     radial-gradient(circle at 78% 22%, rgb(231 225 218 / 0.18), transparent 24rem),
     radial-gradient(circle at 12% 86%, rgb(201 182 163 / 0.20), transparent 28rem),
     linear-gradient(122deg, var(--espresso-cafe) 0%, var(--espresso-deep) 52%, var(--espresso-cafe) 100%) !important;
 }
 
-.brand-preview-espresso .brand-espresso-hero::after {
+.brand-site .brand-espresso-hero::after {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -622,14 +675,14 @@ html {
   background-size: 8px 8px;
 }
 
-.brand-preview-espresso .brand-espresso-hero > * { z-index: 1; }
-.brand-preview-espresso .brand-espresso-hero-accent,
-.brand-preview-espresso .brand-espresso-hero-icon { color: var(--espresso-beige) !important; }
-.brand-preview-espresso .brand-espresso-hero h1,
-.brand-preview-espresso .brand-espresso-hero h2,
-.brand-preview-espresso .brand-espresso-hero p { color: var(--espresso-off-white); }
-.brand-preview-espresso .brand-espresso-primary-cta,
-.brand-preview-espresso .brand-espresso-hero-cta {
+.brand-site .brand-espresso-hero > * { z-index: 1; }
+.brand-site .brand-espresso-hero-accent,
+.brand-site .brand-espresso-hero-icon { color: var(--espresso-beige) !important; }
+.brand-site .brand-espresso-hero h1,
+.brand-site .brand-espresso-hero h2,
+.brand-site .brand-espresso-hero p { color: var(--espresso-off-white); }
+.brand-site .brand-espresso-primary-cta,
+.brand-site .brand-espresso-hero-cta {
   background: linear-gradient(135deg, var(--espresso-beige), var(--espresso-taupe)) !important;
   color: var(--espresso-deep) !important;
   border: 1px solid rgb(247 245 242 / 0.30) !important;
@@ -637,31 +690,31 @@ html {
 }
 
 /* CTAs primários: identidade taupe com resposta tátil curta e acessível. */
-.brand-preview-espresso .brand-espresso-primary-cta,
-.brand-preview-espresso .brand-espresso-hero-cta {
+.brand-site .brand-espresso-primary-cta,
+.brand-site .brand-espresso-hero-cta {
   transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1),
     box-shadow 180ms cubic-bezier(0.23, 1, 0.32, 1),
     background 180ms cubic-bezier(0.23, 1, 0.32, 1),
     border-color 180ms ease !important;
 }
-.brand-preview-espresso .brand-espresso-primary-cta:hover,
-.brand-preview-espresso .brand-espresso-hero-cta:hover {
+.brand-site .brand-espresso-primary-cta:hover,
+.brand-site .brand-espresso-hero-cta:hover {
   background: linear-gradient(135deg, #D9CCBD, var(--espresso-beige)) !important;
   box-shadow: 0 16px 30px rgb(46 37 32 / 0.28) !important;
   transform: translateY(-2px) !important;
 }
-.brand-preview-espresso .brand-espresso-primary-cta:active,
-.brand-preview-espresso .brand-espresso-hero-cta:active {
+.brand-site .brand-espresso-primary-cta:active,
+.brand-site .brand-espresso-hero-cta:active {
   box-shadow: 0 5px 12px rgb(46 37 32 / 0.22) !important;
   transform: translateY(1px) scale(0.975) !important;
 }
-.brand-preview-espresso .brand-espresso-primary-cta:focus-visible,
-.brand-preview-espresso .brand-espresso-hero-cta:focus-visible {
+.brand-site .brand-espresso-primary-cta:focus-visible,
+.brand-site .brand-espresso-hero-cta:focus-visible {
   outline: 3px solid rgb(247 245 242 / 0.80);
   outline-offset: 3px;
 }
 
-.brand-preview-espresso .brand-espresso-secondary-cta {
+.brand-site .brand-espresso-secondary-cta {
   border-color: rgb(201 182 163 / 0.78) !important;
   background-color: rgb(247 245 242 / 0.06) !important;
   color: var(--espresso-off-white) !important;
@@ -669,50 +722,50 @@ html {
     background-color 180ms cubic-bezier(0.23, 1, 0.32, 1),
     border-color 180ms ease !important;
 }
-.brand-preview-espresso .brand-espresso-secondary-cta:hover {
+.brand-site .brand-espresso-secondary-cta:hover {
   border-color: var(--espresso-off-white) !important;
   background-color: rgb(247 245 242 / 0.15) !important;
   transform: translateY(-2px) !important;
 }
-.brand-preview-espresso .brand-espresso-secondary-cta:active {
+.brand-site .brand-espresso-secondary-cta:active {
   transform: translateY(1px) scale(0.975) !important;
 }
-.brand-preview-espresso .brand-espresso-secondary-cta:focus-visible {
+.brand-site .brand-espresso-secondary-cta:focus-visible {
   outline: 3px solid rgb(247 245 242 / 0.80);
   outline-offset: 3px;
 }
 
-/* O arquivo de logo claro ganha contraste no cabeçalho off-white da prévia. */
-.brand-preview-espresso header img[alt="Dr. Felipe de Bulhões - Urologista"] {
+/* O arquivo de logo claro ganha contraste no cabeçalho off-white da marca. */
+.brand-site header img[alt="Dr. Felipe de Bulhões - Urologista"] {
   filter: brightness(0) saturate(100%) !important;
   opacity: 0.88;
 }
 
 /* Camadas de conteúdo: leitura leve entre blocos e marrom reservado aos destaques. */
-.brand-preview-espresso main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
+.brand-site main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
   background-color: var(--espresso-mist) !important;
 }
 
-.brand-preview-espresso main > *:not(#inicio):nth-child(even) section:not(#inicio) {
+.brand-site main > *:not(#inicio):nth-child(even) section:not(#inicio) {
   background-color: var(--espresso-off-white) !important;
 }
 
-.brand-preview-espresso #especialidades > .absolute.bg-\[\#1C3D5A\] {
+.brand-site #especialidades > .absolute.bg-\[\#1C3D5A\] {
   background-color: var(--espresso-cafe) !important;
 }
 
-.brand-preview-espresso #especialidades .bg-white,
-.brand-preview-espresso #especialidades .bg-card {
+.brand-site #especialidades .bg-white,
+.brand-site #especialidades .bg-card {
   background-color: var(--espresso-off-white) !important;
 }
 
-.brand-preview-espresso .card-hover:hover,
-.brand-preview-espresso .specialty-card-hover:hover {
+.brand-site .card-hover:hover,
+.brand-site .specialty-card-hover:hover {
   box-shadow: 0 16px 40px rgb(74 58 48 / 0.16) !important;
 }
 
 /* Conteúdo educativo em taupe claro: uma camada sofisticada, com leitura AA. */
-.brand-preview-espresso #educativo .card-hover {
+.brand-site #educativo .card-hover {
   border-color: rgb(46 37 32 / 0.18) !important;
   background-color: var(--espresso-taupe) !important;
   box-shadow: 0 8px 20px rgb(46 37 32 / 0.10);
@@ -722,50 +775,50 @@ html {
     background-color 280ms ease;
 }
 
-.brand-preview-espresso #educativo .card-hover h3,
-.brand-preview-espresso #educativo .card-hover p { color: var(--espresso-deep) !important; }
-.brand-preview-espresso #educativo .card-hover > div:first-child {
+.brand-site #educativo .card-hover h3,
+.brand-site #educativo .card-hover p { color: var(--espresso-deep) !important; }
+.brand-site #educativo .card-hover > div:first-child {
   background-color: rgb(46 37 32 / 0.12) !important;
   color: var(--espresso-deep) !important;
 }
-.brand-preview-espresso #educativo .card-hover > div:first-child svg { color: inherit !important; }
-.brand-preview-espresso #educativo .card-hover > div:last-child { color: var(--espresso-deep) !important; }
+.brand-site #educativo .card-hover > div:first-child svg { color: inherit !important; }
+.brand-site #educativo .card-hover > div:last-child { color: var(--espresso-deep) !important; }
 
-.brand-preview-espresso #educativo .card-hover:hover,
-.brand-preview-espresso #educativo .card-hover:focus-within {
+.brand-site #educativo .card-hover:hover,
+.brand-site #educativo .card-hover:focus-within {
   transform: translateY(-5px);
   border-color: var(--espresso-beige) !important;
   background-color: var(--espresso-cafe) !important;
   box-shadow: 0 18px 32px rgb(46 37 32 / 0.25) !important;
 }
-.brand-preview-espresso #educativo .card-hover:hover h3,
-.brand-preview-espresso #educativo .card-hover:focus-within h3 { color: var(--espresso-off-white) !important; }
-.brand-preview-espresso #educativo .card-hover:hover p,
-.brand-preview-espresso #educativo .card-hover:focus-within p { color: var(--espresso-mist) !important; }
-.brand-preview-espresso #educativo .card-hover:hover > div:first-child,
-.brand-preview-espresso #educativo .card-hover:focus-within > div:first-child {
+.brand-site #educativo .card-hover:hover h3,
+.brand-site #educativo .card-hover:focus-within h3 { color: var(--espresso-off-white) !important; }
+.brand-site #educativo .card-hover:hover p,
+.brand-site #educativo .card-hover:focus-within p { color: var(--espresso-mist) !important; }
+.brand-site #educativo .card-hover:hover > div:first-child,
+.brand-site #educativo .card-hover:focus-within > div:first-child {
   background-color: rgb(247 245 242 / 0.14) !important;
   color: var(--espresso-off-white) !important;
 }
-.brand-preview-espresso #educativo .card-hover:hover > div:last-child,
-.brand-preview-espresso #educativo .card-hover:focus-within > div:last-child { color: var(--espresso-beige) !important; }
+.brand-site #educativo .card-hover:hover > div:last-child,
+.brand-site #educativo .card-hover:focus-within > div:last-child { color: var(--espresso-beige) !important; }
 
 /* Especialidades: resposta tátil suave para ponteiro e teclado. */
-.brand-preview-espresso #especialidades .specialty-card-hover {
+.brand-site #especialidades .specialty-card-hover {
   transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
     border-color 280ms ease,
     box-shadow 280ms ease,
     background-color 280ms ease;
 }
-.brand-preview-espresso #especialidades .specialty-card-hover:hover,
-.brand-preview-espresso #especialidades .specialty-card-hover:focus-within {
+.brand-site #especialidades .specialty-card-hover:hover,
+.brand-site #especialidades .specialty-card-hover:focus-within {
   transform: translateY(-6px) scale(1.012);
   border-color: var(--espresso-beige) !important;
   background-color: rgb(201 182 163 / 0.18) !important;
   box-shadow: 0 20px 34px rgb(46 37 32 / 0.32) !important;
 }
-.brand-preview-espresso #especialidades .specialty-card-hover:hover > div:first-child,
-.brand-preview-espresso #especialidades .specialty-card-hover:focus-within > div:first-child {
+.brand-site #especialidades .specialty-card-hover:hover > div:first-child,
+.brand-site #especialidades .specialty-card-hover:focus-within > div:first-child {
   background-color: rgb(231 225 218 / 0.20) !important;
 }
 
@@ -807,27 +860,27 @@ html {
 }
 
 @media (max-width: 640px) {
-  .brand-preview-espresso main > *:not(#inicio) {
+  .brand-site main > *:not(#inicio) {
     position: relative;
     margin-top: -1px;
   }
-  .brand-preview-espresso main > *:not(#inicio) section:not(#inicio) {
+  .brand-site main > *:not(#inicio) section:not(#inicio) {
     position: relative;
     overflow: clip;
     box-shadow: inset 0 24px 32px -36px rgb(46 37 32 / 0.30),
       inset 0 -20px 26px -34px rgb(141 123 107 / 0.34);
     transition: background-color 360ms ease, box-shadow 360ms ease;
   }
-  .brand-preview-espresso main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
+  .brand-site main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
     background-image: linear-gradient(180deg, rgb(247 245 242 / 0.40), transparent 68px);
   }
-  .brand-preview-espresso main > *:not(#inicio):nth-child(even) section:not(#inicio) {
+  .brand-site main > *:not(#inicio):nth-child(even) section:not(#inicio) {
     background-image: linear-gradient(180deg, rgb(201 182 163 / 0.16), transparent 68px);
   }
-  .brand-preview-espresso #educativo .card-hover:hover,
-  .brand-preview-espresso #educativo .card-hover:focus-within,
-  .brand-preview-espresso #especialidades .specialty-card-hover:hover,
-  .brand-preview-espresso #especialidades .specialty-card-hover:focus-within {
+  .brand-site #educativo .card-hover:hover,
+  .brand-site #educativo .card-hover:focus-within,
+  .brand-site #especialidades .specialty-card-hover:hover,
+  .brand-site #especialidades .specialty-card-hover:focus-within {
     transform: translateY(-3px);
   }
   .brand-preview-ribbon {
@@ -849,17 +902,17 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brand-preview-espresso .brand-espresso-primary-cta,
-  .brand-preview-espresso .brand-espresso-hero-cta,
-  .brand-preview-espresso .brand-espresso-secondary-cta {
+  .brand-site .brand-espresso-primary-cta,
+  .brand-site .brand-espresso-hero-cta,
+  .brand-site .brand-espresso-secondary-cta {
     transition: none !important;
   }
-  .brand-preview-espresso .brand-espresso-primary-cta:hover,
-  .brand-preview-espresso .brand-espresso-primary-cta:active,
-  .brand-preview-espresso .brand-espresso-hero-cta:hover,
-  .brand-preview-espresso .brand-espresso-hero-cta:active,
-  .brand-preview-espresso .brand-espresso-secondary-cta:hover,
-  .brand-preview-espresso .brand-espresso-secondary-cta:active {
+  .brand-site .brand-espresso-primary-cta:hover,
+  .brand-site .brand-espresso-primary-cta:active,
+  .brand-site .brand-espresso-hero-cta:hover,
+  .brand-site .brand-espresso-hero-cta:active,
+  .brand-site .brand-espresso-secondary-cta:hover,
+  .brand-site .brand-espresso-secondary-cta:active {
     transform: none !important;
   }
 }

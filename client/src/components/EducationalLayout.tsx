@@ -31,7 +31,7 @@ export default function EducationalLayout({
   title,
   subtitle,
   description,
-  accentColor = "#B87333",
+  accentColor = "#C9B6A3",
   metaTitle,
   metaDescription,
   medicalCondition,
@@ -79,18 +79,18 @@ export default function EducationalLayout({
       />
 
       {/* Header */}
-      <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
+      <header className="brand-campaign-header bg-[#F7F5F2] py-4 sticky top-0 z-50 border-b border-[#2E2520]/10">
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img loading="eager"
               src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
               alt="Dr. Felipe de Bulhões - Urologista"
-              className="h-12 lg:h-14 w-auto brightness-0 invert"
+              className="h-12 lg:h-14 w-auto"
             />
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/">
-              <Button variant="outline" className="text-white border-white/20 hover:bg-white/10 bg-transparent">
+              <Button variant="outline" className="brand-campaign-outline text-[#2E2520] border-[#4A3A30]/35 hover:bg-[#4A3A30]/10 bg-transparent">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Voltar
               </Button>

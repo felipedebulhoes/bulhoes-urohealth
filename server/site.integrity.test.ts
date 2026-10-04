@@ -133,11 +133,13 @@ describe("Integridade das páginas públicas", () => {
     expect(server).toContain('req.path.startsWith("/admin/")');
   });
 
-  it("oferece uma prévia isolada da paleta marrom/neutra sem afetar o site público", () => {
+  it("aplica a identidade marrom/neutra ao site público e preserva a prévia não indexável", () => {
     const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
     const home = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
     const header = readFileSync(resolve(projectRoot, "client/src/components/Header.tsx"), "utf8");
     const hero = readFileSync(resolve(projectRoot, "client/src/components/HeroSection.tsx"), "utf8");
+    const campaign = readFileSync(resolve(projectRoot, "client/src/components/CampaignLayout.tsx"), "utf8");
+    const educational = readFileSync(resolve(projectRoot, "client/src/components/EducationalLayout.tsx"), "utf8");
     const preview = readFileSync(resolve(projectRoot, "client/src/pages/BrandPalettePreview.tsx"), "utf8");
     const styles = readFileSync(resolve(projectRoot, "client/src/index.css"), "utf8");
     const routes = readFileSync(resolve(projectRoot, "shared/siteRoutes.ts"), "utf8");
@@ -145,18 +147,20 @@ describe("Integridade das páginas públicas", () => {
 
     expect(app).toContain('const BrandPalettePreview = lazy(() => import("./pages/BrandPalettePreview"))');
     expect(app).toContain('path={"/preview-paleta"}');
-    expect(home).toContain('data-brand-palette={isBrandPalettePreview ? "espresso" : undefined}');
-    expect(header).toContain("const usesSolidSurface = scrolled || previewMode");
+    expect(app).toContain('const isPublicBrandedRoute = !isPrototypeRoute && !isInternalRoute');
+    expect(app).toContain('className={isPublicBrandedRoute ? "brand-site" : undefined}');
+    expect(home).toContain('data-brand-palette="espresso"');
+    expect(header).toContain("const usesSolidSurface = true");
     expect(home).toContain("brand-preview-ribbon");
     expect(preview).toContain("return <Home isBrandPalettePreview />");
     expect(preview).not.toContain("fonts.googleapis.com");
-    expect(styles).toContain(".brand-preview-espresso");
+    expect(styles).toContain(".brand-site");
     expect(styles).toContain("--espresso-deep: #2E2520");
     expect(styles).toContain("--espresso-taupe: #A39484");
     expect(styles).toContain("--espresso-off-white: #F7F5F2");
-    expect(styles).not.toContain('.brand-preview-espresso h1');
+    expect(styles).not.toContain('.brand-site h1');
     expect(styles).toContain("linear-gradient(122deg, var(--espresso-cafe) 0%, var(--espresso-deep) 52%, var(--espresso-cafe) 100%)");
-    expect(styles).toContain(".brand-preview-espresso .brand-espresso-hero h1");
+    expect(styles).toContain(".brand-site .brand-espresso-hero h1");
     expect(styles).toContain("main > *:not(#inicio):nth-child(odd) section:not(#inicio)");
     expect(styles).toContain("#especialidades > .absolute.bg-\\[\\#1C3D5A\\]");
     expect(styles).toContain("#educativo .card-hover");
@@ -168,8 +172,12 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain(".brand-preview-ribbon { top: 7rem; }");
     expect(styles).toContain("#especialidades .specialty-card-hover:focus-within");
     expect(styles).toContain('header img[alt="Dr. Felipe de Bulhões - Urologista"]');
-    expect(header).toContain('previewMode ? "brand-espresso-primary-cta " : ""');
+    expect(styles).toContain(".splash-video-container::after");
+    expect(styles).toContain("mix-blend-mode: color");
+    expect(header).toContain('className="brand-espresso-primary-cta');
     expect(hero).toContain("brand-espresso-secondary-cta");
+    expect(campaign).toContain("brand-campaign-header");
+    expect(educational).toContain("brand-campaign-header");
     expect(styles).toContain("@media (max-width: 640px)");
     expect(styles).toContain("background-image: linear-gradient(180deg");
     expect(routes).toContain('"/preview-paleta"');

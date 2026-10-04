@@ -160,6 +160,7 @@ function App() {
   const isPrototypeRoute = location.startsWith("/prototipo-jornada-paciente");
   const isInternalRoute = location.startsWith("/admin/");
   const isBrandPalettePreview = location === "/preview-paleta";
+  const isPublicBrandedRoute = !isPrototypeRoute && !isInternalRoute;
 
   useEffect(() => {
     if (isInternalRoute || isBrandPalettePreview) return;
@@ -179,9 +180,11 @@ function App() {
           <CanonicalTag />
           {!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && <SplashScreen />}
           {!isBrandPalettePreview && <PageTransition />}
-          <Router />
-          {!isInternalRoute && !isBrandPalettePreview && <CookieBanner />}
-          {!isInternalRoute && !isBrandPalettePreview && <GoogleTagManager />}
+          <div className={isPublicBrandedRoute ? "brand-site" : undefined}>
+            <Router />
+            {!isInternalRoute && !isBrandPalettePreview && <CookieBanner />}
+            {!isInternalRoute && !isBrandPalettePreview && <GoogleTagManager />}
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

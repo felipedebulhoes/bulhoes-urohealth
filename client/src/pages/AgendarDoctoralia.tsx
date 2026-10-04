@@ -63,7 +63,7 @@ export default function AgendarDoctoralia() {
   const strokeDashoffset = circumference - (progress / 100) * circumference;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#4A3A30] to-[#2E2520] flex items-center justify-center px-4">
       <div className="text-center max-w-md">
         {/* Logo */}
         <img
@@ -91,7 +91,7 @@ export default function AgendarDoctoralia() {
                   <circle
                     cx="48" cy="48" r="40"
                     fill="none"
-                    stroke="#B87333"
+                    stroke="#C9B6A3"
                     strokeWidth="4"
                     strokeLinecap="round"
                     strokeDasharray={circumference}
@@ -113,7 +113,7 @@ export default function AgendarDoctoralia() {
               </p>
               <a
                 href={DOCTORALIA_URL}
-                className="text-[#B87333] hover:text-[#D4956A] text-sm underline underline-offset-2 transition-colors"
+                className="text-[#C9B6A3] hover:text-[#F7F5F2] text-sm underline underline-offset-2 transition-colors"
               >
                 Ir agora →
               </a>
@@ -121,7 +121,7 @@ export default function AgendarDoctoralia() {
           ) : (
             <>
               {/* Fallback: link manual */}
-              <Calendar className="w-10 h-10 text-[#B87333] mx-auto mb-4" />
+              <Calendar className="w-10 h-10 text-[#C9B6A3] mx-auto mb-4" />
               <h1 className="text-xl text-white font-serif mb-2">
                 Agendar Consulta
               </h1>
@@ -132,7 +132,7 @@ export default function AgendarDoctoralia() {
                 href={DOCTORALIA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#B87333] hover:bg-[#8B5A2B] text-white px-6 py-3 rounded-lg transition-colors"
+                className="inline-flex items-center gap-2 bg-[#C9B6A3] hover:bg-[#4A3A30] text-white px-6 py-3 rounded-lg transition-colors"
               >
                 <Calendar className="w-5 h-5" />
                 Agendar pelo Doctoralia

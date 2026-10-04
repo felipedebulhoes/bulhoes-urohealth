@@ -36,7 +36,7 @@ export default function CampaignLayout({
   subtitle,
   description,
   campaignSlug,
-  accentColor = "#B87333",
+  accentColor = "#C9B6A3",
   metaTitle,
   metaDescription,
   ogImage,
@@ -119,7 +119,7 @@ export default function CampaignLayout({
       />
 
       {/* Header — minimal, focused on conversion */}
-      <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50 border-b border-white/5">
+      <header className="brand-campaign-header bg-[#F7F5F2] py-4 sticky top-0 z-50 border-b border-[#2E2520]/10">
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img
@@ -127,7 +127,7 @@ export default function CampaignLayout({
               decoding="async"
               src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
               alt="Dr. Felipe de Bulhões - Urologista"
-              className="h-10 lg:h-12 w-auto brightness-0 invert"
+              className="h-10 lg:h-12 w-auto"
             />
           </Link>
           <div className="flex items-center gap-2">
@@ -139,7 +139,7 @@ export default function CampaignLayout({
               }}
               className="hidden sm:block"
             >
-              <Button variant="outline" className="text-white border-[#25D366]/40 hover:bg-[#25D366]/10 bg-transparent text-sm">
+              <Button variant="outline" className="brand-campaign-outline text-[#2E2520] border-[#4A3A30]/35 hover:bg-[#4A3A30]/10 bg-transparent text-sm">
                 <Phone className="w-4 h-4 mr-1.5" />
                 WhatsApp
               </Button>
@@ -152,7 +152,7 @@ export default function CampaignLayout({
                 handleDoctoraliaClick();
               }}
             >
-              <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white text-sm">
+              <Button className="brand-espresso-primary-cta bg-[#C9B6A3] hover:bg-[#4A3A30] text-white text-sm">
                 <Calendar className="w-4 h-4 mr-1.5" />
                 Agendar
               </Button>

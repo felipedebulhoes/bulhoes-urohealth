@@ -49,8 +49,8 @@ export default function Home({ isBrandPalettePreview = false }: HomeProps) {
 
   return (
     <div
-      className={`min-h-screen flex flex-col${isBrandPalettePreview ? " brand-preview-espresso" : ""}`}
-      data-brand-palette={isBrandPalettePreview ? "espresso" : undefined}
+      className={`min-h-screen flex flex-col brand-site-home${isBrandPalettePreview ? " brand-preview-espresso" : ""}`}
+      data-brand-palette="espresso"
     >
       {isBrandPalettePreview && (
         <aside className="brand-preview-ribbon" aria-label="Aviso de prévia de identidade visual">
@@ -61,7 +61,7 @@ export default function Home({ isBrandPalettePreview = false }: HomeProps) {
       )}
       <Header previewMode={isBrandPalettePreview} />
       <main>
-        <HeroSection palette={isBrandPalettePreview ? "espresso" : "current"} />
+        <HeroSection palette="espresso" />
         <ScrollReveal>
           <DoctoraliaBadge />
         </ScrollReveal>

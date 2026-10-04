@@ -1,7 +1,7 @@
 /*
  * Design: Dr. Felipe de Bulhões — Identidade Visual
- * Hero: Split layout — text left, portrait right, Azul do Nilo background
- * Cores: #1C3D5A (fundo), #B87333 (cobre CTAs), #C4C4C4 (nuvem), #FEFEFE (branco)
+ * Hero: Split layout — text left, portrait right, marrom profundo e neutros da marca
+ * A tipografia atual é preservada; a paleta é aplicada por tokens globais.
  */
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -57,7 +57,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl text-white leading-[1.08] mb-4 font-serif">
               Dr. Felipe de
               <br />
-              <span className={isEspressoPalette ? "brand-espresso-hero-accent text-[#B87333]" : "text-[#B87333]"}>Bulhões</span>
+              <span className="brand-espresso-hero-accent text-[#B87333]">Bulhões</span>
             </h1>
 
             <p className="text-xl sm:text-2xl text-[#C4C4C4] font-light mb-6 tracking-wide" style={{ fontStyle: 'normal' }}>
@@ -86,7 +86,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
                 document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <Button className={`${isEspressoPalette ? "brand-espresso-hero-cta brand-espresso-primary-cta " : ""}bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-[#B87333]/30 transition-all hover:shadow-xl hover:shadow-[#B87333]/40 hover:-translate-y-0.5`}>
+              <Button className="brand-espresso-hero-cta brand-espresso-primary-cta bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-[#B87333]/30 transition-all hover:shadow-xl hover:shadow-[#B87333]/40 hover:-translate-y-0.5">
                 <CalendarCheck className="w-5 h-5 mr-2" />
                 Agendar Consulta
               </Button>
@@ -94,7 +94,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
             <a href="#sobre">
               <Button
                 variant="outline"
-                className={`${isEspressoPalette ? "brand-espresso-secondary-cta " : ""}border-white/20 text-white hover:bg-white/10 h-13 px-8 text-base font-medium rounded-lg`}
+                className="brand-espresso-secondary-cta border-white/20 text-white hover:bg-white/10 h-13 px-8 text-base font-medium rounded-lg"
               >
                 Conheça o Dr. Felipe
               </Button>
@@ -111,7 +111,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
             {stats.map((stat) => (
               <div key={stat.label} className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
-                  <stat.icon className={`${isEspressoPalette ? "brand-espresso-hero-icon " : ""}w-5 h-5 text-[#B87333]`} />
+                  <stat.icon className="brand-espresso-hero-icon w-5 h-5 text-[#B87333]" />
                 </div>
                 <div>
                   <p className="text-base font-bold text-white leading-tight" style={{ fontStyle: 'normal' }}>{stat.value}</p>

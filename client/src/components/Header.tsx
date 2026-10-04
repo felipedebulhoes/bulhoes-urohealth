@@ -59,18 +59,11 @@ interface HeaderProps {
 }
 
 export default function Header({ previewMode = false }: HeaderProps) {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [eduOpen, setEduOpen] = useState(false);
   const [mobileEduOpen, setMobileEduOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const usesSolidSurface = scrolled || previewMode;
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const usesSolidSurface = true;
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -231,7 +224,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
             onClick={() => trackCtaClick("agendar_consulta", "header_desktop")}
           >
             <Button
-              className={`${previewMode ? "brand-espresso-primary-cta " : ""}bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 rounded-md px-5 h-10 text-sm font-semibold shadow-md`}
+              className="brand-espresso-primary-cta bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 rounded-md px-5 h-10 text-sm font-semibold shadow-md"
             >
               <Phone className="w-4 h-4 mr-2" />
               Agendar Consulta

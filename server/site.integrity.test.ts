@@ -153,6 +153,8 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).not.toContain('.brand-preview-espresso h1');
     expect(styles).toContain("linear-gradient(122deg, var(--espresso-cafe) 0%, var(--espresso-deep) 52%, var(--espresso-cafe) 100%)");
     expect(styles).toContain(".brand-preview-espresso .brand-espresso-hero h1");
+    expect(styles).toContain("main > *:not(#inicio):nth-child(odd) section:not(#inicio)");
+    expect(styles).toContain("#especialidades > .absolute.bg-\\[\\#1C3D5A\\]");
     expect(routes).toContain('"/preview-paleta"');
     expect(server).toContain('req.path === "/preview-paleta"');
   });

@@ -633,6 +633,29 @@ html {
 }
 .brand-preview-espresso .brand-espresso-hero-cta:hover { background-color: var(--espresso-beige) !important; }
 
+/* Camadas de conteúdo: leitura leve entre blocos e marrom reservado aos destaques. */
+.brand-preview-espresso main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
+  background-color: var(--espresso-mist) !important;
+}
+
+.brand-preview-espresso main > *:not(#inicio):nth-child(even) section:not(#inicio) {
+  background-color: var(--espresso-off-white) !important;
+}
+
+.brand-preview-espresso #especialidades > .absolute.bg-\[\#1C3D5A\] {
+  background-color: var(--espresso-cafe) !important;
+}
+
+.brand-preview-espresso #especialidades .bg-white,
+.brand-preview-espresso #especialidades .bg-card {
+  background-color: var(--espresso-off-white) !important;
+}
+
+.brand-preview-espresso .card-hover:hover,
+.brand-preview-espresso .specialty-card-hover:hover {
+  box-shadow: 0 16px 40px rgb(74 58 48 / 0.16) !important;
+}
+
 .brand-preview-ribbon {
   position: fixed;
   z-index: 60;

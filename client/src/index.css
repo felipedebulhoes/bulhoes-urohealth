@@ -886,6 +886,38 @@ html {
 .brand-site #educativo .card-hover:hover > div:last-child,
 .brand-site #educativo .card-hover:focus-within > div:last-child { color: var(--espresso-beige) !important; }
 
+/* Ícones dos artigos: preserva a diferenciação cromática anterior, agora dentro
+   da paleta neutra da marca. O escopo em `main` evita alterar ícones de widgets. */
+.brand-site main svg[class*="text-blue-"],
+.brand-site main svg[class*="text-indigo-"],
+.brand-site main svg[class*="text-sky-"],
+.brand-site main svg[class*="text-cyan-"] {
+  color: #AFC1D0 !important;
+}
+.brand-site main svg[class*="text-amber-"],
+.brand-site main svg[class*="text-yellow-"],
+.brand-site main svg[class*="text-orange-"] {
+  color: #D9C58A !important;
+}
+.brand-site main svg[class*="text-red-"],
+.brand-site main svg[class*="text-rose-"],
+.brand-site main svg[class*="text-pink-"] {
+  color: #D8A5A5 !important;
+}
+.brand-site main svg[class*="text-green-"],
+.brand-site main svg[class*="text-emerald-"],
+.brand-site main svg[class*="text-lime-"] {
+  color: #B7C0A1 !important;
+}
+.brand-site main svg[class*="text-purple-"],
+.brand-site main svg[class*="text-violet-"],
+.brand-site main svg[class*="text-fuchsia-"] {
+  color: #C7A9C8 !important;
+}
+.brand-site main svg[class*="text-[#B87333]"] {
+  color: var(--espresso-beige) !important;
+}
+
 /* Especialidades: resposta tátil suave para ponteiro e teclado. */
 .brand-site #especialidades .specialty-card-hover {
   transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),

@@ -31,7 +31,7 @@ export default function VasectomiaSemBisturi() {
       campaignSlug="vasectomia-sem-bisturi"
       metaTitle="Vasectomia Sem Bisturi em SP e Campinas | Dr. Felipe de Bulhões"
       metaDescription="Vasectomia sem bisturi com o Dr. Felipe de Bulhões. Procedimento ambulatorial, sem cortes, recuperação rápida. Atendimento em São Paulo e Campinas."
-      ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-vasectomia-T3FhkNuSM9V9Q2UvMZ2pMm.png"
+      ogImage="https://felipebulhoes.com/manus-storage/og-banner-vasectomia-marrom-neutro_a6c66d72.png"
       medicalCondition="Vasectomia"
       trustBadges={["Formado Instituto D'Or", "Técnica No-Scalpel", "Atendimento Particular"]}
     >

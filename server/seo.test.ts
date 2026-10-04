@@ -109,7 +109,7 @@ describe("SEO URL consolidation", () => {
     const html = "<!doctype html><html><head></head><body></body></html>";
     const result = injectCanonicalMetadata(html, "/vasectomia-sem-bisturi");
 
-    expect(result).toContain("og-banner-vasectomia");
+    expect(result).toContain("og-banner-vasectomia-marrom-neutro");
     expect(result).toContain("Vasectomia Sem Bisturi em SP e Campinas");
     expect(result).toContain('<meta property="og:type" content="website" />');
   });

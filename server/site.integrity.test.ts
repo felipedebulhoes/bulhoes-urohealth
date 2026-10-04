@@ -174,6 +174,8 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain('header img[alt="Dr. Felipe de Bulhões - Urologista"]');
     expect(styles).toContain(".splash-video-container::after");
     expect(styles).toContain("mix-blend-mode: color");
+    expect(styles).toContain(".route-fallback");
+    expect(styles).toContain("routeLoadingOrbit");
     expect(header).toContain('className="brand-espresso-primary-cta');
     expect(hero).toContain("brand-espresso-secondary-cta");
     expect(campaign).toContain("brand-campaign-header");
@@ -182,6 +184,24 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain("background-image: linear-gradient(180deg");
     expect(routes).toContain('"/preview-paleta"');
     expect(server).toContain('req.path === "/preview-paleta"');
+  });
+
+  it("mantém banners sociais em marrom/neutro e loader inicial antes do React", () => {
+    const html = readFileSync(resolve(projectRoot, "client/index.html"), "utf8");
+    const metadata = readFileSync(resolve(projectRoot, "shared/pageMetadata.ts"), "utf8");
+    const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
+    const builder = readFileSync(resolve(projectRoot, "server/socialImageBuilder.ts"), "utf8");
+
+    expect(html).toContain("og-banner-homepage-marrom-neutro");
+    expect(html).toContain("initial-page-loader");
+    expect(html).toContain("#2E2520");
+    expect(metadata).toContain("og-banner-vasectomia-marrom-neutro");
+    expect(metadata).toContain("og-banner-andrologia-marrom-neutro");
+    expect(metadata).toContain("og-banner-estetica-intima-marrom-neutro");
+    expect(app).toContain("route-fallback");
+    expect(app).toContain("Preparando a página");
+    expect(builder).toContain("#F7F5F2");
+    expect(builder).not.toContain("#0E2945");
   });
 
   it("não mantém referências ao arquivo antigo do logotipo", () => {

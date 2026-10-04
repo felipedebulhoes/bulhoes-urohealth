@@ -2,8 +2,12 @@ import { isIndexableSitePath, normalizeSitePath } from "./siteRoutes";
 
 export const SITE_ORIGIN = "https://felipebulhoes.com";
 export const SITE_NAME = "Dr. Felipe de Bulhões | Urologista";
+const OG_IMAGE_HOME = `${SITE_ORIGIN}/manus-storage/og-banner-homepage-marrom-neutro_0212adec.png`;
+const OG_IMAGE_VASECTOMIA = `${SITE_ORIGIN}/manus-storage/og-banner-vasectomia-marrom-neutro_a6c66d72.png`;
+const OG_IMAGE_ANDROLOGIA = `${SITE_ORIGIN}/manus-storage/og-banner-andrologia-marrom-neutro_22695a0b.png`;
+const OG_IMAGE_ESTETICA_INTIMA = `${SITE_ORIGIN}/manus-storage/og-banner-estetica-intima-marrom-neutro_2f27a7fa.png`;
 export const DEFAULT_OG_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-homepage-Z3VUGp2G25ZCRLdiqZhFBW.png";
+  OG_IMAGE_HOME;
 
 export interface PageMetadata {
   title: string;
@@ -113,8 +117,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     title: "Vasectomia Sem Bisturi em SP e Campinas | Dr. Felipe de Bulhões",
     description:
       "Informações sobre vasectomia sem bisturi, avaliação individual e recuperação, com atendimento em São Paulo e Campinas.",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-vasectomia-T3FhkNuSM9V9Q2UvMZ2pMm.png",
+    image: OG_IMAGE_VASECTOMIA,
     imageAlt: "Vasectomia sem bisturi — Dr. Felipe de Bulhões",
     type: "website",
     breadcrumb: "Vasectomia sem bisturi",
@@ -123,8 +126,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     title: "Andrologia e Performance Masculina | Dr. Felipe de Bulhões",
     description:
       "Avaliação individualizada de saúde hormonal, sexual e reprodutiva masculina, com abordagem baseada em evidências.",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-andrologia-5MNza8WeePLcioXt5hqUNr.png",
+    image: OG_IMAGE_ANDROLOGIA,
     imageAlt: "Andrologia e saúde masculina — Dr. Felipe de Bulhões",
     type: "website",
     breadcrumb: "Andrologia e performance masculina",
@@ -133,8 +135,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     title: "Estética Íntima Masculina | Dr. Felipe de Bulhões",
     description:
       "Informações sobre estética íntima masculina, com avaliação discreta, segurança e expectativas realistas.",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/og-banner-estetica-intima-9jXDPQ5y9xybYDDczDfBQY.png",
+    image: OG_IMAGE_ESTETICA_INTIMA,
     imageAlt: "Estética íntima masculina — Dr. Felipe de Bulhões",
     type: "website",
     breadcrumb: "Estética íntima masculina",

@@ -18,21 +18,25 @@ export default function PageTransition() {
   useEffect(() => {
     // Skip on initial mount
     if (prevLocation.current === location) return;
-    
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const visibleDuration = reduceMotion ? 0 : 360;
+    const transitionDuration = reduceMotion ? 1 : 760;
+
     prevLocation.current = location;
     setIsTransitioning(true);
     setPhase("fadeIn");
 
-    // After fade-in completes, start fade-out
+    // O logo recebe uma pausa curta antes do fade-out, mantendo a transição
+    // perceptível sem bloquear a navegação entre páginas.
     timeoutRef.current = setTimeout(() => {
       setPhase("fadeOut");
-    }, 400);
+    }, visibleDuration);
 
-    // After fade-out completes, hide overlay
     const hideTimeout = setTimeout(() => {
       setIsTransitioning(false);
       setPhase("idle");
-    }, 800);
+    }, transitionDuration);
 
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);

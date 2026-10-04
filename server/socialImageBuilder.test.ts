@@ -30,6 +30,12 @@ describe("social image builder", () => {
     expect(svg).toContain("&quot;o que fazer&quot;");
     expect(svg).toContain("&amp; quando procurar ajuda");
     expect(svg).toContain("DR. FELIPE DE BULHÕES");
+    expect(svg).toContain("#2E2520");
+    expect(svg).toContain("#4A3A30");
+    expect(svg).toContain("#C9B6A3");
+    expect(svg).toContain("#F7F5F2");
+    expect(svg).not.toContain("#0E2945");
+    expect(svg).not.toContain("#B87333");
   });
 
   it("rasterizes the article SVG to the expected Open Graph dimensions", async () => {

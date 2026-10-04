@@ -88,30 +88,30 @@ export function renderArticleOgSvg(title: string): string {
   const lineHeight = fontSize + 16;
   const titleStartY = lines.length === 1 ? 320 : lines.length === 2 ? 270 : 230;
   const titleMarkup = lines
-    .map((line, index) => `<text x="92" y="${titleStartY + index * lineHeight}" font-family="Arial, sans-serif" font-size="${fontSize}" font-weight="700" fill="#FFFFFF">${escapeXml(line)}</text>`)
+    .map((line, index) => `<text x="92" y="${titleStartY + index * lineHeight}" font-family="Georgia, serif" font-size="${fontSize}" font-weight="400" fill="#F7F5F2">${escapeXml(line)}</text>`)
     .join("");
 
   return `<svg width="${OG_IMAGE_WIDTH}" height="${OG_IMAGE_HEIGHT}" viewBox="0 0 ${OG_IMAGE_WIDTH} ${OG_IMAGE_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0E2945" />
-      <stop offset="100%" stop-color="#173F65" />
+      <stop offset="0%" stop-color="#2E2520" />
+      <stop offset="100%" stop-color="#4A3A30" />
     </linearGradient>
     <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#B87333" />
-      <stop offset="100%" stop-color="#E6BC72" />
+      <stop offset="0%" stop-color="#A39484" />
+      <stop offset="100%" stop-color="#C9B6A3" />
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#background)" />
-  <circle cx="1060" cy="112" r="238" fill="none" stroke="#E6BC72" stroke-opacity="0.22" stroke-width="2" />
-  <circle cx="1060" cy="112" r="176" fill="none" stroke="#E6BC72" stroke-opacity="0.12" stroke-width="1" />
-  <path d="M818 612 C912 468, 1055 418, 1200 385" fill="none" stroke="#B87333" stroke-opacity="0.34" stroke-width="2" />
+  <circle cx="1060" cy="112" r="238" fill="none" stroke="#C9B6A3" stroke-opacity="0.22" stroke-width="2" />
+  <circle cx="1060" cy="112" r="176" fill="none" stroke="#A39484" stroke-opacity="0.24" stroke-width="1" />
+  <path d="M818 612 C912 468, 1055 418, 1200 385" fill="none" stroke="#C9B6A3" stroke-opacity="0.28" stroke-width="2" />
   <rect x="92" y="128" width="102" height="5" rx="2.5" fill="url(#gold)" />
-  <text x="92" y="180" font-family="Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="3" fill="#E6BC72">UROLOGIA • CONTEÚDO EDUCATIVO</text>
+  <text x="92" y="180" font-family="Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="3" fill="#C9B6A3">UROLOGIA • CONTEÚDO EDUCATIVO</text>
   ${titleMarkup}
-  <line x1="92" y1="502" x2="448" y2="502" stroke="#E6BC72" stroke-opacity="0.52" stroke-width="1" />
-  <text x="92" y="552" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">DR. FELIPE DE BULHÕES</text>
-  <text x="92" y="586" font-family="Arial, sans-serif" font-size="19" fill="#D9E4EE">Urologista • São Paulo e Campinas</text>
+  <line x1="92" y1="502" x2="448" y2="502" stroke="#C9B6A3" stroke-opacity="0.52" stroke-width="1" />
+  <text x="92" y="552" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#F7F5F2">DR. FELIPE DE BULHÕES</text>
+  <text x="92" y="586" font-family="Arial, sans-serif" font-size="19" fill="#E7E1DA">Urologista • São Paulo e Campinas</text>
   </svg>`;
 }
 

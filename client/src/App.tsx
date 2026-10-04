@@ -74,11 +74,33 @@ import SplashScreen from "./components/SplashScreen";
 import CookieBanner from "./components/CookieBanner";
 import GoogleTagManager from "./components/GoogleTagManager";
 
-// Minimal, layout-neutral fallback while a route chunk is being fetched.
-// Kept intentionally blank (no spinner) to avoid a flash on fast/local
-// connections; SplashScreen already covers the initial app load.
+// Feedback visual discreto enquanto uma rota carregada sob demanda é resolvida.
+// A composição repete os tons e o isotipo da identidade pública, evitando tela
+// vazia em conexões lentas sem competir com o conteúdo da página.
+function LoadingBrandMark() {
+  return (
+    <svg viewBox="0 0 1295.52 1888.96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path
+        fill="#C9B6A3"
+        d="M127.85 1888.96H.23v-711.2h127.62v711.2zM.23 697.32V0h1160.42v122.25c-99.57-59.5-295-95.38-413.23-95.38H127.84v670.46H.23z"
+      />
+      <path
+        fill="#F7F5F2"
+        d="M819.42 1888.79H289.59v-711.02H416.4v684.16h406.78c63.68-4.84 120.64-27.67 171.42-68.51 50.51-40.84 90.81-94.84 121.17-162.01 30.09-67.17 45.14-141.59 45.14-223 0-83.29-8.33-163.32-47.56-228.11C932.99 882.42-2.36 994.84-.3 1016.35l.22-157.52c0 14.4 747.77 74.61 850.63 22.36 53.03-26.94 95.97-46.35 128.96-105.76 33.11-59.62 49.71-127.62 49.71-203.66 0-65.56-12.36-125.2-37.35-178.94-24.99-53.74-58.57-96.99-100.49-129.23-41.91-32.24-88.39-48.36-139.17-48.36H415.09v483.53H288.28V188.37h480.13c72 0 137.56 16.93 196.94 50.78 59.11 33.85 106.4 79.26 141.86 135.95 35.47 56.69 53.2 122.79 53.2 198.28 0 83.56-24.63 157.51-73.89 221.93-49.35 64.55-113.38 122.09-192.1 150.03 76.04 12.09 144.24 27.9 204.2 70.02 60.14 42.24 107.74 95.38 142.94 159.33 35.2 64.21 52.66 133.8 52.66 209.57v48.63c0 84.1-21.22 160.4-64.21 229.45-42.72 69.05-100.22 124.13-172.22 164.97-72.27 40.84-152.07 61.53-239.66 61.53z"
+      />
+    </svg>
+  );
+}
+
 function RouteFallback() {
-  return null;
+  return (
+    <div className="route-fallback" role="status" aria-live="polite" aria-label="Carregando a página">
+      <div className="route-fallback__content">
+        <div className="route-fallback__mark"><LoadingBrandMark /></div>
+        <span className="route-fallback__label">Preparando a página</span>
+      </div>
+    </div>
+  );
 }
 
 function PublicHomeRoute() {

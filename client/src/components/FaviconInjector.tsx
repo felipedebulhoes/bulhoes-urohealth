@@ -64,9 +64,9 @@ export function FaviconInjector({ title, description }: FaviconInjectorProps) {
     if (!themeColor) {
       themeColor = document.createElement('meta');
       themeColor.setAttribute('name', 'theme-color');
-      themeColor.setAttribute('content', '#1C3D5A');
       document.head.appendChild(themeColor);
     }
+    themeColor.setAttribute('content', '#2E2520');
   }, []);
 
   return null; // Este componente não renderiza nada, apenas injeta meta tags

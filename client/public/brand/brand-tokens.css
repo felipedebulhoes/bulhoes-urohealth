@@ -1,0 +1,42 @@
+:root {
+  /* ============================================================
+     PALETA OFICIAL DR. FELIPE BULHÕES (Atualizada em 04/10/2026)
+     ============================================================ */
+  --brand-marrom-profundo: #2E2520;
+  --brand-marrom-profundo-rgb: 46, 37, 32;
+
+  --brand-cafe: #4A3A30;
+  --brand-cafe-rgb: 74, 58, 48;
+
+  --brand-taupe: #8D7B6B;
+  --brand-taupe-rgb: 141, 123, 107;
+
+  --brand-bege: #C9B6A3;
+  --brand-bege-rgb: 201, 182, 163;
+
+  --brand-cinza-claro: #E7E1DA;
+  --brand-cinza-claro-rgb: 231, 225, 218;
+
+  --brand-off-white: #F7F5F2;
+  --brand-off-white-rgb: 247, 245, 242;
+
+  /* Aplicações Funcionais */
+  --bg-primary: var(--brand-marrom-profundo);
+  --bg-secondary: var(--brand-cafe);
+  --bg-card: var(--brand-cafe);
+  --border-subtle: var(--brand-taupe);
+  --border-light: var(--brand-cinza-claro);
+  --accent-metallic: var(--brand-bege);
+  --text-primary: var(--brand-off-white);
+  --text-secondary: var(--brand-bege);
+  --text-muted: var(--brand-taupe);
+
+  /* Tipografia Oficial */
+  --font-title: 'Trajan Pro', 'Optima', 'Cinzel', serif;
+  --font-body: 'Montserrat', 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display-social: 'Callingstone', cursive, serif;
+
+  /* Espaçamentos e Rastreio */
+  --tracking-title-loose: 0.24em;
+  --tracking-subtitle: 0.32em;
+}

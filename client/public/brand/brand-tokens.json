@@ -1,0 +1,123 @@
+{
+  "brand": {
+    "name": "Dr. Felipe de Bulhões",
+    "specialty": "Urologista e Cirurgião Geral",
+    "subspecialty": "Estética Íntima e Saúde do Homem",
+    "slogan": "Saúde do Homem em Todas as Fases",
+    "crm": "CRM-SP 202.291",
+    "rqe": [
+      "146538",
+      "114019"
+    ],
+    "updated_at": "2026-10-04",
+    "color_palette_status": "Oficial Atualizada (Marrom Profundo & Bege)",
+    "full_name_rule": "SEMPRE 'Felipe de Bulhões' (com 'de'). NUNCA 'Felipe Bulhões'.",
+    "positioning_official": "Estética Íntima e Saúde do Homem",
+    "locations": {
+      "sao_paulo": [
+        {
+          "name": "Clinovi Paulista",
+          "type": "Consultório & Procedimentos",
+          "city": "São Paulo - SP"
+        },
+        {
+          "name": "Clinovi Pinheiros",
+          "type": "Consultório & Procedimentos",
+          "city": "São Paulo - SP"
+        }
+      ],
+      "campinas": [
+        {
+          "name": "Campinas Day Hospital",
+          "type": "Hospital-Dia & Cirurgias Ambulatoriais",
+          "city": "Campinas - SP"
+        },
+        {
+          "name": "Hospital São Luiz Campinas",
+          "type": "Centro Hospitalar de Alta Complexidade & Cirurgias",
+          "city": "Campinas - SP"
+        }
+      ]
+    }
+  },
+  "colors": {
+    "marrom_profundo": {
+      "name": "Marrom Profundo",
+      "hex": "#2E2520",
+      "rgb": "rgb(46, 37, 32)",
+      "cmyk": "cmyk(60%, 65%, 68%, 68%)",
+      "role": "Fundo institucional principal, solidez, autoridade e sofisticação clínica"
+    },
+    "cafe": {
+      "name": "Café",
+      "hex": "#4A3A30",
+      "rgb": "rgb(74, 58, 48)",
+      "cmyk": "cmyk(52%, 60%, 65%, 48%)",
+      "role": "Fundo secundário, profundidade quente, maturidade e equilíbrio"
+    },
+    "taupe": {
+      "name": "Taupe",
+      "hex": "#8D7B6B",
+      "rgb": "rgb(141, 123, 107)",
+      "cmyk": "cmyk(40%, 42%, 48%, 15%)",
+      "role": "Tom neutro intermediário, divisores, modernidade e discrição"
+    },
+    "bege": {
+      "name": "Bege (Bronze / Champagne)",
+      "hex": "#C9B6A3",
+      "rgb": "rgb(201, 182, 163)",
+      "cmyk": "cmyk(20%, 25%, 32%, 0%)",
+      "role": "Acento nobre, sofisticação, luminosidade, acolhimento e detalhes metálicos"
+    },
+    "cinza_claro": {
+      "name": "Cinza Claro",
+      "hex": "#E7E1DA",
+      "rgb": "rgb(231, 225, 218)",
+      "cmyk": "cmyk(8%, 7%, 10%, 0%)",
+      "role": "Linhas secundárias, neutralidade, clareza e equilíbrio"
+    },
+    "off_white": {
+      "name": "Off White",
+      "hex": "#F7F5F2",
+      "rgb": "rgb(247, 245, 242)",
+      "cmyk": "cmyk(2%, 2%, 3%, 0%)",
+      "role": "Tipografia clara sobre fundos escuros, ícones e minimalismo"
+    }
+  },
+  "typography": {
+    "display_titles": {
+      "family": "Trajan / Optima Serif",
+      "fallback": "Cinzel, Georgia, serif",
+      "case": "UPPERCASE",
+      "letter_spacing": "0.18em to 0.28em",
+      "usage": "Títulos institucionais, assinatura de marca, capas nobres"
+    },
+    "subtitles_body": {
+      "family": "Montserrat / Lato",
+      "fallback": "Helvetica Neue, Arial, sans-serif",
+      "weights": [
+        300,
+        400,
+        600
+      ],
+      "usage": "Subtítulos, corpo de texto, legendas técnicas, dados de contato e CRM"
+    },
+    "social_accent": {
+      "family": "Callingstone",
+      "usage": "Display de títulos cursivos/modernos para posts e carrosséis institucionais"
+    }
+  },
+  "materials_textures": {
+    "dark_paper": "Papel texturizado nobre escuro / couro marrom profundo",
+    "metallic_finish": "Hot stamping bronze / champagne fosco acetinado",
+    "natural_stone": "Mármore travertino / taupe para ambientação física"
+  },
+  "brand_pillars": [
+    "Ciência",
+    "Saúde",
+    "Discrição",
+    "Resultados",
+    "Masculinidade",
+    "Longevidade"
+  ]
+}

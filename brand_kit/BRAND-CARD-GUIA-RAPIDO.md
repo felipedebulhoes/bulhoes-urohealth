@@ -1,6 +1,6 @@
 # Brand Card — Dr. Felipe de Bulhões (Guia Rápido)
 
-> **Urologista e Cirurgião Geral | TCBC | Instituto D'Or**  
+> **Urologista e Cirurgião Geral | TCBC | IDOR-SP**  
 > CRM-SP 202.291 • RQE 146538 (Urologia) • RQE 114019 (Cirurgia Geral)  
 > Posicionamento: *Estética Íntima e Saúde do Homem | Saúde do Homem em Todas as Fases*
 

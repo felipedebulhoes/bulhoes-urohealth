@@ -191,7 +191,7 @@ Todas as comunicações públicas obedecem estritamente à **Resolução CFM nº
 As capas dos Destaques utilizam fundo uniforme **Marrom Profundo `#2E2520`**, linhas em **Off White `#F7F5F2`** e acento nobre em **Bege Bronze `#C9B6A3`**, centralizadas para corte circular:
 
 1. **Comece:** Bússola e direcionamento — Apresentação de boas-vindas, para quem é o perfil e visão geral.
-2. **Formação:** Livro aberto, bastão de Asclépio e louros — Residência no Instituto D'Or, TCBC, CRM/RQE e mestrado.
+2. **Formação:** Livro aberto, bastão de Asclépio e louros — Residência no IDOR-SP, TCBC, CRM/RQE e mestrado.
 3. **Urologia:** Silhueta anatômica sutil do rim e ureter — Cálculo renal, próstata, vasectomia e saúde urinária.
 4. **Saúde:** Silhueta masculina em escudo de proteção — Longevidade, prevenção, testosterona e vitalidade.
 5. **Íntima:** Mandala geométrica concêntrica refinada — Estética íntima masculina, discrição e indicação médica ética.

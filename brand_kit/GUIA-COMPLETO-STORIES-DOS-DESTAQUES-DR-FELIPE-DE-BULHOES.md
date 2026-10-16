@@ -66,8 +66,8 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
     * RQE 146538 (Urologia)
     * RQE 114019 (Cirurgia Geral)
 * **Story 2 (Foto/Vídeo de Bastidores no IDOR):**
-  * **Visual:** Foto ou registro institucional no Instituto D'Or em São Paulo.
-  * **Texto/Fala:** *"Minha residência médica em Urologia foi realizada no **Instituto D'Or de Ensino e Pesquisa (IDOR-SP)**, um dos maiores centros de tecnologia e rigor cirúrgico do país. Foram anos dedicados ao domínio exato da anatomia pélvica, genital e laparoscópica."*
+  * **Visual:** Foto ou registro institucional no Instituto D'Or de Ensino e Pesquisa em São Paulo.
+  * **Texto/Fala:** *"Minha residência médica em Urologia foi realizada no **Instituto D'Or de Ensino e Pesquisa em São Paulo (IDOR-SP)**, um dos maiores centros de tecnologia e rigor cirúrgico do país. Foram anos dedicados ao domínio exato da anatomia pélvica, genital e laparoscópica."*
 * **Story 3 (Card Selo TCBC & Mestrado Acadêmico):**
   * **Visual:** Selo do Colégio Brasileiro de Cirurgiões com detalhes em bronze.
   * **Texto/Fala:** *"Sou Membro Titular do **Colégio Brasileiro de Cirurgiões (TCBC)** — um reconhecimento concedido apenas a especialistas com rigorosa comprovação de prática e excelência operatória. Além disso, sigo em constante evolução científica atuando com o Dr. Daniel Moser, inclusive em projeto de Mestrado acadêmico."*

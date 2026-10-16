@@ -9,7 +9,7 @@
 
 ## 1. Identificação Institucional & Visão Geral
 
-O Dr. Felipe de Bulhões é médico formado pelo Instituto D'Or de Ensino e Pesquisa / Cirurgião Geral TCBC e Urologista, atuando no eixo São Paulo e Campinas. A marca pessoal une duas forças complementares:
+O Dr. Felipe de Bulhões é médico formado pelo Instituto D'Or de Ensino e Pesquisa em São Paulo / Cirurgião Geral TCBC e Urologista, atuando no eixo São Paulo e Campinas. A marca pessoal une duas forças complementares:
 1. **Rigor Científico e Cirúrgico:** Formação de excelência em cirurgia minimamente invasiva, urologia geral, andrologia, saúde prostática e cálculo renal.
 2. **Alta Performance e Cuidado Íntimo:** Posicionamento de vanguarda em estética íntima masculina, medicina sexual e longevidade do homem, oferecendo um ambiente estritamente confidencial, individualizado e sem tabus.
 

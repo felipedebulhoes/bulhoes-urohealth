@@ -124,5 +124,5 @@ A paleta de cores atua em conjunto rigoroso com o sistema tipográfico aprovado:
 ---
 
 *Documento homologado para o Dr. Felipe de Bulhões.*  
-*Instituto D'Or de Ensino e Pesquisa (IDOR-SP) • Colégio Brasileiro de Cirurgiões (TCBC)*  
+*Instituto D'Or de Ensino e Pesquisa em São Paulo (IDOR-SP) • Colégio Brasileiro de Cirurgiões (TCBC)*  
 *Conformidade rigorosa com a Resolução CFM nº 2.336/2023.*

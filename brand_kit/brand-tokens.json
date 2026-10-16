@@ -40,8 +40,15 @@
       ]
     },
     "institution_short": "IDOR-SP",
-    "institution": "Instituto D'Or de Ensino e Pesquisa (IDOR-SP)",
-    "bio_approved": "MÉDICO • TCBC | IDOR-SP\nCRM-SP 202.291 • RQE 146538 • 114019\nEstética Íntima e Saúde do Homem\nSão Paulo e Campinas | Agendamento privativo ↓"
+    "institution": "Instituto D'Or de Ensino e Pesquisa em São Paulo",
+    "bio_approved": "MÉDICO • TCBC | IDOR-SP\nCRM-SP 202.291 • RQE 146538 • 114019\nEstética Íntima e Saúde do Homem\nSão Paulo e Campinas | Agendamento privativo ↓",
+    "idor_rule": "Sempre que for escrever IDOR por extenso, escrever obrigatoriamente: 'Instituto D'Or de Ensino e Pesquisa em São Paulo'. Abreviação permitida apenas como 'IDOR-SP' em contextos de limitação severa de caracteres (ex.: bio curta do Instagram/Facebook).",
+    "affiliations": [
+      "Membro Titular do Colégio Brasileiro de Cirurgiões (TCBC)",
+      "Membro da SBU (Sociedade Brasileira de Urologia)",
+      "Membro da AUA (International Resident in Training)",
+      "Membro da EAU (Junior International Member of the European Association of Urology)"
+    ]
   },
   "colors": {
     "marrom_profundo": {

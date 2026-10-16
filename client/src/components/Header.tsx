@@ -56,9 +56,11 @@ const educationalLinks = [
 interface HeaderProps {
   /** Mantém as âncoras na própria página durante a avaliação visual privada. */
   previewMode?: boolean;
+  /** Destino do logotipo durante uma prévia visual privada. */
+  previewHref?: string;
 }
 
-export default function Header({ previewMode = false }: HeaderProps) {
+export default function Header({ previewMode = false, previewHref = "/preview-paleta" }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [eduOpen, setEduOpen] = useState(false);
   const [mobileEduOpen, setMobileEduOpen] = useState(false);
@@ -105,7 +107,7 @@ export default function Header({ previewMode = false }: HeaderProps) {
     >
       <div className="container flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
-          <a href={previewMode ? "/preview-paleta" : "/"} className="flex items-center gap-2 group">
+          <a href={previewMode ? previewHref : "/"} className="flex items-center gap-2 group">
           <img
             loading="eager"
             decoding="async"

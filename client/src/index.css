@@ -970,6 +970,143 @@ html {
 .brand-preview-ribbon strong { font-weight: 400; }
 .brand-preview-current-link { color: var(--espresso-mist); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2rem; }
 
+/* Prévia Quiet Luxury: uma direção editorial mais calma, sem trocar as fontes,
+   o conteúdo ou a identidade médica. Mantida em rota privada para comparação. */
+.quiet-luxury-preview {
+  --quiet-ink: #2B2420;
+  --quiet-walnut: #453830;
+  --quiet-bronze: #A88B6B;
+  --quiet-stone: #DED3C7;
+  --quiet-ivory: #F7F3ED;
+  --quiet-pearl: #FCFAF7;
+  background: var(--quiet-ivory);
+  color: var(--quiet-ink);
+}
+
+.quiet-luxury-preview .brand-preview-ribbon {
+  border-color: rgb(168 139 107 / 0.42);
+  border-radius: 2px;
+  background: rgb(43 36 32 / 0.96);
+  box-shadow: 0 12px 36px rgb(43 36 32 / 0.12);
+}
+.quiet-luxury-preview .brand-preview-ribbon > span {
+  border-radius: 1px;
+  background: var(--quiet-bronze);
+  color: var(--quiet-ink);
+}
+.quiet-luxury-preview header {
+  background: rgb(252 250 247 / 0.92) !important;
+  border-bottom-color: rgb(43 36 32 / 0.12) !important;
+  box-shadow: none !important;
+}
+.quiet-luxury-preview header [class*="text-[#1C3D5A]"] { color: var(--quiet-ink) !important; }
+.quiet-luxury-preview header [class*="hover:bg-[#1C3D5A]"] { --tw-bg-opacity: 1; background-color: rgb(222 211 199 / 0.42) !important; }
+.quiet-luxury-preview .brand-espresso-hero {
+  background:
+    linear-gradient(90deg, rgb(43 36 32 / 0.95) 0%, rgb(43 36 32 / 0.80) 45%, rgb(67 54 46 / 0.20) 100%),
+    linear-gradient(140deg, var(--quiet-walnut), var(--quiet-ink)) !important;
+}
+.quiet-luxury-preview .brand-espresso-hero::after {
+  opacity: 0.10;
+  background-image: linear-gradient(90deg, rgb(247 243 237 / 0.17) 1px, transparent 1px) !important;
+  background-size: 88px 100% !important;
+}
+.quiet-luxury-preview .brand-espresso-hero-accent,
+.quiet-luxury-preview .brand-espresso-hero-icon { color: #D7C5B0 !important; }
+.quiet-luxury-preview .brand-espresso-primary-cta,
+.quiet-luxury-preview .brand-espresso-hero-cta {
+  border-radius: 2px !important;
+  border-color: rgb(247 243 237 / 0.36) !important;
+  background: #D7C5B0 !important;
+  box-shadow: 0 8px 22px rgb(0 0 0 / 0.15) !important;
+  color: var(--quiet-ink) !important;
+}
+.quiet-luxury-preview .brand-espresso-primary-cta:hover,
+.quiet-luxury-preview .brand-espresso-hero-cta:hover {
+  background: #E6D9C9 !important;
+  box-shadow: 0 12px 26px rgb(0 0 0 / 0.18) !important;
+  transform: translateY(-1px) !important;
+}
+.quiet-luxury-preview .brand-espresso-secondary-cta {
+  border-radius: 2px !important;
+  border-color: rgb(247 243 237 / 0.42) !important;
+  background: rgb(247 243 237 / 0.04) !important;
+}
+.quiet-luxury-preview .brand-espresso-secondary-cta:hover { background: rgb(247 243 237 / 0.12) !important; }
+
+.quiet-luxury-preview main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
+  background-color: var(--quiet-ivory) !important;
+  background-image: none !important;
+}
+.quiet-luxury-preview main > *:not(#inicio):nth-child(even) section:not(#inicio) {
+  background-color: #EEE7DE !important;
+  background-image: none !important;
+}
+.quiet-luxury-preview .brand-stats-section {
+  background: linear-gradient(125deg, var(--quiet-walnut), var(--quiet-ink)) !important;
+}
+.quiet-luxury-preview .brand-events-panel {
+  border-color: rgb(168 139 107 / 0.35) !important;
+  background: var(--quiet-pearl) !important;
+  box-shadow: 0 12px 30px rgb(43 36 32 / 0.05);
+}
+.quiet-luxury-preview #especialidades > .absolute.bg-\[\#1C3D5A\] { background-color: var(--quiet-walnut) !important; }
+.quiet-luxury-preview #especialidades .specialty-card-hover {
+  border-color: rgb(247 243 237 / 0.18) !important;
+  border-radius: 3px !important;
+  background: rgb(247 243 237 / 0.055) !important;
+  box-shadow: none !important;
+}
+.quiet-luxury-preview #especialidades .specialty-card-hover:hover,
+.quiet-luxury-preview #especialidades .specialty-card-hover:focus-within {
+  border-color: rgb(215 197 176 / 0.72) !important;
+  background: rgb(247 243 237 / 0.12) !important;
+  box-shadow: 0 14px 28px rgb(0 0 0 / 0.14) !important;
+  transform: translateY(-3px) !important;
+}
+.quiet-luxury-preview #educativo .card-hover,
+.quiet-luxury-preview .testimonial-card-hover,
+.quiet-luxury-preview #blog .card-hover {
+  border-color: rgb(43 36 32 / 0.13) !important;
+  border-radius: 3px !important;
+  background: var(--quiet-pearl) !important;
+  box-shadow: 0 10px 24px rgb(43 36 32 / 0.055) !important;
+}
+.quiet-luxury-preview #educativo .card-hover > div:first-child {
+  background-color: rgb(222 211 199 / 0.62) !important;
+}
+.quiet-luxury-preview #educativo .card-hover:hover,
+.quiet-luxury-preview #educativo .card-hover:focus-within {
+  border-color: rgb(168 139 107 / 0.72) !important;
+  background: #FFFDF9 !important;
+  box-shadow: 0 18px 34px rgb(43 36 32 / 0.10) !important;
+  transform: translateY(-3px) !important;
+}
+.quiet-luxury-preview #educativo .card-hover:hover h3,
+.quiet-luxury-preview #educativo .card-hover:focus-within h3,
+.quiet-luxury-preview #educativo .card-hover:hover p,
+.quiet-luxury-preview #educativo .card-hover:focus-within p {
+  color: var(--quiet-ink) !important;
+}
+.quiet-luxury-preview #educativo .card-hover:hover > div:first-child,
+.quiet-luxury-preview #educativo .card-hover:focus-within > div:first-child {
+  background-color: rgb(222 211 199 / 0.80) !important;
+  color: inherit !important;
+}
+.quiet-luxury-preview .card-hover:hover,
+.quiet-luxury-preview .specialty-card-hover:hover { box-shadow: 0 16px 32px rgb(43 36 32 / 0.10) !important; }
+.quiet-luxury-preview [class*="rounded-xl"] { border-radius: 4px; }
+.quiet-luxury-preview [class*="rounded-lg"] { border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .quiet-luxury-preview .brand-espresso-primary-cta:hover,
+  .quiet-luxury-preview .brand-espresso-hero-cta:hover,
+  .quiet-luxury-preview #especialidades .specialty-card-hover:hover,
+  .quiet-luxury-preview #educativo .card-hover:hover {
+    transform: none !important;
+  }
+}
+
 @media (min-width: 641px) {
   .brand-preview-ribbon { top: 7rem; }
 }

@@ -128,8 +128,8 @@ describe("Integridade das páginas públicas", () => {
     expect(creator).not.toContain("globalThis.fetch(");
     expect(app).toContain('const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"))');
     expect(app).toContain('/admin/social-preview');
-    expect(app).toContain('!isInternalRoute && !isBrandPalettePreview && <GoogleTagManager />');
-    expect(app).toContain('!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && <SplashScreen />');
+    expect(app).toContain('!isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <GoogleTagManager />');
+    expect(app).toContain('!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <SplashScreen />');
     expect(server).toContain('req.path.startsWith("/admin/")');
   });
 
@@ -141,20 +141,27 @@ describe("Integridade das páginas públicas", () => {
     const campaign = readFileSync(resolve(projectRoot, "client/src/components/CampaignLayout.tsx"), "utf8");
     const educational = readFileSync(resolve(projectRoot, "client/src/components/EducationalLayout.tsx"), "utf8");
     const preview = readFileSync(resolve(projectRoot, "client/src/pages/BrandPalettePreview.tsx"), "utf8");
+    const quietLuxuryPreview = readFileSync(resolve(projectRoot, "client/src/pages/QuietLuxuryPreview.tsx"), "utf8");
     const styles = readFileSync(resolve(projectRoot, "client/src/index.css"), "utf8");
     const routes = readFileSync(resolve(projectRoot, "shared/siteRoutes.ts"), "utf8");
     const server = readFileSync(resolve(projectRoot, "server/_core/index.ts"), "utf8");
 
     expect(app).toContain('const BrandPalettePreview = lazy(() => import("./pages/BrandPalettePreview"))');
     expect(app).toContain('path={"/preview-paleta"}');
+    expect(app).toContain('const QuietLuxuryPreview = lazy(() => import("./pages/QuietLuxuryPreview"))');
+    expect(app).toContain('path={"/preview-quiet-luxury"}');
     expect(app).toContain('const isPublicBrandedRoute = !isPrototypeRoute && !isInternalRoute');
     expect(app).toContain('className={isPublicBrandedRoute ? "brand-site" : undefined}');
     expect(home).toContain('data-brand-palette="espresso"');
     expect(header).toContain("const usesSolidSurface = true");
     expect(home).toContain("brand-preview-ribbon");
     expect(preview).toContain("return <Home isBrandPalettePreview />");
+    expect(quietLuxuryPreview).toContain("return <Home isQuietLuxuryPreview />");
     expect(preview).not.toContain("fonts.googleapis.com");
     expect(styles).toContain(".brand-site");
+    expect(styles).toContain(".quiet-luxury-preview");
+    expect(styles).toContain("--quiet-ivory: #F7F3ED");
+    expect(styles).toContain("--quiet-bronze: #A88B6B");
     expect(styles).toContain("--espresso-deep: #2E2520");
     expect(styles).toContain("--espresso-taupe: #A39484");
     expect(styles).toContain("--espresso-off-white: #F7F5F2");
@@ -183,7 +190,9 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain("@media (max-width: 640px)");
     expect(styles).toContain("background-image: linear-gradient(180deg");
     expect(routes).toContain('"/preview-paleta"');
+    expect(routes).toContain('"/preview-quiet-luxury"');
     expect(server).toContain('req.path === "/preview-paleta"');
+    expect(server).toContain('req.path === "/preview-quiet-luxury"');
   });
 
   it("mantém banners sociais em marrom/neutro e loader inicial antes do React", () => {
@@ -363,7 +372,7 @@ describe("Integridade das páginas públicas", () => {
 
     expect(prototype.match(/<ScrollReveal threshold=\{0\.08\}>/g)?.length).toBeGreaterThanOrEqual(3);
     expect(reveal).toContain('matchMedia("(prefers-reduced-motion: reduce)")');
-    expect(app).toContain("!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && <SplashScreen />");
+    expect(app).toContain("!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <SplashScreen />");
   });
 
   it("oferece contato por e-mail sem campo clínico livre e com consentimento explícito", () => {

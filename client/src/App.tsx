@@ -49,6 +49,7 @@ const AdminLeads = lazy(() => import("./pages/AdminLeads"));
 const AdminKeywords = lazy(() => import("./pages/AdminKeywords"));
 const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"));
 const BrandPalettePreview = lazy(() => import("./pages/BrandPalettePreview"));
+const QuietLuxuryPreview = lazy(() => import("./pages/QuietLuxuryPreview"));
 const Consultorios = lazy(() => import("./pages/Consultorios"));
 const Contato = lazy(() => import("./pages/Contato"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
@@ -154,6 +155,7 @@ function Router() {
         <Route path={"/admin/keywords"} component={AdminKeywords} />
         <Route path={"/admin/social-preview"} component={AdminSocialPreview} />
         <Route path={"/preview-paleta"} component={BrandPalettePreview} />
+        <Route path={"/preview-quiet-luxury"} component={QuietLuxuryPreview} />
         <Route path={"/guia-glp1"} component={GuiaGLP1} />
         <Route path={"/vasectomia-sem-bisturi"} component={VasectomiaSemBisturi} />
         <Route path={"/andrologia-performance-masculina"} component={AndrologiaPerformance} />
@@ -182,14 +184,15 @@ function App() {
   const isPrototypeRoute = location.startsWith("/prototipo-jornada-paciente");
   const isInternalRoute = location.startsWith("/admin/");
   const isBrandPalettePreview = location === "/preview-paleta";
+  const isQuietLuxuryPreview = location === "/preview-quiet-luxury";
   const isPublicBrandedRoute = !isPrototypeRoute && !isInternalRoute;
 
   useEffect(() => {
-    if (isInternalRoute || isBrandPalettePreview) return;
+    if (isInternalRoute || isBrandPalettePreview || isQuietLuxuryPreview) return;
     captureAttribution();
     initGlobalContactListener();
     initEngagementTracking();
-  }, [isBrandPalettePreview, isInternalRoute]);
+  }, [isBrandPalettePreview, isInternalRoute, isQuietLuxuryPreview]);
 
   return (
     <ErrorBoundary>
@@ -197,15 +200,15 @@ function App() {
         defaultTheme="light"
         switchable={true}
       >
-        <TooltipProvider>
-          <Toaster />
-          <CanonicalTag />
-          {!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && <SplashScreen />}
-          {!isBrandPalettePreview && <PageTransition />}
-          <div className={isPublicBrandedRoute ? "brand-site" : undefined}>
-            <Router />
-            {!isInternalRoute && !isBrandPalettePreview && <CookieBanner />}
-            {!isInternalRoute && !isBrandPalettePreview && <GoogleTagManager />}
+          <TooltipProvider>
+            <Toaster />
+            <CanonicalTag />
+            {!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <SplashScreen />}
+            {!isBrandPalettePreview && !isQuietLuxuryPreview && <PageTransition />}
+            <div className={isPublicBrandedRoute ? "brand-site" : undefined}>
+              <Router />
+              {!isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <CookieBanner />}
+              {!isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <GoogleTagManager />}
           </div>
         </TooltipProvider>
       </ThemeProvider>

@@ -53,7 +53,8 @@ async function startServer() {
     if (
       req.path.startsWith("/prototipo-jornada-paciente") ||
       req.path.startsWith("/admin/") ||
-      req.path === "/preview-paleta"
+      req.path === "/preview-paleta" ||
+      req.path === "/preview-quiet-luxury"
     ) {
       res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
     }

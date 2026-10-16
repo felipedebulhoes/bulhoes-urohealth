@@ -36,30 +36,50 @@ const SocialShareButtons = lazy(() => import("@/components/SocialShareButtons"))
 interface HomeProps {
   /** Habilita uma apresentação privada da paleta marrom/neutra, sem publicar a mudança. */
   isBrandPalettePreview?: boolean;
+  /** Habilita uma apresentação privada Quiet Luxury, sem alterar o site público. */
+  isQuietLuxuryPreview?: boolean;
 }
 
-export default function Home({ isBrandPalettePreview = false }: HomeProps) {
+export default function Home({
+  isBrandPalettePreview = false,
+  isQuietLuxuryPreview = false,
+}: HomeProps) {
+  const isVisualPreview = isBrandPalettePreview || isQuietLuxuryPreview;
+  const previewTitle = isQuietLuxuryPreview
+    ? "Prévia Quiet Luxury"
+    : "Prévia da nova paleta";
+  const previewDescription = isQuietLuxuryPreview
+    ? "Prévia privada Quiet Luxury do site do Dr. Felipe de Bulhões."
+    : "Prévia privada da nova paleta visual do site do Dr. Felipe de Bulhões.";
+
   usePageMeta({
-    title: isBrandPalettePreview ? "Prévia da nova paleta" : "Urologista em São Paulo e Campinas",
-    description: isBrandPalettePreview
-      ? "Prévia privada da nova paleta visual do site do Dr. Felipe de Bulhões."
+    title: isVisualPreview ? previewTitle : "Urologista em São Paulo e Campinas",
+    description: isVisualPreview
+      ? previewDescription
       : "Dr. Felipe de Bulhões — Urologista em São Paulo e Campinas. Cirurgia robótica, endourologia e saúde do homem. Atendimento particular. Formado Instituto D'Or. Agende.",
-    canonical: isBrandPalettePreview ? undefined : "https://felipebulhoes.com/",
+    canonical: isVisualPreview ? undefined : "https://felipebulhoes.com/",
   });
 
   return (
     <div
-      className={`min-h-screen flex flex-col brand-site-home${isBrandPalettePreview ? " brand-preview-espresso" : ""}`}
+      className={`min-h-screen flex flex-col brand-site-home${isBrandPalettePreview ? " brand-preview-espresso" : ""}${isQuietLuxuryPreview ? " quiet-luxury-preview" : ""}`}
       data-brand-palette="espresso"
     >
-      {isBrandPalettePreview && (
+      {isVisualPreview && (
         <aside className="brand-preview-ribbon" aria-label="Aviso de prévia de identidade visual">
           <span>Prévia privada</span>
-          <strong>Nova paleta • Marrom profundo, café, taupe e off white</strong>
+          <strong>
+            {isQuietLuxuryPreview
+              ? "Quiet Luxury • Marfim, pedra, café e bronze fosco"
+              : "Nova paleta • Marrom profundo, café, taupe e off white"}
+          </strong>
           <a href="/" className="brand-preview-current-link">Ver site atual</a>
         </aside>
       )}
-      <Header previewMode={isBrandPalettePreview} />
+      <Header
+        previewMode={isVisualPreview}
+        previewHref={isQuietLuxuryPreview ? "/preview-quiet-luxury" : "/preview-paleta"}
+      />
       <main>
         <HeroSection palette="espresso" />
         <ScrollReveal>

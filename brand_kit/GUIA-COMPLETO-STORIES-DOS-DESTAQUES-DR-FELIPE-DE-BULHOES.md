@@ -70,7 +70,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
   * **Texto/Fala:** *"Minha residência médica em Urologia foi realizada no **Instituto D'Or de Ensino e Pesquisa em São Paulo (IDOR-SP)**, um dos maiores centros de tecnologia e rigor cirúrgico do país. Foram anos dedicados ao domínio exato da anatomia pélvica, genital e laparoscópica."*
 * **Story 3 (Card Selo TCBC & Mestrado Acadêmico):**
   * **Visual:** Selo do Colégio Brasileiro de Cirurgiões com detalhes em bronze.
-  * **Texto/Fala:** *"Sou Membro Titular do **Colégio Brasileiro de Cirurgiões (TCBC)** — um reconhecimento concedido apenas a especialistas com rigorosa comprovação de prática e excelência operatória. Além disso, sigo em constante evolução científica atuando com o Dr. Daniel Moser, inclusive em projeto de Mestrado acadêmico."*
+  * **Texto/Fala:** *"Sou Membro Titular do **Colégio Brasileiro de Cirurgiões (TCBC)** — um reconhecimento concedido apenas a especialistas com rigorosa comprovação de prática e excelência operatória. Além disso, sigo em constante evolução científica com projeto de Mestrado acadêmico em andamento na área urológica."*
 * **Story 4 (Vídeo Falando para a Câmera — O Significado para o Paciente):**
   * **Fala:** *"Por que compartilho isso com você? Porque quando o assunto envolve a sua anatomia íntima e a sua saúde, títulos e registros de especialista (RQEs) não são vaidade: são a sua garantia de segurança e responsabilidade médica."*
   * **Texto na tela:** Segurança e rigor científico em primeiro lugar.

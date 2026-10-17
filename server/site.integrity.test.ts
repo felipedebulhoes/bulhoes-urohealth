@@ -133,7 +133,7 @@ describe("Integridade das páginas públicas", () => {
     expect(server).toContain('req.path.startsWith("/admin/")');
   });
 
-  it("aplica a identidade marrom/neutra ao site público e preserva a prévia não indexável", () => {
+  it("aplica a identidade híbrida Quiet Luxury ao site público e preserva as prévias não indexáveis", () => {
     const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
     const home = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
     const header = readFileSync(resolve(projectRoot, "client/src/components/Header.tsx"), "utf8");
@@ -165,15 +165,20 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain("--espresso-deep: #2E2520");
     expect(styles).toContain("--espresso-taupe: #A39484");
     expect(styles).toContain("--espresso-off-white: #F7F5F2");
+    expect(styles).toContain("--hybrid-ink: #2B2420");
+    expect(styles).toContain("--hybrid-walnut: #453830");
+    expect(styles).toContain("--hybrid-bronze: #A88B6B");
+    expect(styles).toContain("--hybrid-surface: #F7F3ED");
     expect(styles).not.toContain('.brand-site h1');
-    expect(styles).toContain("linear-gradient(122deg, var(--espresso-cafe) 0%, var(--espresso-deep) 52%, var(--espresso-cafe) 100%)");
+    expect(styles).toContain("linear-gradient(90deg, rgb(43 36 32 / 0.96)");
     expect(styles).toContain(".brand-site .brand-espresso-hero h1");
     expect(styles).toContain("main > *:not(#inicio):nth-child(odd) section:not(#inicio)");
     expect(styles).toContain("#especialidades > .absolute.bg-\\[\\#1C3D5A\\]");
     expect(styles).toContain("#educativo .card-hover");
-    expect(styles).toContain("background-color: var(--espresso-taupe) !important");
+    expect(styles).toContain("background: var(--hybrid-card) !important");
+    expect(styles).toContain("transform: translateY(-3px)");
     expect(styles).toContain(".brand-espresso-primary-cta:active");
-    expect(styles).toContain("scale(0.975)");
+    expect(styles).toContain("scale(0.98)");
     expect(styles).toContain("prefers-reduced-motion: reduce");
     expect(styles).toContain("@media (min-width: 641px)");
     expect(styles).toContain(".brand-preview-ribbon { top: 7rem; }");

@@ -620,11 +620,10 @@ html {
   }
 }
 
-/* ===== Identidade pública — marrom/neutra =====
+/* ===== Identidade pública híbrida — marrom/neutra + Quiet Luxury =====
    Fonte: guia de marca fornecido em 04/10/2026.
-   Paleta: #2E2520, #4A3A30, #8D7B6B, #C9B6A3, #E7E1DA, #F7F5F2.
-   O taupe dos cards usa #A39484, uma variação mais clara do tom-base para
-   preservar leitura confortável com texto marrom profundo.
+   O marrom original permanece como assinatura; marfim, pedra e bronze fosco
+   tornam o conteúdo editorial mais leve. Tipografia e estrutura são preservadas.
    A camada é aplicada ao site público pela classe `.brand-site`;
    protótipo e áreas administrativas continuam isolados. */
 .brand-site {
@@ -634,6 +633,16 @@ html {
   --espresso-beige: #C9B6A3;
   --espresso-mist: #E7E1DA;
   --espresso-off-white: #F7F5F2;
+  --hybrid-ink: #2B2420;
+  --hybrid-walnut: #453830;
+  --hybrid-bronze: #A88B6B;
+  --hybrid-stone: #DED3C7;
+  --hybrid-surface: #F7F3ED;
+  --hybrid-surface-alt: #EEE7DE;
+  --hybrid-card: #FCFAF7;
+  --hybrid-border: rgb(43 36 32 / 0.13);
+  --hybrid-shadow: 0 10px 24px rgb(43 36 32 / 0.055);
+  --hybrid-shadow-hover: 0 18px 34px rgb(43 36 32 / 0.10);
   --primary: oklch(0.205 0.024 57.5);
   --primary-foreground: oklch(0.975 0.008 81.5);
   --accent: oklch(0.338 0.024 57.5);
@@ -653,8 +662,8 @@ html {
   --border: oklch(0.865 0.012 79.5);
   --input: oklch(0.865 0.012 79.5);
   --ring: oklch(0.515 0.027 60.5);
-  background: var(--espresso-off-white);
-  color: var(--espresso-deep);
+  background: var(--hybrid-surface);
+  color: var(--hybrid-ink);
 }
 
 .brand-site [class*="bg-[#1C3D5A]/"] { background-color: rgb(46 37 32 / 0.10) !important; }
@@ -702,9 +711,9 @@ html {
 }
 
 .brand-site .brand-campaign-header {
-  background-color: var(--espresso-off-white) !important;
-  color: var(--espresso-deep);
-  box-shadow: 0 8px 22px rgb(46 37 32 / 0.06);
+  background-color: var(--hybrid-card) !important;
+  color: var(--hybrid-ink);
+  box-shadow: 0 8px 22px rgb(43 36 32 / 0.05);
 }
 .brand-site .brand-campaign-header img[alt="Dr. Felipe de Bulhões - Urologista"] {
   filter: brightness(0) saturate(100%) !important;
@@ -714,11 +723,18 @@ html {
   color: var(--espresso-deep) !important;
 }
 
+.brand-site header {
+  background: rgb(252 250 247 / 0.94) !important;
+  border-bottom-color: var(--hybrid-border) !important;
+  box-shadow: none !important;
+}
+.brand-site header [class*="text-[#1C3D5A]"] { color: var(--hybrid-ink) !important; }
+.brand-site header [class*="hover:bg-[#1C3D5A]"] { background-color: rgb(222 211 199 / 0.42) !important; }
+
 .brand-site .brand-espresso-hero {
   background:
-    radial-gradient(circle at 78% 22%, rgb(231 225 218 / 0.18), transparent 24rem),
-    radial-gradient(circle at 12% 86%, rgb(201 182 163 / 0.20), transparent 28rem),
-    linear-gradient(122deg, var(--espresso-cafe) 0%, var(--espresso-deep) 52%, var(--espresso-cafe) 100%) !important;
+    linear-gradient(90deg, rgb(43 36 32 / 0.96) 0%, rgb(43 36 32 / 0.84) 52%, rgb(69 56 48 / 0.28) 100%),
+    linear-gradient(140deg, var(--hybrid-walnut), var(--hybrid-ink)) !important;
 }
 
 .brand-site .brand-espresso-hero::after {
@@ -727,11 +743,9 @@ html {
   z-index: 0;
   content: "";
   pointer-events: none;
-  opacity: 0.20;
-  background-image:
-    linear-gradient(45deg, rgb(247 245 242 / 0.025) 25%, transparent 25%),
-    linear-gradient(-45deg, rgb(247 245 242 / 0.025) 25%, transparent 25%);
-  background-size: 8px 8px;
+  opacity: 0.09;
+  background-image: linear-gradient(90deg, rgb(247 243 237 / 0.17) 1px, transparent 1px);
+  background-size: 88px 100%;
 }
 
 .brand-site .brand-espresso-hero > * { z-index: 1; }
@@ -742,13 +756,14 @@ html {
 .brand-site .brand-espresso-hero p { color: var(--espresso-off-white); }
 .brand-site .brand-espresso-primary-cta,
 .brand-site .brand-espresso-hero-cta {
-  background: linear-gradient(135deg, var(--espresso-beige), var(--espresso-taupe)) !important;
-  color: var(--espresso-deep) !important;
-  border: 1px solid rgb(247 245 242 / 0.30) !important;
-  box-shadow: 0 12px 28px rgb(0 0 0 / 0.30) !important;
+  border-radius: 3px !important;
+  background: #D7C5B0 !important;
+  color: var(--hybrid-ink) !important;
+  border: 1px solid rgb(247 243 237 / 0.36) !important;
+  box-shadow: 0 8px 22px rgb(0 0 0 / 0.15) !important;
 }
 
-/* CTAs primários: identidade taupe com resposta tátil curta e acessível. */
+/* CTAs primários: marfim e bronze fosco, com resposta tátil curta. */
 .brand-site .brand-espresso-primary-cta,
 .brand-site .brand-espresso-hero-cta {
   transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1),
@@ -758,14 +773,14 @@ html {
 }
 .brand-site .brand-espresso-primary-cta:hover,
 .brand-site .brand-espresso-hero-cta:hover {
-  background: linear-gradient(135deg, #D9CCBD, var(--espresso-beige)) !important;
-  box-shadow: 0 16px 30px rgb(46 37 32 / 0.28) !important;
-  transform: translateY(-2px) !important;
+  background: #E6D9C9 !important;
+  box-shadow: 0 12px 26px rgb(0 0 0 / 0.18) !important;
+  transform: translateY(-1px) !important;
 }
 .brand-site .brand-espresso-primary-cta:active,
 .brand-site .brand-espresso-hero-cta:active {
-  box-shadow: 0 5px 12px rgb(46 37 32 / 0.22) !important;
-  transform: translateY(1px) scale(0.975) !important;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.16) !important;
+  transform: translateY(1px) scale(0.98) !important;
 }
 .brand-site .brand-espresso-primary-cta:focus-visible,
 .brand-site .brand-espresso-hero-cta:focus-visible {
@@ -774,6 +789,7 @@ html {
 }
 
 .brand-site .brand-espresso-secondary-cta {
+  border-radius: 3px !important;
   border-color: rgb(201 182 163 / 0.78) !important;
   background-color: rgb(247 245 242 / 0.06) !important;
   color: var(--espresso-off-white) !important;
@@ -784,10 +800,10 @@ html {
 .brand-site .brand-espresso-secondary-cta:hover {
   border-color: var(--espresso-off-white) !important;
   background-color: rgb(247 245 242 / 0.15) !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-1px) !important;
 }
 .brand-site .brand-espresso-secondary-cta:active {
-  transform: translateY(1px) scale(0.975) !important;
+  transform: translateY(1px) scale(0.98) !important;
 }
 .brand-site .brand-espresso-secondary-cta:focus-visible {
   outline: 3px solid rgb(247 245 242 / 0.80);
@@ -802,15 +818,17 @@ html {
 
 /* Camadas de conteúdo: leitura leve entre blocos e marrom reservado aos destaques. */
 .brand-site main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
-  background-color: var(--espresso-mist) !important;
+  background-color: var(--hybrid-surface) !important;
+  background-image: none !important;
 }
 
 .brand-site main > *:not(#inicio):nth-child(even) section:not(#inicio) {
-  background-color: var(--espresso-off-white) !important;
+  background-color: var(--hybrid-surface-alt) !important;
+  background-image: none !important;
 }
 
 .brand-site #especialidades > .absolute.bg-\[\#1C3D5A\] {
-  background-color: var(--espresso-cafe) !important;
+  background-color: var(--hybrid-walnut) !important;
 }
 
 .brand-site #especialidades .bg-white,
@@ -821,7 +839,7 @@ html {
 /* Correções das seções revisadas no mobile: fundo escuro nunca recebe texto claro
    sobre uma camada clara, e os ícones mantêm acentos cromáticos individuais. */
 .brand-site .brand-stats-section {
-  background: linear-gradient(135deg, var(--espresso-cafe), var(--espresso-deep)) !important;
+  background: linear-gradient(125deg, var(--hybrid-walnut), var(--hybrid-ink)) !important;
   color: var(--espresso-off-white);
 }
 .brand-site .brand-stats-section h2,
@@ -833,12 +851,14 @@ html {
   color: rgb(247 245 242 / 0.72);
 }
 .brand-site .brand-events-panel {
-  color: var(--espresso-deep);
-  background: linear-gradient(110deg, var(--espresso-mist), var(--espresso-off-white)) !important;
+  color: var(--hybrid-ink);
+  border-color: rgb(168 139 107 / 0.35) !important;
+  background: var(--hybrid-card) !important;
+  box-shadow: 0 12px 30px rgb(43 36 32 / 0.05);
 }
 .brand-site .brand-events-panel h3,
 .brand-site .brand-events-panel li span:last-child {
-  color: var(--espresso-deep) !important;
+  color: var(--hybrid-ink) !important;
 }
 .brand-site .brand-playbook-section {
   color: var(--espresso-off-white);
@@ -846,45 +866,52 @@ html {
 
 .brand-site .card-hover:hover,
 .brand-site .specialty-card-hover:hover {
-  box-shadow: 0 16px 40px rgb(74 58 48 / 0.16) !important;
+  box-shadow: var(--hybrid-shadow-hover) !important;
 }
 
-/* Conteúdo educativo em taupe claro: uma camada sofisticada, com leitura AA. */
-.brand-site #educativo .card-hover {
-  border-color: rgb(46 37 32 / 0.18) !important;
-  background-color: var(--espresso-taupe) !important;
-  box-shadow: 0 8px 20px rgb(46 37 32 / 0.10);
-  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 280ms ease,
-    box-shadow 280ms ease,
-    background-color 280ms ease;
+/* Cards editoriais: superfícies marfim, borda fina e elevação breve. */
+.brand-site #educativo .card-hover,
+.brand-site .testimonial-card-hover,
+.brand-site #blog .card-hover {
+  border-color: var(--hybrid-border) !important;
+  border-radius: 4px !important;
+  background: var(--hybrid-card) !important;
+  box-shadow: var(--hybrid-shadow) !important;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
 }
 
 .brand-site #educativo .card-hover h3,
-.brand-site #educativo .card-hover p { color: var(--espresso-deep) !important; }
+.brand-site #educativo .card-hover p { color: var(--hybrid-ink) !important; }
 .brand-site #educativo .card-hover > div:first-child {
-  background-color: rgb(46 37 32 / 0.12) !important;
+  background-color: rgb(222 211 199 / 0.72) !important;
 }
-.brand-site #educativo .card-hover > div:last-child { color: var(--espresso-deep) !important; }
+.brand-site #educativo .card-hover > div:last-child { color: var(--hybrid-ink) !important; }
 
 .brand-site #educativo .card-hover:hover,
-.brand-site #educativo .card-hover:focus-within {
-  transform: translateY(-5px);
-  border-color: var(--espresso-beige) !important;
-  background-color: var(--espresso-cafe) !important;
-  box-shadow: 0 18px 32px rgb(46 37 32 / 0.25) !important;
+.brand-site #educativo .card-hover:focus-within,
+.brand-site .testimonial-card-hover:hover,
+.brand-site .testimonial-card-hover:focus-within,
+.brand-site #blog .card-hover:hover,
+.brand-site #blog .card-hover:focus-within {
+  transform: translateY(-3px);
+  border-color: rgb(168 139 107 / 0.72) !important;
+  background: #FFFDF9 !important;
+  box-shadow: var(--hybrid-shadow-hover) !important;
 }
 .brand-site #educativo .card-hover:hover h3,
-.brand-site #educativo .card-hover:focus-within h3 { color: var(--espresso-off-white) !important; }
+.brand-site #educativo .card-hover:focus-within h3 { color: var(--hybrid-ink) !important; }
 .brand-site #educativo .card-hover:hover p,
-.brand-site #educativo .card-hover:focus-within p { color: var(--espresso-mist) !important; }
+.brand-site #educativo .card-hover:focus-within p { color: var(--hybrid-ink) !important; }
 .brand-site #educativo .card-hover:hover > div:first-child,
 .brand-site #educativo .card-hover:focus-within > div:first-child {
-  background-color: rgb(247 245 242 / 0.14) !important;
-  color: var(--espresso-off-white) !important;
+  background-color: rgb(222 211 199 / 0.80) !important;
+  color: inherit !important;
 }
 .brand-site #educativo .card-hover:hover > div:last-child,
-.brand-site #educativo .card-hover:focus-within > div:last-child { color: var(--espresso-beige) !important; }
+.brand-site #educativo .card-hover:focus-within > div:last-child { color: var(--hybrid-ink) !important; }
 
 /* Ícones dos artigos: preserva a diferenciação cromática anterior, agora dentro
    da paleta neutra da marca. O escopo em `main` evita alterar ícones de widgets. */
@@ -920,17 +947,21 @@ html {
 
 /* Especialidades: resposta tátil suave para ponteiro e teclado. */
 .brand-site #especialidades .specialty-card-hover {
-  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 280ms ease,
-    box-shadow 280ms ease,
-    background-color 280ms ease;
+  border-color: rgb(247 243 237 / 0.18) !important;
+  border-radius: 4px !important;
+  background: rgb(247 243 237 / 0.055) !important;
+  box-shadow: none !important;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
 }
 .brand-site #especialidades .specialty-card-hover:hover,
 .brand-site #especialidades .specialty-card-hover:focus-within {
-  transform: translateY(-6px) scale(1.012);
-  border-color: var(--espresso-beige) !important;
-  background-color: rgb(201 182 163 / 0.18) !important;
-  box-shadow: 0 20px 34px rgb(46 37 32 / 0.32) !important;
+  transform: translateY(-3px);
+  border-color: rgb(215 197 176 / 0.72) !important;
+  background: rgb(247 243 237 / 0.12) !important;
+  box-shadow: 0 14px 28px rgb(0 0 0 / 0.14) !important;
 }
 .brand-site #especialidades .specialty-card-hover:hover > div:first-child,
 .brand-site #especialidades .specialty-card-hover:focus-within > div:first-child {
@@ -1124,10 +1155,10 @@ html {
     transition: background-color 360ms ease, box-shadow 360ms ease;
   }
   .brand-site main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
-    background-image: linear-gradient(180deg, rgb(247 245 242 / 0.40), transparent 68px);
+    background-image: linear-gradient(180deg, rgb(247 243 237 / 0.40), transparent 68px);
   }
   .brand-site main > *:not(#inicio):nth-child(even) section:not(#inicio) {
-    background-image: linear-gradient(180deg, rgb(201 182 163 / 0.16), transparent 68px);
+    background-image: linear-gradient(180deg, rgb(222 211 199 / 0.16), transparent 68px);
   }
   .brand-site #educativo .card-hover:hover,
   .brand-site #educativo .card-hover:focus-within,
@@ -1164,7 +1195,15 @@ html {
   .brand-site .brand-espresso-hero-cta:hover,
   .brand-site .brand-espresso-hero-cta:active,
   .brand-site .brand-espresso-secondary-cta:hover,
-  .brand-site .brand-espresso-secondary-cta:active {
+  .brand-site .brand-espresso-secondary-cta:active,
+  .brand-site #educativo .card-hover:hover,
+  .brand-site #educativo .card-hover:focus-within,
+  .brand-site .testimonial-card-hover:hover,
+  .brand-site .testimonial-card-hover:focus-within,
+  .brand-site #blog .card-hover:hover,
+  .brand-site #blog .card-hover:focus-within,
+  .brand-site #especialidades .specialty-card-hover:hover,
+  .brand-site #especialidades .specialty-card-hover:focus-within {
     transform: none !important;
   }
 }

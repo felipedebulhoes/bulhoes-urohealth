@@ -30,7 +30,7 @@ export default function PlaybookSection() {
   };
 
   return (
-    <section id="playbook" className="brand-playbook-section relative py-20 overflow-hidden">
+    <section id="playbook" className="brand-playbook-section brand-dark-surface relative py-20 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#4A3A30] via-[#2E2520] to-[#241B17]" />
       {/* Subtle pattern overlay */}

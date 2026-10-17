@@ -71,7 +71,7 @@ export default function SpecialtiesSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="especialidades" className="relative py-20 lg:py-28 overflow-hidden" ref={ref}>
+    <section id="especialidades" className="brand-dark-surface relative py-20 lg:py-28 overflow-hidden" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 bg-[#1C3D5A]" />
       <div className="absolute inset-0 opacity-[0.03]" style={{

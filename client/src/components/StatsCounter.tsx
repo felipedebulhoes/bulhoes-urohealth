@@ -145,7 +145,7 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
 
 export default function StatsCounter() {
   return (
-    <section id="numeros-compromisso" className="brand-stats-section py-20 bg-[#4A3A30] relative overflow-hidden">
+    <section id="numeros-compromisso" className="brand-stats-section brand-dark-surface py-20 bg-[#4A3A30] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

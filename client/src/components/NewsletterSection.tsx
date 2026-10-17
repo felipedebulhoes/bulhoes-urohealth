@@ -26,7 +26,7 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-r from-[#1C3D5A] to-[#0D3B66] relative overflow-hidden">
+    <section className="brand-dark-surface py-16 bg-gradient-to-r from-[#1C3D5A] to-[#0D3B66] relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#B87333]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#B87333]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -70,7 +70,7 @@ export default function NewsletterSection() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-white dark:bg-card/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10"
+                className="brand-dark-surface-panel backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10"
               >
                 <CheckCircle2 className="w-12 h-12 text-[#B87333] mx-auto mb-4" />
                 <h3 className="text-lg font-bold text-white mb-2">Cadastro Realizado!</h3>
@@ -79,7 +79,7 @@ export default function NewsletterSection() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white dark:bg-card/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+              <form onSubmit={handleSubmit} className="brand-dark-surface-panel backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <div className="space-y-3 mb-4">
                   <input
                     type="text"
@@ -100,7 +100,7 @@ export default function NewsletterSection() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#B87333] text-white rounded-lg font-semibold hover:bg-[#0B8278] transition-colors text-sm"
+                  className="schedule-cta schedule-cta--primary w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#B87333] text-white rounded-lg font-semibold hover:bg-[#0B8278] transition-colors text-sm"
                 >
                   <Send className="w-4 h-4" /> Quero Receber as Dicas
                 </button>

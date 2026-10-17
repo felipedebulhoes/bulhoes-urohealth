@@ -93,13 +93,13 @@ export default function CirurgiaRobotica() {
             </p>
 
             {/* Imagem ilustrativa */}
-            <div className="rounded-2xl overflow-hidden mb-8 shadow-lg">
+            <div className="educational-image-frame rounded-2xl mb-8">
               <img
                 loading="lazy"
                 decoding="async"
                 src="/manus-storage/cirurgia-robotica-hero_bc9b9ac6_4e08d375.webp"
                 alt="Sistema robótico Da Vinci Xi em sala cirúrgica — cirurgia robótica urológica"
-                className="w-full h-auto"
+                className="educational-inline-image w-full h-auto"
               />
               <p className="text-xs text-[#64748B] italic text-center py-2 bg-gray-50 dark:bg-card">
                 Sistema robótico Da Vinci Xi em sala cirúrgica — imagem ilustrativa

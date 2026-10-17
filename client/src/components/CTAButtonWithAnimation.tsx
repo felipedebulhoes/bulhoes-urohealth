@@ -1,10 +1,8 @@
 /**
- * Botão CTA com Animações de Hover e Transições Suaves
- * Melhora experiência do usuário e engajamento
+ * CTA reutilizável com feedback breve e acessível para ações de agendamento.
  */
-import { motion } from 'framer-motion';
-import { Loader2 } from 'lucide-react';
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { Loader2 } from "lucide-react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 
 interface CTAButtonWithAnimationProps {
   children: ReactNode;
@@ -12,12 +10,12 @@ interface CTAButtonWithAnimationProps {
   href?: string;
   target?: string;
   rel?: string;
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "outline";
+  size?: "sm" | "md" | "lg";
   icon?: ReactNode;
   className?: string;
   disabled?: boolean;
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
   loading?: boolean;
   loadingText?: ReactNode;
   autoLoading?: boolean;
@@ -29,14 +27,14 @@ export function CTAButtonWithAnimation({
   href,
   target,
   rel,
-  variant = 'primary',
-  size = 'md',
+  variant = "primary",
+  size = "md",
   icon,
-  className = '',
+  className = "",
   disabled = false,
-  type = 'button',
+  type = "button",
   loading = false,
-  loadingText = 'Abrindo…',
+  loadingText = "Abrindo…",
   autoLoading = true,
 }: CTAButtonWithAnimationProps) {
   const [internalLoading, setInternalLoading] = useState(false);
@@ -58,26 +56,27 @@ export function CTAButtonWithAnimation({
     beginFeedback();
     await onClick?.();
   };
-  // Estilos base por variante
+
   const variantStyles = {
-    primary: 'bg-[#B87333] hover:bg-[#A0632A] text-white',
-    secondary: 'bg-[#1C3D5A] hover:bg-[#152B42] text-white',
-    outline: 'border-2 border-[#B87333] text-[#B87333] hover:bg-[#B87333] hover:text-white',
+    primary: "bg-[#D7C5B0] text-[#2B2420] border border-[#F7F3ED]/50",
+    secondary: "bg-[#453830] text-[#F7F3ED] border border-[#D7C5B0]/35",
+    outline: "border border-[#D7C5B0]/65 text-white bg-transparent",
   };
 
-  // Estilos por tamanho
   const sizeStyles = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
+    sm: "px-4 py-2 text-sm",
+    md: "px-6 py-3 text-base",
+    lg: "px-8 py-4 text-lg",
   };
 
   const baseClasses = `
-    inline-flex items-center justify-center gap-2 rounded-lg font-medium
-    transition-all duration-300 ease-out
-    disabled:opacity-50 disabled:cursor-not-allowed aria-disabled:opacity-60
-    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B87333]
-    active:scale-[0.97]
+    schedule-cta schedule-cta--${variant}
+    inline-flex items-center justify-center gap-2 rounded-md font-semibold
+    motion-safe:transition-[color,background-color,border-color,box-shadow,transform,opacity]
+    motion-safe:duration-150 motion-safe:ease-[cubic-bezier(0.23,1,0.32,1)]
+    motion-reduce:transition-none
+    disabled:opacity-50 disabled:cursor-not-allowed aria-disabled:opacity-60 aria-busy:cursor-wait
+    focus-visible:outline-none
     ${variantStyles[variant]}
     ${sizeStyles[size]}
     ${className}
@@ -94,24 +93,9 @@ export function CTAButtonWithAnimation({
     </>
   );
 
-  // Animações
-  const buttonVariants = {
-    rest: {
-      scale: 1,
-      boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-    },
-    hover: {
-      scale: 1.05,
-      boxShadow: '0px 12px 20px rgba(184, 115, 51, 0.3)',
-    },
-    tap: {
-      scale: 0.98,
-    },
-  };
-
   if (href) {
     return (
-      <motion.a
+      <a
         href={href}
         target={target}
         rel={rel}
@@ -124,32 +108,23 @@ export function CTAButtonWithAnimation({
         }}
         aria-busy={isLoading}
         aria-disabled={disabled || isLoading}
+        tabIndex={disabled || isLoading ? -1 : undefined}
         className={baseClasses}
-        variants={buttonVariants}
-        initial="rest"
-        whileHover="hover"
-        whileTap="tap"
-        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       >
         {buttonContent}
-      </motion.a>
+      </a>
     );
   }
 
   return (
-    <motion.button
+    <button
       type={type}
       onClick={() => void handleClick()}
       disabled={disabled || isLoading}
       aria-busy={isLoading}
       className={baseClasses}
-      variants={buttonVariants}
-      initial="rest"
-      whileHover="hover"
-      whileTap="tap"
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
       {buttonContent}
-    </motion.button>
+    </button>
   );
 }

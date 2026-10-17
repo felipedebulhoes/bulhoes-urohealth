@@ -246,14 +246,14 @@ export default function IncontinenciaUrinaria() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden shadow-lg"
+            className="educational-image-frame rounded-2xl"
           >
             <img
               loading="lazy"
               decoding="async"
               src="/manus-storage/incontinencia-urinaria-tipos_62186555_abc470ac.webp"
               alt="Tipos de incontinência urinária masculina"
-              className="w-full h-auto"
+              className="educational-inline-image w-full h-auto"
             />
           </motion.div>
         </div>

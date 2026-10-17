@@ -226,7 +226,7 @@ export default function Header({ previewMode = false, previewHref = "/preview-pa
             onClick={() => trackCtaClick("agendar_consulta", "header_desktop")}
           >
             <Button
-              className="brand-espresso-primary-cta bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 rounded-md px-5 h-10 text-sm font-semibold shadow-md"
+              className="brand-espresso-primary-cta schedule-cta schedule-cta--primary bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 rounded-md px-5 h-10 text-sm font-semibold shadow-md"
             >
               <Phone className="w-4 h-4 mr-2" />
               Agendar Consulta
@@ -328,7 +328,7 @@ export default function Header({ previewMode = false, previewHref = "/preview-pa
                 }}
                 className="mt-2"
               >
-                <Button className={`${previewMode ? "brand-espresso-primary-cta " : ""}w-full bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5`}>
+                <Button className="brand-espresso-primary-cta schedule-cta schedule-cta--primary w-full bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5">
                   <Phone className="w-4 h-4 mr-2" />
                   Agendar Consulta
                 </Button>

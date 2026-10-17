@@ -908,13 +908,14 @@ html {
   opacity: 0.88;
 }
 
-/* Camadas de conteúdo: leitura leve entre blocos e marrom reservado aos destaques. */
-.brand-site main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
+/* Camadas de conteúdo: leitura leve entre blocos. Superfícies escuras usam uma
+   marca explícita para nunca receber fundo claro com texto branco. */
+.brand-site main > *:not(#inicio):nth-child(odd) section:not(#inicio):not(.brand-dark-surface) {
   background-color: var(--hybrid-surface) !important;
   background-image: none !important;
 }
 
-.brand-site main > *:not(#inicio):nth-child(even) section:not(#inicio) {
+.brand-site main > *:not(#inicio):nth-child(even) section:not(#inicio):not(.brand-dark-surface) {
   background-color: var(--hybrid-surface-alt) !important;
   background-image: none !important;
 }
@@ -954,6 +955,37 @@ html {
 }
 .brand-site .brand-playbook-section {
   color: var(--espresso-off-white);
+}
+
+/* Superfícies com conteúdo claro: café e tinta preservam o contraste, inclusive
+   quando o componente é adiado e reentra na alternância de seções da home. */
+.brand-site .brand-dark-surface {
+  color: var(--espresso-off-white);
+  background: linear-gradient(125deg, var(--hybrid-walnut), var(--hybrid-ink)) !important;
+}
+.brand-site .brand-dark-surface > [class*="bg-[#1C3D5A]"],
+.brand-site .brand-dark-surface > [class*="bg-[#0F3460]"],
+.brand-site .brand-dark-surface > [class*="bg-[#0D3B66]"] {
+  background-color: var(--hybrid-walnut) !important;
+}
+.brand-site .brand-dark-surface > [class*="bg-gradient"] {
+  background-image: linear-gradient(135deg, var(--hybrid-walnut), var(--hybrid-ink)) !important;
+}
+.brand-site .brand-dark-surface .text-white\/25,
+.brand-site .brand-dark-surface .text-white\/40,
+.brand-site .brand-dark-surface .text-white\/50 {
+  color: #DED3C7 !important;
+}
+.brand-site .brand-dark-surface .text-white\/60,
+.brand-site .brand-dark-surface .text-white\/70,
+.brand-site .brand-dark-surface .text-white\/80 {
+  color: #EEE4D9 !important;
+}
+.brand-site .brand-dark-surface .text-white\/90 { color: var(--espresso-off-white) !important; }
+.brand-site .brand-dark-surface-panel {
+  background: rgb(58 48 42 / 0.96) !important;
+  border-color: rgb(247 243 237 / 0.20) !important;
+  box-shadow: 0 14px 30px rgb(20 16 14 / 0.18);
 }
 
 .brand-site .card-hover:hover,
@@ -1033,6 +1065,117 @@ html {
 .dark .brand-site .editorial-cover-overlay {
   background: linear-gradient(180deg, rgb(43 36 32 / 0.22) 10%, rgb(20 16 14 / 0.86) 100%);
 }
+
+/* Imagens educativas: unidade editorial sutil, sem overlay, zoom ou alteração
+   diagnóstica da imagem. As classes são opt-in para nunca alcançar logo, avatar
+   ou mídia clínica que não tenha sido revisada. */
+.brand-site .educational-image-frame {
+  overflow: hidden;
+  border: 1px solid rgb(43 36 32 / 0.12);
+  border-radius: 4px;
+  background: var(--hybrid-card);
+  box-shadow: 0 10px 24px rgb(43 36 32 / 0.06);
+  transition: border-color 220ms ease, box-shadow 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.brand-site .educational-inline-image {
+  display: block;
+  border: 1px solid rgb(43 36 32 / 0.12);
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgb(43 36 32 / 0.06);
+  filter: saturate(0.94) contrast(1.01);
+  transition: filter 220ms ease, box-shadow 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.brand-site .educational-image-frame .educational-inline-image {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Agendamento: uma resposta tátil consistente, curta e acessível em qualquer rota. */
+.brand-site .schedule-cta {
+  transform-origin: center;
+  transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1),
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+.brand-site .schedule-cta--primary {
+  border-color: rgb(247 243 237 / 0.48) !important;
+  background: #D7C5B0 !important;
+  color: var(--hybrid-ink) !important;
+  box-shadow: 0 8px 20px rgb(43 36 32 / 0.14) !important;
+}
+.brand-site .schedule-cta--primary:hover {
+  background: #E6D9C9 !important;
+  box-shadow: 0 12px 24px rgb(43 36 32 / 0.18) !important;
+  transform: translateY(-1px) !important;
+}
+.brand-site .schedule-cta--secondary {
+  border-color: rgb(215 197 176 / 0.42) !important;
+  background: var(--hybrid-walnut) !important;
+  color: var(--espresso-off-white) !important;
+}
+.brand-site .schedule-cta--secondary:hover {
+  background: #5A4A40 !important;
+  transform: translateY(-1px) !important;
+}
+.brand-site .schedule-cta--outline {
+  border-color: rgb(247 243 237 / 0.54) !important;
+  background: rgb(247 243 237 / 0.04) !important;
+  color: var(--espresso-off-white) !important;
+}
+.brand-site .schedule-cta--outline:hover {
+  border-color: var(--espresso-off-white) !important;
+  background: rgb(247 243 237 / 0.13) !important;
+  transform: translateY(-1px) !important;
+}
+.brand-site .schedule-cta:active {
+  transform: translateY(1px) scale(0.98) !important;
+  box-shadow: 0 4px 10px rgb(43 36 32 / 0.14) !important;
+}
+.brand-site .schedule-cta:focus-visible,
+.brand-site .mobile-contact-action:focus-visible,
+.brand-site .schedule-banner-cta:focus-visible,
+.brand-site .whatsapp-floating-cta:focus-visible,
+.brand-site .campaign-whatsapp-cta:focus-visible {
+  outline: 2px solid var(--espresso-off-white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--hybrid-ink) !important;
+}
+.brand-site .whatsapp-floating-cta,
+.brand-site .campaign-whatsapp-cta {
+  border: 1px solid rgb(247 243 237 / 0.58);
+  box-shadow: 0 10px 22px rgb(43 36 32 / 0.18) !important;
+  transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 180ms ease,
+    box-shadow 180ms cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+.brand-site .whatsapp-floating-cta:hover,
+.brand-site .campaign-whatsapp-cta:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 14px 26px rgb(43 36 32 / 0.22) !important;
+}
+.brand-site .whatsapp-floating-cta:active,
+.brand-site .campaign-whatsapp-cta:active { transform: translateY(1px) scale(0.98) !important; }
+.brand-site .campaign-whatsapp-cta:focus-visible .campaign-whatsapp-tooltip { opacity: 1; }
+.brand-site .mobile-contact-action {
+  transition: background-color 180ms ease, transform 140ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.brand-site .mobile-contact-action:hover { background: rgb(237 228 217 / 0.70); }
+.brand-site .mobile-contact-action:active { transform: scale(0.98); }
+.brand-site .schedule-banner-cta {
+  border: 1px solid transparent;
+  transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1), background-color 180ms ease, box-shadow 180ms ease;
+}
+.brand-site .schedule-banner-cta--primary {
+  background: var(--hybrid-walnut);
+  border-color: rgb(43 36 32 / 0.20);
+  color: var(--espresso-off-white);
+}
+.brand-site .schedule-banner-cta--primary:hover { background: var(--hybrid-ink); transform: translateY(-1px); }
+.brand-site .schedule-banner-cta--whatsapp { background: #147A3F; }
+.brand-site .schedule-banner-cta--whatsapp:hover { background: #116637; transform: translateY(-1px); }
 
 /* Ícones dos artigos: preserva a diferenciação cromática anterior, agora dentro
    da paleta neutra da marca. O escopo em `main` evita alterar ícones de widgets. */
@@ -1275,10 +1418,10 @@ html {
       inset 0 -20px 26px -34px rgb(141 123 107 / 0.34);
     transition: background-color 360ms ease, box-shadow 360ms ease;
   }
-  .brand-site main > *:not(#inicio):nth-child(odd) section:not(#inicio) {
+  .brand-site main > *:not(#inicio):nth-child(odd) section:not(#inicio):not(.brand-dark-surface) {
     background-image: linear-gradient(180deg, rgb(247 243 237 / 0.40), transparent 68px);
   }
-  .brand-site main > *:not(#inicio):nth-child(even) section:not(#inicio) {
+  .brand-site main > *:not(#inicio):nth-child(even) section:not(#inicio):not(.brand-dark-surface) {
     background-image: linear-gradient(180deg, rgb(222 211 199 / 0.16), transparent 68px);
   }
   .brand-site #educativo .card-hover:hover,
@@ -1308,7 +1451,14 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .brand-site .brand-espresso-primary-cta,
   .brand-site .brand-espresso-hero-cta,
-  .brand-site .brand-espresso-secondary-cta {
+  .brand-site .brand-espresso-secondary-cta,
+  .brand-site .schedule-cta,
+  .brand-site .educational-image-frame,
+  .brand-site .educational-inline-image,
+  .brand-site .whatsapp-floating-cta,
+  .brand-site .campaign-whatsapp-cta,
+  .brand-site .mobile-contact-action,
+  .brand-site .schedule-banner-cta {
     transition: none !important;
   }
   .brand-site .brand-espresso-primary-cta:hover,
@@ -1317,6 +1467,14 @@ html {
   .brand-site .brand-espresso-hero-cta:active,
   .brand-site .brand-espresso-secondary-cta:hover,
   .brand-site .brand-espresso-secondary-cta:active,
+  .brand-site .schedule-cta:hover,
+  .brand-site .schedule-cta:active,
+  .brand-site .whatsapp-floating-cta:hover,
+  .brand-site .whatsapp-floating-cta:active,
+  .brand-site .campaign-whatsapp-cta:hover,
+  .brand-site .campaign-whatsapp-cta:active,
+  .brand-site .mobile-contact-action:active,
+  .brand-site .schedule-banner-cta:hover,
   .brand-site #educativo .card-hover:hover,
   .brand-site #educativo .card-hover:focus-within,
   .brand-site .testimonial-card-hover:hover,

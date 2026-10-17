@@ -353,14 +353,14 @@ export default function DoencaPeyronie() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden shadow-lg"
+            className="educational-image-frame rounded-2xl"
           >
             <img
               loading="lazy"
               decoding="async"
               src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/peyronie-hero-PZ4avfGPN6TNxMX6qqECke.webp"
               alt="Doença de Peyronie — tratamento e correção da curvatura peniana"
-              className="w-full h-auto"
+              className="educational-inline-image w-full h-auto"
             />
           </motion.div>
         </div>

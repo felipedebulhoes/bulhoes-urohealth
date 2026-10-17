@@ -3,7 +3,7 @@
  * Component: Schedule Banner — Banner discreto de agendamento que aparece após scroll
  */
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Calendar, X } from "lucide-react";
 import { trackWhatsAppClick, trackCtaClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
@@ -11,6 +11,7 @@ import { getWhatsAppUrl } from "@/lib/tracking";
 export default function ScheduleBanner() {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,16 +34,17 @@ export default function ScheduleBanner() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          initial={{ y: 100, opacity: 0 }}
+          initial={shouldReduceMotion ? false : { y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          exit={shouldReduceMotion ? { opacity: 0 } : { y: 12, opacity: 0 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.24, ease: [0.23, 1, 0.32, 1] }}
           className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-sm z-40"
         >
           <div className="bg-white dark:bg-card rounded-xl shadow-2xl border border-[#1C3D5A]/8 p-4 relative">
             <button
               onClick={handleDismiss}
-              className="absolute top-2 right-2 p-1 rounded-full hover:bg-[#1C3D5A]/5 transition-colors"
+              className="absolute top-2 right-2 p-1 rounded-full hover:bg-[#453830]/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A88B6B] focus-visible:ring-offset-2"
+              aria-label="Fechar lembrete de agendamento"
             >
               <X className="w-4 h-4 text-[#1C3D5A] dark:text-foreground/30" />
             </button>
@@ -64,9 +66,10 @@ export default function ScheduleBanner() {
                     onClick={(e) => {
                       e.preventDefault();
                       trackCtaClick("agendar_agora", "schedule_banner");
-                      document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
+                      const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+                      document.getElementById("agendamento")?.scrollIntoView({ behavior });
                     }}
-                    className="flex-1 text-center bg-[#B87333] hover:bg-[#8B5A2B] text-white text-xs font-semibold py-2 px-3 rounded-lg transition-colors"
+                    className="schedule-banner-cta schedule-banner-cta--primary flex-1 text-center text-xs font-semibold py-2 px-3 rounded-md focus-visible:outline-none"
                   >
                     Agendar Agora
                   </a>
@@ -75,7 +78,7 @@ export default function ScheduleBanner() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackWhatsAppClick("schedule_banner")}
-                    className="flex-1 text-center bg-[#25D366] hover:bg-[#20BD5A] text-white text-xs font-semibold py-2 px-3 rounded-lg transition-colors"
+                    className="schedule-banner-cta schedule-banner-cta--whatsapp flex-1 text-center text-white text-xs font-semibold py-2 px-3 rounded-md focus-visible:outline-none"
                   >
                     WhatsApp
                   </a>

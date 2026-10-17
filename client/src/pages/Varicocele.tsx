@@ -298,7 +298,7 @@ export default function Varicocele() {
                   decoding="async"
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/edu-varicocele-hero-599XQPQfjE7X8GrKiTmeJT.webp"
                   alt="Ilustração anatômica da varicocele"
-                  className="w-full rounded-xl"
+                  className="educational-inline-image w-full rounded-xl"
                 />
                 <p className="text-sm text-gray-500 dark:text-muted-foreground mt-3 text-center">
                   Comparação entre lado com varicocele (esquerdo) e lado normal (direito)

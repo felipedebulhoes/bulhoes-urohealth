@@ -58,7 +58,7 @@ export default function MobileBottomBar({ source = "homepage", whatsappMessage }
         <div className="flex justify-center">
           <button
             onClick={() => { setManualHide(false); setScrollHidden(false); }}
-            className="relative -mb-px bg-white border border-gray-200 border-b-0 rounded-t-lg px-3 py-1 shadow-sm active:bg-gray-50 transition-colors -translate-y-full"
+            className="relative -mb-px bg-white border border-gray-200 border-b-0 rounded-t-lg px-3 py-1 shadow-sm active:bg-gray-50 transition-colors -translate-y-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A88B6B] focus-visible:ring-offset-2"
             aria-label="Mostrar barra de contato"
           >
             <ChevronUp className="w-4 h-4 text-gray-500" />
@@ -71,7 +71,7 @@ export default function MobileBottomBar({ source = "homepage", whatsappMessage }
         {!manualHide && (
           <button
             onClick={() => setManualHide(true)}
-            className="absolute -top-6 left-1/2 -translate-x-1/2 bg-white border border-gray-200 border-b-0 rounded-t-lg px-3 py-0.5 shadow-sm active:bg-gray-50"
+            className="absolute -top-6 left-1/2 -translate-x-1/2 bg-white border border-gray-200 border-b-0 rounded-t-lg px-3 py-0.5 shadow-sm active:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A88B6B] focus-visible:ring-offset-2"
             aria-label="Ocultar barra de contato"
           >
             <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
@@ -85,9 +85,9 @@ export default function MobileBottomBar({ source = "homepage", whatsappMessage }
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppClick(`mobile_bar_${source}`)}
-            className="flex flex-col items-center gap-0.5 flex-1 py-1.5 px-2 rounded-lg active:bg-green-50 transition-colors"
+            className="mobile-contact-action mobile-contact-action--whatsapp flex flex-col items-center gap-0.5 flex-1 min-h-11 py-1.5 px-2 rounded-md active:bg-green-50 focus-visible:outline-none"
           >
-            <div className="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center shadow-sm">
+            <div className="w-9 h-9 rounded-full bg-[#147A3F] flex items-center justify-center shadow-sm">
               <MessageCircle className="w-5 h-5 text-white fill-white" />
             </div>
             <span className="text-[10px] font-medium text-gray-600">WhatsApp</span>
@@ -99,21 +99,21 @@ export default function MobileBottomBar({ source = "homepage", whatsappMessage }
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackDoctoraliaClick(`mobile_bar_${source}`)}
-            className="flex flex-col items-center gap-0.5 flex-1 py-1.5 px-2 rounded-lg active:bg-amber-50 transition-colors"
+            className="mobile-contact-action mobile-contact-action--schedule flex flex-col items-center gap-0.5 flex-1 min-h-11 py-1.5 px-2 rounded-md active:bg-[#EDE4D9] focus-visible:outline-none"
           >
-            <div className="w-11 h-11 rounded-full bg-[#B87333] flex items-center justify-center shadow-md -mt-3 border-2 border-white">
+            <div className="w-11 h-11 rounded-full bg-[#453830] flex items-center justify-center shadow-md -mt-3 border-2 border-white">
               <Calendar className="w-6 h-6 text-white" />
             </div>
-            <span className="text-[10px] font-semibold text-[#B87333]">Agendar</span>
+            <span className="text-[10px] font-semibold text-[#453830]">Agendar</span>
           </a>
 
           {/* Telefone */}
           <a
             href={phoneNumber}
             onClick={() => trackPhoneClick(`mobile_bar_${source}`)}
-            className="flex flex-col items-center gap-0.5 flex-1 py-1.5 px-2 rounded-lg active:bg-blue-50 transition-colors"
+            className="mobile-contact-action mobile-contact-action--phone flex flex-col items-center gap-0.5 flex-1 min-h-11 py-1.5 px-2 rounded-md active:bg-[#EDE4D9] focus-visible:outline-none"
           >
-            <div className="w-9 h-9 rounded-full bg-[#1C3D5A] flex items-center justify-center shadow-sm">
+            <div className="w-9 h-9 rounded-full bg-[#6E7F90] flex items-center justify-center shadow-sm">
               <Phone className="w-5 h-5 text-white" />
             </div>
             <span className="text-[10px] font-medium text-gray-600">Ligar</span>

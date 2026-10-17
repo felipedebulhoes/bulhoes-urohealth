@@ -4,7 +4,7 @@
  * Aceita mensagem personalizada por landing page para identificar origem
  * Inclui origem do tráfego (UTM) na mensagem quando disponível
  */
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Loader2, MessageCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { trackWhatsAppClick } from "@/lib/analytics";
@@ -42,6 +42,7 @@ function buildTrafficOriginTag(): string {
 export default function WhatsAppButton({ message, source }: WhatsAppButtonProps = {}) {
   const [isOpening, setIsOpening] = useState(false);
   const resetTimerRef = useRef<number | null>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => () => {
     if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
@@ -66,10 +67,10 @@ export default function WhatsAppButton({ message, source }: WhatsAppButtonProps 
       onClick={handleClick}
       disabled={isOpening}
       aria-busy={isOpening}
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 1.5, type: "spring", stiffness: 200 }}
-      className="hidden md:flex fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] rounded-full items-center justify-center shadow-lg shadow-green-900/30 transition-colors cursor-pointer"
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={shouldReduceMotion ? { duration: 0 } : { delay: 0.45, duration: 0.24, ease: [0.23, 1, 0.32, 1] }}
+      className="whatsapp-floating-cta hidden md:flex fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#147A3F] hover:bg-[#116637] rounded-full items-center justify-center shadow-lg shadow-green-900/30 cursor-pointer focus-visible:outline-none"
       aria-label={isOpening ? "Abrindo WhatsApp" : "Contato via WhatsApp"}
     >
       {isOpening ? (

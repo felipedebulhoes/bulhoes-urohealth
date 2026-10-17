@@ -43,7 +43,7 @@ export default function QuickContactForm() {
   };
 
   return (
-    <section id="formulario" className="py-16 lg:py-24 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] relative overflow-hidden">
+    <section id="formulario" className="brand-dark-surface py-16 lg:py-24 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#B87333] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
@@ -92,7 +92,7 @@ export default function QuickContactForm() {
             viewport={{ once: true }}
           >
             {submitted ? (
-              <div className="bg-white dark:bg-card/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
+              <div className="brand-dark-surface-panel backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
                 <CheckCircle className="w-12 h-12 text-[#B87333] mx-auto mb-4" />
                 <h3 className="text-xl text-white font-semibold mb-2">
                   Mensagem Enviada!
@@ -104,7 +104,7 @@ export default function QuickContactForm() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-white dark:bg-card/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10 space-y-4"
+                className="brand-dark-surface-panel backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10 space-y-4"
               >
                 {/* Nome */}
                 <div>
@@ -199,7 +199,7 @@ export default function QuickContactForm() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2 disabled:opacity-70"
+                  className="schedule-cta schedule-cta--primary w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2 disabled:opacity-70"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   {loading ? "Enviando..." : "Enviar pelo WhatsApp"}

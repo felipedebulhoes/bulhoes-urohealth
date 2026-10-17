@@ -14,7 +14,7 @@ export default function ContactSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contato" className="relative py-20 lg:py-28 overflow-hidden" ref={ref}>
+    <section id="contato" className="brand-dark-surface relative py-20 lg:py-28 overflow-hidden" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 bg-[#1C3D5A]" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#1C3D5A] via-[#0D2D4A] to-[#1C3D5A]" />
@@ -88,7 +88,7 @@ export default function ContactSection() {
                 document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white h-13 px-8 text-base font-semibold rounded-md shadow-lg shadow-amber-900/30">
+              <Button className="schedule-cta schedule-cta--primary bg-[#B87333] hover:bg-[#8B5A2B] text-white h-13 px-8 text-base font-semibold rounded-md shadow-lg shadow-amber-900/30">
                 <CalendarCheck className="w-5 h-5 mr-2" style={{ color: "#D9C58A" }} />
                 Agendar Consulta
               </Button>
@@ -101,7 +101,7 @@ export default function ContactSection() {
             >
               <Button
                 variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 h-13 px-8 text-base font-medium rounded-md"
+                className="schedule-cta schedule-cta--outline border-white/20 text-white hover:bg-white/10 h-13 px-8 text-base font-medium rounded-md"
               >
                 <MessageCircle className="w-5 h-5 mr-2 text-[#25D366]" />
                 WhatsApp

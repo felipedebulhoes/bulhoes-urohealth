@@ -3,7 +3,7 @@
  * Facilita agendamento rápido de consultas
  */
 import { MessageCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface WhatsAppFloatingButtonProps {
   phoneNumber?: string;
@@ -16,6 +16,8 @@ export function WhatsAppFloatingButton({
   message = 'Olá Dr. Felipe! Gostaria de agendar uma consulta.',
   campaignName = 'site',
 }: WhatsAppFloatingButtonProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -25,29 +27,23 @@ export function WhatsAppFloatingButton({
   return (
     <motion.button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full p-4 shadow-lg transition-all duration-300 flex items-center justify-center group"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      initial={{ opacity: 0, y: 20 }}
+      className="campaign-whatsapp-cta fixed bottom-6 right-6 z-50 bg-[#147A3F] hover:bg-[#116637] text-white rounded-full p-4 shadow-lg flex items-center justify-center group focus-visible:outline-none"
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5, duration: 0.3 }}
-      aria-label="Abrir WhatsApp"
+      transition={shouldReduceMotion ? { duration: 0 } : { delay: 0.35, duration: 0.24, ease: [0.23, 1, 0.32, 1] }}
+      aria-label={`Abrir WhatsApp para ${campaignName}`}
     >
-      <motion.div
-        animate={{ rotate: [0, 10, -10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
+      <span aria-hidden="true">
         <MessageCircle className="w-6 h-6" />
-      </motion.div>
+      </span>
       
       {/* Tooltip ao passar o mouse */}
-      <motion.div
-        className="absolute right-full mr-3 bg-[#1C3D5A] text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
-        initial={{ opacity: 0, x: 10 }}
-        whileHover={{ opacity: 1, x: 0 }}
+      <span
+        aria-hidden="true"
+        className="campaign-whatsapp-tooltip absolute right-full mr-3 bg-[#453830] text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 motion-safe:transition-[opacity,transform] motion-safe:duration-150 pointer-events-none"
       >
         Agende pelo WhatsApp
-      </motion.div>
+      </span>
     </motion.button>
   );
 }

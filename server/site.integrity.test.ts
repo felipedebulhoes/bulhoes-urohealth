@@ -140,6 +140,8 @@ describe("Integridade das páginas públicas", () => {
     const hero = readFileSync(resolve(projectRoot, "client/src/components/HeroSection.tsx"), "utf8");
     const campaign = readFileSync(resolve(projectRoot, "client/src/components/CampaignLayout.tsx"), "utf8");
     const educational = readFileSync(resolve(projectRoot, "client/src/components/EducationalLayout.tsx"), "utf8");
+    const blog = readFileSync(resolve(projectRoot, "client/src/pages/Blog.tsx"), "utf8");
+    const blogPost = readFileSync(resolve(projectRoot, "client/src/pages/BlogPost.tsx"), "utf8");
     const preview = readFileSync(resolve(projectRoot, "client/src/pages/BrandPalettePreview.tsx"), "utf8");
     const quietLuxuryPreview = readFileSync(resolve(projectRoot, "client/src/pages/QuietLuxuryPreview.tsx"), "utf8");
     const styles = readFileSync(resolve(projectRoot, "client/src/index.css"), "utf8");
@@ -169,6 +171,14 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain("--hybrid-walnut: #453830");
     expect(styles).toContain("--hybrid-bronze: #A88B6B");
     expect(styles).toContain("--hybrid-surface: #F7F3ED");
+    expect(styles).toContain(".dark .brand-site");
+    expect(styles).toContain("--hybrid-surface-alt: #332A25");
+    expect(styles).toContain(".dark .brand-site .blog-editorial-card > a > div");
+    expect(styles).toContain("Tipografia: a fonte autoral permanece");
+    expect(styles).toContain("text-transform: none !important");
+    expect(styles).toContain(".editorial-cover-overlay");
+    expect(styles).toContain(".blog-editorial-header img");
+    expect(styles).toContain(".blog-editorial-accent");
     expect(styles).not.toContain('.brand-site h1');
     expect(styles).toContain("linear-gradient(90deg, rgb(43 36 32 / 0.96)");
     expect(styles).toContain(".brand-site .brand-espresso-hero h1");
@@ -192,6 +202,13 @@ describe("Integridade das páginas públicas", () => {
     expect(hero).toContain("brand-espresso-secondary-cta");
     expect(campaign).toContain("brand-campaign-header");
     expect(educational).toContain("brand-campaign-header");
+    expect(blog).toContain("blog-editorial-card");
+    expect(blog).toContain("blog-editorial-header");
+    expect(blog).toContain("blog-editorial-accent");
+    expect(blog).toContain("editorial-cover-image");
+    expect(blogPost).toContain("blog-editorial-header");
+    expect(blogPost).toContain("editorial-cover-frame");
+    expect(blogPost).toContain("editorial-cover-overlay");
     expect(styles).toContain("@media (max-width: 640px)");
     expect(styles).toContain("background-image: linear-gradient(180deg");
     expect(routes).toContain('"/preview-paleta"');

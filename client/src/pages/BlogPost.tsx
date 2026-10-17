@@ -73,7 +73,7 @@ export default function BlogPost() {
       />
 
       {/* Header bar */}
-      <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
+      <header className="blog-editorial-header bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img
@@ -100,7 +100,7 @@ export default function BlogPost() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="relative h-[40vh] lg:h-[50vh] overflow-hidden"
+        className="relative h-[40vh] lg:h-[50vh] overflow-hidden editorial-cover-frame"
       >
         <img
           loading="eager"
@@ -108,9 +108,9 @@ export default function BlogPost() {
           decoding="async"
           src={post.coverImage}
           alt={post.title}
-          className="w-full h-full object-cover"
+          className="editorial-cover-image w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1C3D5A] via-[#1C3D5A]/40 to-transparent" />
+        <div className="editorial-cover-overlay" aria-hidden="true" />
 
         {/* Title overlay */}
         <div className="absolute bottom-0 left-0 right-0 pb-10 lg:pb-14">

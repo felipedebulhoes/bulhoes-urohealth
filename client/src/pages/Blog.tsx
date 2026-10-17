@@ -21,7 +21,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-white dark:bg-card">
       {/* Header bar */}
-      <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
+      <header className="blog-editorial-header bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img
@@ -42,7 +42,7 @@ export default function Blog() {
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] py-16 lg:py-24">
+      <section className="blog-editorial-hero bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] py-16 lg:py-24">
         <div className="container">
           <PageBreadcrumbs className="mb-7" />
           <motion.div
@@ -59,7 +59,7 @@ export default function Blog() {
             </div>
             <h1 className="text-3xl lg:text-5xl text-white leading-tight mb-4">
               Saúde Urológica
-              <span className="block text-[#D4884A]">em Evidência</span>
+              <span className="blog-editorial-accent block text-[#D4884A]">em Evidência</span>
             </h1>
             <p className="text-white/60 text-lg leading-relaxed">
               Artigos baseados em evidências científicas sobre prevenção, diagnóstico e
@@ -87,20 +87,21 @@ export default function Blog() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group"
+                className="group blog-editorial-card"
               >
                 <Link href={`/blog/${post.slug}`}>
                   <div className="bg-white dark:bg-card rounded-xl border border-[#1C3D5A]/8 overflow-hidden hover:shadow-xl hover:shadow-[#1C3D5A]/5 transition-all duration-500 hover:-translate-y-1">
                     {/* Cover image */}
-                    <div className="relative overflow-hidden aspect-[16/9]">
+                    <div className="relative overflow-hidden aspect-[16/9] editorial-cover-frame">
                       <img
                         loading="lazy"
                         decoding="async"
                         src={post.coverImage}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="editorial-cover-image w-full h-full object-cover"
                       />
-                      <div className="absolute top-4 left-4">
+                      <div className="editorial-cover-overlay" aria-hidden="true" />
+                      <div className="absolute top-4 left-4 z-10">
                         <span className="bg-[#B87333] text-white text-xs font-semibold px-3 py-1.5 rounded-md">
                           {post.category}
                         </span>

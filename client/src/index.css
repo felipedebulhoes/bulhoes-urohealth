@@ -666,6 +666,74 @@ html {
   color: var(--hybrid-ink);
 }
 
+/* Modo escuro: mantém o mesmo vocabulário marrom/marfim, sem retornar ao azul. */
+.dark .brand-site {
+  --hybrid-surface: #2B2420;
+  --hybrid-surface-alt: #332A25;
+  --hybrid-card: #3A302A;
+  --hybrid-border: rgb(247 243 237 / 0.14);
+  --hybrid-shadow: 0 10px 26px rgb(0 0 0 / 0.18);
+  --hybrid-shadow-hover: 0 18px 36px rgb(0 0 0 / 0.28);
+  --primary: oklch(0.820 0.035 74);
+  --primary-foreground: oklch(0.200 0.018 58);
+  --accent: oklch(0.760 0.050 72);
+  --accent-foreground: oklch(0.200 0.018 58);
+  --copper: oklch(0.760 0.050 72);
+  --copper-foreground: oklch(0.200 0.018 58);
+  --background: oklch(0.200 0.018 58);
+  --foreground: oklch(0.975 0.008 81.5);
+  --card: oklch(0.255 0.018 58);
+  --card-foreground: oklch(0.975 0.008 81.5);
+  --popover: oklch(0.255 0.018 58);
+  --popover-foreground: oklch(0.975 0.008 81.5);
+  --secondary: oklch(0.310 0.018 58);
+  --secondary-foreground: oklch(0.975 0.008 81.5);
+  --muted: oklch(0.310 0.018 58);
+  --muted-foreground: oklch(0.790 0.020 76);
+  --border: oklch(0.390 0.018 58);
+  --input: oklch(0.390 0.018 58);
+  --ring: oklch(0.760 0.050 72);
+  background: var(--hybrid-surface);
+  color: var(--espresso-off-white);
+}
+
+.dark .brand-site [class*="bg-[#F7F8F8]"] { background-color: var(--hybrid-surface-alt) !important; }
+.dark .brand-site [class*="text-[#1C3D5A]"] { color: var(--espresso-off-white) !important; }
+.dark .brand-site header {
+  background: rgb(43 36 32 / 0.96) !important;
+  border-bottom-color: rgb(247 243 237 / 0.14) !important;
+}
+.dark .brand-site header img[alt="Dr. Felipe de Bulhões - Urologista"],
+.dark .brand-site .brand-campaign-header img[alt="Dr. Felipe de Bulhões - Urologista"] {
+  filter: brightness(0) invert(1) sepia(0.16) !important;
+  opacity: 0.94;
+}
+.dark .brand-site .brand-campaign-header {
+  background: var(--hybrid-card) !important;
+  color: var(--espresso-off-white);
+}
+.dark .brand-site #educativo .card-hover h3,
+.dark .brand-site #educativo .card-hover > div:last-child {
+  color: var(--espresso-off-white) !important;
+}
+.dark .brand-site #educativo .card-hover p { color: rgb(247 243 237 / 0.74) !important; }
+.dark .brand-site .blog-editorial-card > a > div {
+  background: var(--hybrid-card) !important;
+  border-color: rgb(247 243 237 / 0.14) !important;
+}
+.dark .brand-site .blog-editorial-card h2 { color: var(--espresso-off-white) !important; }
+.dark .brand-site .blog-editorial-card p,
+.dark .brand-site .blog-editorial-card [class*="text-[#1C3D5A]"] { color: rgb(247 243 237 / 0.72) !important; }
+.dark .brand-site .blog-editorial-card [class*="text-[#B87333]"] { color: #D7C5B0 !important; }
+.dark .brand-site #educativo .card-hover:hover,
+.dark .brand-site #educativo .card-hover:focus-within,
+.dark .brand-site .testimonial-card-hover:hover,
+.dark .brand-site .testimonial-card-hover:focus-within,
+.dark .brand-site #blog .card-hover:hover,
+.dark .brand-site #blog .card-hover:focus-within {
+  background: #463930 !important;
+}
+
 .brand-site [class*="bg-[#1C3D5A]/"] { background-color: rgb(46 37 32 / 0.10) !important; }
 .brand-site [class*="bg-[#1C3D5A]"]:not([class*="/"]) { background-color: var(--espresso-deep) !important; }
 .brand-site [class*="text-[#1C3D5A]"] { color: var(--espresso-deep) !important; }
@@ -730,6 +798,30 @@ html {
 }
 .brand-site header [class*="text-[#1C3D5A]"] { color: var(--hybrid-ink) !important; }
 .brand-site header [class*="hover:bg-[#1C3D5A]"] { background-color: rgb(222 211 199 / 0.42) !important; }
+.brand-site .blog-editorial-header img[alt="Dr. Felipe de Bulhões - Urologista"] {
+  filter: brightness(0) invert(1) sepia(0.14) !important;
+  opacity: 0.94;
+}
+.brand-site .blog-editorial-accent { color: #D7C5B0 !important; }
+.brand-site .blog-editorial-hero .h-px { background-color: #D7C5B0 !important; }
+
+/* Tipografia: a fonte autoral permanece; o ajuste está no ritmo editorial. */
+.brand-site .brand-espresso-hero h1 {
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.brand-site main :is(h1, h2) {
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  line-height: 1.14;
+  text-wrap: balance;
+}
+.brand-site main .text-xs.uppercase {
+  font-weight: 500;
+  letter-spacing: 0.11em !important;
+  text-transform: none !important;
+}
 
 .brand-site .brand-espresso-hero {
   background:
@@ -912,6 +1004,35 @@ html {
 }
 .brand-site #educativo .card-hover:hover > div:last-child,
 .brand-site #educativo .card-hover:focus-within > div:last-child { color: var(--hybrid-ink) !important; }
+
+.brand-site #educativo .card-hover:focus-within,
+.brand-site .testimonial-card-hover:focus-within,
+.brand-site #blog .card-hover:focus-within,
+.brand-site #especialidades .specialty-card-hover:focus-within {
+  outline: 2px solid var(--hybrid-bronze);
+  outline-offset: 4px;
+}
+
+/* Capas editoriais: suaviza saturação e dá unidade à fotografia sem ocultá-la. */
+.brand-site .editorial-cover-frame { background: var(--hybrid-walnut); }
+.brand-site .editorial-cover-image {
+  filter: saturate(0.78) sepia(0.10) contrast(1.02) brightness(0.92);
+  transition: transform 420ms cubic-bezier(0.23, 1, 0.32, 1), filter 320ms ease;
+}
+.brand-site .editorial-cover-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(43 36 32 / 0.05) 10%, rgb(43 36 32 / 0.78) 100%);
+}
+.brand-site .blog-editorial-card:hover .editorial-cover-image,
+.brand-site .blog-editorial-card:focus-within .editorial-cover-image {
+  filter: saturate(0.88) sepia(0.08) contrast(1.03) brightness(0.96);
+  transform: scale(1.035);
+}
+.dark .brand-site .editorial-cover-overlay {
+  background: linear-gradient(180deg, rgb(43 36 32 / 0.22) 10%, rgb(20 16 14 / 0.86) 100%);
+}
 
 /* Ícones dos artigos: preserva a diferenciação cromática anterior, agora dentro
    da paleta neutra da marca. O escopo em `main` evita alterar ícones de widgets. */

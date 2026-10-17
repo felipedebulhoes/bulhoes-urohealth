@@ -169,7 +169,7 @@ export default function Contato() {
       </section>
 
       {/* Contact Channels */}
-      <section className="py-16 lg:py-20">
+      <section className="mobile-form-section py-16 lg:py-20">
         <div className="container max-w-5xl">
           <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground mb-8">Canais de Atendimento</h2>
           <div className="grid sm:grid-cols-2 gap-4 mb-12">
@@ -294,7 +294,7 @@ export default function Contato() {
 
             {/* Right — Form */}
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.7 }}>
-              <div className="bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] rounded-2xl p-6 lg:p-8">
+              <div className="mobile-compact-form bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] rounded-2xl p-6 lg:p-8">
                 <h3 className="text-lg font-semibold text-white mb-1">Solicite um Contato</h3>
                 <p className="text-white/40 text-sm mb-6">Preencha o formulário e enviaremos sua mensagem pelo WhatsApp.</p>
 
@@ -305,13 +305,14 @@ export default function Contato() {
                     <p className="text-white/50 text-sm">Você será redirecionado para o WhatsApp.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="mobile-compact-form space-y-4">
                     {/* Nome */}
                     <div>
-                      <label className="text-white/70 text-xs font-medium mb-1.5 block">Nome completo *</label>
+                      <label htmlFor="contact-name" className="text-white/70 text-xs font-medium mb-1.5 block">Nome completo *</label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                         <input
+                          id="contact-name"
                           type="text"
                           required
                           value={formData.name}
@@ -323,10 +324,11 @@ export default function Contato() {
                     </div>
                     {/* WhatsApp */}
                     <div>
-                      <label className="text-white/70 text-xs font-medium mb-1.5 block">WhatsApp *</label>
+                      <label htmlFor="contact-phone" className="text-white/70 text-xs font-medium mb-1.5 block">WhatsApp *</label>
                       <div className="relative">
                         <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                         <input
+                          id="contact-phone"
                           type="tel"
                           required
                           value={formData.phone}
@@ -338,10 +340,11 @@ export default function Contato() {
                     </div>
                     {/* E-mail */}
                     <div>
-                      <label className="text-white/70 text-xs font-medium mb-1.5 block">E-mail *</label>
+                      <label htmlFor="contact-email" className="text-white/70 text-xs font-medium mb-1.5 block">E-mail *</label>
                       <div className="relative">
                         <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                         <input
+                          id="contact-email"
                           type="email"
                           required
                           value={formData.email}
@@ -353,10 +356,11 @@ export default function Contato() {
                     </div>
                     {/* Mensagem */}
                     <div>
-                      <label className="text-white/70 text-xs font-medium mb-1.5 block">Mensagem</label>
+                      <label htmlFor="contact-message" className="text-white/70 text-xs font-medium mb-1.5 block">Mensagem</label>
                       <div className="relative">
                         <FileText className="absolute left-3 top-3.5 w-4 h-4 text-white/30" />
                         <textarea
+                          id="contact-message"
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                           placeholder="Como podemos ajudar? (opcional)"

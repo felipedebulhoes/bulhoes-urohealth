@@ -108,8 +108,15 @@ export default function CampaignLayout({
     trackWhatsAppClick(`campaign_${campaignSlug}`);
   };
 
+  const scrollToSchedule = () => {
+    const shouldReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById("agendamento")?.scrollIntoView({
+      behavior: shouldReduceMotion ? "auto" : "smooth",
+    });
+  };
+
   return (
-    <div className="min-h-screen bg-white dark:bg-card">
+    <div className="brand-campaign-page min-h-screen bg-white dark:bg-card">
       {/* Schema Markup */}
       <MedicalPageSchema
         title={metaTitle || title}
@@ -135,7 +142,7 @@ export default function CampaignLayout({
               href="#agendamento"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' });
+                scrollToSchedule();
               }}
               className="hidden sm:block"
             >
@@ -148,11 +155,11 @@ export default function CampaignLayout({
               href="#agendamento"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' });
+                scrollToSchedule();
                 handleDoctoraliaClick();
               }}
             >
-              <Button className="brand-espresso-primary-cta bg-[#C9B6A3] hover:bg-[#4A3A30] text-white text-sm">
+              <Button className="brand-espresso-primary-cta schedule-cta schedule-cta--primary bg-[#C9B6A3] hover:bg-[#4A3A30] text-white text-sm">
                 <Calendar className="w-4 h-4 mr-1.5" />
                 Agendar
               </Button>
@@ -162,7 +169,7 @@ export default function CampaignLayout({
       </header>
 
       {/* Hero — editorial, high-impact */}
-      <section className="bg-gradient-to-b from-[#1C3D5A] via-[#0F3460] to-[#0D2847] py-16 lg:py-24">
+      <section className="brand-campaign-hero brand-dark-surface bg-gradient-to-b from-[#1C3D5A] via-[#0F3460] to-[#0D2847] py-16 lg:py-24">
         <div className="container">
           <PageBreadcrumbs className="mb-7" />
           <motion.div
@@ -199,9 +206,9 @@ export default function CampaignLayout({
       </section>
 
       {/* Content */}
-      <main>{children}</main>
+      <main className="brand-campaign-content">{children}</main>
 
-      <section className="border-t border-[#1C3D5A]/8 bg-[#F7F8F8] py-8 dark:bg-card">
+      <section className="brand-campaign-share border-t border-[#1C3D5A]/8 bg-[#F7F8F8] py-8 dark:bg-card">
         <div className="container flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div>
             <h2 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground">Este conteúdo pode ajudar alguém</h2>
@@ -212,7 +219,7 @@ export default function CampaignLayout({
       </section>
 
       {/* CTA Final — conversion-focused */}
-      <section id="agendamento" className="py-16 lg:py-20 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
+      <section id="agendamento" className="brand-campaign-final-cta brand-dark-surface py-16 lg:py-20 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
         <div className="container text-center max-w-2xl">
           <h2 className="text-2xl lg:text-3xl text-white mb-3 font-serif">
             Agende sua avaliação
@@ -229,7 +236,7 @@ export default function CampaignLayout({
               onClick={handleDoctoraliaClick}
               loadingText="Abrindo agenda…"
               icon={<Calendar className="w-5 h-5" />}
-              className="px-8 h-12 text-base"
+              className="schedule-cta schedule-cta--primary px-8 h-12 text-base"
             >
               Agendar pelo Doctoralia
             </CTAButtonWithAnimation>
@@ -241,7 +248,7 @@ export default function CampaignLayout({
               loadingText="Abrindo WhatsApp…"
               icon={<Phone className="w-5 h-5" />}
               variant="outline"
-              className="border-[#25D366]/30 text-white hover:bg-[#25D366]/10 hover:text-white px-8 h-12 text-base"
+              className="schedule-cta schedule-cta--outline border-[#25D366]/30 text-white hover:bg-[#25D366]/10 hover:text-white px-8 h-12 text-base"
             >
               WhatsApp
             </CTAButtonWithAnimation>
@@ -253,7 +260,7 @@ export default function CampaignLayout({
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0F2A3F] py-8">
+      <footer className="brand-campaign-footer brand-dark-surface bg-[#0F2A3F] py-8">
         <div className="container text-center">
           <p className="text-white/30 text-sm">
             &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202.291

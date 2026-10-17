@@ -30,7 +30,7 @@ export default function PlaybookSection() {
   };
 
   return (
-    <section id="playbook" className="brand-playbook-section brand-dark-surface relative py-20 overflow-hidden">
+    <section id="playbook" className="mobile-form-section brand-playbook-section brand-dark-surface relative py-20 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#4A3A30] via-[#2E2520] to-[#241B17]" />
       {/* Subtle pattern overlay */}
@@ -91,7 +91,7 @@ export default function PlaybookSection() {
           {/* Right side - Form */}
           <div className="w-full max-w-md">
             {!submitted ? (
-              <div className="bg-white rounded-2xl shadow-2xl p-8">
+              <div className="mobile-compact-form bg-white rounded-2xl shadow-2xl p-8">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-[#4A3A30] to-[#2E2520] rounded-xl flex items-center justify-center mx-auto mb-4">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,7 +106,7 @@ export default function PlaybookSection() {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="mobile-compact-form space-y-4">
                   <div>
                     <label htmlFor="playbook-name" className="block text-sm font-medium text-gray-700 mb-1">
                       Seu nome
@@ -170,7 +170,7 @@ export default function PlaybookSection() {
                 </p>
               </div>
             ) : (
-              <div className="bg-white rounded-2xl shadow-2xl p-8 text-center">
+              <div className="mobile-compact-form bg-white rounded-2xl shadow-2xl p-8 text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

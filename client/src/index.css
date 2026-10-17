@@ -778,6 +778,64 @@ html {
   background-image: linear-gradient(to top, rgb(46 37 32 / 0.96), rgb(46 37 32 / 0.36), transparent) !important;
 }
 
+/* Conteúdos informativos legados: azul e ardósia tornam-se pedra/taupe sem
+   confundir o paciente nem retirar a hierarquia das caixas de orientação. */
+.brand-site [class*="bg-[#F8FAFB]"],
+.brand-site [class*="bg-[#F6F8FA]"],
+.brand-site [class*="bg-[#F9FAFB]"] {
+  background-color: var(--hybrid-surface-alt) !important;
+}
+.brand-site [class*="text-[#334155]"] { color: var(--hybrid-ink) !important; }
+.brand-site [class*="text-[#64748B]"] { color: #685B52 !important; }
+.brand-site main [class*="bg-blue-"],
+.brand-site main [class*="bg-indigo-"],
+.brand-site main [class*="bg-sky-"],
+.brand-site main [class*="bg-cyan-"] {
+  background-color: #EFE7DE !important;
+}
+.brand-site main [class*="border-blue-"],
+.brand-site main [class*="border-indigo-"],
+.brand-site main [class*="border-sky-"],
+.brand-site main [class*="border-cyan-"] {
+  border-color: rgb(168 139 107 / 0.44) !important;
+}
+.brand-site main [class*="text-blue-"],
+.brand-site main [class*="text-indigo-"],
+.brand-site main [class*="text-sky-"],
+.brand-site main [class*="text-cyan-"] {
+  color: #5A4A40 !important;
+}
+.dark .brand-site main [class*="bg-blue-"],
+.dark .brand-site main [class*="bg-indigo-"],
+.dark .brand-site main [class*="bg-sky-"],
+.dark .brand-site main [class*="bg-cyan-"] {
+  background-color: var(--hybrid-card) !important;
+}
+.dark .brand-site main [class*="text-blue-"],
+.dark .brand-site main [class*="text-indigo-"],
+.dark .brand-site main [class*="text-sky-"],
+.dark .brand-site main [class*="text-cyan-"] {
+  color: #E6D9C9 !important;
+}
+
+/* Campanhas mantêm profundidade institucional no hero e no CTA final, com
+   camadas claras editoriais e alternadas no conteúdo clínico. */
+.brand-site .brand-campaign-page { background: var(--hybrid-surface); color: var(--hybrid-ink); }
+.brand-site .brand-campaign-content > section:nth-child(odd) {
+  background-color: var(--hybrid-surface) !important;
+  background-image: none !important;
+}
+.brand-site .brand-campaign-content > section:nth-child(even) {
+  background-color: var(--hybrid-surface-alt) !important;
+  background-image: none !important;
+}
+.brand-site .brand-campaign-share {
+  background-color: var(--hybrid-surface-alt) !important;
+  border-color: var(--hybrid-border) !important;
+}
+.brand-site .brand-campaign-final-cta { scroll-margin-top: 6rem; }
+.brand-site .brand-campaign-footer { background: var(--hybrid-ink) !important; }
+
 .brand-site .brand-campaign-header {
   background-color: var(--hybrid-card) !important;
   color: var(--hybrid-ink);
@@ -1183,7 +1241,7 @@ html {
 .brand-site main svg[class*="text-indigo-"],
 .brand-site main svg[class*="text-sky-"],
 .brand-site main svg[class*="text-cyan-"] {
-  color: #AFC1D0 !important;
+  color: #B9A38D !important;
 }
 .brand-site main svg[class*="text-amber-"],
 .brand-site main svg[class*="text-yellow-"],
@@ -1446,6 +1504,18 @@ html {
     text-align: center;
   }
   .brand-preview-ribbon strong { display: none; }
+}
+
+/* Formulários compactos: preservam alvos de toque de 44 px em telefones
+   estreitos, reduzem apenas os espaços periféricos e nunca escondem campos. */
+@media (max-width: 380px) {
+  .brand-site .mobile-form-section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+  .brand-site .mobile-form-section .mobile-compact-form { padding: 1rem !important; border-radius: 0.75rem !important; }
+  .brand-site .mobile-form-section .mobile-compact-form input,
+  .brand-site .mobile-form-section .mobile-compact-form button { min-height: 44px; padding-top: 0.625rem !important; padding-bottom: 0.625rem !important; }
+  .brand-site .mobile-form-section .mobile-compact-form textarea { min-height: 5.5rem; padding-top: 0.625rem !important; padding-bottom: 0.625rem !important; }
+  .brand-site .mobile-form-section .max-w-md { max-width: none; }
+  .brand-site .mobile-form-section .gap-12 { gap: 2.25rem !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {

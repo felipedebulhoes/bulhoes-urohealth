@@ -159,6 +159,8 @@ describe("Integridade das páginas públicas", () => {
     const quickContact = readFileSync(resolve(projectRoot, "client/src/components/QuickContactForm.tsx"), "utf8");
     const newsletter = readFileSync(resolve(projectRoot, "client/src/components/NewsletterSection.tsx"), "utf8");
     const contact = readFileSync(resolve(projectRoot, "client/src/components/ContactSection.tsx"), "utf8");
+    const contactPage = readFileSync(resolve(projectRoot, "client/src/pages/Contato.tsx"), "utf8");
+    const playbook = readFileSync(resolve(projectRoot, "client/src/components/PlaybookSection.tsx"), "utf8");
     const preview = readFileSync(resolve(projectRoot, "client/src/pages/BrandPalettePreview.tsx"), "utf8");
     const quietLuxuryPreview = readFileSync(resolve(projectRoot, "client/src/pages/QuietLuxuryPreview.tsx"), "utf8");
     const styles = readFileSync(resolve(projectRoot, "client/src/index.css"), "utf8");
@@ -200,6 +202,10 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain(".schedule-banner-cta");
     expect(styles).toContain("section:not(#inicio):not(.brand-dark-surface)");
     expect(styles).toContain(".brand-dark-surface-panel");
+    expect(styles).toContain(".brand-campaign-content > section:nth-child(odd)");
+    expect(styles).toContain(".brand-site main [class*=\"bg-blue-\"]");
+    expect(styles).toContain("@media (max-width: 380px)");
+    expect(styles).toContain(".mobile-form-section .mobile-compact-form");
     expect(styles).toContain(".blog-editorial-header img");
     expect(styles).toContain(".blog-editorial-accent");
     expect(styles).not.toContain('.brand-site h1');
@@ -252,6 +258,16 @@ describe("Integridade das páginas públicas", () => {
     expect(quickContact).toContain("brand-dark-surface-panel");
     expect(newsletter).toContain("brand-dark-surface-panel");
     expect(contact).toContain("brand-dark-surface");
+    expect(campaign).toContain("brand-campaign-page");
+    expect(campaign).toContain("brand-campaign-content");
+    expect(campaign).toContain("brand-campaign-final-cta");
+    expect(campaign).toContain("prefers-reduced-motion: reduce");
+    expect(quickContact).toContain("mobile-compact-form");
+    expect(newsletter).toContain("mobile-compact-form");
+    expect(newsletter).toContain('htmlFor="newsletter-email"');
+    expect(playbook).toContain("mobile-compact-form");
+    expect(contactPage).toContain("mobile-compact-form");
+    expect(contactPage).toContain('htmlFor="contact-email"');
     expect(styles).toContain("@media (max-width: 640px)");
     expect(styles).toContain("background-image: linear-gradient(180deg");
     expect(routes).toContain('"/preview-paleta"');

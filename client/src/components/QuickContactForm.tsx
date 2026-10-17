@@ -43,7 +43,7 @@ export default function QuickContactForm() {
   };
 
   return (
-    <section id="formulario" className="brand-dark-surface py-16 lg:py-24 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] relative overflow-hidden">
+    <section id="formulario" className="mobile-form-section brand-dark-surface py-16 lg:py-24 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#B87333] rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
@@ -92,7 +92,7 @@ export default function QuickContactForm() {
             viewport={{ once: true }}
           >
             {submitted ? (
-              <div className="brand-dark-surface-panel backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
+              <div className="brand-dark-surface-panel mobile-compact-form backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
                 <CheckCircle className="w-12 h-12 text-[#B87333] mx-auto mb-4" />
                 <h3 className="text-xl text-white font-semibold mb-2">
                   Mensagem Enviada!
@@ -104,16 +104,17 @@ export default function QuickContactForm() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="brand-dark-surface-panel backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10 space-y-4"
+                className="brand-dark-surface-panel mobile-compact-form backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10 space-y-4"
               >
                 {/* Nome */}
                 <div>
-                  <label className="text-white/70 text-xs font-medium mb-1.5 block">
+                  <label htmlFor="quick-contact-name" className="text-white/70 text-xs font-medium mb-1.5 block">
                     Nome completo *
                   </label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                     <input
+                      id="quick-contact-name"
                       type="text"
                       required
                       value={formData.name}
@@ -126,12 +127,13 @@ export default function QuickContactForm() {
 
                 {/* WhatsApp */}
                 <div>
-                  <label className="text-white/70 text-xs font-medium mb-1.5 block">
+                  <label htmlFor="quick-contact-phone" className="text-white/70 text-xs font-medium mb-1.5 block">
                     WhatsApp *
                   </label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                     <input
+                      id="quick-contact-phone"
                       type="tel"
                       required
                       value={formData.phone}
@@ -144,12 +146,13 @@ export default function QuickContactForm() {
 
                 {/* E-mail */}
                 <div>
-                  <label className="text-white/70 text-xs font-medium mb-1.5 block">
+                  <label htmlFor="quick-contact-email" className="text-white/70 text-xs font-medium mb-1.5 block">
                     E-mail *
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                     <input
+                      id="quick-contact-email"
                       type="email"
                       required
                       value={formData.email}
@@ -162,12 +165,13 @@ export default function QuickContactForm() {
 
                 {/* Mensagem */}
                 <div>
-                  <label className="text-white/70 text-xs font-medium mb-1.5 block">
+                  <label htmlFor="quick-contact-message" className="text-white/70 text-xs font-medium mb-1.5 block">
                     Mensagem
                   </label>
                   <div className="relative">
                     <FileText className="absolute left-3 top-3.5 w-4 h-4 text-white/30" />
                     <textarea
+                      id="quick-contact-message"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Como podemos ajudar? (opcional)"

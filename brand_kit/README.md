@@ -20,7 +20,11 @@
 - `isotipo-fb-bicolor.svg`: Vetor mestre do monograma FB (Bege + Off-White).
 - `isotipo-fb-offwhite.svg` e `isotipo-fb-bege.svg`: Variações monocromáticas em vetor.
 - `brand-board-identidade-visual-oficial.jpg`: Arquivo original do Brand Board.
-- `destaques-instagram/`: 10 capas PNG oficiais em 2048×2048 px.
+- `destaques-instagram/`: monogramas de referência em PNG; as nove capas de destaques em versão web ficam no catálogo de storage.
+
+## Assets otimizados para web
+
+As pranchas e capas de destaque foram convertidas para **WebP**, redimensionadas e publicadas no armazenamento do projeto. Consulte [WEB_ASSET_CATALOG.md](./WEB_ASSET_CATALOG.md) para as URLs vigentes e as dimensões. Os masters PNG e os pacotes ZIP foram preservados fora deste repositório para não bloquear checkpoints ou publicação.
 
 ---
 

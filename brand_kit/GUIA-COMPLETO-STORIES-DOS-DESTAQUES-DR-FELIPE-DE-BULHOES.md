@@ -25,7 +25,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
 
 ### DESTAQUE 01: COMECE AQUI
 * **Nome exibido no Instagram:** `Comece aqui` (ou `Comece`)
-* **Capa oficial:** `destaque-01-comece-aqui.png` (Ícone de Bússola e Rosa dos Ventos)
+* **Capa oficial:** [destaque-01-comece-aqui.webp](/manus-storage/destaque-01-comece-aqui_60667dc7.webp) (Ícone de Bússola e Rosa dos Ventos)
 * **Objetivo estratégico:** Primeira impressão humanizada. Reduz a timidez do paciente, estabelece a autoridade médica e explica a proposta do perfil.
 * **Volume ideal:** 4 Stories.
 
@@ -52,7 +52,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
 
 ### DESTAQUE 02: FORMAÇÃO & TCBC
 * **Nome exibido no Instagram:** `Formação` (ou `Autoridade`)
-* **Capa oficial:** `destaque-02-formacao.png` (Caduceu, Livro Acadêmico e Louros)
+* **Capa oficial:** [destaque-02-formacao.webp](/manus-storage/destaque-02-formacao_209f1bbb.webp) (Caduceu, Livro Acadêmico e Louros)
 * **Objetivo estratégico:** Provar competência técnica inquestionável. Diferenciar o Dr. Felipe de profissionais sem residência médica ou sem títulos cirúrgicos reconhecidos.
 * **Volume ideal:** 4 Stories.
 
@@ -79,7 +79,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
 
 ### DESTAQUE 03: ESTÉTICA ÍNTIMA (CARRO-CHEFE)
 * **Nome exibido no Instagram:** `Íntima` (ou `Estética Íntima`)
-* **Capa oficial:** `destaque-05-estetica-intima.png` (Mandala Geométrica / Proporção Áurea)
+* **Capa oficial:** [destaque-05-estetica-intima.webp](/manus-storage/destaque-05-estetica-intima_c3ee8743.webp) (Mandala Geométrica / Proporção Áurea)
 * **Objetivo estratégico:** Desmistificar o engrossamento peniano e a harmonização genital masculina, explorando a dor da insegurança e o desejo de autoconfiança com rigor anatômico e acolhimento ético.
 * **Volume ideal:** 5 Stories.
 
@@ -111,7 +111,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
 
 ### DESTAQUE 04: SAÚDE DO HOMEM & PERFORMANCE
 * **Nome exibido no Instagram:** `Performance` (ou `Saúde do Homem`)
-* **Capa oficial:** `destaque-04-saude-do-homem.png` (Silhueta Masculina & Escudo)
+* **Capa oficial:** [destaque-04-saude-do-homem.webp](/manus-storage/destaque-04-saude-do-homem_5fe93a5c.webp) (Silhueta Masculina & Escudo)
 * **Objetivo estratégico:** Posicionar o Dr. Felipe como referência em longevidade, disposição física, saúde metabólica, equilíbrio hormonal e saúde sexual masculina.
 * **Volume ideal:** 4 Stories.
 
@@ -138,7 +138,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
 
 ### DESTAQUE 05: UROLOGIA GERAL
 * **Nome exibido no Instagram:** `Urologia`
-* **Capa oficial:** `destaque-03-urologia.png` (Silhueta Anatômica de Rim e Trato Urinário)
+* **Capa oficial:** [destaque-03-urologia.webp](/manus-storage/destaque-03-urologia_53e4fc4d.webp) (Silhueta Anatômica de Rim e Trato Urinário)
 * **Objetivo estratégico:** Consolidar a base médica da especialidade para queixas clássicas (cálculo renal, próstata, vasectomia), gerando confiança técnica ampla.
 * **Volume ideal:** 4 Stories.
 
@@ -165,7 +165,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
 
 ### DESTAQUE 06: CIRURGIAS & BASTIDORES
 * **Nome exibido no Instagram:** `Cirurgias` (ou `Bastidores`)
-* **Capa oficial:** `destaque-06-cirurgias.png` (Foco Cirúrgico de Centro Operatório)
+* **Capa oficial:** [destaque-06-cirurgias.webp](/manus-storage/destaque-06-cirurgias_68fdf9ac.webp) (Foco Cirúrgico de Centro Operatório)
 * **Objetivo estratégico:** Tranquilizar o paciente quanto à segurança cirúrgica. Demonstrar a tecnologia de ponta, o rigor de assepsia e a tranquilidade da anestesia em ambiente hospitalar credenciado.
 * **Volume ideal:** 4 Stories.
 
@@ -188,7 +188,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
 
 ### DESTAQUE 07: ONDE ATENDO
 * **Nome exibido no Instagram:** `Onde atendo` (ou `Locais`)
-* **Capa oficial:** `destaque-07-onde-atendo.png` (Fachada Clínica com Pino de Localização)
+* **Capa oficial:** [destaque-07-onde-atendo.webp](/manus-storage/destaque-07-onde-atendo_2cf4aa4b.webp) (Fachada Clínica com Pino de Localização)
 * **Objetivo estratégico:** Clareza geográfica imediata. Remove fricção para pacientes de São Paulo capital, Grande Campinas e pacientes que vêm de outros estados.
 * **Volume ideal:** 4 Stories.
 
@@ -219,7 +219,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
 
 ### DESTAQUE 08: AGENDAMENTO
 * **Nome exibido no Instagram:** `Agendamento` (ou `Consulta`)
-* **Capa oficial:** `destaque-08-agendamento.png` (Calendário Executivo com Check)
+* **Capa oficial:** [destaque-08-agendamento.webp](/manus-storage/destaque-08-agendamento_21d2eb77.webp) (Calendário Executivo com Check)
 * **Objetivo estratégico:** Converter o seguidor interessado em consulta sem nenhum constrangimento. Deixar evidente o canal oficial sigiloso de WhatsApp.
 * **Volume ideal:** 4 Stories.
 
@@ -248,7 +248,7 @@ Os Destaques do Instagram funcionam como as **páginas estáticas de um site ins
 
 ### DESTAQUE 09: DÚVIDAS FREQUENTES (FAQ)
 * **Nome exibido no Instagram:** `Dúvidas` (ou `FAQ`)
-* **Capa oficial:** `destaque-09-duvidas.png` (Balões de Diálogo & Interrogação)
+* **Capa oficial:** [destaque-09-duvidas.webp](/manus-storage/destaque-09-duvidas_7d2135aa.webp) (Balões de Diálogo & Interrogação)
 * **Objetivo estratégico:** Derrubar objeções práticas (dor, recuperação, retorno ao trabalho, sexo após o procedimento) que travam a decisão do homem.
 * **Volume ideal:** 5 Stories.
 

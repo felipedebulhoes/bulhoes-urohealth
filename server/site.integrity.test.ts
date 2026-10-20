@@ -316,6 +316,19 @@ describe("Integridade das páginas públicas", () => {
     expect(matrix).toContain("allUsers");
   });
 
+  it("mantém uma cópia reexecutável dos assets para o bucket privado", () => {
+    const transferScript = readFileSync(
+      resolve(projectRoot, "scripts/google-cloud/copy-manus-assets.sh"),
+      "utf8"
+    );
+
+    expect(transferScript).toContain("manus-assets.manifest.json");
+    expect(transferScript).toContain("Cloud Storage");
+    expect(transferScript).toContain("APPLY=YES");
+    expect(transferScript).toContain("gsutil");
+    expect(transferScript).toContain("curl -fL");
+  });
+
   it("mantém o Firebase Hosting pronto, mas impede expor o staging sem aprovação explícita", () => {
     const firebaseConfig = JSON.parse(readFileSync(resolve(projectRoot, "firebase.json"), "utf8"));
     const firebaseProjectExample = readFileSync(resolve(projectRoot, ".firebaserc.example"), "utf8");

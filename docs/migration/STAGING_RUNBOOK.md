@@ -16,6 +16,20 @@ O staging **não autentica usuários**: a área `/admin` e as APIs retornam resp
 4. A cópia de mídia para `gs://site-dr-felipe-bulhoes-public-2026/site-assets/` foi concluída e auditada contra `docs/migration/manus-assets.manifest.json`.
 5. O comando é executado a partir da raiz do repositório e usa uma imagem por digest ou por tag imutável.
 
+## Copiar e auditar os assets privados
+
+O script lê exclusivamente o manifesto versionado, baixa cada recurso do host legado e compara o tamanho local ao objeto enviado. Ele é reexecutável: objetos com o mesmo tamanho são preservados, e o bucket não recebe acesso público.
+
+```bash
+# Simulação: lista a origem, o destino e a quantidade de assets, sem transferir arquivos.
+./scripts/google-cloud/copy-manus-assets.sh
+
+# Cópia efetiva e verificação por tamanho de cada objeto.
+APPLY=YES ./scripts/google-cloud/copy-manus-assets.sh
+```
+
+Registre somente o resumo final (copiados, já conferidos e falhos). Não registre URLs assinadas, tokens ou cabeçalhos de autenticação.
+
 ## Atualizar somente o staging privado
 
 ```bash

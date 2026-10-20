@@ -102,3 +102,9 @@ temp/
 .webdev/
 client/public/__manus__/version.json
 .project-config.json
+
+# Documentation and preview instrumentation are not required by Cloud Run.
+docs/
+spec-kit/
+superpowers/
+client/public/__manus__/

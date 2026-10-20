@@ -7,6 +7,8 @@
     "dev": "cross-env NODE_ENV=development tsx watch server/_core/index.ts",
     "build": "vite build && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "cross-env NODE_ENV=production node dist/index.js",
+    "build:portable": "pnpm build && esbuild server/production.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "start:portable": "cross-env NODE_ENV=production node dist/production.js",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run",

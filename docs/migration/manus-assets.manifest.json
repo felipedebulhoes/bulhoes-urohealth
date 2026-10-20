@@ -6,7 +6,8 @@
     "client/public/__manus__",
     "node_modules",
     "dist",
-    ".git"
+    ".git",
+    "test and spec source files"
   ],
   "assets": [
     {
@@ -86,8 +87,7 @@
       "kind": "image",
       "plannedCloudStorageObject": "site-assets/guide-saude-masculina-capa_b385e7c7.jpg",
       "sources": [
-        "client/src/components/prototype/PrototypeEmailContactForm.tsx",
-        "server/site.integrity.test.ts"
+        "client/src/components/prototype/PrototypeEmailContactForm.tsx"
       ]
     },
     {
@@ -96,14 +96,6 @@
       "plannedCloudStorageObject": "site-assets/heartbeat_c004f89d.mp3",
       "sources": [
         "client/src/components/SplashScreen.tsx"
-      ]
-    },
-    {
-      "key": "imagem.webp",
-      "kind": "image",
-      "plannedCloudStorageObject": "site-assets/imagem.webp",
-      "sources": [
-        "server/production.test.ts"
       ]
     },
     {
@@ -181,8 +173,7 @@
         "client/src/pages/Consultorios.tsx",
         "client/src/pages/Contato.tsx",
         "client/src/pages/LocationPages.tsx",
-        "client/src/pages/SobreDrFelipe.tsx",
-        "server/production.test.ts"
+        "client/src/pages/SobreDrFelipe.tsx"
       ]
     },
     {
@@ -190,8 +181,7 @@
       "kind": "document",
       "plannedCloudStorageObject": "site-assets/main_2775651b.pdf",
       "sources": [
-        "client/src/components/prototype/PrototypeEmailContactForm.tsx",
-        "server/site.integrity.test.ts"
+        "client/src/components/prototype/PrototypeEmailContactForm.tsx"
       ]
     },
     {
@@ -331,7 +321,6 @@
       "kind": "document",
       "plannedCloudStorageObject": "site-assets/Playbook-Saude-Integral-DrFelipeBulhoes_57b5fc71.pdf",
       "sources": [
-        "server/playbook.test.ts",
         "server/routers/playbook.ts"
       ]
     },

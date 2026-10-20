@@ -24,6 +24,10 @@ function isExcluded(path) {
   );
 }
 
+function isTestSource(sourcePath) {
+  return /\.(?:test|spec)\.[cm]?[jt]sx?$/.test(sourcePath);
+}
+
 function collectSourceFiles(path) {
   if (isExcluded(path)) return [];
 
@@ -67,6 +71,8 @@ for (const directory of sourceDirectories) {
 
   for (const sourceFile of collectSourceFiles(absoluteDirectory)) {
     const sourcePath = relative(projectRoot, sourceFile).replaceAll("\\", "/");
+    if (isTestSource(sourcePath)) continue;
+
     for (const key of findReferences(sourceFile)) {
       const asset = assets.get(key) ?? {
         key,
@@ -84,7 +90,7 @@ const manifest = {
   version: 1,
   source: "/manus-storage/",
   migrationTarget: "Cloud Storage private asset bucket served by Cloud Run",
-  exclusions: ["client/public/__manus__", "node_modules", "dist", ".git"],
+  exclusions: ["client/public/__manus__", "node_modules", "dist", ".git", "test and spec source files"],
   assets: [...assets.values()]
     .map(asset => ({
       key: asset.key,

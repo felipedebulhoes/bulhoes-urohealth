@@ -308,6 +308,8 @@ describe("Integridade das páginas públicas", () => {
     expect(inventory).toContain("manus-assets.manifest.json");
     expect(inventory).toContain("client/public/__manus__");
     expect(inventory).toContain("Cloud Storage private asset bucket served by Cloud Run");
+    expect(inventory).toContain("isTestSource");
+    expect(inventory).toContain("if (isTestSource(sourcePath)) continue");
     expect(matrix).toContain("Inventário de portabilidade de mídia");
     expect(matrix).toContain("manus-assets.manifest.json");
     expect(matrix).toContain("roles/storage.objectViewer");

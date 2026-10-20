@@ -1,0 +1,388 @@
+{
+  "version": 1,
+  "source": "/manus-storage/",
+  "migrationTarget": "Cloud Storage public asset bucket",
+  "exclusions": [
+    "client/public/__manus__",
+    "node_modules",
+    "dist",
+    ".git"
+  ],
+  "assets": [
+    {
+      "key": "blog-urologista-campinas-cover_ba932b43_ec3a9955.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/blog-urologista-campinas-cover_ba932b43_ec3a9955.webp",
+      "sources": [
+        "client/src/lib/blogData.ts"
+      ]
+    },
+    {
+      "key": "Callingstone_0c7058f7.ttf",
+      "kind": "font",
+      "plannedCloudStorageObject": "public/Callingstone_0c7058f7.ttf",
+      "sources": [
+        "client/index.html",
+        "client/src/index.css"
+      ]
+    },
+    {
+      "key": "campinas-day-hospital_47df2b14_d5a9cb24.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/campinas-day-hospital_47df2b14_d5a9cb24.webp",
+      "sources": [
+        "client/src/components/LocationCardsSection.tsx",
+        "client/src/components/LocationSection.tsx",
+        "client/src/pages/Consultorios.tsx"
+      ]
+    },
+    {
+      "key": "cirurgia-robotica-blog_7b6f2d98_4694f840.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/cirurgia-robotica-blog_7b6f2d98_4694f840.webp",
+      "sources": [
+        "client/src/lib/blogData.ts"
+      ]
+    },
+    {
+      "key": "cirurgia-robotica-hero_bc9b9ac6_4e08d375.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/cirurgia-robotica-hero_bc9b9ac6_4e08d375.webp",
+      "sources": [
+        "client/src/pages/CirurgiaRobotica.tsx"
+      ]
+    },
+    {
+      "key": "clinovi-paulista_42fff2fa_cecba450.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/clinovi-paulista_42fff2fa_cecba450.webp",
+      "sources": [
+        "client/src/components/LocationCardsSection.tsx",
+        "client/src/components/LocationSection.tsx",
+        "client/src/pages/Consultorios.tsx"
+      ]
+    },
+    {
+      "key": "double-j-stent_063cc894_8ea27222.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/double-j-stent_063cc894_8ea27222.webp",
+      "sources": [
+        "client/src/pages/CalculosRenais.tsx"
+      ]
+    },
+    {
+      "key": "felipe-portrait_0e0693e4_be070ac1.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/felipe-portrait_0e0693e4_be070ac1.webp",
+      "sources": [
+        "client/index.html",
+        "client/src/components/HeroSection.tsx",
+        "client/src/pages/PrototypePatientJourney.tsx",
+        "client/src/pages/SobreDrFelipe.tsx"
+      ]
+    },
+    {
+      "key": "guide-saude-masculina-capa_b385e7c7.jpg",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/guide-saude-masculina-capa_b385e7c7.jpg",
+      "sources": [
+        "client/src/components/prototype/PrototypeEmailContactForm.tsx",
+        "server/site.integrity.test.ts"
+      ]
+    },
+    {
+      "key": "heartbeat_c004f89d.mp3",
+      "kind": "audio",
+      "plannedCloudStorageObject": "public/heartbeat_c004f89d.mp3",
+      "sources": [
+        "client/src/components/SplashScreen.tsx"
+      ]
+    },
+    {
+      "key": "incontinencia-urinaria-tipos_62186555_abc470ac.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/incontinencia-urinaria-tipos_62186555_abc470ac.webp",
+      "sources": [
+        "client/src/pages/IncontinenciaUrinaria.tsx"
+      ]
+    },
+    {
+      "key": "instagram_profile_bc867e99_9d4bb2af.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/instagram_profile_bc867e99_9d4bb2af.webp",
+      "sources": [
+        "client/src/lib/blogData.ts"
+      ]
+    },
+    {
+      "key": "isotipo-fb_b21c0959.svg",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/isotipo-fb_b21c0959.svg",
+      "sources": [
+        "client/src/components/PageTransition.tsx"
+      ]
+    },
+    {
+      "key": "jj-stent-placement_40a34aa6_113423d0.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/jj-stent-placement_40a34aa6_113423d0.webp",
+      "sources": [
+        "client/src/pages/CalculosRenais.tsx"
+      ]
+    },
+    {
+      "key": "jornada-idor_cd58a6fe_2866b20d.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/jornada-idor_cd58a6fe_2866b20d.webp",
+      "sources": [
+        "client/src/components/AboutSection.tsx"
+      ]
+    },
+    {
+      "key": "jpu-congress_61ecfbf9_f41d816f.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/jpu-congress_61ecfbf9_f41d816f.webp",
+      "sources": [
+        "client/src/components/EducationSection.tsx",
+        "client/src/pages/SobreDrFelipe.tsx"
+      ]
+    },
+    {
+      "key": "kidney-prevention-diet_6a6af788_5e94c70b.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/kidney-prevention-diet_6a6af788_5e94c70b.webp",
+      "sources": [
+        "client/src/pages/CalculosRenais.tsx"
+      ]
+    },
+    {
+      "key": "logo-landscape-dr-felipe_cc84d4a3.svg",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/logo-landscape-dr-felipe_cc84d4a3.svg",
+      "sources": [
+        "client/src/components/CampaignLayout.tsx",
+        "client/src/components/EducationalLayout.tsx",
+        "client/src/components/Footer.tsx",
+        "client/src/components/Header.tsx",
+        "client/src/components/SchemaMarkup.tsx",
+        "client/src/pages/Agendamento.tsx",
+        "client/src/pages/AgendarDoctoralia.tsx",
+        "client/src/pages/AgendarWhatsApp.tsx",
+        "client/src/pages/Blog.tsx",
+        "client/src/pages/BlogPost.tsx",
+        "client/src/pages/Consultorios.tsx",
+        "client/src/pages/Contato.tsx",
+        "client/src/pages/LocationPages.tsx",
+        "client/src/pages/SobreDrFelipe.tsx"
+      ]
+    },
+    {
+      "key": "main_2775651b.pdf",
+      "kind": "document",
+      "plannedCloudStorageObject": "public/main_2775651b.pdf",
+      "sources": [
+        "client/src/components/prototype/PrototypeEmailContactForm.tsx",
+        "server/site.integrity.test.ts"
+      ]
+    },
+    {
+      "key": "og-banner-andrologia-marrom-neutro_22695a0b.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-andrologia-marrom-neutro_22695a0b.png",
+      "sources": [
+        "client/src/pages/AndrologiaPerformance.tsx",
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-cirurgia-robotica-urologia-campinas-marrom-neutro_3fb671ac.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-cirurgia-robotica-urologia-campinas-marrom-neutro_3fb671ac.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-cirurgia-robotica-urologica-marrom-neutro_48c2742e.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-cirurgia-robotica-urologica-marrom-neutro_48c2742e.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-hiperplasia-prostatica-benigna-tratamentos-modernos-marrom-neutro_8a3fc8ef.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-hiperplasia-prostatica-benigna-tratamentos-modernos-marrom-neutro_8a3fc8ef.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-importancia-saude-urologica-preventiva-marrom-neutro_feefe8de.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-importancia-saude-urologica-preventiva-marrom-neutro_feefe8de.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-incontinencia-urinaria-pos-prostatectomia-marrom-neutro_390dc58f.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-incontinencia-urinaria-pos-prostatectomia-marrom-neutro_390dc58f.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-pedra-no-rim-o-que-fazer-marrom-neutro_dde4e1b4.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-pedra-no-rim-o-que-fazer-marrom-neutro_dde4e1b4.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-psa-rastreamento-cancer-prostata-2026-marrom-neutro_48bbf9f6.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-psa-rastreamento-cancer-prostata-2026-marrom-neutro_48bbf9f6.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-quando-procurar-urologista-marrom-neutro_79078219.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-quando-procurar-urologista-marrom-neutro_79078219.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-urologista-campinas-quando-procurar-marrom-neutro_40197d20.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-urologista-campinas-quando-procurar-marrom-neutro_40197d20.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-urologista-medico-do-homem-desde-jovem-marrom-neutro_84182cb0.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-urologista-medico-do-homem-desde-jovem-marrom-neutro_84182cb0.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-urologista-pinheiros-zona-oeste-sp-marrom-neutro_97d3fdbf.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-urologista-pinheiros-zona-oeste-sp-marrom-neutro_97d3fdbf.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-blog-vasectomia-campinas-guia-completo-marrom-neutro_9beca3d7.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-blog-vasectomia-campinas-guia-completo-marrom-neutro_9beca3d7.png",
+      "sources": [
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-estetica-intima-marrom-neutro_2f27a7fa.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-estetica-intima-marrom-neutro_2f27a7fa.png",
+      "sources": [
+        "client/src/pages/EsteticaIntimaMasculina.tsx",
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-homepage-marrom-neutro_0212adec.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-homepage-marrom-neutro_0212adec.png",
+      "sources": [
+        "client/index.html",
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "og-banner-vasectomia-marrom-neutro_a6c66d72.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/og-banner-vasectomia-marrom-neutro_a6c66d72.png",
+      "sources": [
+        "client/src/pages/VasectomiaSemBisturi.tsx",
+        "shared/pageMetadata.ts"
+      ]
+    },
+    {
+      "key": "Playbook-Saude-Integral-DrFelipeBulhoes_57b5fc71.pdf",
+      "kind": "document",
+      "plannedCloudStorageObject": "public/Playbook-Saude-Integral-DrFelipeBulhoes_57b5fc71.pdf",
+      "sources": [
+        "server/playbook.test.ts",
+        "server/routers/playbook.ts"
+      ]
+    },
+    {
+      "key": "sao-luiz-campinas-fachada_a326a12f.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/sao-luiz-campinas-fachada_a326a12f.webp",
+      "sources": [
+        "client/src/components/LocationCardsSection.tsx",
+        "client/src/components/LocationSection.tsx"
+      ]
+    },
+    {
+      "key": "site-splash-6s_45b79a42.mp4",
+      "kind": "video",
+      "plannedCloudStorageObject": "public/site-splash-6s_45b79a42.mp4",
+      "sources": [
+        "client/src/components/SplashScreen.tsx"
+      ]
+    },
+    {
+      "key": "splash-poster_0d71c137.png",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/splash-poster_0d71c137.png",
+      "sources": [
+        "client/src/components/SplashScreen.tsx"
+      ]
+    },
+    {
+      "key": "ureteroscopy-illustration_0dc79076_b87de921.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/ureteroscopy-illustration_0dc79076_b87de921.webp",
+      "sources": [
+        "client/src/pages/CalculosRenais.tsx"
+      ]
+    },
+    {
+      "key": "uroonco-solo_7227a008_5754f461.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/uroonco-solo_7227a008_5754f461.webp",
+      "sources": [
+        "client/src/components/ServicesSection.tsx",
+        "client/src/pages/SobreDrFelipe.tsx"
+      ]
+    },
+    {
+      "key": "vasectomia-blog-cover_a51a156f_1918def0.webp",
+      "kind": "image",
+      "plannedCloudStorageObject": "public/vasectomia-blog-cover_a51a156f_1918def0.webp",
+      "sources": [
+        "client/src/lib/blogData.ts"
+      ]
+    },
+    {
+      "key": "whoosh_c71d172a.mp3",
+      "kind": "audio",
+      "plannedCloudStorageObject": "public/whoosh_c71d172a.mp3",
+      "sources": [
+        "client/src/components/SplashScreen.tsx"
+      ]
+    }
+  ]
+}

@@ -294,6 +294,24 @@ describe("Integridade das páginas públicas", () => {
     expect(builder).not.toContain("#0E2945");
   });
 
+  it("mantém um inventário reproduzível dos assets que dependem do storage atual", () => {
+    const inventory = readFileSync(
+      resolve(projectRoot, "scripts/google-cloud/inventory-manus-assets.mjs"),
+      "utf8"
+    );
+    const matrix = readFileSync(
+      resolve(projectRoot, "docs/migration/PORTABILITY_MATRIX.md"),
+      "utf8"
+    );
+
+    expect(inventory).toContain("/manus-storage/");
+    expect(inventory).toContain("manus-assets.manifest.json");
+    expect(inventory).toContain("client/public/__manus__");
+    expect(matrix).toContain("Inventário de portabilidade de mídia");
+    expect(matrix).toContain("manus-assets.manifest.json");
+    expect(matrix).toContain("Cloud Storage");
+  });
+
   it("não mantém referências ao arquivo antigo do logotipo", () => {
     const files = [
       "client/src/components/Header.tsx",

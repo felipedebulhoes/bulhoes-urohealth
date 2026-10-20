@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { createServer, type Server } from "node:http";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -35,6 +35,16 @@ describe("runtime público portátil", () => {
   afterEach(async () => {
     await new Promise<void>((resolve, reject) => server.close(error => (error ? reject(error) : resolve())));
     rmSync(staticDirectory, { recursive: true, force: true });
+  });
+
+  it("inclui os patches exigidos pelo pnpm antes da instalação no container", () => {
+    const dockerfile = readFileSync(new URL("../Dockerfile", import.meta.url), "utf8");
+
+    expect(dockerfile).toContain("COPY package.json pnpm-lock.yaml ./");
+    expect(dockerfile).toContain("COPY patches ./patches");
+    expect(dockerfile.indexOf("COPY patches ./patches")).toBeLessThan(
+      dockerfile.indexOf("RUN pnpm install --frozen-lockfile")
+    );
   });
 
   it("inicia sem as variáveis exclusivas da hospedagem atual", () => {

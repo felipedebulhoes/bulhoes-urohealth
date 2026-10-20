@@ -3,6 +3,7 @@ import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { createServer, type Server } from "node:http";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { Readable } from "node:stream";
 import { createPortablePublicApp } from "./production";
 
 const platformOnlyVariables = [
@@ -86,6 +87,45 @@ describe("runtime público portátil", () => {
     expect(response.headers.get("location")).toBe(
       "https://felipebulhoes.com/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
     );
+  });
+
+  it("entrega mídia por um provedor privado quando o bucket do Cloud Storage estiver configurado", async () => {
+    const privateServer = createServer(
+      createPortablePublicApp({
+        staticDirectory,
+        assetProvider: async key => {
+          if (key !== "imagem.webp") return null;
+          return {
+            contentType: "image/webp",
+            cacheControl: "public, max-age=31536000, immutable",
+            etag: '"imagem-versao-1"',
+            size: 14,
+            createReadStream: () => Readable.from(["mídia privada"]),
+          };
+        },
+      })
+    );
+
+    await new Promise<void>(resolve => privateServer.listen(0, "127.0.0.1", resolve));
+    const address = privateServer.address();
+    if (!address || typeof address === "string") throw new Error("Servidor de mídia privada sem porta");
+
+    try {
+      const response = await fetch(`http://127.0.0.1:${address.port}/manus-storage/imagem.webp`, {
+        redirect: "manual",
+      });
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("content-type")).toBe("image/webp");
+      expect(response.headers.get("cache-control")).toBe("public, max-age=31536000, immutable");
+      expect(response.headers.get("etag")).toBe('"imagem-versao-1"');
+      expect(response.headers.get("location")).toBeNull();
+      expect(await response.text()).toBe("mídia privada");
+    } finally {
+      await new Promise<void>((resolve, reject) =>
+        privateServer.close(error => (error ? reject(error) : resolve()))
+      );
+    }
   });
 
   it("não expõe APIs ou a área administrativa antes da substituição de autenticação", async () => {

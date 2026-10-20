@@ -16,10 +16,10 @@ O comando produz [`manus-assets.manifest.json`](./manus-assets.manifest.json), o
 
 | Origem atual | Destino planejado | Visibilidade | Regra de migração |
 |---|---|---|---|
-| `/manus-storage/<arquivo>` | `gs://<bucket-publico>/public/<arquivo>` | Pública, somente leitura | Copiar com `Content-Type` correto e cache versionado; manter o nome durante a transição. |
-| Banners Open Graph | Mesmo bucket, prefixo `public/` | Pública | Validar resposta 200, `1200×630`, URL absoluta e cache de Facebook/WhatsApp antes do corte. |
-| Fontes, imagens, áudio e vídeo de interface | Mesmo bucket, prefixo `public/` | Pública | Preservar CORS para carregamento do site e evitar substituir arquivos por conteúdo diferente com o mesmo nome. |
-| PDFs educativos | Mesmo bucket, prefixo `public/` | Pública quando a página já os expõe | Revisar conteúdo e cabeçalho `Content-Disposition`; não incluir relatórios internos ou dados pessoais. |
+| `/manus-storage/<arquivo>` | `gs://<bucket-privado>/site-assets/<arquivo>` | Privada no bucket; pública somente pelo mesmo caminho do Cloud Run | Copiar com `Content-Type` e cache corretos; o Cloud Run lê via identidade de serviço e preserva a URL `/manus-storage/<arquivo>`. |
+| Banners Open Graph | Mesmo bucket, prefixo `site-assets/` | Privada no bucket; acessível via URL absoluta do Cloud Run | Validar resposta 200, `1200×630`, URL absoluta e cache de Facebook/WhatsApp antes do corte. |
+| Fontes, imagens, áudio e vídeo de interface | Mesmo bucket, prefixo `site-assets/` | Privada no bucket; entregue pelo Cloud Run | Preservar tipos MIME, cache e paths estáveis; evitar substituir arquivos por conteúdo diferente com o mesmo nome. |
+| PDFs educativos | Mesmo bucket, prefixo `site-assets/` | Privada no bucket; disponível pelo Cloud Run quando o site já o expõe | Revisar conteúdo e `Content-Disposition`; não incluir relatórios internos ou dados pessoais. |
 | Uploads futuros administrativos | Bucket privado separado ou prefixo privado | Privada | Usar conta de serviço do Cloud Run e URL assinada quando necessário; nunca permitir upload anônimo. |
 
 ## Exclusões deliberadas
@@ -27,15 +27,17 @@ O comando produz [`manus-assets.manifest.json`](./manus-assets.manifest.json), o
 - `client/public/__manus__`: scripts de depuração específicos do ambiente atual; não fazem parte do site publicado no Google Cloud.
 - `node_modules`, `dist` e `.git`: dependências, build e histórico, não assets de produção.
 - Segredos, credenciais, exportações de banco e dados de leads: não pertencem a um bucket de mídia e não serão incluídos no inventário.
+- A política organizacional de compartilhamento restrito de domínio bloqueia `allUsers`; ela será preservada. Não tornar o bucket público é uma salvaguarda deliberada, não uma pendência.
 
 ## Controles de corte
 
 Antes de alterar referências no código ou DNS, a versão staging deve comprovar:
 
-1. Cada item do `manus-assets.manifest.json` possui objeto correspondente no bucket e retorno HTTP 200.
-2. Imagens, fontes, áudio, vídeo e PDFs respondem com `Content-Type` compatível.
-3. O sitemap, canonicals e todas as metas Open Graph usam o domínio canônico planejado.
-4. O site atual continua em operação e pode ser usado como reversão.
+1. Cada item do `manus-assets.manifest.json` possui objeto correspondente no bucket privado e retorno HTTP 200 pelo caminho `/manus-storage/` do Cloud Run.
+2. A identidade do Cloud Run possui apenas `roles/storage.objectViewer` no bucket; não há principal `allUsers` na política.
+3. Imagens, fontes, áudio, vídeo e PDFs respondem com `Content-Type` compatível.
+4. O sitemap, canonicals e todas as metas Open Graph usam o domínio canônico planejado.
+5. O site atual continua em operação e pode ser usado como reversão.
 
 ## Limite de escopo
 

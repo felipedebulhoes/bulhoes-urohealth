@@ -72,7 +72,7 @@ for (const directory of sourceDirectories) {
         key,
         kind: getMediaKind(key),
         sources: new Set(),
-        plannedCloudStorageObject: `public/${key}`,
+        plannedCloudStorageObject: `site-assets/${key}`,
       };
       asset.sources.add(sourcePath);
       assets.set(key, asset);
@@ -83,7 +83,7 @@ for (const directory of sourceDirectories) {
 const manifest = {
   version: 1,
   source: "/manus-storage/",
-  migrationTarget: "Cloud Storage public asset bucket",
+  migrationTarget: "Cloud Storage private asset bucket served by Cloud Run",
   exclusions: ["client/public/__manus__", "node_modules", "dist", ".git"],
   assets: [...assets.values()]
     .map(asset => ({

@@ -307,9 +307,11 @@ describe("Integridade das páginas públicas", () => {
     expect(inventory).toContain("/manus-storage/");
     expect(inventory).toContain("manus-assets.manifest.json");
     expect(inventory).toContain("client/public/__manus__");
+    expect(inventory).toContain("Cloud Storage private asset bucket served by Cloud Run");
     expect(matrix).toContain("Inventário de portabilidade de mídia");
     expect(matrix).toContain("manus-assets.manifest.json");
-    expect(matrix).toContain("Cloud Storage");
+    expect(matrix).toContain("roles/storage.objectViewer");
+    expect(matrix).toContain("allUsers");
   });
 
   it("não mantém referências ao arquivo antigo do logotipo", () => {

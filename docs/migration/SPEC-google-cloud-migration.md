@@ -4,7 +4,7 @@
 Hospedar o site público do Dr. Felipe de Bulhões na infraestrutura Google administrada por `contato@felipebulhoes.com`, preservando URLs canônicas, SEO server-side, Open Graph, redirecionamentos, formulários, dados administrativos e continuidade do site atual. A mudança pública de domínio só ocorrerá após validação em ambiente de teste e confirmação explícita para DNS.
 
 ## Arquitetura
-Firebase Hosting será a camada de CDN, TLS e domínio próprio. Cloud Run hospedará o servidor Node/Express, incluindo injeção server-side de metadados, tRPC e redirecionamentos. Cloud SQL for MySQL substituirá o banco atual. Cloud Storage substituirá o proxy e os arquivos de `/manus-storage/`; segredos irão ao Secret Manager.
+Firebase Hosting será a camada de CDN, TLS e domínio próprio. Cloud Run hospedará o servidor Node/Express, incluindo injeção server-side de metadados, tRPC, redirecionamentos e o proxy de mídia `/manus-storage/`. Cloud SQL for MySQL substituirá o banco atual. Cloud Storage permanecerá privado e será lido pela identidade de serviço do Cloud Run; segredos irão ao Secret Manager.
 
 ## Estado atual e lacunas de portabilidade
 - O servidor de produção é iniciado por `server/_core/index.ts`, que depende de OAuth, Forge APIs e storage internos da plataforma atual.
@@ -34,7 +34,7 @@ Firebase Hosting será a camada de CDN, TLS e domínio próprio. Cloud Run hospe
 - Hosting: `firebase deploy --only hosting --project PROJECT_ID`
 
 ## Segurança e privacidade
-- Sempre: segredos apenas em Secret Manager; buckets de conteúdo público sem upload anônimo; princípio de menor privilégio no IAM; logs sem dados clínicos livres.
+- Sempre: segredos apenas em Secret Manager; bucket de mídia privado sem principal `allUsers`; identidade do Cloud Run com apenas `roles/storage.objectViewer`; princípio de menor privilégio no IAM; logs sem dados clínicos livres.
 - Perguntar antes: associar faturamento, criar Cloud SQL, migrar tabelas/dados, liberar Cloud Run publicamente, trocar DNS e desligar a hospedagem atual.
 - Nunca: versionar `.env`, credenciais, exportação de banco ou dados pessoais no Git; apontar domínio público para staging; expor `/admin` sem autenticação substituta.
 

@@ -314,6 +314,39 @@ describe("Integridade das páginas públicas", () => {
     expect(matrix).toContain("allUsers");
   });
 
+  it("mantém o Firebase Hosting pronto, mas impede expor o staging sem aprovação explícita", () => {
+    const firebaseConfig = JSON.parse(readFileSync(resolve(projectRoot, "firebase.json"), "utf8"));
+    const firebaseProjectExample = readFileSync(resolve(projectRoot, ".firebaserc.example"), "utf8");
+    const stagingScript = readFileSync(
+      resolve(projectRoot, "scripts/google-cloud/deploy-staging.sh"),
+      "utf8"
+    );
+    const runbook = readFileSync(resolve(projectRoot, "docs/migration/STAGING_RUNBOOK.md"), "utf8");
+
+    expect(firebaseConfig.hosting.site).toBe("site-dr-felipe-bulhoes");
+    expect(firebaseConfig.hosting.public).toBe("firebase-hosting-empty");
+    expect(firebaseConfig.hosting.rewrites).toEqual([
+      {
+        source: "**",
+        run: {
+          serviceId: "dr-felipe-site-staging",
+          region: "southamerica-east1",
+          pinTag: true,
+        },
+      },
+    ]);
+    expect(firebaseProjectExample).toContain('"site-dr-felipe-bulhoes"');
+    expect(stagingScript).toContain('SERVICE_NAME="${SERVICE_NAME:-dr-felipe-site-staging}"');
+    expect(stagingScript).toContain("--no-allow-unauthenticated");
+    expect(stagingScript).toContain("FIREBASE_HOSTING_PUBLIC_APPROVED=YES");
+    expect(stagingScript).toContain('--member="allUsers"');
+    expect(stagingScript).toContain('--role="roles/run.invoker"');
+    expect(stagingScript).toContain("firebase deploy --only hosting");
+    expect(runbook).toContain("cloud-run-site-assets");
+    expect(runbook).toContain("não autentica usuários");
+    expect(runbook).toContain("FIREBASE_HOSTING_PUBLIC_APPROVED=YES");
+  });
+
   it("não mantém referências ao arquivo antigo do logotipo", () => {
     const files = [
       "client/src/components/Header.tsx",

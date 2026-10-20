@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "site": "site-dr-felipe-bulhoes",
+    "public": "firebase-hosting-empty",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "run": {
+          "serviceId": "dr-felipe-site-staging",
+          "region": "southamerica-east1",
+          "pinTag": true
+        }
+      }
+    ]
+  }
+}

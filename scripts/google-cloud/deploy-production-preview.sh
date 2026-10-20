@@ -68,15 +68,11 @@ gcloud run deploy "$SERVICE_NAME" \
   --timeout "$TIMEOUT_SECONDS" \
   --cpu 1 \
   --memory 512Mi \
-  --no-allow-unauthenticated
+  --no-invoker-iam-check
 
-# A reescrita do Firebase Hosting exige este único acesso público no serviço;
-# o bucket permanece privado e não recebe principal allUsers.
-gcloud run services add-iam-policy-binding "$SERVICE_NAME" \
-  --project "$PROJECT_ID" \
-  --region "$REGION" \
-  --member="allUsers" \
-  --role="roles/run.invoker"
+# Em projetos com compartilhamento por domínio restrito, este é o método
+# recomendado pelo Cloud Run para expor somente o serviço. O bucket segue
+# privado e não recebe principal allUsers.
 
 firebase --config firebase.production-preview.json hosting:channel:deploy "$PREVIEW_CHANNEL" \
   --project "$PROJECT_ID" \

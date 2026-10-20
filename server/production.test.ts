@@ -81,8 +81,11 @@ describe("runtime público portátil", () => {
     expect(previewScript).toContain('PREVIEW_CHANNEL="${PREVIEW_CHANNEL:-production-candidate}"');
     expect(previewScript).toContain("FIREBASE_PREVIEW_PUBLIC_APPROVED=YES");
     expect(previewScript).toContain('firebase --config firebase.production-preview.json hosting:channel:deploy "$PREVIEW_CHANNEL"');
+    expect(previewScript).toContain("--no-invoker-iam-check");
     expect(previewScript).not.toContain("firebase deploy --only hosting");
     expect(previewScript).not.toContain("gcloud dns");
+    expect(previewScript).not.toContain("add-iam-policy-binding");
+    expect(previewScript).not.toContain('member="allUsers"');
   });
 
   it("inicia sem as variáveis exclusivas da hospedagem atual", () => {

@@ -17,7 +17,7 @@ Visitante
 
 A produção deve usar um serviço separado, por exemplo `dr-felipe-site-production`, e não reutilizar o serviço de staging. Isso permite validar uma imagem imutável, preservar a revisão de staging como referência e fazer rollback sem misturar ambientes.
 
-Há uma consequência importante: o Firebase Hosting exige que o serviço Cloud Run usado em uma reescrita aceite invocações não autenticadas. Portanto, `roles/run.invoker` para `allUsers` será necessário **somente no serviço Cloud Run de produção**. Isso não torna o bucket público, não altera a service account e não libera `/admin` nem `/api`, que já são bloqueados pelo runtime portátil. A URL direta do Cloud Run também ficará acessível publicamente; para escondê-la de modo rígido seria necessário trocar para uma arquitetura com balanceador de carga, mais complexa e potencialmente mais cara. [Firebase Hosting com Cloud Run](https://firebase.google.com/docs/hosting/cloud-run)
+Há uma consequência importante: o Firebase Hosting exige que o serviço Cloud Run usado em uma reescrita aceite invocações não autenticadas. Como este projeto usa compartilhamento restrito por domínio, a produção desabilita a checagem de Invoker IAM no **serviço Cloud Run de produção**, em vez de tentar conceder `roles/run.invoker` a `allUsers`. Esse é o método recomendado pelo Cloud Run nessa situação. Isso não torna o bucket público, não altera a service account e não libera `/admin` nem `/api`, que já são bloqueados pelo runtime portátil. A URL direta do Cloud Run também ficará acessível publicamente; para escondê-la de modo rígido seria necessário trocar para uma arquitetura com balanceador de carga, mais complexa e potencialmente mais cara. [Acesso público sem autenticação no Cloud Run](https://cloud.google.com/run/docs/authenticating/public)
 
 ## Bloqueador de compliance antes de expor a produção
 
@@ -45,7 +45,7 @@ Nessa etapa o serviço de produção deve permanecer privado para revisão final
 Após autorização explícita para tornar a versão candidata acessível publicamente:
 
 1. Usar `firebase.production-preview.json`, que reescreve apenas o canal temporário para `dr-felipe-site-production`, com `region: southamerica-east1` e `pinTag: true`. O `firebase.json` do canal live não é alterado nesta fase.
-2. Conceder `roles/run.invoker` a `allUsers` somente no serviço de produção, pois o Firebase precisa invocá-lo para servir o canal temporário. O bucket de assets continua privado.
+2. Desabilitar a checagem de Invoker IAM somente no serviço de produção, pois o Firebase precisa invocá-lo para servir o canal temporário. O bucket de assets continua privado; nenhum binding `allUsers` é usado.
 3. Publicar primeiro o canal `production-candidate`, válido por sete dias, pelo script guardado abaixo. A Firebase CLI devolve uma URL temporária `web.app`; ela deve ser validada antes do canal live.
 
 ```bash
@@ -115,7 +115,7 @@ Também confirmar no Cloud Console:
 
 - política IAM do bucket sem `allUsers`;
 - `roles/storage.objectViewer` somente para a service account do Cloud Run;
-- `allUsers` limitado a `roles/run.invoker` no serviço **de produção**, se Firebase Hosting estiver ativo;
+- checagem de Invoker IAM desabilitada somente no serviço **de produção**, se o Firebase Hosting estiver ativo; nenhuma política `allUsers` no bucket;
 - orçamento, alertas e limite máximo de instâncias ativos;
 - logs sem nome, telefone, email, mensagem ou informação clínica do visitante.
 

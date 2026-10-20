@@ -58,6 +58,33 @@ describe("runtime público portátil", () => {
     expect(copyScript).toContain("--connect-timeout 20 --max-time 180");
   });
 
+  it("mantém o preview de produção separado do Hosting live e protegido por confirmações", () => {
+    const previewConfig = JSON.parse(
+      readFileSync(new URL("../firebase.production-preview.json", import.meta.url), "utf8")
+    );
+    const previewScript = readFileSync(
+      new URL("../scripts/google-cloud/deploy-production-preview.sh", import.meta.url),
+      "utf8"
+    );
+
+    expect(previewConfig.hosting.site).toBe("site-dr-felipe-bulhoes");
+    expect(previewConfig.hosting.rewrites).toEqual([
+      {
+        source: "**",
+        run: {
+          serviceId: "dr-felipe-site-production",
+          region: "southamerica-east1",
+          pinTag: true,
+        },
+      },
+    ]);
+    expect(previewScript).toContain('PREVIEW_CHANNEL="${PREVIEW_CHANNEL:-production-candidate}"');
+    expect(previewScript).toContain("FIREBASE_PREVIEW_PUBLIC_APPROVED=YES");
+    expect(previewScript).toContain('firebase --config firebase.production-preview.json hosting:channel:deploy "$PREVIEW_CHANNEL"');
+    expect(previewScript).not.toContain("firebase deploy --only hosting");
+    expect(previewScript).not.toContain("gcloud dns");
+  });
+
   it("inicia sem as variáveis exclusivas da hospedagem atual", () => {
     const previous = new Map(platformOnlyVariables.map(name => [name, process.env[name]]));
 

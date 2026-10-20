@@ -44,9 +44,24 @@ Nessa etapa o serviço de produção deve permanecer privado para revisão final
 
 Após autorização explícita para tornar a versão candidata acessível publicamente:
 
-1. Alterar a reescrita de `firebase.json` para o serviço `dr-felipe-site-production`, mantendo `region: southamerica-east1` e `pinTag: true`.
-2. Conceder `roles/run.invoker` a `allUsers` somente no serviço de produção.
-3. Publicar primeiro um canal de preview do Firebase Hosting. O comando de preview devolve uma URL temporária `web.app`; ela deve ser validada antes do canal live.
+1. Usar `firebase.production-preview.json`, que reescreve apenas o canal temporário para `dr-felipe-site-production`, com `region: southamerica-east1` e `pinTag: true`. O `firebase.json` do canal live não é alterado nesta fase.
+2. Conceder `roles/run.invoker` a `allUsers` somente no serviço de produção, pois o Firebase precisa invocá-lo para servir o canal temporário. O bucket de assets continua privado.
+3. Publicar primeiro o canal `production-candidate`, válido por sete dias, pelo script guardado abaixo. A Firebase CLI devolve uma URL temporária `web.app`; ela deve ser validada antes do canal live.
+
+```bash
+git pull --ff-only user_github main
+export PROJECT_ID=site-dr-felipe-bulhoes
+export REGION=southamerica-east1
+export SERVICE_ACCOUNT_EMAIL=cloud-run-site-assets@site-dr-felipe-bulhoes.iam.gserviceaccount.com
+export GCS_ASSET_BUCKET=site-dr-felipe-bulhoes-public-2026
+export IMAGE=southamerica-east1-docker.pkg.dev/site-dr-felipe-bulhoes/felipe-site/site:COMMIT_SHA
+
+APPLY=YES FIREBASE_PREVIEW_PUBLIC_APPROVED=YES \
+  ./scripts/google-cloud/deploy-production-preview.sh
+```
+
+O script não aceita o canal `live`, não executa publicação live do Firebase Hosting e não altera DNS ou domínios personalizados. Ele solicita explicitamente a imagem imutável a implantar, mantém o serviço de staging intacto e imprime a URL temporária ao final.
+
 4. Verificar que o `pinTag` fixa a versão de Hosting à revisão Cloud Run correspondente. O mecanismo também permite rollback coordenado, mas mantém limites de tags que devem ser monitorados em ciclos de release. [Configuração de Hosting](https://firebase.google.com/docs/hosting/full-config)
 
 A região `southamerica-east1` é compatível com rewrites do Firebase Hosting para Cloud Run. O Hosting impõe timeout de 60 segundos às requisições encaminhadas, que é compatível com o site público atual. [Firebase Hosting com Cloud Run](https://firebase.google.com/docs/hosting/cloud-run)

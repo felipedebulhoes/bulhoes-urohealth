@@ -42,6 +42,7 @@ describe("runtime público portátil", () => {
 
     expect(dockerfile).toContain("COPY package.json pnpm-lock.yaml ./");
     expect(dockerfile).toContain("COPY patches ./patches");
+    expect(dockerfile).not.toContain("COPY package.json pnpm-lock.yaml patches/ ./");
     expect(dockerfile.indexOf("COPY patches ./patches")).toBeLessThan(
       dockerfile.indexOf("RUN pnpm install --frozen-lockfile")
     );

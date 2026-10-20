@@ -15,6 +15,8 @@
  * - share_content: compartilhamento de conteúdo por plataforma
  */
 
+import { hasAnalyticsConsent, hasMarketingConsent } from "./consent";
+
 // Tipagem global para Google tags.
 declare global {
   interface Window {
@@ -28,74 +30,25 @@ const GOOGLE_ADS_CONVERSION_ID = "AW-18050357375";
 const GOOGLE_ADS_CONVERSION_LABEL = "1tRMCJ6z3ZscEP-wip9D";
 const GOOGLE_ADS_SEND_TO = `${GOOGLE_ADS_CONVERSION_ID}/${GOOGLE_ADS_CONVERSION_LABEL}`;
 
-// ===== CONVERSÕES OTIMIZADAS (Enhanced Conversions) =====
-
-/**
- * Normaliza número de telefone para formato E.164 (ex: +5511981124455).
- * Remove tudo que não é dígito, adiciona +55 se não tiver DDI.
- */
-function normalizePhone(phone: string): string {
-  const digits = phone.replace(/\D/g, "");
-  if (digits.startsWith("55") && digits.length >= 12) {
-    return `+${digits}`;
-  }
-  if (digits.length >= 10) {
-    return `+55${digits}`;
-  }
-  return `+55${digits}`;
-}
-
-/**
- * Envia user_data normalizado ao Google Ads para Conversões Otimizadas.
- * NUNCA incluir informações clínicas — apenas email e telefone do formulário.
- * Deve ser chamado ANTES de disparar o evento de conversão.
- */
-export function setUserDataForOptimizedConversions(data: {
-  email?: string;
-  phone?: string;
-}): void {
-  if (typeof window === "undefined" || !window.gtag) return;
-
-  const userData: Record<string, string> = {};
-
-  if (data.email) {
-    userData.email = data.email.trim().toLowerCase();
-  }
-  if (data.phone) {
-    userData.phone_number = normalizePhone(data.phone);
-  }
-
-  if (Object.keys(userData).length > 0) {
-    window.gtag("set", "user_data", userData);
-  }
-}
-
 /**
  * Dispara todos os eventos de conversão do formulário WhatsApp:
- * - user_data para Conversões Otimizadas
- * - conversion Google Ads
+ * - conversão Google Ads agregada, sem identificadores pessoais
  * - lead_form_submit, contact_whatsapp, lead_whatsapp
  * Não envia evento ao Meta Pixel: uma solicitação de contato em contexto de
  * saúde pode refletir interesse em atendimento médico.
  * Retorna uma Promise que resolve após o delay técnico (800ms).
  */
-export function fireFormConversionEvents(data: {
-  email?: string;
-  phone?: string;
-}): Promise<void> {
+export function fireFormConversionEvents(): Promise<void> {
   return new Promise((resolve) => {
-    // 1. Enviar user_data para Enhanced Conversions
-    setUserDataForOptimizedConversions(data);
-
-    // 2. Conversão principal Google Ads
-    if (typeof window !== "undefined" && window.gtag) {
+    if (typeof window !== "undefined" && window.gtag && hasMarketingConsent()) {
       window.gtag("event", "conversion", {
         send_to: GOOGLE_ADS_SEND_TO,
         value: 100,
         currency: "BRL",
       });
+    }
 
-      // 3. Eventos GA4 adicionais
+    if (typeof window !== "undefined" && window.gtag && hasAnalyticsConsent()) {
       window.gtag("event", "lead_form_submit", {
         event_category: "conversion",
         contact_method: "whatsapp",
@@ -122,7 +75,7 @@ export function trackEvent(
   eventName: string,
   params?: Record<string, string | number | boolean>
 ) {
-  if (typeof window !== "undefined" && window.gtag) {
+  if (typeof window !== "undefined" && window.gtag && hasAnalyticsConsent()) {
     window.gtag("event", eventName, params);
   }
 }
@@ -132,7 +85,7 @@ export function trackEvent(
  * Chamado automaticamente nos eventos de conversão principais
  */
 export function trackGoogleAdsConversion(value: number = 100.0) {
-  if (typeof window !== "undefined" && window.gtag) {
+  if (typeof window !== "undefined" && window.gtag && hasMarketingConsent()) {
     window.gtag("event", "conversion", {
       send_to: GOOGLE_ADS_SEND_TO,
       value: value,

@@ -151,9 +151,16 @@ export default function PrivacyPolicy() {
             </div>
 
             <p className="mt-4 leading-relaxed">
-              Você pode gerenciar suas preferências de cookies a qualquer momento através do banner de cookies 
-              exibido no site ou nas configurações do seu navegador.
+              Você pode gerenciar suas preferências de cookies a qualquer momento nas configurações do seu navegador
+              ou pelo controle abaixo.
             </p>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("open_cookie_preferences"))}
+              className="mt-4 inline-flex min-h-11 items-center rounded-lg border border-[#1C3D5A]/30 px-4 py-2 text-sm font-medium text-[#1C3D5A] transition-colors hover:border-[#B87333] hover:text-[#9D602A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B87333] dark:border-white/35 dark:text-white"
+            >
+              Gerenciar preferências de cookies
+            </button>
           </section>
 
           {/* 5. Compartilhamento */}

@@ -104,11 +104,8 @@ export default function Contato() {
     if (loadingForm) return;
     setLoadingForm(true);
 
-    // Disparar eventos de conversão otimizados antes do redirecionamento
-    await fireFormConversionEvents({
-      email: formData.email,
-      phone: formData.phone,
-    });
+    // Eventos agregados, sem transmitir dados preenchidos pelo paciente.
+    await fireFormConversionEvents();
 
     const message = `Olá, meu nome é ${formData.name}. ${formData.message ? `Mensagem: ${formData.message}. ` : ""}Meu telefone: ${formData.phone}`;
     const encoded = encodeURIComponent(message);

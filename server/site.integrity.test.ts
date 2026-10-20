@@ -19,13 +19,15 @@ describe("Integridade das páginas públicas", () => {
   it("minimiza o Meta Pixel em saúde e bloqueia prévias, rotas clínicas e eventos de conversão", () => {
     const html = readFileSync(resolve(projectRoot, "client/index.html"), "utf8");
     const analytics = readFileSync(resolve(projectRoot, "client/src/lib/analytics.ts"), "utf8");
+    const pixel = readFileSync(resolve(projectRoot, "client/src/components/MetaPixel.tsx"), "utf8");
 
-    expect(html).toContain("allowedHosts");
-    expect(html).toContain("'felipebulhoes.com': true");
-    expect(html).toContain("institutionalPaths");
-    expect(html).toContain("'/agendamento': true");
-    expect(html).toContain("if (!allowedHosts[f.location.hostname] || !institutionalPaths[pathname]) return");
-    expect(html).not.toContain("manus.computer': true");
+    expect(html).not.toContain("fbevents.js");
+    expect(pixel).toContain('"felipebulhoes.com": true');
+    expect(pixel).toContain("institutionalPaths");
+    expect(pixel).toContain('"/agendamento": true');
+    expect(pixel).toContain("if (!isInstitutionalPage()) return");
+    expect(pixel).toContain("hasMarketingConsent()");
+    expect(pixel).not.toContain("manus.computer\": true");
     expect(html).not.toContain("facebook.com/tr?id=");
     expect(analytics).not.toContain("trackMetaLead");
     expect(analytics).not.toContain("trackMetaSchedule");

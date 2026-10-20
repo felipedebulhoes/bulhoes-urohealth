@@ -5,11 +5,20 @@ const mockGtag = vi.fn();
 
 describe("Google Analytics 4 — Event Tracking", () => {
   beforeEach(() => {
+    const consent = JSON.stringify({
+      version: "2.0",
+      analytics: true,
+      marketing: true,
+      timestamp: Date.now(),
+    });
     // Setup global gtag mock
     (globalThis as any).window = {
       gtag: mockGtag,
       dataLayer: [],
       location: { pathname: "/test" },
+      localStorage: {
+        getItem: (key: string) => (key === "lgpd_consent" ? consent : null),
+      },
     };
   });
 

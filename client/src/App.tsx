@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -74,6 +74,8 @@ import PageTransition from "./components/PageTransition";
 import SplashScreen from "./components/SplashScreen";
 import CookieBanner from "./components/CookieBanner";
 import GoogleTagManager from "./components/GoogleTagManager";
+import MetaPixel from "./components/MetaPixel";
+import { readConsent } from "./lib/consent";
 
 // Feedback visual discreto enquanto uma rota carregada sob demanda é resolvida.
 // A composição repete os tons e o isotipo da identidade pública, evitando tela
@@ -186,13 +188,22 @@ function App() {
   const isBrandPalettePreview = location === "/preview-paleta";
   const isQuietLuxuryPreview = location === "/preview-quiet-luxury";
   const isPublicBrandedRoute = !isPrototypeRoute && !isInternalRoute;
+  const [consent, setConsent] = useState(readConsent);
+
+  useEffect(() => {
+    const syncConsent = () => setConsent(readConsent());
+    window.addEventListener("cookie_consent_updated", syncConsent);
+    return () => window.removeEventListener("cookie_consent_updated", syncConsent);
+  }, []);
 
   useEffect(() => {
     if (isInternalRoute || isBrandPalettePreview || isQuietLuxuryPreview) return;
-    captureAttribution();
-    initGlobalContactListener();
-    initEngagementTracking();
-  }, [isBrandPalettePreview, isInternalRoute, isQuietLuxuryPreview]);
+    if (consent.marketing) captureAttribution();
+    if (consent.analytics) {
+      initGlobalContactListener();
+      initEngagementTracking();
+    }
+  }, [consent.analytics, consent.marketing, isBrandPalettePreview, isInternalRoute, isQuietLuxuryPreview, location]);
 
   return (
     <ErrorBoundary>
@@ -209,6 +220,7 @@ function App() {
               <Router />
               {!isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <CookieBanner />}
               {!isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <GoogleTagManager />}
+              {!isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <MetaPixel />}
           </div>
         </TooltipProvider>
       </ThemeProvider>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { readConsent } from "@/lib/consent";
 
 /**
  * Google Tag Manager - carrega APENAS quando o usuário consentiu cookies de analytics/marketing.
@@ -17,18 +18,9 @@ export default function GoogleTagManager() {
     if (!gtmId) return;
 
     const checkConsent = () => {
-      try {
-        const consent = localStorage.getItem("lgpd_consent");
-        if (consent) {
-          const parsed = JSON.parse(consent);
-          // Carrega GTM se analytics OU marketing estiver habilitado
-          if (parsed.analytics || parsed.marketing) {
-            setShouldLoad(true);
-          }
-        }
-      } catch {
-        // Se não conseguir parsear, não carrega
-      }
+      const consent = readConsent();
+      // Carrega GTM somente quando alguma categoria opcional foi autorizada.
+      setShouldLoad(consent.analytics || consent.marketing);
     };
 
     // Verificar consentimento inicial
@@ -49,13 +41,9 @@ export default function GoogleTagManager() {
     window.addEventListener("storage", handleStorageChange);
     window.addEventListener("cookie_consent_updated", handleConsentChange);
 
-    // Polling leve para capturar mudanças na mesma aba (fallback)
-    const interval = setInterval(checkConsent, 2000);
-
     return () => {
       window.removeEventListener("storage", handleStorageChange);
       window.removeEventListener("cookie_consent_updated", handleConsentChange);
-      clearInterval(interval);
     };
   }, [gtmId]);
 
@@ -87,12 +75,13 @@ export default function GoogleTagManager() {
     noscript.appendChild(iframe);
     document.body.insertBefore(noscript, document.body.firstChild);
 
-    // Enviar evento de consentimento ao dataLayer
+    // Registrar somente categorias efetivamente concedidas, sem dados pessoais.
+    const consent = readConsent();
     (window as any).dataLayer = (window as any).dataLayer || [];
     (window as any).dataLayer.push({
       event: "consent_granted",
-      consent_analytics: true,
-      consent_marketing: true,
+      consent_analytics: consent.analytics,
+      consent_marketing: consent.marketing,
     });
   }, [shouldLoad, gtmId]);
 

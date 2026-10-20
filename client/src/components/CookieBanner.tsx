@@ -7,69 +7,67 @@ import { useState, useEffect } from "react";
 import { X, Cookie, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-
-const CONSENT_KEY = "lgpd_consent";
-const CONSENT_VERSION = "1.0";
-
-interface ConsentData {
-  version: string;
-  accepted: boolean;
-  timestamp: number;
-  analytics: boolean;
-  marketing: boolean;
-}
+import { CONSENT_STORAGE_KEY, CONSENT_VERSION, readConsent, saveConsent } from "@/lib/consent";
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
-  const [analytics, setAnalytics] = useState(true);
+  const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem(CONSENT_KEY);
+    const stored = localStorage.getItem(CONSENT_STORAGE_KEY);
     if (!stored) {
       // Mostrar banner após 1.5s para não competir com splash screen
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
     try {
-      const data: ConsentData = JSON.parse(stored);
+      const data = JSON.parse(stored) as { version?: string };
       if (data.version !== CONSENT_VERSION) {
         setVisible(true);
+        return;
       }
+      const preferences = readConsent();
+      setAnalytics(preferences.analytics);
+      setMarketing(preferences.marketing);
     } catch {
       setVisible(true);
     }
   }, []);
 
-  const saveConsent = (accepted: boolean) => {
-    const consent: ConsentData = {
-      version: CONSENT_VERSION,
-      accepted,
-      timestamp: Date.now(),
-      analytics: accepted ? analytics : false,
-      marketing: accepted ? marketing : false,
+  useEffect(() => {
+    const openPreferences = () => {
+      const preferences = readConsent();
+      setAnalytics(preferences.analytics);
+      setMarketing(preferences.marketing);
+      setShowDetails(true);
+      setVisible(true);
     };
-    localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
-    // Disparar evento para que o GoogleTagManager detecte imediatamente
-    window.dispatchEvent(new Event("cookie_consent_updated"));
+
+    window.addEventListener("open_cookie_preferences", openPreferences);
+    return () => window.removeEventListener("open_cookie_preferences", openPreferences);
+  }, []);
+
+  const savePreferences = (preferences: { analytics: boolean; marketing: boolean }) => {
+    saveConsent(preferences);
     setVisible(false);
   };
 
   const acceptAll = () => {
     setAnalytics(true);
     setMarketing(true);
-    saveConsent(true);
+    savePreferences({ analytics: true, marketing: true });
   };
 
   const acceptSelected = () => {
-    saveConsent(true);
+    savePreferences({ analytics, marketing });
   };
 
   const rejectAll = () => {
     setAnalytics(false);
     setMarketing(false);
-    saveConsent(false);
+    savePreferences({ analytics: false, marketing: false });
   };
 
   return (
@@ -145,6 +143,7 @@ export default function CookieBanner() {
                                 checked={analytics}
                                 onChange={(e) => setAnalytics(e.target.checked)}
                                 className="sr-only peer"
+                                aria-label="Permitir cookies de análise"
                               />
                               <div className="w-9 h-5 bg-gray-200 dark:bg-muted peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#B87333]"></div>
                             </label>
@@ -166,6 +165,7 @@ export default function CookieBanner() {
                                 checked={marketing}
                                 onChange={(e) => setMarketing(e.target.checked)}
                                 className="sr-only peer"
+                                aria-label="Permitir cookies de marketing"
                               />
                               <div className="w-9 h-5 bg-gray-200 dark:bg-muted peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#B87333]"></div>
                             </label>

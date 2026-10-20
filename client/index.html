@@ -292,48 +292,21 @@
     <meta name="theme-color" content="#2E2520" />
     <!-- Facebook Domain Verification -->
     <meta name="facebook-domain-verification" content="hiwn6ax4235x1ih4bwhnsbtme1cb82" />
-    <!-- Meta Pixel: somente domínio público e rotas institucionais. Não carregar
-         em prévias *.manus.computer, localhost, páginas clínicas ou protótipos. -->
-    <script>
-    (function(f,b,e,v,n,t,s) {
-      var allowedHosts = {
-        'felipebulhoes.com': true,
-        'www.felipebulhoes.com': true,
-        'felipebulhoes.com.br': true,
-        'www.felipebulhoes.com.br': true,
-        'bulhoesurohealth.com': true,
-        'www.bulhoesurohealth.com': true,
-        'drfelipebulhoesurologia.com.br': true,
-        'www.drfelipebulhoesurologia.com.br': true
-      };
-      var institutionalPaths = {
-        '/': true,
-        '/sobre': true,
-        '/contato': true,
-        '/agendamento': true,
-        '/consultorios': true,
-        '/privacidade': true
-      };
-      var pathname = f.location.pathname.replace(/\/+$/, '') || '/';
-      if (!allowedHosts[f.location.hostname] || !institutionalPaths[pathname]) return;
-
-      if (f.fbq) return;
-      n=f.fbq=function(){n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)};
-      if(!f._fbq) f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
-      t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s);
-      f.fbq('init', '1730608694762791');
-      f.fbq('track', 'PageView');
-    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    </script>
-    <!-- Não há fallback noscript: ele não permite bloquear prévias ou rotas clínicas. -->
+    <!-- O Pixel Meta é injetado pelo componente React após consentimento de marketing.
+         Não há fallback noscript porque ele impediria a aplicação dessa escolha. -->
     <link rel="manifest" href="/site.webmanifest" />
-    <!-- Google Analytics 4 -->
+    <!-- Consent Mode precisa ser definido antes de qualquer configuração ou evento Google. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJHFGVQPS6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
       gtag('js', new Date());
       gtag('config', 'G-PJHFGVQPS6', {
         send_page_view: true,
@@ -350,7 +323,6 @@
         first_party_collection: true
       });
       gtag('config', 'AW-18050357375', {
-        allow_enhanced_conversions: true,
         send_page_view: false,
         linker: {
           domains: ['felipebulhoes.com', 'felipebulhoes.com.br', 'bulhoesurohealth.com', 'drfelipebulhoesurologia.com.br', 'doctoralia.com.br'],

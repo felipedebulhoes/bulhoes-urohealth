@@ -12,6 +12,8 @@
  * GA4 ID: G-PJHFGVQPS6
  */
 
+import { hasAnalyticsConsent, hasMarketingConsent } from "./consent";
+
 // ===== CONFIGURAÇÃO =====
 const GOOGLE_ADS_ID = "AW-18050357375";
 const STORAGE_KEY = "fb_ads_attribution";
@@ -112,7 +114,7 @@ function getFromCookies(): Partial<AttributionData> | null {
  * Deve ser chamado uma vez no carregamento da página (App.tsx ou main.tsx).
  */
 export function captureAttribution(): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !hasMarketingConsent()) return;
 
   const params = new URLSearchParams(window.location.search);
   const gclid = params.get("gclid");
@@ -273,12 +275,12 @@ declare global {
   interface Window {
     gtag: (...args: any[]) => void;
     dataLayer: any[];
-    fbq: (...args: any[]) => void;
+    fbq?: (...args: any[]) => void;
   }
 }
 
 function fireGA4Event(eventName: string, params: Record<string, string | number | boolean | undefined>) {
-  if (typeof window === "undefined" || !window.gtag) return;
+  if (typeof window === "undefined" || !window.gtag || !hasAnalyticsConsent()) return;
   
   // Anexar dados de atribuição e métricas de engajamento ao evento
   const attribution = getAttribution();
@@ -307,7 +309,7 @@ function fireGA4Event(eventName: string, params: Record<string, string | number 
 }
 
 function fireGoogleAdsConversion(eventType: string, value: number) {
-  if (typeof window === "undefined" || !window.gtag) return;
+  if (typeof window === "undefined" || !window.gtag || !hasMarketingConsent()) return;
 
   const label = GOOGLE_ADS_LABELS[eventType];
   if (!label) return;

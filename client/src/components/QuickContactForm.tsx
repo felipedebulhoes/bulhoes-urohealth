@@ -26,12 +26,8 @@ export default function QuickContactForm() {
     if (loading) return;
     setLoading(true);
 
-    // Disparar eventos de conversão otimizados antes do redirecionamento
-    // Apenas email e telefone — nunca dados clínicos
-    await fireFormConversionEvents({
-      email: formData.email,
-      phone: formData.phone,
-    });
+    // Eventos agregados, sem transmitir dados preenchidos pelo paciente.
+    await fireFormConversionEvents();
 
     // Redireciona para WhatsApp com os dados preenchidos
     const message = `Olá, meu nome é ${formData.name}. ${formData.message ? `Mensagem: ${formData.message}. ` : ""}Meu telefone: ${formData.phone}`;

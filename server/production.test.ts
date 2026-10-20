@@ -48,6 +48,16 @@ describe("runtime público portátil", () => {
     );
   });
 
+  it("repete erros transitórios de transporte ao copiar assets legados", () => {
+    const copyScript = readFileSync(
+      new URL("../scripts/google-cloud/copy-manus-assets.sh", import.meta.url),
+      "utf8"
+    );
+
+    expect(copyScript).toContain("--retry 3 --retry-all-errors");
+    expect(copyScript).toContain("--connect-timeout 20 --max-time 180");
+  });
+
   it("inicia sem as variáveis exclusivas da hospedagem atual", () => {
     const previous = new Map(platformOnlyVariables.map(name => [name, process.env[name]]));
 

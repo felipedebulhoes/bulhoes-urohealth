@@ -67,7 +67,9 @@ while IFS=$'\t' read -r key object_path; do
   content_type="$(content_type_for "$key")"
 
   printf 'Verificando %s\n' "$key"
-  if ! curl -fL --retry 2 --connect-timeout 20 --max-time 180 "$source_url" --output "$local_file"; then
+  # O host legado pode recusar transitoriamente uma conexão do Cloud Shell.
+  # Repetimos erros de transporte sem alterar a lógica idempotente de verificação de tamanho.
+  if ! curl -fL --retry 3 --retry-all-errors --connect-timeout 20 --max-time 180 "$source_url" --output "$local_file"; then
     printf 'Falha ao obter %s\n' "$key" >&2
     failed=$((failed + 1))
     continue

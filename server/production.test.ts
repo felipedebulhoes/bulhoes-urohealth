@@ -112,6 +112,20 @@ describe("runtime público portátil", () => {
     expect(liveScript).not.toContain("customDomains");
   });
 
+  it("mantém o desafio HTTP ACME temporário até o certificado do domínio ser confirmado", () => {
+    const challenge = readFileSync(
+      new URL(
+        "../client/public/.well-known/acme-challenge/2JxXwOsY0xJYLWvouKpD26LusHjH7OjUVG_uxKIccav1QFiTeCzTdBi6FzgxYiw2",
+        import.meta.url
+      ),
+      "utf8"
+    ).trim();
+
+    expect(challenge).toBe(
+      "2JxXwOsY0xJYLWvouKpD26LusHjH7OjUVG_uxKIccav1QFiTeCzTdBi6FzgxYiw2.M0-GObbb5ePi63ASQsPKBrDqfgayGnOWpyrEF0nHqug"
+    );
+  });
+
   it("inicia sem as variáveis exclusivas da hospedagem atual", () => {
     const previous = new Map(platformOnlyVariables.map(name => [name, process.env[name]]));
 

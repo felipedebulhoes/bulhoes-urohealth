@@ -11,7 +11,7 @@
       {
         "source": "**",
         "run": {
-          "serviceId": "dr-felipe-site-staging",
+          "serviceId": "dr-felipe-site-production",
           "region": "southamerica-east1",
           "pinTag": true
         }

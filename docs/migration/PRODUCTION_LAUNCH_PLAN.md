@@ -72,6 +72,8 @@ Com o preview aprovado, publicar o canal live do Firebase Hosting. Isso libera s
 
 Manter a hospedagem atual funcionando como rollback enquanto a versão Firebase é observada. Não desligar a hospedagem atual nesta fase.
 
+Usar `scripts/google-cloud/deploy-production-live.sh` com `APPLY=YES FIREBASE_HOSTING_LIVE_APPROVED=YES`. Antes de publicar, ele verifica a revisão pronta do serviço `dr-felipe-site-production`, a identidade `cloud-run-site-assets`, o bucket privado esperado e a anotação `run.googleapis.com/invoker-iam-disabled: true`. O script não faz deploy de container, não configura domínios e não altera registros DNS.
+
 ## Domínio personalizado e DNS
 
 A configuração recomendada preserva o canônico atual:

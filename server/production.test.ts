@@ -88,6 +88,30 @@ describe("runtime público portátil", () => {
     expect(previewScript).not.toContain('member="allUsers"');
   });
 
+  it("publica o Hosting live somente para o serviço de produção após confirmação explícita", () => {
+    const liveConfig = JSON.parse(readFileSync(new URL("../firebase.json", import.meta.url), "utf8"));
+    const liveScript = readFileSync(
+      new URL("../scripts/google-cloud/deploy-production-live.sh", import.meta.url),
+      "utf8"
+    );
+
+    expect(liveConfig.hosting.rewrites).toEqual([
+      {
+        source: "**",
+        run: {
+          serviceId: "dr-felipe-site-production",
+          region: "southamerica-east1",
+          pinTag: true,
+        },
+      },
+    ]);
+    expect(liveScript).toContain("FIREBASE_HOSTING_LIVE_APPROVED=YES");
+    expect(liveScript).toContain('firebase deploy --only hosting --project "$PROJECT_ID"');
+    expect(liveScript).toContain("run.googleapis.com/invoker-iam-disabled");
+    expect(liveScript).not.toContain("gcloud dns");
+    expect(liveScript).not.toContain("customDomains");
+  });
+
   it("inicia sem as variáveis exclusivas da hospedagem atual", () => {
     const previous = new Map(platformOnlyVariables.map(name => [name, process.env[name]]));
 

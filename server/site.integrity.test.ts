@@ -331,11 +331,15 @@ describe("Integridade das páginas públicas", () => {
     expect(transferScript).toContain("curl -fL");
   });
 
-  it("mantém o Firebase Hosting pronto, mas impede expor o staging sem aprovação explícita", () => {
+  it("mantém staging privado por padrão e aponta o Firebase Hosting live somente para produção", () => {
     const firebaseConfig = JSON.parse(readFileSync(resolve(projectRoot, "firebase.json"), "utf8"));
     const firebaseProjectExample = readFileSync(resolve(projectRoot, ".firebaserc.example"), "utf8");
     const stagingScript = readFileSync(
       resolve(projectRoot, "scripts/google-cloud/deploy-staging.sh"),
+      "utf8"
+    );
+    const liveScript = readFileSync(
+      resolve(projectRoot, "scripts/google-cloud/deploy-production-live.sh"),
       "utf8"
     );
     const runbook = readFileSync(resolve(projectRoot, "docs/migration/STAGING_RUNBOOK.md"), "utf8");
@@ -346,7 +350,7 @@ describe("Integridade das páginas públicas", () => {
       {
         source: "**",
         run: {
-          serviceId: "dr-felipe-site-staging",
+          serviceId: "dr-felipe-site-production",
           region: "southamerica-east1",
           pinTag: true,
         },
@@ -356,9 +360,10 @@ describe("Integridade das páginas públicas", () => {
     expect(stagingScript).toContain('SERVICE_NAME="${SERVICE_NAME:-dr-felipe-site-staging}"');
     expect(stagingScript).toContain("--no-allow-unauthenticated");
     expect(stagingScript).toContain("FIREBASE_HOSTING_PUBLIC_APPROVED=YES");
-    expect(stagingScript).toContain('--member="allUsers"');
-    expect(stagingScript).toContain('--role="roles/run.invoker"');
-    expect(stagingScript).toContain("firebase deploy --only hosting");
+    expect(liveScript).toContain("FIREBASE_HOSTING_LIVE_APPROVED=YES");
+    expect(liveScript).toContain('firebase deploy --only hosting --project "$PROJECT_ID"');
+    expect(liveScript).not.toContain("gcloud dns");
+    expect(liveScript).not.toContain("customDomains");
     expect(runbook).toContain("cloud-run-site-assets");
     expect(runbook).toContain("não autentica usuários");
     expect(runbook).toContain("FIREBASE_HOSTING_PUBLIC_APPROVED=YES");

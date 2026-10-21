@@ -30,7 +30,7 @@ Firebase Hosting será a camada de CDN, TLS e domínio próprio. Cloud Run hospe
 - Verificação: `pnpm check && pnpm test && pnpm build`
 - Build de container: `gcloud builds submit --tag REGION-docker.pkg.dev/PROJECT_ID/site/site:COMMIT_SHA`
 - Staging Cloud Run: `gcloud run deploy SERVICE --image IMAGE --region southamerica-east1 --no-allow-unauthenticated`
-- Produção Cloud Run: `gcloud run deploy SERVICE --image IMAGE --region southamerica-east1 --allow-unauthenticated`
+- Produção Cloud Run: `gcloud run deploy SERVICE --image IMAGE --region southamerica-east1 --no-invoker-iam-check` quando a política de compartilhamento por domínio bloquear `allUsers`
 - Hosting: `firebase deploy --only hosting --project PROJECT_ID`
 
 ## Segurança e privacidade

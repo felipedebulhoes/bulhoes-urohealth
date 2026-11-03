@@ -48,6 +48,8 @@ const educationalLinks = [
   { label: "Incontinência Urinária", href: "/educativo/incontinencia-urinaria" },
   { label: "Infertilidade Masculina", href: "/educativo/infertilidade-masculina" },
   { label: "Doença de Peyronie", href: "/educativo/doenca-peyronie" },
+  { label: "Preenchimento Peniano (Ácido Hialurônico)", href: "/preenchimento-peniano" },
+  { label: "Guia: Engrossamento Peniano", href: "/educativo/engrossamento-peniano" },
   { label: "Orientações Pré-Operatórias", href: "/educativo/orientacoes-pre-operatorias" },
   { label: "Orientações Pós-Operatórias", href: "/educativo/orientacoes-pos-operatorias" },
   { label: "Canetas Emagrecedoras (GLP-1)", href: "/guia-glp1" },

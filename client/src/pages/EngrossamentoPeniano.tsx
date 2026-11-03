@@ -1,9 +1,11 @@
 import EducationalLayout from "@/components/EducationalLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertCircle, CheckCircle, Clock, Shield, Users } from "lucide-react";
+import { AlertCircle, ArrowRight, CheckCircle, Clock, Shield, Sparkles, Users } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { FaviconInjector } from "@/components/FaviconInjector";
 import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 
 export default function EngrossamentoPeniano() {
   const faqItems = [
@@ -60,12 +62,34 @@ export default function EngrossamentoPeniano() {
       medicalCondition="Engrossamento Peniano"
     >
       {/* Aviso Importante */}
-      <Alert className="border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950 mb-8">
+      <Alert className="border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950 mb-6">
         <AlertCircle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
         <AlertDescription className="text-blue-800 dark:text-blue-200">
           <strong>Informação Importante:</strong> Este conteúdo é educativo. O engrossamento peniano com ácido hialurônico é um procedimento eletivo que deve ser realizado por urologista qualificado após avaliação clínica completa e consentimento informado.
         </AlertDescription>
       </Alert>
+
+      {/* Banner de Acesso Rápido à Página Exclusiva com Atlas Anatômico */}
+      <div className="mb-8 rounded-xl border border-[#B87333]/30 bg-[#1C3D5A] text-white p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-md">
+        <div>
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#D9C58A] mb-1">
+            <Sparkles className="w-3.5 h-3.5" />
+            Página Especial de Atendimento · SP e Campinas
+          </span>
+          <h3 className="text-lg font-serif text-white">
+            Deseja ver o Atlas Anatômico Didático e agendar avaliação sigilosa?
+          </h3>
+          <p className="text-xs sm:text-sm text-white/75 mt-1">
+            Acesse nossa página completa sobre Preenchimento Peniano com Ácido Hialurônico com diagramas das camadas anatômicas, comparativo AH vs. PMMA e agendamento discreto.
+          </p>
+        </div>
+        <Link href="/preenchimento-peniano" className="shrink-0">
+          <Button className="bg-[#B87333] hover:bg-[#D4884A] text-white font-semibold text-xs sm:text-sm h-10 px-4">
+            Ver Página do Procedimento
+            <ArrowRight className="w-4 h-4 ml-1.5" />
+          </Button>
+        </Link>
+      </div>
 
       {/* Introdução */}
       <Card className="mb-8">
@@ -486,8 +510,20 @@ export default function EngrossamentoPeniano() {
       {/* CTA */}
       <Alert className="border-[#1C3D5A] bg-[#1C3D5A]/5 dark:bg-[#1C3D5A]/10">
         <AlertCircle className="h-4 w-4 text-[#1C3D5A]" />
-        <AlertDescription className="text-[#1C3D5A] dark:text-blue-300">
-          <strong>Tem dúvidas?</strong> Agende uma consulta com o Dr. Felipe de Bulhões para discussão personalizada sobre engrossamento peniano com ácido hialurônico. Avaliação completa e consentimento informado são essenciais.
+        <AlertDescription className="text-[#1C3D5A] dark:text-blue-300 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <span>
+            <strong>Tem dúvidas?</strong> Agende uma consulta com o Dr. Felipe de Bulhões para discussão personalizada sobre{" "}
+            <Link href="/preenchimento-peniano" className="underline font-semibold hover:text-[#B87333]">
+              preenchimento peniano com ácido hialurônico
+            </Link>
+            . Avaliação completa e consentimento informado são essenciais.
+          </span>
+          <Link href="/preenchimento-peniano" className="shrink-0">
+            <Button className="bg-[#1C3D5A] hover:bg-[#1C3D5A]/90 text-white text-xs h-9 px-4">
+              Acessar Página de Agendamento
+              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+            </Button>
+          </Link>
         </AlertDescription>
       </Alert>
     </EducationalLayout>

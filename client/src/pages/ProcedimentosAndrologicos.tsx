@@ -5,11 +5,12 @@
  */
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "wouter";
 import EducationalLayout from "@/components/EducationalLayout";
 import {
   Shield, Scissors, Heart, AlertTriangle, Check, X,
   Clock, ChevronDown, ChevronUp, Activity, Pill,
-  Stethoscope, Thermometer, Baby
+  Stethoscope, Thermometer, Baby, ArrowRight, Sparkles
 } from "lucide-react";
 
 interface Procedure {
@@ -397,6 +398,29 @@ export default function ProcedimentosAndrologicos() {
           {procedures.map((proc, i) => (
             <ProcedureSection key={proc.id} proc={proc} index={i} />
           ))}
+
+          {/* Card de Redirecionamento para Preenchimento Peniano com Ácido Hialurônico */}
+          <div className="rounded-xl border border-[#1C3D5A]/15 bg-[#1C3D5A] text-white p-6 lg:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#D9C58A] mb-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                Procedimento Ambulatorial sem Cortes
+              </span>
+              <h3 className="text-xl font-serif text-white mb-2">
+                Preenchimento Peniano com Ácido Hialurônico
+              </h3>
+              <p className="text-sm text-white/75 leading-relaxed max-w-xl">
+                Conheça o protocolo urológico para ganho de circunferência peniana em consultório, com material biocompatível, 100% reversível e preservação total da função erétil.
+              </p>
+            </div>
+            <Link
+              href="/preenchimento-peniano"
+              className="shrink-0 inline-flex items-center gap-2 rounded-lg bg-[#B87333] hover:bg-[#D4884A] text-white font-semibold text-xs sm:text-sm px-5 py-3 transition-colors"
+            >
+              Ver Guia Completo
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

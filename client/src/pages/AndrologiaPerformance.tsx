@@ -4,7 +4,8 @@
  * Tom: médico, elegante, discreto, autoridade técnica
  */
 import { motion } from "framer-motion";
-import { CheckCircle2, Activity, Brain, Beaker, ShieldCheck, TrendingUp } from "lucide-react";
+import { Link } from "wouter";
+import { CheckCircle2, Activity, Brain, Beaker, ShieldCheck, TrendingUp, ArrowRight, Sparkles } from "lucide-react";
 import CampaignLayout from "@/components/CampaignLayout";
 import { FaviconInjector } from "@/components/FaviconInjector";
 import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
@@ -164,7 +165,7 @@ export default function AndrologiaPerformance() {
             <p className="text-[#334155] leading-relaxed mb-6">
               O Dr. Felipe de Bulhões segue as diretrizes das principais sociedades urológicas internacionais (EAU, AUA) para diagnóstico e tratamento de distúrbios hormonais masculinos. A abordagem é sempre individualizada, segura e com acompanhamento rigoroso.
             </p>
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-3 gap-4 mb-10">
               {[
                 { title: "EAU Guidelines", desc: "European Association of Urology" },
                 { title: "AUA Guidelines", desc: "American Urological Association" },
@@ -175,6 +176,50 @@ export default function AndrologiaPerformance() {
                   <p className="text-xs text-[#64748B] mt-1">{item.desc}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Procedimentos Correlatos em Andrologia e Estética Íntima */}
+            <div className="rounded-xl border border-[#1C3D5A]/10 bg-white dark:bg-card p-6">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#B87333] mb-2">
+                <Sparkles className="w-3.5 h-3.5" />
+                Áreas Correlatas em Andrologia
+              </div>
+              <h3 className="text-lg font-serif text-[#1C3D5A] dark:text-foreground mb-2">
+                Procedimentos Andrológicos e Estética Íntima Masculina
+              </h3>
+              <p className="text-sm text-[#334155] leading-relaxed mb-4">
+                Além da investigação hormonal e da função erétil, realizamos avaliação urológica especializada para procedimentos estéticos e reconstrutivos genitais com protocolos seguros e discretos:
+              </p>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <Link
+                  href="/preenchimento-peniano"
+                  className="group rounded-lg border border-[#1C3D5A]/10 p-4 hover:border-[#B87333]/50 transition-colors flex items-center justify-between gap-3"
+                >
+                  <div>
+                    <p className="text-sm font-semibold text-[#1C3D5A] group-hover:text-[#B87333] transition-colors">
+                      Preenchimento Peniano com Ácido Hialurônico
+                    </p>
+                    <p className="text-xs text-[#64748B] mt-0.5">
+                      Ganho de circunferência sem cortes, biocompatível e 100% reversível
+                    </p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-[#B87333] shrink-0" />
+                </Link>
+                <Link
+                  href="/estetica-intima-masculina"
+                  className="group rounded-lg border border-[#1C3D5A]/10 p-4 hover:border-[#B87333]/50 transition-colors flex items-center justify-between gap-3"
+                >
+                  <div>
+                    <p className="text-sm font-semibold text-[#1C3D5A] group-hover:text-[#B87333] transition-colors">
+                      Estética Íntima Masculina e Curvatura Peniana
+                    </p>
+                    <p className="text-xs text-[#64748B] mt-0.5">
+                      Avaliação sigilosa em São Paulo e Campinas
+                    </p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-[#B87333] shrink-0" />
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>

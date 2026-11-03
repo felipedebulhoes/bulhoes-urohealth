@@ -3,6 +3,7 @@
  * Footer: Clean, minimal with essential info — active locations + teleconsulta
  */
 import { Instagram, ExternalLink, MapPin, Phone, Mail, Monitor } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -173,6 +174,39 @@ export default function Footer() {
                 <span className="text-xs font-sans break-all">drfelipebulhoes@bulhoesurohealth.com</span>
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Navegação de Procedimentos e Especialidades (SEO Internal Linking) */}
+        <div className="pt-8 pb-8 border-t border-white/8">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-white/45 mb-3">
+            Procedimentos e Áreas de Atuação em Destaque
+          </p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-sans text-white/65">
+            <Link href="/preenchimento-peniano" className="hover:text-white transition-colors">
+              Preenchimento Peniano com Ácido Hialurônico
+            </Link>
+            <Link href="/estetica-intima-masculina" className="hover:text-white transition-colors">
+              Estética Íntima Masculina
+            </Link>
+            <Link href="/andrologia-performance-masculina" className="hover:text-white transition-colors">
+              Andrologia e Saúde Hormonal
+            </Link>
+            <Link href="/vasectomia-sem-bisturi" className="hover:text-white transition-colors">
+              Vasectomia Sem Bisturi
+            </Link>
+            <Link href="/cirurgia-robotica-urologia" className="hover:text-white transition-colors">
+              Cirurgia Robótica em Urologia
+            </Link>
+            <Link href="/litotripsia-calculo-renal" className="hover:text-white transition-colors">
+              Cálculos Renais e Litotripsia a Laser
+            </Link>
+            <Link href="/educativo/engrossamento-peniano" className="hover:text-white transition-colors">
+              Guia Educativo: Engrossamento Peniano
+            </Link>
+            <Link href="/consultorios" className="hover:text-white transition-colors">
+              Consultórios em São Paulo e Campinas
+            </Link>
           </div>
         </div>
 

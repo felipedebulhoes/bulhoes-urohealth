@@ -4,7 +4,8 @@
  * Tom: clínico, discreto, sem apelo sexual explícito
  */
 import { motion } from "framer-motion";
-import { CheckCircle2, ShieldCheck, Eye, UserCheck, AlertTriangle, Stethoscope } from "lucide-react";
+import { Link } from "wouter";
+import { CheckCircle2, ShieldCheck, Eye, UserCheck, AlertTriangle, Stethoscope, ArrowRight } from "lucide-react";
 import CampaignLayout from "@/components/CampaignLayout";
 import { FaviconInjector } from "@/components/FaviconInjector";
 import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
@@ -81,10 +82,12 @@ export default function EsteticaIntimaMasculina() {
                 {
                   title: "Preenchimento peniano com ácido hialurônico",
                   desc: "Procedimento ambulatorial para aumento de circunferência. Utiliza ácido hialurônico de alta densidade, específico para a região. Resultado temporário (12-18 meses) e reversível.",
+                  href: "/preenchimento-peniano",
                 },
                 {
                   title: "Tratamento de curvatura peniana",
                   desc: "Avaliação e tratamento da Doença de Peyronie e curvaturas congênitas. Abordagem clínica ou cirúrgica conforme indicação.",
+                  href: "/educativo/doenca-peyronie",
                 },
                 {
                   title: "Correção de assimetrias escrotais",
@@ -96,6 +99,15 @@ export default function EsteticaIntimaMasculina() {
                 >
                   <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h3>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
+                  {item.href && (
+                    <Link
+                      href={item.href}
+                      className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#B87333] hover:underline"
+                    >
+                      Saiba mais sobre este procedimento
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </div>

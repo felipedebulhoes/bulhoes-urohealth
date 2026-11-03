@@ -140,6 +140,15 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     type: "website",
     breadcrumb: "Estética íntima masculina",
   },
+  "/preenchimento-peniano": {
+    title: "Preenchimento Peniano com Ácido Hialurônico em SP e Campinas | Dr. Felipe de Bulhões",
+    description:
+      "Preenchimento peniano com ácido hialurônico realizado por urologista em São Paulo e Campinas. Procedimento ambulatorial sem cortes, reversível, seguro e com sigilo absoluto.",
+    image: OG_IMAGE_ESTETICA_INTIMA,
+    imageAlt: "Preenchimento peniano com ácido hialurônico — Dr. Felipe de Bulhões",
+    type: "website",
+    breadcrumb: "Preenchimento peniano",
+  },
 };
 
 const EDUCATIONAL_LABELS: Record<string, string> = {

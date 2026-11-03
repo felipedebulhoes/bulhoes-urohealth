@@ -54,6 +54,7 @@ export const PUBLIC_STATIC_PATHS = [
   "/vasectomia-sem-bisturi",
   "/andrologia-performance-masculina",
   "/estetica-intima-masculina",
+  "/preenchimento-peniano",
   "/privacidade",
 ] as const;
 

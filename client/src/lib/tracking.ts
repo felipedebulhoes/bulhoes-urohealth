@@ -331,6 +331,7 @@ function getServiceContext(): string {
   const pathname = window.location.pathname;
   if (pathname.includes("vasectomia")) return "vasectomia";
   if (pathname.includes("andrologia")) return "andrologia";
+  if (pathname.includes("preenchimento-peniano") || pathname.includes("engrossamento-peniano")) return "preenchimento_peniano";
   if (pathname.includes("estetica-intima")) return "estetica_intima";
   if (pathname.includes("glp1") || pathname.includes("canetas")) return "glp1";
   if (pathname.includes("cirurgia-robotica")) return "cirurgia_robotica";
@@ -477,6 +478,8 @@ export function getWhatsAppUrl(options: {
     "andrologia-performance-masculina": "Olá! Gostaria de agendar uma consulta sobre saúde e performance masculina com o Dr. Felipe Bulhões.",
     "estetica-intima": "Olá! Gostaria de agendar uma consulta sobre estética íntima masculina com o Dr. Felipe Bulhões.",
     "estetica-intima-masculina": "Olá! Gostaria de agendar uma consulta sobre estética íntima masculina com o Dr. Felipe Bulhões.",
+    "preenchimento-peniano": "Olá! Vi a página sobre preenchimento peniano com ácido hialurônico e gostaria de agendar uma avaliação com o Dr. Felipe Bulhões.",
+    "engrossamento-peniano": "Olá! Vi a página sobre preenchimento peniano com ácido hialurônico e gostaria de agendar uma avaliação com o Dr. Felipe Bulhões.",
     "campinas": "Olá! Gostaria de agendar uma consulta com o Dr. Felipe Bulhões em Campinas.",
     "homepage": "Olá! Gostaria de agendar uma consulta com o Dr. Felipe Bulhões.",
     "guia-glp1": "Olá! Gostaria de agendar uma consulta sobre canetas GLP-1 e saúde masculina com o Dr. Felipe Bulhões.",

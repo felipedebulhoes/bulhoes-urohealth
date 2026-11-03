@@ -58,6 +58,7 @@ const GuiaGLP1 = lazy(() => import("./pages/GuiaGLP1"));
 const VasectomiaSemBisturi = lazy(() => import("./pages/VasectomiaSemBisturi"));
 const AndrologiaPerformance = lazy(() => import("./pages/AndrologiaPerformance"));
 const EsteticaIntimaMasculina = lazy(() => import("./pages/EsteticaIntimaMasculina"));
+const PreenchimentoPeniano = lazy(() => import("./pages/PreenchimentoPeniano"));
 const EngrossamentoPeniano = lazy(() => import("./pages/EngrossamentoPeniano"));
 const InstagramCarousel = lazy(() => import("./pages/InstagramCarousel"));
 const AgendarDoctoralia = lazy(() => import("./pages/AgendarDoctoralia"));
@@ -162,6 +163,7 @@ function Router() {
         <Route path={"/vasectomia-sem-bisturi"} component={VasectomiaSemBisturi} />
         <Route path={"/andrologia-performance-masculina"} component={AndrologiaPerformance} />
         <Route path={"/estetica-intima-masculina"} component={EsteticaIntimaMasculina} />
+        <Route path={"/preenchimento-peniano"} component={PreenchimentoPeniano} />
         <Route path={"/educativo/engrossamento-peniano"} component={EngrossamentoPeniano} />
         <Route path={"/instagram-carousel"} component={InstagramCarousel} />
         <Route path={"/agendar/doctoralia"} component={AgendarDoctoralia} />

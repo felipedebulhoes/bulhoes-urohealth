@@ -12,11 +12,17 @@ const callingstoneB64 = fs
 const isotipoSvg = fs
   .readFileSync(path.join(STORAGE_DIR, "isotipo-fb_b21c0959.svg"), "utf8")
   .replace(/<\?xml.*?\?>/g, "")
+  .replace(/<!DOCTYPE.*?>/gs, "")
+  .replace(/#C4C4C4/gi, "#C9B6A3")
+  .replace(/#FEFEFE/gi, "#F7F5F2")
   .trim();
 
 const landscapeLogoSvg = fs
   .readFileSync(path.join(STORAGE_DIR, "logo-landscape-dr-felipe_cc84d4a3.svg"), "utf8")
   .replace(/<\?xml.*?\?>/g, "")
+  .replace(/<!DOCTYPE.*?>/gs, "")
+  .replace(/#C4C4C4/gi, "#C9B6A3")
+  .replace(/#FEFEFE/gi, "#F7F5F2")
   .trim();
 
 const WHATSAPP_LINK_BASE = "https://wa.me/5511981124455?text=";
@@ -1228,7 +1234,7 @@ const GUIDES = [
       "Cornu JN, Gacci M, Hashim H, et al. EAU Guidelines on Management of Non-Neurogenic Male Lower Urinary Tract Symptoms (LUTS), incl. Benign Prostatic Obstruction (BPO). European Association of Urology, 2025/2026.",
       "Cornford P, Tilki D, van den Bergh RCN, et al. EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer. Eur Urol, 2025.",
       "Sandhu JS, Bixler BR, Dahm P, et al. Management of Lower Urinary Tract Symptoms Attributed to Benign Prostatic Hyperplasia: AUA Guideline. J Urol. 2024.",
-      "Conselho Federal de Medicina (CFM). Resolução CFM nº 2.336/2023. Material informativo elaborado pelo Dr. Felipe de Bulhões Ojeda (CRM-SP 202291 | RQE 146538 | RQE 114019).",
+      "Conselho Federal de Medicina (CFM). Resolução CFM nº 2.336/2023. Material informativo elaborado pelo Dr. Felipe de Bulhões (CRM-SP 202.291 | RQE 146538 / 114019).",
     ],
   },
   {
@@ -1364,7 +1370,7 @@ const GUIDES = [
       "Salonia A, Bettocchi C, Boeri L, et al. EAU Guidelines on Sexual and Reproductive Health — Male Infertility & Varicocele. European Association of Urology, 2025/2026.",
       "Schlegel PN, Sigman M, Collura B, et al. Diagnosis and Treatment of Infertility in Men: AUA/ASRM Guideline. J Urol. 2021.",
       "Sharlip ID, Belker AM, Honig S, et al. Vasectomy: AUA Guideline. American Urological Association.",
-      "Conselho Federal de Medicina (CFM). Resolução CFM nº 2.336/2023. Dr. Felipe de Bulhões Ojeda — CRM-SP 202291 | RQE 146538 | RQE 114019.",
+      "Conselho Federal de Medicina (CFM). Resolução CFM nº 2.336/2023. Dr. Felipe de Bulhões — CRM-SP 202.291 | RQE 146538 / 114019.",
     ],
   },
 ];
@@ -1404,13 +1410,15 @@ for (const guide of GUIDES) {
   console.log(`Generated ${guide.filename} (${Math.round(stat.size / 1024)} KB)`);
 }
 
-// Copy flagship guide to legacy filename so any existing link or test remains 100% functional
-const legacyPath = path.join(
-  STORAGE_DIR,
-  "Guia_Saude_Integral_Homem_Dr_Felipe_Bulhoes_113672bc.pdf"
-);
-fs.copyFileSync(
-  path.join(STORAGE_DIR, GUIDES[0].filename),
-  legacyPath
-);
-console.log("Updated legacy Guia_Saude_Integral_Homem_Dr_Felipe_Bulhoes_113672bc.pdf");
+// Copy flagship guide to legacy filenames so any existing link or test remains 100% functional
+const legacyPaths = [
+  "Guia_Saude_Integral_Homem_Dr_Felipe_Bulhoes_113672bc.pdf",
+  "Playbook-Saude-Integral-DrFelipeBulhoes_57b5fc71.pdf",
+];
+for (const legacyFile of legacyPaths) {
+  fs.copyFileSync(
+    path.join(STORAGE_DIR, GUIDES[0].filename),
+    path.join(STORAGE_DIR, legacyFile)
+  );
+}
+console.log("Updated legacy playbook PDFs with Official Warm Quiet Luxury palette");

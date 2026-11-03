@@ -4,8 +4,84 @@ import { trackEvent, fireFormConversionEvents } from "@/lib/analytics";
 import { getAttribution } from "@/lib/tracking";
 
 const KOMMO_WHATSAPP_NUMBER = "5511981124455";
-const DEFAULT_PLAYBOOK_URL =
-  "/manus-storage/Playbook-Saude-Integral-DrFelipeBulhoes_57b5fc71.pdf";
+
+export interface PlaybookTopicOption {
+  id: "performance-hormonal" | "estetica-intima" | "prostata-cirurgia" | "fertilidade-vasectomia";
+  shortLabel: string;
+  badge: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  pdfUrl: string;
+  highlights: string[];
+}
+
+export const PLAYBOOK_TOPICS: PlaybookTopicOption[] = [
+  {
+    id: "performance-hormonal",
+    shortLabel: "Performance Hormonal & Check-up 35+",
+    badge: "Andrologia & Longevidade",
+    title: "Guia de Performance Hormonal, Testosterona & Check-up de Precisão",
+    subtitle: "Vitalidade, Investigação Andrológica, Ereção e Saúde Metabólica",
+    description:
+      "Entenda os 5 eixos clínicos do check-up masculino de precisão, quando repor testosterona com segurança máxima e como tratar a causa raiz da queda de energia e libido.",
+    pdfUrl: "/manus-storage/Guia_Performance_Hormonal_Checkup_Dr_Felipe_Bulhoes.pdf",
+    highlights: [
+      "Os 5 eixos clínicos que todo homem 35+ deve monitorar além do exame básico;",
+      "Como diferenciar queda real de testosterona (DAEM) de estresse e privação de sono;",
+      "Por que implantes não regulamentados comprometem a saúde cardiovascular e fértil;",
+      "Autoavaliação andrológica prática (6 sinais de alerta para levar à consulta).",
+    ],
+  },
+  {
+    id: "estetica-intima",
+    shortLabel: "Estética Íntima: Preenchimento & Botox",
+    badge: "Estética Íntima & Confidencialidade",
+    title: "Guia Médico de Estética Íntima: Preenchimento Peniano & Botox Íntimo",
+    subtitle: "Ganho de Calibre com Ácido Hialurônico (Urofill™) e Conforto com Toxina Botulínica",
+    description:
+      "Informação médica transparente sobre espessamento peniano em plano fascial seguro, reversibilidade do Ácido Hialurônico e indicações do Botox Peniano e Escrotal.",
+    pdfUrl: "/manus-storage/Guia_Estetica_Intima_Masculina_Dr_Felipe_Bulhoes.pdf",
+    highlights: [
+      "Anatomia de segurança: aplicação entre as fáscias sem atingir os corpos cavernosos;",
+      "Comparativo técnico: Ácido Hialurônico (100% reversível) vs. riscos do PMMA;",
+      "Botox Peniano e Escrotal (Scrotox): retração no frio/esporte e conforto térmico;",
+      "Como funciona a anestesia local sem dor em consultório e recuperação em 10–14 dias.",
+    ],
+  },
+  {
+    id: "prostata-cirurgia",
+    shortLabel: "Próstata, Urina & Cirurgia a Laser/Robótica",
+    badge: "Próstata & Tecnologia Cirúrgica",
+    title: "Guia de Saúde da Próstata, Urina & Cirurgia Minimamente Invasiva",
+    subtitle: "Rastreio de Precisão (PI-RADS), Laser HoLEP, Rezum e Cirurgia Robótica",
+    description:
+      "Saiba diferenciar a Hiperplasia Prostática (HPB) do Câncer de Próstata e conheça as tecnologias sem corte abdominal que preservam a continência e a potência sexual.",
+    pdfUrl: "/manus-storage/Guia_Saude_Prostata_Cirurgia_Dr_Felipe_Bulhoes.pdf",
+    highlights: [
+      "Diferença anatômica entre Próstata Aumentada (HPB) e Câncer de Próstata;",
+      "Ressonância Multiparamétrica (PI-RADS) e Biópsia Transperineal por Fusão;",
+      "Tecnologias minimamente invasivas: Vapor d'Água (Rezum), Laser HoLEP e Robótica;",
+      "Autoavaliação de sintomas urinários (jato fraco, urgência e acordar à noite).",
+    ],
+  },
+  {
+    id: "fertilidade-vasectomia",
+    shortLabel: "Fertilidade, Varicocele & Vasectomia",
+    badge: "Microcirurgia & Planejamento",
+    title: "Guia de Fertilidade, Varicocele com Microscópio & Vasectomia Sem Bisturi",
+    subtitle: "Microcirurgia Reprodutiva de Alta Precisão e Contracepção Definitiva Segura",
+    description:
+      "O guia completo para as duas fases do planejamento familiar: restaurar o potencial fértil com microscópio óptico ou realizar a Vasectomia Sem Bisturi com rápida recuperação.",
+    pdfUrl: "/manus-storage/Guia_Fertilidade_Microcirurgia_Vasectomia_Dr_Felipe_Bulhoes.pdf",
+    highlights: [
+      "Varicocelectomia Microcirúrgica Subinguinal com Microscópio Óptico (padrão-ouro EAU/AUA);",
+      "Investigação da Fragmentação do DNA Espermático e preservação fértil na reposição hormonal;",
+      "Vasectomia Sem Bisturi (No-Scalpel): procedimento em 30 min e recuperação em 48–72h;",
+      "Regras atuais da Lei nº 14.443/2022 e protocolo seguro de espermograma pós-procedimento.",
+    ],
+  },
+];
 
 function formatWhatsAppPhone(value: string): string {
   const digits = value.replace(/\D/g, "").slice(0, 11);
@@ -18,7 +94,7 @@ function formatWhatsAppPhone(value: string): string {
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 }
 
-function getLeadOriginIdentification(): {
+function getLeadOriginIdentification(topic: PlaybookTopicOption): {
   sourceSlug: string;
   pageLabel: string;
   channelSummary: string;
@@ -26,18 +102,18 @@ function getLeadOriginIdentification(): {
 } {
   if (typeof window === "undefined") {
     return {
-      sourceSlug: "homepage-guia-saude-integral",
-      pageLabel: "Página Principal (Home — Guia de Saúde Integral)",
+      sourceSlug: `guia-${topic.id}`,
+      pageLabel: "Página Principal (Home — Central de Guias Clínicos)",
       channelSummary: "Tráfego Direto / Orgânico",
-      fullOriginDetails: "Guia de Saúde Integral | Home | Tráfego Direto",
+      fullOriginDetails: `Guia PDF: ${topic.shortLabel} | Home | Tráfego Direto`,
     };
   }
 
   const pathname = window.location.pathname || "/";
   const pageLabel =
     pathname === "/"
-      ? "Página Principal (Home — Seção Guia de Saúde Integral)"
-      : `Página ${pathname} (Seção Guia de Saúde Integral)`;
+      ? "Página Principal (Home — Seção Guias Clínicos)"
+      : `Página ${pathname} (Seção Guias Clínicos)`;
 
   const attr = getAttribution();
   const urlParams = new URLSearchParams(window.location.search);
@@ -73,12 +149,12 @@ function getLeadOriginIdentification(): {
 
   const channelSummary = parts.length > 0 ? parts.join(" · ") : "Tráfego Orgânico / Direto";
   const sourceSlug = utmSource
-    ? `playbook-${utmSource}`.slice(0, 64)
+    ? `guia-${topic.id}-${utmSource}`.slice(0, 64)
     : hasGclid
-      ? "playbook-google-ads"
-      : "homepage-guia-saude-integral";
+      ? `guia-${topic.id}-gads`.slice(0, 64)
+      : `guia-${topic.id}`.slice(0, 64);
 
-  const fullOriginDetails = `${pageLabel} | Canal: ${channelSummary}`;
+  const fullOriginDetails = `Tema: ${topic.shortLabel} | ${pageLabel} | Canal: ${channelSummary}`;
 
   return {
     sourceSlug,
@@ -89,13 +165,18 @@ function getLeadOriginIdentification(): {
 }
 
 export default function PlaybookSection() {
+  const [selectedTopicId, setSelectedTopicId] =
+    useState<PlaybookTopicOption["id"]>("performance-hormonal");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [downloadUrl, setDownloadUrl] = useState<string | null>(DEFAULT_PLAYBOOK_URL);
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(PLAYBOOK_TOPICS[0].pdfUrl);
   const [whatsappRedirectUrl, setWhatsappRedirectUrl] = useState<string>("");
+
+  const activeTopic =
+    PLAYBOOK_TOPICS.find((t) => t.id === selectedTopicId) || PLAYBOOK_TOPICS[0];
 
   const mutation = trpc.playbook.requestDownload.useMutation({
     onSuccess: (data) => {
@@ -104,6 +185,14 @@ export default function PlaybookSection() {
       }
     },
   });
+
+  const handleSelectTopic = (topicId: PlaybookTopicOption["id"]) => {
+    setSelectedTopicId(topicId);
+    const found = PLAYBOOK_TOPICS.find((t) => t.id === topicId);
+    if (found) {
+      setDownloadUrl(found.pdfUrl);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -118,14 +207,16 @@ export default function PlaybookSection() {
     }
     setPhoneError("");
 
-    const origin = getLeadOriginIdentification();
+    const origin = getLeadOriginIdentification(activeTopic);
+    setDownloadUrl(activeTopic.pdfUrl);
 
     // Monta a mensagem estruturada para avaliação da SDR / Secretária via Kommo (+55 11 98112-4455)
     const kommoMessage = [
-      "Olá! Acabei de preencher meus dados no site para receber o *Guia de Saúde Integral — Dr. Felipe de Bulhões*.",
+      `Olá! Acabei de solicitar no site o PDF: *${activeTopic.title}* — Dr. Felipe de Bulhões.`,
       "",
-      "📋 *Identificação do Lead (Kommo / SDR):*",
-      `• *Origem do Lead:* Guia de Saúde Integral (Material Educativo)`,
+      "📋 *Identificação do Lead (Kommo / SDR / Secretária):*",
+      `• *Tema de Interesse Escolhido:* ${activeTopic.shortLabel}`,
+      `• *Origem do Lead:* Central de Guias Clínicos PDF`,
       `• *Página:* ${origin.pageLabel}`,
       `• *Canal de Tráfego:* ${origin.channelSummary}`,
       `• *Nome:* ${cleanName}`,
@@ -142,17 +233,20 @@ export default function PlaybookSection() {
 
     // Dispara eventos analíticos e de conversão
     trackEvent("playbook_download", {
-      material: "guia-saude-integral",
+      material: activeTopic.id,
+      topic_title: activeTopic.shortLabel,
       source: origin.sourceSlug,
       channel: origin.channelSummary,
     });
     fireFormConversionEvents().catch(() => {});
 
-    // Salva o lead no banco de dados e notifica a equipe
+    // Salva o lead no banco de dados e notifica a equipe com o tema escolhido
     mutation.mutate({
       name: cleanName,
       email: cleanEmail,
       phone,
+      topicId: activeTopic.id,
+      topicTitle: activeTopic.shortLabel,
       source: origin.sourceSlug,
       originDetails: origin.fullOriginDetails,
     });
@@ -163,7 +257,7 @@ export default function PlaybookSection() {
       id="playbook"
       className="mobile-form-section brand-playbook-section brand-dark-surface relative py-20 overflow-hidden"
     >
-      {/* Background gradient */}
+      {/* Background gradient — Official Warm Quiet Luxury (#2E2520 / #4A3A30) */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#4A3A30] via-[#2E2520] to-[#241B17]" />
       {/* Subtle pattern overlay */}
       <div
@@ -174,105 +268,109 @@ export default function PlaybookSection() {
       />
 
       <div className="container relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* Left side - Content */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-              <svg className="w-4 h-4 text-[#D9C58A]" fill="currentColor" viewBox="0 0 20 20">
+        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-14">
+          {/* Left side — Dynamic Topic Preview & Interactive Cards */}
+          <div className="flex-1 text-left w-full">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-[#C9B6A3]/35 mb-5">
+              <svg className="w-4 h-4 text-[#C9B6A3]" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="text-sm text-white/90 font-medium">
-                Material Gratuito e Exclusivo
+              <span className="text-xs sm:text-sm text-[#F7F5F2] font-medium tracking-wide">
+                Guias Médicos Exclusivos em PDF · Escolha o Seu Tema
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Guia de Saúde Integral
-            </h2>
-            <p className="text-lg text-[#E1C79F] font-medium mb-4">Estilo de Vida & Urologia</p>
-            <p className="text-white/80 text-base md:text-lg mb-6 max-w-lg mx-auto lg:mx-0">
-              Descubra como pequenas mudanças no dia a dia podem transformar sua saúde urológica e
-              seu bem-estar geral. Um guia prático com orientações baseadas em evidências
-              científicas.
+            {/* Topic Selector Pills on Left */}
+            <p className="text-xs uppercase tracking-[0.16em] text-[#C9B6A3] font-semibold mb-3">
+              1. Clique no tema de seu maior interesse para visualizar o conteúdo do PDF:
             </p>
+            <div className="grid sm:grid-cols-2 gap-2.5 mb-7">
+              {PLAYBOOK_TOPICS.map((topic, idx) => {
+                const isSelected = topic.id === selectedTopicId;
+                return (
+                  <button
+                    key={topic.id}
+                    type="button"
+                    onClick={() => handleSelectTopic(topic.id)}
+                    className={`text-left p-3.5 rounded-xl border transition-all duration-200 ${
+                      isSelected
+                        ? "bg-[#C9B6A3]/20 border-[#C9B6A3] shadow-lg"
+                        : "bg-white/[0.04] border-white/15 hover:bg-white/[0.08] hover:border-[#C9B6A3]/50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-2 mb-1">
+                      <span className="text-[11px] uppercase tracking-wider text-[#C9B6A3] font-semibold">
+                        Guia 0{idx + 1} · {topic.badge}
+                      </span>
+                      <span
+                        className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ${
+                          isSelected ? "border-[#C9B6A3] bg-[#C9B6A3]" : "border-white/40"
+                        }`}
+                      >
+                        {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-[#2E2520]" />}
+                      </span>
+                    </div>
+                    <p className="text-sm font-semibold text-[#F7F5F2] leading-snug">
+                      {topic.shortLabel}
+                    </p>
+                  </button>
+                );
+              })}
+            </div>
 
-            {/* Benefits list */}
-            <ul className="space-y-3 text-white/80 text-sm md:text-base mb-8 max-w-lg mx-auto lg:mx-0">
-              <li className="flex items-start gap-3">
-                <svg
-                  className="w-5 h-5 text-[#D9C58A] mt-0.5 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Nutrição e saúde urológica — alimentos que protegem</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg
-                  className="w-5 h-5 text-[#D9C58A] mt-0.5 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Exercícios para equilíbrio metabólico e hormonal</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg
-                  className="w-5 h-5 text-[#D9C58A] mt-0.5 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Orientações para homens e mulheres</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg
-                  className="w-5 h-5 text-[#D9C58A] mt-0.5 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>Baseado em evidências científicas atualizadas</span>
-              </li>
-            </ul>
+            {/* Active PDF Preview Card */}
+            <div className="rounded-2xl bg-white/[0.05] border border-[#C9B6A3]/30 p-6 sm:p-7 backdrop-blur-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-semibold uppercase tracking-wider bg-[#C9B6A3]/20 text-[#C9B6A3] border border-[#C9B6A3]/35">
+                  PDF Selecionado
+                </span>
+                <span className="text-xs text-[#E7E1DA]/75">4 páginas · Leitura prática e sigilosa</span>
+              </div>
+
+              <h2 className="text-2xl md:text-3xl font-bold text-[#F7F5F2] mb-2 leading-tight font-serif">
+                {activeTopic.title}
+              </h2>
+              <p className="text-sm sm:text-base text-[#C9B6A3] font-medium mb-3">
+                {activeTopic.subtitle}
+              </p>
+              <p className="text-[#E7E1DA]/85 text-sm sm:text-base mb-5 leading-relaxed">
+                {activeTopic.description}
+              </p>
+
+              <p className="text-xs uppercase tracking-[0.14em] text-[#C9B6A3] font-semibold mb-3">
+                O que você vai receber neste PDF:
+              </p>
+              <ul className="space-y-2.5 text-[#F7F5F2]/90 text-sm">
+                {activeTopic.highlights.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <svg
+                      className="w-4 h-4 text-[#C9B6A3] mt-0.5 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Right side - Form */}
-          <div className="w-full max-w-md">
+          {/* Right side — Lead Capture Form with Topic Selector */}
+          <div className="w-full max-w-md lg:sticky lg:top-28 mx-auto lg:mx-0">
             {!submitted ? (
-              <div className="mobile-compact-form bg-white rounded-2xl shadow-2xl p-8">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#4A3A30] to-[#2E2520] rounded-xl flex items-center justify-center mx-auto mb-4">
+              <div className="mobile-compact-form bg-[#F7F5F2] rounded-2xl shadow-2xl p-6 sm:p-8 border border-[#C9B6A3]/40">
+                <div className="text-center mb-5">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#2E2520] to-[#4A3A30] rounded-xl flex items-center justify-center mx-auto mb-3 border border-[#C9B6A3]/40">
                     <svg
-                      className="w-8 h-8 text-white"
+                      className="w-7 h-7 text-[#C9B6A3]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -285,17 +383,40 @@ export default function PlaybookSection() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Baixe Gratuitamente</h3>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Preencha seus dados para liberar o PDF e receber atendimento personalizado
+                  <h3 className="text-xl font-bold text-[#2E2520]">Receba o Guia em PDF</h3>
+                  <p className="text-xs sm:text-sm text-[#4A3A30] mt-1">
+                    Escolha o tema abaixo e informe seus dados para liberar o download imediato
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="mobile-compact-form space-y-4">
+                <form onSubmit={handleSubmit} className="mobile-compact-form space-y-3.5">
+                  <div>
+                    <label
+                      htmlFor="playbook-topic"
+                      className="block text-xs font-semibold uppercase tracking-wider text-[#4A3A30] mb-1"
+                    >
+                      Tema do Guia PDF de maior interesse *
+                    </label>
+                    <select
+                      id="playbook-topic"
+                      value={selectedTopicId}
+                      onChange={(e) =>
+                        handleSelectTopic(e.target.value as PlaybookTopicOption["id"])
+                      }
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#C9B6A3] rounded-lg focus:ring-2 focus:ring-[#4A3A30]/20 focus:border-[#4A3A30] transition-colors text-[#2E2520] font-medium text-sm"
+                    >
+                      {PLAYBOOK_TOPICS.map((t) => (
+                        <option key={t.id} value={t.id}>
+                          {t.shortLabel}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
                   <div>
                     <label
                       htmlFor="playbook-name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-[#2E2520] mb-1"
                     >
                       Seu nome *
                     </label>
@@ -306,14 +427,14 @@ export default function PlaybookSection() {
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Digite seu nome completo"
                       required
-                      className="w-full px-4 py-3 border border-[#C9B6A3] rounded-lg focus:ring-2 focus:ring-[#4A3A30]/20 focus:border-[#4A3A30] transition-colors text-gray-900 placeholder:text-gray-400"
+                      className="w-full px-4 py-2.5 bg-white border border-[#C9B6A3] rounded-lg focus:ring-2 focus:ring-[#4A3A30]/20 focus:border-[#4A3A30] transition-colors text-[#2E2520] placeholder:text-[#8D7B6B]"
                     />
                   </div>
 
                   <div>
                     <label
                       htmlFor="playbook-phone"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-[#2E2520] mb-1"
                     >
                       Seu WhatsApp (com DDD) *
                     </label>
@@ -328,7 +449,7 @@ export default function PlaybookSection() {
                       }}
                       placeholder="(11) 99999-9999"
                       required
-                      className="w-full px-4 py-3 border border-[#C9B6A3] rounded-lg focus:ring-2 focus:ring-[#4A3A30]/20 focus:border-[#4A3A30] transition-colors text-gray-900 placeholder:text-gray-400"
+                      className="w-full px-4 py-2.5 bg-white border border-[#C9B6A3] rounded-lg focus:ring-2 focus:ring-[#4A3A30]/20 focus:border-[#4A3A30] transition-colors text-[#2E2520] placeholder:text-[#8D7B6B]"
                     />
                     {phoneError && <p className="text-xs text-red-600 mt-1">{phoneError}</p>}
                   </div>
@@ -336,7 +457,7 @@ export default function PlaybookSection() {
                   <div>
                     <label
                       htmlFor="playbook-email"
-                      className="block text-sm font-medium text-gray-700 mb-1"
+                      className="block text-sm font-medium text-[#2E2520] mb-1"
                     >
                       Seu melhor e-mail *
                     </label>
@@ -347,14 +468,14 @@ export default function PlaybookSection() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="seu@email.com"
                       required
-                      className="w-full px-4 py-3 border border-[#C9B6A3] rounded-lg focus:ring-2 focus:ring-[#4A3A30]/20 focus:border-[#4A3A30] transition-colors text-gray-900 placeholder:text-gray-400"
+                      className="w-full px-4 py-2.5 bg-white border border-[#C9B6A3] rounded-lg focus:ring-2 focus:ring-[#4A3A30]/20 focus:border-[#4A3A30] transition-colors text-[#2E2520] placeholder:text-[#8D7B6B]"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={mutation.isPending}
-                    className="w-full py-3.5 px-6 bg-gradient-to-r from-[#C9B6A3] to-[#A39484] hover:from-[#E1C79F] hover:to-[#C9B6A3] text-[#2E2520] font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full py-3.5 px-6 bg-[#C9B6A3] hover:bg-[#b8a38e] text-[#2E2520] font-bold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {mutation.isPending ? (
                       <span className="flex items-center justify-center gap-2">
@@ -374,7 +495,7 @@ export default function PlaybookSection() {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                           />
                         </svg>
-                        Processando...
+                        Liberando PDF...
                       </span>
                     ) : (
                       <span className="flex items-center justify-center gap-2">
@@ -391,7 +512,7 @@ export default function PlaybookSection() {
                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                           />
                         </svg>
-                        Quero Meu Guia Gratuito
+                        Baixar PDF: {activeTopic.shortLabel.split(":")[0]}
                       </span>
                     )}
                   </button>
@@ -403,15 +524,15 @@ export default function PlaybookSection() {
                   </p>
                 )}
 
-                <p className="text-xs text-gray-500 text-center mt-4">
-                  Seus dados são confidenciais e atendidos pela nossa equipe via WhatsApp oficial.
+                <p className="text-xs text-[#8D7B6B] text-center mt-4">
+                  Sigilo médico absoluto · Atendimento personalizado via WhatsApp oficial.
                 </p>
               </div>
             ) : (
-              <div className="mobile-compact-form bg-white rounded-2xl shadow-2xl p-8 text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="mobile-compact-form bg-[#F7F5F2] rounded-2xl shadow-2xl p-8 text-center border border-[#C9B6A3]/40">
+                <div className="w-16 h-16 bg-[#2E2520] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#C9B6A3]">
                   <svg
-                    className="w-8 h-8 text-green-600"
+                    className="w-8 h-8 text-[#C9B6A3]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -424,12 +545,15 @@ export default function PlaybookSection() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  Pronto! Seu Guia foi Liberado
+                <span className="inline-block px-3 py-1 rounded-full bg-[#E7E1DA] text-[#4A3A30] text-xs font-semibold mb-2">
+                  {activeTopic.shortLabel}
+                </span>
+                <h3 className="text-xl font-bold text-[#2E2520] mb-2">
+                  Pronto! Seu Guia PDF foi Liberado
                 </h3>
-                <p className="text-sm text-gray-600 mb-6">
-                  Sua solicitação foi encaminhada para nossa equipe no WhatsApp e você já pode
-                  baixar o PDF completo abaixo:
+                <p className="text-sm text-[#4A3A30] mb-6">
+                  Sua solicitação foi identificada para nossa equipe no WhatsApp e você já pode
+                  abrir o PDF completo do tema escolhido abaixo:
                 </p>
 
                 <div className="flex flex-col gap-3">
@@ -438,10 +562,10 @@ export default function PlaybookSection() {
                       href={downloadUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 py-3 px-6 bg-gradient-to-r from-[#4A3A30] to-[#2E2520] text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center justify-center gap-2 py-3.5 px-6 bg-gradient-to-r from-[#2E2520] to-[#4A3A30] text-[#F7F5F2] font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="w-5 h-5 text-[#C9B6A3]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -453,7 +577,7 @@ export default function PlaybookSection() {
                           d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                         />
                       </svg>
-                      Baixar Guia (PDF)
+                      Abrir PDF: {activeTopic.shortLabel}
                     </a>
                   )}
 
@@ -462,7 +586,7 @@ export default function PlaybookSection() {
                       href={whatsappRedirectUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 py-3 px-6 bg-[#147A3F] hover:bg-[#116637] text-white font-semibold rounded-lg transition-all duration-200 shadow-md"
+                      className="inline-flex items-center justify-center gap-2 py-3 px-6 bg-[#C9B6A3] hover:bg-[#b8a38e] text-[#2E2520] font-bold rounded-lg transition-all duration-200 shadow-md"
                     >
                       Falar com a Equipe no WhatsApp
                     </a>

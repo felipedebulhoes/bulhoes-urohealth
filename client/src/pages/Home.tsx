@@ -106,7 +106,7 @@ export default function Home({
         <DeferredSection minHeight={440}>
           <ScrollReveal><PlaybookSection /></ScrollReveal>
         </DeferredSection>
-        <DeferredSection minHeight={620}>
+        <DeferredSection minHeight={440}>
           <ScrollReveal><EducationalPreviewSection /></ScrollReveal>
         </DeferredSection>
         <DeferredSection minHeight={520}>

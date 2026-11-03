@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY ?? "";
-const NOTIFICATION_EMAIL = "drfelipebulhoes@bulhoesurohealth.com";
+const NOTIFICATION_EMAIL = "contato@felipebulhoes.com";
 const FROM_EMAIL = "leads@bulhoesurohealth.com"; // Requires domain verification in Resend
 const FROM_EMAIL_FALLBACK = "onboarding@resend.dev"; // Resend default sender for testing
 

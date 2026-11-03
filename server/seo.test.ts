@@ -223,4 +223,43 @@ describe("SEO URL consolidation", () => {
       expect(getCanonicalUrl(pathname), pathname).toBe(url.replace(/\/$/, pathname === "/" ? "/" : ""));
     }
   });
+
+  it("wires all 8 specialty cards and campaign landing pages to indexable routes with dedicated metadata", () => {
+    const landingPaths = [
+      "/saude-da-prostata",
+      "/litotripsia-calculo-renal",
+      "/cirurgia-robotica-urologia",
+      "/andrologia-performance-masculina",
+      "/avaliacao-urodinamica",
+      "/vasectomia-sem-bisturi",
+      "/uro-oncologia",
+      "/preenchimento-peniano",
+      "/estetica-intima-masculina",
+    ];
+
+    for (const path of landingPaths) {
+      expect(getSpaResponseStatus(path), path).toBe(200);
+      expect(isIndexableSitePath(path), path).toBe(true);
+      const meta = getPageMetadata(path);
+      expect(meta.title, path).not.toBe("Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas");
+      expect(getBreadcrumbItems(path), path).toHaveLength(2);
+    }
+
+    const specialtiesSource = readFileSync(
+      resolve(import.meta.dirname, "../client/src/components/SpecialtiesSection.tsx"),
+      "utf8"
+    );
+    const hrefMatches = [...specialtiesSource.matchAll(/href:\s*"([^"]+)"/g)].map(m => m[1]);
+    expect(hrefMatches).toEqual([
+      "/saude-da-prostata",
+      "/litotripsia-calculo-renal",
+      "/cirurgia-robotica-urologia",
+      "/andrologia-performance-masculina",
+      "/estetica-intima-masculina",
+      "/preenchimento-peniano",
+      "/avaliacao-urodinamica",
+      "/vasectomia-sem-bisturi",
+      "/uro-oncologia",
+    ]);
+  });
 });

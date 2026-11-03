@@ -319,6 +319,7 @@ html {
 .scroll-reveal-stagger.revealed > *:nth-child(6) { transition-delay: 0.3s; }
 .scroll-reveal-stagger.revealed > *:nth-child(7) { transition-delay: 0.35s; }
 .scroll-reveal-stagger.revealed > *:nth-child(8) { transition-delay: 0.4s; }
+.scroll-reveal-stagger.revealed > *:nth-child(9) { transition-delay: 0.45s; }
 
 .scroll-reveal-stagger.revealed > * {
   opacity: 1;
@@ -734,23 +735,32 @@ html {
   background: #463930 !important;
 }
 
-.brand-site [class*="bg-[#1C3D5A]/"] { background-color: rgb(46 37 32 / 0.10) !important; }
-.brand-site [class*="bg-[#1C3D5A]"]:not([class*="/"]) { background-color: var(--espresso-deep) !important; }
-.brand-site [class*="text-[#1C3D5A]"] { color: var(--espresso-deep) !important; }
-.brand-site [class*="border-[#1C3D5A]"] { border-color: var(--espresso-deep) !important; }
-.brand-site [class*="shadow-[#1C3D5A]"] { --tw-shadow-color: rgb(46 37 32 / 0.24) !important; }
+.brand-site [class*="bg-[#1C3D5A]/"] { background-color: rgb(46 37 32 / 0.08) !important; }
+.brand-site .bg-\[\#1C3D5A\] { background-color: var(--espresso-deep) !important; }
+.brand-site .text-\[\#1C3D5A\] { color: var(--hybrid-ink) !important; }
+.brand-site p.text-\[\#1C3D5A\] { color: #463B34 !important; }
+.brand-site .text-\[\#1C3D5A\]\/75,
+.brand-site .text-\[\#1C3D5A\]\/70 { color: #52453D !important; }
+.brand-site .text-\[\#1C3D5A\]\/60,
+.brand-site .text-\[\#1C3D5A\]\/55,
+.brand-site .text-\[\#1C3D5A\]\/50 { color: #65574E !important; }
+.brand-site .text-\[\#1C3D5A\]\/40,
+.brand-site .text-\[\#1C3D5A\]\/35,
+.brand-site .text-\[\#1C3D5A\]\/30 { color: #78695F !important; }
+.brand-site [class*="border-[#1C3D5A]"] { border-color: rgb(43 36 32 / 0.16) !important; }
+.brand-site [class*="shadow-[#1C3D5A]"] { --tw-shadow-color: rgb(46 37 32 / 0.20) !important; }
 
 .brand-site [class*="bg-[#B87333]/"],
-.brand-site [class*="bg-[#D4884A]/"] { background-color: rgb(74 58 48 / 0.10) !important; }
-.brand-site [class*="bg-[#B87333]"]:not([class*="/"]),
-.brand-site [class*="bg-[#D4884A]"]:not([class*="/"]) { background-color: var(--espresso-cafe) !important; }
-.brand-site [class*="text-[#B87333]"],
-.brand-site [class*="text-[#D4884A]"],
-.brand-site [class*="text-[#9D602A]"] { color: var(--espresso-cafe) !important; }
+.brand-site [class*="bg-[#D4884A]/"] { background-color: rgb(168 139 107 / 0.14) !important; }
+.brand-site .bg-\[\#B87333\],
+.brand-site .bg-\[\#D4884A\] { background-color: var(--espresso-cafe) !important; }
+.brand-site .text-\[\#B87333\],
+.brand-site .text-\[\#D4884A\],
+.brand-site .text-\[\#9D602A\] { color: #7C5638 !important; }
 .brand-site [class*="border-[#B87333]"],
-.brand-site [class*="border-[#D4884A]"] { border-color: var(--espresso-cafe) !important; }
+.brand-site [class*="border-[#D4884A]"] { border-color: rgb(124 86 56 / 0.35) !important; }
 .brand-site [class*="shadow-[#B87333]"],
-.brand-site [class*="shadow-[#D4884A]"] { --tw-shadow-color: rgb(74 58 48 / 0.28) !important; }
+.brand-site [class*="shadow-[#D4884A]"] { --tw-shadow-color: rgb(74 58 48 / 0.24) !important; }
 .brand-site [class*="bg-[#F7F8F8]"] { background-color: var(--espresso-mist) !important; }
 .brand-site [class*="bg-[#0F2A3F]"],
 .brand-site [class*="bg-[#0F3460]"],
@@ -1029,6 +1039,21 @@ html {
 .brand-site .brand-dark-surface > [class*="bg-gradient"] {
   background-image: linear-gradient(135deg, var(--hybrid-walnut), var(--hybrid-ink)) !important;
 }
+.brand-site .brand-dark-surface .text-white {
+  color: var(--espresso-off-white) !important;
+}
+.brand-site .brand-dark-surface .text-\[\#B87333\],
+.brand-site .brand-dark-surface .text-\[\#D4884A\],
+.brand-site [class*="from-[#1C3D5A]"] .text-\[\#B87333\],
+.brand-site [class*="from-[#1C3D5A]"] .text-\[\#D4884A\] {
+  color: #D9C58A !important;
+}
+.brand-site .brand-dark-surface .h-px.bg-\[\#B87333\] {
+  background-color: #D7C5B0 !important;
+}
+.brand-site .brand-dark-surface .group:hover .group-hover\:text-\[\#D4884A\] {
+  color: #D9C58A !important;
+}
 .brand-site .brand-dark-surface .text-white\/25,
 .brand-site .brand-dark-surface .text-white\/40,
 .brand-site .brand-dark-surface .text-white\/50 {
@@ -1264,7 +1289,11 @@ html {
   color: #C7A9C8 !important;
 }
 .brand-site main svg[class*="text-[#B87333]"] {
-  color: var(--espresso-beige) !important;
+  color: #7C5638 !important;
+}
+.brand-site main .brand-dark-surface svg[class*="text-[#B87333]"],
+.brand-site main .brand-espresso-hero svg[class*="text-[#B87333]"] {
+  color: #D9C58A !important;
 }
 
 /* Especialidades: resposta tátil suave para ponteiro e teclado. */

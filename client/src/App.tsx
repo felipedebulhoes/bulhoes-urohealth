@@ -59,6 +59,11 @@ const VasectomiaSemBisturi = lazy(() => import("./pages/VasectomiaSemBisturi"));
 const AndrologiaPerformance = lazy(() => import("./pages/AndrologiaPerformance"));
 const EsteticaIntimaMasculina = lazy(() => import("./pages/EsteticaIntimaMasculina"));
 const PreenchimentoPeniano = lazy(() => import("./pages/PreenchimentoPeniano"));
+const SaudeProstata = lazy(() => import("./pages/SaudeProstata"));
+const LitotripsiaCalculoRenal = lazy(() => import("./pages/LitotripsiaCalculoRenal"));
+const CirurgiaRoboticaUrologia = lazy(() => import("./pages/CirurgiaRoboticaUrologia"));
+const AvaliacaoUrodinamica = lazy(() => import("./pages/AvaliacaoUrodinamica"));
+const UroOncologia = lazy(() => import("./pages/UroOncologia"));
 const EngrossamentoPeniano = lazy(() => import("./pages/EngrossamentoPeniano"));
 const InstagramCarousel = lazy(() => import("./pages/InstagramCarousel"));
 const AgendarDoctoralia = lazy(() => import("./pages/AgendarDoctoralia"));
@@ -164,6 +169,11 @@ function Router() {
         <Route path={"/andrologia-performance-masculina"} component={AndrologiaPerformance} />
         <Route path={"/estetica-intima-masculina"} component={EsteticaIntimaMasculina} />
         <Route path={"/preenchimento-peniano"} component={PreenchimentoPeniano} />
+        <Route path={"/saude-da-prostata"} component={SaudeProstata} />
+        <Route path={"/litotripsia-calculo-renal"} component={LitotripsiaCalculoRenal} />
+        <Route path={"/cirurgia-robotica-urologia"} component={CirurgiaRoboticaUrologia} />
+        <Route path={"/avaliacao-urodinamica"} component={AvaliacaoUrodinamica} />
+        <Route path={"/uro-oncologia"} component={UroOncologia} />
         <Route path={"/educativo/engrossamento-peniano"} component={EngrossamentoPeniano} />
         <Route path={"/instagram-carousel"} component={InstagramCarousel} />
         <Route path={"/agendar/doctoralia"} component={AgendarDoctoralia} />

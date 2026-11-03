@@ -13,7 +13,8 @@ import {
   Microscope,
   Syringe,
   Scan,
-  Pill,
+  Sparkles,
+  Layers,
   ArrowRight,
 } from "lucide-react";
 
@@ -23,56 +24,63 @@ const specialties = [
     iconColor: "#D9C58A",
     title: "Saúde da Próstata",
     desc: "Rastreio, diagnóstico e tratamento de hiperplasia prostática benigna (HPB) e câncer de próstata com técnicas minimamente invasivas.",
-    href: "/educativo/hiperplasia-prostatica",
+    href: "/saude-da-prostata",
   },
   {
     icon: Zap,
     iconColor: "#E1B58A",
     title: "Cálculos Renais",
-    desc: "Tratamento de litíase urinária com litotripsia, ureteroscopia flexível e cirurgia percutânea. Abordagem minimamente invasiva.",
+    desc: "Tratamento de litíase urinária com litotripsia a laser, ureteroscopia flexível e cirurgia percutânea sem cortes externos.",
     href: "/litotripsia-calculo-renal",
   },
   {
     icon: Microscope,
     iconColor: "#C9B6A3",
     title: "Cirurgia Robótica & Laparoscópica",
-    desc: "Prostatectomia, nefrectomia e outras cirurgias urológicas com tecnologia robótica e videolaparoscópica para menor tempo de recuperação.",
+    desc: "Prostatectomia, nefrectomia parcial e reconstruções urológicas com visão 3D em 10x e rápida recuperação.",
     href: "/cirurgia-robotica-urologia",
   },
   {
     icon: Heart,
     iconColor: "#D8A5A5",
-    title: "Saúde do Homem",
-    desc: "Check-up masculino completo com bioimpedância, avaliação hormonal, reposição de testosterona (TRH) e acompanhamento de performance.",
+    title: "Andrologia & Saúde do Homem",
+    desc: "Check-up hormonal, reposição de testosterona (TRT), disfunção erétil, fertilidade e varicocelectomia com microscópio.",
     href: "/andrologia-performance-masculina",
+  },
+  {
+    icon: Sparkles,
+    iconColor: "#D5B18D",
+    title: "Estética Íntima & Botox Peniano",
+    desc: "Harmonização genital urológica, botox peniano e escrotal (toxina botulínica para retração em repouso) e correções funcionais.",
+    href: "/estetica-intima-masculina",
+  },
+  {
+    icon: Layers,
+    iconColor: "#D9C58A",
+    title: "Preenchimento Peniano",
+    desc: "Ganho de espessura (circunferência) peniana com ácido hialurônico: procedimento ambulatorial com microcânula, sem cortes e reversível.",
+    href: "/preenchimento-peniano",
   },
   {
     icon: Activity,
     iconColor: "#B7C0A1",
     title: "Urodinâmica",
     desc: "Exame funcional do trato urinário inferior para diagnóstico preciso de incontinência, bexiga hiperativa e obstrução prostática.",
-    href: "/educativo/urodinamica",
+    href: "/avaliacao-urodinamica",
   },
   {
     icon: Syringe,
     iconColor: "#C7A9C8",
     title: "Vasectomia & Postectomia",
-    desc: "Procedimentos ambulatoriais realizados com refinamento técnico para garantir mínimo desconforto e rápida recuperação.",
+    desc: "Vasectomia sem bisturi (no-scalpel), postectomia, frenuloplastia e microcirurgias escrotais com rápida recuperação.",
     href: "/vasectomia-sem-bisturi",
   },
   {
     icon: Scan,
     iconColor: "#AFC1D0",
     title: "Uro-oncologia",
-    desc: "Diagnóstico e tratamento cirúrgico de tumores renais, vesicais, testiculares e de próstata seguindo protocolos internacionais.",
-    href: "/educativo/cancer-prostata",
-  },
-  {
-    icon: Pill,
-    iconColor: "#D5B18D",
-    title: "Andrologia, Estética Íntima & ISTs",
-    desc: "Disfunção erétil, curvatura peniana, preenchimento peniano com ácido hialurônico, infertilidade masculina e ISTs.",
-    href: "/preenchimento-peniano",
+    desc: "Diagnóstico e tratamento cirúrgico de tumores de próstata, rim, bexiga e testículo seguindo diretrizes internacionais.",
+    href: "/uro-oncologia",
   },
 ];
 
@@ -114,7 +122,7 @@ export default function SpecialtiesSection() {
         </motion.div>
 
         {/* Cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {specialties.map((spec, i) => (
             <Link key={spec.title} href={spec.href} className="block h-full">
               <motion.div

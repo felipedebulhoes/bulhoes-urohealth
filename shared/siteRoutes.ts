@@ -55,6 +55,11 @@ export const PUBLIC_STATIC_PATHS = [
   "/andrologia-performance-masculina",
   "/estetica-intima-masculina",
   "/preenchimento-peniano",
+  "/saude-da-prostata",
+  "/litotripsia-calculo-renal",
+  "/cirurgia-robotica-urologia",
+  "/avaliacao-urodinamica",
+  "/uro-oncologia",
   "/privacidade",
 ] as const;
 

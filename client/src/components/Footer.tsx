@@ -165,13 +165,13 @@ export default function Footer() {
                 <span className="text-xs font-sans">Teleconsulta disponível</span>
               </div>
               <a
-                href="mailto:drfelipebulhoes@bulhoesurohealth.com"
+                href="mailto:contato@felipebulhoes.com"
                 className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors group"
               >
                 <div className="w-7 h-7 rounded-md bg-[#B87333]/15 group-hover:bg-[#B87333]/25 flex items-center justify-center shrink-0 transition-colors">
                   <Mail className="w-3.5 h-3.5" style={{ color: "#E1B58A" }} />
                 </div>
-                <span className="text-xs font-sans break-all">drfelipebulhoes@bulhoesurohealth.com</span>
+                <span className="text-xs font-sans break-all">contato@felipebulhoes.com</span>
               </a>
             </div>
           </div>
@@ -195,11 +195,20 @@ export default function Footer() {
             <Link href="/vasectomia-sem-bisturi" className="hover:text-white transition-colors">
               Vasectomia Sem Bisturi
             </Link>
+            <Link href="/saude-da-prostata" className="hover:text-white transition-colors">
+              Saúde da Próstata e HPB
+            </Link>
             <Link href="/cirurgia-robotica-urologia" className="hover:text-white transition-colors">
               Cirurgia Robótica em Urologia
             </Link>
             <Link href="/litotripsia-calculo-renal" className="hover:text-white transition-colors">
               Cálculos Renais e Litotripsia a Laser
+            </Link>
+            <Link href="/avaliacao-urodinamica" className="hover:text-white transition-colors">
+              Exame de Urodinâmica e Incontinência
+            </Link>
+            <Link href="/uro-oncologia" className="hover:text-white transition-colors">
+              Uro-Oncologia
             </Link>
             <Link href="/educativo/engrossamento-peniano" className="hover:text-white transition-colors">
               Guia Educativo: Engrossamento Peniano

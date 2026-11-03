@@ -16,6 +16,7 @@ O **Bulhões UroHealth** é a plataforma digital oficial e aplicativo web do **D
 - **Titulação:** Membro Titular do Colégio Brasileiro de Cirurgiões (TCBC)
 - **Sociedades:** Sociedade Brasileira de Urologia (SBU), American Urological Association (AUA), European Association of Urology (EAU)
 - **Formação:** Instituto D'Or de Ensino e Pesquisa (São Paulo)
+- **E-mail Oficial:** contato@felipebulhoes.com
 
 ### Locais Oficiais de Atendimento
 1. **Campinas Day Hospital** (Particular)  

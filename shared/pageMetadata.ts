@@ -123,20 +123,20 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Vasectomia sem bisturi",
   },
   "/andrologia-performance-masculina": {
-    title: "Andrologia e Performance Masculina | Dr. Felipe de Bulhões",
+    title: "Andrologia, Saúde do Homem e Varicocelectomia Microcirúrgica | Dr. Felipe de Bulhões",
     description:
-      "Avaliação individualizada de saúde hormonal, sexual e reprodutiva masculina, com abordagem baseada em evidências.",
+      "Avaliação individualizada de saúde hormonal, reposição de testosterona (TRT), função sexual, fertilidade masculina e varicocelectomia com microscópio em São Paulo e Campinas.",
     image: OG_IMAGE_ANDROLOGIA,
     imageAlt: "Andrologia e saúde masculina — Dr. Felipe de Bulhões",
     type: "website",
     breadcrumb: "Andrologia e performance masculina",
   },
   "/estetica-intima-masculina": {
-    title: "Estética Íntima Masculina | Dr. Felipe de Bulhões",
+    title: "Estética Íntima Masculina e Botox Peniano em SP e Campinas | Dr. Felipe de Bulhões",
     description:
-      "Informações sobre estética íntima masculina, com avaliação discreta, segurança e expectativas realistas.",
+      "Estética íntima masculina com preenchimento peniano com ácido hialurônico, botox peniano e escrotal (toxina botulínica) e procedimentos funcionais em São Paulo e Campinas.",
     image: OG_IMAGE_ESTETICA_INTIMA,
-    imageAlt: "Estética íntima masculina — Dr. Felipe de Bulhões",
+    imageAlt: "Estética íntima masculina e botox peniano — Dr. Felipe de Bulhões",
     type: "website",
     breadcrumb: "Estética íntima masculina",
   },
@@ -148,6 +148,51 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     imageAlt: "Preenchimento peniano com ácido hialurônico — Dr. Felipe de Bulhões",
     type: "website",
     breadcrumb: "Preenchimento peniano",
+  },
+  "/saude-da-prostata": {
+    title: "Saúde da Próstata e Tratamento de HPB em SP e Campinas | Dr. Felipe de Bulhões",
+    description:
+      "Avaliação especializada da próstata em São Paulo e Campinas. Check-up prostático, rastreio seguro e tratamentos minimamente invasivos para próstata aumentada (HPB) com preservação sexual.",
+    image: DEFAULT_OG_IMAGE,
+    imageAlt: "Saúde da Próstata e tratamento de HPB — Dr. Felipe de Bulhões",
+    type: "website",
+    breadcrumb: "Saúde da próstata",
+  },
+  "/litotripsia-calculo-renal": {
+    title: "Cálculo Renal e Litotripsia a Laser em SP e Campinas | Dr. Felipe de Bulhões",
+    description:
+      "Tratamento especializado de cálculos renais (pedra nos rins) e ureterais em São Paulo e Campinas. Litotripsia a laser flexível sem cortes, alívio rápido da cólica renal e prevenção metabólica.",
+    image: DEFAULT_OG_IMAGE,
+    imageAlt: "Cálculo renal e litotripsia a laser — Dr. Felipe de Bulhões",
+    type: "website",
+    breadcrumb: "Cálculos renais e litotripsia a laser",
+  },
+  "/cirurgia-robotica-urologia": {
+    title: "Cirurgia Robótica em Urologia em SP e Campinas | Dr. Felipe de Bulhões",
+    description:
+      "Cirurgia robótica e videolaparoscópica em urologia em São Paulo e Campinas. Prostatectomia robótica, nefrectomia parcial e reconstruções com visão 3D, precisão milimétrica e rápida recuperação.",
+    image: DEFAULT_OG_IMAGE,
+    imageAlt: "Cirurgia robótica em urologia — Dr. Felipe de Bulhões",
+    type: "website",
+    breadcrumb: "Cirurgia robótica em urologia",
+  },
+  "/avaliacao-urodinamica": {
+    title: "Exame de Urodinâmica e Incontinência Urinária em SP e Campinas | Dr. Felipe de Bulhões",
+    description:
+      "Estudo urodinâmico completo e tratamento de incontinência urinária, bexiga hiperativa e obstrução prostática em São Paulo e Campinas. Exame conduzido com conforto, privacidade e precisão.",
+    image: DEFAULT_OG_IMAGE,
+    imageAlt: "Exame de urodinâmica e incontinência urinária — Dr. Felipe de Bulhões",
+    type: "website",
+    breadcrumb: "Exame de urodinâmica",
+  },
+  "/uro-oncologia": {
+    title: "Uro-Oncologia em SP e Campinas: Próstata, Rim e Bexiga | Dr. Felipe de Bulhões",
+    description:
+      "Diagnóstico e tratamento cirúrgico de tumores urológicos (câncer de próstata, rim, bexiga e testículo) em São Paulo e Campinas. Cirurgia robótica, precisão oncológica e cuidado acolhedor.",
+    image: DEFAULT_OG_IMAGE,
+    imageAlt: "Uro-oncologia em São Paulo e Campinas — Dr. Felipe de Bulhões",
+    type: "website",
+    breadcrumb: "Uro-oncologia",
   },
 };
 

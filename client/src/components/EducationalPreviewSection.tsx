@@ -1,196 +1,136 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Component: Educational Content Preview Section for Home page
+ * Consolidado em 12 temas clínicos essenciais (3 linhas no desktop) para evitar redundância e sobrecarga visual.
  */
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
-  BookOpen, ArrowRight, Activity, Scissors, Zap, Flame,
-  Heart, Dumbbell, Shield, Pill, Stethoscope,
-  Search, Microscope, Thermometer, Waves, Syringe, Cpu, Target, Crosshair, Droplets, ClipboardCheck
+  BookOpen,
+  ArrowRight,
+  Activity,
+  Zap,
+  Heart,
+  Shield,
+  Pill,
+  Search,
+  Microscope,
+  Waves,
+  Syringe,
+  Cpu,
+  Target,
+  ClipboardCheck,
 } from "lucide-react";
 
 const educationalPages = [
   {
-    title: "Próstata Aumentada (HPB)",
-    description: "O que é, sintomas, diagnóstico e tratamento da hiperplasia prostática benigna — guia acessível para o paciente.",
+    title: "Próstata Aumentada (HPB) e Tratamentos",
+    description:
+      "Sintomas, diagnóstico e opções modernas (RTU, HoLEP, ThuLEP e Rezum) para hiperplasia prostática benigna.",
     href: "/educativo/hiperplasia-prostatica",
     icon: <Heart className="w-5 h-5" />,
-    color: "bg-amber-50 text-amber-600",
+    color: "bg-[#B87333]/10 text-[#8B5A2B]",
   },
   {
-    title: "Tratamentos para HPB",
-    description: "RTU, HoLEP, ThuLEP, Rezum e outras opções para hiperplasia prostática benigna.",
-    href: "/educativo/tratamentos-hpb",
-    icon: <Activity className="w-5 h-5" />,
-    color: "bg-blue-50 text-blue-600",
-  },
-  {
-    title: "Cirurgias Minimamente Invasivas",
-    description: "Laparoscopia, robótica e endoscopia — menos dor, menos cicatriz, recuperação rápida.",
-    href: "/educativo/cirurgias-minimamente-invasivas",
-    icon: <Scissors className="w-5 h-5" />,
-    color: "bg-amber-50 text-amber-600",
-  },
-  {
-    title: "Cálculos Renais",
-    description: "Prevenção, tratamentos modernos e tudo sobre o cateter duplo J.",
-    href: "/educativo/calculos-renais",
-    icon: <Zap className="w-5 h-5" />,
-    color: "bg-amber-50 text-amber-600",
-  },
-  {
-    title: "Litotripsia a Laser",
-    description: "Como funciona, indicações, tipos de laser, preparo e recuperação — guia completo.",
-    href: "/educativo/litotripsia-laser",
-    icon: <Flame className="w-5 h-5" />,
-    color: "bg-blue-50 text-blue-600",
-  },
-  {
-    title: "Câncer de Próstata",
-    description: "Diagnóstico, estadiamento e opções de tratamento — do rastreamento à cirurgia robótica.",
-    href: "/educativo/cancer-prostata",
-    icon: <Microscope className="w-5 h-5" />,
-    color: "bg-rose-50 text-rose-600",
-  },
-  {
-    title: "Tratamento do Câncer de Próstata",
-    description: "Vigilância ativa, cirurgia robótica (RARP), radioterapia e hormonioterapia por grupo de risco.",
-    href: "/educativo/tratamento-cancer-prostata",
-    icon: <Crosshair className="w-5 h-5" />,
-    color: "bg-red-50 text-red-600",
-  },
-  {
-    title: "Exame de Próstata",
-    description: "Tudo o que você precisa saber: como é, quando fazer e por que não ter medo.",
+    title: "Exame e Biópsia de Próstata",
+    description:
+      "Quando iniciar o check-up urológico, PSA, toque retal, preparo e como funciona a biópsia guiada com segurança.",
     href: "/educativo/exame-prostata",
     icon: <Search className="w-5 h-5" />,
-    color: "bg-indigo-50 text-indigo-600",
+    color: "bg-[#1C3D5A]/8 text-[#1C3D5A]",
   },
   {
-    title: "Biópsia de Próstata",
-    description: "Indicações, preparo, como é feita, pós-biópsia e complicações — guia completo.",
-    href: "/educativo/biopsia-prostata",
-    icon: <Syringe className="w-5 h-5" />,
-    color: "bg-fuchsia-50 text-fuchsia-600",
-  },
-  {
-    title: "Cirurgia Robótica",
-    description: "Guia completo: como funciona, indicações, vantagens, procedimentos e recuperação.",
-    href: "/educativo/cirurgia-robotica",
-    icon: <Cpu className="w-5 h-5" />,
-    color: "bg-indigo-50 text-indigo-600",
+    title: "Câncer de Próstata e Tratamentos",
+    description:
+      "Do rastreamento e estadiamento à vigilância ativa, cirurgia robótica (RARP), radioterapia e hormonioterapia.",
+    href: "/educativo/cancer-prostata",
+    icon: <Microscope className="w-5 h-5" />,
+    color: "bg-[#B87333]/10 text-[#8B5A2B]",
   },
   {
     title: "Câncer de Bexiga",
-    description: "Fatores de risco, hematúria, diagnóstico, estadiamento, RTU-B, BCG e cistectomia.",
+    description:
+      "Fatores de risco, investigação de sangue na urina (hematúria), estadiamento, RTU-B, BCG e cistectomia.",
     href: "/educativo/cancer-bexiga",
     icon: <Target className="w-5 h-5" />,
-    color: "bg-purple-50 text-purple-600",
+    color: "bg-[#1C3D5A]/8 text-[#1C3D5A]",
   },
   {
-    title: "Disfunção Erétil",
-    description: "Causas, diagnóstico e opções de tratamento em decisão compartilhada.",
+    title: "Cirurgia Robótica e Minimamente Invasiva",
+    description:
+      "Plataforma robótica, laparoscopia e endoscopia: visão 3D, menor sangramento, menos dor e recuperação rápida.",
+    href: "/educativo/cirurgia-robotica",
+    icon: <Cpu className="w-5 h-5" />,
+    color: "bg-[#1C3D5A]/8 text-[#1C3D5A]",
+  },
+  {
+    title: "Cálculos Renais e Litotripsia a Laser",
+    description:
+      "Prevenção de pedras nos rins, ureteroscopia flexível a laser sem cortes e cuidados com o cateter duplo J.",
+    href: "/educativo/calculos-renais",
+    icon: <Zap className="w-5 h-5" />,
+    color: "bg-[#B87333]/10 text-[#8B5A2B]",
+  },
+  {
+    title: "Urodinâmica, Incontinência e Infecções",
+    description:
+      "Avaliação urodinâmica, tratamento da perda urinária (Kegel, sling, esfíncter) e infecção urinária no homem.",
+    href: "/educativo/incontinencia-urinaria",
+    icon: <Waves className="w-5 h-5" />,
+    color: "bg-[#1C3D5A]/8 text-[#1C3D5A]",
+  },
+  {
+    title: "Disfunção Erétil e Doença de Peyronie",
+    description:
+      "Investigação vascular, terapias medicamentosas, tratamento da curvatura peniana adquirida e próteses.",
     href: "/educativo/disfuncao-eretil",
-    icon: <Heart className="w-5 h-5" />,
-    color: "bg-red-50 text-red-600",
+    icon: <Activity className="w-5 h-5" />,
+    color: "bg-[#B87333]/10 text-[#8B5A2B]",
   },
   {
-    title: "Hipogonadismo e Testosterona",
-    description: "Deficiência de testosterona, sintomas e reposição hormonal.",
+    title: "Testosterona e Síndrome Metabólica",
+    description:
+      "Deficiência androgênica (hipogonadismo), reposição hormonal segura, controle de peso e longevidade masculina.",
     href: "/educativo/hipogonadismo",
     icon: <Pill className="w-5 h-5" />,
-    color: "bg-violet-50 text-violet-600",
+    color: "bg-[#B87333]/10 text-[#8B5A2B]",
   },
   {
-    title: "Síndrome Metabólica",
-    description: "Controle do peso, exercícios e envelhecimento saudável no homem.",
-    href: "/educativo/sindrome-metabolica",
-    icon: <Dumbbell className="w-5 h-5" />,
-    color: "bg-orange-50 text-orange-600",
-  },
-  {
-    title: "Infecção Urinária no Homem",
-    description: "Causas, tratamento e quando procurar o urologista.",
-    href: "/educativo/infeccao-urinaria",
-    icon: <Thermometer className="w-5 h-5" />,
-    color: "bg-yellow-50 text-yellow-600",
-  },
-  {
-    title: "Urodinâmica",
-    description: "O que é o exame, como funciona e quando é indicado.",
-    href: "/educativo/urodinamica",
-    icon: <Waves className="w-5 h-5" />,
-    color: "bg-sky-50 text-sky-600",
-  },
-  {
-    title: "Incontinência Urinária",
-    description: "Tipos, classificação, exercícios de Kegel, sling masculino e esfíncter artificial.",
-    href: "/educativo/incontinencia-urinaria",
-    icon: <Droplets className="w-5 h-5" />,
-    color: "bg-amber-50 text-amber-600",
-  },
-  {
-    title: "Vasectomia",
-    description: "Guia completo: preparo, técnica no-scalpel, pós-operatório, espermograma e reversão.",
+    title: "Vasectomia e Fertilidade Masculina",
+    description:
+      "Vasectomia sem bisturi, reversão microcirúrgica, investigação de varicocele, espermograma e reprodução.",
     href: "/educativo/vasectomia",
     icon: <Shield className="w-5 h-5" />,
-    color: "bg-lime-50 text-lime-600",
+    color: "bg-[#1C3D5A]/8 text-[#1C3D5A]",
   },
   {
-    title: "Infertilidade Masculina",
-    description: "Espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida.",
-    href: "/educativo/infertilidade-masculina",
-    icon: <Heart className="w-5 h-5" />,
-    color: "bg-pink-50 text-pink-600",
-  },
-  {
-    title: "Doença de Peyronie",
-    description: "Curvatura peniana adquirida: fases, diagnóstico, Xiaflex, plicatura, enxerto e prótese peniana.",
-    href: "/educativo/doenca-peyronie",
-    icon: <Activity className="w-5 h-5" />,
-    color: "bg-violet-50 text-violet-600",
-  },
-  {
-    title: "Procedimentos Urológicos",
-    description: "Postectomia, varicocele e HPV — o que esperar.",
-    href: "/educativo/procedimentos-andrologicos",
-    icon: <Stethoscope className="w-5 h-5" />,
-    color: "bg-cyan-50 text-cyan-600",
-  },
-  {
-    title: "Orientações Pré-Operatórias",
-    description: "Preparo para cirurgia: jejum, medicamentos, exames e checklist completo.",
-    href: "/educativo/orientacoes-pre-operatorias",
-    icon: <ClipboardCheck className="w-5 h-5" />,
-    color: "bg-amber-50 text-amber-600",
-  },
-  {
-    title: "Orientações Pós-Operatórias",
-    description: "Cuidados após cirurgia, sintomas normais e sinais de alerta.",
-    href: "/educativo/orientacoes-pos-operatorias",
-    icon: <Stethoscope className="w-5 h-5" />,
-    color: "bg-amber-50 text-amber-600",
-  },
-  {
-    title: "Engrossamento Peniano",
-    description: "Engrossamento peniano com ácido hialurônico: técnica, segurança, eficácia e resultados baseados em evidências.",
+    title: "Estética Íntima e Procedimentos",
+    description:
+      "Engrossamento peniano com ácido hialurônico, postectomia (fimose), correção de varicocele e HPV.",
     href: "/educativo/engrossamento-peniano",
     icon: <Syringe className="w-5 h-5" />,
-    color: "bg-blue-50 text-blue-600",
+    color: "bg-[#B87333]/10 text-[#8B5A2B]",
+  },
+  {
+    title: "Orientações Pré e Pós-Operatórias",
+    description:
+      "Checklist completo de preparo cirúrgico, jejum, medicações, cuidados na recuperação e sinais de alerta.",
+    href: "/educativo/orientacoes-pre-operatorias",
+    icon: <ClipboardCheck className="w-5 h-5" />,
+    color: "bg-[#1C3D5A]/8 text-[#1C3D5A]",
   },
 ];
 
 export default function EducationalPreviewSection() {
   return (
-    <section id="educativo" className="py-16 lg:py-24 bg-[#F8FAFB]">
+    <section id="educativo" className="py-16 lg:py-20 bg-[#F8FAFB]">
       <div className="container max-w-6xl">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <div className="flex items-center justify-center gap-2 mb-3">
             <BookOpen className="w-5 h-5 text-[#B87333]" />
@@ -210,7 +150,7 @@ export default function EducationalPreviewSection() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {educationalPages.map((page, i) => (
             <motion.div
-              key={i}
+              key={page.href}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

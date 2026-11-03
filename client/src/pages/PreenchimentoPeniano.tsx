@@ -31,6 +31,10 @@ import {
   MessageCircle,
   Layers,
   EyeOff,
+  Plane,
+  Video,
+  Check,
+  Quote,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaviconInjector } from "@/components/FaviconInjector";
@@ -46,7 +50,7 @@ import {
   trackWhatsAppClick,
   trackCtaClick,
 } from "@/lib/analytics";
-import { getWhatsAppUrl, getWhatsAppCampinasUrl } from "@/lib/tracking";
+import { getWhatsAppUrl } from "@/lib/tracking";
 
 const CAMPAIGN_SLUG = "preenchimento-peniano";
 const PAGE_TITLE = "Preenchimento Peniano com Ácido Hialurônico em SP e Campinas | Dr. Felipe de Bulhões";
@@ -216,17 +220,132 @@ const faqItems: Array<{
   },
 ];
 
+type DiscreetMessageMode = "discreta" | "direta" | "duvida";
+
+const discreetMessageOptions: Record<
+  DiscreetMessageMode,
+  {
+    label: string;
+    badge: string;
+    description: string;
+    messageSp: string;
+    messageCampinas: string;
+  }
+> = {
+  discreta: {
+    label: "100% Discreta (Código Reservado)",
+    badge: "Mais escolhida",
+    description:
+      "Não menciona o nome do procedimento na conversa inicial. Ideal para total privacidade na tela do celular e na recepção.",
+    messageSp:
+      "Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em São Paulo (Ref: Avaliação Reservada).",
+    messageCampinas:
+      "Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em Campinas (Ref: Avaliação Reservada).",
+  },
+  direta: {
+    label: "Direta sobre o Procedimento",
+    badge: "Objetiva",
+    description:
+      "Informa diretamente que você deseja avaliação para Preenchimento Peniano com Ácido Hialurônico.",
+    messageSp:
+      "Olá! Vi a página sobre Preenchimento Peniano com Ácido Hialurônico e gostaria de agendar uma avaliação em São Paulo com o Dr. Felipe de Bulhões.",
+    messageCampinas:
+      "Olá! Vi a página sobre Preenchimento Peniano com Ácido Hialurônico e gostaria de agendar uma avaliação em Campinas com o Dr. Felipe de Bulhões.",
+  },
+  duvida: {
+    label: "Tirar Dúvida de Agenda / Logística",
+    badge: "Rápida",
+    description:
+      "Para quem deseja consultar disponibilidade de datas, horários executivos ou fluxo para pacientes de outra cidade.",
+    messageSp:
+      "Olá! Gostaria de verificar os próximos horários disponíveis para avaliação particular com o Dr. Felipe de Bulhões.",
+    messageCampinas:
+      "Olá! Gostaria de verificar os próximos horários disponíveis em Campinas para avaliação particular com o Dr. Felipe de Bulhões.",
+  },
+};
+
+const mythsAndFacts = [
+  {
+    myth: "“O produto pode ficar embolado ou artificial ao toque.”",
+    fact: "Quando aplicado com microcânula no plano correto (entre as fáscias de Dartos e Buck) e utilizando ácido hialurônico de reologia específica para a região genital, o gel se acomoda como um manto uniforme e elástico tanto em flacidez quanto em ereção.",
+  },
+  {
+    myth: "“O preenchimento pode atrapalhar a ereção ou diminuir a sensibilidade.”",
+    fact: "Os corpos cavernosos (responsáveis pela rigidez erétil) e o feixe vasculonervoso dorsal ficam protegidos abaixo da fáscia de Buck, em um compartimento mais profundo que não é invadido pela cânula.",
+  },
+  {
+    myth: "“É preciso internação hospitalar ou afastamento do trabalho.”",
+    fact: "Todo o protocolo é ambulatorial, sob anestesia local sem cortes, durando de 30 a 45 minutos. O paciente sai caminhando imediatamente e pode retomar atividades administrativas no mesmo dia ou no dia seguinte.",
+  },
+  {
+    myth: "“Se eu não gostar de algum detalhe, não há como corrigir.”",
+    fact: "Ao contrário do PMMA (que é definitivo e perigoso), o ácido hialurônico possui antídoto específico (a enzima hialuronidase), permitindo ajustes finos de simetria ou reversão completa com segurança.",
+  },
+];
+
+const patientReviews = [
+  {
+    author: "Paciente Verificado · São Paulo",
+    source: "Doctoralia / Google",
+    text: "Médico extremamente atencioso, técnico e discreto. Explicou toda a anatomia com calma, sem pressa e transmitiu muita segurança desde a primeira consulta.",
+  },
+  {
+    author: "Paciente Verificado · Campinas",
+    source: "Doctoralia / Google",
+    text: "Atendimento impecável do agendamento ao pós-procedimento. Ambiente reservado, postura ética e acompanhamento próximo pelo próprio Dr. Felipe.",
+  },
+  {
+    author: "Paciente Verificado · São Paulo",
+    source: "Doctoralia / Google",
+    text: "Excelente profissional. Muito transparente sobre o que esperar, cuidadoso nos detalhes e com mão extremamente leve durante o procedimento em consultório.",
+  },
+];
+
 export default function PreenchimentoPeniano() {
   const [activeCategory, setActiveCategory] = useState<FaqCategory>("todos");
   const [openFaqId, setOpenFaqId] = useState<string | null>("faq-ganho");
+  const [messageMode, setMessageMode] = useState<DiscreetMessageMode>("discreta");
+
+  // Estados da Autoavaliação Interativa de Perfil
+  const [quizGoal, setQuizGoal] = useState<string>("espessura");
+  const [quizPriority, setQuizPriority] = useState<string>("reversivel");
+  const [quizCity, setQuizCity] = useState<string>("sp");
+
+  const activeMessageConfig = discreetMessageOptions[messageMode];
 
   const whatsappSpUrl = getWhatsAppUrl({
     page: CAMPAIGN_SLUG,
-    customMessage:
-      "Olá! Vi a página sobre Preenchimento Peniano com Ácido Hialurônico e gostaria de agendar uma avaliação com o Dr. Felipe de Bulhões.",
+    customMessage: activeMessageConfig.messageSp,
   });
 
-  const whatsappCampinasUrl = getWhatsAppCampinasUrl(CAMPAIGN_SLUG);
+  const whatsappCampinasUrl = getWhatsAppUrl({
+    phone: "5519998559890",
+    page: CAMPAIGN_SLUG,
+    campaign: "campinas",
+    customMessage: activeMessageConfig.messageCampinas,
+  });
+
+  // URL contextualizada gerada pela Autoavaliação Interativa
+  const quizGoalLabel: Record<string, string> = {
+    espessura: "ganho de circunferência (espessura)",
+    retracao: "reduzir retração no estado flácido e ganhar calibre",
+    simetria: "melhorar proporção e simetria",
+  };
+  const quizCityLabel: Record<string, string> = {
+    sp: "São Paulo (Av. Paulista ou Pinheiros)",
+    campinas: "Campinas (Cambuí)",
+    outra_cidade: "pré-avaliação por Teleconsulta (sou de outra cidade)",
+  };
+
+  const quizWhatsappUrl = getWhatsAppUrl({
+    phone: quizCity === "campinas" ? "5519998559890" : "5511981124455",
+    page: CAMPAIGN_SLUG,
+    campaign: quizCity === "campinas" ? "campinas" : CAMPAIGN_SLUG,
+    customMessage:
+      messageMode === "discreta"
+        ? `Olá! Gostaria de agendar uma avaliação urológica particular com o Dr. Felipe de Bulhões para ${quizCityLabel[quizCity]} (Ref: Avaliação Reservada).`
+        : `Olá! Fiz a autoavaliação na página de Preenchimento Peniano (objetivo: ${quizGoalLabel[quizGoal]}) e gostaria de agendar consulta em ${quizCityLabel[quizCity]}.`,
+  });
 
   const doctoraliaUrl = `https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=landing_page&utm_campaign=${CAMPAIGN_SLUG}`;
 
@@ -421,6 +540,45 @@ export default function PreenchimentoPeniano() {
                       <p className="text-xs text-white/70 leading-snug">{item.desc}</p>
                     </div>
                   ))}
+                </div>
+
+                {/* Seletor de Modo de Mensagem Discreta */}
+                <div className="mb-4 rounded-xl border border-white/15 bg-[#2E2520]/60 p-3.5 max-w-xl">
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#D7C5B0] flex items-center gap-1.5">
+                      <EyeOff className="w-3.5 h-3.5 text-[#D7C5B0]" />
+                      Escolha como iniciar sua conversa no WhatsApp:
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#D7C5B0]/20 text-[#D7C5B0]">
+                      {activeMessageConfig.badge}
+                    </span>
+                  </div>
+                  <div className="grid sm:grid-cols-3 gap-2">
+                    {(Object.keys(discreetMessageOptions) as DiscreetMessageMode[]).map((modeKey) => {
+                      const opt = discreetMessageOptions[modeKey];
+                      const isSelected = messageMode === modeKey;
+                      return (
+                        <button
+                          key={modeKey}
+                          type="button"
+                          onClick={() => setMessageMode(modeKey)}
+                          className={`text-left rounded-lg px-2.5 py-2 text-xs transition-all border ${
+                            isSelected
+                              ? "bg-[#D7C5B0] text-[#2B2420] border-[#D7C5B0] font-semibold shadow-sm"
+                              : "bg-white/[0.04] text-white/80 border-white/12 hover:bg-white/[0.08]"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between gap-1">
+                            <span className="truncate">{opt.label}</span>
+                            {isSelected && <Check className="w-3.5 h-3.5 shrink-0" />}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <p className="mt-2 text-[11px] text-white/70 leading-snug">
+                    {activeMessageConfig.description}
+                  </p>
                 </div>
 
                 {/* CTAs principais */}
@@ -648,6 +806,599 @@ export default function PreenchimentoPeniano() {
                   </div>
                 </motion.div>
               </div>
+
+              {/* Diagramas Anatômicos Didáticos (Corte Transversal + Pontos de Entrada e Vetores) */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={2.5}
+                className="mb-12 rounded-2xl border border-[#2B2420]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-8 shadow-sm"
+              >
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#2B2420]/10">
+                  <div>
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#4A3A30] block mb-1.5">
+                      Atlas Anatômico Didático · Ilustração Esquematizada
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-serif text-[#2B2420] dark:text-foreground">
+                      Onde exatamente o ácido hialurônico é depositado?
+                    </h3>
+                  </div>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-[#4A3A30] bg-[#4A3A30]/10 px-3 py-1.5 rounded-full self-start md:self-auto">
+                    <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+                    Estruturas da ereção e sensibilidade 100% isoladas
+                  </span>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+                  {/* DIAGRAMA 1: Corte Transversal Anatômico */}
+                  <div className="rounded-xl border border-[#2B2420]/10 bg-[#2E2520] text-white p-5 sm:p-6 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#D7C5B0]">
+                          Figura 1 · Corte Transversal da Haste
+                        </span>
+                        <span className="text-[11px] text-white/65">Visão em Camadas</span>
+                      </div>
+                      <h4 className="text-base sm:text-lg font-serif text-white mb-2">
+                        Plano Interfascial Seguro (Entre Dartos e Buck)
+                      </h4>
+                      <p className="text-xs text-white/75 leading-relaxed mb-4">
+                        O ácido hialurônico (em dourado) forma um manto uniforme na camada superficial,
+                        enquanto a <strong>Fáscia de Buck</strong> atua como uma barreira protetora natural
+                        sobre os nervos, vasos e corpos cavernosos.
+                      </p>
+
+                      {/* SVG Corte Transversal */}
+                      <div className="relative mx-auto max-w-[360px] my-2">
+                        <svg
+                          viewBox="0 0 420 340"
+                          className="w-full h-auto"
+                          role="img"
+                          aria-label="Diagrama anatômico em corte transversal mostrando o ácido hialurônico depositado entre a fáscia de Dartos e a fáscia de Buck, separado dos corpos cavernosos e da uretra."
+                        >
+                          <defs>
+                            <radialGradient id="haGlow" cx="50%" cy="46%" r="48%">
+                              <stop offset="65%" stopColor="#D9C58A" stopOpacity="0.28" />
+                              <stop offset="92%" stopColor="#B87333" stopOpacity="0.55" />
+                              <stop offset="100%" stopColor="#D9C58A" stopOpacity="0.3" />
+                            </radialGradient>
+                            <linearGradient id="cavernosoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stopColor="#3B2E28" />
+                              <stop offset="100%" stopColor="#261D19" />
+                            </linearGradient>
+                          </defs>
+
+                          {/* 1. Pele + Fáscia de Dartos (Camada Externa) */}
+                          <ellipse
+                            cx="210"
+                            cy="170"
+                            rx="132"
+                            ry="118"
+                            fill="#3E322B"
+                            stroke="#C9B6A3"
+                            strokeWidth="2.5"
+                          />
+
+                          {/* 2. Espaço Interfascial Preenchido com Ácido Hialurônico (Arco Dorso-Lateral 270°) */}
+                          <path
+                            d="M 118 242 A 118 105 0 1 1 302 242 L 284 226 A 95 84 0 1 0 136 226 Z"
+                            fill="url(#haGlow)"
+                            stroke="#D9C58A"
+                            strokeWidth="2"
+                          />
+
+                          {/* Micropartículas / Gotículas ilustrativas do gel de AH no arco dorso-lateral */}
+                          {[
+                            { cx: 210, cy: 64 },
+                            { cx: 172, cy: 70 },
+                            { cx: 248, cy: 70 },
+                            { cx: 138, cy: 88 },
+                            { cx: 282, cy: 88 },
+                            { cx: 112, cy: 118 },
+                            { cx: 308, cy: 118 },
+                            { cx: 100, cy: 156 },
+                            { cx: 320, cy: 156 },
+                            { cx: 105, cy: 196 },
+                            { cx: 315, cy: 196 },
+                            { cx: 122, cy: 226 },
+                            { cx: 298, cy: 226 },
+                          ].map((dot, idx) => (
+                            <circle
+                              key={idx}
+                              cx={dot.cx}
+                              cy={dot.cy}
+                              r="4.5"
+                              fill="#E5D4A1"
+                              fillOpacity="0.85"
+                            />
+                          ))}
+
+                          {/* 3. Fáscia de Buck (Barreira Fibrosa Protetora Interna) */}
+                          <ellipse
+                            cx="210"
+                            cy="176"
+                            rx="95"
+                            ry="84"
+                            fill="#221A17"
+                            stroke="#AFC1D0"
+                            strokeWidth="2.5"
+                            strokeDasharray="5 3"
+                          />
+
+                          {/* 4. Feixe Vasculonervoso Dorsal (Protegido abaixo da Fáscia de Buck) */}
+                          <circle cx="210" cy="103" r="5" fill="#7BA3C4" />
+                          <circle cx="196" cy="105" r="3.5" fill="#D8A5A5" />
+                          <circle cx="224" cy="105" r="3.5" fill="#D8A5A5" />
+                          <circle cx="185" cy="108" r="2.8" fill="#E1B58A" />
+                          <circle cx="235" cy="108" r="2.8" fill="#E1B58A" />
+
+                          {/* 5. Dois Corpos Cavernosos (Ereção) */}
+                          <ellipse
+                            cx="168"
+                            cy="162"
+                            rx="41"
+                            ry="44"
+                            fill="url(#cavernosoGrad)"
+                            stroke="#C9B6A3"
+                            strokeWidth="2"
+                          />
+                          <ellipse
+                            cx="252"
+                            cy="162"
+                            rx="41"
+                            ry="44"
+                            fill="url(#cavernosoGrad)"
+                            stroke="#C9B6A3"
+                            strokeWidth="2"
+                          />
+                          {/* Artérias profundas cavernosas */}
+                          <circle cx="168" cy="162" r="4" fill="#D8A5A5" />
+                          <circle cx="252" cy="162" r="4" fill="#D8A5A5" />
+
+                          {/* Textos internos dos Corpos Cavernosos */}
+                          <text
+                            x="168"
+                            y="157"
+                            textAnchor="middle"
+                            fill="#E7E1DA"
+                            fontSize="9"
+                            fontWeight="600"
+                          >
+                            Corpo
+                          </text>
+                          <text
+                            x="168"
+                            y="168"
+                            textAnchor="middle"
+                            fill="#E7E1DA"
+                            fontSize="9"
+                            fontWeight="600"
+                          >
+                            Cavernoso
+                          </text>
+                          <text
+                            x="252"
+                            y="157"
+                            textAnchor="middle"
+                            fill="#E7E1DA"
+                            fontSize="9"
+                            fontWeight="600"
+                          >
+                            Corpo
+                          </text>
+                          <text
+                            x="252"
+                            y="168"
+                            textAnchor="middle"
+                            fill="#E7E1DA"
+                            fontSize="9"
+                            fontWeight="600"
+                          >
+                            Cavernoso
+                          </text>
+
+                          {/* 6. Corpo Esponjoso e Uretra (Face Ventral - Livre de Produto) */}
+                          <ellipse
+                            cx="210"
+                            cy="228"
+                            rx="32"
+                            ry="24"
+                            fill="#332722"
+                            stroke="#B7C0A1"
+                            strokeWidth="1.8"
+                          />
+                          {/* Lúmen Uretral */}
+                          <path
+                            d="M 199 228 Q 210 223 221 228 Q 210 233 199 228 Z"
+                            fill="#1A1412"
+                            stroke="#B7C0A1"
+                            strokeWidth="1.4"
+                          />
+                          <text
+                            x="210"
+                            y="244"
+                            textAnchor="middle"
+                            fill="#B7C0A1"
+                            fontSize="8.5"
+                            fontWeight="600"
+                          >
+                            Uretra
+                          </text>
+
+                          {/* Callouts / Rótulos Explicativos */}
+                          {/* Rótulo Topo: Ácido Hialurônico */}
+                          <line x1="210" y1="64" x2="210" y2="28" stroke="#D9C58A" strokeWidth="1.5" />
+                          <circle cx="210" cy="64" r="3" fill="#D9C58A" />
+                          <rect
+                            x="110"
+                            y="6"
+                            width="200"
+                            height="22"
+                            rx="5"
+                            fill="#D9C58A"
+                          />
+                          <text
+                            x="210"
+                            y="20"
+                            textAnchor="middle"
+                            fill="#221A17"
+                            fontSize="10"
+                            fontWeight="700"
+                          >
+                            Ácido Hialurônico (Plano Seguro)
+                          </text>
+
+                          {/* Rótulo Esquerda Superior: Pele + Fáscia de Dartos */}
+                          <line x1="103" y1="100" x2="55" y2="54" stroke="#C9B6A3" strokeWidth="1.2" />
+                          <text x="8" y="42" fill="#E7E1DA" fontSize="9.5" fontWeight="600">
+                            Pele + Fáscia
+                          </text>
+                          <text x="8" y="53" fill="#C9B6A3" fontSize="9">
+                            de Dartos
+                          </text>
+
+                          {/* Rótulo Direita Superior: Fáscia de Buck */}
+                          <line x1="286" y1="126" x2="348" y2="54" stroke="#AFC1D0" strokeWidth="1.2" />
+                          <text x="412" y="42" textAnchor="end" fill="#AFC1D0" fontSize="9.5" fontWeight="600">
+                            Fáscia de Buck
+                          </text>
+                          <text x="412" y="53" textAnchor="end" fill="#E7E1DA" fontSize="8.5">
+                            (Barreira Protetora)
+                          </text>
+
+                          {/* Rótulo Esquerda Inferior: Feixe Vasculonervoso */}
+                          <line x1="196" y1="104" x2="62" y2="302" stroke="#D8A5A5" strokeWidth="1.2" strokeDasharray="3 2" />
+                          <text x="8" y="314" fill="#D8A5A5" fontSize="9" fontWeight="600">
+                            Feixe Vasculonervoso
+                          </text>
+                          <text x="8" y="325" fill="#E7E1DA" fontSize="8.5">
+                            (Sensibilidade intacta)
+                          </text>
+
+                          {/* Rótulo Direita Inferior: Zona Ventral Livre */}
+                          <line x1="238" y1="238" x2="342" y2="302" stroke="#B7C0A1" strokeWidth="1.2" />
+                          <text x="412" y="314" textAnchor="end" fill="#B7C0A1" fontSize="9" fontWeight="600">
+                            Face Ventral Livre
+                          </text>
+                          <text x="412" y="325" textAnchor="end" fill="#E7E1DA" fontSize="8.5">
+                            (Uretra preservada)
+                          </text>
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Legenda rápida da Figura 1 */}
+                    <div className="mt-4 pt-3.5 border-t border-white/10 grid grid-cols-2 gap-2.5 text-[11px]">
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-[#D9C58A] shrink-0" />
+                        <span className="text-white/85">Camada de Ácido Hialurônico</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-0.5 border-t-2 border-dashed border-[#AFC1D0] shrink-0" />
+                        <span className="text-white/85">Fáscia de Buck (Proteção)</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-[#3B2E28] border border-[#C9B6A3] shrink-0" />
+                        <span className="text-white/85">Corpos Cavernosos (Ereção)</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-[#332722] border border-[#B7C0A1] shrink-0" />
+                        <span className="text-white/85">Uretra (Zona não injetada)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* DIAGRAMA 2: Vista Longitudinal e Vetores de Aplicação com Microcânula */}
+                  <div className="rounded-xl border border-[#2B2420]/10 bg-[#2E2520] text-white p-5 sm:p-6 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#D7C5B0]">
+                          Figura 2 · Vista Dorsal Esquematizada
+                        </span>
+                        <span className="text-[11px] text-white/65">Técnica com Microcânula</span>
+                      </div>
+                      <h4 className="text-base sm:text-lg font-serif text-white mb-2">
+                        Pontos de Entrada (10h e 2h) e Distribuição Homogênea
+                      </h4>
+                      <p className="text-xs text-white/75 leading-relaxed mb-4">
+                        Por apenas <strong>dois micropontos na base</strong> (posições 10h e 2h), a
+                        microcânula de ponta romba deposita o gel em colunas retroinjetadas até o
+                        sulco coronal, sem agulhas perfurantes na haste.
+                      </p>
+
+                      {/* SVG Vista Longitudinal / Vetores */}
+                      <div className="relative mx-auto max-w-[360px] my-2">
+                        <svg
+                          viewBox="0 0 420 340"
+                          className="w-full h-auto"
+                          role="img"
+                          aria-label="Diagrama esquemático longitudinal mostrando os dois pontos de entrada na base (10h e 2h) e as linhas vetoriais de distribuição uniforme do ácido hialurônico ao longo da haste até o sulco coronal."
+                        >
+                          <defs>
+                            <linearGradient id="shaftFill" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor="#D9C58A" stopOpacity="0.35" />
+                              <stop offset="22%" stopColor="#3B2E28" stopOpacity="0.95" />
+                              <stop offset="78%" stopColor="#3B2E28" stopOpacity="0.95" />
+                              <stop offset="100%" stopColor="#D9C58A" stopOpacity="0.35" />
+                            </linearGradient>
+                            <marker
+                              id="arrowGold"
+                              viewBox="0 0 10 10"
+                              refX="6"
+                              refY="5"
+                              markerWidth="5"
+                              markerHeight="5"
+                              orient="auto-start-reverse"
+                            >
+                              <path d="M 0 1 L 10 5 L 0 9 z" fill="#D9C58A" />
+                            </marker>
+                          </defs>
+
+                          {/* Base Pubiana (Referência Superior) */}
+                          <path
+                            d="M 85 38 Q 210 52 335 38"
+                            fill="none"
+                            stroke="#C9B6A3"
+                            strokeWidth="2"
+                            strokeDasharray="4 4"
+                          />
+                          <text
+                            x="210"
+                            y="26"
+                            textAnchor="middle"
+                            fill="#C9B6A3"
+                            fontSize="9.5"
+                            fontWeight="600"
+                          >
+                            Base Peniana (Bloqueio Anestésico Local)
+                          </text>
+
+                          {/* Contorno Externo Após Preenchimento (Ganho de Calibre Simétrico) */}
+                          <path
+                            d="M 134 45 L 134 228 Q 134 242 146 246 L 274 246 Q 286 242 286 228 L 286 45 Z"
+                            fill="url(#shaftFill)"
+                            stroke="#D9C58A"
+                            strokeWidth="2.2"
+                          />
+
+                          {/* Contorno Interno Original da Haste (Tracejado Comparativo) */}
+                          <line
+                            x1="154"
+                            y1="46"
+                            x2="154"
+                            y2="244"
+                            stroke="#E7E1DA"
+                            strokeWidth="1.3"
+                            strokeDasharray="4 3"
+                            strokeOpacity="0.6"
+                          />
+                          <line
+                            x1="266"
+                            y1="46"
+                            x2="266"
+                            y2="244"
+                            stroke="#E7E1DA"
+                            strokeWidth="1.3"
+                            strokeDasharray="4 3"
+                            strokeOpacity="0.6"
+                          />
+
+                          {/* Setas indicando ganho de circunferência lateral */}
+                          <line
+                            x1="152"
+                            y1="145"
+                            x2="136"
+                            y2="145"
+                            stroke="#D9C58A"
+                            strokeWidth="1.6"
+                            markerEnd="url(#arrowGold)"
+                          />
+                          <line
+                            x1="268"
+                            y1="145"
+                            x2="284"
+                            y2="145"
+                            stroke="#D9C58A"
+                            strokeWidth="1.6"
+                            markerEnd="url(#arrowGold)"
+                          />
+
+                          {/* Vetores de Retroinjeção em Leque (Microcânula 22G) */}
+                          {/* Vetores vindos do ponto 10h (Esquerda: 168, 58) */}
+                          <line
+                            x1="168"
+                            y1="58"
+                            x2="146"
+                            y2="225"
+                            stroke="#E5D4A1"
+                            strokeWidth="1.8"
+                            strokeDasharray="5 3"
+                            markerEnd="url(#arrowGold)"
+                          />
+                          <line
+                            x1="168"
+                            y1="58"
+                            x2="174"
+                            y2="230"
+                            stroke="#E5D4A1"
+                            strokeWidth="1.8"
+                            strokeDasharray="5 3"
+                            markerEnd="url(#arrowGold)"
+                          />
+                          <line
+                            x1="168"
+                            y1="58"
+                            x2="198"
+                            y2="230"
+                            stroke="#E5D4A1"
+                            strokeWidth="1.6"
+                            strokeDasharray="5 3"
+                            markerEnd="url(#arrowGold)"
+                          />
+
+                          {/* Vetores vindos do ponto 2h (Direita: 252, 58) */}
+                          <line
+                            x1="252"
+                            y1="58"
+                            x2="274"
+                            y2="225"
+                            stroke="#E5D4A1"
+                            strokeWidth="1.8"
+                            strokeDasharray="5 3"
+                            markerEnd="url(#arrowGold)"
+                          />
+                          <line
+                            x1="252"
+                            y1="58"
+                            x2="246"
+                            y2="230"
+                            stroke="#E5D4A1"
+                            strokeWidth="1.8"
+                            strokeDasharray="5 3"
+                            markerEnd="url(#arrowGold)"
+                          />
+                          <line
+                            x1="252"
+                            y1="58"
+                            x2="222"
+                            y2="230"
+                            stroke="#E5D4A1"
+                            strokeWidth="1.6"
+                            strokeDasharray="5 3"
+                            markerEnd="url(#arrowGold)"
+                          />
+
+                          {/* Pontos de Entrada da Microcânula (10h e 2h) */}
+                          <circle
+                            cx="168"
+                            cy="58"
+                            r="7"
+                            fill="#D9C58A"
+                            stroke="#221A17"
+                            strokeWidth="2"
+                          />
+                          <circle
+                            cx="252"
+                            cy="58"
+                            r="7"
+                            fill="#D9C58A"
+                            stroke="#221A17"
+                            strokeWidth="2"
+                          />
+
+                          {/* Rótulos dos Pontos de Entrada */}
+                          <line x1="161" y1="58" x2="108" y2="75" stroke="#D9C58A" strokeWidth="1.3" />
+                          <text x="102" y="73" textAnchor="end" fill="#D9C58A" fontSize="9.5" fontWeight="700">
+                            Ponto 10h
+                          </text>
+                          <text x="102" y="84" textAnchor="end" fill="#E7E1DA" fontSize="8.5">
+                            Microcânula
+                          </text>
+
+                          <line x1="259" y1="58" x2="312" y2="75" stroke="#D9C58A" strokeWidth="1.3" />
+                          <text x="318" y="73" fill="#D9C58A" fontSize="9.5" fontWeight="700">
+                            Ponto 2h
+                          </text>
+                          <text x="318" y="84" fill="#E7E1DA" fontSize="8.5">
+                            Microcânula
+                          </text>
+
+                          {/* Rótulo Ganho de Circunferência Lateral */}
+                          <text x="122" y="142" textAnchor="end" fill="#D9C58A" fontSize="9" fontWeight="700">
+                            + Calibre
+                          </text>
+                          <text x="122" y="153" textAnchor="end" fill="#E7E1DA" fontSize="8">
+                            Uniforme
+                          </text>
+
+                          <text x="298" y="142" fill="#D9C58A" fontSize="9" fontWeight="700">
+                            + Calibre
+                          </text>
+                          <text x="298" y="153" fill="#E7E1DA" fontSize="8">
+                            Simétrico
+                          </text>
+
+                          {/* Sulco Coronal (Limite Distal da Aplicação) */}
+                          <path
+                            d="M 142 246 Q 210 256 278 246"
+                            fill="none"
+                            stroke="#AFC1D0"
+                            strokeWidth="2.2"
+                          />
+                          <line x1="278" y1="246" x2="322" y2="236" stroke="#AFC1D0" strokeWidth="1.2" />
+                          <text x="326" y="234" fill="#AFC1D0" fontSize="9" fontWeight="600">
+                            Sulco Coronal
+                          </text>
+                          <text x="326" y="245" fill="#E7E1DA" fontSize="8">
+                            (Limite distal)
+                          </text>
+
+                          {/* Glande Esquematizada (Preservada / Sem Aplicação Padrão) */}
+                          <path
+                            d="M 146 248 Q 144 308 210 318 Q 276 308 274 248 Q 210 258 146 248 Z"
+                            fill="#2B211D"
+                            stroke="#C9B6A3"
+                            strokeWidth="1.6"
+                            strokeOpacity="0.7"
+                          />
+                          <text
+                            x="210"
+                            y="288"
+                            textAnchor="middle"
+                            fill="#C9B6A3"
+                            fontSize="9.5"
+                            fontWeight="600"
+                          >
+                            Glande Preservada
+                          </text>
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Legenda rápida da Figura 2 */}
+                    <div className="mt-4 pt-3.5 border-t border-white/10 grid grid-cols-2 gap-2.5 text-[11px]">
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-[#D9C58A] shrink-0" />
+                        <span className="text-white/85">2 Orifícios de Entrada (10h e 2h)</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-0.5 border-t-2 border-dashed border-[#E5D4A1] shrink-0" />
+                        <span className="text-white/85">Vetores de Retroinjeção Linear</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-0.5 border-t-2 border-[#AFC1D0] shrink-0" />
+                        <span className="text-white/85">Transição Suave no Sulco Coronal</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-[#2B211D] border border-[#C9B6A3] shrink-0" />
+                        <span className="text-white/85">Sem Cortes ou Pontos Cirúrgicos</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
 
               {/* Dados da Literatura Científica */}
               <motion.div
@@ -984,6 +1735,347 @@ export default function PreenchimentoPeniano() {
                   ))}
                 </div>
               </motion.div>
+
+              {/* Quadro Visual: Mitos vs. Realidade Científica */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={3.5}
+                className="mt-10 bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-8 border border-[#2B2420]/10"
+              >
+                <div className="mb-6">
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-1.5">
+                    Esclarecimento Urológico
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-serif text-[#2B2420] dark:text-foreground">
+                    Mitos vs. Realidade Científica
+                  </h3>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {mythsAndFacts.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-xl border border-[#2B2420]/10 bg-white dark:bg-card p-5 flex flex-col justify-between"
+                    >
+                      <div className="mb-3 pb-3 border-b border-[#2B2420]/8">
+                        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-rose-700 mb-1">
+                          <XCircle className="w-3.5 h-3.5" />
+                          Mito Comum
+                        </span>
+                        <p className="text-sm font-semibold text-[#2B2420] dark:text-foreground">
+                          {item.myth}
+                        </p>
+                      </div>
+                      <div>
+                        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-700 mb-1">
+                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          Realidade Urológica
+                        </span>
+                        <p className="text-xs sm:text-sm text-[#334155] leading-relaxed">
+                          {item.fact}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* 4.5. AUTOAVALIAÇÃO INTERATIVA DE PERFIL + SIGILO 4 CAMADAS + PACIENTE DE FORA */}
+          <section className="py-16 lg:py-24 bg-[#EEE7DE]/60 dark:bg-card/50 border-y border-[#2B2420]/10">
+            <div className="container max-w-5xl space-y-12">
+              {/* Autoavaliação Interativa de Perfil (30 segundos) */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={0}
+                className="rounded-2xl border border-[#2B2420]/15 bg-[#FCFAF7] dark:bg-card p-6 sm:p-8 shadow-sm"
+              >
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-6 border-b border-[#2B2420]/10">
+                  <div>
+                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] flex items-center gap-1.5 mb-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-[#4A3A30]" />
+                      Planejamento Individualizado · 30 Segundos
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-serif text-[#2B2420] dark:text-foreground">
+                      Descubra como funciona o planejamento para o seu perfil
+                    </h2>
+                  </div>
+                  <span className="text-xs text-[#64748B] bg-[#2E2520]/[0.05] px-3 py-1.5 rounded-full self-start md:self-auto">
+                    100% anônimo · Nenhum dado fica salvo
+                  </span>
+                </div>
+
+                <div className="grid lg:grid-cols-3 gap-6 mb-7">
+                  {/* Pergunta 1 */}
+                  <div className="rounded-xl border border-[#2B2420]/10 bg-white dark:bg-card p-4">
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#4A3A30] mb-1">
+                      1. Principal Objetivo
+                    </p>
+                    <p className="text-sm font-semibold text-[#2B2420] mb-3">
+                      O que você mais deseja melhorar?
+                    </p>
+                    <div className="space-y-2">
+                      {[
+                        { id: "espessura", label: "Ganho de espessura (flácido e ereto)" },
+                        { id: "retracao", label: "Reduzir retração no estado flácido" },
+                        { id: "simetria", label: "Melhorar proporção e contorno" },
+                      ].map((opt) => (
+                        <button
+                          key={opt.id}
+                          type="button"
+                          onClick={() => setQuizGoal(opt.id)}
+                          className={`w-full text-left px-3 py-2.5 rounded-lg text-xs font-medium border transition-all flex items-center justify-between gap-2 ${
+                            quizGoal === opt.id
+                              ? "bg-[#2E2520] text-white border-[#2E2520]"
+                              : "bg-[#FCFAF7] text-[#334155] border-[#2B2420]/10 hover:border-[#4A3A30]/40"
+                          }`}
+                        >
+                          <span>{opt.label}</span>
+                          {quizGoal === opt.id && <Check className="w-3.5 h-3.5 shrink-0" />}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Pergunta 2 */}
+                  <div className="rounded-xl border border-[#2B2420]/10 bg-white dark:bg-card p-4">
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#4A3A30] mb-1">
+                      2. Critério de Segurança
+                    </p>
+                    <p className="text-sm font-semibold text-[#2B2420] mb-3">
+                      O que é mais importante para você?
+                    </p>
+                    <div className="space-y-2">
+                      {[
+                        { id: "reversivel", label: "Material 100% reversível e sem cortes" },
+                        { id: "naturalidade", label: "Toque e aparência totalmente naturais" },
+                        { id: "recuperacao", label: "Retorno rápido sem afastamento" },
+                      ].map((opt) => (
+                        <button
+                          key={opt.id}
+                          type="button"
+                          onClick={() => setQuizPriority(opt.id)}
+                          className={`w-full text-left px-3 py-2.5 rounded-lg text-xs font-medium border transition-all flex items-center justify-between gap-2 ${
+                            quizPriority === opt.id
+                              ? "bg-[#2E2520] text-white border-[#2E2520]"
+                              : "bg-[#FCFAF7] text-[#334155] border-[#2B2420]/10 hover:border-[#4A3A30]/40"
+                          }`}
+                        >
+                          <span>{opt.label}</span>
+                          {quizPriority === opt.id && <Check className="w-3.5 h-3.5 shrink-0" />}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Pergunta 3 */}
+                  <div className="rounded-xl border border-[#2B2420]/10 bg-white dark:bg-card p-4">
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#4A3A30] mb-1">
+                      3. Local de Preferência
+                    </p>
+                    <p className="text-sm font-semibold text-[#2B2420] mb-3">
+                      Onde seria melhor para você?
+                    </p>
+                    <div className="space-y-2">
+                      {[
+                        { id: "sp", label: "São Paulo (Av. Paulista ou Pinheiros)" },
+                        { id: "campinas", label: "Campinas (Cambuí)" },
+                        { id: "outra_cidade", label: "Outra cidade / Estado (Fluxo Executivo)" },
+                      ].map((opt) => (
+                        <button
+                          key={opt.id}
+                          type="button"
+                          onClick={() => setQuizCity(opt.id)}
+                          className={`w-full text-left px-3 py-2.5 rounded-lg text-xs font-medium border transition-all flex items-center justify-between gap-2 ${
+                            quizCity === opt.id
+                              ? "bg-[#2E2520] text-white border-[#2E2520]"
+                              : "bg-[#FCFAF7] text-[#334155] border-[#2B2420]/10 hover:border-[#4A3A30]/40"
+                          }`}
+                        >
+                          <span>{opt.label}</span>
+                          {quizCity === opt.id && <Check className="w-3.5 h-3.5 shrink-0" />}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Resultado Dinâmico da Autoavaliação */}
+                <div className="rounded-xl bg-[#2E2520] text-white p-5 sm:p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                  <div className="space-y-1.5 max-w-2xl">
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-[#D9C58A]">
+                      <CheckCircle2 className="w-4 h-4" />
+                      Síntese para o seu perfil selecionado
+                    </span>
+                    <p className="text-base sm:text-lg font-serif text-white">
+                      Indicação compatível para avaliação de{" "}
+                      <span className="text-[#D9C58A]">{quizGoalLabel[quizGoal]}</span>
+                    </p>
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                      {quizCity === "outra_cidade"
+                        ? "Como você reside fora de SP/Campinas, podemos realizar uma Teleconsulta urológica inicial para planejamento técnico e agendar o procedimento presencial em visita única de 45 minutos."
+                        : `Na consulta presencial em ${quizCityLabel[quizCity]}, o Dr. Felipe avalia a elasticidade tecidual e define a quantidade exata de ácido hialurônico para um resultado natural, simétrico e 100% reversível.`}
+                    </p>
+                  </div>
+
+                  <a
+                    href={quizWhatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => handleWhatsAppConversion(`quiz_${quizGoal}_${quizCity}`)}
+                    className="shrink-0 w-full lg:w-auto"
+                  >
+                    <Button className="w-full lg:w-auto bg-[#D7C5B0] hover:bg-[#E6D9C9] text-[#2B2420] font-semibold h-12 px-6 text-sm">
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Solicitar Avaliação para este Perfil
+                    </Button>
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Grid Duplo: Garantia de Sigilo em 4 Camadas + Fluxo Paciente de Fora */}
+              <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+                {/* Card 1: Protocolo de Privacidade em 4 Camadas */}
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                  custom={1}
+                  className="rounded-2xl border border-[#2B2420]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-7 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-3">
+                      <div className="w-9 h-9 rounded-lg bg-[#2E2520] flex items-center justify-center shrink-0">
+                        <Lock className="w-4 h-4 text-[#D9C58A]" />
+                      </div>
+                      <div>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#4A3A30] block">
+                          Privacidade Médica Estruturada
+                        </span>
+                        <h3 className="text-xl font-serif text-[#2B2420] dark:text-foreground">
+                          Garantia de Sigilo em 4 Camadas
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-xs sm:text-sm text-[#334155] leading-relaxed mb-5">
+                      Sabemos que a discrição é tão importante quanto a técnica urológica. Por isso,
+                      estruturamos todo o fluxo para que você se sinta totalmente confortável:
+                    </p>
+                    <div className="space-y-3.5">
+                      {[
+                        {
+                          step: "1",
+                          title: "Agendamento Codificado",
+                          desc: "Ao usar o modo 'Mensagem Discreta', nossa equipe identifica seu atendimento apenas como consulta urológica particular.",
+                        },
+                        {
+                          step: "2",
+                          title: "Recepção sem Exposição",
+                          desc: "Na chegada à clínica (Paulista, Pinheiros ou Campinas), nenhuma pergunta sobre o motivo da consulta é feita na recepção.",
+                        },
+                        {
+                          step: "3",
+                          title: "Consultório Acusticamente Isolado",
+                          desc: "Toda a conversa, avaliação física e procedimento acontecem exclusivamente em sala médica privada com o Dr. Felipe.",
+                        },
+                        {
+                          step: "4",
+                          title: "Prontuário Criptografado (CFM & LGPD)",
+                          desc: "Seus dados clínicos são protegidos por sigilo médico legal absoluto, sem fotos de divulgação.",
+                        },
+                      ].map((layer) => (
+                        <div key={layer.step} className="flex items-start gap-3">
+                          <span className="w-6 h-6 rounded-full bg-[#4A3A30]/12 text-[#2E2520] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            {layer.step}
+                          </span>
+                          <div>
+                            <p className="text-sm font-semibold text-[#2B2420] dark:text-foreground">
+                              {layer.title}
+                            </p>
+                            <p className="text-xs text-[#64748B] leading-relaxed">{layer.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Card 2: Protocolo Paciente de Outra Cidade / Agenda Executiva */}
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                  custom={2}
+                  className="rounded-2xl border border-[#2B2420]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-7 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-3">
+                      <div className="w-9 h-9 rounded-lg bg-[#2E2520] flex items-center justify-center shrink-0">
+                        <Plane className="w-4 h-4 text-[#AFC1D0]" />
+                      </div>
+                      <div>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#4A3A30] block">
+                          Logística Simplificada · Brasil e Exterior
+                        </span>
+                        <h3 className="text-xl font-serif text-[#2B2420] dark:text-foreground">
+                          Vem de outra cidade ou tem agenda executiva?
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-xs sm:text-sm text-[#334155] leading-relaxed mb-5">
+                      Recebemos regularmente pacientes do interior de São Paulo e de outros estados.
+                      Como o procedimento não exige internação, otimizamos sua vinda:
+                    </p>
+                    <div className="space-y-4">
+                      <div className="rounded-xl bg-white dark:bg-card p-4 border border-[#2B2420]/8 flex items-start gap-3">
+                        <Video className="w-5 h-5 text-[#4A3A30] shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-sm font-semibold text-[#2B2420]">
+                            Etapa 1 · Teleconsulta Urológica Prévia (Opcional)
+                          </p>
+                          <p className="text-xs text-[#64748B] leading-relaxed mt-0.5">
+                            Alinhamento inicial por videoconferência segura com o Dr. Felipe para
+                            esclarecer dúvidas técnicas, avaliar histórico e planejar a data ideal.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="rounded-xl bg-white dark:bg-card p-4 border border-[#2B2420]/8 flex items-start gap-3">
+                        <Clock className="w-5 h-5 text-[#4A3A30] shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-sm font-semibold text-[#2B2420]">
+                            Etapa 2 · Visita Presencial Única (Retorno no Mesmo Dia)
+                          </p>
+                          <p className="text-xs text-[#64748B] leading-relaxed mt-0.5">
+                            Exame físico confirmatório e realização do procedimento em consultório
+                            (30–45 min), com liberação imediata para viagem de retorno de carro ou
+                            avião.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="rounded-xl bg-white dark:bg-card p-4 border border-[#2B2420]/8 flex items-start gap-3">
+                        <Stethoscope className="w-5 h-5 text-[#4A3A30] shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-sm font-semibold text-[#2B2420]">
+                            Etapa 3 · Acompanhamento Pós-Procedimento Direto
+                          </p>
+                          <p className="text-xs text-[#64748B] leading-relaxed mt-0.5">
+                            Canal direto de suporte com a equipe médica e revisão de 14 dias
+                            presencial ou por telemedicina.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </section>
 
@@ -1127,6 +2219,64 @@ export default function PreenchimentoPeniano() {
                   </div>
                 </motion.div>
               </div>
+
+              {/* Prova Social Ética: Experiência de Atendimento Verificada */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={2}
+                className="mt-14 pt-12 border-t border-[#2B2420]/10"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
+                  <div>
+                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-1.5">
+                      Experiência de Atendimento Verificada
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-serif text-[#2B2420] dark:text-foreground">
+                      O que os pacientes destacam sobre o atendimento
+                    </h3>
+                  </div>
+                  <div className="inline-flex items-center gap-2 bg-[#FCFAF7] border border-[#2B2420]/10 px-3.5 py-2 rounded-full self-start sm:self-auto">
+                    <div className="flex items-center gap-0.5">
+                      {[...Array(5)].map((_, idx) => (
+                        <Star key={idx} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                      ))}
+                    </div>
+                    <span className="text-xs font-bold text-[#2B2420]">
+                      Nota 5.0 · Mais de 100 avaliações verificadas
+                    </span>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-5">
+                  {patientReviews.map((review, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-xl border border-[#2B2420]/10 bg-[#FCFAF7] dark:bg-card p-5 flex flex-col justify-between shadow-sm"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <div className="flex items-center gap-0.5">
+                            {[...Array(5)].map((_, sIdx) => (
+                              <Star key={sIdx} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                            ))}
+                          </div>
+                          <Quote className="w-4 h-4 text-[#4A3A30]/40" />
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#334155] leading-relaxed italic mb-4">
+                          &ldquo;{review.text}&rdquo;
+                        </p>
+                      </div>
+                      <div className="pt-3 border-t border-[#2B2420]/8 flex items-center justify-between text-[11px] text-[#64748B]">
+                        <span className="font-semibold text-[#2B2420]">{review.author}</span>
+                        <span>{review.source}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </section>
 
@@ -1299,11 +2449,47 @@ export default function PreenchimentoPeniano() {
               Agende sua avaliação confidencial com o Dr. Felipe de Bulhões
             </h2>
 
-            <p className="text-white/75 text-sm sm:text-base max-w-2xl mx-auto mb-9 leading-relaxed">
+            <p className="text-white/75 text-sm sm:text-base max-w-2xl mx-auto mb-7 leading-relaxed">
               Escolha a unidade de sua preferência em <strong>São Paulo</strong> ou{" "}
               <strong>Campinas</strong>, ou inicie o atendimento diretamente pelo WhatsApp para
               verificar horários disponíveis.
             </p>
+
+            {/* Seletor de Modo de Mensagem Discreta no Rodapé de Conversão */}
+            <div className="max-w-2xl mx-auto mb-7 rounded-xl border border-white/15 bg-white/[0.04] p-4 text-left">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                <span className="text-xs font-semibold text-[#D7C5B0] flex items-center gap-1.5">
+                  <EyeOff className="w-3.5 h-3.5 text-[#D7C5B0]" />
+                  Preferência de mensagem inicial no WhatsApp:
+                </span>
+                <span className="text-[11px] text-white/65">
+                  Altera automaticamente o texto enviado aos botões abaixo
+                </span>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-2">
+                {(Object.keys(discreetMessageOptions) as DiscreetMessageMode[]).map((modeKey) => {
+                  const opt = discreetMessageOptions[modeKey];
+                  const isSelected = messageMode === modeKey;
+                  return (
+                    <button
+                      key={modeKey}
+                      type="button"
+                      onClick={() => setMessageMode(modeKey)}
+                      className={`text-left rounded-lg px-3 py-2 text-xs transition-all border ${
+                        isSelected
+                          ? "bg-[#D7C5B0] text-[#2B2420] border-[#D7C5B0] font-semibold"
+                          : "bg-white/[0.03] text-white/80 border-white/12 hover:bg-white/[0.08]"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-1">
+                        <span className="truncate">{opt.label}</span>
+                        {isSelected && <Check className="w-3.5 h-3.5 shrink-0" />}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
 
             {/* Botões de WhatsApp por Cidade + Doctoralia */}
             <div className="grid sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto mb-8">
@@ -1385,7 +2571,7 @@ export default function PreenchimentoPeniano() {
 
         <MobileBottomBar source={CAMPAIGN_SLUG} />
         <WhatsAppButton
-          message="Olá! Vi a página sobre Preenchimento Peniano com Ácido Hialurônico e gostaria de agendar uma avaliação com o Dr. Felipe de Bulhões."
+          message={activeMessageConfig.messageSp}
           source={`campaign_${CAMPAIGN_SLUG}`}
         />
       </div>

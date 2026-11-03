@@ -187,10 +187,17 @@ export function createPortablePublicApp(options: PortablePublicAppOptions = {}) 
       return;
     }
 
+    const localAssetPath = resolve(staticDirectory, "manus-storage", assetKey);
+
     if (assetProvider) {
       try {
         const asset = await assetProvider(assetKey);
         if (!asset) {
+          if (existsSync(localAssetPath)) {
+            res.setHeader("Cache-Control", DEFAULT_ASSET_CACHE_CONTROL);
+            res.sendFile(localAssetPath);
+            return;
+          }
           res.status(404).end();
           return;
         }

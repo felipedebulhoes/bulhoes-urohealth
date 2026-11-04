@@ -9,6 +9,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { getRequestHostname, getSeoRedirectTarget } from "./seo";
 import { serveStatic, setupVite } from "./vite";
+import { registerOutboundRedirects } from "../outboundRedirects";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -103,6 +104,9 @@ async function startServer() {
   app.get("/educativo/cancer-de-prostata", (_req, res) => {
     res.redirect(301, "/educativo/cancer-prostata");
   });
+
+  // Links curtos de saída (ex.: /instagram) com contagem server-side de cliques
+  registerOutboundRedirects(app);
 
   // Storage proxy for /manus-storage/ paths
   registerStorageProxy(app);

@@ -4,6 +4,7 @@ import { existsSync, promises as fs } from "node:fs";
 import { resolve } from "node:path";
 import { getRequestHostname, getSeoRedirectTarget, getSpaResponseStatus, injectCanonicalMetadata } from "./_core/seo";
 import { isIndexableSitePath } from "../shared/siteRoutes";
+import { registerOutboundRedirects } from "./outboundRedirects";
 
 const NOINDEX_VALUE = "noindex, nofollow, noarchive, nosnippet";
 const DEFAULT_LEGACY_ASSET_ORIGIN = "https://felipebulhoes.com";
@@ -179,6 +180,8 @@ export function createPortablePublicApp(options: PortablePublicAppOptions = {}) 
   app.get("/educativo/cancer-de-prostata", (_req, res) => {
     res.redirect(301, "/educativo/cancer-prostata");
   });
+
+  registerOutboundRedirects(app);
 
   app.get("/manus-storage/*", async (req, res, next) => {
     const assetKey = (req.params as { 0?: string })[0];

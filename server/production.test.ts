@@ -157,6 +157,13 @@ describe("runtime público portátil", () => {
     expect(response.headers.get("location")).toBe("/consultorios");
   });
 
+  it("redireciona o link curto /instagram antes do fallback da SPA", async () => {
+    const response = await fetch(`${baseUrl}/instagram?utm_source=taggo`, { redirect: "manual" });
+
+    expect(response.status).toBe(302);
+    expect(response.headers.get("location")).toBe("https://www.instagram.com/drfelipebulhoes/");
+  });
+
   it("responde 404 e noindex para uma rota pública desconhecida", async () => {
     const response = await fetch(`${baseUrl}/rota-que-nao-existe`);
     const html = await response.text();

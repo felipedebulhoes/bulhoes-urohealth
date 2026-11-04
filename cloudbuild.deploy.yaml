@@ -1,0 +1,65 @@
+# Publicação automática do site em produção.
+#
+# Executado pelo gatilho do Cloud Build a cada push na branch main
+# (passo a passo em docs/DEPLOY-AUTOMATICO.md). Sequência:
+#   1. monta e envia a imagem do commit;
+#   2. cria uma revisão nova no Cloud Run, mantendo identidade, variáveis e
+#      escala atuais (só a imagem muda);
+#   3. testa a revisão nova pela URL do serviço — se falhar, para aqui e o
+#      domínio continua na versão anterior, porque o Hosting usa pinTag;
+#   4. publica o Firebase Hosting live, que passa a apontar para a revisão nova.
+#
+# Não altera DNS, domínios, IAM nem buckets.
+substitutions:
+  _REGION: southamerica-east1
+  _SERVICE: dr-felipe-site-production
+  _IMAGE: southamerica-east1-docker.pkg.dev/${PROJECT_ID}/felipe-site/site:${COMMIT_SHA}
+
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args: ["build", "--tag", "${_IMAGE}", "."]
+
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args: ["push", "${_IMAGE}"]
+
+  - id: deploy-cloud-run
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image=${_IMAGE}
+      - --region=${_REGION}
+      - --quiet
+
+  - id: smoke-test
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        url="$$(gcloud run services describe ${_SERVICE} --region=${_REGION} --format='value(status.url)')"
+        home="$$(curl -s -o /dev/null -w '%{http_code}' --retry 3 --retry-all-errors "$$url/")"
+        insta="$$(curl -s -o /dev/null -w '%{http_code}' --retry 3 --retry-all-errors "$$url/instagram")"
+        echo "home=$$home instagram=$$insta"
+        test "$$home" = "200"
+        test "$$insta" = "302"
+
+  - id: deploy-hosting
+    name: node:22-bookworm-slim
+    entrypoint: bash
+    args:
+      - -c
+      - npx --yes firebase-tools@13 deploy --only hosting --project "${PROJECT_ID}" --non-interactive
+
+images:
+  - ${_IMAGE}
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: 1800s

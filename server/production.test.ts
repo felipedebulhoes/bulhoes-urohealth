@@ -112,6 +112,23 @@ describe("runtime público portátil", () => {
     expect(liveScript).not.toContain("customDomains");
   });
 
+  it("publica automaticamente só depois de testar a revisão nova, sem tocar em DNS ou IAM", () => {
+    const pipeline = readFileSync(new URL("../cloudbuild.deploy.yaml", import.meta.url), "utf8");
+    const order = ["id: build", "id: push", "id: deploy-cloud-run", "id: smoke-test", "id: deploy-hosting"].map(step =>
+      pipeline.indexOf(step)
+    );
+
+    expect(order.every(position => position >= 0)).toBe(true);
+    expect([...order].sort((a, b) => a - b)).toEqual(order);
+    expect(pipeline).toContain("_SERVICE: dr-felipe-site-production");
+    expect(pipeline).toContain('test "$$insta" = "302"');
+    expect(pipeline).toContain("deploy --only hosting");
+    expect(pipeline).not.toContain("gcloud dns");
+    expect(pipeline).not.toContain("add-iam-policy-binding");
+    expect(pipeline).not.toContain("--service-account");
+    expect(pipeline).not.toContain("--set-env-vars");
+  });
+
   it("mantém o desafio HTTP ACME temporário até o certificado do domínio ser confirmado", () => {
     const challenge = readFileSync(
       new URL(

@@ -234,7 +234,6 @@ export default function PlaybookSection() {
     // Dispara eventos analíticos e de conversão
     trackEvent("playbook_download", {
       material: activeTopic.id,
-      topic_title: activeTopic.shortLabel,
       source: origin.sourceSlug,
       channel: origin.channelSummary,
     });

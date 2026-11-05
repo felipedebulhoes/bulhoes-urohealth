@@ -97,16 +97,15 @@ export function trackGoogleAdsConversion(value: number = 100.0) {
 /**
  * Rastreia a captação de um lead pelo chat
  * Dispara conversão no GA4 e no Google Ads. A origem clínica não é enviada ao Meta.
+ *
+ * LGPD (art. 11, dado de saúde): o rótulo é fixo. Nunca envie o motivo da
+ * consulta, sintomas, texto digitado, nome, telefone ou e-mail do visitante.
+ * A função recebe só a unidade preferida para impedir esse envio por engano.
  */
-export function trackLeadGenerated(data: {
-  name: string;
-  phone: string;
-  reason?: string;
-  location?: string;
-}) {
+export function trackLeadGenerated(data: { location?: string } = {}) {
   trackEvent("generate_lead", {
     event_category: "conversion",
-    event_label: data.reason || "chat_lead",
+    event_label: "chat_lead",
     lead_source: "ai_chat",
     preferred_location: data.location || "not_specified",
   });

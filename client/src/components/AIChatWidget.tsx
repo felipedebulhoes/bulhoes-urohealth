@@ -110,12 +110,7 @@ export default function AIChatWidget() {
       if (result.success) {
         setView("lead-success");
         setLeadSubmitted(true);
-        trackLeadGenerated({
-          name: formData.name,
-          phone: formData.phone,
-          reason: formData.reason,
-          location: formData.preferredLocation,
-        });
+        trackLeadGenerated({ location: formData.preferredLocation });
       }
     },
   });

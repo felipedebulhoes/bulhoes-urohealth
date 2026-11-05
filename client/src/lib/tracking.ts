@@ -415,6 +415,16 @@ function getContactEventType(url: string): string | null {
 }
 
 /**
+ * Remove query string e fragmento de um link antes de enviá-lo à mensuração.
+ * Links do WhatsApp carregam a mensagem pronta em ?text= (tema clínico, nome,
+ * telefone ou e-mail digitados pelo visitante), que não pode ir ao Google.
+ */
+export function sanitizeLinkUrl(href: string): string {
+  const cut = href.search(/[?#]/);
+  return cut === -1 ? href : href.slice(0, cut);
+}
+
+/**
  * Inicializa listener global de cliques para captura automática de eventos de contato.
  * Funciona como fallback — captura cliques em links de contato mesmo sem onClick explícito.
  * Deve ser chamado uma vez no carregamento da página.
@@ -437,7 +447,7 @@ export function initGlobalContactListener(): void {
       event_category: "conversion",
       event_label: `global_${window.location.pathname.replace(/\//g, "_")}`,
       contact_method: eventType.replace("lead_", ""),
-      link_url: target.href,
+      link_url: sanitizeLinkUrl(target.href),
       link_text: target.textContent?.trim()?.substring(0, 50) || "",
     });
 

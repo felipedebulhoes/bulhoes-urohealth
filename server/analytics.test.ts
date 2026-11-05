@@ -45,17 +45,12 @@ describe("Google Analytics 4 — Event Tracking", () => {
     expect(mockGtag).toHaveBeenCalledWith("event", "test_event", { key: "value" });
   });
 
-  it("should track lead generation with generate_lead event", async () => {
+  it("should track lead generation with a fixed label and no health or personal data", async () => {
     const { trackLeadGenerated } = await import("@/lib/analytics");
-    trackLeadGenerated({
-      name: "João Silva",
-      phone: "(11) 99999-0000",
-      reason: "Consulta urológica",
-      location: "Campinas",
-    });
+    trackLeadGenerated({ location: "Campinas" });
     expect(mockGtag).toHaveBeenCalledWith("event", "generate_lead", {
       event_category: "conversion",
-      event_label: "Consulta urológica",
+      event_label: "chat_lead",
       lead_source: "ai_chat",
       preferred_location: "Campinas",
     });
@@ -129,7 +124,7 @@ describe("Google Analytics 4 — Event Tracking", () => {
 
   it("should use default values when optional params are missing in trackLeadGenerated", async () => {
     const { trackLeadGenerated } = await import("@/lib/analytics");
-    trackLeadGenerated({ name: "Maria", phone: "(11) 98888-0000" });
+    trackLeadGenerated();
     expect(mockGtag).toHaveBeenCalledWith("event", "generate_lead", {
       event_category: "conversion",
       event_label: "chat_lead",

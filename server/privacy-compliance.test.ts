@@ -82,4 +82,50 @@ describe("mensuração pública com privacidade", () => {
     expect(banner).toContain("open_cookie_preferences");
     expect(privacyPolicy).toContain("Gerenciar preferências de cookies");
   });
+
+  it("nunca envia o motivo da consulta nem dados do chat ao Google Analytics", async () => {
+    const gtag = vi.fn();
+    const consent = JSON.stringify({ version: "2.0", analytics: true, marketing: true, timestamp: Date.now() });
+    (globalThis as any).window = {
+      gtag,
+      dataLayer: [],
+      location: { pathname: "/" },
+      localStorage: { getItem: (key: string) => (key === "lgpd_consent" ? consent : null) },
+    };
+
+    const { trackLeadGenerated } = await import("@/lib/analytics");
+    // Simula uma chamada antiga que ainda passasse dados do formulário.
+    (trackLeadGenerated as (data: Record<string, string>) => void)({
+      name: "Paciente Teste",
+      phone: "(11) 99999-0000",
+      reason: "teste123",
+      location: "Campinas",
+    });
+
+    const sent = JSON.stringify(gtag.mock.calls);
+    expect(sent).toContain("generate_lead");
+    expect(sent).not.toContain("teste123");
+    expect(sent).not.toContain("Paciente Teste");
+    expect(sent).not.toContain("99999");
+
+    const widget = readSource("client/src/components/AIChatWidget.tsx");
+    const call = widget.slice(widget.indexOf("trackLeadGenerated("), widget.indexOf("trackLeadGenerated(") + 120);
+    expect(call).not.toMatch(/reason|name|phone|email/);
+    delete (globalThis as any).window;
+  });
+
+  it("remove a mensagem do WhatsApp dos links enviados pelo rastreamento global", async () => {
+    const { sanitizeLinkUrl } = await import("@/lib/tracking");
+    expect(sanitizeLinkUrl("https://wa.me/5511981124455?text=Ol%C3%A1%2C%20sou%20Jo%C3%A3o")).toBe("https://wa.me/5511981124455");
+    expect(sanitizeLinkUrl("https://www.doctoralia.com.br/x#agenda")).toBe("https://www.doctoralia.com.br/x");
+    expect(sanitizeLinkUrl("tel:+551933014300")).toBe("tel:+551933014300");
+    expect(readSource("client/src/lib/tracking.ts")).toContain("link_url: sanitizeLinkUrl(target.href)");
+  });
+
+  it("o download de guia envia só o identificador do material, sem o tema clínico por extenso", () => {
+    const playbook = readSource("client/src/components/PlaybookSection.tsx");
+    const call = playbook.slice(playbook.indexOf('trackEvent("playbook_download"'), playbook.indexOf("fireFormConversionEvents().catch"));
+    expect(call).not.toContain("topic_title");
+    expect(call).not.toMatch(/cleanName|cleanEmail|phone/);
+  });
 });

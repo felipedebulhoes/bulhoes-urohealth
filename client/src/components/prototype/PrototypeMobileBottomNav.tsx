@@ -73,8 +73,8 @@ export default function PrototypeMobileBottomNav() {
           <span>FAQ</span>
         </a>
         <a
-          href={destination("contato-email")}
-          onClick={(event) => scrollToSection(event, "contato-email", "email_contact")}
+          href="mailto:contato@felipebulhoes.com"
+          onClick={() => trackPrototypeEvent("prototype_section_view", "prototype_mobile_bottom_nav", "email_contact")}
           className={itemClass}
         >
           <Mail className="h-5 w-5 text-[#B87333]" aria-hidden="true" />

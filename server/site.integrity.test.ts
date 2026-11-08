@@ -76,18 +76,13 @@ describe("Integridade das páginas públicas", () => {
     expect(page).toContain('aria-live="polite"');
   });
 
-  it("inicializa o mapa apenas após o callback da API e exibe os quatro locais ativos", () => {
-    const map = readFileSync(resolve(projectRoot, "client/src/components/Map.tsx"), "utf8");
+  it("mostra o mapa incorporado do Google sem proxy externo e exibe os quatro locais ativos", () => {
     const interactiveMap = readFileSync(resolve(projectRoot, "client/src/components/InteractiveMap.tsx"), "utf8");
     const consultorios = readFileSync(resolve(projectRoot, "client/src/pages/Consultorios.tsx"), "utf8");
 
-    expect(map).toContain('__felipeBulhoesMapsReady');
-    expect(map).toContain('callback=${callbackName}');
-    expect(map).toContain('libraries=marker,places,geocoding,geometry');
-    expect(map).toContain('fallback?: ReactNode');
-    expect(interactiveMap).toContain('onMapError={() => setMapLoadFailed(true)}');
-    expect(interactiveMap).toContain('https://www.google.com/maps?q=${fallbackMapQuery}&output=embed');
-    expect(interactiveMap).toContain('title={`Mapa de ${fallbackClinic.name}`}');
+    expect(interactiveMap).toContain('https://www.google.com/maps?q=${mapQuery}&output=embed');
+    expect(interactiveMap).toContain('title={`Mapa de ${selectedClinic.name}`}');
+    expect(interactiveMap).not.toContain("forge");
     expect(consultorios).toContain('Atendimento presencial em quatro locais ativos');
     expect(consultorios).not.toContain('Atendimento presencial em 6 locais');
   });
@@ -102,37 +97,6 @@ describe("Integridade das páginas públicas", () => {
     expect(breadcrumbs).toContain('aria-label="Caminho de navegação"');
     expect(educationalLayout).toContain("<PageBreadcrumbs");
     expect(campaignLayout).toContain("<PageBreadcrumbs");
-  });
-
-  it("mantém a prévia social como ferramenta administrativa, noindex e livre de chamadas externas", () => {
-    const page = readFileSync(resolve(projectRoot, "client/src/pages/AdminSocialPreview.tsx"), "utf8");
-    const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
-    const server = readFileSync(resolve(projectRoot, "server/_core/index.ts"), "utf8");
-
-    expect(page).toContain('getSocialPreviewData');
-    expect(page).toContain('const isAdmin = isAuthenticated && user?.role === "admin"');
-    expect(page).toContain("if (!isAdmin) return <AccessDenied />");
-    expect(page).toContain('aria-pressed={normalizedPath === item.path}');
-    expect(page).toContain('target="_blank"');
-    expect(page).not.toContain("globalThis.fetch(");
-    expect(page).not.toContain("window.fetch(");
-    expect(page).not.toContain("axios");
-    expect(page).toContain("Facebook Sharing Debugger");
-    expect(page).toContain("developers.facebook.com/tools/debug/");
-    expect(page).toContain("Histórico de versões");
-    expect(page).toContain("imageAudit.useQuery");
-    expect(page).toContain("history.useQuery");
-    expect(page).toContain("SocialImageCreatorPanel");
-    const creator = readFileSync(resolve(projectRoot, "client/src/components/SocialImageCreatorPanel.tsx"), "utf8");
-    expect(creator).toContain("cropImage.useMutation");
-    expect(creator).toContain("generateArticleImage.useMutation");
-    expect(creator).toContain("1200 × 630");
-    expect(creator).not.toContain("globalThis.fetch(");
-    expect(app).toContain('const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"))');
-    expect(app).toContain('/admin/social-preview');
-    expect(app).toContain('!isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <GoogleTagManager />');
-    expect(app).toContain('!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <SplashScreen />');
-    expect(server).toContain('req.path.startsWith("/admin/")');
   });
 
   it("aplica a identidade híbrida Quiet Luxury ao site público e preserva as prévias não indexáveis", () => {
@@ -162,12 +126,11 @@ describe("Integridade das páginas públicas", () => {
     const newsletter = readFileSync(resolve(projectRoot, "client/src/components/NewsletterSection.tsx"), "utf8");
     const contact = readFileSync(resolve(projectRoot, "client/src/components/ContactSection.tsx"), "utf8");
     const contactPage = readFileSync(resolve(projectRoot, "client/src/pages/Contato.tsx"), "utf8");
-    const playbook = readFileSync(resolve(projectRoot, "client/src/components/PlaybookSection.tsx"), "utf8");
     const preview = readFileSync(resolve(projectRoot, "client/src/pages/BrandPalettePreview.tsx"), "utf8");
     const quietLuxuryPreview = readFileSync(resolve(projectRoot, "client/src/pages/QuietLuxuryPreview.tsx"), "utf8");
     const styles = readFileSync(resolve(projectRoot, "client/src/index.css"), "utf8");
     const routes = readFileSync(resolve(projectRoot, "shared/siteRoutes.ts"), "utf8");
-    const server = readFileSync(resolve(projectRoot, "server/_core/index.ts"), "utf8");
+    const server = readFileSync(resolve(projectRoot, "server/production.ts"), "utf8");
 
     expect(app).toContain('const BrandPalettePreview = lazy(() => import("./pages/BrandPalettePreview"))');
     expect(app).toContain('path={"/preview-paleta"}');
@@ -267,22 +230,19 @@ describe("Integridade das páginas públicas", () => {
     expect(quickContact).toContain("mobile-compact-form");
     expect(newsletter).toContain("mobile-compact-form");
     expect(newsletter).toContain('htmlFor="newsletter-email"');
-    expect(playbook).toContain("mobile-compact-form");
     expect(contactPage).toContain("mobile-compact-form");
     expect(contactPage).toContain('htmlFor="contact-email"');
     expect(styles).toContain("@media (max-width: 640px)");
     expect(styles).toContain("background-image: linear-gradient(180deg");
     expect(routes).toContain('"/preview-paleta"');
     expect(routes).toContain('"/preview-quiet-luxury"');
-    expect(server).toContain('req.path === "/preview-paleta"');
-    expect(server).toContain('req.path === "/preview-quiet-luxury"');
+    expect(server).toContain("isIndexableSitePath(requestPath)");
   });
 
   it("mantém banners sociais em marrom/neutro e loader inicial antes do React", () => {
     const html = readFileSync(resolve(projectRoot, "client/index.html"), "utf8");
     const metadata = readFileSync(resolve(projectRoot, "shared/pageMetadata.ts"), "utf8");
     const app = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
-    const builder = readFileSync(resolve(projectRoot, "server/socialImageBuilder.ts"), "utf8");
 
     expect(html).toContain("og-banner-homepage-marrom-neutro");
     expect(html).toContain("initial-page-loader");
@@ -292,8 +252,6 @@ describe("Integridade das páginas públicas", () => {
     expect(metadata).toContain("og-banner-estetica-intima-marrom-neutro");
     expect(app).toContain("route-fallback");
     expect(app).toContain("Preparando a página");
-    expect(builder).toContain("#F7F5F2");
-    expect(builder).not.toContain("#0E2945");
   });
 
   it("mantém um inventário reproduzível dos assets que dependem do storage atual", () => {
@@ -390,15 +348,12 @@ describe("Integridade das páginas públicas", () => {
     const home = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
 
     expect(app).toContain('const Blog = lazy(() => import("./pages/Blog"))');
-    expect(home).toContain('lazy(() => import("@/components/AIChatWidget"))');
+    expect(home).toContain('lazy(() => import("@/components/FAQSection"))');
     expect(home).toContain("<DeferredSection");
   });
 
   it("usa o renderizador Markdown leve sem carregar streamdown", () => {
     const files = [
-      "client/src/components/AIChatBox.tsx",
-      "client/src/components/AIChatWidget.tsx",
-      "client/src/pages/AdminKeywords.tsx",
       "client/src/pages/BlogPost.tsx",
     ];
 
@@ -469,13 +424,13 @@ describe("Integridade das páginas públicas", () => {
 
   it("impede indexação do protótipo e restaura a configuração ao sair", () => {
     const meta = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeMeta.tsx"), "utf8");
-    const server = readFileSync(resolve(projectRoot, "server/_core/index.ts"), "utf8");
+    const server = readFileSync(resolve(projectRoot, "server/production.ts"), "utf8");
 
     expect(meta).toContain('noindex, nofollow, noarchive, nosnippet');
     expect(meta).toContain("robots.remove()");
     expect(meta).toContain("previousRobots");
     expect(server).toContain('req.path.startsWith("/prototipo-jornada-paciente")');
-    expect(server).toContain('res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet")');
+    expect(server).toContain('const NOINDEX_VALUE = "noindex, nofollow, noarchive, nosnippet"');
   });
 
   it("rastreia o protótipo somente com identificadores fixos de interface", () => {
@@ -531,20 +486,6 @@ describe("Integridade das páginas públicas", () => {
     expect(app).toContain("!isPrototypeRoute && !isInternalRoute && !isBrandPalettePreview && !isQuietLuxuryPreview && <SplashScreen />");
   });
 
-  it("oferece contato por e-mail sem campo clínico livre e com consentimento explícito", () => {
-    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
-    const router = readFileSync(resolve(projectRoot, "server/routers/aiChat.ts"), "utf8");
-    const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
-
-    expect(prototype).toContain("<PrototypeEmailContactForm />");
-    expect(form).toContain("submitEmailContact.useMutation");
-    expect(form).toContain("Política de Privacidade");
-    expect(form).not.toContain("textarea");
-    expect(router).toContain("submitEmailContact: publicProcedure");
-    expect(router).toContain("prototype-email-contact");
-    expect(router).toContain("rateLimit({ windowMs: 60 * 60 * 1000, max: 4 })");
-  });
-
   it("indica visualmente o hover do FAQ e oferece Voltar ao topo acessível", () => {
     const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
     const backToTop = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeBackToTop.tsx"), "utf8");
@@ -555,15 +496,6 @@ describe("Integridade das páginas públicas", () => {
     expect(backToTop).toContain("window.scrollY > 520");
     expect(backToTop).toContain('aria-label="Voltar ao topo da página"');
     expect(backToTop).toContain('matchMedia("(prefers-reduced-motion: reduce)")');
-  });
-
-  it("confirma o contato por e-mail com toast único e mensagem de próximo passo", () => {
-    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
-
-    expect(form).toContain('toast.success("Solicitação enviada com sucesso"');
-    expect(form).toContain('id: "prototype-email-contact-success"');
-    expect(form).toContain('description: "A equipe responderá pelo e-mail informado."');
-    expect(form).toContain("duration: 5000");
   });
 
   it("permite pesquisar no FAQ sem registrar o termo digitado no analytics", () => {
@@ -590,18 +522,6 @@ describe("Integridade das páginas públicas", () => {
     expect(analytics).toContain('| "mens_health_filter"');
   });
 
-  it("libera o guia PDF somente no estado de sucesso do contato por e-mail", () => {
-    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
-    const analytics = readFileSync(resolve(projectRoot, "client/src/lib/analytics.ts"), "utf8");
-
-    expect(form).toContain('const MEN_S_HEALTH_GUIDE_URL = "/manus-storage/main_2775651b.pdf"');
-    expect(form).toContain("if (submitted)");
-    expect(form).toContain("Baixar guia em PDF");
-    expect(form).toContain('download="guia-pratico-saude-masculina-dr-felipe-bulhoes.pdf"');
-    expect(form).toContain('trackPrototypeEvent("guide_download", "email_contact_success", "mens_health_pdf")');
-    expect(analytics).toContain('| "guide_download"');
-  });
-
   it("destaca dúvidas populares antes da busca sem duplicar as respostas clínicas", () => {
     const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
 
@@ -621,33 +541,6 @@ describe("Integridade das páginas públicas", () => {
     expect(prototype).toContain('ring-2 ring-[#B87333]/35 ring-offset-2');
   });
 
-  it("mostra uma prévia otimizada da capa junto ao download pós-contato", () => {
-    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
-
-    expect(form).toContain('const MEN_S_HEALTH_GUIDE_COVER = "/manus-storage/guide-saude-masculina-capa_b385e7c7.jpg"');
-    expect(form).toContain('alt="Capa do Guia prático de saúde masculina"');
-    expect(form).toContain('width="104"');
-    expect(form).toContain('height="147"');
-    expect(form).toContain('loading="lazy"');
-  });
-
-  it("registra apenas votos úteis reais e bloqueia repetição no mesmo navegador", () => {
-    const component = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeFaqHelpfulButton.tsx"), "utf8");
-    const router = readFileSync(resolve(projectRoot, "server/routers/prototypeFeedback.ts"), "utf8");
-    const schema = readFileSync(resolve(projectRoot, "drizzle/schema.ts"), "utf8");
-
-    expect(schema).toContain('mysqlTable("faq_helpful_counts"');
-    expect(schema).toContain('questionId: varchar("questionId", { length: 64 }).notNull().unique()');
-    expect(router).toContain('z.enum(["faq_duration", "faq_risks", "faq_candidate"])');
-    expect(router).toContain("incrementFaqHelpfulCount(input.questionId)");
-    expect(component).toContain("window.localStorage.setItem(storageKey, \"1\")");
-    expect(component).toContain("window.localStorage.getItem(storageKey) === \"1\"");
-    expect(component).toContain("disabled={voted || helpfulMutation.isPending}");
-    expect(component).toContain('trackPrototypeEvent("faq_helpful", "girth_popular_faq", questionId)');
-    expect(component).not.toContain("email");
-    expect(component).not.toContain("symptom");
-  });
-
   it("anima a lista filtrada e respeita a preferência de movimento reduzido", () => {
     const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
 
@@ -655,15 +548,6 @@ describe("Integridade das páginas públicas", () => {
     expect(prototype).toContain("const shouldReduceMotion = useReducedMotion()");
     expect(prototype).toContain("layout={!shouldReduceMotion}");
     expect(prototype).toContain("duration: shouldReduceMotion ? 0 : 0.22");
-  });
-
-  it("resume o valor do guia em três tópicos objetivos no estado pós-envio", () => {
-    const form = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
-
-    expect(form).toContain('aria-label="Principais conteúdos do guia"');
-    expect(form).toContain("Checklist de cuidados por fase da vida");
-    expect(form).toContain("Sinais de alerta e quando buscar avaliação");
-    expect(form).toContain("Saúde sexual, urinária e reprodutiva");
   });
 
   it("oferece recuperação rápida quando a lista filtrada não possui resultados", () => {
@@ -675,40 +559,29 @@ describe("Integridade das páginas públicas", () => {
     expect(prototype).toContain('key="empty-filter-state"');
   });
 
-  it("agradece o voto útil com celebração discreta e movimento reduzido respeitado", () => {
-    const component = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeFaqHelpfulButton.tsx"), "utf8");
-
-    expect(component).toContain("const shouldReduceMotion = useReducedMotion()");
-    expect(component).toContain("if (!shouldReduceMotion)");
-    expect(component).toContain("setCelebrating(true)");
-    expect(component).toContain("Obrigado por compartilhar sua opinião");
-    expect(component).toContain("Seu voto ajuda a priorizar dúvidas relevantes");
-    expect(component).toContain("prototype-faq-helpful-${questionId}");
-  });
-
-  it("mantém o HMR na porta pública HTTPS da prévia", () => {
-    const viteServer = readFileSync(resolve(projectRoot, "server/_core/vite.ts"), "utf8");
-
-    expect(viteServer).toContain("hmr: { server, clientPort: 443 }");
-    expect(viteServer).toContain("middlewareMode: true");
-  });
-
   it("oferece navegação inferior mobile para WhatsApp, FAQ e contato", () => {
     const navigation = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeMobileBottomNav.tsx"), "utf8");
     const layout = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeLayout.tsx"), "utf8");
     const prototype = readFileSync(resolve(projectRoot, "client/src/pages/PrototypePatientJourney.tsx"), "utf8");
-    const emailForm = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeEmailContactForm.tsx"), "utf8");
     const floatingWhatsApp = readFileSync(resolve(projectRoot, "client/src/components/prototype/PrototypeWhatsAppButton.tsx"), "utf8");
 
     expect(navigation).toContain('aria-label="Atalhos de contato do protótipo"');
     expect(navigation).toContain('destination("faq-engrossamento")');
-    expect(navigation).toContain('destination("contato-email")');
+    expect(navigation).toContain('href="mailto:contato@felipebulhoes.com"');
     expect(navigation).toContain('pb-[max(env(safe-area-inset-bottom),0.5rem)]');
     expect(navigation).toContain('trackWhatsAppClick("prototype_patient_journey_mobile_bottom_nav")');
     expect(layout).toContain("<PrototypeMobileBottomNav />");
     expect(prototype).toContain('id="faq-engrossamento"');
-    expect(emailForm.match(/id="contato-email"/g)).toHaveLength(2);
     expect(floatingWhatsApp).toContain("md:flex");
+  });
+
+  it("não carrega código da plataforma Manus nem chama a API desligada", () => {
+    const vite = readFileSync(resolve(projectRoot, "vite.config.ts"), "utf8");
+    const main = readFileSync(resolve(projectRoot, "client/src/main.tsx"), "utf8");
+
+    expect(vite).not.toContain("vite-plugin-manus-runtime");
+    expect(vite).not.toContain("manus-debug-collector");
+    expect(main).not.toContain("/api/trpc");
   });
 
   it("exibe o CRM correto na Política de Privacidade", () => {

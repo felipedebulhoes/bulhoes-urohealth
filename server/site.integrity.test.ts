@@ -83,6 +83,14 @@ describe("Integridade das páginas públicas", () => {
     expect(interactiveMap).toContain('https://www.google.com/maps?q=${mapQuery}&output=embed');
     expect(interactiveMap).toContain('title={`Mapa de ${selectedClinic.name}`}');
     expect(interactiveMap).not.toContain("forge");
+    expect(interactiveMap).toContain("<ConsentMapFrame");
+    expect(interactiveMap).not.toContain("<iframe");
+    const locationPages = readFileSync(resolve(projectRoot, "client/src/pages/LocationPages.tsx"), "utf8");
+    expect(locationPages).toContain("<ConsentMapFrame");
+    expect(locationPages).not.toContain("<iframe");
+    const consentFrame = readFileSync(resolve(projectRoot, "client/src/components/ConsentMapFrame.tsx"), "utf8");
+    expect(consentFrame).toContain("if (consented || activated)");
+    expect(consentFrame).toContain('"cookie_consent_updated"');
     expect(consultorios).toContain('Atendimento presencial em quatro locais ativos');
     expect(consultorios).not.toContain('Atendimento presencial em 6 locais');
   });

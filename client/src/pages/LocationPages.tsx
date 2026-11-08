@@ -1,4 +1,5 @@
 import { trackDoctoraliaClick } from "@/lib/analytics";
+import ConsentMapFrame from "@/components/ConsentMapFrame";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Location Pages individuais para SEO local
@@ -227,14 +228,9 @@ function LocationPage({ slug }: { slug: string }) {
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}>
                 <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Como Chegar</h2>
                 <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-border h-64">
-                  <iframe
+                  <ConsentMapFrame
                     src={loc.mapEmbed}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
+                    className="h-full w-full border-0"
                     title={`Mapa ${loc.name}`}
                   />
                 </div>

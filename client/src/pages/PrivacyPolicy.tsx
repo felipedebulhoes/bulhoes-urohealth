@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
             Política de Privacidade
           </h1>
           <p className="text-[#C4C4C4] mt-3 text-sm">
-            Última atualização: 10 de setembro de 2026
+            Última atualização: 8 de novembro de 2026
           </p>
         </div>
       </div>
@@ -60,12 +60,16 @@ export default function PrivacyPolicy() {
               <li>Endereço de e-mail</li>
               <li>Número de telefone/WhatsApp</li>
               <li>Preferências administrativas de contato, local, modalidade e período de atendimento</li>
-              <li>Mensagens enviadas via formulário de contato ou chat</li>
+              <li>Mensagens que você decide enviar pelo WhatsApp, por e-mail ou por outros canais de atendimento</li>
             </ul>
             <p className="mt-4 leading-relaxed">
               Formulários de captação em plataformas de publicidade, como o TikTok Ads, destinam-se somente a
               contato e agendamento. <strong>Não envie sintomas, diagnósticos, exames, medicamentos, fotografias
               ou outras informações de saúde nesses formulários.</strong>
+            </p>
+            <p className="mt-4 leading-relaxed">
+              O formulário de contato deste site não armazena o que você digita. Ele apenas prepara uma mensagem
+              no WhatsApp, que só é enviada quando você a confirma no aplicativo.
             </p>
 
             <h3 className="text-xl text-[#1C3D5A] dark:text-gray-100 mt-4">1.2 Dados coletados automaticamente</h3>
@@ -170,12 +174,12 @@ export default function PrivacyPolicy() {
             </h2>
             <p className="leading-relaxed">Seus dados pessoais podem ser compartilhados com:</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Google LLC:</strong> para serviços de analytics e publicidade (Google Analytics, Google Ads)</li>
+              <li><strong>Google LLC:</strong> para serviços de analytics e publicidade (Google Analytics, Google Ads) e para exibição do mapa dos consultórios (Google Maps)</li>
               <li><strong>Meta Platforms:</strong> para mensuração de campanhas por meio do Meta Pixel, conforme as preferências de cookies</li>
               <li><strong>TikTok Ads:</strong> quando você preenche um formulário instantâneo, para receber e encaminhar os dados administrativos necessários à solicitação de contato</li>
               <li><strong>Plataformas de agendamento:</strong> Doctoralia e Rede D'Or para marcação de consultas</li>
               <li><strong>Serviços de comunicação:</strong> WhatsApp, e-mail e telefonia para responder à solicitação pelo canal escolhido</li>
-              <li><strong>Hospedagem, banco de dados e CRM:</strong> prestadores estritamente necessários à operação, segurança e registro do contato</li>
+              <li><strong>Hospedagem:</strong> prestadores estritamente necessários à operação e à segurança do site</li>
               <li><strong>Autoridades competentes:</strong> quando exigido por lei ou ordem judicial</li>
             </ul>
             <p className="mt-4 leading-relaxed">
@@ -194,15 +198,14 @@ export default function PrivacyPolicy() {
               6. Armazenamento e Segurança
             </h2>
             <p className="leading-relaxed">
-              Seus dados são armazenados em servidores seguros com criptografia TLS/SSL. 
-              Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado, 
-              destruição, perda, alteração ou divulgação indevida, incluindo:
+              Este site não mantém banco de dados de pacientes nem guarda o conteúdo digitado nos formulários.
+              Adotamos medidas técnicas e organizacionais para proteger as informações tratadas contra acesso não
+              autorizado, destruição, perda, alteração ou divulgação indevida, incluindo:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Criptografia de dados em trânsito (HTTPS/TLS)</li>
-              <li>Controle de acesso baseado em funções</li>
-              <li>Monitoramento contínuo de segurança</li>
-              <li>Backups regulares</li>
+              <li>Acesso restrito às contas de administração do site</li>
+              <li>Registros técnicos de acesso e de erros do servidor</li>
             </ul>
             <p className="mt-4 leading-relaxed">
               Aplicamos prazos de retenção conforme a finalidade. Leads que não resultem em agendamento são mantidos

@@ -123,7 +123,6 @@ describe("Integridade das páginas públicas", () => {
     const stats = readFileSync(resolve(projectRoot, "client/src/components/StatsCounter.tsx"), "utf8");
     const specialties = readFileSync(resolve(projectRoot, "client/src/components/SpecialtiesSection.tsx"), "utf8");
     const quickContact = readFileSync(resolve(projectRoot, "client/src/components/QuickContactForm.tsx"), "utf8");
-    const newsletter = readFileSync(resolve(projectRoot, "client/src/components/NewsletterSection.tsx"), "utf8");
     const contact = readFileSync(resolve(projectRoot, "client/src/components/ContactSection.tsx"), "utf8");
     const contactPage = readFileSync(resolve(projectRoot, "client/src/pages/Contato.tsx"), "utf8");
     const preview = readFileSync(resolve(projectRoot, "client/src/pages/BrandPalettePreview.tsx"), "utf8");
@@ -221,17 +220,14 @@ describe("Integridade das páginas públicas", () => {
     expect(stats).toContain("brand-dark-surface");
     expect(specialties).toContain("brand-dark-surface");
     expect(quickContact).toContain("brand-dark-surface-panel");
-    expect(newsletter).toContain("brand-dark-surface-panel");
     expect(contact).toContain("brand-dark-surface");
     expect(campaign).toContain("brand-campaign-page");
     expect(campaign).toContain("brand-campaign-content");
     expect(campaign).toContain("brand-campaign-final-cta");
     expect(campaign).toContain("prefers-reduced-motion: reduce");
     expect(quickContact).toContain("mobile-compact-form");
-    expect(newsletter).toContain("mobile-compact-form");
-    expect(newsletter).toContain('htmlFor="newsletter-email"');
     expect(contactPage).toContain("mobile-compact-form");
-    expect(contactPage).toContain('htmlFor="contact-email"');
+    expect(contactPage).toContain('htmlFor="contact-phone"');
     expect(styles).toContain("@media (max-width: 640px)");
     expect(styles).toContain("background-image: linear-gradient(180deg");
     expect(routes).toContain('"/preview-paleta"');
@@ -582,6 +578,23 @@ describe("Integridade das páginas públicas", () => {
     expect(vite).not.toContain("vite-plugin-manus-runtime");
     expect(vite).not.toContain("manus-debug-collector");
     expect(main).not.toContain("/api/trpc");
+  });
+
+  it("não pede dado sem uso nem confirma envio que ainda depende do paciente", () => {
+    const quick = readFileSync(resolve(projectRoot, "client/src/components/QuickContactForm.tsx"), "utf8");
+    const contact = readFileSync(resolve(projectRoot, "client/src/pages/Contato.tsx"), "utf8");
+    const home = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
+    const policy = readFileSync(resolve(projectRoot, "client/src/pages/PrivacyPolicy.tsx"), "utf8");
+
+    for (const form of [quick, contact]) {
+      expect(form).not.toContain('type="email"');
+      expect(form).not.toContain("Mensagem Enviada!");
+      expect(form).toContain("Conclua o envio no WhatsApp");
+      expect(form).not.toContain("await fireFormConversionEvents");
+    }
+    expect(home).not.toContain("NewsletterSection");
+    expect(policy).toContain("Este site não mantém banco de dados de pacientes");
+    expect(policy).not.toContain("Backups regulares");
   });
 
   it("exibe o CRM correto na Política de Privacidade", () => {

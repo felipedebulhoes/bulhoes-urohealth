@@ -47,23 +47,18 @@ O projeto é um aplicativo full-stack moderno, de alta performance e acessível:
 │   │   ├── lib/                # Clientes tRPC, utilitários, tracking e analytics
 │   │   ├── index.css           # Design tokens, tipografia (@font-face) e Tailwind
 │   │   └── App.tsx             # Roteador Wouter e provedores React Query / tRPC
-├── server/                     # Backend (Node.js + Express 4 + tRPC 11)
-│   ├── _core/
-│   │   ├── index.ts            # Entrypoint do servidor Express
-│   │   ├── storageProxy.ts     # Proxy de armazenamento com cache local e fallback para produção
-│   │   ├── env.ts              # Validação de variáveis de ambiente
-│   │   └── vite.ts             # Middleware Vite para modo desenvolvimento
-│   ├── routers/                # Roteadores tRPC (IA, Leads, Arquivos, Blog)
-│   └── db.ts                   # Conexão Drizzle ORM com MySQL
-├── drizzle/                    # Migrações e esquemas relacionais de banco de dados
+├── server/                     # Servidor público (Node.js + Express 4)
+│   ├── production.ts           # Entrada de produção no Cloud Run
+│   ├── outboundRedirects.ts    # Links curtos (/instagram etc.)
+│   └── _core/seo.ts            # Redirecionamentos e metatags canônicas
 ├── shared/                     # Tipos compartilhados entre cliente e servidor
 └── package.json                # Gerenciador de dependências e scripts
 ```
 
 ### Tecnologias-Chave
 - **Frontend:** React 19, TypeScript 5.9, Vite 7, TailwindCSS 4, Radix UI, Framer Motion, Wouter, Lucide React.
-- **Backend:** Node.js, Express 4, tRPC 11, Drizzle ORM, MySQL (mysql2).
-- **Integrações:** Resend (disparo de e-mails para novos leads), Google Analytics 4 (gtag.js), Google Tag Manager, Umami Analytics, Doctoralia, WhatsApp com parâmetros UTM.
+- **Backend:** Node.js e Express 4, sem banco de dados nem API (o site é público e estático; a hospedagem é Google Cloud Run + Firebase Hosting).
+- **Integrações:** Google Analytics 4 (gtag.js), Google Tag Manager, Umami Analytics, Doctoralia, WhatsApp com parâmetros UTM.
 - **Testes & Tipagem:** Vitest (`npm test`), TypeScript `tsc --noEmit` (`npm run check`).
 
 ---
@@ -107,9 +102,7 @@ Em cards com hover, adicione: `group-hover:bg-[#B87333]/25 transition-colors`.
 ## 4. Gestão de Assets e Mídia (`/manus-storage/*`)
 
 1. **Rotas de Mídia:** Todas as imagens públicas, fotos e fontes usam caminhos com o prefixo `/manus-storage/[nome-do-arquivo].[ext]`.
-2. **Resolução Local:** O arquivo [`server/_core/storageProxy.ts`](file:///c:/Users/drfel/OneDrive/%C3%81rea%20de%20Trabalho/04_Profissional/Site/server/_core/storageProxy.ts) resolve os assets da seguinte maneira:
-   - Primeiro verifica se o arquivo existe em `client/public/manus-storage/`. Se existir, entrega direto via `res.sendFile()`.
-   - Se não existir localmente e estiver fora da nuvem (desenvolvimento local), faz o proxy automático a partir de `https://felipebulhoes.com/manus-storage/` e salva o cache no disco local.
+2. **Resolução:** o prefixo é só um nome herdado. Em produção, `server/production.ts` entrega os arquivos do bucket definido em `GCS_ASSET_BUCKET`; em desenvolvimento, o Vite busca no site publicado o que não estiver no disco.
 3. **Adição de Novas Imagens:** Sempre coloque o arquivo em `client/public/manus-storage/` para garantir carregamento instantâneo offline.
 
 ---

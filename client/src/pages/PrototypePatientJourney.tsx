@@ -28,9 +28,7 @@ import {
 } from "lucide-react";
 import PrototypeLayout, { PROTOTYPE_BASE } from "@/components/prototype/PrototypeLayout";
 import PrototypeMeta from "@/components/prototype/PrototypeMeta";
-import PrototypeEmailContactForm from "@/components/prototype/PrototypeEmailContactForm";
 import PrototypeBackToTop from "@/components/prototype/PrototypeBackToTop";
-import PrototypeFaqHelpfulButton, { type PopularFaqQuestionId } from "@/components/prototype/PrototypeFaqHelpfulButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { trackPrototypeEvent } from "@/lib/analytics";
 
@@ -772,7 +770,6 @@ export function PrototypeGirthEnhancement() {
                   >
                     {item.title}
                   </button>
-                  <PrototypeFaqHelpfulButton questionId={item.id as PopularFaqQuestionId} questionTitle={item.title} />
                 </article>
               ))}
             </div>
@@ -810,7 +807,6 @@ export function PrototypeGirthEnhancement() {
             )}
           </div>
           <p className="mt-6 text-xs leading-5 text-[#17364F]/65 dark:text-foreground/65">Base clínica resumida: revisão sistemática e meta-análise de preenchedores injetáveis (Sexual Medicine Reviews, 2025) e posição da Sexual Medicine Society of North America sobre procedimentos cosméticos penianos (2024).</p>
-          <PrototypeEmailContactForm />
         </div>
       </section>
 

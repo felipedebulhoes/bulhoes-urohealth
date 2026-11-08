@@ -17,7 +17,6 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import DeferredSection from "@/components/DeferredSection";
 
 const MediaSection = lazy(() => import("@/components/MediaSection"));
-const PlaybookSection = lazy(() => import("@/components/PlaybookSection"));
 const EducationalPreviewSection = lazy(() => import("@/components/EducationalPreviewSection"));
 const SymptomChecker = lazy(() => import("@/components/SymptomChecker"));
 const VideosSection = lazy(() => import("@/components/VideosSection"));
@@ -30,7 +29,6 @@ const NewsletterSection = lazy(() => import("@/components/NewsletterSection"));
 const InstagramSection = lazy(() => import("@/components/InstagramSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const DoctoraliaWidget = lazy(() => import("@/components/DoctoraliaWidget"));
-const AIChatWidget = lazy(() => import("@/components/AIChatWidget"));
 const SocialShareButtons = lazy(() => import("@/components/SocialShareButtons"));
 
 interface HomeProps {
@@ -104,9 +102,6 @@ export default function Home({
           <SpecialtiesSection />
         </ScrollReveal>
         <DeferredSection minHeight={440}>
-          <ScrollReveal><PlaybookSection /></ScrollReveal>
-        </DeferredSection>
-        <DeferredSection minHeight={440}>
           <ScrollReveal><EducationalPreviewSection /></ScrollReveal>
         </DeferredSection>
         <DeferredSection minHeight={520}>
@@ -163,7 +158,6 @@ export default function Home({
       <Footer />
       <WhatsAppWidget />
       <MobileBottomBar source="homepage" />
-      <DeferredSection mode="idle" minHeight={0}><AIChatWidget /></DeferredSection>
       <ScheduleBanner />
     </div>
   );

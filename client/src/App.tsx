@@ -44,10 +44,6 @@ const CampinasDayHospital = lazy(() => import("./pages/LocationPages").then((m) 
 const ClinoviPaulista = lazy(() => import("./pages/LocationPages").then((m) => ({ default: m.ClinoviPaulista })));
 const ClinoviPinheiros = lazy(() => import("./pages/LocationPages").then((m) => ({ default: m.ClinoviPinheiros })));
 const CemedSaoLuizCampinas = lazy(() => import("./pages/LocationPages").then((m) => ({ default: m.CemedSaoLuizCampinas })));
-const AdminFiles = lazy(() => import("./pages/AdminFiles"));
-const AdminLeads = lazy(() => import("./pages/AdminLeads"));
-const AdminKeywords = lazy(() => import("./pages/AdminKeywords"));
-const AdminSocialPreview = lazy(() => import("./pages/AdminSocialPreview"));
 const BrandPalettePreview = lazy(() => import("./pages/BrandPalettePreview"));
 const QuietLuxuryPreview = lazy(() => import("./pages/QuietLuxuryPreview"));
 const Consultorios = lazy(() => import("./pages/Consultorios"));
@@ -158,10 +154,6 @@ function Router() {
         <Route path={"/local/cemed-sao-luiz-campinas"} component={CemedSaoLuizCampinas} />
         <Route path={"/primeira-consulta"} component={PrimeiraConsulta} />
         <Route path={"/guia-google-business"} component={GuiaGoogleBusiness} />
-        <Route path={"/admin/files"} component={AdminFiles} />
-        <Route path={"/admin/leads"} component={AdminLeads} />
-        <Route path={"/admin/keywords"} component={AdminKeywords} />
-        <Route path={"/admin/social-preview"} component={AdminSocialPreview} />
         <Route path={"/preview-paleta"} component={BrandPalettePreview} />
         <Route path={"/preview-quiet-luxury"} component={QuietLuxuryPreview} />
         <Route path={"/guia-glp1"} component={GuiaGLP1} />

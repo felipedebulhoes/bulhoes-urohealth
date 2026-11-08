@@ -83,7 +83,7 @@ describe("mensuração pública com privacidade", () => {
     expect(privacyPolicy).toContain("Gerenciar preferências de cookies");
   });
 
-  it("nunca envia o motivo da consulta nem dados do chat ao Google Analytics", async () => {
+  it("nunca envia o motivo da consulta ao Google Analytics", async () => {
     const gtag = vi.fn();
     const consent = JSON.stringify({ version: "2.0", analytics: true, marketing: true, timestamp: Date.now() });
     (globalThis as any).window = {
@@ -107,10 +107,6 @@ describe("mensuração pública com privacidade", () => {
     expect(sent).not.toContain("teste123");
     expect(sent).not.toContain("Paciente Teste");
     expect(sent).not.toContain("99999");
-
-    const widget = readSource("client/src/components/AIChatWidget.tsx");
-    const call = widget.slice(widget.indexOf("trackLeadGenerated("), widget.indexOf("trackLeadGenerated(") + 120);
-    expect(call).not.toMatch(/reason|name|phone|email/);
     delete (globalThis as any).window;
   });
 
@@ -120,12 +116,5 @@ describe("mensuração pública com privacidade", () => {
     expect(sanitizeLinkUrl("https://www.doctoralia.com.br/x#agenda")).toBe("https://www.doctoralia.com.br/x");
     expect(sanitizeLinkUrl("tel:+551933014300")).toBe("tel:+551933014300");
     expect(readSource("client/src/lib/tracking.ts")).toContain("link_url: sanitizeLinkUrl(target.href)");
-  });
-
-  it("o download de guia envia só o identificador do material, sem o tema clínico por extenso", () => {
-    const playbook = readSource("client/src/components/PlaybookSection.tsx");
-    const call = playbook.slice(playbook.indexOf('trackEvent("playbook_download"'), playbook.indexOf("fireFormConversionEvents().catch"));
-    expect(call).not.toContain("topic_title");
-    expect(call).not.toMatch(/cleanName|cleanEmail|phone/);
   });
 });

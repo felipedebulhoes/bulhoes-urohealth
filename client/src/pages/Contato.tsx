@@ -20,7 +20,6 @@ import {
   Monitor,
   MessageCircle,
   Clock,
-  Mail,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -82,7 +81,7 @@ const offices = [
 export default function Contato() {
   const [submitted, setSubmitted] = useState(false);
   const [loadingForm, setLoadingForm] = useState(false);
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "", privacyConsent: false });
+  const [formData, setFormData] = useState({ name: "", phone: "", message: "", privacyConsent: false });
 
   usePageMeta({
     title: "Contato",
@@ -105,7 +104,7 @@ export default function Contato() {
     setLoadingForm(true);
 
     // Eventos agregados, sem transmitir dados preenchidos pelo paciente.
-    await fireFormConversionEvents();
+    fireFormConversionEvents();
 
     const message = `Olá, meu nome é ${formData.name}. ${formData.message ? `Mensagem: ${formData.message}. ` : ""}Meu telefone: ${formData.phone}`;
     const encoded = encodeURIComponent(message);
@@ -293,13 +292,13 @@ export default function Contato() {
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.7 }}>
               <div className="mobile-compact-form bg-gradient-to-br from-[#1C3D5A] to-[#0F3460] rounded-2xl p-6 lg:p-8">
                 <h3 className="text-lg font-semibold text-white mb-1">Solicite um Contato</h3>
-                <p className="text-white/40 text-sm mb-6">Preencha o formulário e enviaremos sua mensagem pelo WhatsApp.</p>
+                <p className="text-white/40 text-sm mb-6">Preencha o formulário para preparar sua mensagem no WhatsApp.</p>
 
                 {submitted ? (
                   <div className="text-center py-8">
                     <CheckCircle className="w-12 h-12 text-[#B87333] mx-auto mb-4" />
-                    <h4 className="text-xl text-white font-semibold mb-2">Mensagem Enviada!</h4>
-                    <p className="text-white/50 text-sm">Você será redirecionado para o WhatsApp.</p>
+                    <h4 className="text-xl text-white font-semibold mb-2">Conclua o envio no WhatsApp</h4>
+                    <p className="text-white/50 text-sm">Sua mensagem foi preparada. Toque em enviar no WhatsApp para que ela chegue à equipe.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="mobile-compact-form space-y-4">
@@ -335,22 +334,6 @@ export default function Contato() {
                         />
                       </div>
                     </div>
-                    {/* E-mail */}
-                    <div>
-                      <label htmlFor="contact-email" className="text-white/70 text-xs font-medium mb-1.5 block">E-mail *</label>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                        <input
-                          id="contact-email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="seu@email.com"
-                          className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#B87333]/50 transition-colors"
-                        />
-                      </div>
-                    </div>
                     {/* Mensagem */}
                     <div>
                       <label htmlFor="contact-message" className="text-white/70 text-xs font-medium mb-1.5 block">Mensagem</label>
@@ -377,7 +360,7 @@ export default function Contato() {
                         className="mt-0.5 w-4 h-4 accent-[#B87333] flex-shrink-0 cursor-pointer"
                       />
                       <label htmlFor="privacyConsentContato" className="text-white/50 text-[11px] leading-relaxed cursor-pointer">
-                        Ao enviar, você concorda em ser contatado por WhatsApp/e-mail e com a{" "}
+                        Ao continuar, você concorda em ser contatado por WhatsApp e com a{" "}
                         <a href="/privacidade" className="text-[#B87333] hover:underline" target="_blank" rel="noopener noreferrer">
                           Política de Privacidade
                         </a>
@@ -390,10 +373,10 @@ export default function Contato() {
                       className="w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2 disabled:opacity-70"
                     >
                       <Send className="w-4 h-4 mr-2" />
-                      {loadingForm ? "Enviando..." : "Enviar pelo WhatsApp"}
+                      {loadingForm ? "Abrindo..." : "Continuar no WhatsApp"}
                     </Button>
                     <p className="text-white/25 text-[11px] text-center">
-                      Ao enviar, você será redirecionado para o WhatsApp com sua mensagem pré-preenchida.
+                      O WhatsApp abrirá com sua mensagem pronta. Ela só é enviada quando você confirmar no aplicativo. Este site não guarda o que você digitou.
                     </p>
                   </form>
                 )}

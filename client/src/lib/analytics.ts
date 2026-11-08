@@ -38,34 +38,29 @@ const GOOGLE_ADS_SEND_TO = `${GOOGLE_ADS_CONVERSION_ID}/${GOOGLE_ADS_CONVERSION_
  * saúde pode refletir interesse em atendimento médico.
  * Retorna uma Promise que resolve após o delay técnico (800ms).
  */
-export function fireFormConversionEvents(): Promise<void> {
-  return new Promise((resolve) => {
-    if (typeof window !== "undefined" && window.gtag && hasMarketingConsent()) {
-      window.gtag("event", "conversion", {
-        send_to: GOOGLE_ADS_SEND_TO,
-        value: 100,
-        currency: "BRL",
-      });
-    }
+export function fireFormConversionEvents(): void {
+  if (typeof window !== "undefined" && window.gtag && hasMarketingConsent()) {
+    window.gtag("event", "conversion", {
+      send_to: GOOGLE_ADS_SEND_TO,
+      value: 100,
+      currency: "BRL",
+    });
+  }
 
-    if (typeof window !== "undefined" && window.gtag && hasAnalyticsConsent()) {
-      window.gtag("event", "lead_form_submit", {
-        event_category: "conversion",
-        contact_method: "whatsapp",
-      });
-      window.gtag("event", "contact_whatsapp", {
-        event_category: "contact",
-        contact_method: "whatsapp",
-      });
-      window.gtag("event", "lead_whatsapp", {
-        event_category: "conversion",
-        contact_method: "whatsapp",
-      });
-    }
-
-    // 4. Aguardar janela técnica antes do redirecionamento
-    setTimeout(resolve, 800);
-  });
+  if (typeof window !== "undefined" && window.gtag && hasAnalyticsConsent()) {
+    window.gtag("event", "lead_form_submit", {
+      event_category: "conversion",
+      contact_method: "whatsapp",
+    });
+    window.gtag("event", "contact_whatsapp", {
+      event_category: "contact",
+      contact_method: "whatsapp",
+    });
+    window.gtag("event", "lead_whatsapp", {
+      event_category: "conversion",
+      contact_method: "whatsapp",
+    });
+  }
 }
 
 /**

@@ -25,7 +25,6 @@ const LocationCardsSection = lazy(() => import("@/components/LocationCardsSectio
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const QuickContactForm = lazy(() => import("@/components/QuickContactForm"));
 const BlogPreviewSection = lazy(() => import("@/components/BlogPreviewSection"));
-const NewsletterSection = lazy(() => import("@/components/NewsletterSection"));
 const InstagramSection = lazy(() => import("@/components/InstagramSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const DoctoraliaWidget = lazy(() => import("@/components/DoctoraliaWidget"));
@@ -127,9 +126,6 @@ export default function Home({
         </DeferredSection>
         <DeferredSection minHeight={480}>
           <ScrollReveal><BlogPreviewSection /></ScrollReveal>
-        </DeferredSection>
-        <DeferredSection minHeight={320}>
-          <ScrollReveal><NewsletterSection /></ScrollReveal>
         </DeferredSection>
         <DeferredSection minHeight={420}>
           <ScrollReveal><InstagramSection /></ScrollReveal>

@@ -6,7 +6,7 @@
 import { useState } from "react";
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { motion } from "framer-motion";
-import { Send, CheckCircle, User, Phone, FileText, Mail } from "lucide-react";
+import { Send, CheckCircle, User, Phone, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { fireFormConversionEvents } from "@/lib/analytics";
 
@@ -16,7 +16,6 @@ export default function QuickContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     message: "",
     privacyConsent: false,
   });
@@ -27,7 +26,7 @@ export default function QuickContactForm() {
     setLoading(true);
 
     // Eventos agregados, sem transmitir dados preenchidos pelo paciente.
-    await fireFormConversionEvents();
+    fireFormConversionEvents();
 
     // Redireciona para WhatsApp com os dados preenchidos
     const message = `Olá, meu nome é ${formData.name}. ${formData.message ? `Mensagem: ${formData.message}. ` : ""}Meu telefone: ${formData.phone}`;
@@ -64,7 +63,7 @@ export default function QuickContactForm() {
               Solicite um Contato
             </h2>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Preencha o formulário abaixo e enviaremos sua mensagem pelo WhatsApp. Para agendamento por telefone, ligue: Clinovi (11) 3382-1529 | Campinas Day Hospital (19) 2127-2900 | São Luiz Campinas (19) 3014-3000. WhatsApp Campinas: (19) 99855-9890. Resposta em até 2 horas.
+              Preencha o formulário abaixo para preparar sua mensagem no WhatsApp. Para agendamento por telefone, ligue: Clinovi (11) 3382-1529 | Campinas Day Hospital (19) 2127-2900 | São Luiz Campinas (19) 3014-3000. WhatsApp Campinas: (19) 99855-9890. Resposta em até 2 horas.
             </p>
 
             <div className="space-y-4">
@@ -91,10 +90,10 @@ export default function QuickContactForm() {
               <div className="brand-dark-surface-panel mobile-compact-form backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
                 <CheckCircle className="w-12 h-12 text-[#B87333] mx-auto mb-4" />
                 <h3 className="text-xl text-white font-semibold mb-2">
-                  Mensagem Enviada!
+                  Conclua o envio no WhatsApp
                 </h3>
                 <p className="text-white/50 text-sm">
-                  Você será redirecionado para o WhatsApp. Entraremos em contato em breve.
+                  Sua mensagem foi preparada. Toque em enviar no WhatsApp para que ela chegue à equipe.
                 </p>
               </div>
             ) : (
@@ -140,24 +139,6 @@ export default function QuickContactForm() {
                   </div>
                 </div>
 
-                {/* E-mail */}
-                <div>
-                  <label htmlFor="quick-contact-email" className="text-white/70 text-xs font-medium mb-1.5 block">
-                    E-mail *
-                  </label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                    <input
-                      id="quick-contact-email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="seu@email.com"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#B87333]/50 transition-colors"
-                    />
-                  </div>
-                </div>
 
                 {/* Mensagem */}
                 <div>
@@ -188,7 +169,7 @@ export default function QuickContactForm() {
                     className="mt-0.5 w-4 h-4 accent-[#B87333] flex-shrink-0 cursor-pointer"
                   />
                   <label htmlFor="privacyConsent" className="text-white/50 text-[11px] leading-relaxed cursor-pointer">
-                    Ao enviar, você concorda em ser contatado por WhatsApp/e-mail e com a{" "}
+                    Ao continuar, você concorda em ser contatado por WhatsApp e com a{" "}
                     <a href="/privacidade" className="text-[#B87333] hover:underline" target="_blank" rel="noopener noreferrer">
                       Política de Privacidade
                     </a>
@@ -202,11 +183,11 @@ export default function QuickContactForm() {
                   className="schedule-cta schedule-cta--primary w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2 disabled:opacity-70"
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  {loading ? "Enviando..." : "Enviar pelo WhatsApp"}
+                  {loading ? "Abrindo..." : "Continuar no WhatsApp"}
                 </Button>
 
                 <p className="text-white/25 text-[11px] text-center">
-                  Ao enviar, você será redirecionado para o WhatsApp com sua mensagem pré-preenchida.
+                  O WhatsApp abrirá com sua mensagem pronta. Ela só é enviada quando você confirmar no aplicativo. Este site não guarda o que você digitou.
                 </p>
               </form>
             )}

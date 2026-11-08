@@ -43,9 +43,9 @@ describe("mensuração pública com privacidade", () => {
 
     expect(analytics).not.toContain("user_data");
     expect(analytics).not.toContain("setUserDataForOptimizedConversions");
-    expect(analytics).toContain("export function fireFormConversionEvents(): Promise<void>");
-    expect(quickForm).toContain("await fireFormConversionEvents();");
-    expect(contactForm).toContain("await fireFormConversionEvents();");
+    expect(analytics).toContain("export function fireFormConversionEvents(): void");
+    expect(quickForm).toContain("fireFormConversionEvents();");
+    expect(contactForm).toContain("fireFormConversionEvents();");
     expect(tracking).toContain("hasAnalyticsConsent");
     expect(tracking).toContain("hasMarketingConsent");
   });

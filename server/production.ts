@@ -1,3 +1,4 @@
+import compression from "compression";
 import express, { type Request, type Response } from "express";
 import { Storage } from "@google-cloud/storage";
 import { existsSync, promises as fs } from "node:fs";
@@ -139,6 +140,10 @@ export function createPortablePublicApp(options: PortablePublicAppOptions = {}) 
     throw new Error(`Build público não encontrado em ${staticDirectory}. Execute pnpm build:portable.`);
   }
 
+  // O Firebase Hosting não comprime as respostas vindas do Cloud Run. O filtro
+  // padrão ignora formatos já comprimidos, como imagens e vídeos.
+  app.use(compression({ threshold: 1024 }));
+
   app.use(applySecurityHeaders);
 
   app.use((req, res, next) => {
@@ -219,6 +224,18 @@ export function createPortablePublicApp(options: PortablePublicAppOptions = {}) 
     // Cloud Run uses GCS_ASSET_BUCKET and its service identity instead.
     res.redirect(302, `${legacyAssetOrigin}/manus-storage/${encodeURIComponent(assetKey)}`);
   });
+
+  // Os arquivos de /assets têm o hash do conteúdo no nome, então podem ficar em
+  // cache por um ano. O HTML continua sem cache longo para publicar na hora.
+  app.use(
+    "/assets",
+    express.static(resolve(staticDirectory, "assets"), {
+      index: false,
+      fallthrough: true,
+      immutable: true,
+      maxAge: "1y",
+    })
+  );
 
   app.use(express.static(staticDirectory, { index: false, fallthrough: true }));
 

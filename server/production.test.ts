@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { createServer, type Server } from "node:http";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -35,6 +35,35 @@ describe("runtime público portátil", () => {
   afterEach(async () => {
     await new Promise<void>((resolve, reject) => server.close(error => (error ? reject(error) : resolve())));
     rmSync(staticDirectory, { recursive: true, force: true });
+  });
+
+  it("comprime respostas de texto quando o cliente aceita gzip", async () => {
+    writeFileSync(
+      join(staticDirectory, "index.html"),
+      `<!doctype html><html lang="pt-BR"><head><title>Página</title></head><body>${"conteúdo ".repeat(500)}</body></html>`
+    );
+
+    const response = await fetch(`${baseUrl}/`, { headers: { "accept-encoding": "gzip" } });
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get("content-encoding")).toBe("gzip");
+    expect(response.headers.get("vary")?.toLowerCase()).toContain("accept-encoding");
+    expect(response.headers.get("cache-control") ?? "").not.toContain("immutable");
+    expect(await response.text()).toContain("conteúdo");
+  });
+
+  it("guarda em cache longo somente os arquivos versionados de /assets", async () => {
+    mkdirSync(join(staticDirectory, "assets"));
+    writeFileSync(join(staticDirectory, "assets", "index-abc123.js"), "console.log('ok');");
+    writeFileSync(join(staticDirectory, "robots.txt"), "User-agent: *");
+
+    const asset = await fetch(`${baseUrl}/assets/index-abc123.js`);
+    const rootFile = await fetch(`${baseUrl}/robots.txt`);
+
+    expect(asset.status).toBe(200);
+    expect(asset.headers.get("cache-control")).toBe("public, max-age=31536000, immutable");
+    expect(rootFile.status).toBe(200);
+    expect(rootFile.headers.get("cache-control")).toBe("public, max-age=0");
   });
 
   it("inclui os patches exigidos pelo pnpm antes da instalação no container", () => {

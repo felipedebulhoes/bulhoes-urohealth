@@ -4,6 +4,7 @@
  */
 import { useState } from "react";
 import { MapPin, Phone, Navigation } from "lucide-react";
+import ConsentMapFrame from "@/components/ConsentMapFrame";
 
 interface ClinicLocation {
   id: string;
@@ -83,13 +84,10 @@ export default function InteractiveMap() {
 
       {/* Map */}
       <div className="rounded-xl overflow-hidden shadow-lg border border-[#2E2520]/8">
-        <iframe
-          key={selectedClinic.id}
+        <ConsentMapFrame
           title={`Mapa de ${selectedClinic.name}`}
           src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
-          className="block h-[380px] w-full border-0 lg:h-[450px]"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+          className="h-[380px] w-full border-0 lg:h-[450px]"
         />
       </div>
 

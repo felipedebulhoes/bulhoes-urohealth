@@ -174,7 +174,7 @@ export default function PrivacyPolicy() {
             </h2>
             <p className="leading-relaxed">Seus dados pessoais podem ser compartilhados com:</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Google LLC:</strong> para serviços de analytics e publicidade (Google Analytics, Google Ads) e para exibição do mapa dos consultórios (Google Maps)</li>
+              <li><strong>Google LLC:</strong> para serviços de analytics e publicidade (Google Analytics, Google Ads) e para exibição do mapa dos consultórios (Google Maps), carregado somente depois que você aceita cookies ou escolhe mostrar o mapa</li>
               <li><strong>Meta Platforms:</strong> para mensuração de campanhas por meio do Meta Pixel, conforme as preferências de cookies</li>
               <li><strong>TikTok Ads:</strong> quando você preenche um formulário instantâneo, para receber e encaminhar os dados administrativos necessários à solicitação de contato</li>
               <li><strong>Plataformas de agendamento:</strong> Doctoralia e Rede D'Or para marcação de consultas</li>

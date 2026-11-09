@@ -157,7 +157,7 @@ export default function MediaSection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-slate-500 text-sm mb-4">
+          <p className="text-slate-600 dark:text-foreground/70 text-sm mb-4">
             Formação pelo Instituto D'Or de Ensino e Pesquisa — referência em ensino médico no Brasil
           </p>
           <div className="flex items-center justify-center gap-6 flex-wrap">

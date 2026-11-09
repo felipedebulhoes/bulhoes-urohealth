@@ -827,13 +827,13 @@ html {
 /* Contraste nos dois temas: fundos sólidos legados, verde do WhatsApp e textos translúcidos. */
 .brand-site.brand-site :is(.bg-indigo-500, .bg-indigo-600, .bg-blue-500, .bg-blue-600, .bg-amber-500, .bg-amber-600) { background-color: var(--espresso-cafe) !important; }
 .brand-site [class*="from-[#1C3D5A]"] span.rounded-full[style*="color"] { color: #F7F5F2 !important; }
-.brand-site [class*="bg-[#F8FAFB]"] .text-amber-400 { color: #8A5A12 !important; }
+.brand-site [class*="bg-[#F8FAFB]"] .text-amber-400 { color: #7A4E0E !important; }
 .brand-site main :is(.text-amber-500, .text-amber-600, .text-amber-700\/70, .text-orange-600) { color: #8A5A12 !important; }
 .brand-site main :is(.text-green-500, .text-green-600, .text-emerald-600) { color: #166534 !important; }
 .brand-site main .text-red-500 { color: #B91C1C !important; }
 .brand-site [class*="from-amber-600"] { background-image: linear-gradient(135deg, var(--espresso-cafe), var(--espresso-deep)) !important; }
 .brand-site .bg-\[\#25D366\] { background-color: #147A3F !important; }
-.brand-site .text-\[\#25D366\] { color: #147A3F !important; }
+.brand-site .text-\[\#25D366\] { color: #0F6B35 !important; }
 .dark .brand-site .text-\[\#25D366\] { color: #8FE3B0 !important; }
 .brand-site [class*="text-[#00B8A9]"] { color: #0F766E !important; }
 .dark .brand-site [class*="text-[#00B8A9]"] { color: #7FD6CC !important; }

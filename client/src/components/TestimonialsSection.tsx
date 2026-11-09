@@ -204,8 +204,8 @@ function ReviewSchema() {
       "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "30",
-      "reviewCount": "30"
+      "ratingCount": "35",
+      "reviewCount": "35"
     },
     "review": testimonials.map((t) => ({
       "@type": "Review",
@@ -275,7 +275,7 @@ export default function TestimonialsSection() {
               <div className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">5.0</div>
               <div className="flex flex-col items-start">
                 <StarRating count={5} size="w-4 h-4" />
-                <span className="text-xs text-[#1C3D5A] dark:text-foreground/50 mt-0.5">30 opiniões verificadas</span>
+                <span className="text-xs text-[#1C3D5A] dark:text-foreground/50 mt-0.5">35 opiniões verificadas</span>
               </div>
             </div>
           </div>

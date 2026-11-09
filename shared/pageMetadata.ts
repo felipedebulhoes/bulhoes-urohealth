@@ -231,6 +231,33 @@ const LOCATION_LABELS: Record<string, string> = {
   "/local/cemed-sao-luiz-campinas": "CEMED Rede D'Or São Luiz Campinas",
 };
 
+/**
+ * Título e descrição escritos para a busca, usados nas páginas com muitas
+ * impressões e poucos cliques. Sem promessa de resultado (CFM 2.336/2023).
+ */
+const SEARCH_SNIPPETS: Record<string, Pick<PageMetadata, "title" | "description">> = {
+  "/educativo/litotripsia-laser": {
+    title: "Litotripsia a laser: como é feita, preparo e recuperação",
+    description:
+      "Como é feita a litotripsia a laser para pedra nos rins e no ureter: indicações, preparo, recuperação e complicações. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/vasectomia": {
+    title: "Vasectomia: como é feita, recuperação, riscos e cuidados",
+    description:
+      "Vasectomia: como é feita, preparo, recuperação, riscos e espermograma de controle. Guia baseado em diretrizes, do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/engrossamento-peniano": {
+    title: "Engrossamento peniano com ácido hialurônico: guia e riscos",
+    description:
+      "Como é feito o engrossamento peniano com ácido hialurônico: técnica, duração, riscos e evidências científicas. Conteúdo educativo do urologista Dr. Felipe de Bulhões.",
+  },
+  "/local/campinas-day-hospital": {
+    title: "Urologista no Campinas Day Hospital, Cambuí | Particular",
+    description:
+      "Dr. Felipe de Bulhões atende no Campinas Day Hospital: Av. Benjamin Constant, 1991, Cambuí, Campinas. Atendimento particular, às sextas, das 8h às 12h.",
+  },
+};
+
 const BLOG_TITLES: Record<string, string> = {
   "importancia-saude-urologica-preventiva": "A importância da saúde urológica preventiva",
   "urologista-medico-do-homem-desde-jovem": "O urologista é o médico do homem",
@@ -313,10 +340,14 @@ export function getPageMetadata(input: string): PageMetadata {
   if (exact) return exact;
 
   const educationalLabel = EDUCATIONAL_LABELS[pathname];
-  if (educationalLabel) return genericEducationalMetadata(educationalLabel);
+  if (educationalLabel) {
+    return { ...genericEducationalMetadata(educationalLabel), ...SEARCH_SNIPPETS[pathname] };
+  }
 
   const locationLabel = LOCATION_LABELS[pathname];
-  if (locationLabel) return genericLocationMetadata(locationLabel);
+  if (locationLabel) {
+    return { ...genericLocationMetadata(locationLabel), ...SEARCH_SNIPPETS[pathname] };
+  }
 
   if (pathname.startsWith("/blog/")) {
     const slug = pathname.slice("/blog/".length);

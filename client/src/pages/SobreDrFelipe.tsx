@@ -4,6 +4,7 @@
  */
 import ResearchSection from "@/components/ResearchSection";
 import MediaSection from "@/components/MediaSection";
+import SectionFold from "@/components/SectionFold";
 import { motion } from "framer-motion";
 import {
   GraduationCap,
@@ -239,8 +240,8 @@ export default function SobreDrFelipe() {
       </section>
 
       {/* Pesquisa e atualização científica */}
-      <ResearchSection />
-      <MediaSection />
+      <SectionFold title="Pesquisa e ensino"><ResearchSection /></SectionFold>
+      <SectionFold title="Atualização científica"><MediaSection /></SectionFold>
 
       {/* Locais de Atendimento */}
       <section className="py-16 bg-white dark:bg-card">

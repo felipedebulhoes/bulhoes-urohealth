@@ -18,6 +18,7 @@ import { formatMedicalReviewDate, getMedicalReviewDate } from "@shared/medicalRe
 import SocialShareButtons from "@/components/SocialShareButtons";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import { foldEducationalSections } from "@/components/foldEducationalSections";
 
 interface EducationalLayoutProps {
   title: string;
@@ -144,7 +145,7 @@ export default function EducationalLayout({
       </section>
 
       {/* Content */}
-      <main>{children}</main>
+      <main>{foldEducationalSections(children)}</main>
 
       <section className="border-y border-[#1C3D5A]/8 bg-[#F7F8F8] py-8 dark:bg-card">
         <div className="container flex flex-col items-center justify-between gap-4 sm:flex-row">

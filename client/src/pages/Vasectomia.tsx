@@ -88,7 +88,8 @@ export default function Vasectomia() {
               A vasectomia é um procedimento cirúrgico que consiste na <strong>secção e oclusão dos ductos deferentes</strong> — os canais que transportam os espermatozoides dos testículos até a uretra. Após a vasectomia, os espermatozoides continuam sendo produzidos pelos testículos, mas são reabsorvidos pelo organismo, sem serem eliminados no ejaculado.
             </p>
             <p className="text-[#334155] leading-relaxed mb-6">
-              O procedimento é realizado sob <strong>anestesia local</strong>, dura entre 15 e 30 minutos, e o paciente recebe alta no mesmo dia. A vasectomia <strong>não interfere na produção de testosterona</strong>, portanto não causa alterações hormonais, mudanças na voz, perda de pelos ou ganho de peso. O volume do ejaculado permanece praticamente inalterado, pois os espermatozoides representam apenas 2-5% do sêmen.
+              O procedimento é realizado sob <strong>anestesia local</strong>, dura entre 15 e 30 minutos, e o paciente recebe alta no mesmo dia. A vasectomia <strong>não interfere na produção de testosterona</strong>, portanto não causa alterações hormonais, mudanças na voz, perda de pelos ou ganho de peso. O volume do ejaculado permanece praticamente inalterado, pois os espermatozoides representam apenas 2-5% do sêmen. Para quem é da região, veja o{" "}
+              <Link href="/blog/vasectomia-campinas-guia-completo" className="underline hover:text-[#B87333]">guia de vasectomia em Campinas</Link>.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4">

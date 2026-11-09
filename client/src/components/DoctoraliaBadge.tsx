@@ -5,30 +5,32 @@
 import { motion } from "framer-motion";
 import { Star, ExternalLink, ThumbsUp, Shield } from "lucide-react";
 
+// Avaliações públicas copiadas do perfil na Doctoralia (conferidas em 09/11/2026).
+// Use somente textos que existam lá, com as iniciais exibidas pela plataforma.
 const reviews = [
   {
-    name: "Paciente verificado",
-    date: "Março 2026",
+    name: "SA · Consulta verificada",
+    date: "Setembro 2026",
     rating: 5,
-    text: "Excelente profissional! Muito atencioso e explicou tudo com clareza. Recomendo demais.",
+    text: "Consulta perfeita. Eu falei e ele foi atencioso em buscar uma solução. Também muito respeitoso.",
   },
   {
-    name: "Paciente verificado",
-    date: "Fevereiro 2026",
+    name: "TS · Consulta verificada",
+    date: "Setembro 2026",
     rating: 5,
-    text: "Médico muito competente e humano. Me deixou tranquilo sobre o procedimento e tudo correu perfeitamente.",
+    text: "Foi um atendimento muito bom, consegui passar minhas dúvidas e fui muito bem atendido.",
   },
   {
-    name: "Paciente verificado",
-    date: "Janeiro 2026",
+    name: "WJM · Consulta verificada",
+    date: "Agosto 2026",
     rating: 5,
-    text: "Atendimento pontual e consultório excelente. Dr. Felipe é muito dedicado e explica cada detalhe do tratamento.",
+    text: "Gostaria de elogiar o atendimento profissional, atencioso e humanizado do Dr. Felipe. Demonstrou grande conhecimento, ouviu cuidadosamente minhas necessidades e explicou tudo com clareza e paciência.",
   },
 ];
 
 const stats = [
   { icon: <Star className="w-4 h-4" />, value: "5.0", label: "Avaliação" },
-  { icon: <ThumbsUp className="w-4 h-4" />, value: "100%", label: "Recomendam" },
+  { icon: <ThumbsUp className="w-4 h-4" />, value: "35", label: "Opiniões" },
   { icon: <Shield className="w-4 h-4" />, value: "1500+", label: "Pacientes" },
 ];
 
@@ -104,7 +106,7 @@ export default function DoctoraliaBadge() {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <div className="w-7 h-7 rounded-full bg-[#1C3D5A]/5 flex items-center justify-center">
-                        <span className="text-xs font-bold text-[#1C3D5A] dark:text-foreground/40">P</span>
+                        <span className="text-xs font-bold text-[#1C3D5A] dark:text-foreground/40">{review.name.charAt(0)}</span>
                       </div>
                       <span className="text-xs font-medium text-[#1C3D5A] dark:text-foreground/60">{review.name}</span>
                     </div>

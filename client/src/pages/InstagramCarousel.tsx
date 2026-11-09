@@ -36,7 +36,7 @@ export default function InstagramCarousel() {
               ))}
             </div>
             <p className="text-[#B87333] font-bold text-xl">5.0</p>
-            <p className="text-gray-300 text-sm">30 avaliações verificadas no Doctoralia</p>
+            <p className="text-gray-300 text-sm">35 avaliações verificadas no Doctoralia</p>
           </div>
 
           {/* Especialidades */}

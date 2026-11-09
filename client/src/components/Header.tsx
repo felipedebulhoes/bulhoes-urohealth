@@ -23,7 +23,6 @@ const mainNavLinks = [
 
 const quickLinks = [
   { label: "Primeira Consulta", href: "/primeira-consulta" },
-  { label: "Vídeos", href: "#videos" },
 ];
 
 const educationalLinks = [

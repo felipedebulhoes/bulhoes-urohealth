@@ -16,7 +16,7 @@ export default function MobileBottomBar({ source = "homepage", whatsappMessage }
 
   const whatsappUrl = getWhatsAppUrl({ page: source });
   const doctoraliaUrl = `https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=mobile-bar&utm_campaign=${source}`;
-  const phoneNumber = "tel:+5511981124455";
+  const phoneNumber = "tel:+551133821529";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +45,7 @@ export default function MobileBottomBar({ source = "homepage", whatsappMessage }
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isHidden = manualHide || scrollHidden;
+  const isHidden = manualHide;
 
   return (
     <div

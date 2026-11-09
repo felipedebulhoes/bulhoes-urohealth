@@ -261,7 +261,8 @@ export default function CalculosRenais() {
             </p>
             <p>
               O tratamento moderno dos cálculos renais é predominantemente <strong>minimamente invasivo</strong>. A escolha da técnica depende do tamanho, localização, composição do cálculo e das características do paciente. As opções vão desde a litotripsia extracorpórea (LECO) até a nefrolitotripsia percutânea (NLPC) para cálculos grandes e complexos, passando pela ureteroscopia com laser — a técnica mais versátil e frequentemente utilizada. Veja como é o atendimento para{" "}
-              <Link href="/litotripsia-calculo-renal" className="underline hover:text-[#B87333]">cirurgia de pedra no rim em São Paulo</Link>.
+              <Link href="/litotripsia-calculo-renal" className="underline hover:text-[#B87333]">cirurgia de pedra no rim em São Paulo</Link>. Em crise de dor, leia também{" "}
+              <Link href="/blog/pedra-no-rim-o-que-fazer" className="underline hover:text-[#B87333]">pedra no rim: o que fazer</Link>.
             </p>
           </div>
         </div>

@@ -4,6 +4,7 @@
  */
 import EducationalLayout from "@/components/EducationalLayout";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import {
   ClipboardList, Stethoscope, TestTube, MessageCircle,
   Clock, FileText, Heart, Shield, CheckCircle, ArrowRight
@@ -114,7 +115,8 @@ export default function PrimeiraConsulta() {
                   Duração média: 30-45 minutos
                 </p>
                 <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">
-                  A primeira consulta urológica é mais longa que as consultas de retorno, pois inclui uma avaliação completa do seu histórico e estado de saúde. Reserve tempo suficiente e chegue 15 minutos antes para preenchimento de cadastro.
+                  A primeira consulta urológica é mais longa que as consultas de retorno, pois inclui uma avaliação completa do seu histórico e estado de saúde. Reserve tempo suficiente e chegue 15 minutos antes para preenchimento de cadastro. Em dúvida se é hora de marcar, veja os{" "}
+                  <Link href="/blog/quando-procurar-urologista" className="underline hover:text-[#B87333]">sinais de que você deve procurar um urologista</Link>.
                 </p>
               </div>
             </div>

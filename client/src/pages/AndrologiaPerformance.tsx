@@ -10,9 +10,9 @@ import AreaLandingPageTemplate, {
 const config: AreaLandingPageConfig = {
   campaignSlug: "andrologia-performance-masculina",
   path: "/andrologia-performance-masculina",
-  pageTitle: "Andrologia, Saúde do Homem, TRT e Varicocelectomia Microcirúrgica em SP e Campinas | Dr. Felipe de Bulhões",
+  pageTitle: "Andrologia em São Paulo e Campinas | Dr. Felipe de Bulhões",
   pageDescription:
-    "Consulta em Andrologia e Saúde do Homem em São Paulo e Campinas. Investigação hormonal, reposição de testosterona (TRT), varicocelectomia com microscópio, fertilidade masculina e disfunção erétil.",
+    "Procura andrologista em São Paulo? Urologista com atendimento em andrologia na Av. Paulista, em Pinheiros e em Campinas: testosterona, fertilidade, varicocele e disfunção erétil.",
   medicalCondition: "Hipogonadismo Masculino, Varicocele, Fertilidade e Disfunção Erétil",
   heroBadge: "Andrologia, Microcirurgia e Medicina Sexual · Abordagem Baseada em Evidências",
   heroTitle: "Saúde do Homem, Andrologia e Performance Masculina",
@@ -23,7 +23,7 @@ const config: AreaLandingPageConfig = {
       <strong className="text-white font-semibold">terapia de reposição de testosterona (TRT)</strong>,{" "}
       <strong className="text-white font-semibold">varicocelectomia com microscópio (microcirúrgica)</strong>,
       fertilidade e tratamento da <strong className="text-white font-semibold">disfunção erétil</strong> em{" "}
-      <strong className="text-white font-semibold">São Paulo</strong> e{" "}
+      <strong className="text-white font-semibold">São Paulo (Av. Paulista e Pinheiros)</strong> e{" "}
       <strong className="text-white font-semibold">Campinas</strong>.
     </>
   ),
@@ -306,6 +306,13 @@ const config: AreaLandingPageConfig = {
   specialistFocusParagraph:
     "Membro da Sociedade Brasileira de Urologia (SBU), European Association of Urology (EAU) e American Urological Association (AUA), o Dr. Felipe de Bulhões conduz a área de Andrologia e Saúde do Homem com medicina baseada em evidências — oferecendo investigação endócrino-urológica profunda, microcirurgia de varicocele com microscópio, sigilo absoluto e tratamentos personalizados em São Paulo e Campinas.",
   faqs: [
+    {
+      id: "faq-andrologista-sao-paulo",
+      category: "indicacoes",
+      question: "Procuro um andrologista em São Paulo. O urologista faz esse atendimento?",
+      answer:
+        "Sim. A andrologia é a área da Urologia dedicada à saúde sexual, hormonal e reprodutiva masculina. O Dr. Felipe de Bulhões, urologista (CRM-SP 202291, RQE 146538), atende essas queixas em São Paulo, na Clinovi Paulista e na Clinovi Pinheiros, além de Campinas e por teleconsulta.",
+    },
     {
       id: "faq-varicocelectomia-microscopio",
       category: "procedimento",

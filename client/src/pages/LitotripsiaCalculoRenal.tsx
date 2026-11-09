@@ -10,7 +10,7 @@ import AreaLandingPageTemplate, {
 const config: AreaLandingPageConfig = {
   campaignSlug: "litotripsia-calculo-renal",
   path: "/litotripsia-calculo-renal",
-  pageTitle: "Cálculo Renal e Litotripsia a Laser em SP e Campinas | Dr. Felipe de Bulhões",
+  pageTitle: "Cirurgia de Pedra no Rim em São Paulo | Dr. Felipe de Bulhões",
   pageDescription:
     "Tratamento especializado de cálculos renais (pedra nos rins) e ureterais em São Paulo e Campinas. Litotripsia a laser flexível sem cortes, alívio rápido da cólica renal e prevenção metabólica.",
   medicalCondition: "Litíase Urinária (Cálculo Renal e Ureteral)",

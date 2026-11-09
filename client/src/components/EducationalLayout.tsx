@@ -83,7 +83,7 @@ export default function EducationalLayout({
         <div className="container flex items-center justify-between">
           <Link href="/">
             <img loading="eager"
-              src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
+              src="/brand/logo-site-fundo-claro.png"
               alt="Dr. Felipe de Bulhões - Urologista"
               className="h-12 lg:h-14 w-auto"
             />

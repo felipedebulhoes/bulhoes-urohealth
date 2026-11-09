@@ -43,7 +43,7 @@ export default function ScheduleBanner() {
           <div className="bg-white dark:bg-card rounded-xl shadow-2xl border border-[#1C3D5A]/8 p-4 relative">
             <button
               onClick={handleDismiss}
-              className="absolute top-2 right-2 p-1 rounded-full hover:bg-[#453830]/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A88B6B] focus-visible:ring-offset-2"
+              className="absolute top-2 right-2 p-1 rounded-full hover:bg-[#4A3A30]/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8D7B6B] focus-visible:ring-offset-2"
               aria-label="Fechar lembrete de agendamento"
             >
               <X className="w-4 h-4 text-[#1C3D5A] dark:text-foreground/30" />

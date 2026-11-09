@@ -33,7 +33,7 @@ const fadeUp = {
 };
 
 // CDN URLs corretas (mesmas usadas no restante do site)
-const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
+const LOGO_URL = "/brand/logo-site-fundo-claro.png";
 const PORTRAIT_URL = "/manus-storage/felipe-portrait_0e0693e4_be070ac1.webp";
 const UROONCO_URL = "/manus-storage/uroonco-solo_7227a008_5754f461.webp";
 const JPU_URL = "/manus-storage/jpu-congress_61ecfbf9_f41d816f.webp";
@@ -285,7 +285,7 @@ export default function SobreDrFelipe() {
       <section className="py-16 bg-[#1C3D5A]">
         <div className="container max-w-4xl text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
-            <img loading="lazy" src={LOGO_URL} alt="Dr. Felipe de Bulhões" className="h-14 mx-auto mb-6 brightness-0 invert" />
+            <img loading="lazy" src="/brand/logo-site-fundo-escuro.png" alt="Dr. Felipe de Bulhões" className="h-14 mx-auto mb-6" />
             <h2 className="text-2xl lg:text-3xl text-white font-serif mb-4">Agende Sua Consulta</h2>
             <p className="text-white/70 mb-8 max-w-xl mx-auto">
               Cuide da sua saúde com um urologista especializado. Atendimento presencial em Campinas e São Paulo, ou teleconsulta para todo o Brasil.

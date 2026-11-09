@@ -75,7 +75,7 @@ const ATLAS_BY_SLUG: Record<string, AtlasDefinition> = {
               strokeWidth="2"
             />
             {/* Uretra Ampla */}
-            <rect x="98" y="118" width="14" height="120" rx="5" fill="#1C3D5A" stroke="#AFC1D0" strokeWidth="1.5" />
+            <rect x="98" y="118" width="14" height="120" rx="5" fill="#2E2520" stroke="#AFC1D0" strokeWidth="1.5" />
             {/* Fluxo Urinário Forte */}
             <line x1="105" y1="130" x2="105" y2="225" stroke="#D9C58A" strokeWidth="2.5" strokeDasharray="5 3" />
             <text x="105" y="256" textAnchor="middle" fill="#B7C0A1" fontSize="9.5" fontWeight="600">
@@ -144,7 +144,7 @@ const ATLAS_BY_SLUG: Record<string, AtlasDefinition> = {
             <path d="M 338 95 Q 352 148 338 205" fill="none" stroke="#D9C58A" strokeWidth="3.5" strokeDasharray="6 3" />
 
             {/* Loja Prostática Desobstruída (Canal Amplo) */}
-            <ellipse cx="210" cy="148" rx="58" ry="48" fill="#1C3D5A" stroke="#B7C0A1" strokeWidth="2.5" />
+            <ellipse cx="210" cy="148" rx="58" ry="48" fill="#2E2520" stroke="#B7C0A1" strokeWidth="2.5" />
             <text x="210" y="143" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="700">
               Canal Desobstruído
             </text>
@@ -222,7 +222,7 @@ const ATLAS_BY_SLUG: Record<string, AtlasDefinition> = {
             {/* Pelve Renal Dilatada (Hidronefrose) */}
             <path
               d="M 135 88 Q 168 112 195 128 L 195 152 Q 165 148 135 138 Z"
-              fill="#1C3D5A"
+              fill="#2E2520"
               stroke="#AFC1D0"
               strokeWidth="2"
             />
@@ -713,7 +713,7 @@ const ATLAS_BY_SLUG: Record<string, AtlasDefinition> = {
               (Comando Voluntário)
             </text>
             {/* Canal Aberto */}
-            <rect x="303" y="154" width="24" height="72" rx="6" fill="#1C3D5A" stroke="#B7C0A1" strokeWidth="2" />
+            <rect x="303" y="154" width="24" height="72" rx="6" fill="#2E2520" stroke="#B7C0A1" strokeWidth="2" />
             <line x1="315" y1="162" x2="315" y2="245" stroke="#D9C58A" strokeWidth="3" strokeDasharray="5 3" />
             <text x="315" y="264" textAnchor="middle" fill="#D9C58A" fontSize="9.5" fontWeight="600">
               Esvaziamento Completo Sem Esforço
@@ -1197,13 +1197,13 @@ export function AreaDidacticAtlas({ campaignSlug }: { campaignSlug: string }) {
   if (!atlas) return null;
 
   return (
-    <div className="mb-12 rounded-2xl border border-[#2B2420]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-8 shadow-sm">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#2B2420]/10">
+    <div className="mb-12 rounded-2xl border border-[#2E2520]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-8 shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#2E2520]/10">
         <div>
           <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#4A3A30] block mb-1.5">
             {atlas.eyebrow}
           </span>
-          <h3 className="text-xl sm:text-2xl font-serif text-[#2B2420] dark:text-foreground">
+          <h3 className="text-xl sm:text-2xl font-serif text-[#2E2520] dark:text-foreground">
             {atlas.title}
           </h3>
         </div>
@@ -1217,11 +1217,11 @@ export function AreaDidacticAtlas({ campaignSlug }: { campaignSlug: string }) {
         {atlas.figures.map((fig, idx) => (
           <div
             key={idx}
-            className="rounded-xl border border-[#2B2420]/10 bg-[#2E2520] text-white p-5 sm:p-6 flex flex-col justify-between"
+            className="rounded-xl border border-[#2E2520]/10 bg-[#2E2520] text-white p-5 sm:p-6 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#D7C5B0]">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#C9B6A3]">
                   {fig.tag}
                 </span>
                 <span className="text-[11px] text-white/65">{fig.viewLabel}</span>

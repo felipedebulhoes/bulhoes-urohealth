@@ -86,7 +86,7 @@ export default function GuiaGLP1() {
       metaTitle="Guia das Canetas GLP-1 (Ozempic, Mounjaro) | Dr. Felipe de Bulhões"
       metaDescription="Entenda como as canetas emagrecedoras (semaglutida e tirzepatida) podem elevar a testosterona e melhorar a fertilidade masculina. Guia baseado em evidência científica."
       medicalCondition="Obesidade masculina e hipogonadismo funcional"
-      accentColor="#B87333"
+      accentColor="#8D7B6B"
     >
       {/* ── O QUE SÃO ────────────────────────────────────────────────── */}
       <section className="py-16 lg:py-20 bg-white dark:bg-card">

@@ -628,7 +628,7 @@ export default function OrientacoesPreOperatorias() {
       title="Orientações Pré-Operatórias"
       subtitle="Guia Completo de Preparo para Cirurgia"
       description="Tudo o que você precisa saber para se preparar adequadamente para sua cirurgia urológica: jejum, medicamentos, exames, cuidados especiais e checklist completo."
-      accentColor="#1C3D5A"
+      accentColor="#2E2520"
       metaTitle="Orientações Pré-Operatórias | Preparo para Cirurgia Urológica | Dr. Felipe de Bulhões"
       metaDescription="Guia completo de orientações pré-operatórias para cirurgias urológicas: jejum, medicamentos, exames, preparo intestinal, anticoagulantes e checklist. Baseado nas guidelines ASA, EAU 2025 e ERAS."
     >

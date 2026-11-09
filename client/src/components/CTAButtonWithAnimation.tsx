@@ -58,9 +58,9 @@ export function CTAButtonWithAnimation({
   };
 
   const variantStyles = {
-    primary: "bg-[#D7C5B0] text-[#2B2420] border border-[#F7F3ED]/50",
-    secondary: "bg-[#453830] text-[#F7F3ED] border border-[#D7C5B0]/35",
-    outline: "border border-[#D7C5B0]/65 text-white bg-transparent",
+    primary: "bg-[#C9B6A3] text-[#2E2520] border border-[#F7F5F2]/50",
+    secondary: "bg-[#4A3A30] text-[#F7F5F2] border border-[#C9B6A3]/35",
+    outline: "border border-[#C9B6A3]/65 text-white bg-transparent",
   };
 
   const sizeStyles = {

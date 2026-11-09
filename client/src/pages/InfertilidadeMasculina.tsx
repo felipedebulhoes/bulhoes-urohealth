@@ -290,7 +290,7 @@ export default function InfertilidadeMasculina() {
       title="Infertilidade Masculina"
       subtitle="Causas, Diagnóstico e Tratamentos Baseados em Evidências"
       description="Guia completo sobre infertilidade masculina: espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. Baseado nas guidelines EAU 2025 e AUA/ASRM 2024."
-      accentColor="#B87333"
+      accentColor="#8D7B6B"
       metaTitle="Infertilidade Masculina: Causas e Tratamentos | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre infertilidade masculina: espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. EAU 2025 + AUA 2024. Urologista em Campinas e São Paulo."
     >

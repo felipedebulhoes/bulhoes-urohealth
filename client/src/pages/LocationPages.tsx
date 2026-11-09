@@ -33,7 +33,7 @@ const fadeUp = {
   }),
 };
 
-const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
+const LOGO_URL = "/brand/logo-site-fundo-claro.png";
 
 interface LocationData {
   name: string;
@@ -97,7 +97,7 @@ const locations: Record<string, LocationData> = {
     metaTitle: "Urologista na Av. Paulista — Clinovi | Dr. Felipe de Bulhões",
     metaDescription: "Urologista na Av. Paulista em São Paulo. Atendimento particular na Clinovi. Consultas, teleconsulta e procedimentos ambulatoriais.",
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
-    accentColor: "#B87333",
+    accentColor: "#8D7B6B",
   },
   "clinovi-pinheiros": {
     name: "Clinovi Pinheiros",

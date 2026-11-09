@@ -14,9 +14,9 @@ export default function Footer() {
         {/* Logo ampliado */}
         <div className="mb-10">
           <img loading="lazy"
-            src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
+            src="/brand/logo-site-fundo-escuro.png"
             alt="Dr. Felipe de Bulhões - Urologista"
-            className="h-16 lg:h-20 w-auto brightness-0 invert"
+            className="h-16 lg:h-20 w-auto"
           />
           <p className="text-sm text-white/40 font-sans leading-relaxed max-w-md mt-4">
             Urologista e Cirurgião Geral. CRM-SP 202291. Membro Titular do Colégio

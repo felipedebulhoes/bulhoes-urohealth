@@ -264,7 +264,7 @@ export default function Varicocele() {
       title="Varicocele"
       subtitle="Causas, Diagnóstico e Tratamento"
       description="Entenda o que é varicocele, como é diagnosticada, quando o tratamento é indicado e quais são as técnicas cirúrgicas disponíveis. Baseado nas EAU Guidelines 2025 e AUA/ASRM 2024."
-      accentColor="#B87333"
+      accentColor="#8D7B6B"
       metaTitle="Varicocele: Causas, Diagnóstico e Tratamento | Dr. Felipe de Bulhões"
       metaDescription="Tudo sobre varicocele: o que é, sintomas, classificação, diagnóstico e tratamento cirúrgico. Varicocelectomia microcirúrgica é o padrão-ouro. Baseado nas EAU Guidelines 2025."
     >

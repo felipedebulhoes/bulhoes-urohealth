@@ -109,18 +109,18 @@ export default function Header({ previewMode = false, previewHref = "/preview-pa
     >
       <div className="container flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
-          <a href={previewMode ? previewHref : "/"} className="flex items-center gap-2 group">
+          <a href={previewMode ? previewHref : "/"} className="flex shrink-0 items-center gap-2 group">
           <img
             loading="eager"
             decoding="async"
-            src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
+            src="/brand/logo-site-fundo-claro.png"
             alt="Dr. Felipe de Bulhões - Urologista"
-            className={`h-12 lg:h-14 w-auto transition-all duration-300 ${usesSolidSurface ? '' : 'brightness-0 invert'}`}
+            className="h-12 2xl:h-14 w-auto max-w-none transition-all duration-300"
           />
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-0.5">
+        <nav className="hidden xl:flex items-center gap-0.5 whitespace-nowrap">
           {mainNavLinks.slice(0, 3).map((link) => (
             <a
               key={link.href}
@@ -221,7 +221,7 @@ export default function Header({ previewMode = false, previewHref = "/preview-pa
         </nav>
 
         {/* CTA + Theme Toggle */}
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden xl:flex items-center gap-2">
           <ThemeToggle />
           <Link
             href="/agendamento"
@@ -239,7 +239,7 @@ export default function Header({ previewMode = false, previewHref = "/preview-pa
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2 rounded-md transition-colors ${
+          className={`xl:hidden p-2 rounded-md transition-colors ${
             usesSolidSurface ? "text-[#1C3D5A] dark:text-foreground" : "text-white"
           }`}
         >
@@ -254,7 +254,7 @@ export default function Header({ previewMode = false, previewHref = "/preview-pa
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white dark:bg-card border-b border-[#C4C4C4]/30 overflow-hidden"
+            className="xl:hidden bg-white dark:bg-card border-b border-[#C4C4C4]/30 overflow-hidden"
           >
             <nav className="container py-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
               {mainNavLinks.slice(0, 3).map((link) => (

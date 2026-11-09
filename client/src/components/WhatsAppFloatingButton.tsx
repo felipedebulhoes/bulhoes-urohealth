@@ -40,7 +40,7 @@ export function WhatsAppFloatingButton({
       {/* Tooltip ao passar o mouse */}
       <span
         aria-hidden="true"
-        className="campaign-whatsapp-tooltip absolute right-full mr-3 bg-[#453830] text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 motion-safe:transition-[opacity,transform] motion-safe:duration-150 pointer-events-none"
+        className="campaign-whatsapp-tooltip absolute right-full mr-3 bg-[#4A3A30] text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 motion-safe:transition-[opacity,transform] motion-safe:duration-150 pointer-events-none"
       >
         Agende pelo WhatsApp
       </span>

@@ -9,6 +9,7 @@
   --brand-cafe-rgb: 74, 58, 48;
 
   --brand-taupe: #8D7B6B;
+  --brand-taupe-texto: #A08E7E;
   --brand-taupe-rgb: 141, 123, 107;
 
   --brand-bege: #C9B6A3;
@@ -29,12 +30,12 @@
   --accent-metallic: var(--brand-bege);
   --text-primary: var(--brand-off-white);
   --text-secondary: var(--brand-bege);
-  --text-muted: var(--brand-taupe);
+  --text-muted: var(--brand-taupe-texto);
 
   /* Tipografia Oficial */
-  --font-title: 'Trajan Pro', 'Optima', 'Cinzel', serif;
-  --font-body: 'Montserrat', 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display-social: 'Callingstone', cursive, serif;
+  --font-title: 'trajan-pro-3', 'Trajan Pro', 'Cinzel', serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-logotipo: 'Callingstone', serif;
 
   /* Espaçamentos e Rastreio */
   --tracking-title-loose: 0.24em;

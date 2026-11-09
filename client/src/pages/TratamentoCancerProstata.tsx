@@ -64,7 +64,7 @@ export default function TratamentoCancerProstata() {
       title="Tratamento do Câncer de Próstata"
       subtitle="Guia Completo Baseado em Evidências"
       description="Conheça todas as opções de tratamento do câncer de próstata: vigilância ativa, cirurgia robótica (RARP), radioterapia, hormonioterapia e terapias focais. Informações baseadas nas diretrizes da EAU 2025."
-      accentColor="#B87333"
+      accentColor="#8D7B6B"
       metaTitle="Tratamento do Câncer de Próstata: Cirurgia Robótica, Radioterapia e Vigilância Ativa | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre tratamento do câncer de próstata: vigilância ativa, prostatectomia radical robótica (RARP), radioterapia (IMRT, braquiterapia), hormonioterapia e manejo por grupo de risco. Baseado nas EAU Guidelines 2025."
     >

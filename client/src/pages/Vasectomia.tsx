@@ -63,7 +63,7 @@ export default function Vasectomia() {
       title="Vasectomia: Guia Completo"
       subtitle="Contracepção Masculina Definitiva"
       description="Tudo o que você precisa saber sobre a vasectomia: indicações, preparo, como é realizada, pós-operatório, complicações e perguntas frequentes. Informações baseadas no AUA Vasectomy Guideline 2026 e EAU Guidelines 2025."
-      accentColor="#B87333"
+      accentColor="#8D7B6B"
       metaTitle="Vasectomia: Como é Feita, Preparo, Recuperação e Riscos | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre vasectomia: indicações, técnica no-scalpel, preparo, pós-operatório, espermograma de controle e reversão. Baseado no AUA Guideline 2026."
     >

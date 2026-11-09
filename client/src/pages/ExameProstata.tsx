@@ -32,7 +32,7 @@ export default function ExameProstata() {
       title="Exame de Próstata: Tudo o que Você Precisa Saber"
       subtitle="Guia Completo"
       description="Entenda como funciona o exame de próstata, quando é indicado, como se preparar e por que ele é fundamental para a saúde masculina. Informações baseadas nas diretrizes da EAU, AUA e SBU."
-      accentColor="#B87333"
+      accentColor="#8D7B6B"
       metaTitle="Exame de Próstata: Como Funciona, Preparo e Quando Fazer | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre o exame de próstata (toque retal e PSA): como funciona, preparo, quando fazer, mitos e verdades. Urologista em São Paulo e Campinas."
     >

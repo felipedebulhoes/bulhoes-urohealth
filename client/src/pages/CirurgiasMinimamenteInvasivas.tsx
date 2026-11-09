@@ -30,7 +30,7 @@ const categories: SurgeryCategory[] = [
     id: "endourologia",
     name: "Endourologia",
     icon: <Microscope className="w-7 h-7" />,
-    color: "#B87333",
+    color: "#8D7B6B",
     bgColor: "bg-amber-50",
     subtitle: "Cirurgia através dos orifícios naturais",
     overview:

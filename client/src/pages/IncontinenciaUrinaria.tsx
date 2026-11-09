@@ -233,7 +233,7 @@ export default function IncontinenciaUrinaria() {
       title="Incontinência Urinária Masculina"
       subtitle="Causas, Diagnóstico e Tratamentos Baseados em Evidências"
       description="Guia completo sobre incontinência urinária masculina: tipos, classificação de gravidade, exercícios do assoalho pélvico, sling masculino e esfíncter urinário artificial. Baseado nas guidelines AUA 2024 e EAU 2025."
-      accentColor="#B87333"
+      accentColor="#8D7B6B"
       metaTitle="Incontinência Urinária Masculina: Tratamentos | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre incontinência urinária masculina pós-prostatectomia. Exercícios de Kegel, sling masculino, esfíncter artificial. AUA 2024 + EAU 2025. Urologista em Campinas e São Paulo."
     >

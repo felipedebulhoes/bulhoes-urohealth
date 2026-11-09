@@ -3,7 +3,6 @@
     "name": "Dr. Felipe de Bulhões",
     "specialty": "Urologista e Cirurgião Geral",
     "subspecialty": "Estética Íntima e Saúde do Homem",
-    "slogan": "Saúde do Homem em Todas as Fases",
     "crm": "CRM-SP 202.291",
     "rqe": [
       "146538",
@@ -70,7 +69,13 @@
       "hex": "#8D7B6B",
       "rgb": "rgb(141, 123, 107)",
       "cmyk": "cmyk(40%, 42%, 48%, 15%)",
-      "role": "Tom neutro intermediário, divisores, modernidade e discrição"
+      "role": "Tom neutro intermediário, divisores e superfícies; não usar em texto sobre Marrom Profundo"
+    },
+    "taupe_texto": {
+      "name": "Taupe para Texto",
+      "hex": "#A08E7E",
+      "rgb": "rgb(160, 142, 126)",
+      "role": "Textos secundários e legendas sobre Marrom Profundo"
     },
     "bege": {
       "name": "Bege (Bronze / Champagne)",
@@ -96,14 +101,14 @@
   },
   "typography": {
     "display_titles": {
-      "family": "Trajan / Optima Serif",
+      "family": "Trajan Pro 3",
       "fallback": "Cinzel, Georgia, serif",
       "case": "UPPERCASE",
       "letter_spacing": "0.18em to 0.28em",
       "usage": "Títulos institucionais, assinatura de marca, capas nobres"
     },
     "subtitles_body": {
-      "family": "Montserrat / Lato",
+      "family": "Montserrat",
       "fallback": "Helvetica Neue, Arial, sans-serif",
       "weights": [
         300,
@@ -112,9 +117,9 @@
       ],
       "usage": "Subtítulos, corpo de texto, legendas técnicas, dados de contato e CRM"
     },
-    "social_accent": {
+    "logotype": {
       "family": "Callingstone",
-      "usage": "Display de títulos cursivos/modernos para posts e carrosséis institucionais"
+      "usage": "Somente no nome do logotipo"
     }
   },
   "materials_textures": {

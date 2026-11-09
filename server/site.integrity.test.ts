@@ -156,12 +156,12 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain("--quiet-ivory: #F7F3ED");
     expect(styles).toContain("--quiet-bronze: #A88B6B");
     expect(styles).toContain("--espresso-deep: #2E2520");
-    expect(styles).toContain("--espresso-taupe: #A39484");
+    expect(styles).toContain("--espresso-taupe: #A08E7E");
     expect(styles).toContain("--espresso-off-white: #F7F5F2");
-    expect(styles).toContain("--hybrid-ink: #2B2420");
-    expect(styles).toContain("--hybrid-walnut: #453830");
-    expect(styles).toContain("--hybrid-bronze: #A88B6B");
-    expect(styles).toContain("--hybrid-surface: #F7F3ED");
+    expect(styles).toContain("--hybrid-ink: #2E2520");
+    expect(styles).toContain("--hybrid-walnut: #4A3A30");
+    expect(styles).toContain("--hybrid-bronze: #8D7B6B");
+    expect(styles).toContain("--hybrid-surface: #F7F5F2");
     expect(styles).toContain(".dark .brand-site");
     expect(styles).toContain("--hybrid-surface-alt: #332A25");
     expect(styles).toContain(".dark .brand-site .blog-editorial-card > a > div");
@@ -178,10 +178,9 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain(".brand-site main [class*=\"bg-blue-\"]");
     expect(styles).toContain("@media (max-width: 380px)");
     expect(styles).toContain(".mobile-form-section .mobile-compact-form");
-    expect(styles).toContain(".blog-editorial-header img");
     expect(styles).toContain(".blog-editorial-accent");
     expect(styles).not.toContain('.brand-site h1');
-    expect(styles).toContain("linear-gradient(90deg, rgb(43 36 32 / 0.96)");
+    expect(styles).toContain("linear-gradient(90deg, rgb(46 37 32 / 0.96)");
     expect(styles).toContain(".brand-site .brand-espresso-hero h1");
     expect(styles).toContain("main > *:not(#inicio):nth-child(odd) section:not(#inicio)");
     expect(styles).toContain("#especialidades > .absolute.bg-\\[\\#1C3D5A\\]");
@@ -195,8 +194,7 @@ describe("Integridade das páginas públicas", () => {
     expect(styles).toContain(".brand-preview-ribbon { top: 7rem; }");
     expect(styles).toContain("#especialidades .specialty-card-hover:focus-within");
     expect(styles).toContain('header img[alt="Dr. Felipe de Bulhões - Urologista"]');
-    expect(styles).toContain(".splash-video-container::after");
-    expect(styles).toContain("mix-blend-mode: color");
+    expect(styles).toContain(".splash-logo");
     expect(styles).toContain(".route-fallback");
     expect(styles).toContain("routeLoadingOrbit");
     expect(header).toContain('className="brand-espresso-primary-cta');
@@ -343,7 +341,7 @@ describe("Integridade das páginas públicas", () => {
     for (const file of files) {
       const source = readFileSync(resolve(projectRoot, file), "utf8");
       expect(source).not.toContain("logo-landscape_be6628b3.svg");
-      expect(source).toContain("logo-landscape-dr-felipe_cc84d4a3.svg");
+      expect(source).toMatch(/\/brand\/logo-site-fundo-(claro|escuro)\.png/);
     }
   });
 

@@ -91,9 +91,9 @@ export default function AgendarWhatsApp() {
         <img
           loading="eager"
           decoding="async"
-          src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
+          src="/brand/logo-site-fundo-escuro.png"
           alt="Dr. Felipe de Bulhões"
-          className="h-14 w-auto mx-auto mb-8 brightness-0 invert"
+          className="h-14 w-auto mx-auto mb-8"
         />
 
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">

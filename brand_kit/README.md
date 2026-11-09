@@ -3,7 +3,6 @@
 **Urologista e Cirurgião Geral | TCBC | Instituto D'Or**  
 *CRM-SP 202.291 • RQE 146538 (Urologia) • RQE 114019 (Cirurgia Geral)*  
 *Posicionamento:* **Estética Íntima e Saúde do Homem**  
-*Slogan:* **Saúde do homem em todas as fases.**
 
 ---
 
@@ -17,9 +16,9 @@
 - `brand-tokens.css`: Variáveis CSS para o site.
 - `logo-vertical-oficial-paleta-marrom.png`: Selo vertical oficial (2048×2048 px).
 - `logo-horizontal-oficial-paleta-marrom.png`: Logotipo horizontal linear (2400×800 px).
+- `brand-board-dr-felipe-de-bulhoes.png`: Painel da marca com logotipos, cores, fontes e pilares.
 - `isotipo-fb-bicolor.svg`: Vetor mestre do monograma FB (Bege + Off-White).
 - `isotipo-fb-offwhite.svg` e `isotipo-fb-bege.svg`: Variações monocromáticas em vetor.
-- `brand-board-identidade-visual-oficial.jpg`: Arquivo original do Brand Board.
 - `destaques-instagram/`: monogramas de referência em PNG; as nove capas de destaques em versão web ficam no catálogo de storage.
 
 ## Assets otimizados para web

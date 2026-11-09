@@ -68,8 +68,9 @@ O projeto é um aplicativo full-stack moderno, de alta performance e acessível:
 A identidade visual do projeto segue o padrão internacional de precisão cirúrgica e acolhimento humano.
 
 ### 3.1. Tipografia da Marca
-- **Fonte Display / Títulos de Destaque:** `Callingstone` (`/manus-storage/Callingstone_0c7058f7.ttf`) — serifa de luxo, elegante e sofisticada.
-- **Fonte de Conteúdo e Interface:** `Roboto` (Google Fonts) — clareza máxima, leitura sem esforço e legibilidade clínica.
+- **Fonte de Títulos:** `Trajan Pro 3` (Adobe Fonts, kit `mjm5ecu`).
+- **Fonte de Conteúdo e Interface:** `Montserrat` (Google Fonts).
+- **Logotipo:** `Callingstone`, somente no nome.
 
 ### 3.2. Paleta de Cores e Superfícies
 - **Fundo Escuro Primário (Hero / Seções Especiais):** `#1C3D5A` (Navy ardósia profundo).

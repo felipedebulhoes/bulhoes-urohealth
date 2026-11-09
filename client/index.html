@@ -13,7 +13,7 @@
       .initial-page-loader__mark { position: relative; display: grid; place-items: center; width: 104px; height: 104px; border: 1px solid rgba(201,182,163,.56); border-radius: 999px; background: rgba(46,37,32,.35); }
       .initial-page-loader__mark::before { content: ''; position: absolute; inset: -9px; border-radius: inherit; border: 2px solid transparent; border-top-color: #C9B6A3; border-right-color: rgba(163,148,132,.34); animation: initial-loader-orbit 1.15s linear infinite; }
       .initial-page-loader__mark svg { width: 40px; height: 58px; }
-      .initial-page-loader__label { font: 600 10px/1 Roboto, Arial, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: #E7E1DA; }
+      .initial-page-loader__label { font: 600 10px/1 Montserrat, Arial, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: #E7E1DA; }
       @keyframes initial-loader-orbit { to { transform: rotate(360deg); } }
       @media (prefers-reduced-motion: reduce) { .initial-page-loader__mark::before { animation: none; } }
     </style>
@@ -337,14 +337,16 @@
     <!-- Preconnect: Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preconnect: Adobe Fonts -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <!-- Preconnect: Google Analytics -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <!-- Preload: Fonte Callingstone (LCP critical) -->
-    <link rel="preload" href="/manus-storage/Callingstone_0c7058f7.ttf" as="font" type="font/ttf" crossorigin />
     <!-- Preload: Hero portrait (LCP image) -->
     <link rel="preload" href="/manus-storage/felipe-portrait_0e0693e4_be070ac1.webp" as="image" type="image/webp" />
-    <!-- Fontes Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+    <!-- Fontes da marca: Trajan Pro 3 (Adobe Fonts) e Montserrat (Google Fonts) -->
+    <link rel="stylesheet" href="https://use.typekit.net/mjm5ecu.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   </head>
 
   <body>

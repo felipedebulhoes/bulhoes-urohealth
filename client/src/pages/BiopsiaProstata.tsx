@@ -57,7 +57,7 @@ export default function BiopsiaProstata() {
       title="Biópsia de Próstata: Guia Completo"
       subtitle="Procedimento Diagnóstico"
       description="Tudo o que você precisa saber sobre a biópsia de próstata: indicações, preparo, como é realizada, pós-procedimento e possíveis complicações. Informações baseadas nas diretrizes da EAU 2025, AUA e SBU."
-      accentColor="#B87333"
+      accentColor="#8D7B6B"
       metaTitle="Biópsia de Próstata: Como é Feita, Preparo e Complicações | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre biópsia de próstata: indicações, preparo, técnicas (transperineal e transretal), pós-biópsia e complicações. Procedimento realizado no Campinas Day Hospital."
     >

@@ -725,7 +725,7 @@ export default function TratamentosHPB() {
       title="Tratamentos para HPB"
       subtitle="Hiperplasia Prostática Benigna"
       description="Conheça todas as opções de tratamento para o aumento benigno da próstata — desde medicamentos até as técnicas cirúrgicas mais modernas — com base nas diretrizes da EAU 2026 e AUA 2025."
-      accentColor="#B87333"
+      accentColor="#8D7B6B"
     >
       {/* Intro */}
       <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">

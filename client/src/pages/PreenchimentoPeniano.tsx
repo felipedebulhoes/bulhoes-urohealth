@@ -58,7 +58,7 @@ const PAGE_DESCRIPTION =
   "Preenchimento peniano com ácido hialurônico realizado por urologista em São Paulo e Campinas. Procedimento ambulatorial sem cortes, reversível, seguro e com sigilo absoluto.";
 const OG_IMAGE = "https://felipebulhoes.com/manus-storage/og-banner-estetica-intima-marrom-neutro_2f27a7fa.png";
 const PORTRAIT_URL = "/manus-storage/felipe-portrait_0e0693e4_be070ac1.webp";
-const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
+const LOGO_URL = "/brand/logo-site-fundo-claro.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -393,7 +393,7 @@ export default function PreenchimentoPeniano() {
         }))}
       />
 
-      <div className="brand-campaign-page min-h-screen bg-[#F7F3ED] text-[#2B2420] dark:bg-card dark:text-foreground">
+      <div className="brand-campaign-page min-h-screen bg-[#F7F5F2] text-[#2E2520] dark:bg-card dark:text-foreground">
         {/* ── HEADER FIXO DE CONVERSÃO ─────────────────────────────────────── */}
         <header className="brand-campaign-header sticky top-0 z-50 border-b border-[#2E2520]/10 bg-[#FCFAF7]/95 py-3.5 backdrop-blur-md">
           <div className="container flex items-center justify-between gap-4">
@@ -455,7 +455,7 @@ export default function PreenchimentoPeniano() {
                 rel="noopener noreferrer"
                 onClick={() => handleWhatsAppConversion("header_whatsapp")}
               >
-                <Button className="schedule-cta schedule-cta--primary bg-[#D7C5B0] hover:bg-[#E6D9C9] text-[#2B2420] font-semibold text-xs sm:text-sm h-10 px-4">
+                <Button className="schedule-cta schedule-cta--primary bg-[#C9B6A3] hover:bg-[#E7E1DA] text-[#2E2520] font-semibold text-xs sm:text-sm h-10 px-4">
                   <MessageCircle className="w-4 h-4 mr-1.5" />
                   <span>Agendar via WhatsApp</span>
                 </Button>
@@ -545,11 +545,11 @@ export default function PreenchimentoPeniano() {
                 {/* Seletor de Modo de Mensagem Discreta */}
                 <div className="mb-4 rounded-xl border border-white/15 bg-[#2E2520]/60 p-3.5 max-w-xl">
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#D7C5B0] flex items-center gap-1.5">
-                      <EyeOff className="w-3.5 h-3.5 text-[#D7C5B0]" />
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#C9B6A3] flex items-center gap-1.5">
+                      <EyeOff className="w-3.5 h-3.5 text-[#C9B6A3]" />
                       Escolha como iniciar sua conversa no WhatsApp:
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#D7C5B0]/20 text-[#D7C5B0]">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#C9B6A3]/20 text-[#C9B6A3]">
                       {activeMessageConfig.badge}
                     </span>
                   </div>
@@ -564,7 +564,7 @@ export default function PreenchimentoPeniano() {
                           onClick={() => setMessageMode(modeKey)}
                           className={`text-left rounded-lg px-2.5 py-2 text-xs transition-all border ${
                             isSelected
-                              ? "bg-[#D7C5B0] text-[#2B2420] border-[#D7C5B0] font-semibold shadow-sm"
+                              ? "bg-[#C9B6A3] text-[#2E2520] border-[#C9B6A3] font-semibold shadow-sm"
                               : "bg-white/[0.04] text-white/80 border-white/12 hover:bg-white/[0.08]"
                           }`}
                         >
@@ -700,7 +700,7 @@ export default function PreenchimentoPeniano() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => handleWhatsAppConversion("hero_card")}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D7C5B0] hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C9B6A3] hover:text-white transition-colors"
                     >
                       Falar com a equipe no WhatsApp
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -728,7 +728,7 @@ export default function PreenchimentoPeniano() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-2">
                   Anatomia e Precisão Urológica
                 </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2B2420] dark:text-foreground font-serif mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2E2520] dark:text-foreground font-serif mb-4">
                   Como funciona o preenchimento peniano com ácido hialurônico?
                 </h2>
                 <p className="text-[#334155] leading-relaxed">
@@ -747,13 +747,13 @@ export default function PreenchimentoPeniano() {
                   viewport={{ once: true }}
                   variants={fadeUp}
                   custom={1}
-                  className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-8 border border-[#2B2420]/10 shadow-sm flex flex-col justify-between"
+                  className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-8 border border-[#2E2520]/10 shadow-sm flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-11 h-11 rounded-lg bg-[#4A3A30]/10 flex items-center justify-center mb-5">
                       <Layers className="w-5 h-5 text-[#4A3A30]" />
                     </div>
-                    <h3 className="text-xl font-serif text-[#2B2420] dark:text-foreground mb-3">
+                    <h3 className="text-xl font-serif text-[#2E2520] dark:text-foreground mb-3">
                       Aplicação no Plano Anatômico Correto
                     </h3>
                     <p className="text-sm text-[#334155] leading-relaxed mb-4">
@@ -768,7 +768,7 @@ export default function PreenchimentoPeniano() {
                       na micção ou na sensibilidade erógena.
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-[#2B2420]/10 text-xs text-[#64748B]">
+                  <div className="mt-6 pt-4 border-t border-[#2E2520]/10 text-xs text-[#64748B]">
                     Técnica com microcânula atraumática (22G) por apenas dois pontos na base (10h e
                     2h).
                   </div>
@@ -780,13 +780,13 @@ export default function PreenchimentoPeniano() {
                   viewport={{ once: true }}
                   variants={fadeUp}
                   custom={2}
-                  className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-8 border border-[#2B2420]/10 shadow-sm flex flex-col justify-between"
+                  className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-8 border border-[#2E2520]/10 shadow-sm flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-11 h-11 rounded-lg bg-[#4A3A30]/10 flex items-center justify-center mb-5">
                       <Scale className="w-5 h-5 text-[#4A3A30]" />
                     </div>
-                    <h3 className="text-xl font-serif text-[#2B2420] dark:text-foreground mb-3">
+                    <h3 className="text-xl font-serif text-[#2E2520] dark:text-foreground mb-3">
                       Construção Progressiva e Naturalidade
                     </h3>
                     <p className="text-sm text-[#334155] leading-relaxed mb-4">
@@ -800,7 +800,7 @@ export default function PreenchimentoPeniano() {
                       complementares para atingir o calibre almejado com total simetria.
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-[#2B2420]/10 text-xs text-[#64748B]">
+                  <div className="mt-6 pt-4 border-t border-[#2E2520]/10 text-xs text-[#64748B]">
                     Utilização exclusiva de géis de ácido hialurônico com reologia e viscoelasticidade
                     adequadas.
                   </div>
@@ -814,14 +814,14 @@ export default function PreenchimentoPeniano() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={2.5}
-                className="mb-12 rounded-2xl border border-[#2B2420]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-8 shadow-sm"
+                className="mb-12 rounded-2xl border border-[#2E2520]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-8 shadow-sm"
               >
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#2B2420]/10">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#2E2520]/10">
                   <div>
                     <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#4A3A30] block mb-1.5">
                       Atlas Anatômico Didático · Ilustração Esquematizada
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-serif text-[#2B2420] dark:text-foreground">
+                    <h3 className="text-xl sm:text-2xl font-serif text-[#2E2520] dark:text-foreground">
                       Onde exatamente o ácido hialurônico é depositado?
                     </h3>
                   </div>
@@ -833,10 +833,10 @@ export default function PreenchimentoPeniano() {
 
                 <div className="grid lg:grid-cols-2 gap-8 items-stretch">
                   {/* DIAGRAMA 1: Corte Transversal Anatômico */}
-                  <div className="rounded-xl border border-[#2B2420]/10 bg-[#2E2520] text-white p-5 sm:p-6 flex flex-col justify-between">
+                  <div className="rounded-xl border border-[#2E2520]/10 bg-[#2E2520] text-white p-5 sm:p-6 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#D7C5B0]">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#C9B6A3]">
                           Figura 1 · Corte Transversal da Haste
                         </span>
                         <span className="text-[11px] text-white/65">Visão em Camadas</span>
@@ -861,7 +861,7 @@ export default function PreenchimentoPeniano() {
                           <defs>
                             <radialGradient id="haGlow" cx="50%" cy="46%" r="48%">
                               <stop offset="65%" stopColor="#D9C58A" stopOpacity="0.28" />
-                              <stop offset="92%" stopColor="#B87333" stopOpacity="0.55" />
+                              <stop offset="92%" stopColor="#8D7B6B" stopOpacity="0.55" />
                               <stop offset="100%" stopColor="#D9C58A" stopOpacity="0.3" />
                             </radialGradient>
                             <linearGradient id="cavernosoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -1111,10 +1111,10 @@ export default function PreenchimentoPeniano() {
                   </div>
 
                   {/* DIAGRAMA 2: Vista Longitudinal e Vetores de Aplicação com Microcânula */}
-                  <div className="rounded-xl border border-[#2B2420]/10 bg-[#2E2520] text-white p-5 sm:p-6 flex flex-col justify-between">
+                  <div className="rounded-xl border border-[#2E2520]/10 bg-[#2E2520] text-white p-5 sm:p-6 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#D7C5B0]">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#C9B6A3]">
                           Figura 2 · Vista Dorsal Esquematizada
                         </span>
                         <span className="text-[11px] text-white/65">Técnica com Microcânula</span>
@@ -1433,7 +1433,7 @@ export default function PreenchimentoPeniano() {
                 ].map((stat, i) => (
                   <div
                     key={i}
-                    className="bg-[#FCFAF7] dark:bg-card rounded-xl p-5 border border-[#2B2420]/10"
+                    className="bg-[#FCFAF7] dark:bg-card rounded-xl p-5 border border-[#2E2520]/10"
                   >
                     <p className="text-2xl font-serif font-bold text-[#2E2520] dark:text-foreground">
                       {stat.metric}
@@ -1460,7 +1460,7 @@ export default function PreenchimentoPeniano() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-2">
                   Segurança em Primeiro Lugar
                 </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2B2420] dark:text-foreground font-serif mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2E2520] dark:text-foreground font-serif mb-4">
                   Por que utilizamos apenas Ácido Hialurônico (e nunca PMMA)?
                 </h2>
                 <p className="text-[#334155] leading-relaxed">
@@ -1480,14 +1480,14 @@ export default function PreenchimentoPeniano() {
                     viewport={{ once: true }}
                     variants={fadeUp}
                     custom={index * 0.5}
-                    className="bg-[#FCFAF7] dark:bg-card rounded-xl border border-[#2B2420]/10 overflow-hidden shadow-sm"
+                    className="bg-[#FCFAF7] dark:bg-card rounded-xl border border-[#2E2520]/10 overflow-hidden shadow-sm"
                   >
-                    <div className="bg-[#2E2520]/[0.04] px-6 py-3 border-b border-[#2B2420]/10">
-                      <h3 className="text-sm font-semibold text-[#2B2420] dark:text-foreground not-italic font-sans">
+                    <div className="bg-[#2E2520]/[0.04] px-6 py-3 border-b border-[#2E2520]/10">
+                      <h3 className="text-sm font-semibold text-[#2E2520] dark:text-foreground not-italic font-sans">
                         {row.criterion}
                       </h3>
                     </div>
-                    <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#2B2420]/10">
+                    <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#2E2520]/10">
                       <div className="p-5 sm:p-6">
                         <div className="flex items-center gap-2 mb-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
@@ -1522,7 +1522,7 @@ export default function PreenchimentoPeniano() {
                 <div className="flex items-start gap-3.5">
                   <ShieldCheck className="w-6 h-6 text-[#4A3A30] shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-sm font-semibold text-[#2B2420]">
+                    <p className="text-sm font-semibold text-[#2E2520]">
                       Segurança da reversibilidade com Hialuronidase
                     </p>
                     <p className="text-xs sm:text-sm text-[#64748B] mt-0.5">
@@ -1560,7 +1560,7 @@ export default function PreenchimentoPeniano() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-2">
                   Protocolo Clínico Padronizado
                 </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2B2420] dark:text-foreground font-serif mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2E2520] dark:text-foreground font-serif mb-4">
                   Como é realizada a jornada do paciente, passo a passo
                 </h2>
                 <p className="text-[#334155] leading-relaxed">
@@ -1578,7 +1578,7 @@ export default function PreenchimentoPeniano() {
                     viewport={{ once: true }}
                     variants={fadeUp}
                     custom={idx * 0.5}
-                    className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 border border-[#2B2420]/10 shadow-sm flex flex-col justify-between"
+                    className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 border border-[#2E2520]/10 shadow-sm flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-4">
@@ -1589,7 +1589,7 @@ export default function PreenchimentoPeniano() {
                           {item.duration}
                         </span>
                       </div>
-                      <h3 className="text-lg font-serif text-[#2B2420] dark:text-foreground mb-2.5">
+                      <h3 className="text-lg font-serif text-[#2E2520] dark:text-foreground mb-2.5">
                         {item.title}
                       </h3>
                       <p className="text-sm text-[#334155] leading-relaxed">{item.description}</p>
@@ -1614,7 +1614,7 @@ export default function PreenchimentoPeniano() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-2">
                   Transparência e Critério Médico
                 </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2B2420] dark:text-foreground font-serif mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2E2520] dark:text-foreground font-serif mb-4">
                   Para quem o procedimento é indicado — e o que ele não faz
                 </h2>
                 <p className="text-[#334155] leading-relaxed">
@@ -1630,11 +1630,11 @@ export default function PreenchimentoPeniano() {
                   viewport={{ once: true }}
                   variants={fadeUp}
                   custom={1}
-                  className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-7 border border-[#2B2420]/10"
+                  className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-7 border border-[#2E2520]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-4">
                     <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0" />
-                    <h3 className="text-xl font-serif text-[#2B2420] dark:text-foreground">
+                    <h3 className="text-xl font-serif text-[#2E2520] dark:text-foreground">
                       Candidatos Ideais
                     </h3>
                   </div>
@@ -1660,11 +1660,11 @@ export default function PreenchimentoPeniano() {
                   viewport={{ once: true }}
                   variants={fadeUp}
                   custom={2}
-                  className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-7 border border-[#2B2420]/10"
+                  className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-7 border border-[#2E2520]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-4">
                     <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0" />
-                    <h3 className="text-xl font-serif text-[#2B2420] dark:text-foreground">
+                    <h3 className="text-xl font-serif text-[#2E2520] dark:text-foreground">
                       Limites e Contraindicações
                     </h3>
                   </div>
@@ -1692,9 +1692,9 @@ export default function PreenchimentoPeniano() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={3}
-                className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-8 border border-[#2B2420]/10"
+                className="bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-8 border border-[#2E2520]/10"
               >
-                <h3 className="text-xl font-serif text-[#2B2420] dark:text-foreground mb-5">
+                <h3 className="text-xl font-serif text-[#2E2520] dark:text-foreground mb-5">
                   Linha do Tempo de Recuperação Pós-Procedimento
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -1722,12 +1722,12 @@ export default function PreenchimentoPeniano() {
                   ].map((phase, idx) => (
                     <div
                       key={idx}
-                      className="rounded-lg bg-[#2E2520]/[0.03] p-4 border border-[#2B2420]/8"
+                      className="rounded-lg bg-[#2E2520]/[0.03] p-4 border border-[#2E2520]/8"
                     >
                       <span className="text-xs font-bold uppercase tracking-wider text-[#4A3A30] block mb-1">
                         {phase.period}
                       </span>
-                      <p className="font-semibold text-sm text-[#2B2420] dark:text-foreground mb-1.5">
+                      <p className="font-semibold text-sm text-[#2E2520] dark:text-foreground mb-1.5">
                         {phase.title}
                       </p>
                       <p className="text-xs text-[#64748B] leading-relaxed">{phase.desc}</p>
@@ -1743,13 +1743,13 @@ export default function PreenchimentoPeniano() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={3.5}
-                className="mt-10 bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-8 border border-[#2B2420]/10"
+                className="mt-10 bg-[#FCFAF7] dark:bg-card rounded-xl p-6 sm:p-8 border border-[#2E2520]/10"
               >
                 <div className="mb-6">
                   <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-1.5">
                     Esclarecimento Urológico
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-serif text-[#2B2420] dark:text-foreground">
+                  <h3 className="text-xl sm:text-2xl font-serif text-[#2E2520] dark:text-foreground">
                     Mitos vs. Realidade Científica
                   </h3>
                 </div>
@@ -1757,14 +1757,14 @@ export default function PreenchimentoPeniano() {
                   {mythsAndFacts.map((item, idx) => (
                     <div
                       key={idx}
-                      className="rounded-xl border border-[#2B2420]/10 bg-white dark:bg-card p-5 flex flex-col justify-between"
+                      className="rounded-xl border border-[#2E2520]/10 bg-white dark:bg-card p-5 flex flex-col justify-between"
                     >
-                      <div className="mb-3 pb-3 border-b border-[#2B2420]/8">
+                      <div className="mb-3 pb-3 border-b border-[#2E2520]/8">
                         <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-rose-700 mb-1">
                           <XCircle className="w-3.5 h-3.5" />
                           Mito Comum
                         </span>
-                        <p className="text-sm font-semibold text-[#2B2420] dark:text-foreground">
+                        <p className="text-sm font-semibold text-[#2E2520] dark:text-foreground">
                           {item.myth}
                         </p>
                       </div>
@@ -1785,7 +1785,7 @@ export default function PreenchimentoPeniano() {
           </section>
 
           {/* 4.5. AUTOAVALIAÇÃO INTERATIVA DE PERFIL + SIGILO 4 CAMADAS + PACIENTE DE FORA */}
-          <section className="py-16 lg:py-24 bg-[#EEE7DE]/60 dark:bg-card/50 border-y border-[#2B2420]/10">
+          <section className="py-16 lg:py-24 bg-[#E7E1DA]/60 dark:bg-card/50 border-y border-[#2E2520]/10">
             <div className="container max-w-5xl space-y-12">
               {/* Autoavaliação Interativa de Perfil (30 segundos) */}
               <motion.div
@@ -1794,15 +1794,15 @@ export default function PreenchimentoPeniano() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={0}
-                className="rounded-2xl border border-[#2B2420]/15 bg-[#FCFAF7] dark:bg-card p-6 sm:p-8 shadow-sm"
+                className="rounded-2xl border border-[#2E2520]/15 bg-[#FCFAF7] dark:bg-card p-6 sm:p-8 shadow-sm"
               >
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-6 border-b border-[#2B2420]/10">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-6 border-b border-[#2E2520]/10">
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] flex items-center gap-1.5 mb-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-[#4A3A30]" />
                       Planejamento Individualizado · 30 Segundos
                     </span>
-                    <h2 className="text-2xl sm:text-3xl font-serif text-[#2B2420] dark:text-foreground">
+                    <h2 className="text-2xl sm:text-3xl font-serif text-[#2E2520] dark:text-foreground">
                       Descubra como funciona o planejamento para o seu perfil
                     </h2>
                   </div>
@@ -1813,11 +1813,11 @@ export default function PreenchimentoPeniano() {
 
                 <div className="grid lg:grid-cols-3 gap-6 mb-7">
                   {/* Pergunta 1 */}
-                  <div className="rounded-xl border border-[#2B2420]/10 bg-white dark:bg-card p-4">
+                  <div className="rounded-xl border border-[#2E2520]/10 bg-white dark:bg-card p-4">
                     <p className="text-xs font-bold uppercase tracking-wider text-[#4A3A30] mb-1">
                       1. Principal Objetivo
                     </p>
-                    <p className="text-sm font-semibold text-[#2B2420] mb-3">
+                    <p className="text-sm font-semibold text-[#2E2520] mb-3">
                       O que você mais deseja melhorar?
                     </p>
                     <div className="space-y-2">
@@ -1833,7 +1833,7 @@ export default function PreenchimentoPeniano() {
                           className={`w-full text-left px-3 py-2.5 rounded-lg text-xs font-medium border transition-all flex items-center justify-between gap-2 ${
                             quizGoal === opt.id
                               ? "bg-[#2E2520] text-white border-[#2E2520]"
-                              : "bg-[#FCFAF7] text-[#334155] border-[#2B2420]/10 hover:border-[#4A3A30]/40"
+                              : "bg-[#FCFAF7] text-[#334155] border-[#2E2520]/10 hover:border-[#4A3A30]/40"
                           }`}
                         >
                           <span>{opt.label}</span>
@@ -1844,11 +1844,11 @@ export default function PreenchimentoPeniano() {
                   </div>
 
                   {/* Pergunta 2 */}
-                  <div className="rounded-xl border border-[#2B2420]/10 bg-white dark:bg-card p-4">
+                  <div className="rounded-xl border border-[#2E2520]/10 bg-white dark:bg-card p-4">
                     <p className="text-xs font-bold uppercase tracking-wider text-[#4A3A30] mb-1">
                       2. Critério de Segurança
                     </p>
-                    <p className="text-sm font-semibold text-[#2B2420] mb-3">
+                    <p className="text-sm font-semibold text-[#2E2520] mb-3">
                       O que é mais importante para você?
                     </p>
                     <div className="space-y-2">
@@ -1864,7 +1864,7 @@ export default function PreenchimentoPeniano() {
                           className={`w-full text-left px-3 py-2.5 rounded-lg text-xs font-medium border transition-all flex items-center justify-between gap-2 ${
                             quizPriority === opt.id
                               ? "bg-[#2E2520] text-white border-[#2E2520]"
-                              : "bg-[#FCFAF7] text-[#334155] border-[#2B2420]/10 hover:border-[#4A3A30]/40"
+                              : "bg-[#FCFAF7] text-[#334155] border-[#2E2520]/10 hover:border-[#4A3A30]/40"
                           }`}
                         >
                           <span>{opt.label}</span>
@@ -1875,11 +1875,11 @@ export default function PreenchimentoPeniano() {
                   </div>
 
                   {/* Pergunta 3 */}
-                  <div className="rounded-xl border border-[#2B2420]/10 bg-white dark:bg-card p-4">
+                  <div className="rounded-xl border border-[#2E2520]/10 bg-white dark:bg-card p-4">
                     <p className="text-xs font-bold uppercase tracking-wider text-[#4A3A30] mb-1">
                       3. Local de Preferência
                     </p>
-                    <p className="text-sm font-semibold text-[#2B2420] mb-3">
+                    <p className="text-sm font-semibold text-[#2E2520] mb-3">
                       Onde seria melhor para você?
                     </p>
                     <div className="space-y-2">
@@ -1895,7 +1895,7 @@ export default function PreenchimentoPeniano() {
                           className={`w-full text-left px-3 py-2.5 rounded-lg text-xs font-medium border transition-all flex items-center justify-between gap-2 ${
                             quizCity === opt.id
                               ? "bg-[#2E2520] text-white border-[#2E2520]"
-                              : "bg-[#FCFAF7] text-[#334155] border-[#2B2420]/10 hover:border-[#4A3A30]/40"
+                              : "bg-[#FCFAF7] text-[#334155] border-[#2E2520]/10 hover:border-[#4A3A30]/40"
                           }`}
                         >
                           <span>{opt.label}</span>
@@ -1931,7 +1931,7 @@ export default function PreenchimentoPeniano() {
                     onClick={() => handleWhatsAppConversion(`quiz_${quizGoal}_${quizCity}`)}
                     className="shrink-0 w-full lg:w-auto"
                   >
-                    <Button className="w-full lg:w-auto bg-[#D7C5B0] hover:bg-[#E6D9C9] text-[#2B2420] font-semibold h-12 px-6 text-sm">
+                    <Button className="w-full lg:w-auto bg-[#C9B6A3] hover:bg-[#E7E1DA] text-[#2E2520] font-semibold h-12 px-6 text-sm">
                       <MessageCircle className="w-4 h-4 mr-2" />
                       Solicitar Avaliação para este Perfil
                     </Button>
@@ -1948,7 +1948,7 @@ export default function PreenchimentoPeniano() {
                   viewport={{ once: true }}
                   variants={fadeUp}
                   custom={1}
-                  className="rounded-2xl border border-[#2B2420]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-7 flex flex-col justify-between"
+                  className="rounded-2xl border border-[#2E2520]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-7 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-2.5 mb-3">
@@ -1959,7 +1959,7 @@ export default function PreenchimentoPeniano() {
                         <span className="text-[11px] font-bold uppercase tracking-wider text-[#4A3A30] block">
                           Privacidade Médica Estruturada
                         </span>
-                        <h3 className="text-xl font-serif text-[#2B2420] dark:text-foreground">
+                        <h3 className="text-xl font-serif text-[#2E2520] dark:text-foreground">
                           Garantia de Sigilo em 4 Camadas
                         </h3>
                       </div>
@@ -1996,7 +1996,7 @@ export default function PreenchimentoPeniano() {
                             {layer.step}
                           </span>
                           <div>
-                            <p className="text-sm font-semibold text-[#2B2420] dark:text-foreground">
+                            <p className="text-sm font-semibold text-[#2E2520] dark:text-foreground">
                               {layer.title}
                             </p>
                             <p className="text-xs text-[#64748B] leading-relaxed">{layer.desc}</p>
@@ -2014,7 +2014,7 @@ export default function PreenchimentoPeniano() {
                   viewport={{ once: true }}
                   variants={fadeUp}
                   custom={2}
-                  className="rounded-2xl border border-[#2B2420]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-7 flex flex-col justify-between"
+                  className="rounded-2xl border border-[#2E2520]/12 bg-[#FCFAF7] dark:bg-card p-6 sm:p-7 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-2.5 mb-3">
@@ -2025,7 +2025,7 @@ export default function PreenchimentoPeniano() {
                         <span className="text-[11px] font-bold uppercase tracking-wider text-[#4A3A30] block">
                           Logística Simplificada · Brasil e Exterior
                         </span>
-                        <h3 className="text-xl font-serif text-[#2B2420] dark:text-foreground">
+                        <h3 className="text-xl font-serif text-[#2E2520] dark:text-foreground">
                           Vem de outra cidade ou tem agenda executiva?
                         </h3>
                       </div>
@@ -2035,10 +2035,10 @@ export default function PreenchimentoPeniano() {
                       Como o procedimento não exige internação, otimizamos sua vinda:
                     </p>
                     <div className="space-y-4">
-                      <div className="rounded-xl bg-white dark:bg-card p-4 border border-[#2B2420]/8 flex items-start gap-3">
+                      <div className="rounded-xl bg-white dark:bg-card p-4 border border-[#2E2520]/8 flex items-start gap-3">
                         <Video className="w-5 h-5 text-[#4A3A30] shrink-0 mt-0.5" />
                         <div>
-                          <p className="text-sm font-semibold text-[#2B2420]">
+                          <p className="text-sm font-semibold text-[#2E2520]">
                             Etapa 1 · Teleconsulta Urológica Prévia (Opcional)
                           </p>
                           <p className="text-xs text-[#64748B] leading-relaxed mt-0.5">
@@ -2047,10 +2047,10 @@ export default function PreenchimentoPeniano() {
                           </p>
                         </div>
                       </div>
-                      <div className="rounded-xl bg-white dark:bg-card p-4 border border-[#2B2420]/8 flex items-start gap-3">
+                      <div className="rounded-xl bg-white dark:bg-card p-4 border border-[#2E2520]/8 flex items-start gap-3">
                         <Clock className="w-5 h-5 text-[#4A3A30] shrink-0 mt-0.5" />
                         <div>
-                          <p className="text-sm font-semibold text-[#2B2420]">
+                          <p className="text-sm font-semibold text-[#2E2520]">
                             Etapa 2 · Visita Presencial Única (Retorno no Mesmo Dia)
                           </p>
                           <p className="text-xs text-[#64748B] leading-relaxed mt-0.5">
@@ -2060,10 +2060,10 @@ export default function PreenchimentoPeniano() {
                           </p>
                         </div>
                       </div>
-                      <div className="rounded-xl bg-white dark:bg-card p-4 border border-[#2B2420]/8 flex items-start gap-3">
+                      <div className="rounded-xl bg-white dark:bg-card p-4 border border-[#2E2520]/8 flex items-start gap-3">
                         <Stethoscope className="w-5 h-5 text-[#4A3A30] shrink-0 mt-0.5" />
                         <div>
-                          <p className="text-sm font-semibold text-[#2B2420]">
+                          <p className="text-sm font-semibold text-[#2E2520]">
                             Etapa 3 · Acompanhamento Pós-Procedimento Direto
                           </p>
                           <p className="text-xs text-[#64748B] leading-relaxed mt-0.5">
@@ -2092,7 +2092,7 @@ export default function PreenchimentoPeniano() {
                   className="lg:col-span-5 flex justify-center"
                 >
                   <div className="relative w-full max-w-sm">
-                    <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-[#2B2420]/15 shadow-xl bg-[#2E2520]">
+                    <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-[#2E2520]/15 shadow-xl bg-[#2E2520]">
                       <img
                         loading="lazy"
                         src={PORTRAIT_URL}
@@ -2100,7 +2100,7 @@ export default function PreenchimentoPeniano() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="mt-4 bg-[#FCFAF7] dark:bg-card rounded-xl p-4 border border-[#2B2420]/10 shadow-sm flex items-center justify-between">
+                    <div className="mt-4 bg-[#FCFAF7] dark:bg-card rounded-xl p-4 border border-[#2E2520]/10 shadow-sm flex items-center justify-between">
                       <div>
                         <div className="flex items-center gap-1">
                           {[...Array(5)].map((_, i) => (
@@ -2109,7 +2109,7 @@ export default function PreenchimentoPeniano() {
                               className="w-4 h-4 text-amber-500 fill-amber-500"
                             />
                           ))}
-                          <span className="text-xs font-bold text-[#2B2420] ml-1.5">
+                          <span className="text-xs font-bold text-[#2E2520] ml-1.5">
                             5.0 no Doctoralia
                           </span>
                         </div>
@@ -2139,7 +2139,7 @@ export default function PreenchimentoPeniano() {
                   <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-2">
                     Responsável Técnico
                   </span>
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2B2420] dark:text-foreground font-serif mb-4">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2E2520] dark:text-foreground font-serif mb-4">
                     Dr. Felipe de Bulhões Ojeda
                   </h2>
                   <p className="text-[#334155] leading-relaxed mb-4">
@@ -2183,11 +2183,11 @@ export default function PreenchimentoPeniano() {
                     ].map((cred, i) => (
                       <div
                         key={i}
-                        className="bg-[#FCFAF7] dark:bg-card rounded-lg p-4 border border-[#2B2420]/10 flex items-start gap-3"
+                        className="bg-[#FCFAF7] dark:bg-card rounded-lg p-4 border border-[#2E2520]/10 flex items-start gap-3"
                       >
                         <cred.icon className="w-5 h-5 text-[#4A3A30] shrink-0 mt-0.5" />
                         <div>
-                          <p className="text-sm font-semibold text-[#2B2420] dark:text-foreground">
+                          <p className="text-sm font-semibold text-[#2E2520] dark:text-foreground">
                             {cred.title}
                           </p>
                           <p className="text-xs text-[#64748B] mt-0.5">{cred.desc}</p>
@@ -2198,8 +2198,8 @@ export default function PreenchimentoPeniano() {
 
                   {/* Locais de atendimento resumidos */}
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="rounded-xl bg-[#FCFAF7] p-4 border border-[#2B2420]/10">
-                      <div className="flex items-center gap-2 text-sm font-semibold text-[#2B2420] mb-1">
+                    <div className="rounded-xl bg-[#FCFAF7] p-4 border border-[#2E2520]/10">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-[#2E2520] mb-1">
                         <MapPin className="w-4 h-4 text-[#4A3A30]" />
                         São Paulo (Capital)
                       </div>
@@ -2207,8 +2207,8 @@ export default function PreenchimentoPeniano() {
                         Clinovi Paulista (Av. Paulista, 1048 — 18° andar) e Clinovi Pinheiros (Av. Rebouças, 2636)
                       </p>
                     </div>
-                    <div className="rounded-xl bg-[#FCFAF7] p-4 border border-[#2B2420]/10">
-                      <div className="flex items-center gap-2 text-sm font-semibold text-[#2B2420] mb-1">
+                    <div className="rounded-xl bg-[#FCFAF7] p-4 border border-[#2E2520]/10">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-[#2E2520] mb-1">
                         <MapPin className="w-4 h-4 text-[#4A3A30]" />
                         Campinas (Interior de SP)
                       </div>
@@ -2227,24 +2227,24 @@ export default function PreenchimentoPeniano() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={2}
-                className="mt-14 pt-12 border-t border-[#2B2420]/10"
+                className="mt-14 pt-12 border-t border-[#2E2520]/10"
               >
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-1.5">
                       Experiência de Atendimento Verificada
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-serif text-[#2B2420] dark:text-foreground">
+                    <h3 className="text-xl sm:text-2xl font-serif text-[#2E2520] dark:text-foreground">
                       O que os pacientes destacam sobre o atendimento
                     </h3>
                   </div>
-                  <div className="inline-flex items-center gap-2 bg-[#FCFAF7] border border-[#2B2420]/10 px-3.5 py-2 rounded-full self-start sm:self-auto">
+                  <div className="inline-flex items-center gap-2 bg-[#FCFAF7] border border-[#2E2520]/10 px-3.5 py-2 rounded-full self-start sm:self-auto">
                     <div className="flex items-center gap-0.5">
                       {[...Array(5)].map((_, idx) => (
                         <Star key={idx} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
                       ))}
                     </div>
-                    <span className="text-xs font-bold text-[#2B2420]">
+                    <span className="text-xs font-bold text-[#2E2520]">
                       Nota 5.0 · Mais de 100 avaliações verificadas
                     </span>
                   </div>
@@ -2254,7 +2254,7 @@ export default function PreenchimentoPeniano() {
                   {patientReviews.map((review, idx) => (
                     <div
                       key={idx}
-                      className="rounded-xl border border-[#2B2420]/10 bg-[#FCFAF7] dark:bg-card p-5 flex flex-col justify-between shadow-sm"
+                      className="rounded-xl border border-[#2E2520]/10 bg-[#FCFAF7] dark:bg-card p-5 flex flex-col justify-between shadow-sm"
                     >
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-3">
@@ -2269,8 +2269,8 @@ export default function PreenchimentoPeniano() {
                           &ldquo;{review.text}&rdquo;
                         </p>
                       </div>
-                      <div className="pt-3 border-t border-[#2B2420]/8 flex items-center justify-between text-[11px] text-[#64748B]">
-                        <span className="font-semibold text-[#2B2420]">{review.author}</span>
+                      <div className="pt-3 border-t border-[#2E2520]/8 flex items-center justify-between text-[11px] text-[#64748B]">
+                        <span className="font-semibold text-[#2E2520]">{review.author}</span>
                         <span>{review.source}</span>
                       </div>
                     </div>
@@ -2294,7 +2294,7 @@ export default function PreenchimentoPeniano() {
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-2">
                   Esclarecimento Completo
                 </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2B2420] dark:text-foreground font-serif mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2E2520] dark:text-foreground font-serif mb-4">
                   Perguntas frequentes sobre o Preenchimento Peniano
                 </h2>
                 <p className="text-[#334155] leading-relaxed">
@@ -2323,7 +2323,7 @@ export default function PreenchimentoPeniano() {
                       className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                         isActive
                           ? "bg-[#2E2520] text-[#F7F5F2]"
-                          : "bg-[#FCFAF7] text-[#2B2420]/75 border border-[#2B2420]/12 hover:border-[#4A3A30]/40"
+                          : "bg-[#FCFAF7] text-[#2E2520]/75 border border-[#2E2520]/12 hover:border-[#4A3A30]/40"
                       }`}
                     >
                       {tab.label}
@@ -2339,7 +2339,7 @@ export default function PreenchimentoPeniano() {
                   return (
                     <div
                       key={item.id}
-                      className="bg-[#FCFAF7] dark:bg-card rounded-xl border border-[#2B2420]/10 overflow-hidden shadow-sm"
+                      className="bg-[#FCFAF7] dark:bg-card rounded-xl border border-[#2E2520]/10 overflow-hidden shadow-sm"
                     >
                       <button
                         type="button"
@@ -2347,7 +2347,7 @@ export default function PreenchimentoPeniano() {
                         aria-expanded={isOpen}
                         className="w-full flex items-center justify-between p-5 text-left hover:bg-[#2E2520]/[0.02] transition-colors"
                       >
-                        <span className="font-semibold text-[#2B2420] dark:text-foreground text-sm sm:text-base pr-4">
+                        <span className="font-semibold text-[#2E2520] dark:text-foreground text-sm sm:text-base pr-4">
                           {item.question}
                         </span>
                         <ChevronDown
@@ -2364,7 +2364,7 @@ export default function PreenchimentoPeniano() {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.2 }}
                           >
-                            <div className="px-5 pb-5 pt-1 border-t border-[#2B2420]/6">
+                            <div className="px-5 pb-5 pt-1 border-t border-[#2E2520]/6">
                               <p className="text-sm text-[#334155] leading-relaxed">
                                 {item.answer}
                               </p>
@@ -2378,11 +2378,11 @@ export default function PreenchimentoPeniano() {
               </div>
 
               {/* Referências Científicas & Link Educativo */}
-              <div className="mt-10 rounded-xl border border-[#2B2420]/10 bg-[#FCFAF7] p-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-[#2B2420]/10">
+              <div className="mt-10 rounded-xl border border-[#2E2520]/10 bg-[#FCFAF7] p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-[#2E2520]/10">
                   <div className="flex items-center gap-2.5">
                     <FileCheck2 className="w-5 h-5 text-[#4A3A30]" />
-                    <h3 className="text-base font-serif text-[#2B2420] dark:text-foreground">
+                    <h3 className="text-base font-serif text-[#2E2520] dark:text-foreground">
                       Base Científica e Literatura de Referência
                     </h3>
                   </div>
@@ -2416,10 +2416,10 @@ export default function PreenchimentoPeniano() {
         </main>
 
         {/* ── COMPARTILHAMENTO DISCRETO ────────────────────────────────────── */}
-        <section className="brand-campaign-share border-t border-[#2B2420]/10 bg-[#EEE7DE] py-8 dark:bg-card">
+        <section className="brand-campaign-share border-t border-[#2E2520]/10 bg-[#E7E1DA] py-8 dark:bg-card">
           <div className="container max-w-5xl flex flex-col items-center justify-between gap-4 sm:flex-row">
             <div>
-              <h2 className="text-lg font-serif text-[#2B2420] dark:text-foreground">
+              <h2 className="text-lg font-serif text-[#2E2520] dark:text-foreground">
                 Salve ou compartilhe esta página com discrição
               </h2>
               <p className="mt-1 text-xs sm:text-sm text-[#64748B]">
@@ -2458,8 +2458,8 @@ export default function PreenchimentoPeniano() {
             {/* Seletor de Modo de Mensagem Discreta no Rodapé de Conversão */}
             <div className="max-w-2xl mx-auto mb-7 rounded-xl border border-white/15 bg-white/[0.04] p-4 text-left">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
-                <span className="text-xs font-semibold text-[#D7C5B0] flex items-center gap-1.5">
-                  <EyeOff className="w-3.5 h-3.5 text-[#D7C5B0]" />
+                <span className="text-xs font-semibold text-[#C9B6A3] flex items-center gap-1.5">
+                  <EyeOff className="w-3.5 h-3.5 text-[#C9B6A3]" />
                   Preferência de mensagem inicial no WhatsApp:
                 </span>
                 <span className="text-[11px] text-white/65">
@@ -2477,7 +2477,7 @@ export default function PreenchimentoPeniano() {
                       onClick={() => setMessageMode(modeKey)}
                       className={`text-left rounded-lg px-3 py-2 text-xs transition-all border ${
                         isSelected
-                          ? "bg-[#D7C5B0] text-[#2B2420] border-[#D7C5B0] font-semibold"
+                          ? "bg-[#C9B6A3] text-[#2E2520] border-[#C9B6A3] font-semibold"
                           : "bg-white/[0.03] text-white/80 border-white/12 hover:bg-white/[0.08]"
                       }`}
                     >

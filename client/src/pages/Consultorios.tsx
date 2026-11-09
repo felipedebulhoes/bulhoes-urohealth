@@ -27,7 +27,7 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import InteractiveMap from "@/components/InteractiveMap";
 import { getWhatsAppUrl } from "@/lib/tracking";
 
-const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
+const LOGO_URL = "/brand/logo-site-fundo-escuro.png";
 const CAMPINAS_IMG = "/manus-storage/campinas-day-hospital_47df2b14_d5a9cb24.webp";
 const CLINOVI_PAULISTA_IMG = "/manus-storage/clinovi-paulista_42fff2fa_cecba450.webp";
 const CLINOVI_PINHEIROS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp";
@@ -100,7 +100,7 @@ export default function Consultorios() {
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <Link href="/">
-            <img loading="lazy" src={LOGO_URL} alt="Dr. Felipe de Bulhões - Urologista" className="h-12 lg:h-14 w-auto brightness-0 invert" />
+            <img loading="lazy" src={LOGO_URL} alt="Dr. Felipe de Bulhões - Urologista" className="h-12 lg:h-14 w-auto" />
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/">

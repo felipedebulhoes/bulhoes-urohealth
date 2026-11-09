@@ -23,7 +23,7 @@ Abaixo estão os valores exatos nos sistemas digital (HEX e RGB), gráfico/impre
 |---|:---:|---|---|---|---|---|
 | **Marrom Profundo** | `[ #2E2520 ]` | `#2E2520` | `46, 37, 32` | `C: 60% M: 65% Y: 70% K: 65%` | Pantone Black 7 C | **Base Mestre:** Fundo escuro oficial de capas, posts, feeds e materiais institucionais. Transmite autoridade máxima, estabilidade e solidez cirúrgica. |
 | **Café** | `[ #4A3A30 ]` | `#4A3A30` | `74, 58, 48` | `C: 55% M: 60% Y: 65% K: 45%` | Pantone 4625 C | **Suporte e Profundidade:** Fundo secundário de cards, caixas de destaque, bordas estruturais e contraste sutil sobre o Marrom Profundo. |
-| **Taupe** | `[ #8D7B6B ]` | `#8D7B6B` | `141, 123, 107` | `C: 40% M: 45% Y: 50% K: 15%` | Pantone Warm Gray 9 C | **Transição e Elegância:** Textos secundários, legendas discretas, ícones complementares e filetes de separação. |
+| **Taupe** | `[ #8D7B6B ]` | `#8D7B6B` | `141, 123, 107` | `C: 40% M: 45% Y: 50% K: 15%` | Pantone Warm Gray 9 C | **Transição e Elegância:** Ícones complementares e filetes de separação. Em textos secundários e legendas sobre Marrom Profundo, usar `#A08E7E`. |
 | **Bege Champagne** | `[ #C9B6A3 ]` | `#C9B6A3` | `201, 182, 163` | `C: 25% M: 30% Y: 35% K: 0%` | Pantone 7528 C | **Destaque e Assinatura (Accent):** Cor oficial do monograma FB, títulos nobres, ícones dos destaques e detalhes de alto valor. |
 | **Cinza Claro Quente** | `[ #E7E1DA ]` | `#E7E1DA` | `231, 225, 218` | `C: 10% M: 10% Y: 12% K: 0%` | Pantone Warm Gray 1 C | **Neutralidade e Equilíbrio:** Fundos alternativos para materiais claros, divisórias suaves e caixas de anotação médica. |
 | **Off-White** | `[ #F7F5F2 ]` | `#F7F5F2` | `247, 245, 242` | `C: 3% M: 2% Y: 3% K: 0%` | Pantone 7541 C | **Tipografia Principal e Fundo Claro:** Leitura impecável sobre fundos escuros e fundo mestre para receituários e papéis timbrados. |
@@ -67,10 +67,11 @@ A paleta de cores atua em conjunto rigoroso com o sistema tipográfico aprovado:
 
 | Nível Hierárquico | Família Tipográfica | Variação de Peso | Cor Recomendada | Aplicação Típica |
 |---|---|---|---|---|
-| **Títulos Principais (H1 / Nomes)** | **Trajan Pro / Cinzel / Optima** | Bold / Semibold | Bege Champagne (`#C9B6A3`) ou Off-White (`#F7F5F2`) | Logotipo, nome "Dr. Felipe de Bulhões", títulos de capas de destaque e títulos de capa de carrossel. |
-| **Subtítulos e Chancelas (H2)** | **Montserrat / Lato** | Semibold / Medium | Bege Champagne (`#C9B6A3`) ou Taupe (`#8D7B6B`) | Especialidade, chancelas (*TCBC \| IDOR-SP*), RQE/CRM e títulos de slides. |
-| **Corpo de Texto (Body)** | **Montserrat / Lato / Inter** | Regular / Light | Off-White (`#F7F5F2`) em fundo escuro / Marrom Profundo (`#2E2520`) em fundo claro | Parágrafos de posts, laudos médicos, roteiros e textos informativos. |
-| **Legendas e Rodapés** | **Montserrat** | Regular (Tracking aumentado) | Taupe (`#8D7B6B`) ou Bege (`#C9B6A3`) | Endereços, avisos legais do CFM e notas de rodapé. |
+| **Títulos Principais (H1)** | **Trajan Pro 3** | Semibold / Regular | Bege Champagne (`#C9B6A3`) ou Off-White (`#F7F5F2`) | Títulos de capas de destaque e títulos de capa de carrossel. |
+| **Logotipo** | **Callingstone** | Regular | Off-White (`#F7F5F2`) | Somente no nome "Dr. Felipe de Bulhões". |
+| **Subtítulos e Chancelas (H2)** | **Montserrat** | Semibold / Medium | Bege Champagne (`#C9B6A3`) ou Taupe para Texto (`#A08E7E`) | Especialidade, chancelas (*TCBC \| IDOR-SP*), RQE/CRM e títulos de slides. |
+| **Corpo de Texto (Body)** | **Montserrat** | Regular / Light | Off-White (`#F7F5F2`) em fundo escuro / Marrom Profundo (`#2E2520`) em fundo claro | Parágrafos de posts, laudos médicos, roteiros e textos informativos. |
+| **Legendas e Rodapés** | **Montserrat** | Regular (Tracking aumentado) | Taupe para Texto (`#A08E7E`) ou Bege (`#C9B6A3`) | Endereços, avisos legais do CFM e notas de rodapé. |
 
 ---
 
@@ -78,7 +79,7 @@ A paleta de cores atua em conjunto rigoroso com o sistema tipográfico aprovado:
 
 ### 6.1. Instagram (Feed, Destaques e Stories)
 * **Capas de Destaques:** Círculo com fundo em Marrom Profundo (`#2E2520`), anel sutil em Café (`#4A3A30`) e ícone central com relevo bronze em Bege Champagne (`#C9B6A3`).
-* **Carrosséis Educativos:** Fundo mestre em Marrom Profundo ou Café. Títulos em Trajan/Cinzel em Bege Champagne. Corpo de texto em Montserrat Off-White com entrelinha confortável (1.5).
+* **Carrosséis Educativos:** Fundo mestre em Marrom Profundo ou Café. Títulos em Trajan Pro 3 em Bege Champagne. Corpo de texto em Montserrat Off-White com entrelinha confortável (1.5).
 * **Stories:** Evitar fundos coloridos fluorescentes do app. Usar sempre fundo em Marrom Profundo (`#2E2520`) e caixas de perguntas com cor neutra escura e texto claro.
 
 ### 6.2. Papelaria e Consultório Médico
@@ -92,12 +93,14 @@ A paleta de cores atua em conjunto rigoroso com o sistema tipográfico aprovado:
 
 ---
 
-## 7. O Que NUNCA Fazer (Diretrizes de Proteção da Marca)
+## 7. Padrões de Partida e Exploração
 
-1. **Nunca usar azuis saturados ou cianos hospitalares:** O antigo azul corporativo foi 100% substituído pela paleta quente de Marrom e Bege.
-2. **Nunca usar preto absoluto (`#000000`) como fundo:** A identidade não é preta e branca; ela é marrom e cobre. O preto puro empobrece a riqueza das texturas quentes.
-3. **Nunca usar gradientes arco-íris ou cores de alerta:** Tons de vermelho, amarelo ou verde só devem existir em gráficos estatísticos cirúrgicos indispensáveis, nunca em elementos de design da marca.
-4. **Nunca aplicar texto em Bege Champagne sobre fundos claros sem contraste:** Garantir sempre a conformidade WCAG AA (contraste mínimo de 4.5:1 para texto de leitura).
+> **Estes são pontos de partida, não limites.** Conforme a seção 0 do Manual de Identidade Visual, toda variação pode ser testada e levada à aprovação do Dr. Felipe de Bulhões.
+
+1. **Base quente:** A paleta padrão é Marrom e Bege, no lugar do antigo azul corporativo.
+2. **Marrom em vez de preto:** O padrão de fundo é marrom e cobre, com mais riqueza do que o preto puro.
+3. **Acentos sóbrios:** Vermelho, amarelo e verde ficam, por padrão, em gráficos e dados.
+4. **Contraste para leitura:** Buscar ao menos 4.5:1 em texto de leitura, resolvendo o contraste com véu, fundo ou cor em vez de abandonar a composição.
 
 ---
 
@@ -109,6 +112,7 @@ A paleta de cores atua em conjunto rigoroso com o sistema tipográfico aprovado:
   --color-brand-brown-dark: #2E2520;
   --color-brand-coffee: #4A3A30;
   --color-brand-taupe: #8D7B6B;
+  --color-brand-taupe-texto: #A08E7E;
   --color-brand-beige: #C9B6A3;
   --color-brand-gray-light: #E7E1DA;
   --color-brand-offwhite: #F7F5F2;
@@ -116,8 +120,9 @@ A paleta de cores atua em conjunto rigoroso com o sistema tipográfico aprovado:
   --gradient-bronze: linear-gradient(135deg, #8D7B6B 0%, #C9B6A3 50%, #E7E1DA 100%);
   --gradient-dark-card: linear-gradient(165deg, rgba(46, 37, 32, 0.95) 0%, rgba(28, 22, 18, 0.98) 100%);
 
-  --font-heading: 'Cinzel', 'Trajan Pro', 'Optima', serif;
-  --font-body: 'Montserrat', 'Lato', sans-serif;
+  --font-heading: 'trajan-pro-3', 'Trajan Pro', 'Cinzel', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-logotipo: 'Callingstone', serif;
 }
 ```
 

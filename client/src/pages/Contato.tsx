@@ -30,7 +30,7 @@ import SocialShareButtons from "@/components/SocialShareButtons";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 
-const LOGO_URL = "/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg";
+const LOGO_URL = "/brand/logo-site-fundo-escuro.png";
 
 const contactChannels = [
   {
@@ -120,7 +120,7 @@ export default function Contato() {
       <header className="bg-[#1C3D5A] py-4 sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <Link href="/">
-            <img loading="lazy" src={LOGO_URL} alt="Dr. Felipe de Bulhões - Urologista" className="h-12 lg:h-14 w-auto brightness-0 invert" />
+            <img loading="lazy" src={LOGO_URL} alt="Dr. Felipe de Bulhões - Urologista" className="h-12 lg:h-14 w-auto" />
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/">

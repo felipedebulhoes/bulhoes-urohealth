@@ -27,9 +27,9 @@ export default function Blog() {
             <img
               loading="eager"
               decoding="async"
-              src="/manus-storage/logo-landscape-dr-felipe_cc84d4a3.svg"
+              src="/brand/logo-site-fundo-escuro.png"
               alt="Dr. Felipe de Bulhões - Urologista"
-              className="h-12 lg:h-14 w-auto brightness-0 invert"
+              className="h-12 lg:h-14 w-auto"
             />
           </Link>
           <Link href="/">

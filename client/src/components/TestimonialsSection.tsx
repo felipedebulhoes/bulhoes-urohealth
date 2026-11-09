@@ -164,6 +164,27 @@ function TestimonialCard({ testimonial, index, isInView }: { testimonial: Testim
   );
 }
 
+const MONTH_NUMBERS: Record<string, string> = {
+  Janeiro: "01",
+  Fevereiro: "02",
+  Março: "03",
+  Abril: "04",
+  Maio: "05",
+  Junho: "06",
+  Julho: "07",
+  Agosto: "08",
+  Setembro: "09",
+  Outubro: "10",
+  Novembro: "11",
+  Dezembro: "12",
+};
+
+// Converte a data exibida ("Junho 2026") para ISO 8601 ("2026-06").
+function toIsoMonth(date: string) {
+  const [month, year] = date.split(" ");
+  return `${year}-${MONTH_NUMBERS[month]}`;
+}
+
 // Schema.org Review JSON-LD for Google Rich Results (stars in search)
 function ReviewSchema() {
   const schema = {
@@ -192,8 +213,16 @@ function ReviewSchema() {
       },
       {
         "@type": "PostalAddress",
-        "streetAddress": "Av. Pereira Barreto, 1479",
-        "addressLocality": "São Bernardo do Campo",
+        "streetAddress": "Av. Benjamin Constant, 1991",
+        "addressLocality": "Campinas",
+        "addressRegion": "SP",
+        "postalCode": "13025-005",
+        "addressCountry": "BR"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Andrade Neves, 863, 4° andar",
+        "addressLocality": "Campinas",
         "addressRegion": "SP",
         "addressCountry": "BR"
       }
@@ -213,7 +242,7 @@ function ReviewSchema() {
         "@type": "Person",
         "name": t.name
       },
-      "datePublished": "2026-03-01",
+      "datePublished": toIsoMonth(t.date),
       "reviewBody": t.text,
       "reviewRating": {
         "@type": "Rating",

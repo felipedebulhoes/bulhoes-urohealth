@@ -41,7 +41,7 @@ const JPU_URL = "/manus-storage/jpu-congress_61ecfbf9_f41d816f.webp";
 export default function SobreDrFelipe() {
   usePageMeta({
     title: "Sobre o Dr. Felipe de Bulhões",
-    description: "Conheça o Dr. Felipe de Bulhões — Urologista formado pelo Instituto D'Or de Ensino e Pesquisa. Cirurgião Geral (TCBC), especialista em cirurgia robótica e minimamente invasiva. Atende em São Paulo e Campinas.",
+    description: "Conheça o Dr. Felipe de Bulhões — Urologista formado pelo Instituto D'Or de Ensino e Pesquisa. Cirurgião Geral (TCBC), com atuação em cirurgia robótica e minimamente invasiva. Atende em São Paulo e Campinas.",
     canonical: "https://felipebulhoes.com/sobre",
   });
 

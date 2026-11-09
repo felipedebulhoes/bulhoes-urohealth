@@ -54,7 +54,7 @@ const config: AreaLandingPageConfig = {
     items: [
       {
         title: "Preenchimento Peniano com Ácido Hialurônico",
-        desc: "Ganho real de circunferência (espessura) e menor retração no estado flácido, em procedimento ambulatorial de 30–45 minutos sem cortes e 100% reversível.",
+        desc: "Ganho real de circunferência (espessura) e menor retração no estado flácido, em procedimento ambulatorial de 30–45 minutos sem cortes e reversível com hialuronidase.",
       },
       {
         title: "Botox Peniano e Escrotal (Toxina Botulínica)",
@@ -261,7 +261,7 @@ const config: AreaLandingPageConfig = {
     },
     {
       myth: "“Preenchimento peniano definitivo com PMMA é melhor porque dura para sempre.”",
-      fact: "O PMMA é uma resina acrílica permanente que provoca reação inflamatória crônica, nódulos duros e deformidades que exigem cirurgias mutilantes para remoção. O Ácido Hialurônico é biocompatível, macio ao toque e 100% reversível.",
+      fact: "O PMMA é uma resina acrílica permanente que provoca reação inflamatória crônica, nódulos duros e deformidades que exigem cirurgias mutilantes para remoção. O Ácido Hialurônico é biocompatível, macio ao toque e reversível com hialuronidase.",
     },
     {
       myth: "“Curvatura peniana que surgiu depois dos 40 anos vai sumir sozinha sem avaliação.”",

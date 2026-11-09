@@ -21,8 +21,8 @@ const config: AreaLandingPageConfig = {
       Método contraceptivo definitivo masculino com{" "}
       <strong className="text-white font-semibold">técnica sem bisturi (no-scalpel)</strong>:
       procedimento ambulatorial de 20 a 30 minutos sob anestesia local,{" "}
-      <strong className="text-white font-semibold">sem cortes, sem pontos externos</strong> e com
-      preservação absoluta da potência, libido e testosterona em{" "}
+      <strong className="text-white font-semibold">sem cortes, sem pontos externos</strong> e
+      sem alterar a função sexual, em{" "}
       <strong className="text-white font-semibold">São Paulo</strong> e{" "}
       <strong className="text-white font-semibold">Campinas</strong>.
     </>
@@ -106,9 +106,9 @@ const config: AreaLandingPageConfig = {
         detail: "Recuperação acelerada com mínimo uso de analgésicos simples",
       },
       {
-        metric: "0% Alteração",
-        label: "Na testosterona e ereção",
-        detail: "Eixo hormonal e nervos da função erétil permanecem 100% preservados",
+        metric: "Sem alteração",
+        label: "Na função sexual",
+        detail: "Testosterona estável a longo prazo; pode haver queda breve após o procedimento (Yang 2021)",
       },
     ],
   },
@@ -348,6 +348,7 @@ const config: AreaLandingPageConfig = {
     items: [
       "American Urological Association (AUA) Vasectomy Guideline — No-Scalpel Technique & Occlusion Methods.",
       "European Association of Urology (EAU) Guidelines on Sexual and Reproductive Health, 2025.",
+      "Yang F, et al. Review of Vasectomy Complications and Safety Concerns. World J Mens Health, 2021;39(3):406-418. DOI: 10.5534/wjmh.200073.",
       "Lei Federal nº 14.443/2022 — Planejamento Familiar e Esterilização Voluntária no Brasil.",
     ],
   },

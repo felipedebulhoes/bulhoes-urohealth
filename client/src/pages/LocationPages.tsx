@@ -83,7 +83,7 @@ const locations: Record<string, LocationData> = {
   "clinovi-paulista": {
     name: "Clinovi Paulista",
     fullName: "Clinovi — Av. Paulista",
-    address: "Av. Paulista",
+    address: "Av. Paulista, 1048, 18° andar",
     city: "São Paulo, SP",
     type: "particular",
     typeLabel: "Particular",

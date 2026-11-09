@@ -65,7 +65,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
             </p>
 
             <p className="text-base text-white/70 leading-relaxed mb-8 max-w-lg" style={{ fontStyle: 'normal' }}>
-              Especialista em cirurgia minimamente invasiva, robótica e endourologia.
+              Atuação em cirurgia minimamente invasiva, robótica e endourologia.
               Formado pelo <strong className="text-white/90">Instituto D'Or de Ensino e Pesquisa</strong>,
               com atuação em São Paulo e Campinas. Atendimento presencial e por teleconsulta.
               Cuidado integral da saúde do homem com excelência técnica e acolhimento.

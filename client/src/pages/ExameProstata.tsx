@@ -122,7 +122,7 @@ export default function ExameProstata() {
                   <div className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-[#B87333] mt-1 shrink-0" />
                     <div>
-                      <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.org}</h4>
+                      <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.org}</h3>
                       <p className="text-[#334155] text-sm leading-relaxed">{item.rec}</p>
                       <p className="text-xs text-[#64748B] mt-2 italic">Fonte: {item.ref}</p>
                     </div>
@@ -147,7 +147,7 @@ export default function ExameProstata() {
                     <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-red-500" />
                     </div>
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h3>
                   </div>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                 </div>
@@ -247,7 +247,7 @@ export default function ExameProstata() {
                 <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm">
                   <div className="flex items-center gap-3 mb-3">
                     <FileText className="w-5 h-5 text-[#B87333]" />
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h3>
                   </div>
                   <p className="text-sm text-[#334155] leading-relaxed mb-2">{item.desc}</p>
                   <p className="text-xs text-[#64748B] italic">Fonte: {item.ref}</p>

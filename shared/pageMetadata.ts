@@ -125,25 +125,25 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
   "/andrologia-performance-masculina": {
     title: "Andrologia em São Paulo e Campinas | Dr. Felipe de Bulhões",
     description:
-      "Procura andrologista em São Paulo? Urologista com atendimento em andrologia na Av. Paulista, em Pinheiros e em Campinas: testosterona, fertilidade, varicocele e disfunção erétil.",
+      "Procura andrologista em São Paulo? Urologista com atendimento em andrologia na Paulista, Pinheiros e Campinas: testosterona, fertilidade e disfunção erétil.",
     image: OG_IMAGE_ANDROLOGIA,
     imageAlt: "Andrologia e saúde masculina — Dr. Felipe de Bulhões",
     type: "website",
     breadcrumb: "Andrologia e performance masculina",
   },
   "/estetica-intima-masculina": {
-    title: "Estética Íntima Masculina em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Estética Íntima Masculina em SP | Dr. Felipe de Bulhões",
     description:
-      "Estética íntima masculina com preenchimento peniano com ácido hialurônico, botox peniano e escrotal (toxina botulínica) e procedimentos funcionais em São Paulo e Campinas.",
+      "Estética íntima masculina com preenchimento peniano com ácido hialurônico e toxina botulínica (botox peniano e escrotal), em São Paulo e Campinas.",
     image: OG_IMAGE_ESTETICA_INTIMA,
     imageAlt: "Estética íntima masculina e botox peniano — Dr. Felipe de Bulhões",
     type: "website",
     breadcrumb: "Estética íntima masculina",
   },
   "/preenchimento-peniano": {
-    title: "Preenchimento Peniano em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Preenchimento Peniano em São Paulo | Dr. Felipe de Bulhões",
     description:
-      "Preenchimento peniano com ácido hialurônico realizado por urologista em São Paulo e Campinas. Procedimento ambulatorial sem cortes, reversível, seguro e com sigilo absoluto.",
+      "Preenchimento peniano com ácido hialurônico realizado por urologista em São Paulo e Campinas. Procedimento ambulatorial sem cortes, reversível e com sigilo.",
     image: OG_IMAGE_ESTETICA_INTIMA,
     imageAlt: "Preenchimento peniano com ácido hialurônico — Dr. Felipe de Bulhões",
     type: "website",
@@ -152,16 +152,16 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
   "/saude-da-prostata": {
     title: "Saúde da Próstata e HPB em SP e Campinas | Dr. Felipe de Bulhões",
     description:
-      "Avaliação especializada da próstata em São Paulo e Campinas. Check-up prostático, rastreio seguro e tratamentos minimamente invasivos para próstata aumentada (HPB) com preservação sexual.",
+      "Avaliação da próstata em São Paulo e Campinas: check-up prostático, rastreio e tratamentos minimamente invasivos para próstata aumentada (HPB).",
     image: DEFAULT_OG_IMAGE,
     imageAlt: "Saúde da Próstata e tratamento de HPB — Dr. Felipe de Bulhões",
     type: "website",
     breadcrumb: "Saúde da próstata",
   },
   "/litotripsia-calculo-renal": {
-    title: "Cálculo Renal e Litotripsia em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Cálculo Renal e Litotripsia em SP | Dr. Felipe de Bulhões",
     description:
-      "Tratamento especializado de cálculos renais (pedra nos rins) e ureterais em São Paulo e Campinas. Litotripsia a laser flexível sem cortes, alívio rápido da cólica renal e prevenção metabólica.",
+      "Tratamento de cálculos renais (pedra nos rins) e ureterais em São Paulo e Campinas: litotripsia a laser flexível sem cortes, cólica renal e prevenção.",
     image: DEFAULT_OG_IMAGE,
     imageAlt: "Cálculo renal e litotripsia a laser — Dr. Felipe de Bulhões",
     type: "website",
@@ -170,7 +170,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
   "/cirurgia-robotica-urologia": {
     title: "Cirurgia Robótica em Urologia em SP e Campinas | Dr. Felipe de Bulhões",
     description:
-      "Cirurgia robótica e videolaparoscópica em urologia em São Paulo e Campinas. Prostatectomia robótica, nefrectomia parcial e reconstruções com visão 3D, precisão milimétrica e rápida recuperação.",
+      "Cirurgia robótica e videolaparoscópica em urologia em São Paulo e Campinas: prostatectomia robótica, nefrectomia parcial e reconstruções com visão 3D.",
     image: DEFAULT_OG_IMAGE,
     imageAlt: "Cirurgia robótica em urologia — Dr. Felipe de Bulhões",
     type: "website",
@@ -179,7 +179,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
   "/avaliacao-urodinamica": {
     title: "Urodinâmica e Incontinência em SP e Campinas | Dr. Felipe de Bulhões",
     description:
-      "Estudo urodinâmico completo e tratamento de incontinência urinária, bexiga hiperativa e obstrução prostática em São Paulo e Campinas. Exame conduzido com conforto, privacidade e precisão.",
+      "Estudo urodinâmico e tratamento de incontinência urinária, bexiga hiperativa e obstrução prostática em São Paulo e Campinas, com conforto e privacidade.",
     image: DEFAULT_OG_IMAGE,
     imageAlt: "Exame de urodinâmica e incontinência urinária — Dr. Felipe de Bulhões",
     type: "website",
@@ -188,7 +188,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
   "/uro-oncologia": {
     title: "Uro-Oncologia em SP e Campinas | Dr. Felipe de Bulhões",
     description:
-      "Diagnóstico e tratamento cirúrgico de tumores urológicos (câncer de próstata, rim, bexiga e testículo) em São Paulo e Campinas. Cirurgia robótica, precisão oncológica e cuidado acolhedor.",
+      "Diagnóstico e tratamento cirúrgico de tumores urológicos (próstata, rim, bexiga e testículo) em São Paulo e Campinas, com cirurgia robótica quando indicada.",
     image: DEFAULT_OG_IMAGE,
     imageAlt: "Uro-oncologia em São Paulo e Campinas — Dr. Felipe de Bulhões",
     type: "website",
@@ -249,7 +249,7 @@ const SEARCH_SNIPPETS: Record<string, Pick<PageMetadata, "title" | "description"
   "/educativo/engrossamento-peniano": {
     title: "Engrossamento peniano com ácido hialurônico: guia e riscos",
     description:
-      "Como é feito o engrossamento peniano com ácido hialurônico: técnica, duração, riscos e evidências científicas. Conteúdo educativo do urologista Dr. Felipe de Bulhões.",
+      "Como é feito o engrossamento peniano com ácido hialurônico: técnica, duração, riscos e evidências. Conteúdo educativo do urologista Dr. Felipe de Bulhões.",
   },
   "/local/campinas-day-hospital": {
     title: "Urologista no Campinas Day Hospital, Cambuí | Particular",

@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {/* Campinas Day Hospital */}
           <div>
-            <h4 className="text-sm font-semibold text-white font-sans mb-3">Campinas Day Hospital</h4>
+            <h3 className="text-sm font-semibold text-white font-sans mb-3">Campinas Day Hospital</h3>
 
             <div className="space-y-3">
               <div className="flex items-start gap-2.5">
@@ -61,7 +61,7 @@ export default function Footer() {
 
           {/* Clinovi Paulista */}
           <div>
-            <h4 className="text-sm font-semibold text-white font-sans mb-3">Clinovi Paulista</h4>
+            <h3 className="text-sm font-semibold text-white font-sans mb-3">Clinovi Paulista</h3>
             <span className="inline-block text-[10px] uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded mb-3">
               Particular
             </span>
@@ -86,7 +86,7 @@ export default function Footer() {
 
           {/* Clinovi Pinheiros */}
           <div>
-            <h4 className="text-sm font-semibold text-white font-sans mb-3">Clinovi Pinheiros</h4>
+            <h3 className="text-sm font-semibold text-white font-sans mb-3">Clinovi Pinheiros</h3>
             <span className="inline-block text-[10px] uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded mb-3">
               Particular
             </span>
@@ -111,7 +111,7 @@ export default function Footer() {
 
           {/* CEMED - Rede D'Or - São Luiz Campinas */}
           <div>
-            <h4 className="text-sm font-semibold text-white font-sans mb-3">São Luiz Campinas</h4>
+            <h3 className="text-sm font-semibold text-white font-sans mb-3">São Luiz Campinas</h3>
 
             <div className="space-y-3">
               <div className="flex items-start gap-2.5">
@@ -134,7 +134,7 @@ export default function Footer() {
 
           {/* Links & Teleconsulta */}
           <div>
-            <h4 className="text-sm font-semibold text-white font-sans mb-3">Links</h4>
+            <h3 className="text-sm font-semibold text-white font-sans mb-3">Links</h3>
             <div className="space-y-3">
               <a
                 href="https://www.instagram.com/drfelipebulhoes/"

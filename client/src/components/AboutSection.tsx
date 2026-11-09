@@ -124,7 +124,7 @@ export default function AboutSection() {
                     <cred.icon className="w-4 h-4 text-[#B87333]" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground font-sans mb-1">{cred.title}</h4>
+                    <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground font-sans mb-1">{cred.title}</h3>
                     <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 font-sans leading-relaxed">{cred.desc}</p>
                   </div>
                 </motion.div>

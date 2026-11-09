@@ -140,7 +140,7 @@ export default function SobreDrFelipe() {
                     <div className="absolute top-1 -left-1.5 w-3 h-3 bg-[#B87333] rounded-full" />
                   </div>
                   <div className="pb-6">
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h3>
                     <p className="text-sm text-[#B87333] font-medium mb-1">{item.inst}</p>
                     <p className="text-xs text-[#64748B] mb-2">{item.city}</p>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.detail}</p>
@@ -173,7 +173,7 @@ export default function SobreDrFelipe() {
                     <item.icon className="w-5 h-5 text-[#B87333]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">{item.title}</h3>
                     <p className="text-xs text-[#64748B]">{item.org}</p>
                     {item.year && <p className="text-xs text-[#B87333] font-medium mt-1">{item.year}</p>}
                   </div>
@@ -220,14 +220,14 @@ export default function SobreDrFelipe() {
               <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100" style={{marginTop: '-5px', marginRight: '-5px', marginLeft: '6px', width: '367px', height: '409px'}}>
                 <img loading="lazy" src={UROONCO_URL} alt="Dr. Felipe no UroOnco 2025" className="w-full h-48 object-cover" style={{paddingRight: '70px', marginTop: '2px', marginLeft: '39px', width: '379px', height: '333px'}} />
                 <div className="p-4 bg-white dark:bg-card">
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">UroOnco 2025</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">UroOnco 2025</h3>
                   <p className="text-sm text-[#64748B]">Congresso de Uro-Oncologia — São Paulo</p>
                 </div>
               </div>
               <div className="rounded-xl overflow-hidden shadow-sm border border-gray-100">
                 <img loading="lazy" src={JPU_URL} alt="Dr. Felipe no JPU 2025" className="w-full h-48 object-cover" />
                 <div className="p-4 bg-white dark:bg-card">
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">JPU 2025</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">JPU 2025</h3>
                   <p className="text-sm text-[#64748B]">Jornada Paulista de Urologia — SBU-SP</p>
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default function SobreDrFelipe() {
               ].map((loc, i) => (
                 <div key={i} className={`rounded-xl p-5 border ${loc.color}`}>
                   <MapPin className="w-5 h-5 text-[#B87333] mb-3" />
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1 text-sm">{loc.name}</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1 text-sm">{loc.name}</h3>
                   <p className="text-xs text-[#64748B] mb-2">{loc.address}</p>
                   <span className="text-xs bg-white dark:bg-card px-2 py-1 rounded border font-medium text-[#B87333]">{loc.type}</span>
                 </div>
@@ -258,7 +258,7 @@ export default function SobreDrFelipe() {
             <div className="mt-6 bg-indigo-50 border border-indigo-100 rounded-xl p-5 flex items-center gap-4">
               <Video className="w-8 h-8 text-indigo-500 shrink-0" />
               <div>
-                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">Teleconsulta</h4>
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">Teleconsulta</h3>
                 <p className="text-sm text-[#334155]">Atendimento online para todo o Brasil. Agende pelo Doctoralia ou WhatsApp.</p>
               </div>
             </div>

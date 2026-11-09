@@ -85,21 +85,21 @@ export default function TratamentoCancerProstata() {
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Eye className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Vigilância Ativa</h4>
+                <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Vigilância Ativa</h3>
                 <p className="text-sm text-gray-600 dark:text-muted-foreground">Monitoramento rigoroso sem tratamento imediato para tumores de baixo risco</p>
               </div>
               <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Cpu className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Cirurgia Robótica</h4>
+                <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Cirurgia Robótica</h3>
                 <p className="text-sm text-gray-600 dark:text-muted-foreground">Prostatectomia radical assistida por robô (RARP) — padrão-ouro cirúrgico</p>
               </div>
               <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                 <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Radiation className="w-6 h-6 text-[#B87333]" />
                 </div>
-                <h4 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Radioterapia</h4>
+                <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Radioterapia</h3>
                 <p className="text-sm text-gray-600 dark:text-muted-foreground">IMRT/VMAT, braquiterapia e SBRT com ou sem hormonioterapia</p>
               </div>
             </div>
@@ -713,7 +713,7 @@ export default function TratamentoCancerProstata() {
               ].map((item, i) => (
                 <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h3>
                     <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full">{item.status}</span>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-muted-foreground">{item.desc}</p>

@@ -61,7 +61,7 @@ export default function CancerProstata() {
                 <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm text-center">
                   <div className="text-3xl font-bold text-red-600 mb-1">{item.stat}</div>
                   <div className="text-xs text-[#64748B] mb-3">{item.statLabel}</div>
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h3>
                   <p className="text-xs text-[#334155] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -86,7 +86,7 @@ export default function CancerProstata() {
                     {item.step}
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h3>
                     <p className="text-sm text-[#334155] leading-relaxed mb-1">{item.desc}</p>
                     <p className="text-xs text-[#64748B] italic">Fonte: {item.ref}</p>
                   </div>
@@ -151,7 +151,7 @@ export default function CancerProstata() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
+                        <h3 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h3>
                         <span className="text-xs bg-white/80 px-2 py-0.5 rounded border text-[#64748B]">{item.risk}</span>
                       </div>
                       <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>

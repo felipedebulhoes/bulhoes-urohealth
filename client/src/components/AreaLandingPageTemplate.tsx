@@ -369,7 +369,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
 
             <nav
               aria-label="Navegação da página"
-              className="hidden lg:flex items-center gap-6 text-sm font-medium text-[#2E2520]/80 dark:text-foreground/80"
+              className="hidden lg:flex items-center gap-3 xl:gap-5 text-[13px] xl:text-sm font-medium text-[#2E2520]/80 dark:text-foreground/80"
             >
               <button
                 type="button"
@@ -430,7 +430,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
               <button
                 type="button"
                 onClick={() => scrollToSection("agendamento")}
-                className="hidden sm:inline-flex"
+                className="hidden sm:max-lg:inline-flex min-[1400px]:inline-flex"
               >
                 <Button
                   variant="outline"

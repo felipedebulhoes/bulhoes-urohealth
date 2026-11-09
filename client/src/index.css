@@ -50,8 +50,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-copper: var(--copper);
   --color-copper-foreground: var(--copper-foreground);
-  --font-sans: "Roboto", system-ui, sans-serif;
-  --font-serif: "Callingstone", Georgia, serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --font-serif: "trajan-pro-3", Georgia, serif;
 }
 
 :root {
@@ -162,7 +162,7 @@
   }
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
-    font-style: italic;
+    font-style: normal;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -487,7 +487,7 @@ html {
 
 .route-fallback__label {
   color: var(--espresso-mist);
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -876,13 +876,13 @@ html {
 /* Tipografia: a fonte autoral permanece; o ajuste está no ritmo editorial. */
 .brand-site .brand-espresso-hero h1 {
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: 0.02em;
   text-wrap: balance;
 }
 .brand-site main :is(h1, h2) {
   font-weight: 400;
-  letter-spacing: -0.022em;
-  line-height: 1.14;
+  letter-spacing: 0.02em;
+  line-height: 1.22;
   text-wrap: balance;
 }
 .brand-site main .text-xs.uppercase {

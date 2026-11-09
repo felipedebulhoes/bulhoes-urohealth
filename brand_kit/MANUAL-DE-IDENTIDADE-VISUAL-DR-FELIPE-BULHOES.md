@@ -1,8 +1,8 @@
 # Manual de Identidade Visual & Diretrizes de Marca (Brand Book)
 
 **Dr. Felipe de Bulhões — Urologista e Cirurgião Geral**  
-*Estética Íntima e Saúde do Homem | Saúde do Homem em Todas as Fases*  
-**Versão:** 2.1 (Princípio de Produção Sem Teto Criativo — Novembro de 2026)  
+*Estética Íntima e Saúde do Homem*  
+**Versão:** 2.2 (Princípio de Produção e sistema tipográfico unificado — Novembro de 2026)  
 **Registro Profissional:** CRM-SP 202.291 | RQE 146538 (Urologia) • RQE 114019 (Cirurgia Geral)
 
 ---
@@ -64,13 +64,10 @@ A prática clínica e cirúrgica do Dr. Felipe de Bulhões concentra-se em centr
 
 ## 2. Propósito, Posicionamento e Essência da Marca
 
-### 2.1 Slogan Oficial
-> **"Saúde do homem em todas as fases."**
-
-### 2.2 Assinatura de Posicionamento
+### 2.1 Assinatura de Posicionamento
 > **"Estética Íntima e Saúde do Homem | Urologista e Cirurgião Geral"**
 
-### 2.3 Os Seis Pilares da Essência da Marca
+### 2.2 Os Seis Pilares da Essência da Marca
 A comunicação e o ambiente de atendimento do Dr. Felipe de Bulhões apoiam-se em seis conceitos fundamentais:
 
 | Pilar | Significado para o Paciente | Aplicação Prática |
@@ -118,7 +115,7 @@ A identidade visual adotou oficialmente a paleta terrosa nobre (Marrom Profundo,
 |---|---|---|---|---|---|
 | **Marrom Profundo** | `■` | `#2E2520` | `46, 37, 32` | `60, 65, 68, 68` | **Solidez, Autoridade e Sofisticação.** É o fundo institucional principal de capas, carrosséis, cartões e materiais escuros. |
 | **Café** | `■` | `#4A3A30` | `74, 58, 48` | `52, 60, 65, 48` | **Equilíbrio, Confiança e Maturidade.** Utilizado em fundos secundários, containers de cartões, contrastes suaves e elementos de apoio. |
-| **Taupe** | `■` | `#8D7B6B` | `141, 123, 107` | `40, 42, 48, 15` | **Modernidade, Elegância e Discrição.** Tom neutro intermediário para divisores sutis, sombras de apoio e marcas d’água discretas. |
+| **Taupe** | `■` | `#8D7B6B` | `141, 123, 107` | `40, 42, 48, 15` | **Modernidade, Elegância e Discrição.** Tom neutro intermediário para divisores sutis, sombras de apoio e marcas d’água discretas. Em textos sobre Marrom Profundo, usar `#A08E7E`. |
 | **Bege (Bronze / Champagne)** | `■` | `#C9B6A3` | `201, 182, 163` | `20, 25, 32, 0` | **Sofisticação, Luminosidade e Acolhimento.** Acento metálico nobre. Usado em subtítulos, ícones de destaque, botões e acabamentos metálicos. |
 | **Cinza Claro** | `■` | `#E7E1DA` | `231, 225, 218` | `8, 7, 10, 0` | **Neutralidade, Clareza e Equilíbrio.** Linhas secundárias finas, bordas suaves e caixas de texto de leitura rápida. |
 | **Off White** | `■` | `#F7F5F2` | `247, 245, 242` | `2, 2, 3, 0` | **Limpeza, Minimalismo e Modernidade.** Cor primária para textos principais sobre fundo escuro e traços dos ícones dos Destaques. |
@@ -134,22 +131,27 @@ A identidade visual adotou oficialmente a paleta terrosa nobre (Marrom Profundo,
 
 A tipografia da marca estabelece um contraste harmônico entre o clássico romano (autoridade médica secular) e o moderno geométrico (clareza, legibilidade e precisão contemporânea).
 
-### 5.1 Títulos e Cabeçalhos Institucionais: Trajan / Optima Serif
-- **Família:** Trajan Pro / Optima (ou Cinzel / Cormorant Garamond em web/Google Fonts).
-- **Uso:** Assinatura do logotipo, títulos de apresentações, capas nobres, placas de consultório e início de seções nobres.
-- **Estilo:** Caixa Alta (`UPPERCASE`), peso Regular ou Semi-Bold.
+### 5.1 Títulos e Cabeçalhos Institucionais: Trajan Pro 3
+- **Família:** Trajan Pro 3, pelo Adobe Fonts. Cinzel é apenas alternativa técnica quando a Trajan não puder ser carregada.
+- **Uso:** Títulos de apresentações, capas nobres, placas de consultório e início de seções nobres.
+- **Estilo:** Caixa Alta (`UPPERCASE`) em tamanhos contidos, peso Regular ou Semi-Bold.
 - **Tracking (Espaçamento entre letras):** Generoso (`0.18em` a `0.28em`), conferindo leveza e sofisticação.
 
-### 5.2 Subtítulos, Textos Corridos e Informações Técnicas: Montserrat / Lato
-- **Família:** Montserrat (primária) e Lato (secundária/longa leitura).
+### 5.2 Subtítulos, Textos Corridos e Informações Técnicas: Montserrat
+- **Família:** Montserrat.
 - **Pesos Oficiais:** Light (300) para subtítulos elegantes e identificação médica; Regular (400) para leitura de parágrafos; Semi-Bold (600) para ênfases.
 - **Uso:** Subtítulos do logotipo (`UROLOGISTA E CIRURGIÃO GERAL`), dados do CRM/RQE, corpo de artigos, legendas do Instagram, receitas e contratos.
 - **Espaçamento:** Subtítulos em caixa alta usam tracking de `0.30em` a `0.38em`; textos corridos usam tracking padrão com entrelinha (line-height) entre `1.5` e `1.6`.
 
-### 5.3 Tipografia Display Complementar para Redes Sociais: Callingstone
+### 5.3 Logotipo: Callingstone
 - **Família:** Callingstone (`Callingstone.ttf`).
-- **Uso:** Palavras de destaque ou frases curtas em capas de carrosséis e posts conceituais de redes sociais, gerando proximidade humana e toque autoral.
+- **Uso:** Somente no nome "Dr. Felipe de Bulhões" do logotipo, nas versões horizontal e vertical.
 - **Regra Técnica:** Usar line-height entre `1.3` e `1.4` para evitar colisões em acentos gráficos (cedilhas e tils).
+
+### 5.4 Princípios para Percepção de Alto Valor
+- **Espaço:** Priorizar poucos elementos e respiro amplo em cada peça.
+- **Coerência:** Manter o mesmo sistema de fontes em todos os materiais.
+- **Discrição:** Títulos em caixa alta pequenos e espaçados, nunca grandes.
 
 ---
 
@@ -255,7 +257,7 @@ Podem ser usados para alcançar a melhor aparência em cada ponto do vídeo, sem
 
 ### 10.3 Jalecos e Scrubs
 - **Scrubs:** Tons escuros institucionais (marrom café profundo ou azul petróleo clássico).
-- **Bordado:** Monograma FB bordado no bolso superior esquerdo em linha Bege Champagne ou dourado suave, com nome e especialidade em tipografia Montserrat/Lato.
+- **Bordado:** Monograma FB bordado no bolso superior esquerdo em linha Bege Champagne ou dourado suave, com nome e especialidade em tipografia Montserrat.
 
 ---
 
@@ -287,6 +289,7 @@ Todos os arquivos mestres gerados e aprovados estão disponíveis no diretório 
 │   ├── brand-tokens.json                                  (Tokens de design para Figma/Web)
 │   ├── brand-tokens.css                                   (Variáveis CSS para sites e apps)
 │   ├── logo-horizontal-oficial-paleta-marrom.png          (Logotipo horizontal oficial em PNG)
+│   ├── brand-board-dr-felipe-de-bulhoes.png                (Painel da marca: logotipos, cores, fontes e pilares)
 │   ├── logo-vertical-oficial-paleta-marrom.png            (Logotipo vertical nobre em PNG)
 │   ├── isotipo-fb-bicolor.svg                             (Vetor mestre bicolor Bege + Off-White)
 │   ├── isotipo-fb-offwhite.svg                            (Vetor mestre em Off-White puro)
@@ -304,7 +307,6 @@ Todos os arquivos mestres gerados e aprovados estão disponíveis no diretório 
 │   ├── destaque-07-onde-atendo.webp → /manus-storage/destaque-07-onde-atendo_2cf4aa4b.webp                        (Capa Destaque 7 - Fachada Clínica)
 │   ├── destaque-08-agendamento.webp → /manus-storage/destaque-08-agendamento_21d2eb77.webp                        (Capa Destaque 8 - Calendário de Consulta)
 │   └── destaque-09-duvidas.webp → /manus-storage/destaque-09-duvidas_7d2135aa.webp                            (Capa Destaque 9 - Balões de Diálogo)
-└── brand-board-identidade-visual-oficial.jpg              (Foto do Brand Board Oficial original)
 ```
 
 ---

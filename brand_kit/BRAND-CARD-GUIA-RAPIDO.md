@@ -2,7 +2,7 @@
 
 > **Urologista e Cirurgião Geral | TCBC | IDOR-SP**  
 > CRM-SP 202.291 • RQE 146538 (Urologia) • RQE 114019 (Cirurgia Geral)  
-> Posicionamento: *Estética Íntima e Saúde do Homem | Saúde do Homem em Todas as Fases*
+> Posicionamento: *Estética Íntima e Saúde do Homem*
 
 ---
 
@@ -18,7 +18,7 @@
 |---|---|---|---|
 | **Marrom Profundo** | `#2E2520` | `46, 37, 32` | Fundo principal de capas e artes escuras |
 | **Café** | `#4A3A30` | `74, 58, 48` | Fundo de apoio, cards e profundidade |
-| **Taupe** | `#8D7B6B` | `141, 123, 107` | Divisores e linhas discretas |
+| **Taupe** | `#8D7B6B` | `141, 123, 107` | Divisores e linhas discretas (em texto, usar `#A08E7E`) |
 | **Bege (Bronze)** | `#C9B6A3` | `201, 182, 163` | Destaques metálicos, monograma e CTAs |
 | **Cinza Claro** | `#E7E1DA` | `231, 225, 218` | Linhas de apoio secundárias |
 | **Off White** | `#F7F5F2` | `247, 245, 242` | Títulos e textos sobre fundo escuro |
@@ -27,9 +27,9 @@
 
 ## 2. Tipografia Oficial
 
-- **Títulos Nobres:** **Trajan Pro / Optima Serif** (ou Cinzel) em Caixa Alta com espaçamento espaçado (`tracking: 0.20em`).
-- **Subtítulos e Textos:** **Montserrat / Lato** (Light 300 para subtítulos; Regular 400 para leitura).
-- **Display Social (Opcional):** **Callingstone** para destaques em capas de carrossel.
+- **Títulos Nobres:** **Trajan Pro 3** em Caixa Alta com espaçamento amplo (`tracking: 0.20em`).
+- **Subtítulos e Textos:** **Montserrat** (Light 300 para subtítulos; Regular 400 para leitura).
+- **Logotipo:** **Callingstone**, somente no nome.
 
 ---
 

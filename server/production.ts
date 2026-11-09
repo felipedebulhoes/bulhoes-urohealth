@@ -10,6 +10,9 @@ import { registerOutboundRedirects } from "./outboundRedirects";
 const NOINDEX_VALUE = "noindex, nofollow, noarchive, nosnippet";
 const DEFAULT_LEGACY_ASSET_ORIGIN = "https://felipebulhoes.com";
 const DEFAULT_ASSET_CACHE_CONTROL = "public, max-age=31536000, immutable";
+// Em observação: só registra bloqueios. Trocar para Content-Security-Policy depois de validar em produção.
+const CONTENT_SECURITY_POLICY =
+  "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://use.typekit.net https://p.typekit.net; font-src 'self' data: https://fonts.gstatic.com https://use.typekit.net https://p.typekit.net; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://pagead2.googlesyndication.com; frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'";
 
 const removedPageRedirects: Record<string, string> = {
   "/local/clinovi-campinas": "/local/campinas-day-hospital",
@@ -47,6 +50,7 @@ function applySecurityHeaders(_req: Request, res: Response, next: () => void) {
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
   res.setHeader("X-Frame-Options", "SAMEORIGIN");
+  res.setHeader("Content-Security-Policy-Report-Only", CONTENT_SECURITY_POLICY);
   res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()");
   next();
 }

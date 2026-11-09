@@ -13,6 +13,7 @@ import { trackEducationalPageView, trackDoctoraliaClick, trackWhatsAppClick } fr
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { MedicalPageSchema } from "@/components/SchemaMarkup";
 import { useLocation } from "wouter";
+import { getSearchSnippet } from "@shared/pageMetadata";
 import { formatMedicalReviewDate, getMedicalReviewDate } from "@shared/medicalReview";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
@@ -49,10 +50,11 @@ export default function EducationalLayout({
   const whatsappCtaUrl = getWhatsAppUrl({ page: pageSlug });
 
   useEffect(() => {
-    const pageTitle = metaTitle || `${title} | Dr. Felipe de Bulhões - Urologista`;
+    const snippet = getSearchSnippet(currentPath);
+    const pageTitle = snippet?.title || metaTitle || `${title} | Dr. Felipe de Bulhões - Urologista`;
     document.title = pageTitle;
 
-    const metaDesc = metaDescription || description;
+    const metaDesc = snippet?.description || metaDescription || description;
     let metaTag = document.querySelector('meta[name="description"]');
     if (!metaTag) {
       metaTag = document.createElement("meta");
@@ -66,7 +68,7 @@ export default function EducationalLayout({
     return () => {
       document.title = "Dr. Felipe de Bulhões | Urologista em São Paulo e Campinas";
     };
-  }, [title, description, metaTitle, metaDescription]);
+  }, [title, description, metaTitle, metaDescription, currentPath]);
 
   const handleDoctoraliaClick = () => {
     trackDoctoraliaClick(`educational_${pageSlug}`);

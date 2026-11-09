@@ -245,6 +245,34 @@ html {
   background: #4A3A30;
 }
 
+/* ===== Entrada do topo da página inicial =====
+   Só deslocamento, sem opacidade: o conteúdo já é visível no HTML pré-renderizado
+   e a animação começa no primeiro desenho, sem esperar o JavaScript. */
+@keyframes heroRise {
+  from { transform: translateY(16px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes heroSlideIn {
+  from { transform: translateX(24px); }
+  to { transform: translateX(0); }
+}
+
+.hero-rise {
+  animation: heroRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-slide-in {
+  animation: heroSlideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .hero-slide-in {
+    animation: none;
+  }
+}
+
 /* ===== Scroll Reveal Animations ===== */
 @keyframes fadeInUp {
   from {

@@ -4,7 +4,6 @@
  * A tipografia atual é preservada; a paleta é aplicada por tokens globais.
  */
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { CalendarCheck, Award, ShieldCheck, Users } from "lucide-react";
 import { trackCtaClick } from "@/lib/analytics";
@@ -51,11 +50,8 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
       <div className="container relative z-10 flex flex-col lg:flex-row items-center min-h-[100vh]">
         {/* Left: Text Content */}
         <div className="flex-1 pt-28 pb-8 lg:pt-0 lg:pb-0 lg:pr-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
+          {/* Entrada só com deslocamento em CSS: o texto aparece já no HTML, sem esperar o JavaScript. */}
+          <div className="hero-rise">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-10 bg-[#B87333]" />
               <span className="text-[#C4C4C4] text-xs font-semibold uppercase tracking-[0.2em]">
@@ -79,14 +75,9 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
               com atuação em São Paulo e Campinas. Atendimento presencial e por teleconsulta.
               Cuidado integral da saúde do homem com excelência técnica e acolhimento.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="flex flex-col sm:flex-row gap-4 mb-6"
-          >
+          <div className="hero-rise flex flex-col sm:flex-row gap-4 mb-6" style={{ animationDelay: "0.1s" }}>
             <Link
               href="/agendamento"
               onClick={() => trackCtaClick("agendar_consulta", "hero_section")}
@@ -104,16 +95,10 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
                 Conheça o Dr. Felipe
               </Button>
             </a>
-          </motion.div>
+          </div>
 
           {/* Atalhos por assunto */}
-          <motion.nav
-            aria-label="O que você procura"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="mb-10"
-          >
+          <nav aria-label="O que você procura" className="hero-rise mb-10" style={{ animationDelay: "0.15s" }}>
             <p className="text-sm text-white/70 mb-3" style={{ fontStyle: "normal" }}>
               O que você procura?
             </p>
@@ -129,15 +114,10 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
                 </Link>
               ))}
             </div>
-          </motion.nav>
+          </nav>
 
           {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="flex flex-wrap gap-6 lg:gap-8"
-          >
+          <div className="hero-rise flex flex-wrap gap-6 lg:gap-8" style={{ animationDelay: "0.2s" }}>
             {stats.map((stat) => (
               <div key={stat.label} className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
@@ -149,15 +129,13 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Right: Real Portrait Photo */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex-1 flex justify-center lg:justify-end items-end self-end relative mt-8 lg:mt-0"
+        <div
+          className="hero-slide-in flex-1 flex justify-center lg:justify-end items-end self-end relative mt-8 lg:mt-0"
+          style={{ animationDelay: "0.15s" }}
         >
           <div className="relative">
             {/* Accent border frame - copper */}
@@ -169,6 +147,8 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
               fetchPriority="high"
               decoding="async"
               src={HERO_PORTRAIT}
+              width={1440}
+              height={1440}
               alt="Dr. Felipe de Bulhões - Urologista"
               className="relative z-10 w-[300px] sm:w-[360px] lg:w-[400px] xl:w-[440px] h-auto object-cover rounded-xl shadow-2xl shadow-black/30"
             />
@@ -179,7 +159,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
               <p className="text-[10px] text-[#1C3D5A] dark:text-foreground/50" style={{ fontStyle: 'normal' }}>Urologia · São Paulo</p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Bottom gradient fade */}

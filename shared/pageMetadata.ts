@@ -236,6 +236,131 @@ const LOCATION_LABELS: Record<string, string> = {
  * impressões e poucos cliques. Sem promessa de resultado (CFM 2.336/2023).
  */
 const SEARCH_SNIPPETS: Record<string, Pick<PageMetadata, "title" | "description">> = {
+  "/educativo/tratamentos-hpb": {
+    title: "Tratamentos para próstata aumentada (HPB): opções",
+    description:
+      "Remédios e cirurgias para a próstata aumentada (HPB), com base nas diretrizes EAU e AUA. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/cirurgias-minimamente-invasivas": {
+    title: "Cirurgias urológicas minimamente invasivas: diferenças",
+    description:
+      "Endourologia, laparoscopia e robótica: como funcionam e quando cada técnica é usada. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/orientacoes-pos-operatorias": {
+    title: "Pós-operatório urológico: cuidados e sinais de alerta",
+    description:
+      "O que é esperado depois das cirurgias urológicas e quando procurar atendimento médico. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/orientacoes-pre-operatorias": {
+    title: "Preparo para cirurgia urológica: jejum, remédios e exames",
+    description:
+      "Jejum, medicamentos, anticoagulantes, exames e checklist antes da cirurgia urológica. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/calculos-renais": {
+    title: "Cálculos renais: prevenção, tratamentos e duplo J",
+    description:
+      "Como prevenir pedra nos rins, quais são os tratamentos minimamente invasivos e o que saber sobre o cateter duplo J. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/hipogonadismo": {
+    title: "Hipogonadismo: testosterona baixa, diagnóstico e reposição",
+    description:
+      "O que é o hipogonadismo, como é diagnosticado e quando a reposição de testosterona é indicada. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/sindrome-metabolica": {
+    title: "Síndrome metabólica e testosterona no homem",
+    description:
+      "A relação entre síndrome metabólica, peso, testosterona e exercício físico na saúde masculina. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/procedimentos-andrologicos": {
+    title: "Postectomia, vasectomia e varicocele: como são feitas",
+    description:
+      "Os procedimentos urológicos mais frequentes: como são realizados, recuperação e sinais de alerta. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/disfuncao-eretil": {
+    title: "Disfunção erétil: causas, diagnóstico e tratamentos",
+    description:
+      "Causas da disfunção erétil, como é feito o diagnóstico e as opções de tratamento discutidas com o médico. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/exame-prostata": {
+    title: "Exame de próstata: como é, preparo e quando fazer",
+    description:
+      "Como funcionam o toque retal e o PSA, preparo, quando fazer, mitos e verdades. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/urodinamica": {
+    title: "Urodinâmica: o que é, como é feita e quando fazer",
+    description:
+      "O que é o exame de urodinâmica, como funciona, indicações, preparo e resultados. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/infeccao-urinaria": {
+    title: "Infecção urinária no homem: causas, sintomas e tratamento",
+    description:
+      "Causas e sintomas da infecção urinária masculina, tratamento e quando procurar o urologista. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/cancer-prostata": {
+    title: "Câncer de próstata: PSA, biópsia, Gleason e tratamento",
+    description:
+      "Câncer de próstata: diagnóstico, PSA, biópsia, Gleason, estadiamento e tratamento. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/biopsia-prostata": {
+    title: "Biópsia de próstata: como é feita, preparo e complicações",
+    description:
+      "Indicações da biópsia de próstata, preparo, técnicas transperineal e transretal e complicações. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/cirurgia-robotica": {
+    title: "Cirurgia robótica em urologia: como é e recuperação",
+    description:
+      "Prostatectomia, nefrectomia parcial e cistectomia robóticas: como são feitas e como é a recuperação. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/cancer-bexiga": {
+    title: "Câncer de bexiga: sintomas, diagnóstico e tratamento",
+    description:
+      "Sangue na urina, cistoscopia, RTU, BCG intravesical, cistectomia e imunoterapia no câncer de bexiga. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/tratamento-cancer-prostata": {
+    title: "Tratamento do câncer de próstata: opções por risco",
+    description:
+      "Vigilância ativa, cirurgia robótica, radioterapia e hormonioterapia conforme o grupo de risco. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/incontinencia-urinaria": {
+    title: "Incontinência urinária masculina: causas e tratamentos",
+    description:
+      "Incontinência após prostatectomia: exercícios de Kegel, sling masculino e esfíncter artificial. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/infertilidade-masculina": {
+    title: "Infertilidade masculina: causas, exames e tratamentos",
+    description:
+      "Espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/doenca-peyronie": {
+    title: "Doença de Peyronie: curvatura peniana e tratamentos",
+    description:
+      "Curvatura peniana adquirida: fases da doença, tratamento clínico, plicatura, enxerto e prótese. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/varicocele": {
+    title: "Varicocele: sintomas, diagnóstico e tratamento cirúrgico",
+    description:
+      "O que é a varicocele, sintomas, classificação, diagnóstico e tratamento cirúrgico. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/hiperplasia-prostatica": {
+    title: "Próstata aumentada (HPB): sintomas e tratamento",
+    description:
+      "O que é a hiperplasia prostática benigna, sintomas, diagnóstico, medicamentos e cirurgias. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/local/clinovi-paulista": {
+    title: "Urologista na Av. Paulista: Clinovi Paulista | Particular",
+    description:
+      "Dr. Felipe de Bulhões atende na Clinovi Paulista: Av. Paulista, 1048, 18° andar, Bela Vista, São Paulo. Atendimento particular e teleconsulta.",
+  },
+  "/local/clinovi-pinheiros": {
+    title: "Urologista em Pinheiros: Clinovi, Av. Rebouças | Particular",
+    description:
+      "Dr. Felipe de Bulhões atende na Clinovi Pinheiros: Av. Rebouças, 2636, São Paulo. Atendimento particular e teleconsulta.",
+  },
+  "/local/cemed-sao-luiz-campinas": {
+    title: "Urologista em Campinas: CEMED Rede D'Or São Luiz",
+    description:
+      "Dr. Felipe de Bulhões atende no CEMED Rede D'Or São Luiz: Av. Andrade Neves, 863, Centro, Campinas. Consultas, cirurgias e exames urológicos.",
+  },
   "/educativo/litotripsia-laser": {
     title: "Litotripsia a laser: como é feita, preparo e recuperação",
     description:
@@ -331,6 +456,11 @@ function genericBlogMetadata(title: string, image = DEFAULT_OG_IMAGE): PageMetad
     type: "article",
     breadcrumb: title,
   };
+}
+
+/** Título e descrição de busca da rota, quando ela tiver texto próprio. */
+export function getSearchSnippet(input: string) {
+  return SEARCH_SNIPPETS[normalizeSitePath(input)];
 }
 
 /** Returns a deterministic metadata set for the URL delivered to crawlers and browsers. */

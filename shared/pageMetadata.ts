@@ -123,9 +123,9 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Vasectomia sem bisturi",
   },
   "/andrologia-performance-masculina": {
-    title: "Andrologia e Saúde do Homem em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Andrologia em São Paulo e Campinas | Dr. Felipe de Bulhões",
     description:
-      "Avaliação individualizada de saúde hormonal, reposição de testosterona (TRT), função sexual, fertilidade masculina e varicocelectomia com microscópio em São Paulo e Campinas.",
+      "Procura andrologista em São Paulo? Urologista com atendimento em andrologia na Av. Paulista, em Pinheiros e em Campinas: testosterona, fertilidade, varicocele e disfunção erétil.",
     image: OG_IMAGE_ANDROLOGIA,
     imageAlt: "Andrologia e saúde masculina — Dr. Felipe de Bulhões",
     type: "website",

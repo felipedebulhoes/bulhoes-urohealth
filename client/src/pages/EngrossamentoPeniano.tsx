@@ -104,7 +104,7 @@ export default function EngrossamentoPeniano() {
         </CardHeader>
         <CardContent className="space-y-4 text-justify">
           <p>
-            O engrossamento peniano com ácido hialurônico (AH) é um procedimento minimamente invasivo que surgiu como alternativa segura e reversível para homens que desejam aumentar a circunferência peniana. Diferentemente de técnicas cirúrgicas tradicionais, que envolvem enxertos de pele ou transferência de gordura com riscos significativos, o preenchimento com AH oferece recuperação rápida, resultados previsíveis e possibilidade de reversão.
+            O engrossamento peniano com ácido hialurônico (AH) é um procedimento minimamente invasivo que surgiu como alternativa segura e reversível para homens que desejam aumentar a circunferência peniana. Diferentemente de técnicas cirúrgicas tradicionais, que envolvem enxertos de pele ou transferência de gordura com riscos significativos, o <Link href="/preenchimento-peniano" className="underline hover:text-[#B87333]">preenchimento peniano com AH</Link> oferece recuperação rápida, resultados previsíveis e possibilidade de reversão.
           </p>
           <p>
             A demanda por procedimentos de aumento peniano tem crescido, impulsionada por pressões sociais, padrões estéticos em evolução e maior conscientização sobre tratamentos disponíveis. Estudos mostram que 14-20% dos homens relatam insatisfação com o tamanho peniano, o que pode impactar autoconfiança, satisfação sexual e qualidade de vida.

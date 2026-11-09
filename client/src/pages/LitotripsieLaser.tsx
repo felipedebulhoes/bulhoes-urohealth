@@ -88,7 +88,8 @@ export default function LitotripsieLaser() {
               A litotripsia a laser é um procedimento minimamente invasivo no qual um <strong>ureteroscópio</strong> (instrumento fino e flexível com câmera) é introduzido pela uretra, passando pela bexiga até o ureter ou rim, sem necessidade de incisões. Ao localizar o cálculo, uma fibra de laser é passada pelo canal de trabalho do ureteroscópio e direcionada ao cálculo, fragmentando-o em partículas microscópicas ("poeira") ou em pedaços menores que são removidos com pinças ou cestas endoscópicas.
             </p>
             <p className="text-[#334155] leading-relaxed mb-6">
-              O procedimento é tecnicamente chamado de <strong>Ureteroscopia (URS) com Litotripsia Intracorpórea a Laser</strong>. Quando realizado no rim, é denominado <strong>Cirurgia Renal Retrógrada Intrarenal (RIRS — Retrograde Intrarenal Surgery)</strong>, utilizando ureteroscópio flexível.
+              O procedimento é tecnicamente chamado de <strong>Ureteroscopia (URS) com Litotripsia Intracorpórea a Laser</strong>. Quando realizado no rim, é denominado <strong>Cirurgia Renal Retrógrada Intrarenal (RIRS — Retrograde Intrarenal Surgery)</strong>, utilizando ureteroscópio flexível. Veja também como é o atendimento para{" "}
+              <Link href="/litotripsia-calculo-renal" className="underline hover:text-[#B87333]">cirurgia de pedra no rim em São Paulo</Link>.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">

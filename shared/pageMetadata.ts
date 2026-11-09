@@ -159,7 +159,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Saúde da próstata",
   },
   "/litotripsia-calculo-renal": {
-    title: "Cálculo Renal e Litotripsia em SP | Dr. Felipe de Bulhões",
+    title: "Cirurgia de Pedra no Rim em São Paulo | Dr. Felipe de Bulhões",
     description:
       "Tratamento de cálculos renais (pedra nos rins) e ureterais em São Paulo e Campinas: litotripsia a laser flexível sem cortes, cólica renal e prevenção.",
     image: DEFAULT_OG_IMAGE,

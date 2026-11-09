@@ -12,6 +12,8 @@ import MobileBottomBar from "./MobileBottomBar";
 import { trackEducationalPageView, trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { MedicalPageSchema } from "@/components/SchemaMarkup";
+import { useLocation } from "wouter";
+import { formatMedicalReviewDate, getMedicalReviewDate } from "@shared/medicalReview";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
@@ -37,6 +39,8 @@ export default function EducationalLayout({
   medicalCondition,
   children,
 }: EducationalLayoutProps) {
+  const [currentPath] = useLocation();
+  const reviewDate = getMedicalReviewDate(currentPath);
   const pageSlug = typeof window !== "undefined"
     ? window.location.pathname.replace(/^\//, "").replace(/\//g, "-") || "home"
     : "educational";
@@ -74,7 +78,7 @@ export default function EducationalLayout({
       <MedicalPageSchema
         title={metaTitle || title}
         description={metaDescription || description}
-        path={typeof window !== "undefined" ? window.location.pathname : ""}
+        path={currentPath}
         medicalCondition={medicalCondition || title}
       />
 
@@ -192,6 +196,7 @@ export default function EducationalLayout({
         <div className="container text-center">
           <p className="text-white/70 text-sm mb-3">
             Conteúdo médico de responsabilidade do Dr. Felipe de Bulhões Ojeda — CRM-SP 202291 · RQE 146538 (Urologia) · RQE 114019 (Cirurgia Geral).
+            {reviewDate && ` Revisado em ${formatMedicalReviewDate(reviewDate)}.`}
           </p>
           <p className="text-white/30 text-sm">
             &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291

@@ -115,7 +115,7 @@ export default function SindromeMetabolica() {
                     <TrendingDown className="w-4 h-4 text-red-600" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Obesidade → ↓ Testosterona</h4>
+                    <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Obesidade → ↓ Testosterona</h3>
                     <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                       O tecido adiposo (gordura) contém a enzima <strong>aromatase</strong>, que converte testosterona em estradiol (estrogênio). Quanto mais gordura visceral, maior a conversão e menor a testosterona disponível. A obesidade também reduz a SHBG, alterando a biodisponibilidade hormonal.
                     </p>
@@ -126,7 +126,7 @@ export default function SindromeMetabolica() {
                     <TrendingDown className="w-4 h-4 text-red-600" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">↓ Testosterona → Mais Obesidade</h4>
+                    <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">↓ Testosterona → Mais Obesidade</h3>
                     <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                       A deficiência de testosterona favorece o acúmulo de gordura (especialmente visceral), reduz a massa muscular e o metabolismo basal, aumenta a resistência insulínica e diminui a motivação para atividade física — perpetuando o ciclo.
                     </p>
@@ -139,7 +139,7 @@ export default function SindromeMetabolica() {
                     <TrendingUp className="w-4 h-4 text-amber-600" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Perda de Peso → ↑ Testosterona</h4>
+                    <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Perda de Peso → ↑ Testosterona</h3>
                     <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                       Perda de 5-10% do peso corporal pode aumentar a testosterona em <strong>50-100 ng/dL</strong>. A cirurgia bariátrica em obesos graves pode aumentar em até 200-300 ng/dL. A perda de gordura visceral reduz a atividade da aromatase.
                     </p>
@@ -150,7 +150,7 @@ export default function SindromeMetabolica() {
                     <TrendingUp className="w-4 h-4 text-amber-600" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Exercício → Quebra o Ciclo</h4>
+                    <h3 className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Exercício → Quebra o Ciclo</h3>
                     <p className="text-xs text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
                       O exercício físico regular (aeróbico + resistência) é a intervenção mais eficaz para quebrar o ciclo vicioso: reduz gordura visceral, aumenta massa muscular, melhora sensibilidade insulínica e eleva os níveis de testosterona — tudo simultaneamente.
                     </p>
@@ -184,7 +184,7 @@ export default function SindromeMetabolica() {
                 <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-500 mx-auto mb-2">
                   {c.icon}
                 </div>
-                <h4 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground mb-1">{c.name}</h4>
+                <h3 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground mb-1">{c.name}</h3>
                 <p className="text-xs text-red-600 font-medium">{c.value}</p>
               </motion.div>
             ))}

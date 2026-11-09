@@ -110,9 +110,9 @@ export default function PrimeiraConsulta() {
                 <Clock className="w-6 h-6 text-[#B87333]" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-2">
+                <p className="font-serif text-lg font-semibold text-[#1C3D5A] dark:text-foreground mb-2">
                   Duração média: 30-45 minutos
-                </h3>
+                </p>
                 <p className="text-sm text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">
                   A primeira consulta urológica é mais longa que as consultas de retorno, pois inclui uma avaliação completa do seu histórico e estado de saúde. Reserve tempo suficiente e chegue 15 minutos antes para preenchimento de cadastro.
                 </p>

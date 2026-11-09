@@ -87,7 +87,7 @@ export default function Urodinamica() {
                 { title: "Avaliação pré-transplante renal", desc: "Em pacientes com disfunção vesical conhecida que serão submetidos a transplante renal, para garantir que a bexiga receptora funcione adequadamente." },
               ].map((item, i) => (
                 <div key={i} className="bg-gray-50 dark:bg-card rounded-xl p-5 border border-gray-100">
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h3>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -110,7 +110,7 @@ export default function Urodinamica() {
                     {item.step}
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h3>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export default function Urodinamica() {
               <div className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-indigo-500 mt-1 shrink-0" />
                 <div>
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">Duração e Conforto</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">Duração e Conforto</h3>
                   <p className="text-sm text-[#334155] leading-relaxed">
                     O exame completo dura entre <strong>30 a 45 minutos</strong>. Embora envolva cateterismo, a maioria dos pacientes tolera bem o procedimento. Não é necessária anestesia. Após o exame, pode haver leve ardência ao urinar nas primeiras 24 horas, que se resolve espontaneamente.
                   </p>
@@ -164,7 +164,7 @@ export default function Urodinamica() {
                 { title: "Baixa Complacência Vesical", desc: "Bexiga com pouca elasticidade, que gera altas pressões durante o enchimento. Risco de dano renal se não tratada.", color: "bg-green-50 border-green-100" },
               ].map((item, i) => (
                 <div key={i} className={`rounded-xl p-5 border ${item.color}`}>
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h3>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                 </div>
               ))}

@@ -103,7 +103,7 @@ export default function InteractiveMap() {
                 : "border-[#2E2520]/8 bg-[#F7F5F2] hover:border-[#4A3A30]/40"
             }`}
           >
-            <h4 className="font-bold text-sm text-[#2E2520] dark:text-foreground mb-1 font-sans">{clinic.name}</h4>
+            <h3 className="font-bold text-sm text-[#2E2520] dark:text-foreground mb-1 font-sans">{clinic.name}</h3>
             <p className="text-xs text-[#2E2520] dark:text-foreground/50 font-sans mb-2">{clinic.address}</p>
             <div className="flex items-center justify-between">
               {clinic.phone && (

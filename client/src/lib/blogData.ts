@@ -778,8 +778,6 @@ Se você mora em Campinas ou região e precisa de acompanhamento urológico, nã
     readTime: "12 min",
     author: defaultAuthor,
     content: `
-# Vasectomia em Campinas: Guia Completo sobre o Procedimento
-
 A **vasectomia** é o método contraceptivo definitivo masculino mais eficaz e seguro disponível atualmente. Segundo o **AUA Vasectomy Guideline 2026**, a taxa de falha é inferior a 1% quando realizada corretamente e confirmada pelo espermograma de controle. Se você está considerando realizar uma vasectomia em Campinas, este guia traz todas as informações que você precisa saber.
 
 ---
@@ -949,8 +947,6 @@ Se você está considerando a vasectomia, agende uma consulta para discutir toda
     readTime: "10 min",
     author: defaultAuthor,
     content: `
-# Cirurgia Robótica em Urologia em Campinas: Tecnologia de Ponta para Tratamentos Menos Invasivos
-
 A **cirurgia robótica** representa uma das maiores evoluções da medicina moderna. Na urologia, essa tecnologia transformou completamente a forma como tratamos doenças complexas como o câncer de próstata, tumores renais e câncer de bexiga. Em **Campinas e região**, pacientes agora têm acesso a essa tecnologia de ponta, com resultados comparáveis aos melhores centros do mundo.
 
 ## O Que é a Cirurgia Robótica?
@@ -1074,8 +1070,6 @@ Se você precisa de uma avaliação urológica ou foi indicado para cirurgia, ag
     readTime: "12 min de leitura",
     author: defaultAuthor,
     content: `
-# Incontinência Urinária Pós-Prostatectomia: Causas, Recuperação e Tratamentos Atuais
-
 A **prostatectomia radical** — cirurgia de remoção completa da próstata — é o tratamento padrão-ouro para o câncer de próstata localizado em pacientes com expectativa de vida superior a 10 anos. Apesar dos avanços da técnica cirúrgica, especialmente com a **cirurgia robótica (RARP)**, a incontinência urinária pós-operatória continua sendo uma das principais preocupações dos pacientes.
 
 A boa notícia é que, na grande maioria dos casos, a incontinência é **temporária** e apresenta melhora progressiva ao longo dos primeiros 12 meses. Este artigo explica por que ela ocorre, qual a evolução esperada e quais tratamentos estão disponíveis — tudo baseado nas **EAU Guidelines 2025** e **AUA/SUFU Guidelines 2024**.
@@ -1289,8 +1283,6 @@ Sim, de forma gradual. Caminhadas leves são recomendadas desde a primeira seman
     readTime: "14 min de leitura",
     author: defaultAuthor,
     content: `
-# PSA e Rastreamento do Câncer de Próstata: O Que Mudou em 2026
-
 O **câncer de próstata** continua sendo o tumor maligno mais frequente entre homens no Brasil — excluindo o câncer de pele não melanoma. O Instituto Nacional de Câncer (INCA) estima **mais de 71 mil novos casos por ano** no triênio 2023-2025, e em 2023 foram registrados **17.093 óbitos** pela doença. Nos Estados Unidos, as estatísticas de 2026 mostram tendência semelhante de alta incidência.
 
 A boa notícia é que, quando detectado precocemente, o câncer de próstata apresenta **taxas de cura superiores a 90%**. Por isso, o rastreamento adequado — baseado no exame de **PSA (Antígeno Prostático Específico)** — é uma das ferramentas mais poderosas da urologia preventiva.
@@ -1464,8 +1456,6 @@ Além do rastreamento de rotina, procure avaliação urológica se apresentar:
     readTime: "16 min de leitura",
     author: defaultAuthor,
     content: `
-# Hiperplasia Prostática Benigna (HPB): Dos Medicamentos às Técnicas Cirúrgicas Mais Modernas
-
 A **Hiperplasia Prostática Benigna (HPB)** é o crescimento não-canceroso da próstata que ocorre naturalmente com o envelhecimento. Estima-se que **mais de 50% dos homens acima de 60 anos** e até **90% dos homens acima de 80 anos** apresentem algum grau de HPB. Quando esse crescimento causa obstrução ao fluxo urinário, surgem os chamados **Sintomas do Trato Urinário Inferior (LUTS)**, que podem impactar significativamente a qualidade de vida.
 
 Este artigo apresenta um panorama completo e atualizado das opções de tratamento para HPB — desde medidas comportamentais e medicamentos até as técnicas cirúrgicas mais modernas disponíveis em 2026, baseado nas **EAU Guidelines 2025** e na **AUA Guideline Amendment 2023**.

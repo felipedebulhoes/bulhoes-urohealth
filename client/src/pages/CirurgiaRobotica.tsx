@@ -186,7 +186,7 @@ export default function CirurgiaRobotica() {
                   <div className="w-10 h-10 bg-[#6366F1]/10 rounded-lg flex items-center justify-center mb-3">
                     <item.icon className="w-5 h-5 text-[#6366F1]" />
                   </div>
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h3>
                   <p className="text-[#334155] text-sm leading-relaxed mb-2">{item.desc}</p>
                   <p className="text-xs text-[#6366F1] font-medium">{item.evidence}</p>
                 </div>
@@ -247,10 +247,10 @@ export default function CirurgiaRobotica() {
             </p>
             <div className="space-y-5">
               <div className="bg-gradient-to-r from-indigo-50 to-white border border-indigo-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <Activity className="w-5 h-5 text-[#6366F1]" />
                   Continência Urinária
-                </h4>
+                </h3>
                 <div className="space-y-3">
                   <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                     <p className="text-sm text-[#334155] leading-relaxed">
@@ -268,10 +268,10 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-gradient-to-r from-violet-50 to-white border border-violet-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <HeartPulse className="w-5 h-5 text-violet-600" />
                   Função Erétil
-                </h4>
+                </h3>
                 <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                   <p className="text-sm text-[#334155] leading-relaxed">
                     <strong>Meta-análise de 5 RCTs (RARP vs LRP):</strong> Recuperação da função erétil significativamente melhor em pacientes potentes submetidos à preservação neurovascular — <strong>OR 4,05 (p=0,003)</strong> a favor da robótica. Aos 10 anos, taxas comparáveis, mas com qualidade funcional superior no grupo robótico.
@@ -281,10 +281,10 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-gradient-to-r from-emerald-50 to-white border border-amber-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <Award className="w-5 h-5 text-amber-600" />
                   Técnicas Avançadas de Preservação
-                </h4>
+                </h3>
                 <div className="space-y-3">
                   <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                     <p className="text-sm text-[#334155] leading-relaxed">
@@ -427,7 +427,7 @@ export default function CirurgiaRobotica() {
                     {item.step}
                   </div>
                   <div className="flex-1 bg-gray-50 dark:bg-card rounded-xl p-5 border border-gray-100">
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.title}</h3>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -469,7 +469,7 @@ export default function CirurgiaRobotica() {
                     <div className="w-10 h-10 bg-[#6366F1]/10 rounded-lg flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-[#6366F1]" />
                     </div>
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h3>
                   </div>
                   <ul className="space-y-2">
                     {item.items.map((text, j) => (
@@ -492,10 +492,10 @@ export default function CirurgiaRobotica() {
             </p>
             <div className="space-y-4">
               <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-[#6366F1]" />
                   Primeiras 24-48 horas
-                </h4>
+                </h3>
                 <ul className="space-y-2">
                   {[
                     "Deambulação precoce (levantar e caminhar no mesmo dia ou no dia seguinte)",
@@ -513,10 +513,10 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-violet-50 border border-violet-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <CalendarCheck className="w-5 h-5 text-violet-600" />
                   Primeiras semanas
-                </h4>
+                </h3>
                 <ul className="space-y-2">
                   {[
                     "Alta hospitalar em 1-2 dias (vs 5-7 dias na cirurgia aberta)",
@@ -535,10 +535,10 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
-                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3 flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-amber-600" />
                   Recuperação completa
-                </h4>
+                </h3>
                 <ul className="space-y-2">
                   {[
                     "Atividade física moderada liberada após 4-6 semanas",
@@ -565,10 +565,10 @@ export default function CirurgiaRobotica() {
             </p>
             <div className="space-y-4">
               <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                <h4 className="font-bold text-green-800 mb-3 flex items-center gap-2">
+                <h3 className="font-bold text-green-800 mb-3 flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5" />
                   Complicações Menores (Clavien I-II) — Mais comuns
-                </h4>
+                </h3>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
                     { name: "Dor no local das incisões", freq: "Transitória, 1-2 semanas" },
@@ -587,10 +587,10 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                <h4 className="font-bold text-amber-800 mb-3 flex items-center gap-2">
+                <h3 className="font-bold text-amber-800 mb-3 flex items-center gap-2">
                   <AlertTriangle className="w-5 h-5" />
                   Complicações Moderadas (Clavien IIIa) — Incomuns
-                </h4>
+                </h3>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
                     { name: "Fístula anastomótica", freq: "~1,0% (RARP)" },
@@ -607,10 +607,10 @@ export default function CirurgiaRobotica() {
               </div>
 
               <div className="bg-red-50 border border-red-200 rounded-xl p-6">
-                <h4 className="font-bold text-red-800 mb-3 flex items-center gap-2">
+                <h3 className="font-bold text-red-800 mb-3 flex items-center gap-2">
                   <ShieldAlert className="w-5 h-5" />
                   Complicações Graves (Clavien IV-V) — Raras
-                </h4>
+                </h3>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
                     { name: "Lesão de órgão adjacente", freq: "Rara (<0,5%)" },
@@ -749,7 +749,7 @@ export default function CirurgiaRobotica() {
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.q}</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.q}</h3>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.a}</p>
                 </div>
               ))}

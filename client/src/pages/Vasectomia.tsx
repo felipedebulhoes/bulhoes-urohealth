@@ -141,7 +141,7 @@ export default function Vasectomia() {
                       <item.icon className="w-5 h-5 text-[#B87333]" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
+                      <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h3>
                       <p className="text-[#334155] text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -592,7 +592,7 @@ export default function Vasectomia() {
                 return (
                   <div key={i} className={`${c.bg} ${c.border} border rounded-xl p-5`}>
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className={`font-bold ${c.text}`}>{item.title}</h4>
+                      <h3 className={`font-bold ${c.text}`}>{item.title}</h3>
                       <div className="flex gap-2">
                         <span className={`text-xs px-2 py-1 rounded-full font-medium ${c.badge}`}>
                           Frequência: {item.freq}
@@ -727,7 +727,7 @@ export default function Vasectomia() {
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.q}</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.q}</h3>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.a}</p>
                 </div>
               ))}

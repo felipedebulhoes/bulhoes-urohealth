@@ -93,7 +93,7 @@ export default function CancerBexiga() {
           </p>
           <div className="grid md:grid-cols-2 gap-4 mt-6">
             <div className="bg-purple-50 rounded-lg p-4 border border-purple-100">
-              <h4 className="font-semibold text-purple-800 mb-2">Incidência Mundial</h4>
+              <h3 className="font-semibold text-purple-800 mb-2">Incidência Mundial</h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 <strong>Homens:</strong> 9,3 por 100.000/ano<br />
                 <strong>Mulheres:</strong> 2,4 por 100.000/ano<br />
@@ -101,7 +101,7 @@ export default function CancerBexiga() {
               </p>
             </div>
             <div className="bg-purple-50 rounded-lg p-4 border border-purple-100">
-              <h4 className="font-semibold text-purple-800 mb-2">Mortalidade Mundial</h4>
+              <h3 className="font-semibold text-purple-800 mb-2">Mortalidade Mundial</h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 <strong>Homens:</strong> 3,1 por 100.000/ano<br />
                 <strong>Mulheres:</strong> 0,80 por 100.000/ano<br />
@@ -168,7 +168,7 @@ export default function CancerBexiga() {
                   {item.icon}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-foreground">{item.title}</h4>
+                  <h3 className="font-semibold text-gray-900 dark:text-foreground">{item.title}</h3>
                   <p className="text-sm text-gray-600 dark:text-muted-foreground mt-1">{item.desc}</p>
                   <span className="inline-block mt-2 text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">
                     {item.level}
@@ -207,7 +207,7 @@ export default function CancerBexiga() {
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="p-4 bg-gray-50 dark:bg-card rounded-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-foreground mb-3">Sintomas Urinários</h4>
+              <h3 className="font-semibold text-gray-900 dark:text-foreground mb-3">Sintomas Urinários</h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-foreground">
                 <li className="flex items-start gap-2">
                   <ChevronRight className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
@@ -232,7 +232,7 @@ export default function CancerBexiga() {
               </ul>
             </div>
             <div className="p-4 bg-gray-50 dark:bg-card rounded-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-foreground mb-3">Sintomas de Doença Avançada</h4>
+              <h3 className="font-semibold text-gray-900 dark:text-foreground mb-3">Sintomas de Doença Avançada</h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-foreground">
                 <li className="flex items-start gap-2">
                   <ChevronRight className="w-4 h-4 text-red-600 mt-0.5 shrink-0" />
@@ -317,7 +317,7 @@ export default function CancerBexiga() {
                   {item.step}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-foreground">{item.title}</h4>
+                  <h3 className="font-semibold text-gray-900 dark:text-foreground">{item.title}</h3>
                   <p className="text-sm text-gray-600 dark:text-muted-foreground mt-1">{item.desc}</p>
                 </div>
               </motion.div>
@@ -408,37 +408,37 @@ export default function CancerBexiga() {
           </p>
           <div className="space-y-6">
             <div className="p-4 bg-green-50 rounded-lg border border-green-100">
-              <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+              <h3 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
                 <Stethoscope className="w-4 h-4" />
                 1. RTU-B (Ressecção Transuretral de Bexiga)
-              </h4>
+              </h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 Primeiro passo do tratamento — remove completamente o tumor visível por via endoscópica. Deve incluir músculo detrusor para estadiamento. Uma <strong>segunda RTU-B (re-RTU)</strong> em 2-6 semanas é recomendada para tumores T1 e de alto grau, pois detecta doença residual em até 50% dos casos.
               </p>
             </div>
             <div className="p-4 bg-blue-50 rounded-lg border border-blue-100">
-              <h4 className="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+              <h3 className="font-semibold text-blue-800 mb-2 flex items-center gap-2">
                 <Pill className="w-4 h-4" />
                 2. Quimioterapia Intravesical (Instilação Única)
-              </h4>
+              </h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 Uma dose única de <strong>mitomicina C</strong> ou <strong>gemcitabina</strong> instilada na bexiga nas primeiras 24 horas após a RTU-B. Reduz o risco de recorrência em tumores de baixo risco em até 35%.
               </p>
             </div>
             <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
-              <h4 className="font-semibold text-amber-800 mb-2 flex items-center gap-2">
+              <h3 className="font-semibold text-amber-800 mb-2 flex items-center gap-2">
                 <Shield className="w-4 h-4" />
                 3. BCG Intravesical (Bacillus Calmette-Guérin)
-              </h4>
+              </h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 Padrão-ouro para tumores de alto risco e CIS. Esquema de indução (6 semanas) seguido de manutenção (até 3 anos). O BCG estimula o sistema imunológico a atacar as células tumorais. Reduz recorrência e progressão. Novidade 2026: <strong>sasanlimab e durvalumab</strong> adicionados ao BCG em pacientes selecionados de alto e muito alto risco.
               </p>
             </div>
             <div className="p-4 bg-red-50 rounded-lg border border-red-100">
-              <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
+              <h3 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
                 <Zap className="w-4 h-4" />
                 4. Cistectomia Radical (Casos Refratários)
-              </h4>
+              </h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 Indicada para tumores que não respondem ao BCG (BCG-unresponsive) ou com progressão para músculo-invasivo. Envolve a remoção completa da bexiga com derivação urinária.
               </p>
@@ -598,25 +598,25 @@ export default function CancerBexiga() {
         <div className="bg-white dark:bg-card rounded-xl border border-gray-100 p-6 shadow-sm">
           <div className="grid md:grid-cols-2 gap-4">
             <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
-              <h4 className="font-semibold text-amber-800 mb-2">Cessação do Tabagismo</h4>
+              <h3 className="font-semibold text-amber-800 mb-2">Cessação do Tabagismo</h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 A medida preventiva mais importante. Parar de fumar reduz significativamente o risco de desenvolver câncer de bexiga e de recorrência após o tratamento. O risco diminui progressivamente com o tempo de cessação.
               </p>
             </div>
             <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
-              <h4 className="font-semibold text-amber-800 mb-2">Proteção Ocupacional</h4>
+              <h3 className="font-semibold text-amber-800 mb-2">Proteção Ocupacional</h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 Uso adequado de EPIs em ambientes com exposição a substâncias químicas. Seguir rigorosamente as normas de segurança do trabalho em indústrias de risco.
               </p>
             </div>
             <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
-              <h4 className="font-semibold text-amber-800 mb-2">Hidratação Adequada</h4>
+              <h3 className="font-semibold text-amber-800 mb-2">Hidratação Adequada</h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 Ingestão adequada de líquidos para diluir substâncias potencialmente carcinogênicas na urina e reduzir o tempo de contato com a mucosa vesical.
               </p>
             </div>
             <div className="p-4 bg-amber-50 rounded-lg border border-amber-100">
-              <h4 className="font-semibold text-amber-800 mb-2">Dieta Mediterrânea</h4>
+              <h3 className="font-semibold text-amber-800 mb-2">Dieta Mediterrânea</h3>
               <p className="text-sm text-gray-700 dark:text-foreground">
                 Rica em vegetais, frutas e gorduras não-saturadas (azeite). Associada a redução do risco de câncer de bexiga (HR 0,85). Evitar dieta ocidental rica em gorduras saturadas.
               </p>
@@ -646,10 +646,10 @@ export default function CancerBexiga() {
           </p>
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             <div className="bg-white dark:bg-card rounded-lg p-4 shadow-sm">
-              <h4 className="font-semibold text-gray-900 dark:text-foreground mb-2 flex items-center gap-2">
+              <h3 className="font-semibold text-gray-900 dark:text-foreground mb-2 flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-purple-600" />
                 Campinas Day Hospital
-              </h4>
+              </h3>
               <p className="text-sm text-gray-600 dark:text-muted-foreground">
                 Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP<br />
                 Procedimentos cirúrgicos e RTU-B<br />
@@ -657,10 +657,10 @@ export default function CancerBexiga() {
               </p>
             </div>
             <div className="bg-white dark:bg-card rounded-lg p-4 shadow-sm">
-              <h4 className="font-semibold text-gray-900 dark:text-foreground mb-2 flex items-center gap-2">
+              <h3 className="font-semibold text-gray-900 dark:text-foreground mb-2 flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-purple-600" />
                 Clinovi Paulista e Clinovi Pinheiros
-              </h4>
+              </h3>
               <p className="text-sm text-gray-600 dark:text-muted-foreground">
                 Atendimento ambulatorial em São Paulo<br />
                 Consultas e acompanhamento<br />
@@ -745,7 +745,7 @@ export default function CancerBexiga() {
               custom={i + 11}
               className="bg-white dark:bg-card rounded-xl border border-gray-100 p-5 shadow-sm"
             >
-              <h4 className="font-semibold text-gray-900 dark:text-foreground mb-2">{item.q}</h4>
+              <h3 className="font-semibold text-gray-900 dark:text-foreground mb-2">{item.q}</h3>
               <p className="text-sm text-gray-600 dark:text-muted-foreground leading-relaxed">{item.a}</p>
             </motion.div>
           ))}

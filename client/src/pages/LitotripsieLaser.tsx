@@ -198,10 +198,10 @@ export default function LitotripsieLaser() {
                     {item.step}
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1 flex items-center gap-2">
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1 flex items-center gap-2">
                       <item.icon className="w-4 h-4 text-[#2563EB]" />
                       {item.title}
-                    </h4>
+                    </h3>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -319,7 +319,7 @@ export default function LitotripsieLaser() {
                       <item.icon className="w-5 h-5 text-[#2563EB]" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
+                      <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h3>
                       <p className="text-[#334155] text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -750,7 +750,7 @@ export default function LitotripsieLaser() {
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
-                  <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.q}</h4>
+                  <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-2">{item.q}</h3>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.a}</p>
                 </div>
               ))}

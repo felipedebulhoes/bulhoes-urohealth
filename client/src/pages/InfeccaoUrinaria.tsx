@@ -65,7 +65,7 @@ export default function InfeccaoUrinaria() {
                     <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-red-500" />
                     </div>
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground">{item.title}</h3>
                   </div>
                   <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                 </div>
@@ -125,7 +125,7 @@ export default function InfeccaoUrinaria() {
                     <item.icon className="w-5 h-5 text-[#B87333]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h4>
+                    <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-1">{item.title}</h3>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export default function InfeccaoUrinaria() {
             </p>
             <div className="space-y-4">
               <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm">
-                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3">Antibioticoterapia</h4>
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3">Antibioticoterapia</h3>
                 <ul className="space-y-2">
                   {[
                     "Pelo menos 7 dias, conforme avaliação médica",
@@ -158,7 +158,7 @@ export default function InfeccaoUrinaria() {
                 </ul>
               </div>
               <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm">
-                <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3">Investigação da Causa</h4>
+                <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3">Investigação da Causa</h3>
                 <ul className="space-y-2">
                   {[
                     "Avaliação prostática (HPB, prostatite crônica)",

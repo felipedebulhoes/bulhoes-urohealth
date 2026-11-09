@@ -41,7 +41,7 @@ const config: AreaLandingPageConfig = {
     {
       icon: Heart,
       title: "Função Sexual Intacta",
-      desc: "Zero impacto na testosterona, ereção, orgasmo ou volume do sêmen",
+      desc: "Sem alteração na ereção, no orgasmo ou na função sexual",
     },
   ],
   synthesisCard: {
@@ -83,8 +83,9 @@ const config: AreaLandingPageConfig = {
       {
         title: "O que Continua Exatamente Igual Após a Vasectomia?",
         paragraphs: [
-          "A testosterona é produzida nos testículos e liberada diretamente na corrente sanguínea (não passa pelos canais deferentes). Portanto, sua produção hormonal, barba, massa muscular e desejo sexual não sofrem nenhuma alteração.",
+          "A testosterona é produzida nos testículos e liberada diretamente na corrente sanguínea (não passa pelos canais deferentes). Nos estudos, a testosterona permanece estável a longo prazo, e pode haver queda breve logo após o procedimento (Yang 2021).",
           "Além disso, 95% a 98% do líquido ejaculado vem da próstata e das vesículas seminais: após a vasectomia, você continua ejaculando normalmente, com o mesmo volume, cor e prazer — apenas sem espermatozoides microscópicos.",
+          "Como todo procedimento, a vasectomia tem riscos. A dor escrotal crônica é descrita em 1% a 15% dos casos e afeta a qualidade de vida em 1% a 2% (Yang 2021). Existe também pequena chance de falha, por isso o espermograma de controle é indispensável antes de suspender outro método contraceptivo.",
         ],
         footer: "Liberdade para o casal suspender anticoncepcionais hormonais femininos após o espermograma.",
       },

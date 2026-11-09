@@ -3,6 +3,7 @@
  * Generates JSON-LD structured data for FAQ pages
  */
 import { useEffect } from "react";
+import { collectJsonLd } from "@/lib/prerenderCollector";
 
 interface FAQItem {
   question: string;
@@ -14,22 +15,23 @@ interface FAQSchemaProps {
 }
 
 export default function FAQSchema({ faqs }: FAQSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+  collectJsonLd("faq-schema", schema);
+
   useEffect(() => {
     const existingScript = document.getElementById("faq-schema");
     if (existingScript) existingScript.remove();
-
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    };
 
     const script = document.createElement("script");
     script.id = "faq-schema";

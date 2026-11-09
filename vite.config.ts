@@ -5,8 +5,9 @@ import { defineConfig } from "vite";
 
 const plugins = [react(), tailwindcss()];
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins,
+  ssr: { noExternal: true },
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -18,9 +19,10 @@ export default defineConfig({
   root: path.resolve(import.meta.dirname, "client"),
   publicDir: path.resolve(import.meta.dirname, "client", "public"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, isSsrBuild ? "dist/ssr" : "dist/public"),
     emptyOutDir: true,
-    rollupOptions: {
+    copyPublicDir: !isSsrBuild,
+    rollupOptions: isSsrBuild ? undefined : {
       output: {
         manualChunks(id) {
           if (!id.includes("node_modules")) return undefined;
@@ -52,4 +54,4 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
-});
+}));

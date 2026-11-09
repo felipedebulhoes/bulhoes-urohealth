@@ -2,6 +2,8 @@
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Sobre o Dr. Felipe de Bulhões — Provider Page otimizada para SEO
  */
+import ResearchSection from "@/components/ResearchSection";
+import MediaSection from "@/components/MediaSection";
 import { motion } from "framer-motion";
 import {
   GraduationCap,
@@ -235,6 +237,10 @@ export default function SobreDrFelipe() {
           </motion.div>
         </div>
       </section>
+
+      {/* Pesquisa e atualização científica */}
+      <ResearchSection />
+      <MediaSection />
 
       {/* Locais de Atendimento */}
       <section className="py-16 bg-white dark:bg-card">

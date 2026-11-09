@@ -87,19 +87,15 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="flex flex-col sm:flex-row gap-4 mb-6"
           >
-            <a
-              href="#agendamento"
-              onClick={(e) => {
-                e.preventDefault();
-                trackCtaClick("agendar_consulta", "hero_section");
-                document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
-              }}
+            <Link
+              href="/agendamento"
+              onClick={() => trackCtaClick("agendar_consulta", "hero_section")}
             >
               <Button className="brand-espresso-hero-cta brand-espresso-primary-cta bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-[#B87333]/30 transition-all hover:shadow-xl hover:shadow-[#B87333]/40 hover:-translate-y-0.5">
                 <CalendarCheck className="w-5 h-5 mr-2" />
                 Agendar Consulta
               </Button>
-            </a>
+            </Link>
             <a href="#sobre">
               <Button
                 variant="outline"

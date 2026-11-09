@@ -54,7 +54,7 @@ export default function DoctoraliaBadge() {
                     (e.target as HTMLImageElement).style.display = 'none';
                   }}
                 />
-                <span className="text-xs font-semibold text-[#00B8A9] bg-[#00B8A9]/10 px-2 py-0.5 rounded">
+                <span className="text-xs font-semibold text-[#00665E] dark:text-[#5EEAD4] bg-[#00B8A9]/10 px-2 py-0.5 rounded">
                   Perfil Verificado
                 </span>
               </div>
@@ -84,7 +84,7 @@ export default function DoctoraliaBadge() {
                 href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#00B8A9] hover:text-[#B87333] transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#00665E] dark:text-[#5EEAD4] hover:text-[#B87333] transition-colors"
               >
                 Ver perfil completo <ExternalLink className="w-3 h-3" />
               </a>

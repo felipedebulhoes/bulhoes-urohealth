@@ -498,7 +498,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
                       <MessageCircle className="w-3.5 h-3.5 text-[#C9B6A3]" />
                       Personalize como iniciar seu atendimento no WhatsApp:
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#C9B6A3]/20 text-[#C9B6A3]">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#C9B6A3]/20 text-[#E7E1DA]">
                       {activeMessageConfig.badge}
                     </span>
                   </div>

@@ -213,7 +213,7 @@ export default function VideosSection() {
                       <div className="absolute top-3 left-3">
                         <span className={`text-[10px] uppercase tracking-wider font-semibold px-2 py-1 rounded ${
                           video.source === "instagram"
-                            ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
+                            ? "bg-gradient-to-r from-purple-700 to-pink-700 text-white"
                             : "bg-red-600 text-white"
                         }`}>
                           {video.source === "instagram" ? "Instagram" : "YouTube"}

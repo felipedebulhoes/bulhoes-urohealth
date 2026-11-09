@@ -293,7 +293,7 @@ export default function SymptomChecker() {
                 >
                   {i + 1}
                 </div>
-                <span className={`text-sm hidden sm:inline ${step === s.key ? "text-[#B87333] font-semibold" : "text-slate-500"}`}>
+                <span className={`text-sm hidden sm:inline ${step === s.key ? "text-[#B87333] font-semibold" : "text-slate-600 dark:text-foreground/70"}`}>
                   {s.label}
                 </span>
                 {i < 2 && <div className="w-8 md:w-16 h-px bg-slate-300" />}

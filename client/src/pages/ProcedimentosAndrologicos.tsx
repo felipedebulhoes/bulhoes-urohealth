@@ -421,6 +421,10 @@ export default function ProcedimentosAndrologicos() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
+          <p className="mt-6 text-sm text-center text-[#1C3D5A] dark:text-foreground/60 leading-relaxed">
+            Para avaliação de testosterona, fertilidade e função sexual, veja o{" "}
+            <Link href="/andrologia-performance-masculina" className="underline hover:text-[#B87333]">atendimento em andrologia em São Paulo</Link>.
+          </p>
         </div>
       </section>
 

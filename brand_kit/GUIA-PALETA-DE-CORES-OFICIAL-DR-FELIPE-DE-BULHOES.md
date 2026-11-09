@@ -92,12 +92,14 @@ A paleta de cores atua em conjunto rigoroso com o sistema tipográfico aprovado:
 
 ---
 
-## 7. O Que NUNCA Fazer (Diretrizes de Proteção da Marca)
+## 7. Padrões de Partida e Exploração
 
-1. **Nunca usar azuis saturados ou cianos hospitalares:** O antigo azul corporativo foi 100% substituído pela paleta quente de Marrom e Bege.
-2. **Nunca usar preto absoluto (`#000000`) como fundo:** A identidade não é preta e branca; ela é marrom e cobre. O preto puro empobrece a riqueza das texturas quentes.
-3. **Nunca usar gradientes arco-íris ou cores de alerta:** Tons de vermelho, amarelo ou verde só devem existir em gráficos estatísticos cirúrgicos indispensáveis, nunca em elementos de design da marca.
-4. **Nunca aplicar texto em Bege Champagne sobre fundos claros sem contraste:** Garantir sempre a conformidade WCAG AA (contraste mínimo de 4.5:1 para texto de leitura).
+> **Estes são pontos de partida, não limites.** Conforme a seção 0 do Manual de Identidade Visual, toda variação pode ser testada e levada à aprovação do Dr. Felipe de Bulhões.
+
+1. **Base quente:** A paleta padrão é Marrom e Bege, no lugar do antigo azul corporativo.
+2. **Marrom em vez de preto:** O padrão de fundo é marrom e cobre, com mais riqueza do que o preto puro.
+3. **Acentos sóbrios:** Vermelho, amarelo e verde ficam, por padrão, em gráficos e dados.
+4. **Contraste para leitura:** Buscar ao menos 4.5:1 em texto de leitura, resolvendo o contraste com véu, fundo ou cor em vez de abandonar a composição.
 
 ---
 

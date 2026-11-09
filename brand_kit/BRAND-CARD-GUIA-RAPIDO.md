@@ -35,8 +35,8 @@
 
 ## 3. Logotipo e Monograma FB
 
-- **Símbolo:** Usar **exclusivamente o vetor oficial** (`isotipo-fb-bicolor.svg` ou `destaque-00-monograma-oficial.png`).
-- **Regra de Ouro:** Nunca usar versões recriadas por IA; manter proporções e respiro de resguardo.
+- **Símbolo:** Finalizar com o vetor oficial (`isotipo-fb-bicolor.svg` ou `destaque-00-monograma-oficial.png`).
+- **Exploração:** Relevo, metal, perspectiva, animação e aplicações em cena podem ser testados e levados à aprovação.
 
 ---
 
@@ -64,8 +64,12 @@
 ## 5. Compliance Médico (CFM 2.336/2023)
 
 - Incluir sempre: **Dr. Felipe de Bulhões | MÉDICO | CRM-SP 202.291 | RQE 146538 / 114019**.
-- Nenhuma foto íntima de paciente em redes abertas.
-- Jamais usar "resultado garantido" ou prometer eficácia absoluta.
+- Imagem de paciente real só com consentimento, nas condições da norma e com decisão do Dr. Felipe.
+- Sem promessa de resultado e sem paciente ou resultado fabricado apresentado como real.
+
+## 5.1 Princípio de Produção
+
+**Explorar primeiro, decidir no final.** Cores, fontes, layout e acabamento são ponto de partida. Avatar próprio, troca de roupa, cenário e demais recursos de IA são opções normais. O Dr. Felipe aprova o produto final (Manual, seção 0).
 
 ---
 

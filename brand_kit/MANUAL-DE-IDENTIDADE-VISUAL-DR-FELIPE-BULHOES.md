@@ -2,8 +2,33 @@
 
 **Dr. Felipe de Bulhões — Urologista e Cirurgião Geral**  
 *Estética Íntima e Saúde do Homem | Saúde do Homem em Todas as Fases*  
-**Versão:** 2.0 (Atualização oficial da paleta de cores — Outubro de 2026)  
+**Versão:** 2.1 (Princípio de Produção Sem Teto Criativo — Novembro de 2026)  
 **Registro Profissional:** CRM-SP 202.291 | RQE 146538 (Urologia) • RQE 114019 (Cirurgia Geral)
+
+---
+
+## 0. Princípio de Produção: Explorar Primeiro, Decidir no Final
+
+> **Este princípio tem prioridade sobre todo o restante deste manual.**  
+> O objetivo é produzir conteúdo cada vez melhor. Nenhuma oportunidade deve ser perdida por restrição desnecessária. Quem produz busca sempre o melhor resultado possível e apresenta as opções. **O Dr. Felipe de Bulhões acompanha, escolhe e aprova o produto final.**
+
+**Como aplicar:**
+1. As orientações de cor, tipografia, layout, tom e acabamento deste manual são **o ponto de partida**, não um limite.
+2. Nenhuma ideia, ferramenta ou técnica é descartada de antemão por contrariar o manual. Ela é produzida ou testada e levada à aprovação.
+3. Avatar da própria imagem do Dr. Felipe, troca de roupa, troca de cenário, voz clonada e demais recursos de IA são opções normais de produção (seção 9.4).
+4. Ao recomendar, comparar lado a lado e indicar qual ficou melhor. A decisão é dele.
+
+**O que continua fixo, por não ser escolha de estilo:**
+
+| Ponto fixo | Motivo |
+|---|---|
+| Nome sempre com "de": **Dr. Felipe de Bulhões** | É a identidade profissional dele |
+| Identificação médica e demais exigências legais (CFM nº 2.336/2023 e norma vigente) | Obrigação legal, que o manual não pode dispensar |
+| Sem promessa ou garantia de resultado | Vedado pela norma e pelo Código de Ética |
+| Privacidade e consentimento de pacientes | Dever médico e legal |
+| Paciente, depoimento ou resultado clínico fabricado nunca é apresentado como real | Enganaria quem assiste, inclusive quem decide sobre a própria saúde |
+
+Quando uma peça tocar um ponto fixo, o caminho é buscar a melhor forma de fazê-la dentro dele e sinalizar na aprovação, nunca abandonar a ideia.
 
 ---
 
@@ -74,13 +99,12 @@ O símbolo central combina as letras **F** e **B** em uma única estrutura escul
 2. **Horizontal (Assinatura Linear):** Monograma FB à esquerda, separado proporcionalmente do nome e subtítulo à direita. Ideal para cabeçalhos de sites, receituários, apresentações e rodapés de vídeo.
 3. **Monograma Isolado (Isotipo):** O símbolo FB sozinho, utilizado em avatares, fotos de perfil, carimbos, relevo seco (blind deboss) e capas de Destaques.
 
-### 3.3 Regras Invioláveis do Monograma (Do's & Don'ts)
-- **NUNCA** redesenhar o monograma utilizando inteligência artificial generativa ou ferramentas de vetorização automática. A fonte da verdade vetorial oficial é o arquivo `isotipo-fb.svg` / `logo-landscape.svg`.
-- **NUNCA** condensar, esticar ou alterar as proporções entre a largura e a altura do monograma.
-- **NUNCA** aplicar sombras projetadas pesadas, chanfros multicoloridos ou gradientes arco-íris.
-- **NUNCA** rotacionar o monograma ou inverter horizontalmente sua orientação.
-- **Área de Não-Interferência:** Manter sempre um respiro mínimo ao redor do monograma equivalente a 50% da largura da haste vertical.
-- **Redução Mínima:** Em impressão, não reproduzir o monograma em altura inferior a 8 mm. Em telas digitais, o tamanho mínimo é de 32×32 px para favicons ou 80×80 px para ícones de interface.
+### 3.3 Padrão de Uso do Monograma
+- **Referência:** A fonte da verdade vetorial é o arquivo `isotipo-fb.svg` / `logo-landscape.svg`. Em cenas geradas por IA, partir sempre desse vetor como referência e aplicar o original na finalização quando a IA deformar o símbolo.
+- **Exploração livre:** Relevo, metal, mármore, perspectiva, rotação em cena, animação, sombra e aplicações em objetos e ambientes podem ser produzidos e levados à aprovação.
+- **Padrão em peças planas:** Proporções originais e sem inversão horizontal, para o símbolo seguir reconhecível.
+- **Respiro sugerido:** 50% da largura da haste vertical.
+- **Tamanho sugerido:** A partir de 8 mm em impressão e de 32×32 px em telas.
 
 ---
 
@@ -151,7 +175,9 @@ A identidade vocal do Dr. Felipe de Bulhões fundamenta-se na fusão entre o **S
 
 ### 7.3 Vocabulário Preferencial vs. Vocabulário a Evitar
 
-| Usar Preferencialmente | Evitar Terminantemente |
+*Lista de partida para a versão publicada. Promessa ou garantia de resultado é ponto fixo (seção 0); o restante é orientação de tom e pode ser testado.*
+
+| Usar Preferencialmente | Revisar antes de Publicar |
 |---|---|
 | "Avaliação individual e personalizada" | "Resultado garantido / 100% eficaz" |
 | "Procedimento minimamente invasivo" | "Sem nenhum risco / indolor absoluto" |
@@ -175,7 +201,7 @@ Todas as comunicações públicas obedecem estritamente à **Resolução CFM nº
 2. **Proibição de Promessa de Resultado:**
    - É vedado garantir resultados estéticos, volumétricos, funcionais ou temporais. Toda intervenção clínica depende da biologia individual de cada paciente.
 3. **Imagens Clínicas e "Antes e Depois":**
-   - A Resolução CFM 2.336/2023 permite imagens de procedimentos exclusivamente com caráter educativo e sob condições rigorosas. Para a marca do Dr. Felipe, adota-se a política institucional de **NUNCA publicar fotos de genitais de pacientes ou imagens explícitas de antes e depois no feed ou stories abertos**, garantindo a máxima elegância e resguardando a privacidade dos pacientes. Utilizam-se diagramas, ilustrações anatômicas limpas e objetos didáticos.
+   - A Resolução CFM 2.336/2023 permite imagens de procedimentos exclusivamente com caráter educativo e sob condições rigorosas. O padrão de partida usa diagramas, ilustrações anatômicas e objetos didáticos, explorando o melhor nível visual possível nesses formatos, inclusive com IA quando a peça deixar claro que é ilustração. Imagem de paciente real depende de consentimento, das condições da norma e da decisão do Dr. Felipe.
 4. **Privacidade e Interação Social:**
    - Jamais solicitar fotos íntimas, exames com dados pessoais ou medidas por Direct/comentários. Consultas e diagnósticos ocorrem exclusivamente no ambiente presencial ou em teleconsulta regulamentada.
 
@@ -204,7 +230,15 @@ As capas dos Destaques utilizam fundo uniforme **Marrom Profundo `#2E2520`**, li
 ### 9.3 Capas de Reels e Posts de Feed
 - **Título com Alto Contraste:** Título conciso em Off White `#F7F5F2` ou Bege `#C9B6A3` sobre o fundo Marrom Profundo.
 - **Margem de Segurança:** Manter todo texto dentro do quadrado central 1080×1080 px do vídeo vertical 1080×1920 px (zona de visualização do grid do perfil).
-- **Sem Poluição:** Evitar stickers nativos excessivos, poluição visual ou textos que cubram o rosto do médico.
+- **Leitura limpa:** Como padrão, priorizar poucos elementos e rosto livre. Efeitos sobre o rosto ou composições mais ousadas podem ser testados e aprovados.
+
+### 9.4 Avatar, Roupa, Cenário e Recursos de IA
+Podem ser usados para alcançar a melhor aparência em cada ponto do vídeo, sempre a partir da imagem e da voz do próprio Dr. Felipe:
+- **Avatar:** vídeo gerado a partir de fotos e voz dele, completo ou em trechos.
+- **Roupa:** terno, jaleco, scrub ou qualquer figurino.
+- **Cenário:** consultório, estúdio ou ambiente gerado por IA.
+- **Atuação:** transferência de movimento, ajuste labial, voz clonada, dublagem e melhoria de imagem.
+- **Prática recomendada:** gerar mais de uma rota, comparar lado a lado e levar a melhor à aprovação. A forma de sinalizar conteúdo feito com IA é definida na aprovação final, conforme as regras vigentes do CFM e de cada plataforma.
 
 ---
 
@@ -227,11 +261,13 @@ As capas dos Destaques utilizam fundo uniforme **Marrom Profundo `#2E2520`**, li
 
 ## 11. Matriz de Boas Práticas (Do's & Don'ts)
 
-| Prática Recomendada (Do) | Prática a Evitar (Don't) |
+*Padrões de partida. Exceto nos pontos fixos da seção 0, qualquer linha pode ser testada e aprovada de outra forma.*
+
+| Padrão de Partida | Pede Revisão na Aprovação |
 |---|---|
-| Usar sempre o monograma oficial em vetor original (`isotipo-fb.svg`). | Deixar ferramentas de IA gerarem variações aleatórias do símbolo da marca. |
-| Priorizar o Marrom Profundo `#2E2520` como base sólida dos designs escuros. | Usar preto puro (`#000000`) chapado e sem calor. |
-| Utilizar o Bege `#C9B6A3` como acento nobre para conduzir a leitura. | Aplicar tons amarelos estridentes, dourados excessivamente brilhantes ou neon. |
+| Finalizar com o monograma oficial em vetor original (`isotipo-fb.svg`). | Símbolo deformado por ferramentas de IA. |
+| Priorizar o Marrom Profundo `#2E2520` como base sólida dos designs escuros. | Preto puro (`#000000`) chapado e sem calor. |
+| Utilizar o Bege `#C9B6A3` como acento nobre para conduzir a leitura. | Tons amarelos estridentes, dourados muito brilhantes ou neon. |
 | Manter a palavra MÉDICO e CRM/RQE legíveis em todos os canais oficiais. | Divulgar atuações cirúrgicas sem identificação profissional transparente. |
 | Abordar a estética genital masculina sob o prisma da saúde, função e acolhimento. | Promover procedimentos íntimos com apelo hipersexualizado ou fotos explícitas. |
 | Produzir capas de Reels com títulos limpos e corte seguro para o grid 1:1. | Deixar textos cortados pelas bordas do feed do Instagram. |

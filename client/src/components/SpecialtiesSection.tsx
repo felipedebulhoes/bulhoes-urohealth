@@ -5,6 +5,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "wouter";
+import { trackCtaClick } from "@/lib/analytics";
 import {
   Activity,
   Heart,
@@ -20,39 +21,13 @@ import {
 
 const specialties = [
   {
-    icon: Shield,
-    iconColor: "#D9C58A",
-    title: "Saúde da Próstata",
-    desc: "Rastreio, diagnóstico e tratamento de hiperplasia prostática benigna (HPB) e câncer de próstata com técnicas minimamente invasivas.",
-    href: "/saude-da-prostata",
-  },
-  {
-    icon: Zap,
-    iconColor: "#E1B58A",
-    title: "Cálculos Renais",
-    desc: "Tratamento de litíase urinária com litotripsia a laser, ureteroscopia flexível e cirurgia percutânea sem cortes externos.",
-    href: "/litotripsia-calculo-renal",
-  },
-  {
-    icon: Microscope,
-    iconColor: "#C9B6A3",
-    title: "Cirurgia Robótica & Laparoscópica",
-    desc: "Prostatectomia, nefrectomia parcial e reconstruções urológicas com visão 3D em 10x e rápida recuperação.",
-    href: "/cirurgia-robotica-urologia",
-  },
-  {
-    icon: Heart,
-    iconColor: "#D8A5A5",
-    title: "Andrologia & Saúde do Homem",
-    desc: "Check-up hormonal, reposição de testosterona (TRT), disfunção erétil, fertilidade e varicocelectomia com microscópio.",
-    href: "/andrologia-performance-masculina",
-  },
-  {
     icon: Sparkles,
     iconColor: "#D5B18D",
     title: "Estética Íntima & Botox Peniano",
     desc: "Harmonização genital urológica, botox peniano e escrotal (toxina botulínica para retração em repouso) e correções funcionais.",
     href: "/estetica-intima-masculina",
+    cta: "Ver estética íntima",
+    trackingId: "estetica_intima",
   },
   {
     icon: Layers,
@@ -60,13 +35,35 @@ const specialties = [
     title: "Preenchimento Peniano",
     desc: "Ganho de espessura (circunferência) peniana com ácido hialurônico: procedimento ambulatorial com microcânula, sem cortes e reversível.",
     href: "/preenchimento-peniano",
+    cta: "Ver preenchimento peniano",
+    trackingId: "preenchimento",
   },
   {
-    icon: Activity,
-    iconColor: "#B7C0A1",
-    title: "Urodinâmica",
-    desc: "Exame funcional do trato urinário inferior para diagnóstico preciso de incontinência, bexiga hiperativa e obstrução prostática.",
-    href: "/avaliacao-urodinamica",
+    icon: Heart,
+    iconColor: "#D8A5A5",
+    title: "Andrologia & Saúde do Homem",
+    desc: "Check-up hormonal, reposição de testosterona (TRT), disfunção erétil, fertilidade e varicocelectomia com microscópio.",
+    href: "/andrologia-performance-masculina",
+    cta: "Ver andrologia",
+    trackingId: "andrologia",
+  },
+  {
+    icon: Zap,
+    iconColor: "#E1B58A",
+    title: "Cálculos Renais",
+    desc: "Tratamento de litíase urinária com litotripsia a laser, ureteroscopia flexível e cirurgia percutânea sem cortes externos.",
+    href: "/litotripsia-calculo-renal",
+    cta: "Ver tratamento de cálculos",
+    trackingId: "calculo_renal",
+  },
+  {
+    icon: Shield,
+    iconColor: "#D9C58A",
+    title: "Saúde da Próstata",
+    desc: "Rastreio, diagnóstico e tratamento de hiperplasia prostática benigna (HPB) e câncer de próstata com técnicas minimamente invasivas.",
+    href: "/saude-da-prostata",
+    cta: "Ver saúde da próstata",
+    trackingId: "prostata",
   },
   {
     icon: Syringe,
@@ -74,6 +71,17 @@ const specialties = [
     title: "Vasectomia & Postectomia",
     desc: "Vasectomia sem bisturi (no-scalpel), postectomia, frenuloplastia e microcirurgias escrotais com rápida recuperação.",
     href: "/vasectomia-sem-bisturi",
+    cta: "Ver vasectomia",
+    trackingId: "vasectomia",
+  },
+  {
+    icon: Microscope,
+    iconColor: "#C9B6A3",
+    title: "Cirurgia Robótica & Laparoscópica",
+    desc: "Prostatectomia, nefrectomia parcial e reconstruções urológicas com visão 3D em 10x e rápida recuperação.",
+    href: "/cirurgia-robotica-urologia",
+    cta: "Ver cirurgia robótica",
+    trackingId: "cirurgia_robotica",
   },
   {
     icon: Scan,
@@ -81,6 +89,17 @@ const specialties = [
     title: "Uro-oncologia",
     desc: "Diagnóstico e tratamento cirúrgico de tumores de próstata, rim, bexiga e testículo seguindo diretrizes internacionais.",
     href: "/uro-oncologia",
+    cta: "Ver uro-oncologia",
+    trackingId: "uro_oncologia",
+  },
+  {
+    icon: Activity,
+    iconColor: "#B7C0A1",
+    title: "Urodinâmica",
+    desc: "Exame funcional do trato urinário inferior para diagnóstico preciso de incontinência, bexiga hiperativa e obstrução prostática.",
+    href: "/avaliacao-urodinamica",
+    cta: "Ver urodinâmica",
+    trackingId: "urodinamica",
   },
 ];
 
@@ -124,7 +143,12 @@ export default function SpecialtiesSection() {
         {/* Cards grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {specialties.map((spec, i) => (
-            <Link key={spec.title} href={spec.href} className="block h-full">
+            <Link
+              key={spec.title}
+              href={spec.href}
+              onClick={() => trackCtaClick(`especialidade_${spec.trackingId}`, "specialties_section")}
+              className="block h-full"
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -143,7 +167,7 @@ export default function SpecialtiesSection() {
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-medium text-[#D9C58A] group-hover:text-white transition-colors">
-                  <span>Saiba mais</span>
+                  <span>{spec.cta}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </div>
               </motion.div>

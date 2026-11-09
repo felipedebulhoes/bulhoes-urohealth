@@ -43,6 +43,7 @@ import SocialShareButtons from "@/components/SocialShareButtons";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
+import InlineConsultCTA from "@/components/InlineConsultCTA";
 import { FAQSchema, MedicalPageSchema } from "@/components/SchemaMarkup";
 import {
   trackEducationalPageView,
@@ -1445,6 +1446,12 @@ export default function PreenchimentoPeniano() {
             </div>
           </section>
 
+          <InlineConsultCTA
+            title="Quer saber se este caminho faz sentido para você?"
+            href={whatsappSpUrl}
+            onClick={() => handleWhatsAppConversion("inline_como_funciona")}
+          />
+
           {/* 2. COMPARATIVO TÉCNICO: ÁCIDO HIALURÔNICO VS PMMA */}
           <section id="comparativo-ah-pmma" className="py-16 lg:py-24 scroll-mt-20">
             <div className="container max-w-5xl">
@@ -1598,6 +1605,12 @@ export default function PreenchimentoPeniano() {
               </div>
             </div>
           </section>
+
+          <InlineConsultCTA
+            title="Tem dúvidas sobre as etapas do atendimento?"
+            href={whatsappSpUrl}
+            onClick={() => handleWhatsAppConversion("inline_jornada")}
+          />
 
           {/* 4. INDICAÇÕES, LIMITAÇÕES E RECUPERAÇÃO */}
           <section className="py-16 lg:py-24">
@@ -2376,7 +2389,13 @@ export default function PreenchimentoPeniano() {
                 })}
               </div>
 
-              {/* Referências Científicas & Link Educativo */}
+              <InlineConsultCTA
+            title="Sua dúvida não apareceu aqui? Fale com a equipe."
+            href={whatsappSpUrl}
+            onClick={() => handleWhatsAppConversion("inline_faq")}
+          />
+
+          {/* Referências Científicas & Link Educativo */}
               <div className="mt-10 rounded-xl border border-[#2E2520]/10 bg-[#FCFAF7] p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-[#2E2520]/10">
                   <div className="flex items-center gap-2.5">

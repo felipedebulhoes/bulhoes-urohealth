@@ -78,20 +78,24 @@ export default function CookieBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="fixed bottom-0 left-0 right-0 z-[9998] p-4 md:p-6"
+          className="fixed bottom-0 left-0 right-0 z-[9998] p-3 md:p-6"
         >
-          <div className="max-w-4xl mx-auto bg-white dark:bg-card rounded-2xl shadow-2xl border border-[#C4C4C4]/30 dark:border-border overflow-hidden">
+          <div className="max-w-4xl mx-auto max-h-[85vh] overflow-y-auto bg-white dark:bg-card rounded-2xl shadow-2xl border border-[#C4C4C4]/30 dark:border-border">
             {/* Header */}
-            <div className="p-5 md:p-6">
+            <div className="p-4 md:p-6">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#B87333]/10 flex items-center justify-center">
+                <div className="hidden sm:flex flex-shrink-0 w-10 h-10 rounded-full bg-[#B87333]/10 items-center justify-center">
                   <Shield className="w-5 h-5 text-[#B87333]" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-base font-semibold text-[#1C3D5A] dark:text-foreground mb-1">
                     Sua privacidade é importante para nós
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-muted-foreground leading-relaxed">
+                  <p className="sm:hidden text-sm text-gray-600 dark:text-muted-foreground leading-snug">
+                    Usamos cookies para o site funcionar e, se você permitir, para medir o uso e os anúncios, conforme a LGPD.{" "}
+                    <a href="/privacidade" className="text-[#B87333] underline font-medium">Política de Privacidade</a>.
+                  </p>
+                  <p className="hidden sm:block text-sm text-gray-600 dark:text-muted-foreground leading-relaxed">
                     Utilizamos cookies e tecnologias semelhantes para melhorar sua experiência de navegação, 
                     personalizar conteúdo e analisar o tráfego do site, em conformidade com a{" "}
                     <span className="font-medium text-[#1C3D5A] dark:text-foreground">
@@ -187,10 +191,10 @@ export default function CookieBanner() {
               </div>
 
               {/* Actions */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mt-4 ml-14">
+              <div className="grid grid-cols-2 sm:flex sm:flex-row sm:items-center gap-2 mt-3 sm:mt-4 sm:ml-14">
                 <Button
                   onClick={acceptAll}
-                  className="btn-copper text-white text-sm font-medium px-5 h-9"
+                  className="order-1 sm:order-none btn-copper text-white text-sm font-medium px-5 h-11 sm:h-9"
                 >
                   Aceitar Todos
                 </Button>
@@ -198,7 +202,7 @@ export default function CookieBanner() {
                   <Button
                     onClick={acceptSelected}
                     variant="outline"
-                    className="text-sm font-medium px-5 h-9 border-[#1C3D5A]/20 text-[#1C3D5A] dark:text-foreground dark:border-border"
+                    className="order-3 col-span-2 sm:order-none text-sm font-medium px-5 h-11 sm:h-9 border-[#1C3D5A]/20 text-[#1C3D5A] dark:text-foreground dark:border-border"
                   >
                     Salvar Preferências
                   </Button>
@@ -206,14 +210,14 @@ export default function CookieBanner() {
                 <Button
                   onClick={() => setShowDetails(!showDetails)}
                   variant="ghost"
-                  className="text-sm font-medium px-5 h-9 text-[#1C3D5A] dark:text-foreground hover:text-[#B87333]"
+                  className="order-3 col-span-2 sm:order-none text-sm font-medium px-5 h-10 sm:h-9 text-[#1C3D5A] dark:text-foreground hover:text-[#B87333]"
                 >
                   {showDetails ? "Ocultar Detalhes" : "Gerenciar Preferências"}
                 </Button>
                 <Button
                   onClick={rejectAll}
-                  variant="ghost"
-                  className="text-sm font-medium px-5 h-9 text-gray-500 dark:text-muted-foreground hover:text-gray-700"
+                  variant="outline"
+                  className="order-2 sm:order-none text-sm font-medium px-5 h-11 sm:h-9 text-[#1C3D5A] dark:text-foreground border-[#1C3D5A]/20 sm:border-transparent sm:bg-transparent sm:text-gray-500 hover:text-gray-700"
                 >
                   Rejeitar
                 </Button>

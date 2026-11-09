@@ -20,7 +20,7 @@ const stats: Stat[] = [
   {
     icon: Users,
     iconColor: "#C9B6A3",
-    value: 5000,
+    value: 1500,
     suffix: "+",
     label: "Pacientes Atendidos",
     description: "Consultas e procedimentos realizados",

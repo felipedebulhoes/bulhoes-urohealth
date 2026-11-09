@@ -572,7 +572,7 @@ export default function IncontinenciaUrinaria() {
               e oferece todas as opções de tratamento — desde fisioterapia pélvica até implante de esfíncter artificial e sling masculino.
               Procedimentos cirúrgicos são realizados no <strong>Campinas Day Hospital</strong>.
             </p>
-            <div className="bg-white dark:bg-card/10 rounded-xl p-6 max-w-md mx-auto">
+            <div className="bg-white/10 rounded-xl p-6 max-w-md mx-auto">
               <p className="font-semibold text-lg mb-1">Campinas Day Hospital</p>
               <p className="text-amber-100">Av. Benjamin Constant, 1991</p>
               <p className="text-amber-100">Cambuí, Campinas — SP</p>

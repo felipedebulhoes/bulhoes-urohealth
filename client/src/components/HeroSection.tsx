@@ -5,6 +5,7 @@
  */
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { CalendarCheck, Award, ShieldCheck, Users } from "lucide-react";
 import { trackCtaClick } from "@/lib/analytics";
 
@@ -15,6 +16,14 @@ const stats = [
   { icon: Award, value: "TCBC", label: "Membro Titular CBC" },
   { icon: ShieldCheck, value: "AUA · EAU · SBU", label: "Sociedades" },
   { icon: Users, value: "1500+", label: "Pacientes atendidos" },
+];
+
+const patientShortcuts = [
+  { label: "Estética íntima", href: "/estetica-intima-masculina", id: "estetica_intima" },
+  { label: "Andrologia", href: "/andrologia-performance-masculina", id: "andrologia" },
+  { label: "Pedra nos rins", href: "/litotripsia-calculo-renal", id: "calculo_renal" },
+  { label: "Próstata", href: "/saude-da-prostata", id: "prostata" },
+  { label: "Vasectomia", href: "/vasectomia-sem-bisturi", id: "vasectomia" },
 ];
 
 interface HeroSectionProps {
@@ -76,7 +85,7 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="flex flex-col sm:flex-row gap-4 mb-10"
+            className="flex flex-col sm:flex-row gap-4 mb-6"
           >
             <a
               href="#agendamento"
@@ -100,6 +109,31 @@ export default function HeroSection({ palette = "current" }: HeroSectionProps) {
               </Button>
             </a>
           </motion.div>
+
+          {/* Atalhos por assunto */}
+          <motion.nav
+            aria-label="O que você procura"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mb-10"
+          >
+            <p className="text-sm text-white/70 mb-3" style={{ fontStyle: "normal" }}>
+              O que você procura?
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {patientShortcuts.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => trackCtaClick(`atalho_${item.id}`, "hero_section")}
+                  className="inline-flex min-h-11 items-center rounded-full border border-white/25 px-4 text-sm font-medium text-white/90 transition-colors hover:bg-white/10"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </motion.nav>
 
           {/* Stats row */}
           <motion.div

@@ -265,15 +265,15 @@ describe("SEO URL consolidation", () => {
     );
     const hrefMatches = [...specialtiesSource.matchAll(/href:\s*"([^"]+)"/g)].map(m => m[1]);
     expect(hrefMatches).toEqual([
-      "/saude-da-prostata",
-      "/litotripsia-calculo-renal",
-      "/cirurgia-robotica-urologia",
-      "/andrologia-performance-masculina",
       "/estetica-intima-masculina",
       "/preenchimento-peniano",
-      "/avaliacao-urodinamica",
+      "/andrologia-performance-masculina",
+      "/litotripsia-calculo-renal",
+      "/saude-da-prostata",
       "/vasectomia-sem-bisturi",
+      "/cirurgia-robotica-urologia",
       "/uro-oncologia",
+      "/avaliacao-urodinamica",
     ]);
   });
 });

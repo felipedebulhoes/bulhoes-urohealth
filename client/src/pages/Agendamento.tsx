@@ -60,9 +60,9 @@ export default function Agendamento() {
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] py-16 lg:py-20">
+      <section className="bg-gradient-to-b from-[#1C3D5A] to-[#0F3460] py-8 lg:py-20">
         <div className="container">
-          <PageBreadcrumbs className="mb-7" />
+          <PageBreadcrumbs className="mb-5 lg:mb-7" />
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="h-px w-10 bg-[#B87333]" />
@@ -72,8 +72,22 @@ export default function Agendamento() {
             <h1 className="text-3xl lg:text-5xl text-white leading-tight mb-4">
               Agende sua Consulta
             </h1>
-            <p className="text-white/60 text-lg leading-relaxed">
-              Escolha o melhor dia e horário diretamente pelo calendário. Confirmação imediata pela Doctoralia. Atendimento presencial em São Paulo e Campinas, ou por teleconsulta.
+            <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-6">
+              Escolha dia e horário no calendário da Doctoralia. Atendimento presencial em São Paulo e Campinas, ou por teleconsulta.
+            </p>
+            <CTAButtonWithAnimation
+                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=agendamento&utm_campaign=agendamento_page"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackDoctoraliaClick("agendamento_page")}
+                loadingText="Abrindo agenda…"
+                icon={<CalendarCheck className="w-5 h-5" />}
+                className="schedule-cta schedule-cta--primary h-12 px-7"
+              >
+                Ver horários disponíveis
+              </CTAButtonWithAnimation>
+            <p className="text-white/60 text-xs mt-4">
+              A agenda abre em uma página segura da Doctoralia. Se preferir, use o WhatsApp ou o telefone abaixo.
             </p>
           </motion.div>
         </div>
@@ -103,47 +117,6 @@ export default function Agendamento() {
               <span className="font-medium">Sem burocracia</span>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Doctoralia scheduling CTA */}
-      <section className="py-16 lg:py-20">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-3xl mx-auto"
-          >
-            <div className="bg-white dark:bg-card rounded-2xl shadow-xl shadow-[#1C3D5A]/5 border border-[#1C3D5A]/5 p-8 sm:p-10 text-center">
-              <div className="w-14 h-14 rounded-full bg-[#B87333]/10 flex items-center justify-center mx-auto mb-5">
-                <CalendarCheck className="w-7 h-7 text-[#B87333]" />
-              </div>
-              <h2 className="text-2xl text-[#1C3D5A] dark:text-foreground font-serif mb-3">
-                Escolha seu horário na Doctoralia
-              </h2>
-              <p className="text-[#64748B] text-sm leading-relaxed max-w-xl mx-auto mb-6">
-                A agenda será aberta em uma página segura da Doctoralia, com os horários disponíveis para atendimento presencial e teleconsulta.
-              </p>
-              <CTAButtonWithAnimation
-                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=agendamento&utm_campaign=agendamento_page"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackDoctoraliaClick("agendamento_page")}
-                loadingText="Abrindo agenda…"
-                icon={<CalendarCheck className="w-5 h-5" />}
-                className="h-12 px-7"
-              >
-                Ver horários disponíveis
-              </CTAButtonWithAnimation>
-              <p className="text-[#64748B] text-xs mt-4">
-                Se preferir, use o WhatsApp ou telefone nas opções abaixo.
-              </p>
-            </div>
-            <p className="text-center text-[#1C3D5A] dark:text-foreground/30 text-xs mt-6">
-              Agendamento seguro via Doctoralia · CRM-SP 202291 · RQE 146538 / RQE 114019
-            </p>
-          </motion.div>
         </div>
       </section>
 

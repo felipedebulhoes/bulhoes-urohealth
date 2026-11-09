@@ -38,7 +38,7 @@ export default function ScheduleBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={shouldReduceMotion ? { opacity: 0 } : { y: 12, opacity: 0 }}
           transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.24, ease: [0.23, 1, 0.32, 1] }}
-          className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-sm z-40"
+          className="fixed bottom-20 hidden sm:block sm:right-6 sm:max-w-sm z-40"
         >
           <div className="bg-white dark:bg-card rounded-xl shadow-2xl border border-[#1C3D5A]/8 p-4 relative">
             <button

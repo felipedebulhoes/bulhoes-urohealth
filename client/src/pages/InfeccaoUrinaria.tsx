@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Infecção Urinária no Homem
- * Referências: EAU Guidelines 2025, AUA, SBU, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines 2025, IDSA 2025, SBU, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import {
@@ -33,7 +33,7 @@ export default function InfeccaoUrinaria() {
       description="Entenda por que a infecção urinária no homem sempre merece atenção especial, suas causas, sintomas, diagnóstico e tratamento baseado em evidências."
       accentColor="#EF4444"
       metaTitle="Infecção Urinária no Homem: Causas e Tratamento | Dr. Felipe de Bulhões"
-      metaDescription="Infecção urinária masculina: causas, sintomas, quando procurar o urologista e tratamento. Guia completo baseado em guidelines da EAU e AUA."
+      metaDescription="Infecção urinária masculina: causas, sintomas, quando procurar o urologista e tratamento. Conteúdo baseado nas diretrizes da EAU e da IDSA."
     >
       <section className="py-16 bg-white dark:bg-card">
         <div className="container max-w-4xl">
@@ -41,14 +41,14 @@ export default function InfeccaoUrinaria() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-10">
               <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
-                Diferentemente das mulheres, a infecção urinária (ITU) no homem é considerada <strong>sempre complicada</strong> pelas diretrizes internacionais (EAU 2025, AUA). Isso significa que toda ITU masculina requer investigação urológica para identificar fatores predisponentes como obstrução prostática, cálculos ou alterações anatômicas. Ignorar uma ITU no homem pode levar a complicações graves como prostatite bacteriana, epididimite, abscesso prostático e sepse urinária.
+                A infecção urinária é menos comum no homem do que na mulher e costuma merecer avaliação médica para identificar a causa. As diretrizes recentes da EAU e da IDSA (2025) deixaram de considerar a infecção complicada apenas por ocorrer em um homem. A distinção principal hoje é entre a infecção localizada na bexiga e a infecção com sinais sistêmicos, como febre e calafrios. Como a cistite no homem sem envolvimento da próstata é incomum, a avaliação considera também a próstata.
               </p>
             </div>
           </motion.div>
 
           {/* Por que é diferente */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="mb-14">
-            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Por que a ITU no Homem É Diferente?</h2>
+            <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">O que causa infecção urinária no homem?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
               A uretra masculina é significativamente mais longa (18-20 cm) que a feminina (3-4 cm), o que naturalmente protege contra infecções ascendentes. Quando um homem desenvolve ITU, isso geralmente indica uma <strong>condição subjacente</strong> que precisa ser investigada.
             </p>
@@ -58,6 +58,7 @@ export default function InfeccaoUrinaria() {
                 { title: "Cálculos Urinários", desc: "Cálculos renais ou vesicais podem servir como reservatório de bactérias e causar obstrução, predispondo a infecções recorrentes.", icon: AlertTriangle },
                 { title: "Estenose Uretral", desc: "Estreitamento da uretra por trauma, infecção prévia ou instrumentação pode dificultar o esvaziamento e favorecer infecções.", icon: HeartPulse },
                 { title: "Cateterismo e Instrumentação", desc: "Sondagem vesical, cistoscopia e cirurgias urológicas podem introduzir bactérias no trato urinário.", icon: Thermometer },
+                { title: "Prostatite", desc: "A infecção da próstata pode acompanhar os sintomas urinários no homem e precisa ser considerada na avaliação médica.", icon: Microscope },
               ].map((item, i) => (
                 <div key={i} className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm">
                   <div className="flex items-center gap-3 mb-3">
@@ -70,6 +71,9 @@ export default function InfeccaoUrinaria() {
                 </div>
               ))}
             </div>
+            <p className="text-[#334155] leading-relaxed mt-6">
+              Em homens jovens e sexualmente ativos, sintomas parecidos podem ser causados por uretrite, inclusive por infecções sexualmente transmissíveis, o que exige investigação específica.
+            </p>
           </motion.div>
 
           {/* Sintomas */}
@@ -113,7 +117,7 @@ export default function InfeccaoUrinaria() {
               {[
                 { icon: Microscope, title: "Urocultura com Antibiograma", desc: "Exame fundamental que identifica a bactéria causadora e os antibióticos eficazes. Deve ser coletada ANTES de iniciar antibiótico. Resultado em 48-72h." },
                 { icon: Pill, title: "Exame de Urina (EAS/Urina I)", desc: "Análise rápida que mostra leucócitos, hemácias, nitritos e bactérias. Útil para triagem inicial, mas não substitui a urocultura." },
-                { icon: Shield, title: "Ultrassonografia do Trato Urinário", desc: "Avalia rins, bexiga e próstata. Identifica obstrução, cálculos, resíduo pós-miccional e abscessos. Indicada em toda ITU masculina." },
+                { icon: Shield, title: "Ultrassonografia do Trato Urinário", desc: "Avalia rins, bexiga e próstata. Identifica obstrução, cálculos, resíduo pós-miccional e abscessos. Frequentemente usada; a indicação é individualizada." },
                 { icon: HeartPulse, title: "PSA (se indicado)", desc: "Pode estar elevado durante infecção/prostatite. Deve ser dosado após resolução da infecção para avaliação prostática adequada." },
               ].map((item, i) => (
                 <div key={i} className="bg-gray-50 dark:bg-card rounded-xl p-5 border border-gray-100 flex gap-4 items-start">
@@ -140,8 +144,8 @@ export default function InfeccaoUrinaria() {
                 <h4 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3">Antibioticoterapia</h4>
                 <ul className="space-y-2">
                   {[
-                    "Duração mínima de 7-14 dias (diferente dos 3 dias da cistite feminina)",
-                    "Fluoroquinolonas ou sulfametoxazol-trimetoprim são opções de primeira linha (quando sensíveis)",
+                    "Pelo menos 7 dias, conforme avaliação médica",
+                    "A escolha do antibiótico é médica e considera a sensibilidade da bactéria",
                     "Ajuste conforme resultado da urocultura com antibiograma",
                     "Em prostatite aguda: antibiótico por 2-4 semanas com boa penetração prostática",
                     "Casos graves (sepse): internação com antibiótico endovenoso",
@@ -201,7 +205,7 @@ export default function InfeccaoUrinaria() {
               <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
                 <li>1. EAU Guidelines on Urological Infections, 2025. European Association of Urology.</li>
-                <li>2. AUA Best Practice Statement on Urological Infections, 2024. American Urological Association.</li>
+                <li>2. IDSA 2025 Guideline on the Management and Treatment of Complicated Urinary Tract Infections. Infectious Diseases Society of America.</li>
                 <li>3. Campbell-Walsh-Wein Urology, 13th Edition — Chapter: Infections of the Urinary Tract. Elsevier, 2024.</li>
                 <li>4. Grabe M, et al. Guidelines on Urological Infections. EAU Guidelines. Arnhem, The Netherlands.</li>
                 <li>5. SBU — Diretrizes de Infecções Urinárias, 2023. Sociedade Brasileira de Urologia.</li>

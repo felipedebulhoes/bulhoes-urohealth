@@ -78,7 +78,7 @@ const comparisonRows = [
   },
   {
     criterion: "Reversibilidade e Ajuste",
-    ha: "100% reversível e ajustável: pode ser dissolvido seletivamente com a enzima hialuronidase caso necessário.",
+    ha: "Reversível com hialuronidase e ajustável: pode ser dissolvido seletivamente com a enzima hialuronidase caso necessário.",
     pmma: "Irreversível por via enzimática. A remoção exige cirurgia complexa com risco de perda tecidual e sequelas.",
     haPositive: true,
   },
@@ -95,8 +95,8 @@ const comparisonRows = [
     haPositive: true,
   },
   {
-    criterion: "Posicionamento das Sociedades Médicas",
-    ha: "Reconhecido em publicações da AUA, EAU e SMSNA como a opção de melhor perfil de segurança para ganho de circunferência.",
+    criterion: "Literatura Científica",
+    ha: "Descrito em publicações científicas com menor taxa de complicações que outros preenchedores para ganho de circunferência.",
     pmma: "Contraindicado para fins estéticos volumétricos genitais devido à alta taxa de complicações tardias graves.",
     haPositive: true,
   },
@@ -504,7 +504,7 @@ export default function PreenchimentoPeniano() {
                 <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-7 max-w-2xl">
                   Procedimento médico ambulatorial para ganho de{" "}
                   <strong className="text-white font-semibold">circunferência peniana</strong> com
-                  ácido hialurônico biocompatível e 100% reversível. Realizado sem cortes, com
+                  ácido hialurônico biocompatível e reversível com hialuronidase. Realizado sem cortes, com
                   anestesia local e precisão anatômica urológica em{" "}
                   <strong className="text-white font-semibold">São Paulo</strong> e{" "}
                   <strong className="text-white font-semibold">Campinas</strong>.
@@ -520,7 +520,7 @@ export default function PreenchimentoPeniano() {
                     },
                     {
                       icon: RefreshCw,
-                      title: "100% Reversível",
+                      title: "Reversível com hialuronidase",
                       desc: "Gel absorvível (12–18 meses) e ajustável",
                     },
                     {
@@ -1413,17 +1413,17 @@ export default function PreenchimentoPeniano() {
                   {
                     metric: "+1,5 a 2,5 cm",
                     label: "Ganho de circunferência",
-                    detail: "Construído em protocolo individualizado conforme elasticidade tecidual",
+                    detail: "Médias em estudos publicados (Boiko 2023; Ahn 2021); varia conforme protocolo e elasticidade tecidual",
                   },
                   {
                     metric: "12 a 18 meses",
                     label: "Durabilidade média",
-                    detail: "Reabsorção gradual com estímulo local de colágeno e opção de manutenção",
+                    detail: "Volume mantido em acompanhamentos de 48 semanas a 18 meses (Park 2026; Kwak 2010); reabsorção gradual, com opção de manutenção",
                   },
                   {
-                    metric: "0% de DE",
-                    label: "Função erétil intacta",
-                    detail: "Nenhum caso de disfunção erétil relatado nas séries clínicas com AH",
+                    metric: "Sem eventos graves",
+                    label: "Segurança nos estudos",
+                    detail: "Sem eventos adversos graves nos estudos com ácido hialurônico (Ahn 2021; Park 2026)",
                   },
                   {
                     metric: "Alto Índice",
@@ -1853,7 +1853,7 @@ export default function PreenchimentoPeniano() {
                     </p>
                     <div className="space-y-2">
                       {[
-                        { id: "reversivel", label: "Material 100% reversível e sem cortes" },
+                        { id: "reversivel", label: "Material reversível com hialuronidase e sem cortes" },
                         { id: "naturalidade", label: "Toque e aparência totalmente naturais" },
                         { id: "recuperacao", label: "Retorno rápido sem afastamento" },
                       ].map((opt) => (
@@ -1920,7 +1920,7 @@ export default function PreenchimentoPeniano() {
                     <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
                       {quizCity === "outra_cidade"
                         ? "Como você reside fora de SP/Campinas, podemos realizar uma Teleconsulta urológica inicial para planejamento técnico e agendar o procedimento presencial em visita única de 45 minutos."
-                        : `Na consulta presencial em ${quizCityLabel[quizCity]}, o Dr. Felipe avalia a elasticidade tecidual e define a quantidade exata de ácido hialurônico para um resultado natural, simétrico e 100% reversível.`}
+                        : `Na consulta presencial em ${quizCityLabel[quizCity]}, o Dr. Felipe avalia a elasticidade tecidual e define a quantidade exata de ácido hialurônico para um resultado natural, simétrico e reversível com hialuronidase.`}
                     </p>
                   </div>
 
@@ -2395,6 +2395,30 @@ export default function PreenchimentoPeniano() {
                   </Link>
                 </div>
                 <ul className="space-y-2 text-xs text-[#64748B]">
+                  <li>
+                    • <strong>Boiko, et al.</strong>{" "}
+                    <em>The Efficacy of Injection Penile Girth Enhancement as an Option for Small Penis Syndrome Management.</em>{" "}
+                    Aesthetic Surgery Journal, 2023.{" "}
+                    <a href="https://doi.org/10.1093/asj/sjad152" target="_blank" rel="noopener noreferrer" className="underline">DOI</a>
+                  </li>
+                  <li>
+                    • <strong>Ahn, et al.</strong>{" "}
+                    <em>Efficacy and Safety of Penile Girth Enhancement Using Hyaluronic Acid Filler and the Clinical Impact on Ejaculation.</em>{" "}
+                    World Journal of Men&apos;s Health, 2021.{" "}
+                    <a href="https://doi.org/10.5534/wjmh.210007" target="_blank" rel="noopener noreferrer" className="underline">DOI</a>
+                  </li>
+                  <li>
+                    • <strong>Park, et al.</strong>{" "}
+                    <em>Real Practice Confirmatory Study of Adjustable Initial Injection Volume and Necessity of Retouch and Reinjection in Penile Girth Enhancement with Hyaluronic Acid Gel.</em>{" "}
+                    World Journal of Men&apos;s Health, 2026.{" "}
+                    <a href="https://doi.org/10.5534/wjmh.250332" target="_blank" rel="noopener noreferrer" className="underline">DOI</a>
+                  </li>
+                  <li>
+                    • <strong>Kwak, et al.</strong>{" "}
+                    <em>The effects of penile girth enhancement using injectable hyaluronic acid gel, a filler.</em>{" "}
+                    Journal of Sexual Medicine, 2010.{" "}
+                    <a href="https://doi.org/10.1111/j.1743-6109.2010.01748.x" target="_blank" rel="noopener noreferrer" className="underline">DOI</a>
+                  </li>
                   <li>
                     • <strong>Pearlman AM, et al.</strong>{" "}
                     <em>The Evolving Landscape of Penile Girth Enhancement.</em> AUANews (American

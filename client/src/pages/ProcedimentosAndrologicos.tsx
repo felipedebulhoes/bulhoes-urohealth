@@ -410,7 +410,7 @@ export default function ProcedimentosAndrologicos() {
                 Preenchimento Peniano com Ácido Hialurônico
               </h3>
               <p className="text-sm text-white/75 leading-relaxed max-w-xl">
-                Conheça o protocolo urológico para ganho de circunferência peniana em consultório, com material biocompatível, 100% reversível e preservação total da função erétil.
+                Conheça o protocolo urológico para ganho de circunferência peniana em consultório, com material biocompatível e reversível com hialuronidase.
               </p>
             </div>
             <Link

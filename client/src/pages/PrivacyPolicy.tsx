@@ -334,7 +334,7 @@ export default function PrivacyPolicy() {
                 </a>
               </p>
               <p className="mt-1">
-                <strong>Endereço:</strong> Av. Ibirapuera, 2907 — Moema, São Paulo/SP
+                <strong>Endereço:</strong> Av. Paulista, 1048, 18° andar — Bela Vista, São Paulo/SP
               </p>
             </div>
           </section>

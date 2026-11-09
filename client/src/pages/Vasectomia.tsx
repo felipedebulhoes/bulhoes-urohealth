@@ -509,7 +509,7 @@ export default function Vasectomia() {
                     desc: "Amostra não centrifugada, avaliada em laboratório, consultório ou por teste enviado por correio (mail-in testing).",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="bg-white dark:bg-card/70 rounded-lg p-4">
+                  <div key={i} className="bg-white/70 rounded-lg p-4">
                     <h4 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">{item.title}</h4>
                     <p className="text-sm text-[#334155] leading-relaxed">{item.desc}</p>
                   </div>

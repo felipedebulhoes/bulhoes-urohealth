@@ -88,7 +88,7 @@ export default function ContactSection() {
                 document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <Button className="schedule-cta schedule-cta--primary bg-[#B87333] hover:bg-[#8B5A2B] text-white h-13 px-8 text-base font-semibold rounded-md shadow-lg shadow-amber-900/30">
+              <Button className="schedule-cta schedule-cta--primary h-13 px-8 text-base font-semibold rounded-md shadow-lg shadow-amber-900/30">
                 <CalendarCheck className="w-5 h-5 mr-2" style={{ color: "#D9C58A" }} />
                 Agendar Consulta
               </Button>

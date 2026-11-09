@@ -124,8 +124,7 @@ export default function EducationalLayout({
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-10" style={{ backgroundColor: accentColor }} />
               <span
-                className="text-sm font-semibold uppercase tracking-[0.15em]"
-                style={{ color: accentColor }}
+                className="text-sm font-semibold uppercase tracking-[0.15em] text-[#C9B6A3]"
               >
                 {subtitle}
               </span>

@@ -657,28 +657,28 @@ export default function LitotripsieLaser() {
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin className="w-4 h-4 text-[#60A5FA]" />
                       <span className="text-white text-sm font-medium">Endereço</span>
                     </div>
                     <p className="text-white/60 text-sm">Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP</p>
                   </div>
-                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Shield className="w-4 h-4 text-[#60A5FA]" />
                       <span className="text-white text-sm font-medium">São Luiz Campinas</span>
                     </div>
                     <p className="text-white/60 text-sm">Allianz, Amil, Bradesco, Cassi, Porto Seguro, SulAmérica, Unimed e outros no Centro Médico São Luiz. Demais unidades: particular.</p>
                   </div>
-                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Clock className="w-4 h-4 text-[#60A5FA]" />
                       <span className="text-white text-sm font-medium">Atendimento</span>
                     </div>
                     <p className="text-white/60 text-sm">Sexta-feira: 8h às 12h</p>
                   </div>
-                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Phone className="w-4 h-4 text-[#60A5FA]" />
                       <span className="text-white text-sm font-medium">Contato</span>

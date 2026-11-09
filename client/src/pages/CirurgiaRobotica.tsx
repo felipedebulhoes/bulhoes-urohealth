@@ -653,28 +653,28 @@ export default function CirurgiaRobotica() {
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Cpu className="w-4 h-4 text-[#818CF8]" />
                       <span className="text-white text-sm font-medium">Tecnologia</span>
                     </div>
                     <p className="text-white/60 text-sm">Plataforma Da Vinci Xi — última geração, com visão 3D, fluorescência (Firefly) e instrumentos articulados.</p>
                   </div>
-                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Users className="w-4 h-4 text-[#818CF8]" />
                       <span className="text-white text-sm font-medium">Equipe</span>
                     </div>
                     <p className="text-white/60 text-sm">Equipe multidisciplinar com urologista, anestesista, enfermagem especializada e instrumentador treinado em robótica.</p>
                   </div>
-                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Shield className="w-4 h-4 text-[#818CF8]" />
                       <span className="text-white text-sm font-medium">São Luiz Campinas</span>
                     </div>
                     <p className="text-white/60 text-sm">Cirurgias realizadas no Centro Médico São Luiz Campinas (Rede D'Or) e Campinas Day Hospital. Entre em contato para mais informações.</p>
                   </div>
-                  <div className="bg-white dark:bg-card/5 rounded-xl p-4 border border-white/10">
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-2">
                       <Phone className="w-4 h-4 text-[#818CF8]" />
                       <span className="text-white text-sm font-medium">Contato</span>

@@ -180,7 +180,7 @@ export default function QuickContactForm() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="schedule-cta schedule-cta--primary w-full bg-[#B87333] hover:bg-[#8B5A2B] text-white h-12 text-sm font-semibold rounded-lg mt-2 disabled:opacity-70"
+                  className="schedule-cta schedule-cta--primary w-full h-12 text-sm font-semibold rounded-lg mt-2 disabled:opacity-70"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   {loading ? "Abrindo..." : "Continuar no WhatsApp"}

@@ -475,15 +475,15 @@ export default function HiperplasiaProstática() {
             </p>
           </div>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="bg-white dark:bg-card/10 rounded-xl p-4 text-center">
+            <div className="bg-white/10 rounded-xl p-4 text-center">
               <Heart className="w-5 h-5 text-[#B87333] mx-auto mb-2" />
               <div className="text-xs text-white/70">Atendimento humanizado e acolhedor</div>
             </div>
-            <div className="bg-white dark:bg-card/10 rounded-xl p-4 text-center">
+            <div className="bg-white/10 rounded-xl p-4 text-center">
               <Stethoscope className="w-5 h-5 text-[#B87333] mx-auto mb-2" />
               <div className="text-xs text-white/70">Decisão compartilhada entre médico e paciente</div>
             </div>
-            <div className="bg-white dark:bg-card/10 rounded-xl p-4 text-center">
+            <div className="bg-white/10 rounded-xl p-4 text-center">
               <ShieldCheck className="w-5 h-5 text-[#B87333] mx-auto mb-2" />
               <div className="text-xs text-white/70">Tratamento baseado em evidências científicas</div>
             </div>

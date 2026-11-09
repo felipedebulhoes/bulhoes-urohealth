@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
   });
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0F2A3F]">
+    <div className="min-h-screen bg-white dark:bg-card">
       {/* Header */}
       <div className="bg-[#1C3D5A] py-16">
         <div className="container max-w-4xl mx-auto px-4">
@@ -140,7 +140,7 @@ export default function PrivacyPolicy() {
                     <td className="border border-[#C4C4C4] p-3">Funcionamento básico do site, sessão, preferências de tema</td>
                     <td className="border border-[#C4C4C4] p-3">Não necessário</td>
                   </tr>
-                  <tr className="bg-gray-50 dark:bg-[#0F2A3F]">
+                  <tr className="bg-gray-50 dark:bg-card">
                     <td className="border border-[#C4C4C4] p-3 font-semibold">Analytics</td>
                     <td className="border border-[#C4C4C4] p-3">Google Analytics 4 — métricas de uso e performance</td>
                     <td className="border border-[#C4C4C4] p-3">Necessário</td>

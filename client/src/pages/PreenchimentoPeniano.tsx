@@ -44,6 +44,8 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import InlineConsultCTA from "@/components/InlineConsultCTA";
+import ProcedureSummary from "@/components/ProcedureSummary";
+import SectionFold, { openFoldAndScroll } from "@/components/SectionFold";
 import { FAQSchema, MedicalPageSchema } from "@/components/SchemaMarkup";
 import {
   trackEducationalPageView,
@@ -284,23 +286,6 @@ const mythsAndFacts = [
   },
 ];
 
-const patientReviews = [
-  {
-    author: "Paciente Verificado · São Paulo",
-    source: "Doctoralia / Google",
-    text: "Médico extremamente atencioso, técnico e discreto. Explicou toda a anatomia com calma, sem pressa e transmitiu muita segurança desde a primeira consulta.",
-  },
-  {
-    author: "Paciente Verificado · Campinas",
-    source: "Doctoralia / Google",
-    text: "Atendimento impecável do agendamento ao pós-procedimento. Ambiente reservado, postura ética e acompanhamento próximo pelo próprio Dr. Felipe.",
-  },
-  {
-    author: "Paciente Verificado · São Paulo",
-    source: "Doctoralia / Google",
-    text: "Excelente profissional. Muito transparente sobre o que esperar, cuidadoso nos detalhes e com mão extremamente leve durante o procedimento em consultório.",
-  },
-];
 
 export default function PreenchimentoPeniano() {
   const [activeCategory, setActiveCategory] = useState<FaqCategory>("todos");
@@ -367,9 +352,7 @@ export default function PreenchimentoPeniano() {
 
   const scrollToSection = (id: string) => {
     const shouldReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    document.getElementById(id)?.scrollIntoView({
-      behavior: shouldReduceMotion ? "auto" : "smooth",
-    });
+    openFoldAndScroll(id, shouldReduceMotion ? "auto" : "smooth");
   };
 
   const filteredFaqs =
@@ -714,6 +697,215 @@ export default function PreenchimentoPeniano() {
 
         {/* ── CONTEÚDO PRINCIPAL ───────────────────────────────────────────── */}
         <main className="brand-campaign-content">
+          <ProcedureSummary
+            indicationsTitle="Candidatos Ideais"
+            indications={[
+                      "Homens adultos que desejam ganho estético de circunferência (espessura) peniana",
+                      "Insatisfação com a retração acentuada do pênis no estado flácido (efeito 'shower')",
+                      "Pacientes que buscam alternativa sem cortes, reversível e de rápida recuperação",
+                      "Expectativas realistas alinhadas às evidências científicas e à própria anatomia",
+                      "Disposição para seguir rigorosamente os cuidados pós-procedimento (10–14 dias)",
+                    ]}
+            limitsTitle="Limites e Contraindicações"
+            limits={[
+                      "Não aumenta o comprimento real em ereção (atua na circunferência e projeção flácida)",
+                      "Não substitui o tratamento de disfunção erétil ou de curvatura peniana (Doença de Peyronie)",
+                      "Contraindicado na presença de infecções genitais ou urinárias ativas",
+                      "Contraindicado para pacientes com transtorno dismórfico corporal (BDD) ou expectativas irreais",
+                      "Não é realizado em pacientes que já possuem PMMA ou silicone líquido injetado previamente na região",
+                    ]}
+            stepsTitle="Como é o atendimento"
+            steps={stepByStep}
+          />
+
+          <InlineConsultCTA
+            title="Quer saber se este caminho faz sentido para você?"
+            note="Nota 5,0 · 35 avaliações na Doctoralia"
+            href={whatsappSpUrl}
+            onClick={() => handleWhatsAppConversion("inline_resumo")}
+          />
+
+          <SectionFold title={"Dr. Felipe de Bulhões Ojeda"} variant="peek">
+          {/* 5. SOBRE O ESPECIALISTA: DR. FELIPE DE BULHÕES */}
+          <section id="especialista" className="py-16 lg:py-24 scroll-mt-20">
+            <div className="container max-w-5xl">
+              <div className="grid lg:grid-cols-12 gap-10 items-center">
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                  custom={0}
+                  className="lg:col-span-5 flex justify-center"
+                >
+                  <div className="relative w-full max-w-sm">
+                    <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-[#2E2520]/15 shadow-xl bg-[#2E2520]">
+                      <img
+                        loading="lazy"
+                        src={PORTRAIT_URL}
+                        alt="Dr. Felipe de Bulhões Ojeda — Urologista em São Paulo e Campinas"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="mt-4 bg-[#FCFAF7] dark:bg-card rounded-xl p-4 border border-[#2E2520]/10 shadow-sm flex items-center justify-between">
+                      <div>
+                        <div className="flex items-center gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className="w-4 h-4 text-amber-500 fill-amber-500"
+                            />
+                          ))}
+                          <span className="text-xs font-bold text-[#2E2520] ml-1.5">
+                            5.0 no Doctoralia
+                          </span>
+                        </div>
+                        <p className="text-xs text-[#64748B] mt-0.5">
+                          CRM-SP 202.291 · RQE 146538 / RQE 114019
+                        </p>
+                      </div>
+                      <Link
+                        href="/sobre"
+                        className="text-xs font-semibold text-[#4A3A30] hover:underline flex items-center gap-1"
+                      >
+                        Currículo
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                  custom={1}
+                  className="lg:col-span-7"
+                >
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-2">
+                    Responsável Técnico
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2E2520] dark:text-foreground font-serif mb-4">
+                    Dr. Felipe de Bulhões Ojeda
+                  </h2>
+                  <p className="text-[#334155] leading-relaxed mb-4">
+                    Médico Urologista formado pelo{" "}
+                    <strong>Instituto D&apos;Or de Ensino e Pesquisa (IDOR)</strong> em São Paulo e
+                    Cirurgião Geral Titular do Colégio Brasileiro de Cirurgiões (
+                    <strong>TCBC</strong>). Possui formação em pesquisa clínica pela{" "}
+                    <strong>Harvard T.H. Chan School of Public Health (PPCR)</strong>.
+                  </p>
+                  <p className="text-[#334155] leading-relaxed mb-6">
+                    Na área de andrologia e estética íntima masculina, alia o domínio cirúrgico da
+                    anatomia peniana a protocolos baseados nas diretrizes internacionais da{" "}
+                    <strong>European Association of Urology (EAU)</strong>,{" "}
+                    <strong>American Urological Association (AUA)</strong> e{" "}
+                    <strong>Sociedade Brasileira de Urologia (SBU)</strong>, oferecendo um ambiente
+                    de escuta acolhedor, sem julgamentos e com foco na segurança do paciente.
+                  </p>
+
+                  <div className="grid sm:grid-cols-2 gap-3.5 mb-8">
+                    {[
+                      {
+                        icon: GraduationCap,
+                        title: "Urologia — Instituto D'Or (IDOR)",
+                        desc: "Residência médica em centro de referência em São Paulo",
+                      },
+                      {
+                        icon: Award,
+                        title: "Cirurgião Geral Titular (TCBC)",
+                        desc: "Domínio profundo da anatomia cirúrgica e fascial",
+                      },
+                      {
+                        icon: BookOpen,
+                        title: "Membro SBU, EAU e AUA",
+                        desc: "Atualização contínua em medicina sexual e andrologia",
+                      },
+                      {
+                        icon: Lock,
+                        title: "Atendimento Particular e Sigiloso",
+                        desc: "Tempo dedicado para esclarecer cada detalhe com calma",
+                      },
+                    ].map((cred, i) => (
+                      <div
+                        key={i}
+                        className="bg-[#FCFAF7] dark:bg-card rounded-lg p-4 border border-[#2E2520]/10 flex items-start gap-3"
+                      >
+                        <cred.icon className="w-5 h-5 text-[#4A3A30] shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-sm font-semibold text-[#2E2520] dark:text-foreground">
+                            {cred.title}
+                          </p>
+                          <p className="text-xs text-[#64748B] mt-0.5">{cred.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Locais de atendimento resumidos */}
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="rounded-xl bg-[#FCFAF7] p-4 border border-[#2E2520]/10">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-[#2E2520] mb-1">
+                        <MapPin className="w-4 h-4 text-[#4A3A30]" />
+                        São Paulo (Capital)
+                      </div>
+                      <p className="text-xs text-[#64748B]">
+                        Clinovi Paulista (Av. Paulista, 1048 — 18° andar) e Clinovi Pinheiros (Av. Rebouças, 2636)
+                      </p>
+                    </div>
+                    <div className="rounded-xl bg-[#FCFAF7] p-4 border border-[#2E2520]/10">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-[#2E2520] mb-1">
+                        <MapPin className="w-4 h-4 text-[#4A3A30]" />
+                        Campinas (Interior de SP)
+                      </div>
+                      <p className="text-xs text-[#64748B]">
+                        Campinas Day Hospital (Av. Benjamin Constant, 1991 — Cambuí) e CEMED Rede D&apos;Or São Luiz Campinas
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Prova Social Ética: Experiência de Atendimento Verificada */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={2}
+                className="mt-14 pt-12 border-t border-[#2E2520]/10"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
+                  <div>
+                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-1.5">
+                      Experiência de Atendimento Verificada
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-serif text-[#2E2520] dark:text-foreground">
+                      O que os pacientes destacam sobre o atendimento
+                    </h3>
+                  </div>
+                  <div className="inline-flex items-center gap-2 bg-[#FCFAF7] border border-[#2E2520]/10 px-3.5 py-2 rounded-full self-start sm:self-auto">
+                    <div className="flex items-center gap-0.5">
+                      {[...Array(5)].map((_, idx) => (
+                        <Star key={idx} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                      ))}
+                    </div>
+                    <span className="text-xs font-bold text-[#2E2520]">
+                      Nota 5,0 · 35 avaliações na Doctoralia
+                    </span>
+                  </div>
+                </div>
+
+                
+              </motion.div>
+            </div>
+          </section>
+          </SectionFold>
+
+          <div className="border-t border-[#2E2520]/12 mt-8 dark:border-border">
+
+          <SectionFold title={"Como funciona o preenchimento peniano com ácido hialurônico?"}>
           {/* 1. COMO FUNCIONA E EVIDÊNCIAS CIENTÍFICAS */}
           <section id="como-funciona" className="py-16 lg:py-24 scroll-mt-20">
             <div className="container max-w-5xl">
@@ -1445,13 +1637,9 @@ export default function PreenchimentoPeniano() {
               </motion.div>
             </div>
           </section>
+          </SectionFold>
 
-          <InlineConsultCTA
-            title="Quer saber se este caminho faz sentido para você?"
-            href={whatsappSpUrl}
-            onClick={() => handleWhatsAppConversion("inline_como_funciona")}
-          />
-
+          <SectionFold title={"Por que utilizamos apenas Ácido Hialurônico (e nunca PMMA)?"}>
           {/* 2. COMPARATIVO TÉCNICO: ÁCIDO HIALURÔNICO VS PMMA */}
           <section id="comparativo-ah-pmma" className="py-16 lg:py-24 scroll-mt-20">
             <div className="container max-w-5xl">
@@ -1551,7 +1739,9 @@ export default function PreenchimentoPeniano() {
               </motion.div>
             </div>
           </section>
+          </SectionFold>
 
+          <SectionFold title={"Como é realizada a jornada do paciente, passo a passo"}>
           {/* 3. PASSO A PASSO VISUAL DA JORNADA */}
           <section id="passo-a-passo" className="py-16 lg:py-24 scroll-mt-20">
             <div className="container max-w-5xl">
@@ -1605,13 +1795,9 @@ export default function PreenchimentoPeniano() {
               </div>
             </div>
           </section>
+          </SectionFold>
 
-          <InlineConsultCTA
-            title="Tem dúvidas sobre as etapas do atendimento?"
-            href={whatsappSpUrl}
-            onClick={() => handleWhatsAppConversion("inline_jornada")}
-          />
-
+          <SectionFold title={"Para quem o procedimento é indicado — e o que ele não faz"}>
           {/* 4. INDICAÇÕES, LIMITAÇÕES E RECUPERAÇÃO */}
           <section className="py-16 lg:py-24">
             <div className="container max-w-5xl">
@@ -1795,7 +1981,9 @@ export default function PreenchimentoPeniano() {
               </motion.div>
             </div>
           </section>
+          </SectionFold>
 
+          <SectionFold title={"Descubra como funciona o planejamento para o seu perfil"}>
           {/* 4.5. AUTOAVALIAÇÃO INTERATIVA DE PERFIL + SIGILO 4 CAMADAS + PACIENTE DE FORA */}
           <section className="py-16 lg:py-24 bg-[#E7E1DA]/60 dark:bg-card/50 border-y border-[#2E2520]/10">
             <div className="container max-w-5xl space-y-12">
@@ -2090,207 +2278,9 @@ export default function PreenchimentoPeniano() {
               </div>
             </div>
           </section>
+          </SectionFold>
 
-          {/* 5. SOBRE O ESPECIALISTA: DR. FELIPE DE BULHÕES */}
-          <section id="especialista" className="py-16 lg:py-24 scroll-mt-20">
-            <div className="container max-w-5xl">
-              <div className="grid lg:grid-cols-12 gap-10 items-center">
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeUp}
-                  custom={0}
-                  className="lg:col-span-5 flex justify-center"
-                >
-                  <div className="relative w-full max-w-sm">
-                    <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-[#2E2520]/15 shadow-xl bg-[#2E2520]">
-                      <img
-                        loading="lazy"
-                        src={PORTRAIT_URL}
-                        alt="Dr. Felipe de Bulhões Ojeda — Urologista em São Paulo e Campinas"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="mt-4 bg-[#FCFAF7] dark:bg-card rounded-xl p-4 border border-[#2E2520]/10 shadow-sm flex items-center justify-between">
-                      <div>
-                        <div className="flex items-center gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="w-4 h-4 text-amber-500 fill-amber-500"
-                            />
-                          ))}
-                          <span className="text-xs font-bold text-[#2E2520] ml-1.5">
-                            5.0 no Doctoralia
-                          </span>
-                        </div>
-                        <p className="text-xs text-[#64748B] mt-0.5">
-                          CRM-SP 202.291 · RQE 146538 / RQE 114019
-                        </p>
-                      </div>
-                      <Link
-                        href="/sobre"
-                        className="text-xs font-semibold text-[#4A3A30] hover:underline flex items-center gap-1"
-                      >
-                        Currículo
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeUp}
-                  custom={1}
-                  className="lg:col-span-7"
-                >
-                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-2">
-                    Responsável Técnico
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#2E2520] dark:text-foreground font-serif mb-4">
-                    Dr. Felipe de Bulhões Ojeda
-                  </h2>
-                  <p className="text-[#334155] leading-relaxed mb-4">
-                    Médico Urologista formado pelo{" "}
-                    <strong>Instituto D&apos;Or de Ensino e Pesquisa (IDOR)</strong> em São Paulo e
-                    Cirurgião Geral Titular do Colégio Brasileiro de Cirurgiões (
-                    <strong>TCBC</strong>). Possui formação em pesquisa clínica pela{" "}
-                    <strong>Harvard T.H. Chan School of Public Health (PPCR)</strong>.
-                  </p>
-                  <p className="text-[#334155] leading-relaxed mb-6">
-                    Na área de andrologia e estética íntima masculina, alia o domínio cirúrgico da
-                    anatomia peniana a protocolos baseados nas diretrizes internacionais da{" "}
-                    <strong>European Association of Urology (EAU)</strong>,{" "}
-                    <strong>American Urological Association (AUA)</strong> e{" "}
-                    <strong>Sociedade Brasileira de Urologia (SBU)</strong>, oferecendo um ambiente
-                    de escuta acolhedor, sem julgamentos e com foco na segurança do paciente.
-                  </p>
-
-                  <div className="grid sm:grid-cols-2 gap-3.5 mb-8">
-                    {[
-                      {
-                        icon: GraduationCap,
-                        title: "Urologia — Instituto D'Or (IDOR)",
-                        desc: "Residência médica em centro de referência em São Paulo",
-                      },
-                      {
-                        icon: Award,
-                        title: "Cirurgião Geral Titular (TCBC)",
-                        desc: "Domínio profundo da anatomia cirúrgica e fascial",
-                      },
-                      {
-                        icon: BookOpen,
-                        title: "Membro SBU, EAU e AUA",
-                        desc: "Atualização contínua em medicina sexual e andrologia",
-                      },
-                      {
-                        icon: Lock,
-                        title: "Atendimento Particular e Sigiloso",
-                        desc: "Tempo dedicado para esclarecer cada detalhe com calma",
-                      },
-                    ].map((cred, i) => (
-                      <div
-                        key={i}
-                        className="bg-[#FCFAF7] dark:bg-card rounded-lg p-4 border border-[#2E2520]/10 flex items-start gap-3"
-                      >
-                        <cred.icon className="w-5 h-5 text-[#4A3A30] shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-sm font-semibold text-[#2E2520] dark:text-foreground">
-                            {cred.title}
-                          </p>
-                          <p className="text-xs text-[#64748B] mt-0.5">{cred.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Locais de atendimento resumidos */}
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="rounded-xl bg-[#FCFAF7] p-4 border border-[#2E2520]/10">
-                      <div className="flex items-center gap-2 text-sm font-semibold text-[#2E2520] mb-1">
-                        <MapPin className="w-4 h-4 text-[#4A3A30]" />
-                        São Paulo (Capital)
-                      </div>
-                      <p className="text-xs text-[#64748B]">
-                        Clinovi Paulista (Av. Paulista, 1048 — 18° andar) e Clinovi Pinheiros (Av. Rebouças, 2636)
-                      </p>
-                    </div>
-                    <div className="rounded-xl bg-[#FCFAF7] p-4 border border-[#2E2520]/10">
-                      <div className="flex items-center gap-2 text-sm font-semibold text-[#2E2520] mb-1">
-                        <MapPin className="w-4 h-4 text-[#4A3A30]" />
-                        Campinas (Interior de SP)
-                      </div>
-                      <p className="text-xs text-[#64748B]">
-                        Campinas Day Hospital (Av. Benjamin Constant, 1991 — Cambuí) e CEMED Rede D&apos;Or São Luiz Campinas
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Prova Social Ética: Experiência de Atendimento Verificada */}
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                custom={2}
-                className="mt-14 pt-12 border-t border-[#2E2520]/10"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
-                  <div>
-                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4A3A30] block mb-1.5">
-                      Experiência de Atendimento Verificada
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-serif text-[#2E2520] dark:text-foreground">
-                      O que os pacientes destacam sobre o atendimento
-                    </h3>
-                  </div>
-                  <div className="inline-flex items-center gap-2 bg-[#FCFAF7] border border-[#2E2520]/10 px-3.5 py-2 rounded-full self-start sm:self-auto">
-                    <div className="flex items-center gap-0.5">
-                      {[...Array(5)].map((_, idx) => (
-                        <Star key={idx} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                      ))}
-                    </div>
-                    <span className="text-xs font-bold text-[#2E2520]">
-                      Nota 5.0 · Mais de 100 avaliações verificadas
-                    </span>
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-5">
-                  {patientReviews.map((review, idx) => (
-                    <div
-                      key={idx}
-                      className="rounded-xl border border-[#2E2520]/10 bg-[#FCFAF7] dark:bg-card p-5 flex flex-col justify-between shadow-sm"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between gap-2 mb-3">
-                          <div className="flex items-center gap-0.5">
-                            {[...Array(5)].map((_, sIdx) => (
-                              <Star key={sIdx} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                            ))}
-                          </div>
-                          <Quote className="w-4 h-4 text-[#4A3A30]/40" />
-                        </div>
-                        <p className="text-xs sm:text-sm text-[#334155] leading-relaxed italic mb-4">
-                          &ldquo;{review.text}&rdquo;
-                        </p>
-                      </div>
-                      <div className="pt-3 border-t border-[#2E2520]/8 flex items-center justify-between text-[11px] text-[#64748B]">
-                        <span className="font-semibold text-[#2E2520]">{review.author}</span>
-                        <span>{review.source}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </section>
+          </div>
 
           {/* 6. FAQ INTERATIVO COM FILTROS + REFERÊNCIAS */}
           <section id="duvidas-frequentes" className="py-16 lg:py-24 scroll-mt-20">
@@ -2389,12 +2379,6 @@ export default function PreenchimentoPeniano() {
                 })}
               </div>
 
-              <InlineConsultCTA
-            title="Sua dúvida não apareceu aqui? Fale com a equipe."
-            href={whatsappSpUrl}
-            onClick={() => handleWhatsAppConversion("inline_faq")}
-          />
-
           {/* Referências Científicas & Link Educativo */}
               <div className="mt-10 rounded-xl border border-[#2E2520]/10 bg-[#FCFAF7] p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-[#2E2520]/10">
@@ -2458,23 +2442,7 @@ export default function PreenchimentoPeniano() {
         </main>
 
         {/* ── COMPARTILHAMENTO DISCRETO ────────────────────────────────────── */}
-        <section className="brand-campaign-share border-t border-[#2E2520]/10 bg-[#E7E1DA] py-8 dark:bg-card">
-          <div className="container max-w-5xl flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div>
-              <h2 className="text-lg font-serif text-[#2E2520] dark:text-foreground">
-                Salve ou compartilhe esta página com discrição
-              </h2>
-              <p className="mt-1 text-xs sm:text-sm text-[#64748B]">
-                Informação médica clara, sem sensacionalismo e baseada em evidências.
-              </p>
-            </div>
-            <SocialShareButtons
-              title={PAGE_TITLE}
-              text={PAGE_DESCRIPTION}
-              source={`campaign_${CAMPAIGN_SLUG}`}
-            />
-          </div>
-        </section>
+        
 
         {/* ── SEÇÃO FINAL DE AGENDAMENTO (ALTA CONVERSÃO) ──────────────────── */}
         <section

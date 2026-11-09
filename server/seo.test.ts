@@ -8,7 +8,7 @@ import {
   getSpaResponseStatus,
   injectCanonicalMetadata,
 } from "./_core/seo";
-import { isIndexableSitePath } from "../shared/siteRoutes";
+import { BLOG_SLUGS, isIndexableSitePath, PUBLIC_STATIC_PATHS } from "../shared/siteRoutes";
 import { getBreadcrumbItems, getPageMetadata, getSocialPreviewData } from "../shared/pageMetadata";
 
 describe("SEO URL consolidation", () => {
@@ -221,6 +221,20 @@ describe("SEO URL consolidation", () => {
       expect(getSpaResponseStatus(pathname), pathname).toBe(200);
       expect(isIndexableSitePath(pathname), pathname).toBe(true);
       expect(getCanonicalUrl(pathname), pathname).toBe(url.replace(/\/$/, pathname === "/" ? "/" : ""));
+    }
+  });
+
+  it("lists every indexable route in the sitemap", () => {
+    const sitemap = readFileSync(
+      resolve(import.meta.dirname, "../client/public/sitemap.xml"),
+      "utf8"
+    );
+    const paths = new Set(
+      [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => new URL(match[1]).pathname)
+    );
+
+    for (const path of [...PUBLIC_STATIC_PATHS, ...BLOG_SLUGS.map(slug => `/blog/${slug}`)]) {
+      expect(paths.has(path), path).toBe(true);
     }
   });
 

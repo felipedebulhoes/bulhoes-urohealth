@@ -5,6 +5,7 @@
  */
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Link } from "wouter";
 import EducationalLayout from "@/components/EducationalLayout";
 import { FAQSchema } from "@/components/SchemaMarkup";
 import {
@@ -219,7 +220,8 @@ export default function HiperplasiaProstática() {
               Com o passar dos anos, a próstata tende a crescer naturalmente — isso é chamado de <strong className="text-[#1C3D5A] dark:text-foreground">Hiperplasia Prostática Benigna (HPB)</strong>. A palavra "benigna" significa que <strong className="text-[#1C3D5A] dark:text-foreground">não é câncer</strong>. Esse crescimento pode comprimir a uretra e dificultar a passagem da urina, causando sintomas urinários.
             </p>
             <p>
-              A HPB é extremamente comum: afeta cerca de <strong className="text-[#1C3D5A] dark:text-foreground">50% dos homens aos 50 anos</strong> e até <strong className="text-[#1C3D5A] dark:text-foreground">90% após os 80 anos</strong>. Nem todo homem com próstata aumentada terá sintomas — o tamanho da próstata nem sempre se correlaciona com a intensidade dos sintomas.
+              A HPB é extremamente comum: afeta cerca de <strong className="text-[#1C3D5A] dark:text-foreground">50% dos homens aos 50 anos</strong> e até <strong className="text-[#1C3D5A] dark:text-foreground">90% após os 80 anos</strong>. Nem todo homem com próstata aumentada terá sintomas — o tamanho da próstata nem sempre se correlaciona com a intensidade dos sintomas. Veja também as{" "}
+              <Link href="/blog/hiperplasia-prostatica-benigna-tratamentos-modernos" className="underline hover:text-[#B87333]">opções modernas de tratamento da HPB</Link>.
             </p>
           </div>
 

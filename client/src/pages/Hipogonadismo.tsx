@@ -5,6 +5,7 @@
  */
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { Link } from "wouter";
 import EducationalLayout from "@/components/EducationalLayout";
 import {
   Activity, AlertTriangle, ArrowDown, ArrowUp,
@@ -92,7 +93,8 @@ export default function Hipogonadismo() {
               O <strong>hipogonadismo masculino</strong> é uma condição clínica caracterizada pela <strong>deficiência de testosterona</strong> associada a <strong>sinais e sintomas clínicos</strong>. Afeta cerca de 2-6% dos homens entre 40-79 anos, com prevalência aumentando significativamente com a idade — a testosterona total diminui em média 1-2% ao ano após os 30 anos.
             </p>
             <p>
-              É fundamental diferenciar o hipogonadismo do declínio fisiológico normal da testosterona com a idade. O diagnóstico exige a <strong>combinação de sintomas clínicos</strong> (diminuição da libido, disfunção erétil, fadiga, perda muscular) <strong>com confirmação laboratorial</strong> (testosterona total &lt;300 ng/dL em duas dosagens matinais). A reposição de testosterona (TRT) pode melhorar significativamente a qualidade de vida quando bem indicada, mas requer acompanhamento médico rigoroso.
+              É fundamental diferenciar o hipogonadismo do declínio fisiológico normal da testosterona com a idade. O diagnóstico exige a <strong>combinação de sintomas clínicos</strong> (diminuição da libido, disfunção erétil, fadiga, perda muscular) <strong>com confirmação laboratorial</strong> (testosterona total &lt;300 ng/dL em duas dosagens matinais). A reposição de testosterona (TRT) pode melhorar significativamente a qualidade de vida quando bem indicada, mas requer acompanhamento médico rigoroso. Veja como é o{" "}
+              <Link href="/andrologia-performance-masculina" className="underline hover:text-[#B87333]">atendimento em andrologia em São Paulo</Link>.
             </p>
           </div>
         </div>

@@ -384,7 +384,6 @@ export default function PreenchimentoPeniano() {
         description={PAGE_DESCRIPTION}
         path="/preenchimento-peniano"
         medicalCondition="Estética Genital Masculina e Engrossamento Peniano com Ácido Hialurônico"
-        lastReviewed="2026-11-02"
       />
       <FAQSchema
         questions={faqItems.map((item) => ({

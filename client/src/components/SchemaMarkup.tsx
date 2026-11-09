@@ -4,6 +4,7 @@
  */
 import { useEffect } from "react";
 import { collectJsonLd } from "@/lib/prerenderCollector";
+import { getMedicalReviewDate } from "@shared/medicalReview";
 
 const SITE_URL = "https://felipebulhoes.com";
 const DOCTOR_NAME = "Dr. Felipe de Bulhões Ojeda";
@@ -173,7 +174,6 @@ interface MedicalPageSchemaProps {
   description: string;
   path: string;
   medicalCondition?: string;
-  lastReviewed?: string;
 }
 
 export function MedicalPageSchema({
@@ -181,8 +181,8 @@ export function MedicalPageSchema({
   description,
   path,
   medicalCondition,
-  lastReviewed,
 }: MedicalPageSchemaProps) {
+  const lastReviewed = getMedicalReviewDate(path);
   const pageData: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
@@ -190,7 +190,7 @@ export function MedicalPageSchema({
     "description": description,
     "url": `${SITE_URL}${path}`,
     "inLanguage": "pt-BR",
-    "lastReviewed": lastReviewed || "2026-04-01",
+    ...(lastReviewed ? { "lastReviewed": lastReviewed } : {}),
     "reviewedBy": {
       "@type": "Physician",
       "@id": `${SITE_URL}/#medico`,

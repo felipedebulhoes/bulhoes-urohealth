@@ -4,7 +4,7 @@
  * Foco em conversão: CTAs parametrizados, tracking avançado, WhatsApp por campanha
  */
 import { useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Phone, Calendar, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -44,6 +44,7 @@ export default function CampaignLayout({
   trustBadges = ["Formado Instituto D'Or", "CRM-SP 202.291", "Atendimento Particular"],
   children,
 }: CampaignLayoutProps) {
+  const [currentPath] = useLocation();
   const whatsappUrl = getWhatsAppUrl({ page: campaignSlug });
   const doctoraliaUrl = `https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=campaign&utm_campaign=${campaignSlug}`;
 
@@ -121,7 +122,7 @@ export default function CampaignLayout({
       <MedicalPageSchema
         title={metaTitle || title}
         description={metaDescription || description}
-        path={typeof window !== "undefined" ? window.location.pathname : ""}
+        path={currentPath}
         medicalCondition={medicalCondition || title}
       />
 

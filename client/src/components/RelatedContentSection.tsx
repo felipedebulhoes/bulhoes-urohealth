@@ -1,5 +1,5 @@
 import { ArrowUpRight, BookOpen, CalendarCheck, MapPin, Stethoscope } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { trackRelatedContentClick } from "@/lib/analytics";
 
@@ -211,7 +211,8 @@ interface RelatedContentSectionProps {
 }
 
 export default function RelatedContentSection({ source, currentPath, dark = false }: RelatedContentSectionProps) {
-  const path = currentPath || (typeof window !== "undefined" ? window.location.pathname : "/");
+  const [location] = useLocation();
+  const path = currentPath || location;
   const items = getRelatedItems(source, path);
 
   return (

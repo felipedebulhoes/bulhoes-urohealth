@@ -344,7 +344,6 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
         description={config.pageDescription}
         path={config.path}
         medicalCondition={config.medicalCondition}
-        lastReviewed="2026-11-03"
       />
       <FAQSchema
         questions={config.faqs.map((item) => ({

@@ -37,6 +37,31 @@ describe("runtime público portátil", () => {
     rmSync(staticDirectory, { recursive: true, force: true });
   });
 
+  it("entrega o conteúdo pré-renderizado só nas rotas indexáveis", async () => {
+    writeFileSync(
+      join(staticDirectory, "index.html"),
+      '<!doctype html><html lang="pt-BR"><head><title>Página</title></head><body><div id="root"><!--prerender-outlet--></div></body></html>'
+    );
+    const prerender = join(staticDirectory, "..", "prerender");
+    mkdirSync(prerender, { recursive: true });
+    writeFileSync(
+      join(prerender, "sobre.json"),
+      JSON.stringify({ html: "<h1>Texto $& real</h1>", jsonLd: [{ id: "schema-x", json: '{"a":"</script>"}' }] })
+    );
+
+    try {
+      const html = await (await fetch(`${baseUrl}/sobre`)).text();
+      expect(html).toContain("<h1>Texto $& real</h1>");
+      expect(html).toContain('<script id="schema-x" type="application/ld+json">{"a":"\\u003c/script>"}</script>');
+
+      const unknown = await fetch(`${baseUrl}/inexistente`);
+      expect(unknown.status).toBe(404);
+      expect(await unknown.text()).not.toContain("Texto");
+    } finally {
+      rmSync(prerender, { recursive: true, force: true });
+    }
+  });
+
   it("comprime respostas de texto quando o cliente aceita gzip", async () => {
     writeFileSync(
       join(staticDirectory, "index.html"),

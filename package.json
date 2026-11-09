@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-prerender.tsx && node scripts/prerender.mjs",
     "build:portable": "pnpm build && esbuild server/production.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start:portable": "cross-env NODE_ENV=production node dist/production.js",
     "check": "tsc --noEmit",

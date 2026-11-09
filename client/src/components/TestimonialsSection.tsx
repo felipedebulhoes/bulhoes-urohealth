@@ -227,7 +227,7 @@ function ReviewSchema() {
         "addressCountry": "BR"
       }
     ],
-    "medicalSpecialty": "Urology",
+    "medicalSpecialty": "Urologic",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",

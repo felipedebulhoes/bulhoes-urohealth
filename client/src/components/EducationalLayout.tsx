@@ -190,6 +190,9 @@ export default function EducationalLayout({
       {/* Footer */}
       <footer className="bg-[#0F2A3F] py-8">
         <div className="container text-center">
+          <p className="text-white/70 text-sm mb-3">
+            Conteúdo médico de responsabilidade do Dr. Felipe de Bulhões Ojeda — CRM-SP 202291 · RQE 146538 (Urologia) · RQE 114019 (Cirurgia Geral).
+          </p>
           <p className="text-white/30 text-sm">
             &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291
           </p>

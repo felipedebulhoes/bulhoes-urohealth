@@ -123,7 +123,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Vasectomia sem bisturi",
   },
   "/andrologia-performance-masculina": {
-    title: "Andrologia, Saúde do Homem e Varicocelectomia Microcirúrgica | Dr. Felipe de Bulhões",
+    title: "Andrologia e Saúde do Homem em SP e Campinas | Dr. Felipe de Bulhões",
     description:
       "Avaliação individualizada de saúde hormonal, reposição de testosterona (TRT), função sexual, fertilidade masculina e varicocelectomia com microscópio em São Paulo e Campinas.",
     image: OG_IMAGE_ANDROLOGIA,
@@ -132,7 +132,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Andrologia e performance masculina",
   },
   "/estetica-intima-masculina": {
-    title: "Estética Íntima Masculina e Botox Peniano em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Estética Íntima Masculina em SP e Campinas | Dr. Felipe de Bulhões",
     description:
       "Estética íntima masculina com preenchimento peniano com ácido hialurônico, botox peniano e escrotal (toxina botulínica) e procedimentos funcionais em São Paulo e Campinas.",
     image: OG_IMAGE_ESTETICA_INTIMA,
@@ -141,7 +141,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Estética íntima masculina",
   },
   "/preenchimento-peniano": {
-    title: "Preenchimento Peniano com Ácido Hialurônico em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Preenchimento Peniano em SP e Campinas | Dr. Felipe de Bulhões",
     description:
       "Preenchimento peniano com ácido hialurônico realizado por urologista em São Paulo e Campinas. Procedimento ambulatorial sem cortes, reversível, seguro e com sigilo absoluto.",
     image: OG_IMAGE_ESTETICA_INTIMA,
@@ -150,7 +150,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Preenchimento peniano",
   },
   "/saude-da-prostata": {
-    title: "Saúde da Próstata e Tratamento de HPB em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Saúde da Próstata e HPB em SP e Campinas | Dr. Felipe de Bulhões",
     description:
       "Avaliação especializada da próstata em São Paulo e Campinas. Check-up prostático, rastreio seguro e tratamentos minimamente invasivos para próstata aumentada (HPB) com preservação sexual.",
     image: DEFAULT_OG_IMAGE,
@@ -159,7 +159,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Saúde da próstata",
   },
   "/litotripsia-calculo-renal": {
-    title: "Cálculo Renal e Litotripsia a Laser em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Cálculo Renal e Litotripsia em SP e Campinas | Dr. Felipe de Bulhões",
     description:
       "Tratamento especializado de cálculos renais (pedra nos rins) e ureterais em São Paulo e Campinas. Litotripsia a laser flexível sem cortes, alívio rápido da cólica renal e prevenção metabólica.",
     image: DEFAULT_OG_IMAGE,
@@ -177,7 +177,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Cirurgia robótica em urologia",
   },
   "/avaliacao-urodinamica": {
-    title: "Exame de Urodinâmica e Incontinência Urinária em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Urodinâmica e Incontinência em SP e Campinas | Dr. Felipe de Bulhões",
     description:
       "Estudo urodinâmico completo e tratamento de incontinência urinária, bexiga hiperativa e obstrução prostática em São Paulo e Campinas. Exame conduzido com conforto, privacidade e precisão.",
     image: DEFAULT_OG_IMAGE,
@@ -186,7 +186,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Exame de urodinâmica",
   },
   "/uro-oncologia": {
-    title: "Uro-Oncologia em SP e Campinas: Próstata, Rim e Bexiga | Dr. Felipe de Bulhões",
+    title: "Uro-Oncologia em SP e Campinas | Dr. Felipe de Bulhões",
     description:
       "Diagnóstico e tratamento cirúrgico de tumores urológicos (câncer de próstata, rim, bexiga e testículo) em São Paulo e Campinas. Cirurgia robótica, precisão oncológica e cuidado acolhedor.",
     image: DEFAULT_OG_IMAGE,
@@ -298,7 +298,7 @@ function genericLocationMetadata(label: string): PageMetadata {
 function genericBlogMetadata(title: string, image = DEFAULT_OG_IMAGE): PageMetadata {
   return {
     title: `${title} | Blog do Dr. Felipe de Bulhões`,
-    description: `Leia sobre ${title.toLocaleLowerCase("pt-BR")}. Conteúdo educativo de urologia para pacientes, em linguagem clara e responsável.`,
+    description: `${title}. Artigo educativo de urologia do Dr. Felipe de Bulhões (CRM-SP 202291), em linguagem clara e responsável.`,
     image,
     imageAlt: `${title} — Blog de Urologia`,
     type: "article",

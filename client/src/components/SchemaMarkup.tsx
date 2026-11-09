@@ -3,6 +3,7 @@
  * JSON-LD structured data for Google Rich Results
  */
 import { useEffect } from "react";
+import { collectJsonLd } from "@/lib/prerenderCollector";
 
 const SITE_URL = "https://felipebulhoes.com";
 const DOCTOR_NAME = "Dr. Felipe de Bulhões Ojeda";
@@ -10,6 +11,8 @@ const DOCTOR_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a
 const LOGO_URL = `${SITE_URL}/brand/logo-site-fundo-claro.png`;
 
 function useJsonLd(id: string, data: Record<string, unknown>) {
+  collectJsonLd(id, data);
+
   useEffect(() => {
     const existingScript = document.getElementById(id);
     if (existingScript) {
@@ -65,7 +68,8 @@ export function ArticleSchema({
     "dateModified": datePublished,
     "inLanguage": "pt-BR",
     "author": {
-      "@type": "Person",
+      "@type": "Physician",
+      "@id": `${SITE_URL}/#medico`,
       "name": authorName,
       "description": authorCredentials,
       "url": SITE_URL,
@@ -188,7 +192,8 @@ export function MedicalPageSchema({
     "inLanguage": "pt-BR",
     "lastReviewed": lastReviewed || "2026-04-01",
     "reviewedBy": {
-      "@type": "Person",
+      "@type": "Physician",
+      "@id": `${SITE_URL}/#medico`,
       "name": DOCTOR_NAME,
       "url": SITE_URL,
       "jobTitle": "Urologista e Cirurgião Geral",
@@ -256,7 +261,7 @@ export function MedicalClinicSchema({
       "addressRegion": city.split(",")[1]?.trim() || "SP",
       "addressCountry": "BR",
     },
-    "medicalSpecialty": "Urology",
+    "medicalSpecialty": "Urologic",
     "availableService": services.map((s) => ({
       "@type": "MedicalProcedure",
       "name": s,

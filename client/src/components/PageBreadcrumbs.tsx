@@ -8,6 +8,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Fragment } from "react";
 import { getBreadcrumbItems } from "@shared/pageMetadata";
 import { cn } from "@/lib/utils";
 
@@ -48,7 +49,8 @@ export default function PageBreadcrumbs({
           {items.map((item, index) => {
             const isCurrent = index === items.length - 1;
             return (
-              <BreadcrumbItem key={item.url} className="min-w-0">
+              <Fragment key={item.url}>
+              <BreadcrumbItem className="min-w-0">
                 {isCurrent ? (
                   <BreadcrumbPage className={cn("max-w-[15rem] truncate font-medium sm:max-w-[28rem]", currentClassName)}>
                     {item.name}
@@ -58,8 +60,9 @@ export default function PageBreadcrumbs({
                     <Link href={item.url}>{item.name}</Link>
                   </BreadcrumbLink>
                 )}
-                {!isCurrent && <BreadcrumbSeparator className={separatorClassName} />}
               </BreadcrumbItem>
+              {!isCurrent && <BreadcrumbSeparator className={separatorClassName} />}
+              </Fragment>
             );
           })}
         </BreadcrumbList>

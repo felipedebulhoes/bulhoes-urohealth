@@ -4,7 +4,7 @@ import { Storage } from "@google-cloud/storage";
 import { existsSync, promises as fs } from "node:fs";
 import { resolve } from "node:path";
 import { getRequestHostname, getSeoRedirectTarget, getSpaResponseStatus, injectCanonicalMetadata } from "./_core/seo";
-import { isIndexableSitePath } from "../shared/siteRoutes";
+import { isIndexableSitePath, normalizeSitePath } from "../shared/siteRoutes";
 import { registerOutboundRedirects } from "./outboundRedirects";
 
 const NOINDEX_VALUE = "noindex, nofollow, noarchive, nosnippet";
@@ -38,6 +38,7 @@ export type PortableAssetProvider = (key: string) => Promise<PrivateAsset | null
 
 export type PortablePublicAppOptions = {
   staticDirectory?: string;
+  prerenderDirectory?: string;
   legacyAssetOrigin?: string;
   assetProvider?: PortableAssetProvider;
 };
@@ -45,6 +46,8 @@ export type PortablePublicAppOptions = {
 function applySecurityHeaders(_req: Request, res: Response, next: () => void) {
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader("X-Frame-Options", "SAMEORIGIN");
+  res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()");
   next();
 }
 
@@ -56,6 +59,29 @@ function sendSpaHtml(res: Response, page: string, requestPath: string) {
   const status = getSpaResponseStatus(requestPath);
   if (!isIndexableSitePath(requestPath)) applyNoindexHeaders(res);
   res.status(status).type("html").send(page);
+}
+
+type PrerenderedPage = { html: string; jsonLd: { id: string; json: string }[] };
+
+async function readPrerenderedPage(directory: string, requestPath: string): Promise<PrerenderedPage | null> {
+  if (!isIndexableSitePath(requestPath)) return null;
+  const pathname = normalizeSitePath(requestPath);
+  const key = pathname === "/" ? "index" : pathname.slice(1).replaceAll("/", "__");
+  try {
+    return JSON.parse(await fs.readFile(resolve(directory, `${key}.json`), "utf8")) as PrerenderedPage;
+  } catch {
+    return null;
+  }
+}
+
+function injectPrerenderedPage(page: string, prerendered: PrerenderedPage | null) {
+  if (!prerendered) return page;
+  const scripts = prerendered.jsonLd
+    .map(({ id, json }) => `<script id="${id}" type="application/ld+json">${json.replace(/</g, "\\u003c")}</script>`)
+    .join("");
+  return page
+    .replace("</head>", () => `${scripts}</head>`)
+    .replace("<!--prerender-outlet-->", () => prerendered.html);
 }
 
 function getStaticDirectory(staticDirectory?: string) {
@@ -128,7 +154,9 @@ function applyAssetHeaders(res: Response, asset: PrivateAsset) {
  */
 export function createPortablePublicApp(options: PortablePublicAppOptions = {}) {
   const app = express();
+  app.disable("x-powered-by");
   const staticDirectory = getStaticDirectory(options.staticDirectory);
+  const prerenderDirectory = options.prerenderDirectory ?? resolve(staticDirectory, "..", "prerender");
   const assetProvider =
     options.assetProvider ??
     (process.env.GCS_ASSET_BUCKET ? createCloudStorageAssetProvider(process.env.GCS_ASSET_BUCKET) : undefined);
@@ -243,7 +271,8 @@ export function createPortablePublicApp(options: PortablePublicAppOptions = {}) 
     try {
       const template = await fs.readFile(resolve(staticDirectory, "index.html"), "utf8");
       const page = injectCanonicalMetadata(template, req.originalUrl);
-      sendSpaHtml(res, page, req.originalUrl);
+      const prerendered = await readPrerenderedPage(prerenderDirectory, req.originalUrl);
+      sendSpaHtml(res, injectPrerenderedPage(page, prerendered), req.originalUrl);
     } catch (error) {
       next(error);
     }

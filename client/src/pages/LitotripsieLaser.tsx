@@ -4,6 +4,7 @@ import { trackDoctoraliaClick } from "@/lib/analytics";
  * Página: Litotripsia a Laser — Guia Completo
  * Referências: EAU Guidelines on Urolithiasis 2025, AUA Surgical Management of Stones 2024, Campbell-Walsh-Wein 13th Ed.
  */
+import { getPageMetadata } from "@shared/pageMetadata";
 import { motion } from "framer-motion";
 import {
   Shield,
@@ -64,8 +65,8 @@ export default function LitotripsieLaser() {
       subtitle="Tratamento de Cálculos Renais e Ureterais"
       description="Tudo sobre litotripsia a laser para cálculos renais e ureterais: como funciona, indicações, tipos de laser, preparo, pós-operatório e complicações. Baseado nas diretrizes da EAU 2025 e AUA."
       accentColor="#2563EB"
-      metaTitle="Litotripsia a Laser: Como Funciona, Indicações e Recuperação | Dr. Felipe de Bulhões"
-      metaDescription="Guia completo sobre litotripsia a laser para pedra nos rins: como é feita, tipos de laser (Holmium e Thulium), preparo, pós-operatório e complicações. Procedimento realizado no Campinas Day Hospital."
+      metaTitle={getPageMetadata("/educativo/litotripsia-laser").title}
+      metaDescription={getPageMetadata("/educativo/litotripsia-laser").description}
     >
       <FAQSchema questions={litotripsieLaserFAQs} />
 

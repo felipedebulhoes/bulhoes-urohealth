@@ -4,6 +4,7 @@ import ConsentMapFrame from "@/components/ConsentMapFrame";
  * Design: Clinical Precision — Swiss Medical Design
  * Location Pages individuais para SEO local
  */
+import { getPageMetadata } from "@shared/pageMetadata";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -75,8 +76,8 @@ const locations: Record<string, LocationData> = {
     services: ["Consultas", "Cirurgias", "Urodinâmica", "Exames", "Procedimentos ambulatoriais"],
     parking: "Estacionamento próprio gratuito",
     description: "O Campinas Day Hospital é um centro cirúrgico moderno e completo, equipado com tecnologia de ponta para procedimentos urológicos. Localizado no Cambuí em Campinas, oferece atendimento particular com pagamento via PIX, cartão de crédito ou débito, com estrutura para cirurgias ambulatoriais e internação de curta permanência.",
-    metaTitle: "Urologista em Campinas — Campinas Day Hospital | Dr. Felipe de Bulhões",
-    metaDescription: "Urologista em Campinas no Campinas Day Hospital. Atendimento particular. Cirurgias minimamente invasivas, urodinâmica e consultas.",
+    metaTitle: getPageMetadata("/local/campinas-day-hospital").title,
+    metaDescription: getPageMetadata("/local/campinas-day-hospital").description,
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
     accentColor: "#2563EB",
   },

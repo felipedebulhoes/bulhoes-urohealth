@@ -3,6 +3,7 @@
  * Página: Vasectomia — Guia Completo
  * Referências: AUA Vasectomy Guideline 2026, EAU Guidelines 2025, Campbell-Walsh-Wein 13th Ed.
  */
+import { getPageMetadata } from "@shared/pageMetadata";
 import { motion } from "framer-motion";
 import {
   Shield,
@@ -64,8 +65,8 @@ export default function Vasectomia() {
       subtitle="Contracepção Masculina Definitiva"
       description="Tudo o que você precisa saber sobre a vasectomia: indicações, preparo, como é realizada, pós-operatório, complicações e perguntas frequentes. Informações baseadas no AUA Vasectomy Guideline 2026 e EAU Guidelines 2025."
       accentColor="#8D7B6B"
-      metaTitle="Vasectomia: Como é Feita, Preparo, Recuperação e Riscos | Dr. Felipe de Bulhões"
-      metaDescription="Guia completo sobre vasectomia: indicações, técnica no-scalpel, preparo, pós-operatório, espermograma de controle e reversão. Baseado no AUA Guideline 2026."
+      metaTitle={getPageMetadata("/educativo/vasectomia").title}
+      metaDescription={getPageMetadata("/educativo/vasectomia").description}
     >
       <FAQSchema questions={vasectomiaFAQs} />
 

@@ -1,3 +1,4 @@
+import { getPageMetadata } from "@shared/pageMetadata";
 import EducationalLayout from "@/components/EducationalLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertCircle, ArrowRight, CheckCircle, Clock, Shield, Sparkles, Users } from "lucide-react";
@@ -59,6 +60,8 @@ export default function EngrossamentoPeniano() {
       title="Engrossamento Peniano com Ácido Hialurônico"
       subtitle="Abordagem Segura e Reversível para Aumento de Circunferência Peniana"
       description="Guia completo sobre engrossamento peniano com ácido hialurônico: técnica, segurança, eficácia e resultados baseados em evidências científicas."
+      metaTitle={getPageMetadata("/educativo/engrossamento-peniano").title}
+      metaDescription={getPageMetadata("/educativo/engrossamento-peniano").description}
       medicalCondition="Engrossamento Peniano"
     >
       {/* Aviso Importante */}

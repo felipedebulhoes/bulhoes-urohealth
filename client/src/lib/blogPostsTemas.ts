@@ -1,9 +1,8 @@
 /**
- * Artigos dos temas apontados como lacuna na auditoria de SEO.
- * Base: diretrizes EAU 2026 (uroweb.org), artigos das diretrizes AUA publicados
- * no Journal of Urology e documentos oficiais citados em cada texto.
- * Sem promessa de resultado (CFM 2.336/2023). Precisam da revisão médica
- * do Dr. Felipe de Bulhões antes de receberem data de revisão.
+ * Artigos dos temas apontados como lacuna na auditoria de SEO, em linguagem simples.
+ * Base: diretrizes EAU 2026 (uroweb.org), diretrizes AUA publicadas no Journal of
+ * Urology e documentos oficiais citados em cada texto.
+ * Sem promessa de resultado (CFM 2.336/2023).
  */
 import type { BlogPost } from "@/lib/blogData";
 
@@ -14,99 +13,88 @@ const author = {
 };
 
 const DATE = "10 de Novembro de 2026";
-const COVER_UROONCO = "/manus-storage/uroonco-solo_7227a008_5754f461.webp";
-const COVER_SAUDE_MASCULINA = "/manus-storage/guide-saude-masculina-capa_b385e7c7.jpg";
-const COVER_URINARIO = "/manus-storage/incontinencia-urinaria-tipos_62186555_abc470ac.webp";
-const COVER_ENDOSCOPIA = "/manus-storage/ureteroscopy-illustration_0dc79076_b87de921.webp";
+const cover = (slug: string) => `/manus-storage/blog-capa-${slug}.jpg`;
 
 export const temaPosts: BlogPost[] = [
   {
     id: "17",
     slug: "ejaculacao-precoce-causas-e-tratamentos",
-    title: "Ejaculação Precoce: O Que É, Por Que Acontece e Quais São os Tratamentos",
+    title: "Ejaculação Precoce: O Que É, Por Que Acontece e Como Tratar",
     excerpt:
-      "A ejaculação precoce é uma das queixas sexuais masculinas mais comuns e tem tratamento. Entenda a diferença entre a forma de toda a vida e a adquirida, como é feito o diagnóstico e o que as diretrizes recomendam.",
-    coverImage: COVER_SAUDE_MASCULINA,
+      "Ejaculação precoce é comum, não tem a ver com idade e tem tratamento. Entenda os tipos, como é a consulta e quais caminhos existem, explicado de forma simples.",
+    coverImage: cover("ejaculacao-precoce-causas-e-tratamentos"),
     category: "Saúde Sexual",
     date: DATE,
-    readTime: "8 min de leitura",
+    readTime: "6 min de leitura",
     author,
     content: `
-A **ejaculação precoce** (EP) é uma das queixas sexuais mais frequentes entre os homens e, ao contrário da disfunção erétil, não fica mais comum com a idade. Mesmo assim, muitos homens nunca procuram ajuda, apesar do impacto na autoconfiança, no relacionamento e no humor. A boa notícia é que existe avaliação estruturada e tratamento com respaldo das principais sociedades de urologia.
+Ejaculação precoce é quando o homem ejacula **mais rápido do que gostaria**, quase sempre logo no começo da relação, **sem conseguir controlar** — e isso incomoda ele ou o casal.
+
+É uma das queixas sexuais mais comuns entre os homens. Diferente da dificuldade de ereção, ela **não aumenta com a idade**: pode aparecer em jovens e em homens mais velhos. Muitos nunca procuram ajuda por vergonha, mas é uma condição médica e **tem tratamento**.
 
 ---
 
-## O que é ejaculação precoce?
+## Existem tipos diferentes
 
-A classificação internacional de doenças (CID-11) passou a chamar a condição de **ejaculação precoce/antecipada**: a ejaculação que acontece antes ou logo depois da penetração ou de outro estímulo sexual, com **pouco ou nenhum controle percebido** e com incômodo para o homem ou para o casal.
-
-As diretrizes da **European Association of Urology (EAU)** descrevem quatro situações diferentes:
-
-| Tipo | Como se apresenta |
+| Tipo | O que significa |
 |---|---|
-| **Ao longo da vida (primária)** | Presente desde as primeiras experiências sexuais |
-| **Adquirida (secundária)** | Surge depois de um período de controle normal |
-| **Variável** | Episódios inconstantes, considerados variação normal |
-| **Subjetiva** | O homem percebe a ejaculação como rápida, mas o tempo é normal |
+| **Desde sempre** | Acontece desde as primeiras relações |
+| **Que apareceu depois** | O homem tinha controle e, em algum momento, perdeu |
+| **De vez em quando** | Acontece em algumas situações, não sempre. Costuma ser normal |
+| **Só na percepção** | O homem acha que é rápido, mas o tempo está dentro do normal |
 
-Essa distinção é importante porque muda o tratamento. Na forma adquirida, é comum haver uma causa associada, como **disfunção erétil, prostatite, alterações da tireoide ou ansiedade**.
+Quando a ejaculação precoce **aparece depois** de anos de controle, muitas vezes existe algo por trás: **dificuldade de ereção, inflamação na próstata, alterações da tireoide ou ansiedade**.
 
 ---
 
-## Como é feito o diagnóstico?
+## Como é a consulta?
 
-O diagnóstico é **clínico**, baseado na conversa e no exame físico:
+O diagnóstico é feito **na conversa e no exame físico**. Na maioria das vezes, **não precisa de exames de sangue**.
 
-- **História sexual detalhada**: desde quando acontece, se ocorre em todas as situações, o grau de controle e o impacto para o casal
-- **Diferenciar da disfunção erétil**: a ansiedade em perder a ereção pode levar o homem a acelerar a ejaculação
-- **Questionários validados**, como o PEDT (Premature Ejaculation Diagnostic Tool)
-- **Exame físico** para procurar condições associadas
+O urologista vai perguntar:
 
-Segundo a EAU, **exames laboratoriais de rotina não são necessários**. O tempo até a ejaculação costuma ser estimado pelo próprio paciente; a medição com cronômetro fica restrita aos estudos científicos.
+- Desde quando isso acontece
+- Se acontece em todas as relações ou só em algumas
+- Quanto você sente que consegue controlar
+- Como isso afeta você e a parceria
+
+Também é importante saber se há **dificuldade de ereção**. Às vezes, o medo de perder a ereção faz o homem "acelerar" sem perceber.
 
 ---
 
 ## Quais são os tratamentos?
 
-As diretrizes da EAU (2026) e da AUA/SMSNA organizam o tratamento em etapas, sempre por decisão compartilhada:
+O tratamento é escolhido **junto com você**, em etapas.
 
-### 1. Tratar o que estiver associado
-Disfunção erétil, prostatite e outras disfunções sexuais devem ser abordadas primeiro, porque podem ser a origem do problema.
+1. **Tratar o que estiver por trás**: se houver dificuldade de ereção ou inflamação na próstata, isso vem primeiro.
+2. **Remédio usado só antes da relação**: existe um comprimido feito especialmente para isso.
+3. **Spray anestésico** passado no pênis antes da relação, que diminui a sensibilidade.
+4. **Remédios de uso diário**: alguns medicamentos da família dos antidepressivos também ajudam a retardar a ejaculação. São usados em doses e formas próprias para essa finalidade.
+5. **Remédios para ereção**, quando ajudam no caso.
+6. **Acompanhamento psicológico e exercícios de controle**, que funcionam melhor junto com o tratamento médico, principalmente quando o problema apareceu depois.
 
-### 2. Primeira linha na forma ao longo da vida
-- **Dapoxetina**, comprimido usado sob demanda, desenvolvido para essa indicação
-- **Spray anestésico tópico** de lidocaína/prilocaína aplicado no pênis antes da relação
-
-### 3. Segunda linha
-- **Antidepressivos da classe ISRS em uso diário** ou **clomipramina**, com indicação fora da bula (off-label)
-
-### 4. Outras opções
-- **Inibidores da PDE5** (os mesmos usados na disfunção erétil) podem ajudar, isolados ou combinados
-- **Tramadol** sob demanda é considerado apenas em terceira linha, com cautela, pelo risco de dependência
-- **Terapia psicossexual e comportamental** é recomendada junto com a medicação, especialmente na forma adquirida
-
-Procedimentos como **neurectomia dorsal** não são recomendados pela EAU por falta de dados de segurança, e injeções de ácido hialurônico devem ser vistas com cautela.
+Procedimentos cirúrgicos para "diminuir a sensibilidade" **não são recomendados** pelas diretrizes atuais.
 
 ---
 
-## Efeitos colaterais que você precisa conhecer
+## Cuidados importantes
 
-| Tratamento | Cuidados |
-|---|---|
-| **Dapoxetina** | Náusea, diarreia, cefaleia e tontura; desmaio é raro. Avaliar pressão e frequência cardíaca antes de iniciar |
-| **ISRS diários** | Cansaço, sonolência, boca seca e redução da libido. Não suspender de forma abrupta; evitar se o casal está tentando engravidar |
-| **Anestésico tópico** | Pode passar a dormência para a parceria; usar preservativo ou lavar antes da relação |
-| **Tramadol** | Constipação, sonolência e risco de dependência |
+- **Não tome remédio por conta própria.** Alguns podem causar enjoo, tontura, sono ou diminuir a libido.
+- O **spray** pode deixar a parceria com a região dormente. Por isso, use preservativo ou lave antes da relação.
+- Remédios de uso diário **não devem ser interrompidos de repente** e podem não ser indicados para quem está tentando ter filhos.
 
-Nenhuma medicação deve ser iniciada por conta própria. A escolha depende do tipo de EP, das doenças associadas e do que faz sentido para o casal.
+Cada caso é diferente. O urologista vai explicar o que faz mais sentido para você.
 
 ---
 
 ## Quando procurar o urologista?
 
-Procure avaliação se a ejaculação rápida acontece com frequência, se você sente que não tem controle ou se o problema está afetando sua vida sexual ou o relacionamento. Também vale procurar se a EP apareceu de repente depois de anos de controle normal, porque pode haver uma causa tratável por trás.
+- Quando a ejaculação rápida acontece **na maior parte das relações**
+- Quando você sente que **não tem controle**
+- Quando isso está **afetando sua vida sexual ou o relacionamento**
+- Quando o problema **apareceu de repente**, depois de anos sem dificuldade
 
-A conversa no consultório é sigilosa e técnica. **Ejaculação precoce é uma condição médica, não uma falha pessoal.**
+A consulta é sigilosa e sem julgamentos. **Ejaculação precoce não é falha pessoal: é uma condição médica que tem tratamento.**
 
 ---
 
@@ -115,7 +103,6 @@ A conversa no consultório é sigilosa e técnica. **Ejaculação precoce é uma
 1. EAU Guidelines on Sexual and Reproductive Health — Disorders of Ejaculation. European Association of Urology, 2026.
 2. Shindel AW, Althof SE, Carrier S, et al. Disorders of Ejaculation: An AUA/SMSNA Guideline. J Urol. 2022;207(3):504-512. doi:10.1097/JU.0000000000002392
 3. Salonia A, Bettocchi C, Boeri L, et al. European Association of Urology Guidelines on Sexual and Reproductive Health — 2021 Update: Male Sexual Dysfunction. Eur Urol. 2021;80(3):333-357. doi:10.1016/j.eururo.2021.06.007
-4. Organização Mundial da Saúde. CID-11 — HA03 Ejaculação precoce/antecipada masculina.
 `,
   },
   {
@@ -123,82 +110,81 @@ A conversa no consultório é sigilosa e técnica. **Ejaculação precoce é uma
     slug: "cancer-de-rim-sintomas-diagnostico-tratamento",
     title: "Câncer de Rim: Sintomas, Diagnóstico e Tratamento",
     excerpt:
-      "A maioria dos tumores de rim hoje é descoberta por acaso, em exames de imagem feitos por outro motivo. Entenda os fatores de risco, como é feito o diagnóstico e quando é possível preservar o rim.",
-    coverImage: COVER_UROONCO,
+      "Hoje, a maioria dos tumores de rim é descoberta por acaso, em exames feitos por outro motivo. Veja quem tem mais risco, como é o diagnóstico e quando dá para preservar o rim.",
+    coverImage: cover("cancer-de-rim-sintomas-diagnostico-tratamento"),
     category: "Uro-oncologia",
     date: DATE,
-    readTime: "9 min de leitura",
+    readTime: "7 min de leitura",
     author,
     content: `
-O **câncer de rim** (carcinoma de células renais) representa cerca de **2% de todos os cânceres** e é aproximadamente **duas vezes mais frequente em homens** do que em mulheres. Uma mudança importante das últimas décadas é a forma de descoberta: segundo a European Association of Urology (EAU), cerca de **60% dos casos são encontrados por acaso**, em ultrassonografias ou tomografias pedidas por outros motivos.
+O câncer de rim é um tumor que nasce no próprio rim. Ele é cerca de **duas vezes mais comum em homens** do que em mulheres e aparece com mais frequência a partir da meia-idade.
+
+Uma mudança importante dos últimos anos: segundo a European Association of Urology (EAU), **cerca de 6 em cada 10 casos são descobertos por acaso**, em um ultrassom ou uma tomografia pedidos por outro motivo. Isso é bom, porque muitas vezes o tumor é encontrado ainda pequeno.
 
 ---
 
 ## Quais são os sintomas?
 
-Na maior parte das vezes, o tumor de rim **não causa sintomas nas fases iniciais**. A chamada tríade clássica — dor no flanco, sangue visível na urina e massa palpável no abdome — é rara e aparece em menos de 1% dos pacientes.
+No começo, o câncer de rim **quase nunca dá sintomas**. Por isso, alguns sinais merecem atenção:
 
-Sinais que merecem investigação:
+- **Sangue na urina**, mesmo que tenha acontecido uma única vez
+- **Dor nas costas, de um lado só**, que não passa e não tem explicação
+- **Um caroço** que dá para sentir na barriga
+- **Veias dilatadas no saco escrotal** que aparecem na vida adulta e não diminuem quando você deita
+- **Perda de peso, febre ou cansaço** sem motivo
 
-- **Sangue na urina** (hematúria), mesmo que em um único episódio
-- **Dor lombar persistente** sem causa aparente
-- **Massa palpável** no abdome
-- **Varicocele** (veias dilatadas no escroto) que surge na idade adulta e **não diminui ao deitar**
-- Sintomas gerais sem explicação: perda de peso, febre, cansaço
+Esses sinais também podem ter outras causas, mas devem ser avaliados.
 
 ---
 
-## Fatores de risco
+## Quem tem mais risco?
 
-A EAU lista fatores de risco bem estabelecidos:
-
-| Fator de risco | O que se sabe |
+| Fator | Por que importa |
 |---|---|
-| **Tabagismo** | Cerca de metade dos pacientes é fumante ou ex-fumante |
-| **Obesidade** | Risco maior em quem tem IMC acima de 35 |
-| **Hipertensão arterial** | Associada a maior risco |
-| **Síndrome metabólica** | Associada a maior risco |
-| **Doença renal crônica em diálise** | Risco muito aumentado ao longo da vida |
-| **Histórico familiar** | Ter parente de primeiro grau com o tumor dobra o risco |
+| **Cigarro** | Cerca de metade das pessoas com câncer de rim fuma ou já fumou |
+| **Excesso de peso** | O risco aumenta com a obesidade |
+| **Pressão alta** | Está ligada a maior risco |
+| **Doença renal em diálise** | O risco é bem maior ao longo da vida |
+| **Família** | Pai, mãe ou irmão com câncer de rim dobra o risco |
 
-Entre **5% e 8%** dos casos são hereditários. A avaliação genética é recomendada para pacientes com **46 anos ou menos**, tumores nos dois rins ou em vários pontos, ou histórico familiar.
+Uma pequena parte dos casos é **hereditária**. Quem tem o tumor antes dos 46 anos, nos dois rins ou com casos na família pode precisar de **avaliação genética**.
 
 ---
 
 ## Como é feito o diagnóstico?
 
-- **Tomografia com contraste** do abdome e do tórax é o exame padrão para diagnóstico e estadiamento
-- **Ressonância magnética** ou **ultrassom com contraste** são alternativas quando a tomografia não é conclusiva ou quando o contraste iodado deve ser evitado
-- **Biópsia do tumor** é recomendada antes de tratamentos como ablação ou terapia sistêmica, e pode ser considerada em quem vai fazer vigilância ativa
+- **Tomografia com contraste**: é o principal exame. Mostra o tumor e se ele se espalhou.
+- **Ressonância magnética ou ultrassom com contraste**: usados quando a tomografia não basta ou quando o contraste comum não pode ser usado.
+- **Biópsia**: em alguns casos, retirar um pedacinho do tumor com uma agulha ajuda a decidir o tratamento.
 
-Vale saber: cerca de **15% das massas renais operadas são benignas**, e a biópsia pode ajudar a evitar cirurgias desnecessárias em casos selecionados.
+Vale saber: **nem todo nódulo no rim é câncer**. Muitos cistos são simples e só precisam de acompanhamento.
 
 ---
 
-## Quais são as opções de tratamento?
+## Como é o tratamento?
 
-O tratamento é definido pelo tamanho do tumor, pela função renal, pela idade e pelas outras doenças do paciente, sempre por decisão compartilhada.
+O tratamento depende do tamanho do tumor, da idade, da saúde do rim e de outras doenças. A decisão é tomada **junto com você**.
 
-### Tumores pequenos (até 7 cm)
-A **nefrectomia parcial** — retirar apenas o tumor e preservar o restante do rim — é a opção preferencial segundo a EAU e a AUA. O controle do câncer é semelhante ao da retirada do rim inteiro, com melhor preservação da função renal.
+### Tumores pequenos
+Sempre que possível, a cirurgia retira **só o tumor e preserva o resto do rim** (nefrectomia parcial). Isso protege a função dos rins no futuro.
 
 ### Tumores maiores
-Quando a preservação não é possível, faz-se a **nefrectomia radical**, preferencialmente por **via laparoscópica ou robótica**, que costuma oferecer menor sangramento e internação mais curta do que a cirurgia aberta.
+Quando não dá para preservar, retira-se o rim inteiro. Hoje isso costuma ser feito por **videolaparoscopia ou cirurgia robótica**, com cortes pequenos e recuperação mais rápida do que a cirurgia aberta.
 
-### Vigilância ativa e ablação
-- **Vigilância ativa** com exames periódicos pode ser oferecida para tumores **menores de 4 cm**, principalmente em pessoas mais velhas ou com outras doenças
-- **Ablação térmica** (calor ou frio) é alternativa para tumores pequenos em quem não pode ser operado, após biópsia
+### Acompanhar em vez de operar
+Para **tumores muito pequenos** (menores de 4 cm), principalmente em pessoas mais velhas ou com outras doenças, pode ser possível **acompanhar com exames periódicos**, tratando só se o tumor crescer.
 
-### Tumores de alto risco
-Após a cirurgia, a **imunoterapia adjuvante** com pembrolizumabe é recomendada para casos de carcinoma de células claras com alto risco de recidiva.
+### Outras opções
+- **Destruir o tumor com calor ou frio** (ablação), por agulha, em quem não pode operar
+- **Tratamento complementar** depois da cirurgia, para casos com mais chance de voltar
 
-**Parar de fumar** é recomendado em todas as fases, porque está associado a menos recidiva e melhor sobrevida.
+**Parar de fumar** ajuda em todas as fases.
 
 ---
 
 ## Quando procurar o urologista?
 
-Procure avaliação se houver sangue na urina, dor lombar persistente ou se um exame de imagem mostrou um nódulo ou cisto complexo no rim. Muitos achados são benignos, mas a avaliação especializada define se é preciso acompanhar, biopsiar ou tratar.
+Procure avaliação se tiver **sangue na urina**, **dor nas costas que não passa** ou se algum exame mostrou **nódulo ou cisto no rim**. A maioria desses achados não é grave, mas só a avaliação especializada diz se é preciso acompanhar, investigar ou tratar.
 
 ---
 
@@ -214,77 +200,81 @@ Procure avaliação se houver sangue na urina, dor lombar persistente ou se um e
     slug: "cancer-de-testiculo-sinais-e-autoexame",
     title: "Câncer de Testículo: Sinais de Alerta, Diagnóstico e Tratamento",
     excerpt:
-      "O câncer de testículo é mais comum em homens jovens e tem altas taxas de cura quando tratado corretamente. Saiba quais sinais observar, quem tem mais risco e como é feito o diagnóstico.",
-    coverImage: COVER_UROONCO,
+      "O câncer de testículo é mais comum em homens jovens e, quando tratado da forma certa, tem chance de cura muito alta. Saiba o que observar e o que fazer.",
+    coverImage: cover("cancer-de-testiculo-sinais-e-autoexame"),
     category: "Uro-oncologia",
     date: DATE,
-    readTime: "8 min de leitura",
+    readTime: "6 min de leitura",
     author,
     content: `
-O **câncer de testículo** é um tumor pouco frequente na população geral — cerca de **1% dos cânceres em adultos** e **5% dos tumores urológicos** —, mas é um dos mais comuns em **homens jovens**. Segundo a European Association of Urology (EAU), o pico dos tumores não seminomatosos ocorre na terceira década de vida e o dos seminomas, na quarta. A incidência vem aumentando nas últimas décadas.
+O câncer de testículo não é comum na população em geral, mas é um dos tumores **mais frequentes em homens jovens**, principalmente entre os 20 e os 40 anos.
 
-A notícia mais importante: com diagnóstico e tratamento adequados, a **sobrevida de longo prazo passa de 95%** considerando os diferentes estágios.
+A notícia mais importante: com diagnóstico e tratamento corretos, **mais de 95% dos homens ficam bem a longo prazo**, segundo a European Association of Urology (EAU). Por isso, perceber cedo faz diferença.
 
 ---
 
 ## Quais são os sinais de alerta?
 
-- **Nódulo ou caroço indolor** no testículo — é a apresentação mais comum
-- **Aumento de volume** ou endurecimento de um dos testículos
-- **Sensação de peso** no escroto
-- Dor no escroto, no abdome ou nas costas, em alguns casos
-- **Aumento das mamas** (ginecomastia), menos frequente
+- **Um caroço no testículo**, que geralmente **não dói**
+- **Um testículo que ficou maior ou mais duro**
+- **Sensação de peso** no saco escrotal
+- Às vezes, dor no saco, na barriga ou nas costas
+- Mais raramente, **aumento das mamas**
 
-Como o nódulo costuma ser indolor, muitos homens adiam a consulta. **Qualquer alteração percebida no testículo deve ser avaliada por um urologista**, sem esperar.
+Como o caroço quase nunca dói, muitos homens deixam para depois. **Qualquer mudança no testículo deve ser avaliada logo por um urologista.** Na maioria das vezes não é câncer, mas só o exame permite saber.
 
 ---
 
 ## Quem tem mais risco?
 
-| Fator de risco | Observação |
+| Situação | O que fazer |
 |---|---|
-| **Criptorquidia** (testículo que não desceu na infância) | Mesmo após correção cirúrgica |
-| **Histórico familiar** | Pai ou irmão com câncer de testículo |
-| **Tumor prévio no outro testículo** | Exige acompanhamento contínuo |
-| **Infertilidade e produção reduzida de espermatozoides** | Fazem parte da mesma síndrome de disgenesia testicular |
+| **Testículo que não desceu na infância** (mesmo que já operado) | Conversar com o urologista sobre acompanhamento |
+| **Pai ou irmão que teve câncer de testículo** | Ficar atento a qualquer mudança |
+| **Já teve câncer no outro testículo** | Fazer acompanhamento regular |
+| **Problemas de fertilidade** | Avaliação completa com urologista |
 
 ---
 
-## Conhecer o próprio corpo
+## Conheça o seu corpo
 
-Não existe rastreamento populacional recomendado para câncer de testículo. Ainda assim, **conhecer o tamanho e a consistência normais dos próprios testículos** — por exemplo, durante o banho — ajuda a perceber mudanças cedo. Homens com fatores de risco devem conversar com o urologista sobre o acompanhamento adequado.
+Não existe um exame de rotina para toda a população. Mesmo assim, **conhecer como são seus testículos** — tamanho, formato, consistência — ajuda a notar mudanças cedo. O banho é um bom momento para isso.
 
 ---
 
 ## Como é feito o diagnóstico?
 
-1. **Exame físico** dos testículos, do abdome, das mamas e dos linfonodos
-2. **Ultrassonografia dos testículos**, exame rápido e sem radiação
-3. **Marcadores tumorais no sangue**: AFP, beta-hCG e LDH, antes e depois da cirurgia
-4. **Orquiectomia por via inguinal**: a retirada do testículo por uma incisão na virilha confirma o diagnóstico e trata o tumor. A EAU contraindica a via pelo escroto quando há suspeita de câncer
-5. **Tomografia de tórax, abdome e pelve** para avaliar se há disseminação
+1. **Exame físico** pelo urologista
+2. **Ultrassom do saco escrotal**: rápido, sem dor e sem radiação
+3. **Exames de sangue** que ajudam a identificar o tipo do tumor
+4. **Cirurgia para retirar o testículo afetado**, feita por um corte na virilha. Ela confirma o diagnóstico e já é o primeiro tratamento
+5. **Tomografia** para ver se o tumor se espalhou
 
 ---
 
-## Fertilidade: um cuidado que vem antes do tratamento
+## E a fertilidade?
 
-A qualidade do sêmen costuma estar reduzida em homens com câncer de testículo, antes e depois do tratamento. Por isso, a EAU recomenda que **todos os pacientes recebam orientação sobre congelamento de sêmen** antes de iniciar o tratamento. É a forma mais simples e eficaz de preservar a possibilidade de ter filhos.
+O câncer de testículo e o tratamento podem diminuir a produção de espermatozoides. Por isso, **antes de começar o tratamento, todo homem deve ser orientado sobre congelar o sêmen**. É simples e é a forma mais segura de preservar a chance de ter filhos.
 
-A retirada de um testículo, por si só, costuma preservar a produção hormonal e a fertilidade pelo testículo restante. Quando há desejo, pode ser discutida a colocação de **prótese testicular**.
+Com um testículo só, a maioria dos homens **continua produzindo hormônio e espermatozoides** normalmente. Se quiser, é possível colocar uma **prótese** no lugar do testículo retirado.
 
 ---
 
-## Tratamento após a cirurgia
+## E depois da cirurgia?
 
-Dependendo do tipo do tumor (seminoma ou não seminoma) e do estágio, o tratamento pode incluir **vigilância ativa**, **quimioterapia**, **radioterapia** ou cirurgia dos linfonodos. A decisão é individualizada, de preferência em centro com experiência e equipe multidisciplinar.
+Dependendo do tipo e da fase do tumor, o próximo passo pode ser:
 
-O acompanhamento depois do tratamento dura anos e inclui exames de imagem e marcadores, além de atenção à qualidade de vida, à saúde cardiovascular e ao bem-estar emocional.
+- **Acompanhar com exames**, sem outro tratamento
+- **Quimioterapia** ou **radioterapia**
+- Em alguns casos, outra cirurgia
+
+O acompanhamento dura alguns anos e inclui exames de sangue e de imagem.
 
 ---
 
 ## Quando procurar o urologista?
 
-Procure avaliação **logo que perceber** um nódulo, aumento de volume, endurecimento ou sensação de peso no testículo. Na grande maioria das vezes não é câncer, mas só a avaliação médica com ultrassonografia permite saber.
+**Assim que perceber** um caroço, inchaço, endurecimento ou sensação de peso no testículo. Não espere passar.
 
 ---
 
@@ -300,81 +290,88 @@ Procure avaliação **logo que perceber** um nódulo, aumento de volume, endurec
     slug: "fimose-em-adultos-e-criancas-tratamento",
     title: "Fimose em Crianças e Adultos: Quando É Normal e Quando Tratar",
     excerpt:
-      "Nem toda fimose precisa de cirurgia. Entenda a diferença entre a fimose fisiológica da infância e a que exige tratamento, quando a pomada funciona e quando a circuncisão é indicada.",
-    coverImage: COVER_SAUDE_MASCULINA,
+      "Nem toda fimose precisa de cirurgia. Entenda quando ela é normal na criança, quando a pomada resolve e quando a cirurgia é indicada, em linguagem simples.",
+    coverImage: cover("fimose-em-adultos-e-criancas-tratamento"),
     category: "Andrologia",
     date: DATE,
-    readTime: "7 min de leitura",
+    readTime: "6 min de leitura",
     author,
     content: `
-**Fimose** é a dificuldade ou impossibilidade de retrair o prepúcio — a pele que cobre a glande. É uma das dúvidas mais frequentes no consultório de urologia, tanto de pais quanto de homens adultos. O ponto principal: **nem toda fimose é doença**, e muitas não precisam de cirurgia.
+Fimose é quando **a pele que cobre a cabeça do pênis** (o prepúcio) **não consegue ser puxada para trás**, ou só vai com dificuldade.
+
+É uma das dúvidas mais comuns no consultório, de pais e de homens adultos. O mais importante para saber: **nem toda fimose é doença**, e muitas não precisam de cirurgia.
 
 ---
 
-## Fimose na infância: na maioria das vezes, é normal
+## Na criança, quase sempre é normal
 
-Ao nascer, quase todos os meninos têm o prepúcio aderido à glande. Isso é **fisiológico** e vai se resolvendo naturalmente com o crescimento. Segundo as diretrizes de urologia pediátrica da European Association of Urology (EAU):
+Quase todo menino nasce com a pele grudada na cabeça do pênis. Isso é **normal** e vai se soltando sozinho com o crescimento. Segundo a European Association of Urology (EAU):
 
-| Idade | Prepúcio retrátil |
+| Idade | Quantos meninos já conseguem puxar a pele |
 |---|---|
-| **Ao nascer** | Cerca de 4% |
-| **Ao final do 1º ano** | Cerca de 50% |
-| **Aos 3 anos** | Cerca de 89% |
-| **Entre 16 e 18 anos** | Fimose persiste em cerca de 1% |
+| **Ao nascer** | Cerca de 4 em cada 100 |
+| **Com 1 ano** | Cerca de metade |
+| **Com 3 anos** | Cerca de 9 em cada 10 |
+| **Na adolescência** | A fimose continua em cerca de 1 em cada 100 |
 
-As **aderências** entre prepúcio e glande, sem anel estreito, também são normais e tendem a se soltar sozinhas antes da puberdade. **Não se deve forçar a retração**, porque isso pode causar fissuras e cicatrizes que transformam uma fimose fisiológica em fimose verdadeira.
+**Não force a pele para trás.** Forçar pode machucar e criar cicatrizes, e aí sim a fimose vira um problema.
 
-O prepúcio "inflar" durante a micção (balonamento), isoladamente, **não é indicação de cirurgia**.
+A pele "encher como um balão" na hora de fazer xixi, **sozinha, não é motivo para cirurgia**.
 
 ---
 
 ## Quando a fimose precisa de tratamento?
 
-- **Infecções repetidas do prepúcio e da glande** (balanopostite de repetição)
-- **Infecções urinárias** em crianças com alterações do trato urinário
-- **Dificuldade para urinar** ou jato muito fino
-- **Dor ou dificuldade na relação sexual** em adolescentes e adultos
-- **Fimose cicatricial** por líquen escleroso
-- Fimose que **não responde à pomada**
+- **Inflamações ou infecções que voltam** na cabeça do pênis
+- **Infecção urinária** em crianças com outros problemas no sistema urinário
+- **Dificuldade para fazer xixi** ou jato muito fino
+- **Dor ou dificuldade nas relações sexuais**, em jovens e adultos
+- Pele **esbranquiçada, endurecida ou com rachaduras**
+- Fimose que **não melhora com a pomada**
 
 ---
 
-## Tratamento com pomada
+## A pomada resolve na maioria das vezes
 
-A primeira linha para a fimose sintomática é a **pomada de corticoide**, aplicada no anel estreito com retração suave, **duas vezes ao dia por 4 a 8 semanas**. A EAU relata sucesso **acima de 80%**, com recidiva de até 17% — por isso, a higiene com retração suave deve continuar depois do tratamento. A pomada **não solta aderências**, que não precisam de tratamento.
+O primeiro tratamento é uma **pomada de corticoide**, passada na pele **duas vezes por dia, por 4 a 8 semanas**, puxando a pele com cuidado. Segundo a EAU, **funciona em mais de 8 de cada 10 casos**.
 
----
-
-## Quando a circuncisão é indicada?
-
-A **circuncisão** (postectomia) é indicada principalmente em:
-
-- Fimose que **não melhora** com o tratamento clínico
-- **Balanopostites de repetição**
-- **Líquen escleroso** (também chamado de balanite xerótica obliterante)
-- Preferência do paciente ou da família, após orientação
-
-Em crianças com outras alterações do pênis (como hipospádia ou pênis embutido), a circuncisão simples **não deve ser feita** sem avaliação especializada, porque o prepúcio pode ser necessário para a correção.
+Depois, é importante **continuar a higiene** puxando a pele com delicadeza, para a fimose não voltar.
 
 ---
 
-## Fimose no adulto: atenção ao líquen escleroso
+## Quando a cirurgia é indicada?
 
-No adulto, a fimose que surge ou piora com o tempo merece investigação. Uma causa importante é o **líquen escleroso**, uma doença inflamatória crônica da pele que deixa o prepúcio esbranquiçado, endurecido e com fissuras. Ele pode comprometer também o meato urinário e exige **acompanhamento prolongado**.
+A **cirurgia de fimose** (postectomia ou circuncisão) é indicada quando:
 
-Diabetes mal controlado também favorece infecções e fimose no adulto. Além disso, a higiene difícil por fimose prolongada está associada a maior risco de **câncer de pênis** — mais um motivo para não adiar a avaliação.
+- A pomada **não resolveu**
+- As **inflamações voltam** com frequência
+- Existe **líquen escleroso**, uma doença da pele que endurece o prepúcio
+- O paciente ou a família **preferem**, depois de bem orientados
+
+Em meninos com outras alterações no pênis, a cirurgia deve ser planejada por um especialista, porque a pele pode ser necessária para outras correções.
 
 ---
 
-## Parafimose: uma urgência
+## No adulto, fique atento
 
-**Parafimose** acontece quando o prepúcio é retraído e não volta, formando um anel que aperta a glande e causa inchaço e dor. É uma **urgência médica**: procure atendimento imediatamente. O tratamento inicial é a redução manual; se não funcionar, pode ser necessária uma pequena incisão.
+No adulto, a fimose que **aparece ou piora com o tempo** precisa de avaliação. Duas causas comuns:
+
+- **Líquen escleroso**: deixa a pele esbranquiçada, dura e com rachaduras
+- **Diabetes descontrolado**: facilita inflamações e infecções
+
+A dificuldade de higiene por muitos anos também está ligada a maior risco de **câncer de pênis**. Mais um motivo para não adiar.
+
+---
+
+## Parafimose: procure atendimento na hora
+
+Parafimose é quando a pele **é puxada para trás e não volta**, apertando a cabeça do pênis, que incha e dói. **É uma urgência.** Procure um pronto atendimento imediatamente.
 
 ---
 
 ## Quando procurar o urologista?
 
-Procure avaliação se houver infecções repetidas, dor, dificuldade para urinar, sangramento, manchas esbranquiçadas no prepúcio ou dificuldade nas relações. Em crianças, a avaliação evita tanto cirurgias desnecessárias quanto o atraso no tratamento quando ele é realmente indicado.
+Se houver **inflamações que voltam, dor, dificuldade para fazer xixi, sangramento, manchas brancas na pele** ou **dificuldade nas relações**. Em crianças, a consulta evita tanto cirurgias desnecessárias quanto o atraso quando o tratamento é realmente preciso.
 
 ---
 
@@ -388,83 +385,81 @@ Procure avaliação se houver infecções repetidas, dor, dificuldade para urina
   {
     id: "21",
     slug: "prostatite-aguda-cronica-dor-pelvica",
-    title: "Prostatite: Aguda, Crônica e Síndrome da Dor Pélvica Crônica",
+    title: "Prostatite: Inflamação da Próstata e Dor Pélvica Crônica",
     excerpt:
-      "Prostatite não é uma doença só. Entenda a diferença entre a prostatite bacteriana aguda, a crônica e a síndrome da dor pélvica crônica, como é feito o diagnóstico e por que o tratamento costuma combinar várias abordagens.",
-    coverImage: COVER_SAUDE_MASCULINA,
+      "Prostatite não é uma doença só. Entenda a diferença entre a infecção aguda, a infecção que volta e a dor pélvica crônica, e por que o tratamento costuma combinar várias abordagens.",
+    coverImage: cover("prostatite-aguda-cronica-dor-pelvica"),
     category: "Próstata",
     date: DATE,
-    readTime: "9 min de leitura",
+    readTime: "7 min de leitura",
     author,
     content: `
-**Prostatite** é o nome dado a um conjunto de condições que causam inflamação ou dor relacionada à próstata. Ela pode afetar homens de qualquer idade adulta, inclusive jovens, e é uma causa frequente de consulta urológica. Entender qual tipo está presente é o primeiro passo para tratar corretamente.
+Prostatite é o nome dado a problemas que causam **inflamação ou dor ligada à próstata** — a glândula que fica logo abaixo da bexiga, no homem.
+
+Ela pode acontecer em **qualquer idade adulta**, inclusive em jovens. Saber qual é o tipo é o primeiro passo para tratar do jeito certo.
 
 ---
 
 ## Os tipos de prostatite
 
-A classificação do NIH (Institutos Nacionais de Saúde dos EUA), adotada pela European Association of Urology (EAU), divide a prostatite em quatro categorias:
+| Tipo | Como é |
+|---|---|
+| **Infecção aguda** | Começa de repente, com febre e dor ao urinar |
+| **Infecção que volta** | Infecções que se repetem, com bactéria encontrada nos exames |
+| **Dor pélvica crônica** | Dor por mais de 3 meses, **sem infecção** |
+| **Sem sintomas** | Inflamação vista só em exames |
 
-| Categoria | Nome | Característica principal |
-|---|---|---|
-| **I** | Prostatite bacteriana aguda | Infecção de início súbito, com febre |
-| **II** | Prostatite bacteriana crônica | Infecções que se repetem, com bactéria identificada |
-| **III** | Síndrome da dor pélvica crônica | Dor por mais de 3 meses sem infecção comprovada |
-| **IV** | Prostatite inflamatória assintomática | Achado em exames, sem sintomas |
-
-A **categoria III é a mais comum**. A EAU passou a chamá-la de **síndrome da dor prostática primária** e considera o termo "prostatite crônica" inadequado nesses casos, porque não há infecção.
+O tipo **mais comum é a dor pélvica crônica**. Por isso, a European Association of Urology (EAU) prefere chamá-la de **síndrome da dor prostática**, já que muitas vezes não há infecção.
 
 ---
 
-## Prostatite bacteriana aguda
+## Infecção aguda da próstata
 
 ### Sintomas
-- **Febre e calafrios**, mal-estar
-- **Dor** na região do períneo, baixo ventre ou ao urinar
-- **Urgência, aumento da frequência** e dificuldade para urinar
-- Em alguns casos, **retenção urinária**
+- **Febre e calafrios**
+- **Dor** entre o saco e o ânus, no pé da barriga ou ao urinar
+- **Vontade de urinar toda hora** e dificuldade para esvaziar a bexiga
+- Às vezes, **não conseguir urinar**
 
-### Diagnóstico e tratamento
-O diagnóstico usa **exame de urina, urocultura e exames de sangue**. A EAU recomenda **não fazer massagem prostática** nesses casos, pelo risco de espalhar a infecção para o sangue.
-
-O tratamento é feito com **antibióticos por 2 a 4 semanas**, muitas vezes iniciado pela veia quando há sinais de gravidade. Em casos selecionados, a ultrassonografia ajuda a descartar **abscesso**.
+### O que fazer
+Procure atendimento **no mesmo dia**. O diagnóstico é feito com **exame de urina, cultura de urina e exames de sangue**. O tratamento é com **antibiótico por 2 a 4 semanas**, às vezes começando pela veia.
 
 ---
 
-## Prostatite bacteriana crônica
+## Infecção que volta
 
-Os sintomas duram **pelo menos 3 meses**: dor no períneo, escroto, pênis ou parte interna da coxa, além de sintomas urinários, com infecções que podem se repetir.
+Os sintomas duram **3 meses ou mais**: dor entre o saco e o ânus, no pênis, nos testículos ou na virilha, junto com incômodo para urinar. As infecções podem ir e voltar.
 
-- **Diagnóstico**: teste de Meares-Stamey (2 ou 4 copos), que compara a urina antes e depois da massagem prostática; pesquisa de agentes como clamídia e micoplasma quando indicado
-- **Tratamento**: antibiótico de boa penetração na próstata, como as fluoroquinolonas, por **4 a 6 semanas**; outros esquemas quando a bactéria identificada exige
-- O **PSA não ajuda** no diagnóstico de prostatite
+- O diagnóstico usa **exames de urina colhidos antes e depois de uma massagem da próstata** feita pelo médico
+- O tratamento é com **antibiótico por 4 a 6 semanas**, escolhido de acordo com a bactéria
+- O exame de **PSA não serve** para diagnosticar prostatite
 
 ---
 
-## Síndrome da dor pélvica crônica
+## Dor pélvica crônica
 
-É a forma mais comum e, muitas vezes, a mais frustrante para o paciente, porque **não se resolve só com antibiótico**. A dor é real e pode envolver a musculatura do assoalho pélvico, nervos, bexiga e fatores emocionais.
+É a forma mais comum e, às vezes, a mais difícil para o paciente, porque **antibiótico sozinho não resolve**. A dor é real e pode envolver os **músculos da pelve**, os **nervos**, a **bexiga** e também o **estresse e a ansiedade**.
 
-As diretrizes da EAU recomendam um **tratamento multimodal, direcionado ao perfil de sintomas** de cada paciente:
+Por isso, o tratamento costuma **combinar várias abordagens**, de acordo com os sintomas de cada pessoa:
 
-| Abordagem | O que a EAU diz |
+| Abordagem | Como ajuda |
 |---|---|
-| **Alfabloqueadores** | Recomendados quando os sintomas têm menos de 1 ano |
-| **Antibióticos** | Um ciclo de pelo menos 6 semanas pode ser considerado em quem nunca tratou e tem sintomas há menos de 1 ano; evitar repetições sem critério |
-| **Anti-inflamatórios** | Podem ser usados, pesando efeitos de longo prazo |
-| **Acupuntura** | Recomendada, com benefício sobre sintomas e qualidade de vida |
-| **Fisioterapia do assoalho pélvico** | Tratamento miofascial como primeira linha quando há disfunção muscular |
-| **Apoio psicológico** | Indicado quando há sofrimento importante associado à dor |
+| **Remédios que relaxam a próstata e a bexiga** | Melhoram a dor e o jato de urina, principalmente no início |
+| **Antibiótico** | Só em casos selecionados, de forma planejada |
+| **Anti-inflamatórios** | Aliviam a dor, com cuidado no uso prolongado |
+| **Fisioterapia pélvica** | Relaxa e reeduca os músculos da pelve |
+| **Acupuntura** | Pode melhorar a dor e a qualidade de vida |
+| **Apoio psicológico** | Ajuda a lidar com a dor e o estresse que ela causa |
 
-O objetivo é **reduzir a dor e melhorar a qualidade de vida**, com reavaliações periódicas e ajuste da combinação de tratamentos.
+O objetivo é **diminuir a dor e melhorar o dia a dia**, com retornos para ajustar o tratamento.
 
 ---
 
 ## Quando procurar atendimento?
 
-- **Febre com dor ao urinar ou dificuldade para urinar**: procure atendimento no mesmo dia
-- **Dor pélvica, no períneo ou nos testículos por semanas**: agende avaliação com urologista
-- **Infecções urinárias repetidas em homem**: merecem investigação da próstata
+- **Febre com dor ou dificuldade para urinar**: procure atendimento no mesmo dia
+- **Dor na pelve, entre o saco e o ânus ou nos testículos por semanas**: agende consulta com urologista
+- **Infecções urinárias que se repetem**: no homem, sempre merecem investigação
 
 ---
 
@@ -477,80 +472,74 @@ O objetivo é **reduzir a dor e melhorar a qualidade de vida**, com reavaliaçõ
   {
     id: "22",
     slug: "estenose-de-uretra-sintomas-tratamento",
-    title: "Estenose de Uretra: Sintomas, Diagnóstico e Tratamento",
+    title: "Estenose de Uretra: Quando o Canal da Urina Fica Estreito",
     excerpt:
-      "Jato urinário fraco em homens nem sempre é próstata. A estenose de uretra é um estreitamento do canal da urina que pode voltar após tratamentos simples. Entenda quando a uretroplastia é a melhor opção.",
-    coverImage: COVER_ENDOSCOPIA,
+      "Jato de urina fraco nem sempre é próstata. Entenda o que é o estreitamento da uretra, por que ele acontece e quando a cirurgia de reconstrução é o melhor caminho.",
+    coverImage: cover("estenose-de-uretra-sintomas-tratamento"),
     category: "Tratamentos",
     date: DATE,
-    readTime: "8 min de leitura",
+    readTime: "6 min de leitura",
     author,
     content: `
-A **estenose de uretra** é um estreitamento do canal que leva a urina da bexiga para fora do corpo. Ela é causada por uma cicatriz na parede da uretra e pode surgir em homens de qualquer idade. Como os sintomas lembram os do aumento da próstata, muitas vezes o diagnóstico demora.
+A **uretra** é o canal que leva a urina da bexiga para fora do corpo. **Estenose de uretra** é quando esse canal **fica estreito** por causa de uma cicatriz na parede dele.
+
+Pode acontecer em homens de qualquer idade. Como os sintomas parecem com os da próstata aumentada, muitas vezes o diagnóstico demora.
 
 ---
 
-## Por que a uretra estreita?
+## Por que a uretra fica estreita?
 
-As causas mais comuns são:
-
-- **Procedimentos médicos anteriores**: sondagem, cistoscopia, cirurgias de próstata ou radioterapia
-- **Trauma**: quedas "a cavaleiro" sobre o períneo ou fraturas da pelve
-- **Infecções**, como uretrites de transmissão sexual
-- **Líquen escleroso**, doença inflamatória da pele genital
-- **Sem causa identificada** (idiopática), em parte dos casos
+- **Procedimentos anteriores**: uso de sonda, exames com câmera, cirurgias da próstata ou radioterapia
+- **Pancadas** na região entre o saco e o ânus (como cair "de cavalinho" em uma barra) ou fraturas da bacia
+- **Infecções**, como as transmitidas pelo sexo
+- **Líquen escleroso**, uma doença da pele dos genitais
+- Em parte dos casos, **não se descobre a causa**
 
 ---
 
 ## Sintomas
 
-- **Jato urinário fraco** ou em "spray"
-- **Sensação de esvaziamento incompleto** da bexiga
-- **Gotejamento** após urinar
-- Aumento da frequência e urgência para urinar
-- Dor ao urinar e **infecções urinárias**
-- Dificuldade em passar sonda em procedimentos
-- Em casos avançados, **retenção urinária** — incapacidade de urinar, que é urgência
+- **Jato de urina fraco**, fino ou que espirra para os lados
+- **Sensação de que a bexiga não esvaziou**
+- **Gotejar** depois de urinar
+- **Vontade de urinar toda hora**
+- **Ardência e infecções urinárias**
+- Em casos avançados, **não conseguir urinar** — isso é urgência
 
 ---
 
 ## Como é feito o diagnóstico?
 
-A European Association of Urology (EAU) descreve os principais exames:
-
 | Exame | Para que serve |
 |---|---|
-| **Urofluxometria** | Mede a força do jato; sugere obstrução, mas não confirma sozinha |
-| **Resíduo pós-miccional** | Mostra quanto de urina fica na bexiga após urinar |
-| **Uretrografia** | Raio-X com contraste que mostra o local e a extensão do estreitamento |
-| **Uretrocistoscopia** | Visualiza diretamente o estreitamento por câmera |
+| **Fluxo urinário** | Você urina em um aparelho que mede a força do jato |
+| **Ultrassom após urinar** | Mostra quanto de urina sobrou na bexiga |
+| **Raio-X com contraste da uretra** | Mostra onde está o estreitamento e o tamanho dele |
+| **Exame com câmera fina** | Permite ver o estreitamento por dentro |
 
-Conhecer **o local e o comprimento** da estenose é essencial para escolher o tratamento.
+Saber **onde fica e qual o tamanho** do estreitamento é essencial para escolher o tratamento.
 
 ---
 
-## Opções de tratamento
+## Como é o tratamento?
 
-### Dilatação e uretrotomia interna
-A **uretrotomia interna** (corte do estreitamento por via endoscópica) e a **dilatação** são procedimentos simples, indicados principalmente para **estenoses curtas (menos de 2 cm) da uretra bulbar** que nunca foram tratadas. O problema é a **recidiva**: nos estudos, o estreitamento costuma voltar no primeiro ano em boa parte dos casos.
+### Dilatação ou corte por dentro
+São procedimentos mais simples, feitos pelo próprio canal. Funcionam melhor em **estreitamentos curtos** que **nunca foram tratados**. O problema é que **o estreitamento costuma voltar**, muitas vezes no primeiro ano.
 
-A EAU **não recomenda repetir a uretrotomia ou a dilatação mais de duas vezes** quando a uretroplastia é possível, porque procedimentos repetidos podem tornar a estenose mais longa e complexa.
+Por isso, a European Association of Urology (EAU) orienta a **não repetir esses procedimentos mais de duas vezes** quando a cirurgia de reconstrução é possível. Repetir demais pode deixar o estreitamento mais longo e difícil de corrigir.
 
-### Uretroplastia
-A **uretroplastia** é a cirurgia de reconstrução da uretra. Pode ser feita retirando o trecho estreitado e unindo as pontas, ou ampliando a uretra com **enxerto de mucosa oral** (retirado da parte interna da bochecha). Nos estudos citados pela EAU, as taxas de uretra pérvia em estenoses bulbares ficam entre cerca de **88% e 99%**, conforme a técnica e o tipo de estenose.
+### Uretroplastia: a reconstrução
+A **uretroplastia** é a cirurgia que **reconstrói a uretra**. Dependendo do caso, o trecho estreito é retirado e as pontas são unidas, ou a uretra é ampliada com um **enxerto tirado da parte de dentro da bochecha**. Nos estudos analisados pela EAU, a maior parte dos pacientes fica com o canal aberto depois da cirurgia.
 
 ### Outras opções
-- **Balão com medicamento**: para estenoses bulbares curtas que voltaram após pelo menos duas tentativas endoscópicas, em quem não pode ou não quer fazer uretroplastia
-- **Autodilatação intermitente**: para manter a uretra aberta quando a cirurgia não é uma opção
-- **Stents permanentes** não são recomendados
+- **Balão com remédio**, para alguns estreitamentos curtos que voltaram, em quem não pode fazer a cirurgia
+- **Dilatação feita pelo próprio paciente** em casa, quando a cirurgia não é uma opção
 
 ---
 
 ## Quando procurar o urologista?
 
-Procure avaliação se o jato urinário enfraqueceu, se você precisa fazer força para urinar ou se tem infecções urinárias repetidas — principalmente se já passou por sondagem, cirurgia urológica ou trauma na região. Se não conseguir urinar, procure atendimento de urgência.
-
-A escolha do tratamento depende do local, do comprimento e da causa da estenose, e deve ser discutida com o urologista.
+Se o **jato de urina enfraqueceu**, se você **precisa fazer força para urinar** ou tem **infecções que se repetem** — principalmente se já usou sonda, fez cirurgia urológica ou sofreu pancada na região. **Se não conseguir urinar, procure um pronto atendimento.**
 
 ---
 
@@ -562,65 +551,70 @@ A escolha do tratamento depende do local, do comprimento e da causa da estenose,
   {
     id: "23",
     slug: "bexiga-hiperativa-urgencia-urinaria-tratamento",
-    title: "Bexiga Hiperativa: Urgência Para Urinar Tem Tratamento",
+    title: "Bexiga Hiperativa: Vontade Urgente de Urinar Tem Tratamento",
     excerpt:
-      "Vontade súbita e difícil de segurar, idas frequentes ao banheiro e acordar à noite para urinar podem ser bexiga hiperativa. Conheça as etapas de tratamento, das mudanças de hábito às opções mais avançadas.",
-    coverImage: COVER_URINARIO,
+      "Vontade forte e repentina de urinar, idas frequentes ao banheiro e acordar à noite para fazer xixi podem ser bexiga hiperativa. Veja como tratar, passo a passo.",
+    coverImage: cover("bexiga-hiperativa-urgencia-urinaria-tratamento"),
     category: "Tratamentos",
     date: DATE,
-    readTime: "8 min de leitura",
+    readTime: "6 min de leitura",
     author,
     content: `
-A **bexiga hiperativa** é definida pela **urgência urinária** — uma vontade súbita de urinar, difícil de adiar —, geralmente acompanhada de **aumento da frequência** e de **noctúria** (acordar à noite para urinar), com ou sem perda de urina. Para o diagnóstico, é preciso que não haja infecção urinária ou outra causa evidente.
+Bexiga hiperativa é quando dá uma **vontade forte e repentina de urinar, difícil de segurar**. Normalmente vem junto com **ir ao banheiro muitas vezes** durante o dia e **acordar à noite para fazer xixi**. Às vezes, a pessoa perde urina antes de chegar ao banheiro.
 
-A condição afeta **homens e mulheres**, é mais comum com a idade e tem grande impacto no sono, no trabalho e na vida social. Muitas pessoas acham que é "normal da idade" e não procuram ajuda — mas existe tratamento em etapas.
+Acontece em **homens e mulheres** e fica mais comum com a idade. Muita gente acha que é "normal da idade" e não procura ajuda, mas **tem tratamento**, e ele é feito em etapas.
 
 ---
 
-## Como é feita a avaliação?
+## Como é a avaliação?
 
-- **Conversa detalhada** sobre os sintomas e os medicamentos em uso, porque alguns remédios pioram a bexiga
+- **Conversa** sobre os sintomas e sobre os **remédios que você usa**, porque alguns pioram a bexiga
 - **Exame físico**
-- **Exame de urina** para descartar infecção e sangue
-- **Diário miccional de pelo menos 3 dias**, anotando horários, volumes e líquidos ingeridos
-- **Resíduo pós-miccional** quando há suspeita de esvaziamento incompleto
+- **Exame de urina**, para descartar infecção ou sangue
+- **Diário da bexiga**: por pelo menos 3 dias, você anota a que horas urinou, quanto urinou e quanto bebeu
+- **Ultrassom** para ver se a bexiga esvazia bem, quando necessário
 
-Segundo a European Association of Urology (EAU), o **estudo urodinâmico não é necessário de rotina** antes do primeiro tratamento nos casos sem complicação. No homem, é importante avaliar também a **próstata**, porque o aumento prostático pode causar ou piorar os sintomas.
+No homem, também é importante avaliar a **próstata**, porque o aumento dela pode causar ou piorar esses sintomas.
 
 ---
 
-## O tratamento em etapas
+## O tratamento, passo a passo
 
-As diretrizes da AUA/SUFU (2024) e da EAU recomendam escolher o tratamento por **decisão compartilhada**, começando pelo mais simples.
+Segundo as diretrizes da AUA/SUFU e da European Association of Urology (EAU), começa-se pelo mais simples.
 
-### 1. Mudanças de hábito e treinamento
-- **Reduzir cafeína**, que pode melhorar urgência e frequência
-- **Ajustar a ingestão de líquidos**, sem desidratar
-- **Perder peso**, quando há excesso
+### 1. Mudanças no dia a dia
+- **Diminuir café, chá preto, refrigerante de cola e energético**
+- **Organizar a quantidade de líquido** ao longo do dia, sem deixar de se hidratar
+- **Perder peso**, se houver excesso
 - **Parar de fumar**
-- **Treinamento vesical**: aumentar gradualmente o intervalo entre as micções
-- **Fisioterapia do assoalho pélvico**
+- **Treinar a bexiga**: aumentar aos poucos o tempo entre as idas ao banheiro
+- **Fisioterapia pélvica**, para fortalecer e controlar os músculos da pelve
 
-### 2. Medicamentos
-- **Antimuscarínicos**: reduzem as contrações involuntárias da bexiga. Podem causar boca seca e intestino preso. A EAU recomenda **cautela no uso prolongado em idosos**, especialmente com risco de alterações de memória
-- **Agonistas beta-3** (mirabegrona e vibegrona): alternativa com outro mecanismo, que podem ser usados isolados ou combinados
+### 2. Remédios
+- Existem **dois grupos principais de remédios** que acalmam a bexiga
+- Um deles pode dar **boca seca e intestino preso** e deve ser usado com **cuidado em idosos**, principalmente com problemas de memória
+- O outro age de forma diferente e costuma ter menos desses efeitos
 
-### 3. Tratamentos para casos refratários
-- **Estimulação do nervo tibial posterior**: sessões semanais de estímulo elétrico próximo ao tornozelo
-- **Toxina botulínica injetada na bexiga**: efeito temporário, com risco de infecção urinária e de precisar de cateterismo intermitente por um período
-- **Neuromodulação sacral**: dispositivo implantado que regula os nervos da bexiga
+### 3. Quando os remédios não bastam
+- **Estímulo elétrico leve** em um nervo perto do tornozelo, em sessões semanais
+- **Aplicação de toxina botulínica na bexiga**, que tem efeito temporário e pode exigir o uso de sonda por algum tempo em parte dos pacientes
+- **Marcapasso da bexiga** (neuromodulação sacral), um pequeno aparelho implantado que regula os nervos da bexiga
 
 ---
 
-## Bexiga hiperativa no homem
+## No homem, a próstata também conta
 
-No homem, sintomas de urgência frequentemente convivem com **aumento da próstata** (HPB). A diretriz da AUA/SUFU dedica atenção específica a essa combinação, porque o tratamento pode envolver medicamentos para a próstata, para a bexiga ou ambos, de acordo com a avaliação.
+No homem, a urgência para urinar muitas vezes aparece junto com o **aumento da próstata**. O tratamento pode envolver remédio para a próstata, para a bexiga ou os dois, conforme a avaliação.
 
 ---
 
 ## Quando procurar o urologista?
 
-Procure avaliação se a urgência para urinar atrapalha sua rotina, se você acorda mais de uma vez por noite para urinar ou se há perdas de urina. Procure antes se houver **sangue na urina, dor, febre ou dificuldade para esvaziar a bexiga**, sinais que pedem investigação de outras causas.
+- Quando a vontade urgente de urinar **atrapalha sua rotina**
+- Quando você **acorda mais de uma vez por noite** para urinar
+- Quando há **perda de urina**
+
+Procure **antes** se tiver **sangue na urina, dor, febre ou dificuldade para esvaziar a bexiga**.
 
 ---
 
@@ -636,77 +630,76 @@ Procure avaliação se a urgência para urinar atrapalha sua rotina, se você ac
     slug: "ists-e-hpv-no-homem-prevencao-e-tratamento",
     title: "ISTs e HPV no Homem: Sintomas, Prevenção e Tratamento",
     excerpt:
-      "Muitas infecções sexualmente transmissíveis no homem não dão sintomas. Saiba quando suspeitar de uretrite, como é feito o diagnóstico, o que fazer com verrugas genitais e quem pode se vacinar contra o HPV pelo SUS.",
-    coverImage: COVER_SAUDE_MASCULINA,
+      "Muitas infecções sexualmente transmissíveis no homem não dão sintomas. Saiba quando desconfiar, como é o diagnóstico, o que fazer com verrugas genitais e quem pode tomar a vacina do HPV pelo SUS.",
+    coverImage: cover("ists-e-hpv-no-homem-prevencao-e-tratamento"),
     category: "Saúde Sexual",
     date: DATE,
-    readTime: "9 min de leitura",
+    readTime: "7 min de leitura",
     author,
     content: `
-As **infecções sexualmente transmissíveis (ISTs)** são comuns e, no homem, muitas vezes **não causam sintomas** — o que favorece a transmissão. O urologista é um dos especialistas que atendem essas condições, com diagnóstico sigiloso, tratamento e orientação para a parceria.
+ISTs são as **infecções sexualmente transmissíveis**, que passam de uma pessoa para outra pelo sexo. Elas são comuns e, no homem, **muitas vezes não dão nenhum sintoma** — por isso passam adiante sem a pessoa saber.
+
+O urologista é um dos médicos que cuidam dessas infecções, com **diagnóstico sigiloso**, tratamento e orientação para a parceria.
 
 ---
 
-## Uretrite: quando suspeitar
+## Uretrite: a infecção no canal da urina
 
-A **uretrite** é a inflamação da uretra, geralmente causada por agentes de transmissão sexual. Os principais são:
+Uretrite é a **inflamação da uretra**, o canal por onde sai a urina. Na maioria das vezes é causada por ISTs como **gonorreia** e **clamídia**.
 
-- **Neisseria gonorrhoeae** (gonorreia)
-- **Chlamydia trachomatis** (clamídia)
-- **Mycoplasma genitalium**
-- Outros, como *Trichomonas vaginalis* e *Ureaplasma*
+### Sinais de alerta
+- **Secreção** saindo pelo pênis (clara, amarelada ou esverdeada)
+- **Ardência ou dor para urinar**
+- **Coceira** na ponta do pênis
+- Às vezes, **dor nos testículos**
 
-### Sintomas
-- **Secreção** pela uretra (clara, amarelada ou esverdeada)
-- **Ardência ou dor ao urinar**
-- Coceira na ponta do pênis
-- Em alguns casos, **dor nos testículos** (epididimite)
+### Como é o diagnóstico
+Geralmente com um **exame de urina específico**, de preferência com a primeira urina da manhã, que identifica qual microrganismo está causando a infecção. Isso ajuda a escolher o antibiótico certo.
 
-### Diagnóstico
-A European Association of Urology (EAU) recomenda o **teste de amplificação de ácido nucleico (NAAT)** na primeira urina do dia ou em swab uretral, para gonorreia, clamídia e *M. genitalium*, **antes do tratamento**. Nos casos de gonorreia, a cultura ajuda a avaliar resistência aos antibióticos.
+### Como é o tratamento
+Com **antibiótico escolhido pelo médico**. **Não tome antibiótico por conta própria**: o tratamento errado ou incompleto deixa as bactérias mais resistentes, e a gonorreia já é um grande desafio nesse ponto.
 
-### Tratamento
-O antibiótico é escolhido conforme o agente e a resistência local. **Não use antibióticos por conta própria**: tratamento incompleto favorece resistência, e a gonorreia é um dos maiores desafios atuais nesse sentido.
-
-Pontos essenciais, segundo a EAU e o CDC:
-- **A parceria sexual também deve ser avaliada e tratada**, com sigilo
-- **Abster-se de relações** por pelo menos 7 dias após o fim do tratamento
-- **Testar para HIV, sífilis e hepatites** no momento do diagnóstico
-- Retornar se os sintomas persistirem
+Pontos importantes:
+- **A parceria também precisa ser avaliada e tratada**, com sigilo
+- **Evite relações** por pelo menos 7 dias depois de terminar o tratamento
+- **Faça os testes de HIV, sífilis e hepatites** no mesmo momento
+- **Volte ao médico** se os sintomas continuarem
 
 ---
 
 ## HPV no homem
 
-O **HPV (papilomavírus humano)** é a IST mais comum. A maior parte das infecções é eliminada pelo próprio organismo, mas alguns tipos causam **verrugas genitais** e outros estão associados a **cânceres** de pênis, ânus e orofaringe.
+O **HPV** é a IST mais comum. Na maioria das vezes, **o próprio corpo elimina o vírus** sem a pessoa perceber. Mas alguns tipos causam **verrugas genitais**, e outros estão ligados a alguns **tipos de câncer**, como de pênis, ânus e garganta.
 
 ### Verrugas genitais
-Aparecem como lesões elevadas, da cor da pele ou mais escuras, no pênis, escroto, região anal ou virilha. O tratamento pode ser feito com **medicações tópicas**, **cauterização química**, **crioterapia** ou **remoção cirúrgica**, conforme número, tamanho e localização. O tratamento remove as lesões, mas o vírus pode permanecer e as verrugas podem voltar — por isso o acompanhamento é importante.
+São **pequenas elevações na pele**, da cor da pele ou mais escuras, no pênis, no saco escrotal, na virilha ou em volta do ânus. Podem ser tratadas com **pomadas, aplicação de produtos no consultório, congelamento ou retirada**, de acordo com o tamanho e o lugar.
 
-### Vacinação
-A vacina quadrivalente mostrou eficácia em homens na prevenção de infecção persistente e de lesões genitais externas causadas pelos tipos incluídos. No **SUS**:
+O tratamento tira as verrugas, mas **elas podem voltar**, porque o vírus pode continuar no corpo. Por isso, o acompanhamento é importante.
 
-- **Meninos e meninas de 9 a 14 anos** recebem a vacina em **dose única**, conforme nota técnica do Ministério da Saúde de 2024
-- Há indicação para **grupos especiais**, como pessoas vivendo com HIV e transplantados, em faixa etária ampliada
-- Em 2025 houve ampliação temporária para adolescentes de 15 a 19 anos não vacinados; confira na unidade de saúde as regras vigentes
+### A vacina protege
+Estudos mostraram que a vacina **protege os homens** contra as verrugas e as lesões causadas pelos tipos de HPV que ela cobre. No **SUS**:
 
-Fora dessas faixas, a vacinação pode ser avaliada individualmente com o médico, na rede privada.
+- **Meninos e meninas de 9 a 14 anos** tomam a vacina em **dose única**
+- Algumas pessoas têm direito em idade maior, como **pessoas que vivem com HIV** e **transplantados**
+- Em 2025, houve uma ampliação temporária para jovens de 15 a 19 anos que não tinham se vacinado. **Confira no posto de saúde as regras atuais**
+
+Fora dessas situações, a vacina pode ser conversada com o médico e aplicada na rede particular.
 
 ---
 
-## Prevenção combinada
+## Como se proteger
 
-- **Preservativo** em todas as relações
-- **Testagem regular** para HIV, sífilis e hepatites, conforme a exposição
-- **PrEP e PEP** para HIV, disponíveis no SUS conforme indicação
-- **Vacinação** contra HPV e hepatite B
-- **Tratamento da parceria** sempre que houver diagnóstico
+- **Use preservativo** em todas as relações
+- **Faça testes regularmente** para HIV, sífilis e hepatites, se tiver relações sem preservativo ou mais de uma parceria
+- **PrEP e PEP**: remédios que previnem o HIV antes ou logo depois de uma exposição de risco, disponíveis no SUS
+- **Vacine-se** contra HPV e hepatite B
+- **Trate a parceria** sempre que houver diagnóstico
 
 ---
 
 ## Quando procurar o urologista?
 
-Procure avaliação se houver secreção, ardência ao urinar, feridas, verrugas ou dor nos testículos, ou se houve exposição de risco. A consulta é sigilosa, e o diagnóstico precoce protege você e a parceria.
+Se aparecer **secreção, ardência para urinar, feridas, verrugas ou dor nos testículos**, ou se você teve uma **relação de risco**. A consulta é sigilosa e sem julgamentos. Tratar cedo protege você e quem está com você.
 
 ---
 

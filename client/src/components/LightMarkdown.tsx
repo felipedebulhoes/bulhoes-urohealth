@@ -56,6 +56,18 @@ function renderInline(text: string): ReactNode[] {
   });
 }
 
+function isTableRow(line: string) {
+  return line.startsWith("|") && line.endsWith("|") && line.length > 2;
+}
+
+function isTableSeparator(line: string) {
+  return /^\|(\s*:?-{3,}:?\s*\|)+$/.test(line);
+}
+
+function splitRow(line: string) {
+  return line.slice(1, -1).split("|").map((cell) => cell.trim());
+}
+
 export default function LightMarkdown({ children, className }: LightMarkdownProps) {
   const lines = children.replace(/\r\n/g, "\n").split("\n");
   const blocks: ReactNode[] = [];
@@ -121,6 +133,43 @@ export default function LightMarkdown({ children, className }: LightMarkdownProp
         index += 1;
       }
       blocks.push(<ol key={`ol-${index}`}>{items}</ol>);
+      continue;
+    }
+
+    if (isTableRow(line) && index + 1 < lines.length && isTableSeparator(lines[index + 1].trim())) {
+      const header = splitRow(line);
+      index += 2;
+      const rows: string[][] = [];
+      while (index < lines.length && isTableRow(lines[index].trim())) {
+        rows.push(splitRow(lines[index].trim()));
+        index += 1;
+      }
+      blocks.push(
+        <div key={`table-${index}`} className="not-prose my-6 overflow-x-auto rounded-lg border border-[#2E2520]/12 dark:border-border">
+          <table className="w-full border-collapse text-left text-sm leading-relaxed">
+            <thead className="bg-[#E7E1DA]/60 dark:bg-card">
+              <tr>
+                {header.map((cell, cellIndex) => (
+                  <th key={cellIndex} scope="col" className="px-4 py-3 font-semibold text-[#2E2520] dark:text-foreground">
+                    {renderInline(cell)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, rowIndex) => (
+                <tr key={rowIndex} className="border-t border-[#2E2520]/10 align-top dark:border-border">
+                  {header.map((_, cellIndex) => (
+                    <td key={cellIndex} className="px-4 py-3 text-[#2E2520]/90 dark:text-foreground/85">
+                      {renderInline(row[cellIndex] ?? "")}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
       continue;
     }
 

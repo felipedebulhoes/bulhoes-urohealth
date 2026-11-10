@@ -402,6 +402,14 @@ const BLOG_TITLES: Record<string, string> = {
   "psa-rastreamento-cancer-prostata-2026": "PSA e rastreamento do câncer de próstata",
   "hiperplasia-prostatica-benigna-tratamentos-modernos": "HPB: tratamentos modernos",
   "urologista-pinheiros-zona-oeste-sp": "Urologista em Pinheiros",
+  "ejaculacao-precoce-causas-e-tratamentos": "Ejaculação precoce: causas e tratamentos",
+  "cancer-de-rim-sintomas-diagnostico-tratamento": "Câncer de rim: sintomas, diagnóstico e tratamento",
+  "cancer-de-testiculo-sinais-e-autoexame": "Câncer de testículo: sinais de alerta e tratamento",
+  "fimose-em-adultos-e-criancas-tratamento": "Fimose em crianças e adultos: quando tratar",
+  "prostatite-aguda-cronica-dor-pelvica": "Prostatite aguda, crônica e dor pélvica",
+  "estenose-de-uretra-sintomas-tratamento": "Estenose de uretra: sintomas e tratamento",
+  "bexiga-hiperativa-urgencia-urinaria-tratamento": "Bexiga hiperativa: urgência urinária tem tratamento",
+  "ists-e-hpv-no-homem-prevencao-e-tratamento": "ISTs e HPV no homem: prevenção e tratamento",
 };
 
 const BLOG_IMAGES: Record<string, string> = {
@@ -429,6 +437,22 @@ const BLOG_IMAGES: Record<string, string> = {
     `${SITE_ORIGIN}/manus-storage/og-banner-blog-hiperplasia-prostatica-benigna-tratamentos-modernos-marrom-neutro_8a3fc8ef.png`,
   "urologista-pinheiros-zona-oeste-sp":
     `${SITE_ORIGIN}/manus-storage/og-banner-blog-urologista-pinheiros-zona-oeste-sp-marrom-neutro_97d3fdbf.png`,
+  "ejaculacao-precoce-causas-e-tratamentos":
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-ejaculacao-precoce-causas-e-tratamentos-marrom-neutro.jpg`,
+  "cancer-de-rim-sintomas-diagnostico-tratamento":
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-cancer-de-rim-sintomas-diagnostico-tratamento-marrom-neutro.jpg`,
+  "cancer-de-testiculo-sinais-e-autoexame":
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-cancer-de-testiculo-sinais-e-autoexame-marrom-neutro.jpg`,
+  "fimose-em-adultos-e-criancas-tratamento":
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-fimose-em-adultos-e-criancas-tratamento-marrom-neutro.jpg`,
+  "prostatite-aguda-cronica-dor-pelvica":
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-prostatite-aguda-cronica-dor-pelvica-marrom-neutro.jpg`,
+  "estenose-de-uretra-sintomas-tratamento":
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-estenose-de-uretra-sintomas-tratamento-marrom-neutro.jpg`,
+  "bexiga-hiperativa-urgencia-urinaria-tratamento":
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-bexiga-hiperativa-urgencia-urinaria-tratamento-marrom-neutro.jpg`,
+  "ists-e-hpv-no-homem-prevencao-e-tratamento":
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-ists-e-hpv-no-homem-prevencao-e-tratamento-marrom-neutro.jpg`,
 };
 
 function genericEducationalMetadata(label: string): PageMetadata {

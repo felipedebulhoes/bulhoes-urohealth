@@ -1,5 +1,6 @@
-import { trackDoctoraliaClick } from "@/lib/analytics";
+import { trackDoctoraliaClick, trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 import ConsentMapFrame from "@/components/ConsentMapFrame";
+import MobileBottomBar from "@/components/MobileBottomBar";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Location Pages individuais para SEO local
@@ -19,6 +20,7 @@ import {
   Video,
   Building2,
   CreditCard,
+  MessageCircle,
 } from "lucide-react";
 import { Link } from "wouter";
 import { MedicalClinicSchema } from "@/components/SchemaMarkup";
@@ -160,6 +162,10 @@ function LocationPage({ slug }: { slug: string }) {
     if (metaDesc) metaDesc.setAttribute("content", loc.metaDescription);
   }
 
+  const locSlug = loc.name.toLowerCase().replace(/ /g, "-");
+  const telHref = `tel:+55${loc.phone.replace(/\D/g, "")}`;
+  const bookingHref = `${loc.bookingUrl || "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"}?utm_source=site&utm_medium=location&utm_campaign=${locSlug}`;
+
   return (
     <div className="min-h-screen bg-white dark:bg-card">
       <MedicalClinicSchema
@@ -183,19 +189,44 @@ function LocationPage({ slug }: { slug: string }) {
               <ChevronRight className="w-4 h-4 rotate-180" /> Voltar ao início
             </Link>
             <div className="flex items-center gap-3 mb-4">
-              <Building2 className="w-6 h-6" style={{ color: loc.accentColor }} />
-              <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: loc.accentColor + "20", color: loc.accentColor }}>
-                {loc.typeLabel}
+              <Building2 className="w-6 h-6 text-[#C9B6A3]" />
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#C9B6A3]/15 text-[#C9B6A3]">
+                {loc.typeLabel ? `Atendimento ${loc.typeLabel.toLowerCase()}` : "Local de atendimento"}
               </span>
             </div>
-            <h1 className="text-3xl lg:text-4xl font-serif font-bold mb-4">{loc.fullName}</h1>
-            <div className="flex flex-wrap items-center gap-4 text-white/70">
-              <span className="flex items-center gap-2">
+            <h1 className="text-3xl lg:text-4xl font-serif font-bold mb-3">{loc.fullName}</h1>
+            <p className="mb-5 text-white/80">
+              Consultas de urologia com o Dr. Felipe de Bulhões · CRM-SP 202291 · RQE 146538
+            </p>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-white/70">
+              <a href={loc.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
                 <MapPin className="w-4 h-4" /> {loc.address} — {loc.city}
-              </span>
-              <span className="flex items-center gap-2">
+              </a>
+              <a href={telHref} onClick={() => trackPhoneClick(`location_${locSlug}`)} className="flex items-center gap-2 hover:text-white transition-colors">
                 <Phone className="w-4 h-4" /> {loc.phone}
-              </span>
+              </a>
+            </div>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={bookingHref}
+                onClick={() => trackDoctoraliaClick(`location_hero_${locSlug}`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="schedule-cta schedule-cta--primary inline-flex min-h-12 items-center justify-center gap-2 rounded-lg px-6 font-semibold"
+              >
+                <Calendar className="w-4 h-4" />
+                {loc.bookingLabel || "Agendar Consulta"}
+              </a>
+              <a
+                href={getWhatsAppUrl({ page: `local-${slug}` })}
+                onClick={() => trackWhatsAppClick(`location_hero_${locSlug}`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/30 px-6 font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Falar no WhatsApp
+              </a>
             </div>
           </motion.div>
         </div>
@@ -224,6 +255,38 @@ function LocationPage({ slug }: { slug: string }) {
                 </div>
               </motion.div>
 
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}>
+                <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-4">Quem Atende</h2>
+                <div className="flex items-start gap-4 rounded-xl border border-[#2E2520]/10 bg-[#F7F5F2] p-5 dark:bg-card">
+                  <img
+                    src="/manus-storage/instagram_profile_bc867e99_9d4bb2af.webp"
+                    alt="Dr. Felipe de Bulhões"
+                    width={64}
+                    height={64}
+                    loading="lazy"
+                    className="h-16 w-16 shrink-0 rounded-full border border-[#C9B6A3] object-cover"
+                    onError={(event) => { event.currentTarget.style.display = "none"; }}
+                  />
+                  <div>
+                    <p className="font-semibold text-[#2E2520] dark:text-foreground">Dr. Felipe de Bulhões</p>
+                    <p className="text-sm text-[#4A3A30] dark:text-foreground/70">
+                      Urologista · CRM-SP 202291 · RQE 146538 (Urologia) · RQE 114019 (Cirurgia Geral)
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-[#4A3A30] dark:text-foreground/70">
+                      Membro Titular do Colégio Brasileiro de Cirurgiões e da Sociedade Brasileira de Urologia.
+                      Na primeira consulta há tempo para ouvir a sua história, examinar e explicar as opções.
+                    </p>
+                    <div className="mt-1 flex flex-wrap gap-x-5 text-sm font-medium">
+                      <Link href="/sobre" className="inline-block py-3 text-[#4A3A30] underline underline-offset-4 hover:text-[#2E2520]">
+                        Conheça o médico
+                      </Link>
+                      <Link href="/primeira-consulta" className="inline-block py-3 text-[#4A3A30] underline underline-offset-4 hover:text-[#2E2520]">
+                        Como é a primeira consulta
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
 
               {/* Mapa */}
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}>
@@ -270,11 +333,23 @@ function LocationPage({ slug }: { slug: string }) {
                     </div>
                   </div>
 
+                  {loc.typeLabel && (
+                    <div className="flex items-start gap-3">
+                      <Shield className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Atendimento</p>
+                        <p className="text-xs text-[#64748B]">{loc.typeLabel}</p>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
+                    <Phone className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Atendimento</p>
-                      <p className="text-xs text-[#64748B]">{loc.typeLabel}</p>
+                      <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Telefone</p>
+                      <a href={telHref} onClick={() => trackPhoneClick(`location_sidebar_${locSlug}`)} className="inline-block py-2 text-sm text-[#4A3A30] underline underline-offset-2">
+                        {loc.phone}
+                      </a>
                     </div>
                   </div>
 
@@ -290,10 +365,10 @@ function LocationPage({ slug }: { slug: string }) {
                 </div>
 
                 <a
-                  href={`${loc.bookingUrl || "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"}?utm_source=site&utm_medium=location&utm_campaign=${loc.name.toLowerCase().replace(/ /g, "-")}`} onClick={() => trackDoctoraliaClick(`location_${loc.name.toLowerCase().replace(/ /g, "-")}`)}
+                  href={bookingHref} onClick={() => trackDoctoraliaClick(`location_${locSlug}`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-[#B87333] hover:bg-[#0B8276] text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 mb-3"
+                  className="w-full bg-[#B87333] hover:bg-[#4A3A30] text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 mb-3"
                 >
                   <Calendar className="w-4 h-4" />
                   {loc.bookingLabel || "Agendar Consulta"}
@@ -324,7 +399,7 @@ function LocationPage({ slug }: { slug: string }) {
                 <Link key={key} href={`/local/${key}`} className="bg-white dark:bg-card rounded-xl p-4 border border-gray-100 hover:shadow-md transition-shadow block">
                   <h4 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">{other.name}</h4>
                   <p className="text-xs text-[#64748B] mb-2">{other.city}</p>
-                  <span className="text-xs font-medium" style={{ color: other.accentColor }}>{other.typeLabel}</span>
+                  <span className="text-xs font-medium text-[#8D7B6B]">{other.typeLabel || "Ver detalhes"}</span>
                 </Link>
               ))}
             <div className="bg-indigo-50 rounded-xl p-4 border border-indigo-100">
@@ -335,6 +410,8 @@ function LocationPage({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
+      <div className="h-16 md:hidden" aria-hidden="true" />
+      <MobileBottomBar source={`location_${locSlug}`} />
     </div>
   );
 }

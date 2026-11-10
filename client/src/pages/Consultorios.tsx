@@ -1,4 +1,4 @@
-import { trackDoctoraliaClick } from "@/lib/analytics";
+import { trackDoctoraliaClick, trackPhoneClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página real /consultorios — Listagem completa dos locais de atendimento
@@ -31,13 +31,15 @@ const LOGO_URL = "/brand/logo-site-fundo-escuro.png";
 const CAMPINAS_IMG = "/manus-storage/campinas-day-hospital_47df2b14_d5a9cb24.webp";
 const CLINOVI_PAULISTA_IMG = "/manus-storage/clinovi-paulista_42fff2fa_cecba450.webp";
 const CLINOVI_PINHEIROS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp";
+const CEMED_IMG = "/manus-storage/sao-luiz-campinas-fachada_a326a12f.webp";
+const BADGE_CLASS = "text-[#6B5A4C] bg-[#C9B6A3]/25";
 
 const locations = [
   {
     name: "Campinas Day Hospital",
     slug: "campinas-day-hospital",
     type: "Particular",
-    typeColor: "text-[#D4884A] bg-[#D4884A]/10",
+    typeColor: BADGE_CLASS,
     image: CAMPINAS_IMG,
     address: "Av. Benjamin Constant, 1991",
     neighborhood: "Cambuí, Campinas - SP",
@@ -54,7 +56,7 @@ const locations = [
     name: "Clinovi Paulista",
     slug: "clinovi-paulista",
     type: "Particular",
-    typeColor: "text-amber-400 bg-amber-400/10",
+    typeColor: BADGE_CLASS,
     image: CLINOVI_PAULISTA_IMG,
     address: "Av. Paulista, 1048, 18° andar",
     neighborhood: "Bela Vista, São Paulo - SP",
@@ -71,7 +73,7 @@ const locations = [
     name: "Clinovi Pinheiros",
     slug: "clinovi-pinheiros",
     type: "Particular",
-    typeColor: "text-amber-400 bg-amber-400/10",
+    typeColor: BADGE_CLASS,
     image: CLINOVI_PINHEIROS_IMG,
     address: "Av. Rebouças, 2636",
     neighborhood: "Pinheiros, São Paulo - SP",
@@ -83,6 +85,23 @@ const locations = [
     description: "Localizada dentro do ComVem Rebouças, um espaço moderno e estratégico no bairro de Pinheiros. Infraestrutura de alto padrão com fácil acesso por transporte público.",
     insurances: null,
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
+  },
+  {
+    name: "CEMED - Rede D'Or - São Luiz Campinas",
+    slug: "cemed-sao-luiz-campinas",
+    type: "Hospital Rede D'Or",
+    typeColor: BADGE_CLASS,
+    image: CEMED_IMG,
+    address: "Av. Andrade Neves, 863, 4° andar",
+    neighborhood: "Centro, Campinas - SP",
+    cep: "",
+    phone: "(19) 3014-3000",
+    whatsapp: null,
+    hours: "Sextas, 13h às 17h",
+    highlight: "Hospital e Maternidade São Luiz Campinas",
+    description: "Centro médico do Hospital e Maternidade São Luiz Campinas, da Rede D'Or. Hospital geral de alta complexidade no Centro de Campinas, com estacionamento próprio.",
+    insurances: null,
+    payment: null,
   },
 ];
 
@@ -109,7 +128,7 @@ export default function Consultorios() {
                 Voltar
               </Button>
             </Link>
-            <a href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=page&utm_campaign=consultorios" target="_blank" rel="noopener noreferrer" className="hidden sm:block" onClick={() => trackDoctoraliaClick("consultorios")}>
+            <a href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=page&utm_campaign=consultorios" target="_blank" rel="noopener noreferrer" className="max-sm:hidden" onClick={() => trackDoctoraliaClick("consultorios")}>
               <Button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white">
                 <Phone className="w-4 h-4 mr-2" />
                 Agendar Consulta
@@ -131,9 +150,30 @@ export default function Consultorios() {
             <h1 className="text-3xl lg:text-5xl text-white leading-tight mb-4">
               Consultórios e Locais de Atendimento
             </h1>
-            <p className="text-white/60 text-lg leading-relaxed">
+            <p className="text-white/75 text-lg leading-relaxed">
               Atendimento presencial em quatro locais ativos — dois em Campinas e dois em São Paulo — além de teleconsulta por vídeo para todo o Brasil. Escolha o local mais conveniente para você.
             </p>
+            <div className="mt-7 flex items-center gap-3 border-t border-white/12 pt-5">
+              <img
+                src="/manus-storage/instagram_profile_bc867e99_9d4bb2af.webp"
+                alt=""
+                width={44}
+                height={44}
+                loading="eager"
+                className="h-11 w-11 shrink-0 rounded-full border border-[#C9B6A3]/50 object-cover"
+                onError={(event) => { event.currentTarget.style.display = "none"; }}
+              />
+              <p className="text-sm leading-relaxed text-white/75">
+                <span className="font-semibold text-white">Dr. Felipe de Bulhões</span> · Urologista
+                <br />
+                <span className="text-white/60">
+                  CRM-SP 202291 · RQE 146538 ·{" "}
+                  <Link href="/sobre" className="underline decoration-[#C9B6A3]/60 underline-offset-4 hover:text-white">
+                    Sobre o médico
+                  </Link>
+                </span>
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -141,7 +181,7 @@ export default function Consultorios() {
       {/* Location Cards */}
       <section className="py-16 lg:py-24">
         <div className="container">
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
             {locations.map((loc, i) => (
               <motion.div
                 key={loc.name}
@@ -176,15 +216,19 @@ export default function Consultorios() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2.5">
+                    <a
+                      href={`tel:+55${loc.phone.replace(/[^0-9]/g, "")}`}
+                      onClick={() => trackPhoneClick("consultorios")}
+                      className="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+                    >
                       <Phone className="w-4 h-4 text-[#B87333] shrink-0" />
-                      <span className="text-sm text-[#1C3D5A] dark:text-foreground/70 font-sans">{loc.phone}</span>
-                    </div>
+                      <span className="text-sm text-[#1C3D5A] dark:text-foreground/70 font-sans underline decoration-[#C9B6A3] underline-offset-4">{loc.phone}</span>
+                    </a>
 
                     {loc.whatsapp && (
                       <a href={`https://wa.me/55${loc.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                        <Phone className="w-4 h-4 text-[#25D366] shrink-0" />
-                        <span className="text-sm text-[#25D366] font-sans">WhatsApp: {loc.whatsapp}</span>
+                        <Phone className="w-4 h-4 text-[#128C4B] shrink-0" />
+                        <span className="text-sm text-[#0F7A40] font-sans">WhatsApp: {loc.whatsapp}</span>
                       </a>
                     )}
 
@@ -241,12 +285,10 @@ export default function Consultorios() {
                 Mesmo valor da consulta presencial.
               </p>
             </div>
-            <a href="/agendamento" className="shrink-0">
-              <button className="bg-[#B87333] hover:bg-[#8B5A2B] text-white rounded-lg px-6 py-3 text-sm font-semibold transition-colors flex items-center gap-2">
-                <Video className="w-4 h-4" />
-                Agendar Teleconsulta
-              </button>
-            </a>
+            <Link href="/agendamento" className="shrink-0 bg-[#B87333] hover:bg-[#8B5A2B] text-white rounded-lg px-6 py-3 text-sm font-semibold transition-colors flex items-center gap-2">
+              <Video className="w-4 h-4" />
+              Agendar Teleconsulta
+            </Link>
           </motion.div>
 
           {/* Interactive Map */}
@@ -264,7 +306,7 @@ export default function Consultorios() {
       <section className="py-16 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
         <div className="container text-center">
           <h2 className="text-2xl lg:text-3xl text-white mb-3 font-serif">Agende sua consulta</h2>
-          <p className="text-white/50 text-sm mb-6 max-w-lg mx-auto">
+          <p className="text-white/65 text-sm mb-6 max-w-lg mx-auto">
             Escolha o consultório mais conveniente e agende presencialmente ou por teleconsulta.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -286,8 +328,11 @@ export default function Consultorios() {
       {/* Footer */}
       <footer className="bg-[#0F2A3F] py-8">
         <div className="container text-center">
-          <p className="text-white/30 text-sm">&copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291</p>
-          <p className="text-white/20 text-xs mt-2">Este conteúdo é informativo e não substitui a consulta médica.</p>
+          <p className="text-white/70 text-sm mb-3">
+            Dr. Felipe de Bulhões Ojeda — CRM-SP 202291 · RQE 146538 (Urologia) · RQE 114019 (Cirurgia Geral).
+          </p>
+          <p className="text-white/55 text-sm">&copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista</p>
+          <p className="text-white/55 text-xs mt-2 pb-16 md:pb-0">Este conteúdo é informativo e não substitui a consulta médica.</p>
         </div>
       </footer>
 

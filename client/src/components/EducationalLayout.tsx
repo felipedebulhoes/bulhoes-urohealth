@@ -19,6 +19,7 @@ import SocialShareButtons from "@/components/SocialShareButtons";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { foldEducationalSections } from "@/components/foldEducationalSections";
+import InlineConsultCTA from "@/components/InlineConsultCTA";
 
 interface EducationalLayoutProps {
   title: string;
@@ -106,7 +107,7 @@ export default function EducationalLayout({
               href={doctoraliaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex"
+              className="max-sm:hidden"
               onClick={handleDoctoraliaClick}
               loadingText="Abrindo agenda…"
               size="sm"
@@ -140,12 +141,45 @@ export default function EducationalLayout({
               {title}
             </h1>
             <p className="text-white/60 text-lg leading-relaxed">{description}</p>
+            <div className="mt-7 flex items-center gap-3 border-t border-white/12 pt-5">
+              <img
+                src="/manus-storage/instagram_profile_bc867e99_9d4bb2af.webp"
+                alt=""
+                width={44}
+                height={44}
+                loading="eager"
+                className="h-11 w-11 shrink-0 rounded-full border border-[#C9B6A3]/50 object-cover"
+                onError={(event) => { event.currentTarget.style.display = "none"; }}
+              />
+              <p className="text-sm leading-relaxed text-white/75">
+                <span className="font-semibold text-white">Dr. Felipe de Bulhões</span> · Urologista
+                <br />
+                <span className="text-white/60">
+                  CRM-SP 202291 · RQE 146538
+                  {reviewDate && ` · Revisado em ${formatMedicalReviewDate(reviewDate)}`}
+                  {" · "}
+                  <Link href="/sobre" className="underline decoration-[#C9B6A3]/60 underline-offset-4 hover:text-white">
+                    Sobre o médico
+                  </Link>
+                </span>
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Content */}
-      <main>{foldEducationalSections(children)}</main>
+      <main>
+        {foldEducationalSections(
+          children,
+          <InlineConsultCTA
+            title="Quer conversar sobre o seu caso?"
+            note="A avaliação é individual. Atendimento presencial em São Paulo e Campinas, ou por teleconsulta."
+            href={whatsappCtaUrl}
+            onClick={() => trackWhatsAppClick(`educational_mid_${pageSlug}`)}
+          />,
+        )}
+      </main>
 
       <section className="border-y border-[#1C3D5A]/8 bg-[#F7F8F8] py-8 dark:bg-card">
         <div className="container flex flex-col items-center justify-between gap-4 sm:flex-row">
@@ -161,12 +195,12 @@ export default function EducationalLayout({
       <section className="py-16 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
         <div className="container text-center">
           <h2 className="text-2xl lg:text-3xl text-white mb-3 font-serif">
-            Tem dúvidas? Agende uma consulta
+            Cada caso pede uma avaliação própria
           </h2>
-          <p className="text-white/50 text-sm mb-6 max-w-lg mx-auto">
-            O Dr. Felipe de Bulhões está disponível para esclarecer suas dúvidas e
-            indicar o melhor tratamento para o seu caso. Atendimento presencial e por
-            teleconsulta.
+          <p className="text-white/65 text-sm mb-6 max-w-lg mx-auto">
+            Na consulta, o Dr. Felipe de Bulhões ouve a sua história, examina, explica
+            as opções com base nas diretrizes atuais e decide o caminho junto com você.
+            Atendimento presencial em São Paulo e Campinas, ou por teleconsulta.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <CTAButtonWithAnimation

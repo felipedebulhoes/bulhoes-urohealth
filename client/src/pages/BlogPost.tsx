@@ -15,6 +15,7 @@ import { getWhatsAppUrl } from "@/lib/tracking";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import MobileBottomBar from "@/components/MobileBottomBar";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
@@ -91,6 +92,18 @@ export default function BlogPost() {
                 Blog
               </Button>
             </Link>
+            <CTAButtonWithAnimation
+              href={`https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=blog&utm_campaign=blog-header`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="max-sm:hidden"
+              onClick={() => trackDoctoraliaClick("blog_post_header")}
+              loadingText="Abrindo agenda…"
+              size="sm"
+              icon={<CalendarCheck className="w-4 h-4" />}
+            >
+              Agendar Consulta
+            </CTAButtonWithAnimation>
           </div>
         </div>
       </header>
@@ -183,6 +196,29 @@ export default function BlogPost() {
             >
               <LightMarkdown>{post.content}</LightMarkdown>
             </motion.div>
+
+            <aside className="mt-10 rounded-xl border border-[#2E2520]/12 bg-[#F7F5F2] p-5 sm:p-6 dark:border-border dark:bg-card">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-base font-semibold text-[#2E2520] dark:text-foreground">
+                    Este texto informa, mas não substitui a consulta.
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#4A3A30] dark:text-foreground/70">
+                    Se você se identificou com o que leu, vale conversar sobre o seu caso com o Dr. Felipe de Bulhões.
+                  </p>
+                </div>
+                <a
+                  href={getWhatsAppUrl({ page: `blog-${params.slug || "post"}` })}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("blog_post_inline")}
+                  className="schedule-cta schedule-cta--primary inline-flex shrink-0 items-center justify-center gap-2 rounded-md border border-[#2E2520]/10 bg-[#C9B6A3] px-5 py-3 text-sm font-semibold text-[#2E2520]"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Falar no WhatsApp
+                </a>
+              </div>
+            </aside>
 
             {/* Share buttons */}
             <motion.div
@@ -296,8 +332,13 @@ export default function BlogPost() {
           <p className="text-white/30 text-sm">
             &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291
           </p>
+          <p className="text-white/40 text-xs mt-2 pb-16 md:pb-0">
+            Este conteúdo é informativo e não substitui a consulta médica.
+          </p>
         </div>
       </footer>
+
+      <MobileBottomBar source={`blog-${params.slug || "post"}`} />
     </div>
   );
 }

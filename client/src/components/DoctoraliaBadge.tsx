@@ -1,9 +1,12 @@
 /*
- * Design: Clinical Precision — Swiss Medical Design
- * Component: Doctoralia Badge — Selo de avaliação para prova social
+ * Design: Dr. Felipe de Bulhões — Direção Editorial
+ * Avaliações: nota à esquerda, três opiniões públicas em serifa à direita.
  */
-import { motion } from "framer-motion";
-import { Star, ExternalLink, ThumbsUp, Shield } from "lucide-react";
+import { Star } from "lucide-react";
+import { trackDoctoraliaClick } from "@/lib/analytics";
+
+const DOCTORALIA_PROFILE =
+  "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas";
 
 // Avaliações públicas copiadas do perfil na Doctoralia (conferidas em 09/11/2026).
 // Use somente textos que existam lá, com as iniciais exibidas pela plataforma.
@@ -28,103 +31,43 @@ const reviews = [
   },
 ];
 
-const stats = [
-  { icon: <Star className="w-4 h-4" />, value: "5.0", label: "Avaliação" },
-  { icon: <ThumbsUp className="w-4 h-4" />, value: "35", label: "Opiniões" },
-  { icon: <Shield className="w-4 h-4" />, value: "1500+", label: "Pacientes" },
-];
-
 export default function DoctoraliaBadge() {
   return (
-    <section className="py-12 lg:py-16">
-      <div className="container max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-br from-[#00B8A9]/5 to-[#B87333]/5 rounded-2xl border border-[#B87333]/10 p-6 lg:p-8"
-        >
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Left — Badge */}
-            <div className="lg:w-1/3">
-              <div className="flex items-center gap-2 mb-4">
-                <img loading="lazy"
-                  src="https://platform.docplanner.com/img/logo/doctoralia-logo.svg"
-                  alt="Doctoralia"
-                  className="h-6"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-                <span className="text-xs font-semibold text-[#00665E] dark:text-[#5EEAD4] bg-[#00B8A9]/10 px-2 py-0.5 rounded">
-                  Perfil Verificado
-                </span>
-              </div>
-
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-4xl font-bold text-[#1C3D5A] dark:text-foreground">5.0</span>
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex gap-4 mb-4">
-                {stats.map((stat, i) => (
-                  <div key={i} className="text-center">
-                    <div className="flex items-center justify-center gap-1 text-[#B87333]">
-                      {stat.icon}
-                      <span className="text-sm font-bold text-[#1C3D5A] dark:text-foreground">{stat.value}</span>
-                    </div>
-                    <span className="text-[10px] text-[#1C3D5A] dark:text-foreground/40">{stat.label}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#00665E] dark:text-[#5EEAD4] hover:text-[#B87333] transition-colors"
-              >
-                Ver perfil completo <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-
-            {/* Right — Reviews */}
-            <div className="lg:w-2/3 space-y-3">
-              {reviews.map((review, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-white dark:bg-card rounded-lg border border-[#1C3D5A]/5 p-4"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-[#1C3D5A]/5 flex items-center justify-center">
-                        <span className="text-xs font-bold text-[#1C3D5A] dark:text-foreground/40">{review.name.charAt(0)}</span>
-                      </div>
-                      <span className="text-xs font-medium text-[#1C3D5A] dark:text-foreground/60">{review.name}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(review.rating)].map((_, j) => (
-                        <Star key={j} className="w-3 h-3 fill-amber-400 text-amber-400" />
-                      ))}
-                      <span className="text-[10px] text-[#1C3D5A] dark:text-foreground/30 ml-1">{review.date}</span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-[#1C3D5A] dark:text-foreground/55 leading-relaxed">
-                    "{review.text}"
-                  </p>
-                </motion.div>
+    <section id="avaliacoes" className="editorial-section editorial-reviews">
+      <div className="editorial-wrap editorial-reviews-grid">
+        <div className="editorial-reviews-score">
+          <p className="editorial-kicker">Reputação</p>
+          <h2 className="editorial-display editorial-title">Avaliações na Doctoralia</h2>
+          <div className="editorial-score">
+            <span className="editorial-score-value">5,0</span>
+            <span className="editorial-score-stars" role="img" aria-label="Nota 5 de 5">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} aria-hidden="true" />
               ))}
-            </div>
+            </span>
           </div>
-        </motion.div>
+          <p className="editorial-score-note">35 opiniões verificadas na Doctoralia</p>
+          <a
+            href={DOCTORALIA_PROFILE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="editorial-link"
+            onClick={() => trackDoctoraliaClick("doctoralia_badge")}
+          >
+            Ver perfil completo
+          </a>
+        </div>
+
+        <ul className="editorial-quotes">
+          {reviews.map((review) => (
+            <li key={review.name}>
+              <blockquote className="editorial-display">“{review.text}”</blockquote>
+              <p className="editorial-quote-by">
+                {review.name} · {review.date}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

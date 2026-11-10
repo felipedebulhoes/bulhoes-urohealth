@@ -80,20 +80,25 @@ function foldInnerBlocks(section: WithProps): WithProps | null {
   );
 }
 
-export function foldEducationalSections(children: ReactNode): ReactNode {
+export function foldEducationalSections(children: ReactNode, afterFirst?: ReactNode): ReactNode {
   let seenFirst = false;
+  const withInsert = (node: ReactNode, index: number) => {
+    const isFirst = !seenFirst;
+    seenFirst = true;
+    if (!isFirst || !afterFirst) return node;
+    return (
+      <Fragment key={`first-${index}`}>
+        {node}
+        {afterFirst}
+      </Fragment>
+    );
+  };
   return flatten(children).map((child, index) => {
     if (!isValidElement(child) || child.type !== "section") return child;
     const section = child as WithProps;
     const inner = foldInnerBlocks(section);
-    if (inner) {
-      seenFirst = true;
-      return inner;
-    }
-    if (!seenFirst) {
-      seenFirst = true;
-      return child;
-    }
+    if (inner) return withInsert(inner, index);
+    if (!seenFirst) return withInsert(child, index);
     const title = findHeading(section.props.children);
     if (mustStayVisible(title, section.props.children)) return child;
     return (

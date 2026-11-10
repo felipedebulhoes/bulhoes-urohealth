@@ -5,11 +5,18 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { blogPosts } from "@/lib/blogData";
-import { Calendar, Clock, ArrowRight, ArrowLeft } from "lucide-react";
+import { Calendar, CalendarCheck, Clock, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import MobileBottomBar from "@/components/MobileBottomBar";
+import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
+import { trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
+import { getWhatsAppUrl } from "@/lib/tracking";
+
+const doctoraliaUrl =
+  "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=blog&utm_campaign=blog-index";
 
 export default function Blog() {
   usePageMeta({
@@ -32,12 +39,26 @@ export default function Blog() {
               className="h-12 lg:h-14 w-auto"
             />
           </Link>
-          <Link href="/">
-            <Button variant="outline" className="text-white border-white/20 hover:bg-white/10 bg-transparent">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Voltar ao Site
-            </Button>
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link href="/">
+              <Button variant="outline" className="text-white border-white/20 hover:bg-white/10 bg-transparent">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Voltar ao Site
+              </Button>
+            </Link>
+            <CTAButtonWithAnimation
+              href={doctoraliaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="max-sm:hidden"
+              onClick={() => trackDoctoraliaClick("blog_index_header")}
+              loadingText="Abrindo agenda…"
+              size="sm"
+              icon={<CalendarCheck className="w-4 h-4" />}
+            >
+              Agendar Consulta
+            </CTAButtonWithAnimation>
+          </div>
         </div>
       </header>
 
@@ -65,6 +86,27 @@ export default function Blog() {
               Artigos baseados em evidências científicas sobre prevenção, diagnóstico e
               tratamento das principais condições urológicas.
             </p>
+            <div className="mt-6 flex items-center gap-3">
+              <img
+                src="/manus-storage/instagram_profile_bc867e99_9d4bb2af.webp"
+                alt=""
+                width={44}
+                height={44}
+                loading="eager"
+                className="h-11 w-11 shrink-0 rounded-full border border-[#C9B6A3]/50 object-cover"
+                onError={(event) => { event.currentTarget.style.display = "none"; }}
+              />
+              <p className="text-sm leading-relaxed text-white/75">
+                Escrito por <span className="font-semibold text-white">Dr. Felipe de Bulhões</span> · Urologista
+                <br />
+                <span className="text-white/60">
+                  CRM-SP 202291 · RQE 146538 ·{" "}
+                  <Link href="/sobre" className="underline decoration-[#C9B6A3]/60 underline-offset-4 hover:text-white">
+                    Sobre o médico
+                  </Link>
+                </span>
+              </p>
+            </div>
             <SocialShareButtons
               title="Blog de Urologia — Dr. Felipe de Bulhões"
               text="Artigos baseados em evidências sobre saúde urológica e saúde do homem."
@@ -164,14 +206,59 @@ export default function Blog() {
         </div>
       </section>
 
+      {/* CTA */}
+      <section className="py-16 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
+        <div className="container text-center">
+          <h2 className="text-2xl lg:text-3xl text-white mb-3 font-serif">
+            Leu e ficou com dúvida sobre o seu caso?
+          </h2>
+          <p className="text-white/65 text-sm mb-6 max-w-lg mx-auto">
+            Os artigos explicam o assunto de forma geral. Na consulta, o Dr. Felipe de Bulhões
+            avalia a sua situação e conversa sobre as opções. Atendimento presencial em
+            São Paulo e Campinas, ou por teleconsulta.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <CTAButtonWithAnimation
+              href={doctoraliaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackDoctoraliaClick("blog_index_cta")}
+              loadingText="Abrindo agenda…"
+              className="px-6 h-11"
+            >
+              Agendar Consulta
+            </CTAButtonWithAnimation>
+            <CTAButtonWithAnimation
+              href={getWhatsAppUrl({ page: "blog" })}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("blog_index_cta")}
+              loadingText="Abrindo WhatsApp…"
+              variant="outline"
+              className="border-white/20 text-white hover:bg-white/10 hover:text-white px-6 h-11"
+            >
+              WhatsApp
+            </CTAButtonWithAnimation>
+          </div>
+        </div>
+      </section>
+
       {/* Footer mini */}
       <footer className="bg-[#0F2A3F] py-8">
         <div className="container text-center">
+          <p className="text-white/70 text-sm mb-3">
+            Conteúdo médico de responsabilidade do Dr. Felipe de Bulhões Ojeda — CRM-SP 202291 · RQE 146538 (Urologia) · RQE 114019 (Cirurgia Geral).
+          </p>
           <p className="text-white/30 text-sm">
             &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291
           </p>
+          <p className="text-white/40 text-xs mt-2 pb-16 md:pb-0">
+            Este conteúdo é informativo e não substitui a consulta médica.
+          </p>
         </div>
       </footer>
+
+      <MobileBottomBar source="blog_index" />
     </div>
   );
 }

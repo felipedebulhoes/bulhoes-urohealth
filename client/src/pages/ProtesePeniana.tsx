@@ -160,10 +160,11 @@ const references = [
   { num: 5, text: "Wein AJ, Kavoussi LR, Partin AW, Peters CA. Campbell-Walsh-Wein Urology. 13th ed. Elsevier; 2024. Surgery for Erectile Dysfunction." },
 ];
 
-const colorMap: Record<string, { bg: string; text: string; border: string; light: string }> = {
-  teal: { bg: "bg-amber-500", text: "text-amber-700", border: "border-amber-200", light: "bg-amber-50" },
-  blue: { bg: "bg-blue-500", text: "text-blue-700", border: "border-blue-200", light: "bg-blue-50" },
-  violet: { bg: "bg-violet-500", text: "text-violet-700", border: "border-violet-200", light: "bg-violet-50" },
+/* Ícones na paleta mineral (AGENTS.md §3.3) sobre container cobre translúcido (§3.4). */
+const colorMap: Record<string, { bg: string; icon: string; text: string; border: string; light: string }> = {
+  teal: { bg: "bg-[#B87333]/15", icon: "#D5B18D", text: "text-amber-700", border: "border-amber-200", light: "bg-amber-50" },
+  blue: { bg: "bg-[#B87333]/15", icon: "#AFC1D0", text: "text-blue-700", border: "border-blue-200", light: "bg-blue-50" },
+  violet: { bg: "bg-[#B87333]/15", icon: "#C7A9C8", text: "text-violet-700", border: "border-violet-200", light: "bg-violet-50" },
 };
 
 /* ========== COMPONENT ========== */
@@ -225,7 +226,7 @@ export default function ProtesePeniana() {
             <ul className="space-y-3">
               {indications.map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-foreground">
-                  <Check className="w-5 h-5 text-violet-500 shrink-0 mt-0.5" />
+                  <span className="w-6 h-6 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0 mt-0.5"><Check className="w-3.5 h-3.5" style={{ color: "#C7A9C8" }} /></span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -261,7 +262,7 @@ export default function ProtesePeniana() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center shrink-0`}>
-                      <type.icon className="w-5 h-5 text-white" />
+                      <type.icon className="w-5 h-5" style={{ color: colors.icon }} />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-foreground">{type.name}</h3>
                   </div>
@@ -274,7 +275,7 @@ export default function ProtesePeniana() {
                   <ul className="space-y-1.5 mb-4">
                     {type.pros.map((p, pi) => (
                       <li key={pi} className="flex items-start gap-2 text-sm text-gray-600 dark:text-muted-foreground">
-                        <Check className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
+                        <span className="w-5 h-5 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0"><Check className="w-3 h-3" style={{ color: "#D9C58A" }} /></span>
                         <span>{p}</span>
                       </li>
                     ))}
@@ -283,7 +284,7 @@ export default function ProtesePeniana() {
                   <ul className="space-y-1.5">
                     {type.cons.map((c, ci) => (
                       <li key={ci} className="flex items-start gap-2 text-sm text-gray-600 dark:text-muted-foreground">
-                        <AlertCircle className="w-3.5 h-3.5 text-red-400 shrink-0 mt-0.5" />
+                        <span className="w-5 h-5 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0"><AlertCircle className="w-3 h-3" style={{ color: "#D8A5A5" }} /></span>
                         <span>{c}</span>
                       </li>
                     ))}
@@ -315,7 +316,7 @@ export default function ProtesePeniana() {
                 className="bg-white dark:bg-card rounded-xl p-6 border border-gray-100"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center text-violet-700 font-bold text-sm">
+                  <div className="w-10 h-10 rounded-full bg-[#B87333]/15 flex items-center justify-center text-[#B87333] font-bold text-sm">
                     {step.step}
                   </div>
                   <h3 className="font-bold text-gray-900 dark:text-foreground">{step.title}</h3>
@@ -346,8 +347,8 @@ export default function ProtesePeniana() {
                 transition={{ delay: i * 0.1 }}
                 className="flex items-start gap-4 bg-gray-50 dark:bg-card rounded-xl p-4 border border-gray-200 dark:border-border"
               >
-                <div className="w-10 h-10 rounded-lg bg-violet-500 flex items-center justify-center shrink-0">
-                  <Clock className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-[#B87333]/15 flex items-center justify-center shrink-0">
+                  <Clock className="w-5 h-5" style={{ color: "#B7C0A1" }} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-foreground">{item.period}</h3>
@@ -378,7 +379,7 @@ export default function ProtesePeniana() {
             {risks.map((risk, i) => (
               <div key={i} className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-border p-5">
                 <h3 className="font-semibold text-gray-900 dark:text-foreground mb-1 flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+                  <span className="w-6 h-6 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0"><AlertCircle className="w-3.5 h-3.5" style={{ color: "#D8A5A5" }} /></span>
                   {risk.title}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-foreground">{risk.text}</p>
@@ -420,7 +421,9 @@ export default function ProtesePeniana() {
       {/* Chamada para consulta */}
       <section className="py-16 bg-gray-50 dark:bg-card">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <CalendarCheck className="w-8 h-8 text-violet-600 mx-auto mb-4" />
+          <div className="w-12 h-12 rounded-md bg-[#B87333]/15 flex items-center justify-center mx-auto mb-4">
+            <CalendarCheck className="w-6 h-6" style={{ color: "#B7C0A1" }} />
+          </div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-3">Avaliação com Urologista</h2>
           <p className="text-gray-700 dark:text-foreground mb-6">
             A consulta define se a prótese é indicada no seu caso e qual modelo combina com a sua anatomia e o seu dia a

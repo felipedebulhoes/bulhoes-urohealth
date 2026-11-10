@@ -38,6 +38,7 @@ export const PUBLIC_STATIC_PATHS = [
   "/educativo/incontinencia-urinaria",
   "/educativo/infertilidade-masculina",
   "/educativo/doenca-peyronie",
+  "/educativo/protese-peniana",
   "/educativo/varicocele",
   "/educativo/hiperplasia-prostatica",
   "/educativo/engrossamento-peniano",

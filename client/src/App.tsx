@@ -37,6 +37,7 @@ const TratamentoCancerProstata = lazy(() => import("./pages/TratamentoCancerPros
 const IncontinenciaUrinaria = lazy(() => import("./pages/IncontinenciaUrinaria"));
 const InfertilidadeMasculina = lazy(() => import("./pages/InfertilidadeMasculina"));
 const DoencaPeyronie = lazy(() => import("./pages/DoencaPeyronie"));
+const ProtesePeniana = lazy(() => import("./pages/ProtesePeniana"));
 const Varicocele = lazy(() => import("./pages/Varicocele"));
 const HiperplasiaProstática = lazy(() => import("./pages/HiperplasiaProstática"));
 const SobreDrFelipe = lazy(() => import("./pages/SobreDrFelipe"));
@@ -142,6 +143,7 @@ function Router() {
         <Route path={"/educativo/incontinencia-urinaria"} component={IncontinenciaUrinaria} />
         <Route path={"/educativo/infertilidade-masculina"} component={InfertilidadeMasculina} />
         <Route path={"/educativo/doenca-peyronie"} component={DoencaPeyronie} />
+        <Route path={"/educativo/protese-peniana"} component={ProtesePeniana} />
         <Route path={"/educativo/varicocele"} component={Varicocele} />
         <Route path={"/educativo/hiperplasia-prostatica"} component={HiperplasiaProstática} />
         <Route path={"/consultorios"} component={Consultorios} />

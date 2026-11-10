@@ -219,6 +219,7 @@ const EDUCATIONAL_LABELS: Record<string, string> = {
   "/educativo/incontinencia-urinaria": "Incontinência urinária",
   "/educativo/infertilidade-masculina": "Infertilidade masculina",
   "/educativo/doenca-peyronie": "Doença de Peyronie",
+  "/educativo/protese-peniana": "Prótese peniana",
   "/educativo/varicocele": "Varicocele",
   "/educativo/hiperplasia-prostatica": "Próstata aumentada (HPB)",
   "/educativo/engrossamento-peniano": "Engrossamento peniano com ácido hialurônico",
@@ -335,6 +336,11 @@ const SEARCH_SNIPPETS: Record<string, Pick<PageMetadata, "title" | "description"
     title: "Doença de Peyronie: curvatura peniana e tratamentos",
     description:
       "Curvatura peniana adquirida: fases da doença, tratamento clínico, plicatura, enxerto e prótese. Guia do urologista Dr. Felipe de Bulhões.",
+  },
+  "/educativo/protese-peniana": {
+    title: "Prótese peniana inflável e maleável: indicação e cirurgia",
+    description:
+      "Quando a prótese peniana é indicada, diferenças entre inflável e maleável, cirurgia, recuperação e riscos. Guia do urologista Dr. Felipe de Bulhões.",
   },
   "/educativo/varicocele": {
     title: "Varicocele: sintomas, diagnóstico e tratamento cirúrgico",

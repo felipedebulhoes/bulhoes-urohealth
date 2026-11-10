@@ -25,6 +25,7 @@ import SocialShareButtons from "@/components/SocialShareButtons";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import { trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import MobileBottomBar from "@/components/MobileBottomBar";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -78,7 +79,7 @@ export default function SobreDrFelipe() {
                     e.preventDefault();
                     document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="bg-[#B87333] hover:bg-[#0B8276] text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                  className="bg-[#B87333] hover:bg-[#4A3A30] text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
                 >
                   <Calendar className="w-4 h-4" />
                   Agendar Consulta
@@ -325,11 +326,13 @@ export default function SobreDrFelipe() {
       </section>
 
       {/* Back to home */}
-      <div className="py-6 bg-gray-50 dark:bg-card text-center">
+      <div className="py-6 pb-24 md:pb-6 bg-gray-50 dark:bg-card text-center">
         <Link href="/" className="text-sm text-[#B87333] hover:underline font-medium">
           ← Voltar para a página inicial
         </Link>
       </div>
+
+      <MobileBottomBar source="sobre" />
     </div>
   );
 }

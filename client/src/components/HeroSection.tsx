@@ -1,20 +1,18 @@
 /*
  * Design: Dr. Felipe de Bulhões — Identidade Visual
- * Hero: Split layout — text left, portrait right, marrom profundo e neutros da marca
- * A tipografia atual é preservada; a paleta é aplicada por tokens globais.
+ * Topo Editorial: texto à esquerda sobre marfim, retrato em altura inteira à direita
+ * e faixa de credenciais com filetes. Sem cards, sem ícones, sem pílulas.
  */
-import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { CalendarCheck, Award, ShieldCheck, Users } from "lucide-react";
 import { trackCtaClick } from "@/lib/analytics";
 
-// Real photo from Instagram — professional portrait with blazer
 const HERO_PORTRAIT = "/manus-storage/felipe-portrait_0e0693e4_be070ac1.webp";
 
-const stats = [
-  { icon: Award, value: "TCBC", label: "Membro Titular CBC" },
-  { icon: ShieldCheck, value: "AUA · EAU · SBU", label: "Sociedades" },
-  { icon: Users, value: "1500+", label: "Pacientes atendidos" },
+const credentials = [
+  { title: "CRM-SP 202291", detail: "RQE 146538 Urologia · RQE 114019 Cirurgia Geral" },
+  { title: "TCBC", detail: "Membro Titular do Colégio Brasileiro de Cirurgiões" },
+  { title: "SBU · AUA · EAU", detail: "Sociedades de urologia do Brasil, dos Estados Unidos e da Europa" },
+  { title: "Instituto D'Or", detail: "Formação em Ensino e Pesquisa, São Paulo" },
 ];
 
 const patientShortcuts = [
@@ -29,141 +27,82 @@ interface HeroSectionProps {
   palette?: "current" | "espresso";
 }
 
-export default function HeroSection({ palette = "current" }: HeroSectionProps) {
-  const isEspressoPalette = palette === "espresso";
-
+export default function HeroSection(_props: HeroSectionProps) {
   return (
-    <section
-      id="inicio"
-      className={`relative min-h-[100vh] bg-[#1C3D5A] overflow-hidden${isEspressoPalette ? " brand-espresso-hero" : ""}`}
-    >
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
-      }} />
+    <section id="inicio" className="editorial-hero">
+      <div className="editorial-hero-grid">
+        <div className="editorial-hero-copy hero-rise">
+          <p className="editorial-eyebrow">
+            <span aria-hidden="true" className="editorial-eyebrow-rule" />
+            Urologia · Andrologia · Cirurgia robótica
+          </p>
 
-      {/* Decorative copper glow */}
-      <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-[#B87333]/10 rounded-full blur-[120px]" />
-      <div className="absolute top-40 left-10 w-48 h-48 bg-[#B87333]/5 rounded-full blur-[80px]" />
+          <h1 className="editorial-hero-name">Dr. Felipe de Bulhões</h1>
 
-      <div className="container relative z-10 flex flex-col lg:flex-row items-center min-h-[100vh]">
-        {/* Left: Text Content */}
-        <div className="flex-1 pt-28 pb-8 lg:pt-0 lg:pb-0 lg:pr-12">
-          {/* Entrada só com deslocamento em CSS: o texto aparece já no HTML, sem esperar o JavaScript. */}
-          <div className="hero-rise">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-10 bg-[#B87333]" />
-              <span className="text-[#C4C4C4] text-xs font-semibold uppercase tracking-[0.2em]">
-                CRM-SP 202291 · RQE 146538 / RQE 114019
-              </span>
-            </div>
+          <p className="editorial-hero-statement">
+            Urologia conduzida com técnica, tempo e discrição.
+          </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl text-white leading-[1.08] mb-4 font-serif">
-              Dr. Felipe de
-              <br />
-              <span className="brand-espresso-hero-accent text-[#B87333]">Bulhões</span>
-            </h1>
+          <p className="editorial-hero-lead">
+            Atendimento particular em São Paulo e Campinas, presencial e por teleconsulta.
+          </p>
 
-            <p className="text-xl sm:text-2xl text-[#C4C4C4] font-light mb-6 tracking-wide" style={{ fontStyle: 'normal' }}>
-              Urologista & Cirurgião Geral
-            </p>
-
-            <p className="text-base text-white/70 leading-relaxed mb-8 max-w-lg" style={{ fontStyle: 'normal' }}>
-              Atuação em cirurgia minimamente invasiva, robótica e endourologia.
-              Formado pelo <strong className="text-white/90">Instituto D'Or de Ensino e Pesquisa</strong>,
-              com atuação em São Paulo e Campinas. Atendimento presencial e por teleconsulta.
-              Cuidado integral da saúde do homem com excelência técnica e acolhimento.
-            </p>
-          </div>
-
-          <div className="hero-rise flex flex-col sm:flex-row gap-4 mb-6" style={{ animationDelay: "0.1s" }}>
+          <div className="editorial-hero-actions">
             <Link
               href="/agendamento"
+              className="editorial-cta"
               onClick={() => trackCtaClick("agendar_consulta", "hero_section")}
             >
-              <Button className="brand-espresso-hero-cta brand-espresso-primary-cta bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 h-13 px-8 text-base font-semibold rounded-lg shadow-lg shadow-[#B87333]/30 transition-all hover:shadow-xl hover:shadow-[#B87333]/40 hover:-translate-y-0.5">
-                <CalendarCheck className="w-5 h-5 mr-2" />
-                Agendar Consulta
-              </Button>
+              Agendar consulta
             </Link>
-            <a href="#sobre">
-              <Button
-                variant="outline"
-                className="brand-espresso-secondary-cta border-white/20 text-white hover:bg-white/10 h-13 px-8 text-base font-medium rounded-lg"
+            <Link
+              href="/sobre"
+              className="editorial-link brand-espresso-secondary-cta"
+              onClick={() => trackCtaClick("conhecer_medico", "hero_section")}
+            >
+              Conhecer o médico
+            </Link>
+          </div>
+
+          <nav aria-label="O que você procura?" className="editorial-shortcuts">
+            <span className="editorial-shortcuts-label">Ir direto para</span>
+            {patientShortcuts.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                onClick={() => trackCtaClick(`atalho_${item.id}`, "hero_section")}
               >
-                Conheça o Dr. Felipe
-              </Button>
-            </a>
-          </div>
-
-          {/* Atalhos por assunto */}
-          <nav aria-label="O que você procura" className="hero-rise mb-10" style={{ animationDelay: "0.15s" }}>
-            <p className="text-sm text-white/70 mb-3" style={{ fontStyle: "normal" }}>
-              O que você procura?
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {patientShortcuts.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => trackCtaClick(`atalho_${item.id}`, "hero_section")}
-                  className="inline-flex min-h-11 items-center rounded-full border border-white/25 px-4 text-sm font-medium text-white/90 transition-colors hover:bg-white/10"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </nav>
-
-          {/* Stats row */}
-          <div className="hero-rise flex flex-wrap gap-6 lg:gap-8" style={{ animationDelay: "0.2s" }}>
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
-                  <stat.icon className="brand-espresso-hero-icon w-5 h-5 text-[#B87333]" />
-                </div>
-                <div>
-                  <p className="text-base font-bold text-white leading-tight" style={{ fontStyle: 'normal' }}>{stat.value}</p>
-                  <p className="text-[11px] text-white/40 uppercase tracking-wider" style={{ fontStyle: 'normal' }}>{stat.label}</p>
-                </div>
-              </div>
+                {item.label}
+              </Link>
             ))}
-          </div>
+          </nav>
         </div>
 
-        {/* Right: Real Portrait Photo */}
-        <div
-          className="hero-slide-in flex-1 flex justify-center lg:justify-end items-end self-end relative mt-8 lg:mt-0"
-          style={{ animationDelay: "0.15s" }}
-        >
-          <div className="relative">
-            {/* Accent border frame - copper */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-[#B87333]/40 rounded-tl-2xl" />
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-[#B87333]/40 rounded-br-2xl" />
-
-            <img
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              src={HERO_PORTRAIT}
-              width={1440}
-              height={1440}
-              alt="Dr. Felipe de Bulhões - Urologista"
-              className="relative z-10 w-[300px] sm:w-[360px] lg:w-[400px] xl:w-[440px] h-auto object-cover rounded-xl shadow-2xl shadow-black/30"
-            />
-
-            {/* Floating credential badge */}
-            <div className="absolute -bottom-2 -left-6 bg-white dark:bg-card rounded-lg px-4 py-3 shadow-xl z-20">
-              <p className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground" style={{ fontStyle: 'normal' }}>Instituto D'Or</p>
-              <p className="text-[10px] text-[#1C3D5A] dark:text-foreground/50" style={{ fontStyle: 'normal' }}>Urologia · São Paulo</p>
-            </div>
-          </div>
-        </div>
+        <figure className="editorial-hero-portrait">
+          <img
+            src={HERO_PORTRAIT}
+            alt="Dr. Felipe de Bulhões - Urologista"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width={1440}
+            height={1440}
+          />
+          <figcaption>
+            <span>CRM-SP 202291</span>
+            <span>RQE 146538 · RQE 114019</span>
+          </figcaption>
+        </figure>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FEFEFE] to-transparent" />
+      <ul className="editorial-credentials" aria-label="Credenciais">
+        {credentials.map((item) => (
+          <li key={item.title}>
+            <strong>{item.title}</strong>
+            <span>{item.detail}</span>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

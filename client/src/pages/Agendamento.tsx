@@ -89,12 +89,33 @@ export default function Agendamento() {
             <p className="text-white/60 text-xs mt-4">
               A agenda abre em uma página segura da Doctoralia. Se preferir, use o WhatsApp ou o telefone abaixo.
             </p>
+            <div className="mt-6 inline-flex items-center gap-3 border-t border-white/12 pt-5 text-left">
+              <img
+                src="/manus-storage/instagram_profile_bc867e99_9d4bb2af.webp"
+                alt=""
+                width={44}
+                height={44}
+                loading="eager"
+                className="h-11 w-11 shrink-0 rounded-full border border-[#C9B6A3]/50 object-cover"
+                onError={(event) => { event.currentTarget.style.display = "none"; }}
+              />
+              <p className="text-sm leading-relaxed text-white/75">
+                <span className="font-semibold text-white">Dr. Felipe de Bulhões</span> · Urologista
+                <br />
+                <span className="text-white/60">
+                  CRM-SP 202291 · RQE 146538 ·{" "}
+                  <Link href="/sobre" className="underline decoration-[#C9B6A3]/60 underline-offset-4 hover:text-white">
+                    Sobre o médico
+                  </Link>
+                </span>
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Trust indicators */}
-      <section className="py-8 bg-[#F0FDFA]">
+      <section className="py-8 bg-[#F7F5F2] border-b border-[#2E2520]/8">
         <div className="container">
           <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-8">
             <div className="flex items-center gap-2 text-sm text-[#1C3D5A] dark:text-foreground/60">
@@ -150,9 +171,9 @@ export default function Agendamento() {
               onClick={() => trackWhatsAppClick("agendamento_page")}
               className="bg-white dark:bg-card rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all text-center"
             >
-              <MessageCircle className="w-6 h-6 text-[#25D366] mx-auto mb-2" />
+              <MessageCircle className="w-6 h-6 text-[#128C4B] mx-auto mb-2" />
               <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">WhatsApp</h3>
-              <p className="text-[#25D366] font-bold">(11) 98112-4455</p>
+              <p className="text-[#0F7A40] font-bold">(11) 98112-4455</p>
               <p className="text-xs text-[#64748B] mt-1">Apenas mensagens</p>
             </a>
           </div>
@@ -168,19 +189,19 @@ export default function Agendamento() {
               <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
               <h3 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Campinas Day Hospital</h3>
               <p className="text-xs text-[#64748B]">Cambuí, Campinas - SP</p>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#D4884A]">Particular</span>
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#6B5A4C]">Particular</span>
             </Link>
             <Link href="/local/clinovi-paulista" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all block">
               <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
               <h3 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Clinovi Paulista</h3>
               <p className="text-xs text-[#64748B]">Bela Vista, São Paulo - SP</p>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-400">Particular</span>
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#6B5A4C]">Particular</span>
             </Link>
             <Link href="/local/clinovi-pinheiros" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all block">
               <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
               <h3 className="font-bold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Clinovi Pinheiros</h3>
               <p className="text-xs text-[#64748B]">Pinheiros, São Paulo - SP</p>
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-amber-400">Particular</span>
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#6B5A4C]">Particular</span>
             </Link>
             <Link href="/local/cemed-sao-luiz-campinas" className="bg-[#F8FAFB] rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all block">
               <MapPin className="w-5 h-5 text-[#B87333] mb-2" />
@@ -201,8 +222,11 @@ export default function Agendamento() {
       {/* Footer */}
       <footer className="bg-[#0F2A3F] py-8">
         <div className="container text-center">
-          <p className="text-white/30 text-sm">&copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291</p>
-          <p className="text-white/20 text-xs mt-2">Este conteúdo é informativo e não substitui a consulta médica.</p>
+          <p className="text-white/70 text-sm mb-3">
+            Dr. Felipe de Bulhões Ojeda — CRM-SP 202291 · RQE 146538 (Urologia) · RQE 114019 (Cirurgia Geral).
+          </p>
+          <p className="text-white/55 text-sm">&copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista</p>
+          <p className="text-white/55 text-xs mt-2 pb-16 md:pb-0">Este conteúdo é informativo e não substitui a consulta médica.</p>
         </div>
       </footer>
 

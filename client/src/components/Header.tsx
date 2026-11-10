@@ -5,7 +5,7 @@
  */
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { trackCtaClick } from "@/lib/analytics";
@@ -230,8 +230,7 @@ export default function Header({ previewMode = false, previewHref = "/preview-pa
             <Button
               className="brand-espresso-primary-cta schedule-cta schedule-cta--primary bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5 rounded-md px-5 h-10 text-sm font-semibold shadow-md"
             >
-              <Phone className="w-4 h-4 mr-2" />
-              Agendar Consulta
+              Agendar consulta
             </Button>
           </Link>
         </div>
@@ -331,8 +330,7 @@ export default function Header({ previewMode = false, previewHref = "/preview-pa
                 className="mt-2"
               >
                 <Button className="brand-espresso-primary-cta schedule-cta schedule-cta--primary w-full bg-[#B87333] hover:bg-[#D4884A] text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#B87333]/30 hover:-translate-y-0.5">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Agendar Consulta
+                  Agendar consulta
                 </Button>
               </Link>
             </nav>

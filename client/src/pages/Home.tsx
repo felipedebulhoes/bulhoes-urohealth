@@ -6,7 +6,6 @@ import DoctoraliaBadge from "@/components/DoctoraliaBadge";
 import AboutSection from "@/components/AboutSection";
 import StatsCounter from "@/components/StatsCounter";
 import SpecialtiesSection from "@/components/SpecialtiesSection";
-import ServicesSection from "@/components/ServicesSection";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import MobileBottomBar from "@/components/MobileBottomBar";
@@ -79,7 +78,6 @@ export default function Home({
         <DeferredSection minHeight={820}>
           <ScrollReveal><LocationCardsSection /></ScrollReveal>
         </DeferredSection>
-        <ScrollReveal><ServicesSection /></ScrollReveal>
         <ScrollReveal><AboutSection /></ScrollReveal>
         <ScrollReveal><StatsCounter /></ScrollReveal>
         <DeferredSection minHeight={520}>

@@ -133,7 +133,7 @@ export default function Contato() {
               href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=page&utm_campaign=contato"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex"
+              className="max-sm:hidden"
               onClick={() => trackDoctoraliaClick("contato")}
               loadingText="Abrindo agenda…"
               size="sm"
@@ -160,6 +160,27 @@ export default function Contato() {
             <p className="text-white/60 text-lg leading-relaxed">
               Agende sua consulta, tire dúvidas ou solicite informações. Atendimento presencial em São Paulo e Campinas, ou por teleconsulta para todo o Brasil.
             </p>
+            <div className="mt-7 flex items-center gap-3 border-t border-white/12 pt-5">
+              <img
+                src="/manus-storage/instagram_profile_bc867e99_9d4bb2af.webp"
+                alt=""
+                width={44}
+                height={44}
+                loading="eager"
+                className="h-11 w-11 shrink-0 rounded-full border border-[#C9B6A3]/50 object-cover"
+                onError={(event) => { event.currentTarget.style.display = "none"; }}
+              />
+              <p className="text-sm leading-relaxed text-white/75">
+                <span className="font-semibold text-white">Dr. Felipe de Bulhões</span> · Urologista
+                <br />
+                <span className="text-white/60">
+                  CRM-SP 202291 · RQE 146538 ·{" "}
+                  <Link href="/sobre" className="underline decoration-[#C9B6A3]/60 underline-offset-4 hover:text-white">
+                    Sobre o médico
+                  </Link>
+                </span>
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -405,7 +426,7 @@ export default function Contato() {
       <section className="py-16 bg-gradient-to-br from-[#1C3D5A] to-[#0F3460]">
         <div className="container text-center">
           <h2 className="text-2xl lg:text-3xl text-white mb-3 font-serif">Prefere agendar online?</h2>
-          <p className="text-white/50 text-sm mb-6 max-w-lg mx-auto">
+          <p className="text-white/65 text-sm mb-6 max-w-lg mx-auto">
             Use o calendário do Doctoralia para escolher o melhor dia e horário. Confirmação imediata.
           </p>
           <CTAButtonWithAnimation href="/agendamento" loadingText="Abrindo agendamento…" className="px-6 h-11">
@@ -417,8 +438,11 @@ export default function Contato() {
       {/* Footer */}
       <footer className="bg-[#0F2A3F] py-8">
         <div className="container text-center">
-          <p className="text-white/30 text-sm">&copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291</p>
-          <p className="text-white/20 text-xs mt-2">Este conteúdo é informativo e não substitui a consulta médica.</p>
+          <p className="text-white/70 text-sm mb-3">
+            Dr. Felipe de Bulhões Ojeda — CRM-SP 202291 · RQE 146538 (Urologia) · RQE 114019 (Cirurgia Geral).
+          </p>
+          <p className="text-white/55 text-sm">&copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista</p>
+          <p className="text-white/55 text-xs mt-2 pb-16 md:pb-0">Este conteúdo é informativo e não substitui a consulta médica.</p>
         </div>
       </footer>
 

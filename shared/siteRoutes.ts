@@ -11,6 +11,14 @@ export const BLOG_SLUGS = [
   "psa-rastreamento-cancer-prostata-2026",
   "hiperplasia-prostatica-benigna-tratamentos-modernos",
   "urologista-pinheiros-zona-oeste-sp",
+  "ejaculacao-precoce-causas-e-tratamentos",
+  "cancer-de-rim-sintomas-diagnostico-tratamento",
+  "cancer-de-testiculo-sinais-e-autoexame",
+  "fimose-em-adultos-e-criancas-tratamento",
+  "prostatite-aguda-cronica-dor-pelvica",
+  "estenose-de-uretra-sintomas-tratamento",
+  "bexiga-hiperativa-urgencia-urinaria-tratamento",
+  "ists-e-hpv-no-homem-prevencao-e-tratamento",
 ] as const;
 
 export const PUBLIC_STATIC_PATHS = [

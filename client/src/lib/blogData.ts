@@ -1,3 +1,5 @@
+import { temaPosts } from "@/lib/blogPostsTemas";
+
 export interface BlogPost {
   id: string;
   slug: string;
@@ -1782,6 +1784,7 @@ A primeira consulta urológica não requer preparo especial. Traga exames anteri
 Urologista Pinheiros, urologista Zona Oeste SP, urologista Vila Madalena, urologista Jardins, urologista Itaim Bibi, urologista Av. Rebouças, urologista Faria Lima, consulta urológica Pinheiros, médico urologista Pinheiros São Paulo, Clinovi Pinheiros urologista, urologista particular Pinheiros, urologista perto de mim Pinheiros.
 `,
   },
+  ...temaPosts,
 ];
 
 

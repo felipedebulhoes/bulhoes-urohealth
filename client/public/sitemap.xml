@@ -342,6 +342,62 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- Blog: Ejaculação precoce -->
+  <url>
+    <loc>https://felipebulhoes.com/blog/ejaculacao-precoce-causas-e-tratamentos</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog: Câncer de rim -->
+  <url>
+    <loc>https://felipebulhoes.com/blog/cancer-de-rim-sintomas-diagnostico-tratamento</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog: Câncer de testículo -->
+  <url>
+    <loc>https://felipebulhoes.com/blog/cancer-de-testiculo-sinais-e-autoexame</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog: Fimose -->
+  <url>
+    <loc>https://felipebulhoes.com/blog/fimose-em-adultos-e-criancas-tratamento</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog: Prostatite -->
+  <url>
+    <loc>https://felipebulhoes.com/blog/prostatite-aguda-cronica-dor-pelvica</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog: Estenose de uretra -->
+  <url>
+    <loc>https://felipebulhoes.com/blog/estenose-de-uretra-sintomas-tratamento</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog: Bexiga hiperativa -->
+  <url>
+    <loc>https://felipebulhoes.com/blog/bexiga-hiperativa-urgencia-urinaria-tratamento</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog: ISTs e HPV -->
+  <url>
+    <loc>https://felipebulhoes.com/blog/ists-e-hpv-no-homem-prevencao-e-tratamento</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Educativo: Orientações Pré-Operatórias -->
   <url>
     <loc>https://felipebulhoes.com/educativo/orientacoes-pre-operatorias</loc>

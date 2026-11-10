@@ -402,6 +402,14 @@ const BLOG_TITLES: Record<string, string> = {
   "psa-rastreamento-cancer-prostata-2026": "PSA e rastreamento do câncer de próstata",
   "hiperplasia-prostatica-benigna-tratamentos-modernos": "HPB: tratamentos modernos",
   "urologista-pinheiros-zona-oeste-sp": "Urologista em Pinheiros",
+  "ejaculacao-precoce-causas-e-tratamentos": "Ejaculação precoce: causas e tratamentos",
+  "cancer-de-rim-sintomas-diagnostico-tratamento": "Câncer de rim: sintomas, diagnóstico e tratamento",
+  "cancer-de-testiculo-sinais-e-autoexame": "Câncer de testículo: sinais de alerta e tratamento",
+  "fimose-em-adultos-e-criancas-tratamento": "Fimose em crianças e adultos: quando tratar",
+  "prostatite-aguda-cronica-dor-pelvica": "Prostatite aguda, crônica e dor pélvica",
+  "estenose-de-uretra-sintomas-tratamento": "Estenose de uretra: sintomas e tratamento",
+  "bexiga-hiperativa-urgencia-urinaria-tratamento": "Bexiga hiperativa: urgência urinária tem tratamento",
+  "ists-e-hpv-no-homem-prevencao-e-tratamento": "ISTs e HPV no homem: prevenção e tratamento",
 };
 
 const BLOG_IMAGES: Record<string, string> = {

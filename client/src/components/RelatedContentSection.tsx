@@ -145,6 +145,13 @@ const content: Record<string, RelatedItem> = {
     label: "Andrologia",
     icon: BookOpen,
   },
+  penileProsthesis: {
+    title: "Prótese peniana",
+    description: "Tipos, indicação, cirurgia e recuperação.",
+    href: "/educativo/protese-peniana",
+    label: "Andrologia",
+    icon: BookOpen,
+  },
   firstVisit: {
     title: "Como funciona a primeira consulta",
     description: "Saiba o que levar e como se preparar para a avaliação.",
@@ -177,7 +184,8 @@ const groups: Array<{ match: RegExp; keys: Array<keyof typeof content> }> = [
   { match: /(hipogonadismo|sindrome-metabolica)/, keys: ["metabolic", "sexualHealth", "firstVisit"] },
   { match: /(engrossamento|procedimentos-andrologicos)/, keys: ["andrologicalProcedures", "peyronie", "firstVisit"] },
   { match: /(vasectomia|planejamento)/, keys: ["vasectomy", "fertility", "firstVisit"] },
-  { match: /(estetica|andrologia|disfuncao|peyronie)/, keys: ["sexualHealth", "peyronie", "firstVisit"] },
+  { match: /(disfuncao|peyronie|protese)/, keys: ["penileProsthesis", "peyronie", "sexualHealth"] },
+  { match: /(estetica|andrologia)/, keys: ["sexualHealth", "peyronie", "firstVisit"] },
   { match: /(infertilidade|varicocele|fertilidade)/, keys: ["fertility", "sexualHealth", "firstVisit"] },
   { match: /(prostata)/, keys: ["hpb", "hpbTreatments", "robotic"] },
   { match: /(calculo|litotripsia|renal)/, keys: ["laserLithotripsy", "stones", "minimallyInvasive"] },

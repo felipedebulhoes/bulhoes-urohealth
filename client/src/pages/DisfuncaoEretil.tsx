@@ -200,7 +200,8 @@ export default function DisfuncaoEretil() {
               A DE é uma condição complexa e <strong>multifatorial</strong> — raramente tem uma causa única. Na maioria dos casos, há uma combinação de fatores vasculares, hormonais, neurológicos, psicológicos e medicamentosos. Mais importante: a DE pode ser o <strong>primeiro sinal de doença cardiovascular</strong>, precedendo eventos como infarto em 3-5 anos. Por isso, todo homem com DE deve ter uma avaliação cardiovascular completa.
             </p>
             <p>
-              O tratamento é <strong>individualizado e escalonado</strong>, baseado na decisão compartilhada entre médico e paciente. Existem opções para todos os graus de gravidade, desde mudanças de estilo de vida até a prótese peniana, com excelentes taxas de sucesso. Veja como é o{" "}
+              O tratamento é <strong>individualizado e escalonado</strong>, baseado na decisão compartilhada entre médico e paciente. Existem opções para todos os graus de gravidade, desde mudanças de estilo de vida até a{" "}
+              <Link href="/educativo/protese-peniana" className="underline hover:text-[#B87333]">prótese peniana</Link>, com excelentes taxas de sucesso. Veja como é o{" "}
               <Link href="/andrologia-performance-masculina" className="underline hover:text-[#B87333]">atendimento em andrologia em São Paulo</Link>.
             </p>
           </div>

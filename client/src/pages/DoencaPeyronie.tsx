@@ -5,6 +5,7 @@
  */
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "wouter";
 import EducationalLayout from "@/components/EducationalLayout";
 import { FAQSchema } from "@/components/SchemaMarkup";
 import {
@@ -627,7 +628,8 @@ export default function DoencaPeyronie() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Opções Cirúrgicas</h2>
             <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-              Três abordagens principais, escolhidas conforme grau de curvatura e função erétil
+              Três abordagens principais, escolhidas conforme grau de curvatura e função erétil. Saiba mais sobre a{" "}
+              <Link href="/educativo/protese-peniana" className="underline hover:text-[#B87333]">prótese peniana</Link>.
             </p>
           </motion.div>
           <div className="space-y-4">

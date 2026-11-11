@@ -273,7 +273,7 @@ export default function Contato() {
                   <Clock className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                   <div>
                     <p className="font-semibold text-[#1C3D5A] dark:text-foreground">Horário de atendimento</p>
-                    <p>Campinas Day Hospital: Sextas, 8h às 12h</p>
+                    <p>Campinas Day Hospital: Sextas, 18h às 20h</p>
                     <p>Clinovi (Paulista e Pinheiros): Segunda a Sábado — consulte horários no Doctoralia</p>
                   </div>
                 </div>

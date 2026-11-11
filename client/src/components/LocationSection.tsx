@@ -24,7 +24,7 @@ const locations = [
     cep: "CEP 13025-005",
     phone: "(19) 2127-2900",
     whatsapp: "(19) 99855-9890",
-    hours: "Sextas, 8h às 12h",
+    hours: "Sextas, 18h às 20h",
     highlight: "Centro Urológico Avançado",
     insurances: null,
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],

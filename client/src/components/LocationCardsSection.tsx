@@ -93,7 +93,7 @@ const locations: LocationData[] = [
     neighborhood: "Cambuí, Campinas - SP",
     phone: "(19) 2127-2900",
     whatsapp: "(19) 99855-9890",
-    hours: "Sextas, 8h às 12h",
+    hours: "Sextas, 18h às 20h",
     highlight: "Centro Urológico Avançado",
     bookingUrl: DOCTORALIA_PROFILE,
     bookingLabel: "Agendar via Doctoralia",

@@ -713,4 +713,110 @@ Se aparecer **secreção, ardência para urinar, feridas, verrugas ou dor nos te
 6. Ministério da Saúde. Nota técnica sobre a vacinação contra HPV em dose única. 2024.
 `,
   },
+  {
+    id: "25",
+    slug: "preenchimento-peniano-4-perguntas-antes-de-fazer",
+    title: "Preenchimento Peniano: 4 Perguntas Para Fazer Antes de Decidir",
+    excerpt:
+      "Antes de perguntar o preço, vale saber quem vai fazer, com que produto, onde e quem cuida de você se houver uma complicação. Um guia simples para decidir com informação.",
+    coverImage: cover("preenchimento-peniano-4-perguntas-antes-de-fazer"),
+    category: "Saúde Sexual",
+    date: "11 de Novembro de 2026",
+    readTime: "6 min de leitura",
+    author,
+    content: `
+O preenchimento peniano com ácido hialurônico é um **procedimento médico**. Muitos homens começam a pesquisa pelo preço, e é natural querer saber quanto custa. Mas o valor sozinho não diz nada sobre **quem vai avaliar você, que produto vai entrar no seu corpo, onde isso vai ser feito e quem vai cuidar de você depois**.
+
+Estas quatro perguntas ajudam a separar uma **decisão bem informada** de uma aposta. Leve-as para qualquer consulta, inclusive para a minha.
+
+---
+
+## 1. Quem vai fazer é médico?
+
+Pela **Lei do Ato Médico** e pela posição da **Sociedade Brasileira de Urologia**, o preenchimento peniano é um ato médico.
+
+E não é só aplicar. Antes, alguém precisa **avaliar a anatomia, a ereção, a pele e os vasos**, e dizer se o procedimento faz sentido para você. Em algumas situações, a melhor resposta é **adiar ou não fazer**: infecção ativa na região, dificuldade de ereção que ainda não foi investigada, ou uma expectativa que a técnica não consegue atender.
+
+**O que perguntar:**
+- Quem faz a avaliação? É a mesma pessoa que vai aplicar?
+- Qual é a formação dela?
+
+Você pode conferir o registro de qualquer médico, com CRM e especialidade (RQE), na busca de médicos do **portal do Conselho Federal de Medicina**.
+
+---
+
+## 2. Que produto vai ser usado?
+
+Preenchedores de ácido hialurônico são **produtos para a saúde** e precisam de **registro na Anvisa**. Você tem o direito de saber exatamente o que vai ser aplicado.
+
+**O que perguntar:**
+- Qual é o nome do produto?
+- Ele tem registro na Anvisa? (Dá para conferir pelo nome na consulta pública do site da Anvisa.)
+
+Uma vantagem do ácido hialurônico é que, se for preciso, ele **pode ser dissolvido** com uma enzima chamada hialuronidase. Desconfie de produto sem nome ou de **materiais permanentes**, como silicone líquido, óleos ou PMMA: nos estudos, eles aparecem com **mais complicações** e complicações mais difíceis de tratar.
+
+---
+
+## 3. Onde vai ser feito, e com que estrutura?
+
+O procedimento costuma ser feito no consultório, com anestesia local. Mesmo assim, o lugar importa.
+
+**O que observar:**
+- Ambiente limpo e adequado para procedimentos
+- **Material estéril e descartável**
+- Equipe preparada para agir se algo sair do esperado
+- Registro do produto usado (nome e lote) no seu prontuário
+
+---
+
+## 4. Se houver uma complicação, quem vai te atender?
+
+**Todo procedimento tem risco.** No preenchimento peniano, os mais conhecidos são:
+
+- **Nódulos** e irregularidades
+- **Assimetria**
+- **Migração do produto**
+- **Sangramento sob a pele** e inchaço
+- **Infecção**
+- Em casos raros e graves, comprometimento da circulação da pele
+
+A maioria pode ser tratada **quando é reconhecida cedo**. Em uma série de 230 homens tratados com ácido hialurônico, 4,3% tiveram complicações, e todas foram tratadas sem sequela grave. Em uma revisão de 23 estudos, o ácido hialurônico teve a **menor taxa de complicações** entre os materiais avaliados. Isso não significa risco zero: significa que **acompanhamento não é detalhe, faz parte do procedimento**.
+
+**O que perguntar:**
+- Como é o retorno depois do procedimento?
+- Quais sinais devem me fazer procurar a equipe?
+- Como falo com vocês se algo acontecer fora do horário?
+
+---
+
+## Resumo: o que ouvir e o que deve acender um alerta
+
+| Pergunta | O que você deve ouvir | Sinal de alerta |
+|---|---|---|
+| **Quem vai fazer?** | Um médico, que avalia antes de aplicar | Ninguém fala de avaliação, só de aplicação |
+| **Que produto?** | Nome do produto e registro na Anvisa | "É um produto importado", sem nome |
+| **Onde?** | Ambiente adequado e material estéril | Local improvisado ou sem estrutura |
+| **E se der problema?** | Retorno combinado e um canal de contato | Promessa de que "não tem risco" |
+
+---
+
+## Se alguma resposta não ficar clara, vale esperar
+
+Uma boa decisão começa com **informação, não com promessa**. Desconfie de quem promete um número de centímetros antes de examinar você, de quem faz o preço ser o assunto principal e de quem diz que não há risco.
+
+O efeito do ácido hialurônico é **temporário**: o corpo absorve o produto aos poucos, e a duração varia de pessoa para pessoa. Isso também precisa entrar na conta antes de decidir.
+
+Na avaliação, eu ouço o que você busca, examino e explico **as possibilidades, os riscos e os limites** no seu caso. A decisão é sua, sem pressa e com sigilo. Para entender melhor o procedimento, veja a [página sobre preenchimento peniano](/preenchimento-peniano).
+
+---
+
+### Referências
+
+1. Brasil. Lei nº 12.842, de 10 de julho de 2013. Dispõe sobre o exercício da Medicina (Lei do Ato Médico), art. 4º, III.
+2. Sociedade Brasileira de Urologia, Departamento de Andrologia, Reprodução e Medicina Sexual. Nota técnica: engrossamento peniano. 2025.
+3. Quan Y, et al. Complications and management of penile augmentation with hyaluronic acid injection. Asian J Androl. 2021;23(4):392-395. doi:10.4103/aja.aja_78_20
+4. Fonseca TDF, Querobino SM. Penile augmentation procedures: a systematic review and meta-analysis of techniques, materials, and safety outcomes. Sex Health. 2026;23(4). doi:10.1071/SH26112
+5. Ramazan M, et al. Complications of penile augmentation: a narrative review of injectables, implants, and surgical grafts. Int J Impot Res. 2025. doi:10.1038/s41443-025-01190-8
+`,
+  },
 ];

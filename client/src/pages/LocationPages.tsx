@@ -74,7 +74,7 @@ const locations: Record<string, LocationData> = {
     whatsapp: "(19) 99855-9890",
     mapUrl: "https://maps.google.com/?q=Campinas+Day+Hospital",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.5!2d-47.06!3d-22.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDUzJzI0LjAiUyA0N8KwMDMnMzYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1",
-    hours: ["Sexta-feira: 8h às 12h"],
+    hours: ["Sexta-feira: 18h às 20h"],
     services: ["Consultas", "Cirurgias", "Urodinâmica", "Exames", "Procedimentos ambulatoriais"],
     parking: "Estacionamento próprio gratuito",
     description: "O Campinas Day Hospital é um centro cirúrgico moderno e completo, equipado com tecnologia de ponta para procedimentos urológicos. Localizado no Cambuí em Campinas, oferece atendimento particular com pagamento via PIX, cartão de crédito ou débito, com estrutura para cirurgias ambulatoriais e internação de curta permanência.",

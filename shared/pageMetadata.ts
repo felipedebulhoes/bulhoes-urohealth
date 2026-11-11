@@ -385,7 +385,7 @@ const SEARCH_SNIPPETS: Record<string, Pick<PageMetadata, "title" | "description"
   "/local/campinas-day-hospital": {
     title: "Urologista no Campinas Day Hospital, Cambuí | Particular",
     description:
-      "Dr. Felipe de Bulhões atende no Campinas Day Hospital: Av. Benjamin Constant, 1991, Cambuí, Campinas. Atendimento particular, às sextas, das 8h às 12h.",
+      "Dr. Felipe de Bulhões atende no Campinas Day Hospital: Av. Benjamin Constant, 1991, Cambuí, Campinas. Atendimento particular, às sextas, das 18h às 20h.",
   },
 };
 

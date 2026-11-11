@@ -706,7 +706,7 @@ O **Campinas Day Hospital** é um centro cirúrgico moderno localizado no **Camb
 
 **Endereço:** Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
 
-**Horário:** Sexta-feira, 8h às 12h
+**Horário:** Sexta-feira, 18h às 20h
 
 **Pagamento:** PIX, cartão de crédito ou débito no local
 
@@ -907,7 +907,7 @@ O **Dr. Felipe de Bulhões** realiza vasectomias no **Campinas Day Hospital**, u
 **Campinas Day Hospital**
 - 📍 Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
 - 📞 Telefone: (19) 2127-2900\n- 💬 WhatsApp: (11) 98112-4455 (apenas mensagens)
-- ⏰ Sexta-feira: 8h às 12h
+- ⏰ Sexta-feira: 18h às 20h
 
 [Agendar consulta pelo Doctoralia](https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas)
 

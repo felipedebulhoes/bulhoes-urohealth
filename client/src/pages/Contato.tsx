@@ -274,7 +274,7 @@ export default function Contato() {
                   <div>
                     <p className="font-semibold text-[#1C3D5A] dark:text-foreground">Horário de atendimento</p>
                     <p>Campinas Day Hospital: Sextas, 18h às 20h</p>
-                    <p>Clinovi (Paulista e Pinheiros): Segunda a Sábado — consulte horários no Doctoralia</p>
+                    <p>Clinovi (Paulista e Pinheiros): Segundas e quartas, 13h às 22h</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

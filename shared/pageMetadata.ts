@@ -410,6 +410,7 @@ const BLOG_TITLES: Record<string, string> = {
   "estenose-de-uretra-sintomas-tratamento": "Estenose de uretra: sintomas e tratamento",
   "bexiga-hiperativa-urgencia-urinaria-tratamento": "Bexiga hiperativa: urgência urinária tem tratamento",
   "ists-e-hpv-no-homem-prevencao-e-tratamento": "ISTs e HPV no homem: prevenção e tratamento",
+  "preenchimento-peniano-4-perguntas-antes-de-fazer": "Preenchimento peniano: 4 perguntas antes de decidir",
 };
 
 const BLOG_IMAGES: Record<string, string> = {
@@ -453,6 +454,8 @@ const BLOG_IMAGES: Record<string, string> = {
     `${SITE_ORIGIN}/manus-storage/og-banner-blog-bexiga-hiperativa-urgencia-urinaria-tratamento-marrom-neutro.jpg`,
   "ists-e-hpv-no-homem-prevencao-e-tratamento":
     `${SITE_ORIGIN}/manus-storage/og-banner-blog-ists-e-hpv-no-homem-prevencao-e-tratamento-marrom-neutro.jpg`,
+  "preenchimento-peniano-4-perguntas-antes-de-fazer":
+    `${SITE_ORIGIN}/manus-storage/og-banner-blog-preenchimento-peniano-4-perguntas-antes-de-fazer-marrom-neutro.jpg`,
 };
 
 function genericEducationalMetadata(label: string): PageMetadata {

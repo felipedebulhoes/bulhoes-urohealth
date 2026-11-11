@@ -19,6 +19,7 @@ export const BLOG_SLUGS = [
   "estenose-de-uretra-sintomas-tratamento",
   "bexiga-hiperativa-urgencia-urinaria-tratamento",
   "ists-e-hpv-no-homem-prevencao-e-tratamento",
+  "preenchimento-peniano-4-perguntas-antes-de-fazer",
 ] as const;
 
 export const PUBLIC_STATIC_PATHS = [

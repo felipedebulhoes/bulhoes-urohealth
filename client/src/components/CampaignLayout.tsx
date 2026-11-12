@@ -4,6 +4,7 @@
  * Foco em conversão: CTAs parametrizados, tracking avançado, WhatsApp por campanha
  */
 import { useEffect } from "react";
+import { getIndexedDocumentMeta } from "@shared/pageMetadata";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Phone, Calendar, Shield, Award } from "lucide-react";
@@ -49,10 +50,12 @@ export default function CampaignLayout({
   const doctoraliaUrl = `https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=campaign&utm_campaign=${campaignSlug}`;
 
   useEffect(() => {
-    const pageTitle = metaTitle || `${title} | Dr. Felipe de Bulhões - Urologista`;
+    // Nas páginas indexáveis, vale o mesmo título e descrição do servidor.
+    const indexed = getIndexedDocumentMeta(window.location.pathname);
+    const pageTitle = indexed?.title || metaTitle || `${title} | Dr. Felipe de Bulhões - Urologista`;
     document.title = pageTitle;
 
-    const metaDesc = metaDescription || description;
+    const metaDesc = indexed?.description || metaDescription || description;
     let metaTag = document.querySelector('meta[name="description"]');
     if (!metaTag) {
       metaTag = document.createElement("meta");

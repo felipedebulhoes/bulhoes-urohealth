@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { getIndexedDocumentMeta } from "@shared/pageMetadata";
 
 interface PageMetaOptions {
   title: string;
@@ -23,17 +24,20 @@ function setMetaTag(attribute: "name" | "property", key: string, content: string
  */
 export function usePageMeta({ title, description, canonical }: PageMetaOptions) {
   useEffect(() => {
-    const fullTitle = `${title} | Dr. Felipe de Bulhões`;
+    // Nas páginas indexáveis, vale o mesmo título e descrição do servidor.
+    const indexed = getIndexedDocumentMeta(window.location.pathname);
+    const fullTitle = indexed?.title ?? `${title} | Dr. Felipe de Bulhões`;
+    const metaDescription = indexed?.description ?? description;
     document.title = fullTitle;
 
-    setMetaTag("name", "description", description);
+    setMetaTag("name", "description", metaDescription);
 
     // Open Graph and Twitter mirrors keep browser-side navigation consistent
     // with the crawler-visible metadata emitted by the server.
     setMetaTag("property", "og:title", fullTitle);
-    setMetaTag("property", "og:description", description);
+    setMetaTag("property", "og:description", metaDescription);
     setMetaTag("name", "twitter:title", fullTitle);
-    setMetaTag("name", "twitter:description", description);
+    setMetaTag("name", "twitter:description", metaDescription);
 
     // Canonical
     if (canonical) {

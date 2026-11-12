@@ -277,3 +277,16 @@ describe("SEO URL consolidation", () => {
     ]);
   });
 });
+
+describe("Tamanho de título e descrição nas páginas indexáveis", () => {
+  const indexablePaths = [
+    ...PUBLIC_STATIC_PATHS.filter(path => isIndexableSitePath(path)),
+    ...BLOG_SLUGS.map(slug => `/blog/${slug}`),
+  ];
+
+  it.each(indexablePaths)("%s cabe no limite da busca", path => {
+    const { title, description } = getPageMetadata(path);
+    expect(title.length).toBeLessThanOrEqual(65);
+    expect(description.length).toBeLessThanOrEqual(160);
+  });
+});

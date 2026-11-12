@@ -5,6 +5,7 @@
  * Conformidade: Resolução CFM nº 2.336/2023 (Diretrizes EAU, AUA e SBU)
  */
 import { useEffect, useState } from "react";
+import { getIndexedDocumentMeta } from "@shared/pageMetadata";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -288,14 +289,16 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
   const doctoraliaUrl = `https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=landing_page&utm_campaign=${config.campaignSlug}`;
 
   useEffect(() => {
-    document.title = config.pageTitle;
+    // Nas páginas indexáveis, vale o mesmo título e descrição do servidor.
+    const indexed = getIndexedDocumentMeta(window.location.pathname);
+    document.title = indexed?.title ?? config.pageTitle;
     let metaTag = document.querySelector('meta[name="description"]');
     if (!metaTag) {
       metaTag = document.createElement("meta");
       metaTag.setAttribute("name", "description");
       document.head.appendChild(metaTag);
     }
-    metaTag.setAttribute("content", config.pageDescription);
+    metaTag.setAttribute("content", indexed?.description ?? config.pageDescription);
 
     trackEducationalPageView(config.heroTitle, window.location.pathname);
   }, [config.pageTitle, config.pageDescription, config.heroTitle]);

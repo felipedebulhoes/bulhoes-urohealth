@@ -13,7 +13,7 @@ import { trackEducationalPageView, trackDoctoraliaClick, trackWhatsAppClick } fr
 import { getWhatsAppUrl } from "@/lib/tracking";
 import { MedicalPageSchema } from "@/components/SchemaMarkup";
 import { useLocation } from "wouter";
-import { getSearchSnippet } from "@shared/pageMetadata";
+import { getIndexedDocumentMeta } from "@shared/pageMetadata";
 import { formatMedicalReviewDate, getMedicalReviewDate } from "@shared/medicalReview";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
@@ -52,11 +52,12 @@ export default function EducationalLayout({
   const whatsappCtaUrl = getWhatsAppUrl({ page: pageSlug });
 
   useEffect(() => {
-    const snippet = getSearchSnippet(currentPath);
-    const pageTitle = snippet?.title || metaTitle || `${title} | Dr. Felipe de Bulhões - Urologista`;
+    // Nas páginas indexáveis, vale o mesmo título e descrição do servidor.
+    const indexed = getIndexedDocumentMeta(currentPath);
+    const pageTitle = indexed?.title || metaTitle || `${title} | Dr. Felipe de Bulhões - Urologista`;
     document.title = pageTitle;
 
-    const metaDesc = snippet?.description || metaDescription || description;
+    const metaDesc = indexed?.description || metaDescription || description;
     let metaTag = document.querySelector('meta[name="description"]');
     if (!metaTag) {
       metaTag = document.createElement("meta");

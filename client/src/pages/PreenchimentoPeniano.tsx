@@ -5,6 +5,7 @@
  * Tom: Médico, elegante, discreto, baseado em evidências (EAU, SMSNA, AUA) e em conformidade ética com o CFM.
  */
 import { useEffect, useState } from "react";
+import { getIndexedDocumentMeta } from "@shared/pageMetadata";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -336,7 +337,7 @@ export default function PreenchimentoPeniano() {
   const doctoraliaUrl = `https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=landing_page&utm_campaign=${CAMPAIGN_SLUG}`;
 
   useEffect(() => {
-    document.title = PAGE_TITLE;
+    document.title = getIndexedDocumentMeta(window.location.pathname)?.title ?? PAGE_TITLE;
     trackEducationalPageView("Preenchimento Peniano com Ácido Hialurônico", window.location.pathname);
   }, []);
 

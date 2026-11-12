@@ -5,7 +5,7 @@ import MobileBottomBar from "@/components/MobileBottomBar";
  * Design: Clinical Precision — Swiss Medical Design
  * Location Pages individuais para SEO local
  */
-import { getPageMetadata } from "@shared/pageMetadata";
+import { getIndexedDocumentMeta, getPageMetadata } from "@shared/pageMetadata";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -157,9 +157,10 @@ function LocationPage({ slug }: { slug: string }) {
 
   // SEO meta tags
   if (typeof document !== "undefined") {
-    document.title = loc.metaTitle;
+    const indexed = getIndexedDocumentMeta(window.location.pathname);
+    document.title = indexed?.title ?? loc.metaTitle;
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", loc.metaDescription);
+    if (metaDesc) metaDesc.setAttribute("content", indexed?.description ?? loc.metaDescription);
   }
 
   const locSlug = loc.name.toLowerCase().replace(/ /g, "-");

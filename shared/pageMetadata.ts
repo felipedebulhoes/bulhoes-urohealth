@@ -150,7 +150,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Preenchimento peniano",
   },
   "/saude-da-prostata": {
-    title: "Saúde da Próstata e HPB em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Saúde da Próstata e HPB em SP | Dr. Felipe de Bulhões",
     description:
       "Avaliação da próstata em São Paulo e Campinas: check-up prostático, rastreio e tratamentos minimamente invasivos para próstata aumentada (HPB).",
     image: DEFAULT_OG_IMAGE,
@@ -168,7 +168,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Cálculos renais e litotripsia a laser",
   },
   "/cirurgia-robotica-urologia": {
-    title: "Cirurgia Robótica em Urologia em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Cirurgia Robótica Urológica em SP | Dr. Felipe de Bulhões",
     description:
       "Cirurgia robótica e videolaparoscópica em urologia em São Paulo e Campinas: prostatectomia robótica, nefrectomia parcial e reconstruções com visão 3D.",
     image: DEFAULT_OG_IMAGE,
@@ -177,7 +177,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
     breadcrumb: "Cirurgia robótica em urologia",
   },
   "/avaliacao-urodinamica": {
-    title: "Urodinâmica e Incontinência em SP e Campinas | Dr. Felipe de Bulhões",
+    title: "Urodinâmica e Incontinência em SP | Dr. Felipe de Bulhões",
     description:
       "Estudo urodinâmico e tratamento de incontinência urinária, bexiga hiperativa e obstrução prostática em São Paulo e Campinas, com conforto e privacidade.",
     image: DEFAULT_OG_IMAGE,
@@ -188,7 +188,7 @@ const ROUTE_METADATA: Record<string, PageMetadata> = {
   "/uro-oncologia": {
     title: "Uro-Oncologia em SP e Campinas | Dr. Felipe de Bulhões",
     description:
-      "Diagnóstico e tratamento cirúrgico de tumores urológicos (próstata, rim, bexiga e testículo) em São Paulo e Campinas, com cirurgia robótica quando indicada.",
+      "Diagnóstico e cirurgia de tumores urológicos (próstata, rim, bexiga e testículo) em São Paulo e Campinas, com cirurgia robótica quando indicada.",
     image: DEFAULT_OG_IMAGE,
     imageAlt: "Uro-oncologia em São Paulo e Campinas — Dr. Felipe de Bulhões",
     type: "website",
@@ -370,7 +370,7 @@ const SEARCH_SNIPPETS: Record<string, Pick<PageMetadata, "title" | "description"
   "/educativo/litotripsia-laser": {
     title: "Litotripsia a laser: como é feita, preparo e recuperação",
     description:
-      "Como é feita a litotripsia a laser para pedra nos rins e no ureter: indicações, preparo, recuperação e complicações. Guia do urologista Dr. Felipe de Bulhões.",
+      "Como é feita a litotripsia a laser para pedra nos rins e no ureter: indicações, preparo, recuperação e riscos. Guia do urologista Dr. Felipe de Bulhões.",
   },
   "/educativo/vasectomia": {
     title: "Vasectomia: como é feita, recuperação, riscos e cuidados",
@@ -380,7 +380,7 @@ const SEARCH_SNIPPETS: Record<string, Pick<PageMetadata, "title" | "description"
   "/educativo/engrossamento-peniano": {
     title: "Engrossamento peniano com ácido hialurônico: guia e riscos",
     description:
-      "Como é feito o engrossamento peniano com ácido hialurônico: técnica, duração, riscos e evidências. Conteúdo educativo do urologista Dr. Felipe de Bulhões.",
+      "Como é feito o engrossamento peniano com ácido hialurônico: técnica, duração, riscos e evidências. Guia do urologista Dr. Felipe de Bulhões.",
   },
   "/local/campinas-day-hospital": {
     title: "Urologista no Campinas Day Hospital, Cambuí | Particular",
@@ -480,10 +480,19 @@ function genericLocationMetadata(label: string): PageMetadata {
   };
 }
 
+// O Google corta títulos perto de 60 caracteres e descrições perto de 160.
+const MAX_TITLE_LENGTH = 65;
+const MAX_DESCRIPTION_LENGTH = 160;
+
 function genericBlogMetadata(title: string, image = DEFAULT_OG_IMAGE): PageMetadata {
+  const withName = `${title} | Dr. Felipe de Bulhões`;
+  const longDescription = `${title}. Artigo educativo de urologia do Dr. Felipe de Bulhões (CRM-SP 202291), em linguagem clara e responsável.`;
   return {
-    title: `${title} | Blog do Dr. Felipe de Bulhões`,
-    description: `${title}. Artigo educativo de urologia do Dr. Felipe de Bulhões (CRM-SP 202291), em linguagem clara e responsável.`,
+    title: withName.length <= MAX_TITLE_LENGTH ? withName : title,
+    description:
+      longDescription.length <= MAX_DESCRIPTION_LENGTH
+        ? longDescription
+        : `${title}. Artigo educativo do urologista Dr. Felipe de Bulhões (CRM-SP 202291).`,
     image,
     imageAlt: `${title} — Blog de Urologia`,
     type: "article",
@@ -519,6 +528,17 @@ export function getPageMetadata(input: string): PageMetadata {
   }
 
   return DEFAULT_METADATA;
+}
+
+/**
+ * Título e descrição que o servidor entrega para uma página indexável. As
+ * páginas usam este valor no navegador para não trocar o título depois que o
+ * JavaScript carrega. Retorna null nas rotas fora do índice.
+ */
+export function getIndexedDocumentMeta(input: string): Pick<PageMetadata, "title" | "description"> | null {
+  if (!isIndexableSitePath(normalizeSitePath(input))) return null;
+  const { title, description } = getPageMetadata(input);
+  return { title, description };
 }
 
 /**

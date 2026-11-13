@@ -141,7 +141,7 @@ function TrustStrip() {
   const items = [
     { value: "CRM-SP 202291", label: "Registro profissional" },
     { value: "RQE 146538 · 114019", label: "Urologia e Cirurgia Geral" },
-    { value: "5,0 · 35 opiniões", label: "Avaliações verificadas" },
+    { value: "5,0 · 37 opiniões", label: "Avaliações verificadas" },
     { value: "SBU · AUA · EAU", label: "Sociedades médicas" },
   ];
 

@@ -629,7 +629,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
 
           <InlineConsultCTA
             title="Quer saber se este caminho faz sentido para você?"
-            note="Nota 5,0 · 35 avaliações na Doctoralia"
+            note="Nota 5,0 · 37 avaliações na Doctoralia"
             href={whatsappSpUrl}
             onClick={() => handleWhatsAppConversion("inline_resumo")}
           />
@@ -796,7 +796,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
                       ))}
                     </div>
                     <span className="text-xs font-bold text-[#2E2520]">
-                      Nota 5,0 · 35 avaliações na Doctoralia
+                      Nota 5,0 · 37 avaliações na Doctoralia
                     </span>
                   </div>
                 </div>

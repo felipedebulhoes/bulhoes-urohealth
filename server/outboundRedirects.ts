@@ -15,6 +15,15 @@ import type { Express, Request, Response } from "express";
  */
 export const outboundRedirects: Record<string, string> = {
   "/instagram": "https://www.instagram.com/drfelipebulhoes/",
+  // Pedido de avaliação no Google enviado aos pacientes após a consulta
+  // (mensagem automática do Feegow). Cada link abre a janela de avaliação do
+  // perfil da unidade; o link curto cabe no SMS de 160 caracteres.
+  "/avaliar/campinas":
+    "https://search.google.com/local/writereview?placeid=ChIJm5WrOkDPyJQR0-eiwlzpcoM",
+  "/avaliar/paulista":
+    "https://search.google.com/local/writereview?placeid=ChIJe7OX8KZZzpQRFd2o_S6x7oM",
+  "/avaliar/pinheiros":
+    "https://search.google.com/local/writereview?placeid=ChIJ0Qew-nZXzpQRHtNRJkjD4jg",
 };
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"] as const;

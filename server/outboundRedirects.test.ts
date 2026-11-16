@@ -64,6 +64,21 @@ describe("links curtos de saída", () => {
     expect(JSON.stringify(logs[0])).not.toMatch(/203\.0\.113\.7|teste/);
   });
 
+  it.each([
+    ["/avaliar/campinas", "ChIJm5WrOkDPyJQR0-eiwlzpcoM"],
+    ["/avaliar/paulista", "ChIJe7OX8KZZzpQRFd2o_S6x7oM"],
+    ["/avaliar/pinheiros", "ChIJ0Qew-nZXzpQRHtNRJkjD4jg"],
+  ])("redireciona %s à janela de avaliação do perfil da unidade", async (path, placeId) => {
+    const response = await fetch(`${baseUrl}${path}?utm_source=feegow&utm_medium=sms`, { redirect: "manual" });
+
+    expect(response.status).toBe(302);
+    expect(response.headers.get("location")).toBe(
+      `https://search.google.com/local/writereview?placeid=${placeId}`
+    );
+    expect(response.headers.get("x-robots-tag")).toContain("noindex");
+    expect(logs[0]).toMatchObject({ path, utm_source: "feegow", utm_medium: "sms" });
+  });
+
   it("não aceita destino informado pelo visitante", async () => {
     const response = await fetch(`${baseUrl}/instagram?next=https://exemplo.com`, { redirect: "manual" });
 

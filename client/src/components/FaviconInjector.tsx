@@ -12,8 +12,10 @@ interface FaviconInjectorProps {
 export function FaviconInjector({ title, description }: FaviconInjectorProps) {
   useEffect(() => {
     // Favicon URLs
-    const faviconUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/favicon-192-hBsZz5ygpyEFRWYduWw7YC.png';
-    const appleTouchIconUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/apple-touch-icon-180-DQsGysGf4bDBHNB45VjyhM.png';
+    const faviconUrl = '/icon-192.png';
+    const favicon32Url = '/favicon-32.png';
+    const favicon16Url = '/favicon-16.png';
+    const appleTouchIconUrl = '/apple-touch-icon.png';
 
     // Injetar ou atualizar favicon (192x192)
     let favicon192 = document.querySelector('link[rel="icon"][sizes="192x192"]');
@@ -35,7 +37,7 @@ export function FaviconInjector({ title, description }: FaviconInjectorProps) {
       favicon32.setAttribute('sizes', '32x32');
       document.head.appendChild(favicon32);
     }
-    favicon32.setAttribute('href', faviconUrl);
+    favicon32.setAttribute('href', favicon32Url);
 
     // Injetar ou atualizar favicon (16x16)
     let favicon16 = document.querySelector('link[rel="icon"][sizes="16x16"]');
@@ -46,7 +48,7 @@ export function FaviconInjector({ title, description }: FaviconInjectorProps) {
       favicon16.setAttribute('sizes', '16x16');
       document.head.appendChild(favicon16);
     }
-    favicon16.setAttribute('href', faviconUrl);
+    favicon16.setAttribute('href', favicon16Url);
 
     // Injetar ou atualizar apple-touch-icon
     let appleTouchIcon = document.querySelector('link[rel="apple-touch-icon"]');

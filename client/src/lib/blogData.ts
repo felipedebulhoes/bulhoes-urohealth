@@ -753,7 +753,7 @@ Seu atendimento é baseado nas diretrizes mais atualizadas das principais socied
 
 Se você mora em Campinas ou região e precisa de acompanhamento urológico, não espere os sintomas aparecerem. A prevenção é sempre o melhor caminho.
 
-**Agende pelo Doctoralia**, ligue para o consultório (Clinovi: (11) 3382-1529 | Campinas: (19) 2127-2900) ou envie uma mensagem pelo WhatsApp: **(11) 98112-4455** (apenas mensagens).
+**Agende pelo Doctoralia** ou envie uma mensagem pelo WhatsApp: **(11) 98112-4455** (apenas mensagens).
 
 ---
 
@@ -906,7 +906,8 @@ O **Dr. Felipe de Bulhões** realiza vasectomias no **Campinas Day Hospital**, u
 
 **Campinas Day Hospital**
 - 📍 Av. Benjamin Constant, 1991 — Cambuí, Campinas/SP
-- 📞 Telefone: (19) 2127-2900\n- 💬 WhatsApp: (11) 98112-4455 (apenas mensagens)
+- 💬 WhatsApp: (11) 98112-4455 (apenas mensagens)
+- Agendamento pelo Doctoralia
 - ⏰ Sexta-feira: 18h às 20h
 
 [Agendar consulta pelo Doctoralia](https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas)

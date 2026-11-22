@@ -39,23 +39,6 @@ export default function Footer() {
                   Cambuí, Campinas - SP
                 </span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
-                  <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
-                </div>
-                <span className="text-xs font-sans text-white/70">(19) 2127-2900</span>
-              </div>
-              <a
-                href="https://wa.me/5519998559890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors group"
-              >
-                <div className="w-7 h-7 rounded-md bg-[#25D366]/15 group-hover:bg-[#25D366]/25 flex items-center justify-center shrink-0 transition-colors">
-                  <Phone className="w-3.5 h-3.5 text-[#25D366]" />
-                </div>
-                <span className="text-xs font-sans">WhatsApp: (19) 99855-9890</span>
-              </a>
             </div>
           </div>
 
@@ -74,12 +57,6 @@ export default function Footer() {
                   Av. Paulista, 1048, 18° andar<br />
                   Bela Vista, São Paulo - SP
                 </span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
-                  <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
-                </div>
-                <span className="text-xs font-sans text-white/70">(11) 3382-1529</span>
               </div>
             </div>
           </div>
@@ -100,12 +77,6 @@ export default function Footer() {
                   Pinheiros, São Paulo - SP
                 </span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
-                  <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
-                </div>
-                <span className="text-xs font-sans text-white/70">(11) 3382-1529</span>
-              </div>
             </div>
           </div>
 
@@ -122,12 +93,6 @@ export default function Footer() {
                   Av. Andrade Neves, 863<br />
                   Centro, Campinas - SP
                 </span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-md bg-[#B87333]/15 flex items-center justify-center shrink-0">
-                  <Phone className="w-3.5 h-3.5" style={{ color: "#D9C58A" }} />
-                </div>
-                <span className="text-xs font-sans text-white/70">(19) 3014-3000</span>
               </div>
             </div>
           </div>
@@ -146,6 +111,17 @@ export default function Footer() {
                   <Instagram className="w-3.5 h-3.5" style={{ color: "#D8A5A5" }} />
                 </div>
                 <span className="text-xs font-sans">@drfelipebulhoes</span>
+              </a>
+              <a
+                href="https://wa.me/5511981124455"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors group"
+              >
+                <div className="w-7 h-7 rounded-md bg-[#25D366]/15 group-hover:bg-[#25D366]/25 flex items-center justify-center shrink-0 transition-colors">
+                  <Phone className="w-3.5 h-3.5 text-[#25D366]" />
+                </div>
+                <span className="text-xs font-sans">WhatsApp (11) 98112-4455 · só mensagens</span>
               </a>
               <a
                 href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=footer&utm_campaign=footer"

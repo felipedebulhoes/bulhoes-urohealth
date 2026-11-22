@@ -16,7 +16,6 @@ export default function MobileBottomBar({ source = "homepage", whatsappMessage }
 
   const whatsappUrl = getWhatsAppUrl({ page: source });
   const doctoraliaUrl = `https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=mobile-bar&utm_campaign=${source}`;
-  const phoneNumber = "tel:+551133821529";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,16 +107,6 @@ export default function MobileBottomBar({ source = "homepage", whatsappMessage }
           </a>
 
           {/* Telefone */}
-          <a
-            href={phoneNumber}
-            onClick={() => trackPhoneClick(`mobile_bar_${source}`)}
-            className="mobile-contact-action mobile-contact-action--phone flex flex-col items-center gap-0.5 flex-1 min-h-11 py-1.5 px-2 rounded-md active:bg-[#EDE4D9] focus-visible:outline-none"
-          >
-            <div className="w-9 h-9 rounded-full bg-[#6E7F90] flex items-center justify-center shadow-sm">
-              <Phone className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-[10px] font-medium text-gray-600">Ligar</span>
-          </a>
         </div>
       </nav>
     </div>

@@ -39,7 +39,7 @@ const locations: LocationData[] = [
     image: "/manus-storage/clinovi-paulista_42fff2fa_cecba450.webp",
     address: "Av. Paulista, 1048, 18° andar",
     neighborhood: "Bela Vista, São Paulo - SP",
-    phone: "(11) 3382-1529",
+    phone: "(11) 98112-4455",
     hours: "Segundas e quartas, 13h às 22h",
     highlight: "Vista panorâmica, 760m², 26 consultórios",
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
@@ -57,7 +57,7 @@ const locations: LocationData[] = [
       "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/clinovi-pinheiros_cec58be4.webp",
     address: "Av. Rebouças, 2636",
     neighborhood: "Pinheiros, São Paulo - SP",
-    phone: "(11) 3382-1529",
+    phone: "(11) 98112-4455",
     hours: "Segundas e quartas, 13h às 22h",
     highlight: "ComVem Rebouças, próximo à Faria Lima",
     payment: ["PIX", "Cartão de Crédito", "Cartão de Débito"],
@@ -74,7 +74,7 @@ const locations: LocationData[] = [
     image: "/manus-storage/sao-luiz-campinas-fachada_a326a12f.webp",
     address: "Av. Andrade Neves, 863, 4° andar",
     neighborhood: "Centro, Campinas - SP",
-    phone: "(19) 3014-3000",
+    phone: "(11) 98112-4455",
     hours: "Sextas, 13h às 17h",
     highlight: "Hospital Rede D'Or — Acreditação JCI",
     bookingUrl:
@@ -91,8 +91,7 @@ const locations: LocationData[] = [
     image: "/manus-storage/campinas-day-hospital_47df2b14_d5a9cb24.webp",
     address: "Av. Benjamin Constant, 1991",
     neighborhood: "Cambuí, Campinas - SP",
-    phone: "(19) 2127-2900",
-    whatsapp: "(19) 99855-9890",
+    phone: "(11) 98112-4455",
     hours: "Sextas, 18h às 20h",
     highlight: "Centro Urológico Avançado",
     bookingUrl: DOCTORALIA_PROFILE,
@@ -152,9 +151,10 @@ export default function LocationCardsSection() {
                   <dd>{loc.hours}</dd>
                 </div>
                 <div>
-                  <dt>Telefone</dt>
+                  <dt>Contato</dt>
                   <dd>
-                    <a href={`tel:${digits(loc.phone)}`}>{loc.phone}</a>
+                    <a href={`https://wa.me/55${digits(loc.phone)}`} target="_blank" rel="noopener noreferrer">WhatsApp {loc.phone}</a>{" "}
+                    ou agendamento pelo Doctoralia
                   </dd>
                 </div>
                 {loc.payment && (

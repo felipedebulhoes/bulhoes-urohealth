@@ -63,7 +63,7 @@ export default function QuickContactForm() {
               Solicite um Contato
             </h2>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Preencha o formulário abaixo para preparar sua mensagem no WhatsApp. Para agendamento por telefone, ligue: Clinovi (11) 3382-1529 | Campinas Day Hospital (19) 2127-2900 | São Luiz Campinas (19) 3014-3000. WhatsApp Campinas: (19) 99855-9890. Resposta em até 2 horas.
+              Preencha o formulário abaixo para preparar sua mensagem no WhatsApp. Contato apenas por WhatsApp (11) 98112-4455 ou agendamento pelo Doctoralia. Resposta em até 2 horas.
             </p>
 
             <div className="space-y-4">

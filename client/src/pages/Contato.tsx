@@ -20,6 +20,7 @@ import {
   Monitor,
   MessageCircle,
   Clock,
+  CalendarCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -34,34 +35,20 @@ const LOGO_URL = "/brand/logo-site-fundo-escuro.png";
 
 const contactChannels = [
   {
-    title: "Clinovi (São Paulo)",
-    phone: "(11) 3382-1529",
-    phoneLink: "tel:+551133821529",
-    description: "Unidades Paulista e Pinheiros — agendamento e informações",
-    icon: Phone,
-  },
-  {
-    title: "Campinas Day Hospital",
-    phone: "(19) 2127-2900",
-    phoneLink: "tel:+551921272900",
-    description: "Agendamento de consultas e cirurgias em Campinas",
-    icon: Phone,
-  },
-  {
-    title: "WhatsApp Campinas",
-    phone: "(19) 99855-9890",
-    phoneLink: "https://wa.me/5519998559890",
-    description: "WhatsApp do Campinas Day Hospital",
-    icon: MessageCircle,
-  },
-  {
-    title: "WhatsApp Geral",
+    title: "WhatsApp Business",
     phone: "(11) 98112-4455",
     phoneLink: "https://wa.me/5511981124455",
-    description: "Apenas mensagens — resposta em até 2 horas",
+    description: "Apenas mensagens, para todas as unidades — resposta em até 2 horas",
     icon: MessageCircle,
   },
-];
+  {
+    title: "Doctoralia",
+    phone: "Agendamento online",
+    phoneLink: "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=page&utm_campaign=contato_canais",
+    description: "São Paulo, Campinas e teleconsulta",
+    icon: CalendarCheck,
+  },
+]
 
 const offices = [
   {
@@ -85,7 +72,7 @@ export default function Contato() {
 
   usePageMeta({
     title: "Contato",
-    description: "Entre em contato com o Dr. Felipe de Bulhões, urologista em São Paulo e Campinas. Telefone, WhatsApp, formulário de contato e endereços dos consultórios. Agendamento online.",
+    description: "Entre em contato com o Dr. Felipe de Bulhões, urologista em São Paulo e Campinas. Contato por WhatsApp, formulário e endereços dos consultórios. Agendamento online pelo Doctoralia.",
     canonical: "https://felipebulhoes.com/contato",
   });
 
@@ -287,8 +274,8 @@ export default function Contato() {
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-semibold text-[#1C3D5A] dark:text-foreground">Agendamento por telefone</p>
-                    <p>Para agendamento imediato, ligue diretamente para a unidade desejada.</p>
+                    <p className="font-semibold text-[#1C3D5A] dark:text-foreground">Agendamento</p>
+                    <p>Contato apenas por WhatsApp ou agendamento pelo Doctoralia.</p>
                   </div>
                 </div>
               </div>
@@ -415,7 +402,7 @@ export default function Contato() {
           </div>
           <SocialShareButtons
             title="Contato — Dr. Felipe de Bulhões"
-            text="Telefones, WhatsApp e locais de atendimento em São Paulo e Campinas."
+            text="WhatsApp, agendamento pelo Doctoralia e locais de atendimento em São Paulo e Campinas."
             url="https://felipebulhoes.com/contato"
             source="contato"
           />

@@ -47,7 +47,7 @@ export default function ContactSection() {
             Humanizado, com excelência técnica.
           </p>
           <p className="text-white/40 font-sans text-sm mb-6 max-w-lg mx-auto">
-            Agende por telefone: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900 | WhatsApp Campinas: (19) 99855-9890<br />
+            Contato apenas por WhatsApp (11) 98112-4455 ou agendamento pelo Doctoralia.<br />
             WhatsApp (11) 98112-4455 — apenas mensagens
           </p>
 

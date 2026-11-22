@@ -306,7 +306,7 @@ export default function PreenchimentoPeniano() {
   });
 
   const whatsappCampinasUrl = getWhatsAppUrl({
-    phone: "5519998559890",
+    phone: "5511981124455",
     page: CAMPAIGN_SLUG,
     campaign: "campinas",
     customMessage: activeMessageConfig.messageCampinas,
@@ -325,7 +325,7 @@ export default function PreenchimentoPeniano() {
   };
 
   const quizWhatsappUrl = getWhatsAppUrl({
-    phone: quizCity === "campinas" ? "5519998559890" : "5511981124455",
+    phone: quizCity === "campinas" ? "5511981124455" : "5511981124455",
     page: CAMPAIGN_SLUG,
     campaign: quizCity === "campinas" ? "campinas" : CAMPAIGN_SLUG,
     customMessage:

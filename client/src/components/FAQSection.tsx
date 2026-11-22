@@ -39,7 +39,7 @@ const faqs = [
     questions: [
       {
         q: "Qual o valor da consulta?",
-        a: "Os valores de consulta variam conforme o local de atendimento. Aceitamos pagamento via PIX, cartão de crédito ou débito, realizado no local antes da consulta. Para informações sobre valores, envie uma mensagem pelo WhatsApp (11) 98112-4455 (São Paulo) ou (19) 99855-9890 (Campinas), ou ligue para agendar: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900.",
+        a: "Os valores de consulta variam conforme o local de atendimento. Aceitamos pagamento via PIX, cartão de crédito ou débito, realizado no local antes da consulta. Para informações sobre valores, envie uma mensagem pelo WhatsApp (11) 98112-4455 ou agende pelo Doctoralia.",
       },
       {
         q: "Vocês emitem nota fiscal / recibo para reembolso?",

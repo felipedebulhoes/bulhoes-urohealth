@@ -70,7 +70,7 @@ export default function WhatsAppWidget() {
             <div className="bg-[#ECE5DD] p-4 min-h-[120px]">
               <div className="bg-white dark:bg-card rounded-lg p-3 shadow-sm max-w-[85%] relative">
                 <p className="text-sm text-[#334155] leading-relaxed">
-                  Olá! Sou o Dr. Felipe de Bulhões, urologista. Envie sua mensagem por aqui. Para agendamento por telefone, ligue: Clinovi (11) 3382-1529 | Campinas Day Hospital (19) 2127-2900 | São Luiz Campinas (19) 3014-3000. WhatsApp: (19) 99855-9890.
+                  Olá! Sou o Dr. Felipe de Bulhões, urologista. Envie sua mensagem por aqui. Contato apenas por WhatsApp ou agendamento pelo Doctoralia.
                 </p>
                 <div className="flex items-center justify-end gap-1 mt-1">
                   <span className="text-[10px] text-[#64748B]">agora</span>

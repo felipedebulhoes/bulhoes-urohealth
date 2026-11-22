@@ -1,4 +1,4 @@
-import { trackDoctoraliaClick, trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
+import { trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 import ConsentMapFrame from "@/components/ConsentMapFrame";
 import MobileBottomBar from "@/components/MobileBottomBar";
 /*
@@ -72,8 +72,7 @@ const locations: Record<string, LocationData> = {
     city: "Campinas, SP",
     type: "particular",
     typeLabel: "Particular",
-    phone: "(19) 2127-2900",
-    whatsapp: "(19) 99855-9890",
+    phone: "(11) 98112-4455",
     mapUrl: "https://maps.google.com/?q=Campinas+Day+Hospital",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.5!2d-47.06!3d-22.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDUzJzI0LjAiUyA0N8KwMDMnMzYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1",
     hours: ["Sexta-feira: 18h às 20h"],
@@ -93,7 +92,7 @@ const locations: Record<string, LocationData> = {
     city: "São Paulo, SP",
     type: "particular",
     typeLabel: "Particular",
-    phone: "(11) 3382-1529",
+    phone: "(11) 98112-4455",
     mapUrl: "https://maps.google.com/?q=Clinovi+Paulista+São+Paulo",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-46.65!3d-23.56!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzM2LjAiUyA0NsKwMzknMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1",
     hours: ["Segunda e quarta: 13h às 22h"],
@@ -113,7 +112,7 @@ const locations: Record<string, LocationData> = {
     city: "São Paulo, SP",
     type: "particular",
     typeLabel: "Particular",
-    phone: "(11) 3382-1529",
+    phone: "(11) 98112-4455",
     mapUrl: "https://maps.google.com/?q=Av.+Rebou%C3%A7as+2636+Pinheiros+S%C3%A3o+Paulo",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-46.678!3d-23.562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQzLjAiUyA0NsKwNDAnNDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1",
     hours: ["Segunda e quarta: 13h às 22h"],
@@ -133,7 +132,7 @@ const locations: Record<string, LocationData> = {
     city: "Campinas, SP",
     type: "particular",
     typeLabel: "",
-    phone: "(19) 3014-3000",
+    phone: "(11) 98112-4455",
     mapUrl: "https://www.google.com/maps/place/Hospital+e+Maternidade+S%C3%A3o+Luiz+Campinas/@-22.9023,-47.0633,17z",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.3!2d-47.0655!3d-22.9023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8b4a2b4c5d7%3A0x5e4a7e3f1c8b9d2a!2sHospital+e+Maternidade+S%C3%A3o+Luiz+Campinas!5e0!3m2!1spt-BR!2sbr!4v1714000000000",
     hours: ["Sexta-feira: 13h às 17h"],
@@ -169,7 +168,7 @@ function LocationPage({ slug }: { slug: string }) {
   }
 
   const locSlug = loc.name.toLowerCase().replace(/ /g, "-");
-  const telHref = `tel:+55${loc.phone.replace(/\D/g, "")}`;
+  const telHref = `https://wa.me/55${loc.phone.replace(/\D/g, "")}`;
   const bookingHref = `${loc.bookingUrl || "https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas"}?utm_source=site&utm_medium=location&utm_campaign=${locSlug}`;
 
   return (
@@ -208,8 +207,8 @@ function LocationPage({ slug }: { slug: string }) {
               <a href={loc.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
                 <MapPin className="w-4 h-4" /> {loc.address} — {loc.city}
               </a>
-              <a href={telHref} onClick={() => trackPhoneClick(`location_${locSlug}`)} className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone className="w-4 h-4" /> {loc.phone}
+              <a href={telHref} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick(`location_${locSlug}`)} className="flex items-center gap-2 hover:text-white transition-colors">
+                <Phone className="w-4 h-4" /> WhatsApp {loc.phone}
               </a>
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -352,10 +351,11 @@ function LocationPage({ slug }: { slug: string }) {
                   <div className="flex items-start gap-3">
                     <Phone className="w-5 h-5 text-[#B87333] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Telefone</p>
-                      <a href={telHref} onClick={() => trackPhoneClick(`location_sidebar_${locSlug}`)} className="inline-block py-2 text-sm text-[#4A3A30] underline underline-offset-2">
-                        {loc.phone}
+                      <p className="text-sm font-semibold text-[#1C3D5A] dark:text-foreground mb-1">Contato</p>
+                      <a href={telHref} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick(`location_sidebar_${locSlug}`)} className="inline-block py-2 text-sm text-[#4A3A30] underline underline-offset-2">
+                        WhatsApp {loc.phone}
                       </a>
+                      <p className="text-xs text-[#64748B]">Só mensagens, ou agendamento pelo Doctoralia.</p>
                     </div>
                   </div>
 

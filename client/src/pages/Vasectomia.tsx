@@ -49,7 +49,7 @@ const fadeUp = {
 
 const vasectomiaFAQs = [
   { question: "A vasectomia dói?", answer: "O procedimento é realizado sob anestesia local, portanto a dor durante a cirurgia é mínima — geralmente limitada à picada da anestesia. Após o procedimento, é normal sentir desconforto leve por 2-5 dias, controlado com paracetamol ou anti-inflamatórios." },
-  { question: "Quanto tempo depois da vasectomia posso ter relações sexuais?", answer: "Geralmente após 5-7 dias, ou quando se sentir confortável. É obrigatório usar outro método contraceptivo até o espermograma de controle liberar (azoospermia ou raros espermatozoides imóveis) (mínimo 8 semanas após o procedimento)." },
+  { question: "Quanto tempo depois da vasectomia posso ter relações sexuais?", answer: "Geralmente após 5-7 dias, ou quando se sentir confortável. É obrigatório usar outro método contraceptivo até o espermograma de controle liberar (azoospermia, ou raros espermatozoides imóveis em amostra analisada em até 2 horas) (mínimo 8 semanas após o procedimento)." },
   { question: "A vasectomia afeta a ereção ou o prazer sexual?", answer: "Não. A vasectomia não interfere na produção de testosterona, na libido, na ereção nem no orgasmo. O volume do ejaculado permanece praticamente inalterado." },
   { question: "Quanto custa a vasectomia?", answer: "O valor da vasectomia varia conforme o local de atendimento. A vasectomia está incluída no rol de procedimentos da ANS. Entre em contato para informações sobre valores e agendamento." },
   { question: "Posso fazer vasectomia se não tenho filhos?", answer: "Sim, não há exigência legal de ter filhos. A Lei 14.443/2022 permite a vasectomia a partir dos 21 anos, independentemente do número de filhos, com prazo de reflexão de 60 dias." },
@@ -700,7 +700,7 @@ export default function Vasectomia() {
                 },
                 {
                   q: "Quanto tempo depois da vasectomia posso ter relações sexuais?",
-                  a: "Geralmente após 5-7 dias, ou quando se sentir confortável. IMPORTANTE: é obrigatório usar outro método contraceptivo até o espermograma de controle liberar (azoospermia ou raros espermatozoides imóveis) (mínimo 8 semanas após o procedimento).",
+                  a: "Geralmente após 5-7 dias, ou quando se sentir confortável. IMPORTANTE: é obrigatório usar outro método contraceptivo até o espermograma de controle liberar (azoospermia, ou raros espermatozoides imóveis em amostra analisada em até 2 horas) (mínimo 8 semanas após o procedimento).",
                 },
                 {
                   q: "A vasectomia afeta a ereção ou o prazer sexual?",

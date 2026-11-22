@@ -238,9 +238,9 @@ const config: AreaLandingPageConfig = {
         desc: "Trabalho de escritório e caminhadas leves liberados rapidamente conforme o procedimento realizado.",
       },
       {
-        period: "Dias 5 a 7",
+        period: "Dias 3 a 14",
         title: "Atividades físicas",
-        desc: "Retomada gradual de academia e treinos no preenchimento peniano (10–14 dias em procedimentos cirúrgicos com sutura).",
+        desc: "No preenchimento peniano, exercícios moderados após 3 a 5 dias e treinos intensos após 7 dias; nos procedimentos cirúrgicos com sutura, após 10 a 14 dias.",
       },
       {
         period: "Dias 10 a 21",

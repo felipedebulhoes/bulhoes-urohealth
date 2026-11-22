@@ -8,6 +8,10 @@
 - [Consultórios](https://felipebulhoes.com/consultorios): endereços e locais de atendimento
 - [Primeira consulta](https://felipebulhoes.com/primeira-consulta): como funciona
 - [Agendamento](https://felipebulhoes.com/agendamento): como marcar consulta
+- [Campinas Day Hospital](https://felipebulhoes.com/local/campinas-day-hospital): Av. Benjamin Constant, 1991, Cambuí, Campinas
+- [Clinovi Paulista](https://felipebulhoes.com/local/clinovi-paulista): Av. Paulista, 1048, 18º andar, São Paulo
+- [Clinovi Pinheiros](https://felipebulhoes.com/local/clinovi-pinheiros): Av. Rebouças, 2636, Pinheiros, São Paulo
+- [Centro Médico São Luiz Campinas](https://felipebulhoes.com/local/cemed-sao-luiz-campinas): Av. Andrade Neves, 863, Centro, Campinas
 
 ## Áreas de atuação
 

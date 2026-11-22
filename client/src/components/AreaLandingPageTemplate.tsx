@@ -7,7 +7,7 @@
 import { useEffect, useState } from "react";
 import { getIndexedDocumentMeta } from "@shared/pageMetadata";
 import { Link } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   ShieldCheck,
   CheckCircle2,
@@ -1577,6 +1577,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
                         type="button"
                         onClick={() => setOpenFaqId(isOpen ? null : item.id)}
                         aria-expanded={isOpen}
+                        aria-controls={`${item.id}-resposta`}
                         className="w-full flex items-center justify-between p-5 text-left hover:bg-[#2E2520]/[0.02] transition-colors"
                       >
                         <span className="font-semibold text-[#2E2520] dark:text-foreground text-sm sm:text-base pr-4">
@@ -1588,22 +1589,14 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
                           }`}
                         />
                       </button>
-                      <AnimatePresence initial={false}>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <div className="px-5 pb-5 pt-1 border-t border-[#2E2520]/6">
-                              <p className="text-sm text-[#334155] leading-relaxed">
-                                {item.answer}
-                              </p>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      {/* Resposta sempre no HTML (buscadores e IAs leem); só fica oculta na tela quando fechada. */}
+                      <div id={`${item.id}-resposta`} hidden={!isOpen}>
+                        <div className="px-5 pb-5 pt-1 border-t border-[#2E2520]/6">
+                          <p className="text-sm text-[#334155] leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}

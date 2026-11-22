@@ -201,7 +201,7 @@ const config: AreaLandingPageConfig = {
         title: "Espermograma de Confirmação (Azoospermia)",
         duration: "Após 60–90 dias",
         description:
-          "Após cerca de 20 a 25 ejaculações e 2 a 3 meses, realizamos o espermograma que comprova ausência total de espermatozoides para liberar o casal.",
+          "A partir de 8 semanas (AUA 2026), e depois de cerca de 20 ejaculações, realizamos o espermograma; o casal é liberado com azoospermia ou com raros espermatozoides imóveis (até 100.000/mL).",
       },
     ],
   },
@@ -319,7 +319,7 @@ const config: AreaLandingPageConfig = {
       category: "seguranca",
       question: "Quando posso ter relações sem preservativo ou sem anticoncepcional da parceira?",
       answer:
-        "Somente após a realização do espermograma pós-vasectomia (geralmente solicitado entre 60 e 90 dias após o procedimento e após pelo menos 20 ejaculações) confirmando azoospermia (zero espermatozoides móveis). Até lá, é indispensável manter o método contraceptivo habitual.",
+        "Somente após a realização do espermograma pós-vasectomia (que pode ser colhido a partir de 8 semanas após o procedimento, segundo a AUA 2026, e depois de cerca de 20 ejaculações) confirmando azoospermia ou raros espermatozoides imóveis (até 100.000/mL). Até lá, é indispensável manter o método contraceptivo habitual.",
     },
     {
       id: "faq-postectomia-junto",

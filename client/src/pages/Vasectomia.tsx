@@ -49,7 +49,7 @@ const fadeUp = {
 
 const vasectomiaFAQs = [
   { question: "A vasectomia dói?", answer: "O procedimento é realizado sob anestesia local, portanto a dor durante a cirurgia é mínima — geralmente limitada à picada da anestesia. Após o procedimento, é normal sentir desconforto leve por 2-5 dias, controlado com paracetamol ou anti-inflamatórios." },
-  { question: "Quanto tempo depois da vasectomia posso ter relações sexuais?", answer: "Geralmente após 5-7 dias, ou quando se sentir confortável. É obrigatório usar outro método contraceptivo até o espermograma de controle confirmar a ausência de espermatozoides (mínimo 8 semanas após o procedimento)." },
+  { question: "Quanto tempo depois da vasectomia posso ter relações sexuais?", answer: "Geralmente após 5-7 dias, ou quando se sentir confortável. É obrigatório usar outro método contraceptivo até o espermograma de controle liberar (azoospermia ou raros espermatozoides imóveis) (mínimo 8 semanas após o procedimento)." },
   { question: "A vasectomia afeta a ereção ou o prazer sexual?", answer: "Não. A vasectomia não interfere na produção de testosterona, na libido, na ereção nem no orgasmo. O volume do ejaculado permanece praticamente inalterado." },
   { question: "Quanto custa a vasectomia?", answer: "O valor da vasectomia varia conforme o local de atendimento. A vasectomia está incluída no rol de procedimentos da ANS. Entre em contato para informações sobre valores e agendamento." },
   { question: "Posso fazer vasectomia se não tenho filhos?", answer: "Sim, não há exigência legal de ter filhos. A Lei 14.443/2022 permite a vasectomia a partir dos 21 anos, independentemente do número de filhos, com prazo de reflexão de 60 dias." },
@@ -327,7 +327,7 @@ export default function Vasectomia() {
                 {
                   step: "4",
                   title: "Oclusão do ducto deferente",
-                  desc: "A técnica recomendada (AUA 2026 — Strong Recommendation, Grau B) combina cauterização da mucosa (MC) + interposição fascial (FI). A mucosa interna do ducto é cauterizada e a fáscia que envolve o ducto é interposta entre as duas extremidades, criando uma barreira adicional. NÃO se deve usar apenas ligadura simples com excisão.",
+                  desc: "A técnica recomendada (AUA 2026 — recomendação forte, Grau B) combina cauterização da mucosa (MC) + interposição fascial (FI). A mucosa interna do ducto é cauterizada e a fáscia que envolve o ducto é interposta entre as duas extremidades, criando uma barreira adicional. NÃO se deve usar apenas ligadura simples com excisão.",
                 },
                 {
                   step: "5",
@@ -374,7 +374,7 @@ export default function Vasectomia() {
                       ["Pontos", "Geralmente não necessários", "Podem ser necessários"],
                       ["Dor pós-operatória", "Menor", "Moderada"],
                       ["Recuperação", "Mais rápida", "Padrão"],
-                      ["Recomendação AUA", "Recomendada (Grau A)", "Aceitável"],
+                      ["Recomendação AUA 2026", "Recomendada (moderada, Grau A)", "Aceitável"],
                     ].map((row, i) => (
                       <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50 dark:bg-card"}>
                         <td className="p-4 font-medium text-[#1C3D5A] dark:text-foreground border-b">{row[0]}</td>
@@ -700,7 +700,7 @@ export default function Vasectomia() {
                 },
                 {
                   q: "Quanto tempo depois da vasectomia posso ter relações sexuais?",
-                  a: "Geralmente após 5-7 dias, ou quando se sentir confortável. IMPORTANTE: é obrigatório usar outro método contraceptivo até o espermograma de controle confirmar a ausência de espermatozoides (mínimo 8 semanas após o procedimento).",
+                  a: "Geralmente após 5-7 dias, ou quando se sentir confortável. IMPORTANTE: é obrigatório usar outro método contraceptivo até o espermograma de controle liberar (azoospermia ou raros espermatozoides imóveis) (mínimo 8 semanas após o procedimento).",
                 },
                 {
                   q: "A vasectomia afeta a ereção ou o prazer sexual?",

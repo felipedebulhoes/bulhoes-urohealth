@@ -106,8 +106,8 @@ const procedures: Procedure[] = [
     recovery: {
       work: "2-3 dias para trabalho de escritório; 5-7 dias para trabalho físico",
       exercise: "1-2 semanas sem exercícios intensos; evitar esforço abdominal",
-      sex: "7-10 dias de abstinência. USAR OUTRO MÉTODO até espermograma de controle negativo (3 meses)",
-      special: "Gelo local nas primeiras 48h. Cueca justa (sunga) por 7 dias. Espermograma de controle em 3 meses (ou após 20 ejaculações) — ESSENCIAL.",
+      sex: "7-10 dias de abstinência. USAR OUTRO MÉTODO até o espermograma de controle liberar (a partir de 8 semanas)",
+      special: "Gelo local nas primeiras 48h. Cueca justa (sunga) por 7 dias. Espermograma de controle a partir de 8 semanas e após cerca de 20 ejaculações (AUA 2026) — ESSENCIAL.",
     },
     expectedSymptoms: [
       "Dor leve a moderada na bolsa escrotal — 2-5 dias",

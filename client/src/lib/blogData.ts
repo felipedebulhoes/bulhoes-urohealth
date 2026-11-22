@@ -1309,21 +1309,20 @@ Por isso, o PSA isolado **não é diagnóstico de câncer** — ele é uma ferra
 
 ---
 
-## Quando iniciar o rastreamento? As novas recomendações AUA/SUO 2026
+## Quando iniciar o rastreamento? As recomendações da AUA/SUO (2023, com emenda de 2026)
 
-A atualização de 2026 da AUA/SUO reforça a abordagem de **rastreamento estratificado por risco**, com as seguintes recomendações principais:
+A diretriz da AUA/SUO, revisada em 2026, reforça a abordagem de **rastreamento estratificado por risco**, com as seguintes recomendações principais:
 
 ### Idade para iniciar
 
 | Grupo de Risco | Idade para Iniciar | Intervalo de Rastreamento |
 |---|---|---|
-| **Risco médio** | 45-50 anos | A cada 2-4 anos (se PSA < 1 ng/mL) |
-| **Risco aumentado** (negros, história familiar) | 40-45 anos | Individualizado |
-| **Alto risco** (BRCA1/BRCA2) | 40 anos | A cada 2 anos |
+| **Risco médio** | PSA basal entre 45 e 50 anos | A cada 2 a 4 anos, dos 50 aos 69 anos |
+| **Risco aumentado** (homens negros, mutação germinativa como BRCA2, forte história familiar) | 40 a 45 anos | Individualizado, conforme o PSA |
 
 ### PSA basal como guia
 
-Um conceito fundamental reforçado pela guideline é o **PSA basal** (baseline PSA). Homens que realizam o primeiro PSA entre 45-50 anos e apresentam **PSA < 1 ng/mL** têm risco muito baixo de desenvolver câncer de próstata clinicamente significativo nas próximas décadas. Para esses pacientes, o intervalo de rastreamento pode ser estendido para **cada 4 anos**.
+Um conceito fundamental reforçado pela guideline é o **PSA basal** (baseline PSA). Homens que realizam o primeiro PSA entre 45-50 anos e apresentam **PSA < 1 ng/mL** têm risco muito baixo de desenvolver câncer de próstata clinicamente significativo nas próximas décadas. Para esses pacientes, os intervalos podem ser mais longos: a AUA/SUO trabalha com **2 a 4 anos**, e a EAU 2026 permite **adiar o próximo exame por até 8 anos** em quem não está em risco (PSA abaixo de 1 ng/mL aos 40 anos ou abaixo de 2 ng/mL aos 60).
 
 Por outro lado, homens com **PSA basal > 1,5-3 ng/mL** na mesma faixa etária merecem acompanhamento mais frequente e podem se beneficiar de ferramentas adicionais.
 
@@ -1399,11 +1398,11 @@ A guideline revisou as recomendações para pacientes com resultado de **ASAP** 
 
 ## Comparação entre as principais guidelines internacionais
 
-| Aspecto | AUA/SUO 2026 | EAU 2025 | SBU (Brasil) |
+| Aspecto | AUA/SUO (2023, emenda 2026) | EAU 2026 | SBU (Brasil) |
 |---|---|---|---|
-| **Idade para iniciar** | 45-50 anos (risco médio) | 50 anos (ou 45 se risco elevado) | 50 anos (ou 45 se negro/história familiar) |
-| **Intervalo** | 2-4 anos (baseado no PSA) | 2 anos (se PSA > 1 ng/mL aos 40-50) | Anual |
-| **RM antes da biópsia** | Recomendada (evidência atualizada) | Fortemente recomendada | Recomendada |
+| **Idade para iniciar** | PSA basal aos 45-50 anos; 40-45 se alto risco | 50 anos; 45 se história familiar ou afrodescendente; 40 se BRCA2 | 50 anos (ou 45 se negro/história familiar) |
+| **Intervalo** | 2 a 4 anos (50 a 69 anos) | 2 anos se em risco (PSA > 1 aos 40 ou > 2 aos 60); até 8 anos se não | Anual |
+| **RM antes da biópsia** | Opcional antes da 1ª biópsia; obrigatória antes de repetir | Recomendada (forte) | Recomendada |
 | **Via de biópsia** | Transperineal ganhando espaço | Transperineal preferida | Transretal ainda predominante |
 | **Biomarcadores** | Atualizados (PHI, 4K, PCA3, SelectMDx) | Mencionados como adjuntos | Limitados na prática |
 

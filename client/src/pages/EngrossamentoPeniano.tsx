@@ -440,7 +440,7 @@ export default function EngrossamentoPeniano() {
               <h4 className="font-semibold text-red-900 dark:text-red-100 mb-3">✗ Evitar</h4>
               <ul className="space-y-2 text-sm">
                 <li>• Atividade sexual por 4 semanas</li>
-                <li>• Atividade física intensa por 3 dias</li>
+                <li>• Atividade física intensa por 7 dias</li>
                 <li>• Banhos quentes nos primeiros 3 dias</li>
                 <li>• Uso de sauna ou piscina por 1 semana</li>
                 <li>• Manipulação excessiva da área</li>

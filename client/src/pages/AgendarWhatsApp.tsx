@@ -34,7 +34,7 @@ export default function AgendarWhatsApp() {
 
     // Construir URL do WhatsApp com mensagem personalizada
     const attribution = getAttribution();
-    let message = "Olá! Gostaria de agendar uma consulta com o Dr. Felipe Bulhões.";
+    let message = "Olá! Gostaria de agendar uma consulta com o Dr. Felipe de Bulhões.";
     
     // Adicionar origem do tráfego se disponível
     const trafficParts: string[] = [];
@@ -150,7 +150,7 @@ export default function AgendarWhatsApp() {
                 Contato via WhatsApp
               </h1>
               <p className="text-white/80 text-sm leading-relaxed mb-6">
-                Clique no botão abaixo para abrir uma conversa com o Dr. Felipe Bulhões no WhatsApp.
+                Clique no botão abaixo para abrir uma conversa com o Dr. Felipe de Bulhões no WhatsApp.
               </p>
               <a
                 href={whatsappUrl}

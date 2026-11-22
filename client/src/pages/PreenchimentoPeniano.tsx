@@ -242,9 +242,9 @@ const discreetMessageOptions: Record<
     description:
       "Não menciona o nome do procedimento na conversa inicial. Ideal para total privacidade na tela do celular e na recepção.",
     messageSp:
-      "Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em São Paulo (Ref: Avaliação Reservada).",
+      "Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em São Paulo (Ref: Avaliação Reservada AR-01).",
     messageCampinas:
-      "Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em Campinas (Ref: Avaliação Reservada).",
+      "Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em Campinas (Ref: Avaliação Reservada AR-01).",
   },
   direta: {
     label: "Direta sobre o Procedimento",
@@ -262,9 +262,9 @@ const discreetMessageOptions: Record<
     description:
       "Para quem deseja consultar disponibilidade de datas, horários executivos ou fluxo para pacientes de outra cidade.",
     messageSp:
-      "Olá! Gostaria de verificar os próximos horários disponíveis para avaliação particular com o Dr. Felipe de Bulhões.",
+      "Olá! Gostaria de verificar os próximos horários disponíveis para avaliação particular com o Dr. Felipe de Bulhões (Ref: AR-01).",
     messageCampinas:
-      "Olá! Gostaria de verificar os próximos horários disponíveis em Campinas para avaliação particular com o Dr. Felipe de Bulhões.",
+      "Olá! Gostaria de verificar os próximos horários disponíveis em Campinas para avaliação particular com o Dr. Felipe de Bulhões (Ref: AR-01).",
   },
 };
 
@@ -330,7 +330,7 @@ export default function PreenchimentoPeniano() {
     campaign: quizCity === "campinas" ? "campinas" : CAMPAIGN_SLUG,
     customMessage:
       messageMode === "discreta"
-        ? `Olá! Gostaria de agendar uma avaliação urológica particular com o Dr. Felipe de Bulhões para ${quizCityLabel[quizCity]} (Ref: Avaliação Reservada).`
+        ? `Olá! Gostaria de agendar uma avaliação urológica particular com o Dr. Felipe de Bulhões para ${quizCityLabel[quizCity]} (Ref: Avaliação Reservada AR-01).`
         : `Olá! Fiz a autoavaliação na página de Preenchimento Peniano (objetivo: ${quizGoalLabel[quizGoal]}) e gostaria de agendar consulta em ${quizCityLabel[quizCity]}.`,
   });
 

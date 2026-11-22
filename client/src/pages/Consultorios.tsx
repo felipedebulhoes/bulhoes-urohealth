@@ -1,4 +1,4 @@
-import { trackDoctoraliaClick, trackPhoneClick } from "@/lib/analytics";
+import { trackDoctoraliaClick, trackWhatsAppClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página real /consultorios — Listagem completa dos locais de atendimento
@@ -216,7 +216,7 @@ export default function Consultorios() {
                       href={`https://wa.me/55${loc.phone.replace(/[^0-9]/g, "")}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackPhoneClick("consultorios")}
+                      onClick={() => trackWhatsAppClick("consultorios")}
                       className="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
                     >
                       <Phone className="w-4 h-4 text-[#B87333] shrink-0" />

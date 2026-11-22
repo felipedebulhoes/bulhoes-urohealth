@@ -548,7 +548,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
                 <div className="mt-7 pt-6 border-t border-white/15 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-white/75">
                   <span className="flex items-center gap-1.5">
                     <Award className="w-4 h-4 text-[#C9B6A3]" />
-                    Dr. Felipe de Bulhões · CRM-SP 202.291 | RQE 146538
+                    Dr. Felipe de Bulhões · CRM-SP 202291 | RQE 146538
                   </span>
                   <span className="flex items-center gap-1.5">
                     <GraduationCap className="w-4 h-4 text-[#C9B6A3]" />
@@ -670,7 +670,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
                           </span>
                         </div>
                         <p className="text-xs text-[#64748B] mt-0.5">
-                          CRM-SP 202.291 · RQE 146538 / RQE 114019
+                          CRM-SP 202291 · RQE 146538 / RQE 114019
                         </p>
                       </div>
                       <Link
@@ -1743,7 +1743,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
           <div className="container text-center">
             <p className="text-white/60 text-sm">
               &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões Ojeda — Médico Urologista |
-              CRM-SP 202.291 · RQE 146538 / RQE 114019 · TCBC
+              CRM-SP 202291 · RQE 146538 / RQE 114019 · TCBC
             </p>
             <div className="mt-3 flex flex-wrap justify-center gap-4 text-xs text-white/50">
               <Link href="/" className="hover:text-white transition-colors">

@@ -167,7 +167,7 @@ export default function MediaSection() {
             </div>
             <div className="flex items-center gap-2 text-sm text-[#1C3D5A] dark:text-foreground font-medium">
               <Calendar className="w-5 h-5 text-[#B87333]" />
-              CRM-SP 202.291
+              CRM-SP 202291
             </div>
           </div>
         </motion.div>

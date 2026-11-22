@@ -64,7 +64,7 @@ export default function SobreDrFelipe() {
             >
               <div className="flex items-center gap-2 mb-4">
                 <Stethoscope className="w-5 h-5 text-[#B87333]" />
-                <span className="text-[#B87333] text-sm font-medium tracking-wider uppercase">Urologista | CRM-SP 202.291 | RQE 146538 / RQE 114019</span>
+                <span className="text-[#B87333] text-sm font-medium tracking-wider uppercase">Urologista | CRM-SP 202291 | RQE 146538 / RQE 114019</span>
               </div>
               <h1 className="text-4xl lg:text-5xl font-serif font-bold mb-6 leading-tight">
                 Dr. Felipe de Bulhões Ojeda

@@ -48,7 +48,7 @@ export default function EngrossamentoPeniano() {
     {
       question: "Há restrições de atividade após o procedimento?",
       answer:
-        "Recomenda-se evitar atividade sexual por 1 semana. Atividade física moderada pode ser retomada após 2-3 dias. Monitoramento de sinais de complicação (inchaço excessivo, infecção) é importante. Seguimento em 2 semanas e 1 mês é recomendado.",
+        "Recomenda-se evitar atividade sexual por 4 semanas. Atividade física moderada pode ser retomada após 2-3 dias. Monitoramento de sinais de complicação (inchaço excessivo, infecção) é importante. Seguimento em 2 semanas e 1 mês é recomendado.",
     },
   ];
 
@@ -413,7 +413,7 @@ export default function EngrossamentoPeniano() {
             </div>
           </div>
           <p className="mt-4 text-sm bg-yellow-50 dark:bg-yellow-950 p-3 rounded">
-            <strong>Duração:</strong> Procedimento típico dura 30-45 minutos. Paciente pode retornar às atividades normais imediatamente, com restrição de atividade sexual por 1 semana.
+            <strong>Duração:</strong> Procedimento típico dura 30-45 minutos. Paciente pode retornar às atividades normais imediatamente, com restrição de atividade sexual por 4 semanas.
           </p>
         </CardContent>
       </Card>
@@ -439,7 +439,7 @@ export default function EngrossamentoPeniano() {
             <div className="bg-red-50 dark:bg-red-950 p-4 rounded-lg">
               <h4 className="font-semibold text-red-900 dark:text-red-100 mb-3">✗ Evitar</h4>
               <ul className="space-y-2 text-sm">
-                <li>• Atividade sexual por 1 semana</li>
+                <li>• Atividade sexual por 4 semanas</li>
                 <li>• Atividade física intensa por 3 dias</li>
                 <li>• Banhos quentes nos primeiros 3 dias</li>
                 <li>• Uso de sauna ou piscina por 1 semana</li>

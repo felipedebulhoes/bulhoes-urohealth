@@ -1056,7 +1056,7 @@ const GUIDES = [
             </tr>
             <tr>
               <td><strong>4. Cuidados Pós-Procedimento</strong></td>
-              <td>Abstinência sexual e de atividades físicas intensas por <strong>10 a 14 dias</strong>, uso de cueca de sustentação orientada e retorno presencial de revisão para avaliação da simetria e acomodação do produto.</td>
+              <td>Abstinência sexual por <strong>4 semanas</strong> e de atividades físicas intensas por <strong>7 dias</strong>, uso de cueca de sustentação orientada e retorno presencial de revisão para avaliação da simetria e acomodação do produto.</td>
             </tr>
           </tbody>
         </table>

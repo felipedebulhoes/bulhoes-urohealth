@@ -482,18 +482,18 @@ export function getWhatsAppUrl(options: {
   const { phone = "5511981124455", page, campaign, customMessage } = options;
 
   const messages: Record<string, string> = {
-    "vasectomia": "Olá! Gostaria de agendar uma consulta sobre vasectomia sem bisturi com o Dr. Felipe Bulhões.",
-    "vasectomia-sem-bisturi": "Olá! Gostaria de agendar uma consulta sobre vasectomia sem bisturi com o Dr. Felipe Bulhões.",
-    "andrologia": "Olá! Gostaria de agendar uma consulta de andrologia com o Dr. Felipe Bulhões.",
-    "andrologia-performance-masculina": "Olá! Gostaria de agendar uma consulta sobre saúde e performance masculina com o Dr. Felipe Bulhões.",
-    "estetica-intima": "Olá! Gostaria de agendar uma consulta sobre estética íntima masculina com o Dr. Felipe Bulhões.",
-    "estetica-intima-masculina": "Olá! Gostaria de agendar uma consulta sobre estética íntima masculina com o Dr. Felipe Bulhões.",
-    "preenchimento-peniano": "Olá! Vi a página sobre preenchimento peniano com ácido hialurônico e gostaria de agendar uma avaliação com o Dr. Felipe Bulhões.",
-    "engrossamento-peniano": "Olá! Vi a página sobre preenchimento peniano com ácido hialurônico e gostaria de agendar uma avaliação com o Dr. Felipe Bulhões.",
-    "campinas": "Olá! Gostaria de agendar uma consulta com o Dr. Felipe Bulhões em Campinas.",
-    "homepage": "Olá! Gostaria de agendar uma consulta com o Dr. Felipe Bulhões.",
-    "guia-glp1": "Olá! Gostaria de agendar uma consulta sobre canetas GLP-1 e saúde masculina com o Dr. Felipe Bulhões.",
-    "default": "Olá! Gostaria de agendar uma consulta com o Dr. Felipe Bulhões.",
+    "vasectomia": "Olá! Gostaria de agendar uma consulta sobre vasectomia sem bisturi com o Dr. Felipe de Bulhões.",
+    "vasectomia-sem-bisturi": "Olá! Gostaria de agendar uma consulta sobre vasectomia sem bisturi com o Dr. Felipe de Bulhões.",
+    "andrologia": "Olá! Gostaria de agendar uma consulta de andrologia com o Dr. Felipe de Bulhões.",
+    "andrologia-performance-masculina": "Olá! Gostaria de agendar uma consulta sobre saúde e performance masculina com o Dr. Felipe de Bulhões.",
+    "estetica-intima": "Olá! Gostaria de agendar uma consulta sobre estética íntima masculina com o Dr. Felipe de Bulhões.",
+    "estetica-intima-masculina": "Olá! Gostaria de agendar uma consulta sobre estética íntima masculina com o Dr. Felipe de Bulhões.",
+    "preenchimento-peniano": "Olá! Vi a página sobre preenchimento peniano com ácido hialurônico e gostaria de agendar uma avaliação com o Dr. Felipe de Bulhões.",
+    "engrossamento-peniano": "Olá! Vi a página sobre preenchimento peniano com ácido hialurônico e gostaria de agendar uma avaliação com o Dr. Felipe de Bulhões.",
+    "campinas": "Olá! Gostaria de agendar uma consulta com o Dr. Felipe de Bulhões em Campinas.",
+    "homepage": "Olá! Gostaria de agendar uma consulta com o Dr. Felipe de Bulhões.",
+    "guia-glp1": "Olá! Gostaria de agendar uma consulta sobre canetas GLP-1 e saúde masculina com o Dr. Felipe de Bulhões.",
+    "default": "Olá! Gostaria de agendar uma consulta com o Dr. Felipe de Bulhões.",
   };
 
   const message = customMessage || messages[page] || messages[campaign || ""] || messages["default"];

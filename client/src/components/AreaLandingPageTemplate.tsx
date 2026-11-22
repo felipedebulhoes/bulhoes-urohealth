@@ -204,7 +204,20 @@ export interface AreaLandingPageConfig {
 type MessageModeKey = "direta" | "exames" | "discreta";
 
 
+/** Código discreto por página para a SDR saber a origem sem revelar o assunto na tela do celular. */
+const RESERVED_REF_CODES: Record<string, string> = {
+  "estetica-intima-masculina": "AR-02",
+  "andrologia-performance-masculina": "AR-03",
+  "vasectomia-sem-bisturi": "AR-04",
+  "saude-da-prostata": "AR-05",
+  "litotripsia-calculo-renal": "AR-06",
+  "avaliacao-urodinamica": "AR-07",
+  "cirurgia-robotica-urologia": "AR-08",
+  "uro-oncologia": "AR-09",
+};
+
 export default function AreaLandingPageTemplate({ config }: { config: AreaLandingPageConfig }) {
+  const reservedRef = RESERVED_REF_CODES[config.campaignSlug] ?? "AR-00";
   const [activeCategory, setActiveCategory] = useState<FaqCategoryKey>("todos");
   const [openFaqId, setOpenFaqId] = useState<string | null>(config.faqs[0]?.id ?? null);
   const [messageMode, setMessageMode] = useState<MessageModeKey>("direta");
@@ -247,9 +260,9 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
       description:
         "Não menciona o motivo clínico na conversa inicial. Ideal para total privacidade na tela do celular e na recepção.",
       messageSp:
-        "Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em São Paulo (Ref: Avaliação Reservada).",
+        `Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em São Paulo (Ref: Avaliação Reservada ${reservedRef}).`,
       messageCampinas:
-        "Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em Campinas (Ref: Avaliação Reservada).",
+        `Olá! Gostaria de agendar uma consulta urológica particular com o Dr. Felipe de Bulhões em Campinas (Ref: Avaliação Reservada ${reservedRef}).`,
     },
   };
 
@@ -282,7 +295,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
     campaign: quizCity === "campinas" ? "campinas" : config.campaignSlug,
     customMessage:
       messageMode === "discreta"
-        ? `Olá! Gostaria de agendar uma avaliação urológica particular com o Dr. Felipe de Bulhões para ${quizCityLabel[quizCity]} (Ref: Avaliação Reservada).`
+        ? `Olá! Gostaria de agendar uma avaliação urológica particular com o Dr. Felipe de Bulhões para ${quizCityLabel[quizCity]} (Ref: Avaliação Reservada ${reservedRef}).`
         : `Olá! Fiz a autoavaliação na página de ${config.heroTitle} (${selectedGoalOption?.summaryText}) e gostaria de agendar consulta em ${quizCityLabel[quizCity]}.`,
   });
 

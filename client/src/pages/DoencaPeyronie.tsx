@@ -60,7 +60,7 @@ const diagnosticSteps = [
       "Impacto psicossocial e na relação conjugal",
       "Questionário PDQ (Peyronie's Disease Questionnaire)",
     ],
-    evidence: "Recomendação Forte — EAU 2025",
+    evidence: "Recomendação Forte — EAU 2026",
   },
   {
     step: 2,
@@ -74,7 +74,7 @@ const diagnosticSteps = [
       "Avaliação do prepúcio e meato uretral",
       "Nota: tamanho da placa NÃO se correlaciona com grau de curvatura",
     ],
-    evidence: "Recomendação Forte — EAU 2025",
+    evidence: "Recomendação Forte — EAU 2026",
   },
   {
     step: 3,
@@ -87,7 +87,7 @@ const diagnosticSteps = [
       "Injeção intracavernosa (método mais preciso)",
       "Documentar: grau, direção (dorsal, ventral, lateral), deformidade em ampulheta",
     ],
-    evidence: "Recomendação Forte — EAU 2025",
+    evidence: "Recomendação Forte — EAU 2026",
   },
   {
     step: 4,
@@ -100,7 +100,7 @@ const diagnosticSteps = [
       "Avaliar resposta a iPDE5 (sildenafila, tadalafila)",
       "DE vascular vs. psicogênica vs. mista",
     ],
-    evidence: "Recomendação Forte — EAU 2025",
+    evidence: "Recomendação Forte — EAU 2026",
   },
 ];
 
@@ -114,7 +114,7 @@ const conservativeTreatments = [
         name: "Pentoxifilina",
         mechanism: "Inibidor de PDE, anti-inflamatório e antifibrótico",
         indication: "Fase aguda — pode reduzir progressão da placa e dor",
-        eau: "Pode ser oferecida na fase aguda (Grau B, NE 2)",
+        eau: "Sem recomendação na edição 2026",
         aua: "Pode oferecer (Condicional, Grau C)",
         recommended: true,
       },
@@ -122,7 +122,7 @@ const conservativeTreatments = [
         name: "Vitamina E",
         mechanism: "Antioxidante",
         indication: "Historicamente utilizada, sem evidência de eficácia",
-        eau: "Não recomendada (Grau C, NE 1)",
+        eau: "Sem recomendação na edição 2026",
         aua: "Não deve oferecer (Forte, Grau C)",
         recommended: false,
       },
@@ -130,7 +130,7 @@ const conservativeTreatments = [
         name: "Potaba (KPAB)",
         mechanism: "Propriedades antifibróticas",
         indication: "Historicamente utilizada, evidência limitada",
-        eau: "Não recomendada (Grau C, NE 1)",
+        eau: "Sem recomendação na edição 2026",
         aua: "Não deve oferecer (Forte, Grau C)",
         recommended: false,
       },
@@ -138,7 +138,7 @@ const conservativeTreatments = [
         name: "Colchicina",
         mechanism: "Anti-inflamatório e antifibrótico",
         indication: "Historicamente utilizada, evidência limitada",
-        eau: "Não recomendada (Grau C, NE 2)",
+        eau: "Sem recomendação na edição 2026",
         aua: "Não deve oferecer (Forte, Grau C)",
         recommended: false,
       },
@@ -153,7 +153,7 @@ const conservativeTreatments = [
         name: "Colagenase Clostridium Histolyticum (CCH / Xiaflex)",
         mechanism: "Quebra o colágeno da placa fibrótica",
         indication: "Fase crônica estável, curvatura 30-90°, placa palpável, função erétil preservada",
-        eau: "Deve ser oferecida (Grau A, NE 1)",
+        eau: "Recomendada (forte), para curvatura dorsal ou lateral; retirada do mercado europeu",
         aua: "Deve oferecer (Forte, Grau B)",
         recommended: true,
         highlight: true,
@@ -168,7 +168,7 @@ const conservativeTreatments = [
         name: "Verapamil Intralesional",
         mechanism: "Bloqueador de canal de cálcio — altera metabolismo fibroblástico",
         indication: "Fases aguda e crônica",
-        eau: "Pode ser considerado (Grau B, NE 2)",
+        eau: "Evidência contraditória, sem recomendação",
         aua: "Pode oferecer (Condicional, Grau C)",
         recommended: true,
       },
@@ -176,7 +176,7 @@ const conservativeTreatments = [
         name: "Interferon Alfa-2b",
         mechanism: "Efeitos antifibróticos e imunomoduladores",
         indication: "Fases aguda e crônica",
-        eau: "Pode ser considerado (Grau B, NE 2)",
+        eau: "Não recomendado; fora do mercado desde 2021",
         aua: "Pode oferecer (Condicional, Grau C)",
         recommended: true,
       },
@@ -191,7 +191,7 @@ const conservativeTreatments = [
         name: "Terapia de Tração Peniana (PTT)",
         mechanism: "Estiramento mecânico para remodelação da túnica albugínea",
         indication: "Fase crônica — isolada ou adjuvante ao CCH",
-        eau: "Deve ser oferecida na fase crônica, especialmente com CCH (Grau B, NE 2)",
+        eau: "Pode ser considerada (fraca)",
         aua: "Pode oferecer (Condicional, Grau C)",
         recommended: true,
       },
@@ -199,7 +199,7 @@ const conservativeTreatments = [
         name: "Ondas de Choque (Li-ESWT)",
         mechanism: "Microtrauma, angiogênese, modificação do colágeno",
         indication: "Apenas para DOR associada à DP. NÃO indicada para curvatura.",
-        eau: "Para dor: pode ser considerada (Grau A, NE 1). Para curvatura: NÃO recomendada (Grau C)",
+        eau: "Para dor na fase aguda: pode ser considerada (fraca). Para curvatura: não usar (forte)",
         aua: "Para curvatura: não deve oferecer (Forte, Grau C). Para dor: pode oferecer (Condicional, Grau C)",
         recommended: false,
         warning: "Não reduz curvatura",
@@ -208,7 +208,7 @@ const conservativeTreatments = [
         name: "Dispositivo de Vácuo (VED)",
         mechanism: "Estiramento mecânico e promoção do fluxo sanguíneo",
         indication: "Terapia adjuvante, especialmente pós-cirurgia ou com injeções intralesionais",
-        eau: "Pode ser considerado como adjuvante (Grau B, NE 3)",
+        eau: "Pode ser considerado (fraca)",
         aua: "Pode oferecer como adjuvante (Condicional, Grau C)",
         recommended: true,
       },
@@ -216,7 +216,7 @@ const conservativeTreatments = [
         name: "Inibidores de PDE5 (Sildenafila, Tadalafila)",
         mechanism: "Melhora da função erétil",
         indication: "Para disfunção erétil associada à DP — NÃO trata a curvatura diretamente",
-        eau: "Deve ser oferecido para DE associada à DP (Grau A, NE 1)",
+        eau: "Para DE associada à DP (fraca)",
         aua: "Deve oferecer para DE + DP (Forte, Grau B)",
         recommended: true,
       },
@@ -233,7 +233,7 @@ const surgicalOptions = [
     description: "Encurtamento do lado convexo (mais longo) do pênis através de excisão ou plicatura de elipse de túnica albugínea. Técnica mais simples, com menor risco de disfunção erétil pós-operatória.",
     howItWorks: "Suturas ou excisão de cunha na túnica albugínea no lado oposto à curvatura, encurtando o lado mais longo para retificar o pênis. Resulta em algum encurtamento peniano.",
     results: "Taxa de retificação: 85-100%. Satisfação: 70-90%. Encurtamento médio: 1-2 cm.",
-    eau: "Deve ser oferecida (Grau A, NE 2)",
+    eau: "Primeira opção se comprimento e rigidez forem adequados (fraca); só com doença estável (forte)",
     aua: "Deve oferecer (Forte, Grau B)",
     pros: ["Técnica mais simples e rápida", "Menor risco de DE pós-operatória", "Resultados previsíveis"],
     cons: ["Encurtamento peniano (1-2 cm)", "Não ideal para curvaturas graves (> 60°)", "Não corrige deformidade em ampulheta"],
@@ -246,7 +246,7 @@ const surgicalOptions = [
     description: "Incisão ou excisão da placa fibrótica no lado côncavo (mais curto) do pênis, seguida de cobertura do defeito com material de enxerto para alongar o lado encurtado.",
     howItWorks: "A placa é incisada ou parcialmente excisada, e o defeito tunical é coberto com enxerto autólogo (veia safena, fáscia temporal), aloenxerto (derme cadavérica - TDA) ou xenoenxerto (submucosa intestinal suína - SIS).",
     results: "Taxa de retificação: 80-95%. Preservação do comprimento. Risco de DE: 5-25%.",
-    eau: "Deve ser oferecida (Grau A, NE 2)",
+    eau: "Quando a função erétil é normal (fraca); só com doença estável (forte)",
     aua: "Deve oferecer (Forte, Grau B)",
     pros: ["Preserva ou recupera comprimento peniano", "Indicada para curvaturas graves", "Corrige deformidade em ampulheta"],
     cons: ["Maior risco de DE pós-operatória (5-25%)", "Cirurgia mais complexa e demorada", "Possível alteração de sensibilidade"],
@@ -259,7 +259,7 @@ const surgicalOptions = [
     description: "Implante de prótese peniana inflável de 3 volumes, que simultaneamente restaura a rigidez erétil e permite retificação do pênis. Pode necessitar de modelagem manual ou enxerto complementar.",
     howItWorks: "Prótese inflável de 3 componentes (cilindros intracavernosos, bomba escrotal, reservatório). Após implante, modelagem manual sobre os cilindros inflados para corrigir curvatura residual. Se curvatura persistir > 20°, pode-se associar plicatura ou enxerto.",
     results: "Satisfação: 85-95%. Retificação com modelagem: 80-90%. Resolve DE e curvatura simultaneamente.",
-    eau: "Deve ser oferecida para DP + DE moderada a grave (Grau A, NE 2)",
+    eau: "Para DP + DE que não responde a medicamentos (forte)",
     aua: "Deve oferecer para DP + DE (Forte, Grau B)",
     pros: ["Resolve DE e curvatura simultaneamente", "Altíssima satisfação do paciente", "Solução definitiva para ambos os problemas"],
     cons: ["Procedimento irreversível", "Risco de infecção (1-3%)", "Necessidade de revisão a longo prazo", "Custo elevado"],
@@ -287,7 +287,7 @@ const faqs = [
   },
   {
     q: "O Xiaflex (CCH) está disponível no Brasil?",
-    a: "A colagenase Clostridium histolyticum (Xiaflex) tem disponibilidade variável. É o único tratamento intralesional com evidência de nível 1 (Grau A — EAU 2025) para redução de curvatura em pacientes com doença estável, curvatura entre 30-90° e função erétil preservada. Consulte seu urologista sobre a disponibilidade atual.",
+    a: "A colagenase Clostridium histolyticum (Xiaflex) tem disponibilidade variável. É o tratamento intralesional com recomendação forte da EAU 2026 para redução de curvatura em pacientes com doença estável, curvatura entre 30-90° e função erétil preservada. Consulte seu urologista sobre a disponibilidade atual.",
   },
   {
     q: "Qual a diferença entre plicatura e enxerto?",
@@ -295,7 +295,7 @@ const faqs = [
   },
   {
     q: "Quando a prótese peniana é indicada?",
-    a: "A prótese peniana inflável é indicada quando o paciente tem Doença de Peyronie associada a disfunção erétil moderada a grave que não responde a medicamentos (iPDE5). É a única opção que resolve simultaneamente a curvatura e a disfunção erétil, com satisfação de 85-95% (Grau A — EAU 2025).",
+    a: "A prótese peniana inflável é indicada quando o paciente tem Doença de Peyronie associada a disfunção erétil moderada a grave que não responde a medicamentos (iPDE5). É a única opção que resolve simultaneamente a curvatura e a disfunção erétil, com satisfação de 85-95% (Grau A — EAU 2026).",
   },
   {
     q: "A cirurgia pode piorar a ereção?",
@@ -340,10 +340,10 @@ export default function DoencaPeyronie() {
     <EducationalLayout
       title="Doença de Peyronie"
       subtitle="Curvatura Peniana Adquirida: Diagnóstico e Tratamentos Baseados em Evidências"
-      description="Guia completo sobre a Doença de Peyronie: fases da doença, diagnóstico, tratamento conservador (CCH/Xiaflex, tração, injeções intralesionais), cirurgia (plicatura, enxerto, prótese peniana). Baseado nas guidelines EAU 2025 e AUA."
+      description="Guia completo sobre a Doença de Peyronie: fases da doença, diagnóstico, tratamento conservador (CCH/Xiaflex, tração, injeções intralesionais), cirurgia (plicatura, enxerto, prótese peniana). Baseado nas guidelines EAU 2026 e AUA."
       accentColor="#7C3AED"
       metaTitle="Doença de Peyronie: Curvatura Peniana — Tratamentos | Dr. Felipe de Bulhões"
-      metaDescription="Guia completo sobre Doença de Peyronie (curvatura peniana adquirida). Xiaflex, plicatura, enxerto, prótese peniana. EAU 2025 + AUA. Urologista em São Paulo e Campinas."
+      metaDescription="Guia completo sobre Doença de Peyronie (curvatura peniana adquirida). Xiaflex, plicatura, enxerto, prótese peniana. EAU 2026 + AUA. Urologista em São Paulo e Campinas."
     >
       <FAQSchema questions={faqs.map(item => ({ question: item.q, answer: item.a }))} />
 
@@ -514,7 +514,7 @@ export default function DoencaPeyronie() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Tratamento Conservador</h2>
             <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-              Opções não cirúrgicas baseadas em evidências — EAU 2025 e AUA
+              Opções não cirúrgicas baseadas em evidências — EAU 2026 e AUA
             </p>
           </motion.div>
 
@@ -560,7 +560,7 @@ export default function DoencaPeyronie() {
                       )}
                       <div className="grid md:grid-cols-2 gap-2 mt-2">
                         <div className="bg-blue-50 rounded-lg px-3 py-2">
-                          <p className="text-xs font-medium text-blue-700">EAU 2025</p>
+                          <p className="text-xs font-medium text-blue-700">EAU 2026</p>
                           <p className="text-xs text-gray-700 dark:text-foreground">{tx.eau}</p>
                         </div>
                         <div className="bg-indigo-50 rounded-lg px-3 py-2">
@@ -595,7 +595,7 @@ export default function DoencaPeyronie() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Algoritmo de Decisão Cirúrgica</h2>
             <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-              Pré-requisito: doença estável por ≥ 3-6 meses, curvatura funcionalmente significativa — EAU 2025 / AUA
+              Pré-requisito: doença estável por ≥ 3-6 meses, curvatura funcionalmente significativa — EAU 2026 / AUA
             </p>
           </motion.div>
           <div className="space-y-4">
@@ -673,7 +673,7 @@ export default function DoencaPeyronie() {
                       </div>
                       <div className="grid md:grid-cols-2 gap-3 mb-4">
                         <div className="bg-blue-50 rounded-lg p-3">
-                          <p className="text-xs font-medium text-blue-700">EAU 2025</p>
+                          <p className="text-xs font-medium text-blue-700">EAU 2026</p>
                           <p className="text-xs text-gray-700 dark:text-foreground">{option.eau}</p>
                         </div>
                         <div className="bg-indigo-50 rounded-lg p-3">

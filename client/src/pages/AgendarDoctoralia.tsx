@@ -143,7 +143,7 @@ export default function AgendarDoctoralia() {
 
         {/* Footer info */}
         <p className="text-white/20 text-xs mt-6">
-          Dr. Felipe de Bulhões — CRM-SP 202.291
+          Dr. Felipe de Bulhões — CRM-SP 202291
         </p>
       </div>
     </div>

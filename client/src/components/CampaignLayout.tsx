@@ -42,7 +42,7 @@ export default function CampaignLayout({
   metaDescription,
   ogImage,
   medicalCondition,
-  trustBadges = ["Formado Instituto D'Or", "CRM-SP 202.291", "Atendimento Particular"],
+  trustBadges = ["Formado Instituto D'Or", "CRM-SP 202291", "Atendimento Particular"],
   children,
 }: CampaignLayoutProps) {
   const [currentPath] = useLocation();
@@ -266,7 +266,7 @@ export default function CampaignLayout({
       <footer className="brand-campaign-footer brand-dark-surface bg-[#0F2A3F] py-8">
         <div className="container text-center">
           <p className="text-white/30 text-sm">
-            &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202.291
+            &copy; {new Date().getFullYear()} Dr. Felipe de Bulhões — Urologista | CRM-SP 202291
           </p>
           <p className="text-white/20 text-xs mt-2">
             Este conteúdo é informativo e não substitui a consulta médica. Procure sempre um especialista.

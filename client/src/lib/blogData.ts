@@ -1287,7 +1287,7 @@ Sim, de forma gradual. Caminhadas leves são recomendadas desde a primeira seman
     content: `
 O **câncer de próstata** continua sendo o tumor maligno mais frequente entre homens no Brasil — excluindo o câncer de pele não melanoma. O Instituto Nacional de Câncer (INCA) estima **mais de 71 mil novos casos por ano** no triênio 2023-2025, e em 2023 foram registrados **17.093 óbitos** pela doença. Nos Estados Unidos, as estatísticas de 2026 mostram tendência semelhante de alta incidência.
 
-A boa notícia é que, quando detectado precocemente, o câncer de próstata apresenta **taxas de cura superiores a 90%**. Por isso, o rastreamento adequado — baseado no exame de **PSA (Antígeno Prostático Específico)** — é uma das ferramentas mais poderosas da urologia preventiva.
+A boa notícia é que, quando detectado precocemente, o câncer de próstata localizado pode ser tratado com **intenção curativa**. Por isso, o rastreamento adequado — baseado no exame de **PSA (Antígeno Prostático Específico)** — é uma das ferramentas mais poderosas da urologia preventiva.
 
 Em fevereiro de 2026, a **American Urological Association (AUA)** e a **Society of Urologic Oncology (SUO)** publicaram uma atualização importante de suas diretrizes de detecção precoce do câncer de próstata. Este artigo resume as principais mudanças e o que elas significam para você.
 
@@ -1414,7 +1414,7 @@ A guideline revisou as recomendações para pacientes com resultado de **ASAP** 
 Se você é homem e tem **45 anos ou mais** (ou 40 anos com fatores de risco), converse com seu urologista sobre o rastreamento do câncer de próstata. Os pontos-chave são:
 
 1. **O PSA é uma ferramenta valiosa** quando usado de forma inteligente e estratificada por risco
-2. **O rastreamento salva vidas** — o estudo ERSPC demonstrou redução de 20% na mortalidade por câncer de próstata com rastreamento baseado em PSA
+2. **O rastreamento reduz a mortalidade** — o estudo ERSPC demonstrou redução de 20% na mortalidade por câncer de próstata com rastreamento baseado em PSA
 3. **A ressonância magnética** antes da biópsia é cada vez mais importante para evitar procedimentos desnecessários
 4. **Novos biomarcadores** podem ajudar a refinar a decisão de biópsia em casos duvidosos
 5. **A decisão deve ser compartilhada** entre médico e paciente, considerando riscos e benefícios individuais

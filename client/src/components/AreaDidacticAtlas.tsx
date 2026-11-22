@@ -503,7 +503,7 @@ const ATLAS_BY_SLUG: Record<string, AtlasDefinition> = {
           <>
             Com o <strong>microscópio cirúrgico óptico</strong>, ampliamos o cordão espermático em
             até 20x para ligar apenas as veias varicosas que aquecem o testículo, mantendo{" "}
-            <strong>100% intactos</strong> a artéria testicular, os vasos linfáticos e o ducto
+            <strong>preservados</strong> a artéria testicular, os vasos linfáticos e o ducto
             deferente.
           </>
         ),

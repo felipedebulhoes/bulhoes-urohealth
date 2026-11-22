@@ -14,7 +14,7 @@ const config: AreaLandingPageConfig = {
   pageDescription:
     "Avaliação especializada em Estética Íntima Masculina com Urologista em São Paulo e Campinas. Preenchimento peniano com ácido hialurônico, Botox peniano (toxina botulínica), escrotoplastia, Peyronie e postectomia estética.",
   medicalCondition: "Estética Genital Masculina, Botox Peniano, Doença de Peyronie e Reconstrução Urológica",
-  heroBadge: "Estética e Reconstrução Genital · Sigilo Médico Absoluto",
+  heroBadge: "Estética e Reconstrução Genital · Sigilo médico",
   heroTitle: "Estética Íntima Masculina e Harmonia Genital",
   heroSubtitleHtml: (
     <>
@@ -54,7 +54,7 @@ const config: AreaLandingPageConfig = {
     items: [
       {
         title: "Preenchimento Peniano com Ácido Hialurônico",
-        desc: "Ganho real de circunferência (espessura) e menor retração no estado flácido, em procedimento ambulatorial de 30–45 minutos sem cortes e reversível com hialuronidase.",
+        desc: "Aumento de circunferência (espessura) e menor retração no estado flácido, em procedimento ambulatorial de 30–45 minutos sem cortes e reversível com hialuronidase.",
       },
       {
         title: "Botox Peniano e Escrotal (Toxina Botulínica)",
@@ -97,12 +97,12 @@ const config: AreaLandingPageConfig = {
     metrics: [
       {
         metric: "100% Sigiloso",
-        label: "Privacidade garantida",
+        label: "Privacidade no atendimento",
         detail: "Atendimento codificado desde o WhatsApp até a sala médica privada",
       },
       {
         metric: "Sem PMMA",
-        label: "Biocompatibilidade total",
+        label: "Material biocompatível",
         detail: "Uso exclusivo de materiais aprovados pela ANVISA e validados pelas diretrizes",
       },
       {
@@ -216,7 +216,7 @@ const config: AreaLandingPageConfig = {
       "A boa medicina estética e reconstrutiva começa sabendo diferenciar o que traz resultados naturais e seguros do que deve ser evitado.",
     indicationsTitle: "Queixas e Procedimentos que Realizamos",
     indications: [
-      "Preenchimento Peniano com Ácido Hialurônico para ganho real de circunferência (espessura) e melhor contorno",
+      "Preenchimento Peniano com Ácido Hialurônico para aumento de circunferência (espessura) e melhor contorno",
       "Botox Peniano e Escrotal (Toxina Botulínica) para combater a retração peniana acentuada no estado flácido (reflexo de Dartos hiperativo), relaxar a musculatura escrotal e auxiliar o relaxamento sinusoidal",
       "Postectomia Estética (circuncisão) para excesso de pele, fimose, higienização ou revisão de cicatriz anterior irregular",
       "Frenuloplastia para freio bálano-prepucial curto que causa repuxamento, dor ou pequenas fissuras durante a ereção",
@@ -257,11 +257,11 @@ const config: AreaLandingPageConfig = {
   mythsAndFacts: [
     {
       myth: "“Procedimentos de estética íntima masculina prejudicam a sensibilidade ou a ereção.”",
-      fact: "Quando realizados pelo urologista nos planos fasciais superficiais corretos (acima da fáscia de Buck), os nervos da sensibilidade e os corpos cavernosos da ereção permanecem 100% intactos.",
+      fact: "Quando realizados pelo urologista nos planos fasciais superficiais corretos (acima da fáscia de Buck), os nervos da sensibilidade e os corpos cavernosos da ereção ficam fora da área tratada.",
     },
     {
       myth: "“Preenchimento peniano definitivo com PMMA é melhor porque dura para sempre.”",
-      fact: "O PMMA é uma resina acrílica permanente que provoca reação inflamatória crônica, nódulos duros e deformidades que exigem cirurgias mutilantes para remoção. O Ácido Hialurônico é biocompatível, macio ao toque e reversível com hialuronidase.",
+      fact: "O PMMA é uma resina acrílica permanente que provoca reação inflamatória crônica, nódulos duros e deformidades que podem exigir cirurgia para remoção. O Ácido Hialurônico é biocompatível, macio ao toque e reversível com hialuronidase.",
     },
     {
       myth: "“Curvatura peniana que surgiu depois dos 40 anos vai sumir sozinha sem avaliação.”",
@@ -269,11 +269,11 @@ const config: AreaLandingPageConfig = {
     },
     {
       myth: "“O Botox Peniano deixa o pênis flácido ou impede a ereção.”",
-      fact: "É exatamente o oposto na fisiologia urológica! A ereção depende do relaxamento da musculatura lisa para que o sangue preencha os corpos cavernosos, enquanto a contração muscular adrenérgica causa a retração (encolhimento). O Botox Peniano relaxa o músculo de Dartos (reduzindo a retração em repouso) e pode inclusive favorecer a hemodinâmica erétil.",
+      fact: "É exatamente o oposto na fisiologia urológica! A ereção depende do relaxamento da musculatura lisa para que o sangue preencha os corpos cavernosos, enquanto a contração muscular adrenérgica causa a retração (encolhimento). O Botox Peniano relaxa o músculo de Dartos (reduzindo a retração em repouso); nessa aplicação superficial, não age sobre o mecanismo da ereção.",
     },
   ],
   quiz: {
-    title: "Descubra em 30 segundos o protocolo ideal para o seu objetivo",
+    title: "Responda em 30 segundos e veja quais opções levar para a consulta",
     question1Label: "Seu Objetivo Principal",
     question1Prompt: "Qual procedimento ou queixa você deseja avaliar?",
     question1Options: [

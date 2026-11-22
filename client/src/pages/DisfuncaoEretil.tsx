@@ -109,7 +109,7 @@ const treatments: Treatment[] = [
     icon: <Zap className="w-5 h-5" />,
     description: "Injeção de medicamento vasodilatador diretamente no corpo cavernoso do pênis.",
     details: "Alprostadil (prostaglandina E1): 5-40mcg. Trimix (papaverina + fentolamina + alprostadil): combinação mais potente. O paciente aprende a se autoinjetar com agulha ultrafina (30G) na base lateral do pênis. Ereção em 5-15 minutos, duração 30-60 minutos.",
-    efficacy: "Eficácia de 85-95% — a mais alta entre todos os tratamentos não cirúrgicos. Funciona mesmo quando iPDE5 falham.",
+    efficacy: "Eficácia descrita de 85-95% nos estudos. Pode ser opção quando os comprimidos (iPDE5) não funcionam.",
     considerations: "Risco de priapismo (ereção >4h — emergência). Dor local (10-20%). Fibrose peniana com uso prolongado. Necessita treinamento para autoinjeção. Dose deve ser titulada em consultório.",
   },
   {
@@ -128,7 +128,7 @@ const treatments: Treatment[] = [
     description: "Terapia com ondas de choque que estimula a neovascularização (formação de novos vasos) no pênis.",
     details: "Sessões de 15-20 minutos, 1-2x/semana, por 6-12 sessões. Ondas de choque de baixa energia são aplicadas no corpo do pênis e crura. Mecanismo: estimula fatores de crescimento vascular (VEGF), promovendo angiogênese e regeneração do endotélio.",
     efficacy: "Evidência moderada. Melhora do IIEF em 2-4 pontos. Pode restaurar resposta a iPDE5 em pacientes que não respondiam. Melhor resultado em DE vasculogênica leve a moderada.",
-    considerations: "Ainda considerada experimental por algumas guidelines. Resultados variáveis. Não invasiva e sem efeitos colaterais significativos. Custo elevado.",
+    considerations: "Ainda considerada experimental por algumas guidelines. Resultados variáveis. Não invasiva e com poucos efeitos colaterais relatados. Custo elevado.",
   },
   {
     line: "3ª Linha",
@@ -201,7 +201,7 @@ export default function DisfuncaoEretil() {
             </p>
             <p>
               O tratamento é <strong>individualizado e escalonado</strong>, baseado na decisão compartilhada entre médico e paciente. Existem opções para todos os graus de gravidade, desde mudanças de estilo de vida até a{" "}
-              <Link href="/educativo/protese-peniana" className="underline hover:text-[#B87333]">prótese peniana</Link>, com excelentes taxas de sucesso. Veja como é o{" "}
+              <Link href="/educativo/protese-peniana" className="underline hover:text-[#B87333]">prótese peniana</Link>, indicada quando os outros tratamentos não funcionam. Veja como é o{" "}
               <Link href="/andrologia-performance-masculina" className="underline hover:text-[#B87333]">atendimento em andrologia em São Paulo</Link>.
             </p>
           </div>
@@ -375,7 +375,7 @@ export default function DisfuncaoEretil() {
               ))}
             </div>
             <p className="text-sm text-white/70 leading-relaxed mt-4">
-              Agende uma consulta para uma avaliação completa e individualizada. Com o tratamento adequado, <strong className="text-white">mais de 95% dos homens com DE podem ter uma vida sexual satisfatória</strong>.
+              Agende uma consulta para uma avaliação completa e individualizada. Existem <strong className="text-white">opções de tratamento para a grande maioria das causas de DE</strong>, e a escolha depende da avaliação individual.
             </p>
           </div>
         </div>

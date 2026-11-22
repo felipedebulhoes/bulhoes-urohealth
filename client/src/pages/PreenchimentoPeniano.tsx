@@ -162,9 +162,9 @@ const faqItems: Array<{
   {
     id: "faq-ganho",
     category: "resultados",
-    question: "Qual é o ganho real de circunferência (espessura) com o ácido hialurônico?",
+    question: "Quanto aumenta a circunferência (espessura) com o ácido hialurônico?",
     answer:
-      "O ganho depende da anatomia inicial, da elasticidade da pele e do volume de ácido hialurônico indicado na avaliação médica. Estudos clínicos publicados (como séries avaliadas na AUANews e PRS Global Open) demonstram ganho mensurável e consistente por sessão, podendo alcançar de 1,5 cm a 2,5 cm de circunferência de forma segura e proporcional, muitas vezes construído de maneira gradual para priorizar a simetria e a naturalidade.",
+      "O ganho depende da anatomia inicial, da elasticidade da pele e do volume de ácido hialurônico indicado na avaliação médica. Estudos clínicos publicados (como séries avaliadas na AUANews e PRS Global Open) descrevem aumentos médios de 1,5 cm a 2,5 cm de circunferência, com variação entre os pacientes e sem garantia de resultado, muitas vezes construído de maneira gradual para priorizar a simetria e a naturalidade.",
   },
   {
     id: "faq-comprimento",
@@ -238,7 +238,7 @@ const discreetMessageOptions: Record<
 > = {
   discreta: {
     label: "100% Discreta (Código Reservado)",
-    badge: "Mais escolhida",
+    badge: "Mais discreta",
     description:
       "Não menciona o nome do procedimento na conversa inicial. Ideal para total privacidade na tela do celular e na recepção.",
     messageSp:
@@ -477,7 +477,7 @@ export default function PreenchimentoPeniano() {
                 <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#C9B6A3]/35 bg-[#2E2520]/50 mb-5">
                   <Lock className="w-3.5 h-3.5 text-[#C9B6A3]" />
                   <span className="text-xs font-medium tracking-wider uppercase text-[#E7E1DA]">
-                    Estética Íntima Masculina · Sigilo Médico Absoluto
+                    Estética Íntima Masculina · Sigilo médico
                   </span>
                 </div>
 
@@ -510,7 +510,7 @@ export default function PreenchimentoPeniano() {
                     {
                       icon: ShieldCheck,
                       title: "Função Preservada",
-                      desc: "Sem impacto na ereção ou sensibilidade",
+                      desc: "Aplicado fora das estruturas da ereção e da sensibilidade",
                     },
                   ].map((item, idx) => (
                     <div
@@ -645,7 +645,7 @@ export default function PreenchimentoPeniano() {
                       <CheckCircle2 className="w-4 h-4 text-[#C9B6A3] mt-1 shrink-0" />
                       <div>
                         <strong className="text-white block">
-                          Ganho Real no Calibre (Flácido e Ereto)
+                          Aumento de circunferência (flácido e ereto)
                         </strong>
                         <span className="text-white/75 text-xs leading-relaxed">
                           Aumento imediato de circunferência e menor retração no estado flácido,
@@ -1604,8 +1604,8 @@ export default function PreenchimentoPeniano() {
               >
                 {[
                   {
-                    metric: "+1,5 a 2,5 cm",
-                    label: "Ganho de circunferência",
+                    metric: "1,5 a 2,5 cm",
+                    label: "Aumento médio de circunferência nos estudos",
                     detail: "Médias em estudos publicados (Boiko 2023; Ahn 2021); varia conforme protocolo e elasticidade tecidual",
                   },
                   {
@@ -1619,8 +1619,8 @@ export default function PreenchimentoPeniano() {
                     detail: "Sem eventos adversos graves nos estudos com ácido hialurônico (Ahn 2021; Park 2026)",
                   },
                   {
-                    metric: "Alto Índice",
-                    label: "Satisfação clínica",
+                    metric: "Autoimagem",
+                    label: "Desfecho avaliado nos estudos",
                     detail: "Melhora documentada na autoimagem genital (Male Genital Self-Image Scale)",
                   },
                 ].map((stat, i) => (
@@ -1687,7 +1687,7 @@ export default function PreenchimentoPeniano() {
                         <div className="flex items-center gap-2 mb-2">
                           <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
                           <span className="text-xs font-bold uppercase tracking-wider text-[#2E2520]">
-                            Ácido Hialurônico (Padrão-Ouro)
+                            Ácido Hialurônico (reabsorvível e reversível)
                           </span>
                         </div>
                         <p className="text-sm text-[#334155] leading-relaxed">{row.ha}</p>

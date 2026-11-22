@@ -228,7 +228,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
   > = {
     direta: {
       label: "Agendamento Direto na Especialidade",
-      badge: "Mais escolhida",
+      badge: "Mais direta",
       description: `Informa diretamente que você deseja agendar avaliação em ${config.heroTitle} com o Dr. Felipe de Bulhões.`,
       messageSp: `Olá! Vi a página sobre ${config.heroTitle} e gostaria de agendar uma consulta em São Paulo com o Dr. Felipe de Bulhões.`,
       messageCampinas: `Olá! Vi a página sobre ${config.heroTitle} e gostaria de agendar uma consulta em Campinas com o Dr. Felipe de Bulhões.`,

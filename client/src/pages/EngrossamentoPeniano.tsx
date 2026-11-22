@@ -48,7 +48,7 @@ export default function EngrossamentoPeniano() {
     {
       question: "Há restrições de atividade após o procedimento?",
       answer:
-        "Recomenda-se evitar atividade sexual por 4 semanas. Atividade física moderada pode ser retomada após 2-3 dias. Monitoramento de sinais de complicação (inchaço excessivo, infecção) é importante. Seguimento em 2 semanas e 1 mês é recomendado.",
+        "Recomenda-se evitar atividade sexual por 4 semanas. Atividade física moderada pode ser retomada após 3 a 5 dias. Monitoramento de sinais de complicação (inchaço excessivo, infecção) é importante. Seguimento em 2 semanas e 1 mês é recomendado.",
     },
   ];
 

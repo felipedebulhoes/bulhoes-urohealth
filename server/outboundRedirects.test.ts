@@ -79,6 +79,20 @@ describe("links curtos de saída", () => {
     expect(logs[0]).toMatchObject({ path, utm_source: "feegow", utm_medium: "sms" });
   });
 
+  it.each([
+    ["/agendar", "Instagram"],
+    ["/yt", "YouTube"],
+  ])("redireciona %s ao WhatsApp Business com a origem %s", async (path, origem) => {
+    const response = await fetch(`${baseUrl}${path}`, { redirect: "manual" });
+
+    expect(response.status).toBe(302);
+    const location = new URL(response.headers.get("location") ?? "");
+    expect(location.origin + location.pathname).toBe("https://wa.me/5511981124455");
+    expect(location.searchParams.get("text")).toBe(
+      `Olá! Vim pelo ${origem} e gostaria de agendar uma consulta.`
+    );
+  });
+
   it("não aceita destino informado pelo visitante", async () => {
     const response = await fetch(`${baseUrl}/instagram?next=https://exemplo.com`, { redirect: "manual" });
 

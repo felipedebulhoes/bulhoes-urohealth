@@ -261,7 +261,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
   });
 
   const whatsappCampinasUrl = getWhatsAppUrl({
-    phone: "5519998559890",
+    phone: "5511981124455",
     page: config.campaignSlug,
     campaign: "campinas",
     customMessage: activeMessageConfig.messageCampinas,
@@ -277,7 +277,7 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
   };
 
   const quizWhatsappUrl = getWhatsAppUrl({
-    phone: quizCity === "campinas" ? "5519998559890" : "5511981124455",
+    phone: quizCity === "campinas" ? "5511981124455" : "5511981124455",
     page: config.campaignSlug,
     campaign: quizCity === "campinas" ? "campinas" : config.campaignSlug,
     customMessage:

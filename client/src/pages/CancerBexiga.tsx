@@ -682,7 +682,7 @@ export default function CancerBexiga() {
             <a href={getWhatsAppUrl({ page: "cancer-bexiga" })} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50">
                 <Phone className="w-4 h-4 mr-2" />
-                WhatsApp SP: (11) 98112-4455 | WhatsApp Campinas: (19) 99855-9890 | Tel: Clinovi (11) 3382-1529 | Campinas (19) 2127-2900
+                Contato apenas por WhatsApp (11) 98112-4455 ou agendamento pelo Doctoralia.
               </Button>
             </a>
           </div>

@@ -520,7 +520,7 @@ export function getWhatsAppUrl(options: {
  */
 export function getWhatsAppCampinasUrl(page: string): string {
   return getWhatsAppUrl({
-    phone: "5519998559890",
+    phone: "5511981124455",
     page,
     campaign: "campinas",
   });

@@ -44,8 +44,7 @@ const locations = [
     address: "Av. Benjamin Constant, 1991",
     neighborhood: "Cambuí, Campinas - SP",
     cep: "CEP 13025-005",
-    phone: "(19) 2127-2900",
-    whatsapp: "(19) 99855-9890",
+    phone: "(11) 98112-4455",
     hours: "Sextas, 18h às 20h",
     highlight: "Centro Urológico Avançado",
     description: "Centro cirúrgico moderno e completo, equipado com tecnologia de ponta para procedimentos urológicos. Estrutura para cirurgias ambulatoriais e internação de curta permanência.",
@@ -61,8 +60,7 @@ const locations = [
     address: "Av. Paulista, 1048, 18° andar",
     neighborhood: "Bela Vista, São Paulo - SP",
     cep: "CEP 01310-100",
-    phone: "(11) 3382-1529",
-    whatsapp: null,
+    phone: "(11) 98112-4455",
     hours: "Segundas e quartas, 13h às 22h",
     highlight: "Cobertura de alto padrão",
     description: "Localizada na icônica Avenida Paulista, no coração de São Paulo. Ambiente moderno e acolhedor, com fácil acesso por metrô e transporte público.",
@@ -78,8 +76,7 @@ const locations = [
     address: "Av. Rebouças, 2636",
     neighborhood: "Pinheiros, São Paulo - SP",
     cep: "",
-    phone: "(11) 3382-1529",
-    whatsapp: null,
+    phone: "(11) 98112-4455",
     hours: "Segundas e quartas, 13h às 22h",
     highlight: "Espaço moderno no ComVem Rebouças",
     description: "Localizada dentro do ComVem Rebouças, um espaço moderno e estratégico no bairro de Pinheiros. Infraestrutura de alto padrão com fácil acesso por transporte público.",
@@ -95,8 +92,7 @@ const locations = [
     address: "Av. Andrade Neves, 863, 4° andar",
     neighborhood: "Centro, Campinas - SP",
     cep: "",
-    phone: "(19) 3014-3000",
-    whatsapp: null,
+    phone: "(11) 98112-4455",
     hours: "Sextas, 13h às 17h",
     highlight: "Hospital e Maternidade São Luiz Campinas",
     description: "Centro médico do Hospital e Maternidade São Luiz Campinas, da Rede D'Or. Hospital geral de alta complexidade no Centro de Campinas, com estacionamento próprio.",
@@ -217,20 +213,16 @@ export default function Consultorios() {
                     </div>
 
                     <a
-                      href={`tel:+55${loc.phone.replace(/[^0-9]/g, "")}`}
+                      href={`https://wa.me/55${loc.phone.replace(/[^0-9]/g, "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => trackPhoneClick("consultorios")}
                       className="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
                     >
                       <Phone className="w-4 h-4 text-[#B87333] shrink-0" />
-                      <span className="text-sm text-[#1C3D5A] dark:text-foreground/70 font-sans underline decoration-[#C9B6A3] underline-offset-4">{loc.phone}</span>
+                      <span className="text-sm text-[#1C3D5A] dark:text-foreground/70 font-sans underline decoration-[#C9B6A3] underline-offset-4">WhatsApp {loc.phone} · só mensagens</span>
                     </a>
 
-                    {loc.whatsapp && (
-                      <a href={`https://wa.me/55${loc.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-                        <Phone className="w-4 h-4 text-[#128C4B] shrink-0" />
-                        <span className="text-sm text-[#0F7A40] font-sans">WhatsApp: {loc.whatsapp}</span>
-                      </a>
-                    )}
 
                     <div className="flex items-center gap-2.5">
                       <Clock className="w-4 h-4 text-[#B87333] shrink-0" />

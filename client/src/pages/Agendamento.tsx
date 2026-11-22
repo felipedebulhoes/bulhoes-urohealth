@@ -87,7 +87,7 @@ export default function Agendamento() {
                 Ver horários disponíveis
               </CTAButtonWithAnimation>
             <p className="text-white/60 text-xs mt-4">
-              A agenda abre em uma página segura da Doctoralia. Se preferir, use o WhatsApp ou o telefone abaixo.
+              A agenda abre em uma página segura da Doctoralia. Se preferir, mande mensagem pelo WhatsApp abaixo.
             </p>
             <div className="mt-6 inline-flex items-center gap-3 border-t border-white/12 pt-5 text-left">
               <img
@@ -144,25 +144,19 @@ export default function Agendamento() {
       {/* Alternative contact */}
       <section className="py-12 bg-[#F8FAFB]">
         <div className="container max-w-4xl">
-          <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-6 text-center">Outras formas de agendar</h2>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <h2 className="text-xl font-bold text-[#1C3D5A] dark:text-foreground mb-2 text-center">Outras formas de agendar</h2>
+          <p className="text-sm text-[#64748B] mb-6 text-center">Contato apenas por WhatsApp ou agendamento pelo Doctoralia.</p>
+          <div className="grid sm:grid-cols-2 gap-4">
             <a
-              href="tel:+551133821529" onClick={() => trackPhoneClick("agendamento_sp")}
+              href="https://www.doctoralia.com.br/felipe-de-bulhoes-ojeda-2/urologista/campinas?utm_source=site&utm_medium=page&utm_campaign=agendamento_outras"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white dark:bg-card rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all text-center"
             >
-              <Phone className="w-6 h-6 text-[#B87333] mx-auto mb-2" />
-              <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Clinovi (SP)</h3>
-              <p className="text-[#B87333] font-bold">(11) 3382-1529</p>
-              <p className="text-xs text-[#64748B] mt-1">Paulista e Pinheiros</p>
-            </a>
-            <a
-              href="tel:+551921272900" onClick={() => trackPhoneClick("agendamento_campinas")}
-              className="bg-white dark:bg-card rounded-xl p-5 border border-[#1C3D5A]/6 hover:shadow-md transition-all text-center"
-            >
-              <Phone className="w-6 h-6 text-[#B87333] mx-auto mb-2" />
-              <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Campinas</h3>
-              <p className="text-[#B87333] font-bold">(19) 2127-2900</p>
-              <p className="text-xs text-[#64748B] mt-1">Campinas Day Hospital</p>
+              <CalendarCheck className="w-6 h-6 text-[#B87333] mx-auto mb-2" />
+              <h3 className="font-semibold text-[#1C3D5A] dark:text-foreground text-sm mb-1">Doctoralia</h3>
+              <p className="text-[#B87333] font-bold">Agendamento online</p>
+              <p className="text-xs text-[#64748B] mt-1">São Paulo, Campinas e teleconsulta</p>
             </a>
             <a
               href={getWhatsAppUrl({ page: "agendamento" })}

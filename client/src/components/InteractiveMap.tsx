@@ -23,7 +23,7 @@ const clinics: ClinicLocation[] = [
     shortName: "Campinas",
     address: "Av. Benjamin Constant, 1991",
     neighborhood: "Cambuí, Campinas - SP",
-    phone: "(19) 2127-2900",
+    phone: "(11) 98112-4455",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Benjamin+Constant+1991+Campinas+SP",
   },
   {
@@ -32,7 +32,7 @@ const clinics: ClinicLocation[] = [
     shortName: "Av. Paulista",
     address: "Av. Paulista, 1048, 18° andar",
     neighborhood: "Bela Vista, São Paulo - SP",
-    phone: "(11) 3382-1529",
+    phone: "(11) 98112-4455",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Paulista+1048+São+Paulo+SP",
   },
   {
@@ -41,7 +41,7 @@ const clinics: ClinicLocation[] = [
     shortName: "Pinheiros",
     address: "Av. Rebouças, 2636",
     neighborhood: "Pinheiros, São Paulo - SP",
-    phone: "(11) 3382-1529",
+    phone: "(11) 98112-4455",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Rebou%C3%A7as+2636+S%C3%A3o+Paulo+SP",
   },
   {
@@ -50,7 +50,7 @@ const clinics: ClinicLocation[] = [
     shortName: "CEMED",
     address: "Av. Andrade Neves, 863",
     neighborhood: "Centro, Campinas - SP",
-    phone: "(19) 3014-3000",
+    phone: "(11) 98112-4455",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Av.+Andrade+Neves+863+Campinas+SP",
   },
 ];
@@ -109,7 +109,7 @@ export default function InteractiveMap() {
               {clinic.phone && (
                 <div className="flex items-center gap-1.5">
                   <Phone className="w-3 h-3 text-[#4A3A30]" />
-                  <span className="text-[11px] text-[#2E2520] dark:text-foreground/60 font-sans">{clinic.phone}</span>
+                  <span className="text-[11px] text-[#2E2520] dark:text-foreground/60 font-sans">WhatsApp {clinic.phone}</span>
                 </div>
               )}
               <a

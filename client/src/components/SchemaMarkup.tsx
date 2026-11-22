@@ -40,6 +40,8 @@ interface ArticleSchemaProps {
   description: string;
   slug: string;
   datePublished: string;
+  /** Data da última alteração real do conteúdo; sem ela, repete a publicação. */
+  dateModified?: string;
   coverImage: string;
   authorName?: string;
   authorCredentials?: string;
@@ -52,6 +54,7 @@ export function ArticleSchema({
   description,
   slug,
   datePublished,
+  dateModified,
   coverImage,
   authorName = DOCTOR_NAME,
   authorCredentials = "CRM-SP 202291 | Urologista | TCBC",
@@ -60,13 +63,13 @@ export function ArticleSchema({
 }: ArticleSchemaProps) {
   const articleData: Record<string, unknown> = {
     "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
+    "@type": "BlogPosting",
     "headline": title,
     "description": description,
     "url": `${SITE_URL}/blog/${slug}`,
     "image": coverImage,
     "datePublished": datePublished,
-    "dateModified": datePublished,
+    "dateModified": dateModified ?? datePublished,
     "inLanguage": "pt-BR",
     "author": {
       "@type": "Physician",
@@ -226,12 +229,12 @@ interface MedicalClinicSchemaProps {
   description: string;
   address: string;
   city: string;
+  postalCode?: string;
   phone: string;
   slug: string;
   type: "particular";
   services: string[];
   hours: string[];
-  paymentMethods?: string[];
 }
 
 export function MedicalClinicSchema({
@@ -239,16 +242,16 @@ export function MedicalClinicSchema({
   description,
   address,
   city,
+  postalCode,
   phone,
   slug,
-  type,
   services,
   hours,
-  paymentMethods,
 }: MedicalClinicSchemaProps) {
   const clinicData: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
+    "@id": `${SITE_URL}/local/${slug}#clinica`,
     "name": name,
     "description": description,
     "url": `${SITE_URL}/local/${slug}`,
@@ -259,6 +262,7 @@ export function MedicalClinicSchema({
       "streetAddress": address,
       "addressLocality": city.split(",")[0].trim(),
       "addressRegion": city.split(",")[1]?.trim() || "SP",
+      ...(postalCode ? { "postalCode": postalCode } : {}),
       "addressCountry": "BR",
     },
     "medicalSpecialty": "Urologic",
@@ -271,21 +275,14 @@ export function MedicalClinicSchema({
       "description": h,
     })),
     "isAcceptingNewPatients": true,
-    "memberOf": {
+    "employee": {
       "@type": "Physician",
+      "@id": `${SITE_URL}/#medico`,
       "name": DOCTOR_NAME,
       "url": SITE_URL,
       "image": DOCTOR_IMAGE,
     },
   };
-
-  if (false) {
-    clinicData["paymentAccepted"] = "Particular";
-    clinicData["currenciesAccepted"] = "BRL";
-  } else {
-    clinicData["paymentAccepted"] = paymentMethods?.join(", ") || "PIX, Cartão de Crédito, Cartão de Débito";
-    clinicData["currenciesAccepted"] = "BRL";
-  }
 
   useJsonLd(`schema-clinic-${slug}`, clinicData);
   return null;

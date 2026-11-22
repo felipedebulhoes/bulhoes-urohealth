@@ -68,7 +68,8 @@ const stats: Stat[] = [
 ];
 
 function useCountUp(target: number, duration: number = 2000, start: boolean = false) {
-  const [count, setCount] = useState(0);
+  // Começa no valor final: o HTML pré-renderizado e quem não rola a página veem o número certo, não "0+".
+  const [count, setCount] = useState(target);
 
   useEffect(() => {
     if (!start) return;

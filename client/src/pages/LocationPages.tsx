@@ -43,6 +43,7 @@ interface LocationData {
   fullName: string;
   address: string;
   city: string;
+  postalCode?: string;
   type: "particular";
   typeLabel: string;
   phone: string;
@@ -67,6 +68,7 @@ const locations: Record<string, LocationData> = {
     name: "Campinas Day Hospital",
     fullName: "Campinas Day Hospital",
     address: "Av. Benjamin Constant, 1991 — Cambuí",
+    postalCode: "13025-005",
     city: "Campinas, SP",
     type: "particular",
     typeLabel: "Particular",
@@ -87,6 +89,7 @@ const locations: Record<string, LocationData> = {
     name: "Clinovi Paulista",
     fullName: "Clinovi — Av. Paulista",
     address: "Av. Paulista, 1048, 18° andar",
+    postalCode: "01310-100",
     city: "São Paulo, SP",
     type: "particular",
     typeLabel: "Particular",
@@ -106,6 +109,7 @@ const locations: Record<string, LocationData> = {
     name: "Clinovi Pinheiros",
     fullName: "Clinovi — Pinheiros",
     address: "Av. Rebouças, 2636",
+    postalCode: "05402-400",
     city: "São Paulo, SP",
     type: "particular",
     typeLabel: "Particular",
@@ -125,6 +129,7 @@ const locations: Record<string, LocationData> = {
     name: "CEMED - Rede D'Or - São Luiz Campinas",
     fullName: "Centro Médico São Luiz Campinas — Rede D'Or",
     address: "Av. Andrade Neves, 863, 4° andar — Centro",
+    postalCode: "13013-161",
     city: "Campinas, SP",
     type: "particular",
     typeLabel: "",
@@ -174,12 +179,12 @@ function LocationPage({ slug }: { slug: string }) {
         description={loc.description}
         address={loc.address}
         city={loc.city}
+        postalCode={loc.postalCode}
         phone={loc.phone}
         slug={slug}
         type={loc.type}
         services={loc.services}
         hours={loc.hours}
-        paymentMethods={loc.payment}
       />
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1C3D5A] via-[#0F3460] to-[#1C3D5A] text-white pt-28 pb-16">

@@ -132,12 +132,12 @@ function ReviewSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Physician",
+    "@id": "https://felipebulhoes.com/#medico",
     name: "Dr. Felipe de Bulhões Ojeda",
     image:
       "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/dr-felipe-hero-portrait_a1e2b3c4.webp",
     url: "https://felipebulhoes.com",
     telephone: "+5511981124455",
-    priceRange: "$$",
     address: [
       {
         "@type": "PostalAddress",
@@ -152,6 +152,7 @@ function ReviewSchema() {
         streetAddress: "Av. Rebouças, 2636",
         addressLocality: "São Paulo",
         addressRegion: "SP",
+        postalCode: "05402-400",
         addressCountry: "BR",
       },
       {
@@ -167,6 +168,7 @@ function ReviewSchema() {
         streetAddress: "Av. Andrade Neves, 863, 4° andar",
         addressLocality: "Campinas",
         addressRegion: "SP",
+        postalCode: "13013-161",
         addressCountry: "BR",
       },
     ],

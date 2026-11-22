@@ -243,9 +243,9 @@ const config: AreaLandingPageConfig = {
         desc: "No preenchimento peniano, exercícios moderados após 3 a 5 dias e treinos intensos após 7 dias; nos procedimentos cirúrgicos com sutura, após 10 a 14 dias.",
       },
       {
-        period: "Dias 10 a 21",
+        period: "Semanas 3 a 4",
         title: "Retorno sexual",
-        desc: "Entre 10–14 dias para preenchimento com ácido hialurônico e 3–4 semanas para postectomia/escrotoplastia.",
+        desc: "4 semanas para preenchimento com ácido hialurônico e 3–4 semanas para postectomia/escrotoplastia.",
       },
       {
         period: "Dia 30",

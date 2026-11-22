@@ -213,7 +213,7 @@ const faqItems: Array<{
     category: "recuperacao",
     question: "Quanto tempo depois posso voltar a trabalhar, treinar e ter relações?",
     answer:
-      "Atividades cotidianas e trabalho de escritório podem ser retomados no mesmo dia ou no dia seguinte. Exercícios físicos moderados são liberados após 3 a 5 dias, e atividades intensas após 7 dias. Para relações sexuais, recomenda-se aguardar de 10 a 14 dias para garantir a completa estabilização do gel no plano anatômico.",
+      "Atividades cotidianas e trabalho de escritório podem ser retomados no mesmo dia ou no dia seguinte. Exercícios físicos moderados são liberados após 3 a 5 dias, e atividades intensas após 7 dias. Para relações sexuais, recomenda-se aguardar 4 semanas para garantir a completa estabilização do gel no plano anatômico.",
   },
   {
     id: "faq-valores",
@@ -705,7 +705,7 @@ export default function PreenchimentoPeniano() {
                       "Insatisfação com a retração acentuada do pênis no estado flácido (efeito 'shower')",
                       "Pacientes que buscam alternativa sem cortes, reversível e de rápida recuperação",
                       "Expectativas realistas alinhadas às evidências científicas e à própria anatomia",
-                      "Disposição para seguir rigorosamente os cuidados pós-procedimento (10–14 dias)",
+                      "Disposição para seguir rigorosamente os cuidados pós-procedimento (4 semanas)",
                     ]}
             limitsTitle="Limites e Contraindicações"
             limits={[
@@ -1843,7 +1843,7 @@ export default function PreenchimentoPeniano() {
                       "Insatisfação com a retração acentuada do pênis no estado flácido (efeito 'shower')",
                       "Pacientes que buscam alternativa sem cortes, reversível e de rápida recuperação",
                       "Expectativas realistas alinhadas às evidências científicas e à própria anatomia",
-                      "Disposição para seguir rigorosamente os cuidados pós-procedimento (10–14 dias)",
+                      "Disposição para seguir rigorosamente os cuidados pós-procedimento (4 semanas)",
                     ].map((point, i) => (
                       <li key={i} className="flex items-start gap-2.5">
                         <CheckCircle2 className="w-4 h-4 text-[#4A3A30] mt-0.5 shrink-0" />

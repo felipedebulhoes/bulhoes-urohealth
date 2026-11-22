@@ -269,7 +269,7 @@ const config: AreaLandingPageConfig = {
     },
     {
       myth: "“O Botox Peniano deixa o pênis flácido ou impede a ereção.”",
-      fact: "É exatamente o oposto na fisiologia urológica! A ereção depende do relaxamento da musculatura lisa para que o sangue preencha os corpos cavernosos, enquanto a contração muscular adrenérgica causa a retração (encolhimento). O Botox Peniano relaxa o músculo de Dartos (reduzindo a retração em repouso) e não age sobre o mecanismo da ereção.",
+      fact: "É exatamente o oposto na fisiologia urológica! A ereção depende do relaxamento da musculatura lisa para que o sangue preencha os corpos cavernosos, enquanto a contração muscular adrenérgica causa a retração (encolhimento). O Botox Peniano relaxa o músculo de Dartos (reduzindo a retração em repouso); nessa aplicação superficial, não age sobre o mecanismo da ereção.",
     },
   ],
   quiz: {

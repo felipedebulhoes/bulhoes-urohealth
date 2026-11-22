@@ -46,7 +46,7 @@ export default function DoctoraliaBadge() {
               ))}
             </span>
           </div>
-          <p className="editorial-score-note">37 opiniões verificadas na Doctoralia</p>
+          <p className="editorial-score-note">38 opiniões verificadas na Doctoralia</p>
           <a
             href={DOCTORALIA_PROFILE}
             target="_blank"

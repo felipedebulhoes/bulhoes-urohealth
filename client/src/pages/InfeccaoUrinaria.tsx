@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Infecção Urinária no Homem
- * Referências: EAU Guidelines 2025, IDSA 2025, SBU, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines 2026, IDSA 2025, SBU, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import {
@@ -41,7 +41,7 @@ export default function InfeccaoUrinaria() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-10">
               <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
-                A infecção urinária é menos comum no homem do que na mulher e costuma merecer avaliação médica para identificar a causa. As diretrizes recentes da EAU e da IDSA (2025) deixaram de considerar a infecção complicada apenas por ocorrer em um homem. A distinção principal hoje é entre a infecção localizada na bexiga e a infecção com sinais sistêmicos, como febre e calafrios. Como a cistite no homem sem envolvimento da próstata é incomum, a avaliação considera também a próstata.
+                A infecção urinária é menos comum no homem do que na mulher e costuma merecer avaliação médica para identificar a causa. As diretrizes recentes da EAU (2026) e da IDSA (2025) deixaram de considerar a infecção complicada apenas por ocorrer em um homem. A distinção principal hoje é entre a infecção localizada na bexiga e a infecção com sinais sistêmicos, como febre e calafrios. Como a cistite no homem sem envolvimento da próstata é incomum, a avaliação considera também a próstata.
               </p>
             </div>
           </motion.div>
@@ -137,14 +137,14 @@ export default function InfeccaoUrinaria() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4} className="mb-14">
             <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Tratamento</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
-              O tratamento da ITU masculina difere significativamente do tratamento feminino. Segundo a <strong>EAU Guidelines 2025</strong>:
+              O tratamento da ITU masculina difere significativamente do tratamento feminino. Segundo a <strong>EAU Guidelines 2026</strong>:
             </p>
             <div className="space-y-4">
               <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm">
                 <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3">Antibioticoterapia</h3>
                 <ul className="space-y-2">
                   {[
-                    "Pelo menos 7 dias, conforme avaliação médica",
+                    "Cistite: 7 dias; infecção com febre no homem: em geral 14 dias (7 dias é inferior a 14 nesse caso), conforme avaliação médica",
                     "A escolha do antibiótico é médica e considera a sensibilidade da bactéria",
                     "Ajuste conforme resultado da urocultura com antibiograma",
                     "Em prostatite aguda: antibiótico por 2-4 semanas com boa penetração prostática",
@@ -204,7 +204,7 @@ export default function InfeccaoUrinaria() {
             <div className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
               <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
-                <li>1. EAU Guidelines on Urological Infections, 2025. European Association of Urology.</li>
+                <li>1. EAU Guidelines on Urological Infections, 2026. European Association of Urology.</li>
                 <li>2. IDSA 2025 Guideline on the Management and Treatment of Complicated Urinary Tract Infections. Infectious Diseases Society of America.</li>
                 <li>3. Campbell-Walsh-Wein Urology, 13th Edition — Chapter: Infections of the Urinary Tract. Elsevier, 2024.</li>
                 <li>4. Grabe M, et al. Guidelines on Urological Infections. EAU Guidelines. Arnhem, The Netherlands.</li>

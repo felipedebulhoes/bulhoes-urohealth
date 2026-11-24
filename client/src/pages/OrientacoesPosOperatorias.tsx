@@ -403,13 +403,13 @@ export default function OrientacoesPosOperatorias() {
         <div className="container max-w-4xl">
           <h3 className="text-xs font-semibold text-[#1C3D5A] dark:text-foreground/40 uppercase tracking-wider mb-3">Referências</h3>
           <ol className="text-[10px] text-[#1C3D5A] dark:text-foreground/35 space-y-1 list-decimal list-inside">
-            <li>EAU Guidelines on Urolithiasis, 2025. European Association of Urology.</li>
-            <li>EAU Guidelines on Non-neurogenic Male LUTS (BPH), 2025. European Association of Urology.</li>
+            <li>EAU Guidelines on Urolithiasis, 2026. European Association of Urology.</li>
+            <li>EAU Guidelines on Non-neurogenic Male LUTS (BPH), 2026. European Association of Urology.</li>
             <li>AUA/ASTRO Guidelines on Clinically Localized Prostate Cancer, 2025.</li>
             <li>Campbell-Walsh-Wein Urology, 12th Edition. Elsevier, 2021. Chapters 90-95, 150-155.</li>
-            <li>Gravas S, et al. EAU Guidelines on Management of Non-Neurogenic Male LUTS. Eur Urol. 2025.</li>
-            <li>Türk C, et al. EAU Guidelines on Urolithiasis. Eur Urol. 2025.</li>
-            <li>Mottet N, et al. EAU Guidelines on Prostate Cancer. Eur Urol. 2025.</li>
+            <li>EAU Guidelines on Management of Non-Neurogenic Male LUTS. EAU Guidelines Office, Arnhem; 2026.</li>
+            <li>Skolarikos A, et al. EAU Guidelines on Urolithiasis. EAU Guidelines Office, Arnhem; 2026.</li>
+            <li>Cornford P, Tilki D, et al. EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer. EAU Guidelines Office, Arnhem; 2026.</li>
           </ol>
         </div>
       </section>

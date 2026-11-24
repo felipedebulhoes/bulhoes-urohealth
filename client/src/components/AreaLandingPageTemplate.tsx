@@ -7,6 +7,7 @@
 import { useEffect, useState } from "react";
 import { getIndexedDocumentMeta } from "@shared/pageMetadata";
 import { Link } from "wouter";
+import AnswerSummary from "@/components/AnswerSummary";
 import { motion } from "framer-motion";
 import {
   ShieldCheck,
@@ -111,6 +112,8 @@ export interface AreaLandingPageConfig {
   heroBadge: string;
   heroTitle: string;
   heroSubtitleHtml: React.ReactNode;
+  /** Resumo direto (2 ou 3 frases) mostrado logo abaixo do subtítulo. */
+  answerSummary?: string;
   heroHighlights: Array<{
     icon?: LucideIcon;
     title: string;
@@ -470,6 +473,8 @@ export default function AreaLandingPageTemplate({ config }: { config: AreaLandin
                 <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-7 max-w-2xl">
                   {config.heroSubtitleHtml}
                 </p>
+
+                {config.answerSummary && <AnswerSummary text={config.answerSummary} className="mb-7" />}
 
                 {/* Destaques rápidos */}
                 <div className="grid sm:grid-cols-3 gap-3 mb-8">

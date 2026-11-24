@@ -16,6 +16,8 @@ const config: AreaLandingPageConfig = {
   medicalCondition: "Estética Genital Masculina, Botox Peniano, Doença de Peyronie e Reconstrução Urológica",
   heroBadge: "Estética e Reconstrução Genital · Sigilo médico",
   heroTitle: "Estética Íntima Masculina e Harmonia Genital",
+  answerSummary:
+    "A estética íntima masculina reúne procedimentos urológicos para a aparência e o conforto da região genital do homem, como o preenchimento peniano com ácido hialurônico, a aplicação de toxina botulínica, a postectomia e a escrotoplastia. A indicação depende de consulta e exame com o urologista, que explica benefícios, limites e riscos de cada opção. O Dr. Felipe de Bulhões (CRM-SP 202291, RQE 146538) atende em São Paulo (Av. Paulista e Pinheiros) e em Campinas.",
   heroSubtitleHtml: (
     <>
       Procedimentos urológicos estéticos e funcionais conduzidos por cirurgião urologista:{" "}

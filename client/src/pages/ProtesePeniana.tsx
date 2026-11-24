@@ -180,6 +180,7 @@ export default function ProtesePeniana() {
       subtitle="Tipos, Indicação, Cirurgia e Recuperação"
       description="Guia sobre a prótese peniana para disfunção erétil: quando é indicada, diferenças entre prótese inflável e maleável, como é a cirurgia, recuperação e riscos. Baseado nas diretrizes EAU 2025 e AUA."
       accentColor="#7C3AED"
+      answerSummary="A prótese peniana é um implante colocado por cirurgia nos corpos cavernosos para tratar a disfunção erétil quando os remédios e outras opções não funcionam ou não são bem tolerados. Existem modelos infláveis e maleáveis; a escolha é feita em consulta, depois de explicar riscos como infecção e falha mecânica. O urologista Dr. Felipe de Bulhões (CRM-SP 202291, RQE 146538) faz a avaliação em São Paulo (Av. Paulista e Pinheiros) e em Campinas."
       metaTitle="Prótese Peniana em São Paulo e Campinas | Dr. Felipe de Bulhões"
       metaDescription="Prótese peniana para disfunção erétil: indicação, tipos inflável e maleável, cirurgia, recuperação e riscos. Urologista em São Paulo e Campinas."
     >

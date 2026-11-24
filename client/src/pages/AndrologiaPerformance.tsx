@@ -16,6 +16,8 @@ const config: AreaLandingPageConfig = {
   medicalCondition: "Hipogonadismo Masculino, Varicocele, Fertilidade e Disfunção Erétil",
   heroBadge: "Andrologia, Microcirurgia e Medicina Sexual · Abordagem Baseada em Evidências",
   heroTitle: "Saúde do Homem, Andrologia e Performance Masculina",
+  answerSummary:
+    "A andrologia é a área da urologia que cuida da saúde hormonal, sexual e reprodutiva do homem: testosterona baixa, disfunção erétil, ejaculação precoce, varicocele e infertilidade. O diagnóstico vem da consulta, do exame físico e de exames de sangue colhidos pela manhã, e o tratamento segue as diretrizes da EAU e da AUA. O Dr. Felipe de Bulhões (CRM-SP 202291, RQE 146538) atende em São Paulo, em Campinas e por teleconsulta.",
   heroSubtitleHtml: (
     <>
       Avaliação urológica individualizada e confidencial para{" "}

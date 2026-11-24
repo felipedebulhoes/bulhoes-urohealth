@@ -1,7 +1,7 @@
 /**
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Orientações Pré-Operatórias para Pacientes
- * Referências: ASA 2023 (Jejum), EAU 2025, ERAS Society, AUA 2024
+ * Referências: ASA 2023 (Jejum), EAU 2026, ERAS Society, AUA 2024
  * Consistente com OrientacoesPosOperatorias.tsx
  */
 import { useState, useRef } from "react";
@@ -135,7 +135,7 @@ const generalSections: PreOpSection[] = [
     items: [
       {
         title: "Exames laboratoriais",
-        detail: "Hemograma completo, coagulograma (TP, TTPa, INR), glicemia de jejum, ureia, creatinina, sódio, potássio. Para cirurgias de grande porte: tipagem sanguínea e reserva de hemoderivados. Urocultura é obrigatória antes de procedimentos que violam a mucosa do trato urinário (EAU 2025).",
+        detail: "Hemograma completo, coagulograma (TP, TTPa, INR), glicemia de jejum, ureia, creatinina, sódio, potássio. Para cirurgias de grande porte: tipagem sanguínea e reserva de hemoderivados. Urocultura é obrigatória antes de procedimentos que violam a mucosa do trato urinário (EAU 2026).",
         timing: "Até 30 dias antes",
       },
       {
@@ -155,7 +155,7 @@ const generalSections: PreOpSection[] = [
       },
       {
         title: "Urocultura",
-        detail: "Obrigatória antes de qualquer procedimento endoscópico (cistoscopia, RTU-P, RTU-B, ureteroscopia, NLPC) ou que viole a mucosa urinária. Se positiva, o tratamento antibiótico deve ser realizado antes da cirurgia para reduzir o risco de infecção pós-operatória (EAU Guidelines on Urological Infections, 2025).",
+        detail: "Obrigatória antes de qualquer procedimento endoscópico (cistoscopia, RTU-P, RTU-B, ureteroscopia, NLPC) ou que viole a mucosa urinária. Se positiva, o tratamento antibiótico deve ser realizado antes da cirurgia para reduzir o risco de infecção pós-operatória (EAU Guidelines on Urological Infections, 2026).",
         timing: "7-14 dias antes",
         important: true,
       },
@@ -630,7 +630,7 @@ export default function OrientacoesPreOperatorias() {
       description="Tudo o que você precisa saber para se preparar adequadamente para sua cirurgia urológica: jejum, medicamentos, exames, cuidados especiais e checklist completo."
       accentColor="#2E2520"
       metaTitle="Orientações Pré-Operatórias | Preparo para Cirurgia Urológica | Dr. Felipe de Bulhões"
-      metaDescription="Guia completo de orientações pré-operatórias para cirurgias urológicas: jejum, medicamentos, exames, preparo intestinal, anticoagulantes e checklist. Baseado nas guidelines ASA, EAU 2025 e ERAS."
+      metaDescription="Guia completo de orientações pré-operatórias para cirurgias urológicas: jejum, medicamentos, exames, preparo intestinal, anticoagulantes e checklist. Baseado nas guidelines ASA, EAU 2026 e ERAS."
     >
       {/* Introdução */}
       <section className="py-12 lg:py-16 border-b border-[#1C3D5A]/6">
@@ -638,7 +638,7 @@ export default function OrientacoesPreOperatorias() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border-l-4 border-[#1C3D5A] p-6 rounded-r-lg mb-8">
               <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
-                O preparo pré-operatório adequado é fundamental para o sucesso da sua cirurgia e para uma recuperação mais rápida e segura. Este guia reúne as orientações baseadas nos protocolos <strong>ERAS (Enhanced Recovery After Surgery)</strong>, nas diretrizes da <strong>ASA (American Society of Anesthesiologists)</strong> e da <strong>EAU (European Association of Urology, 2025)</strong>. Leia com atenção e, em caso de dúvidas, entre em contato com a equipe do Dr. Felipe de Bulhões.
+                O preparo pré-operatório adequado é fundamental para o sucesso da sua cirurgia e para uma recuperação mais rápida e segura. Este guia reúne as orientações baseadas nos protocolos <strong>ERAS (Enhanced Recovery After Surgery)</strong>, nas diretrizes da <strong>ASA (American Society of Anesthesiologists)</strong> e da <strong>EAU (European Association of Urology, 2026)</strong>. Leia com atenção e, em caso de dúvidas, entre em contato com a equipe do Dr. Felipe de Bulhões.
               </p>
             </div>
 

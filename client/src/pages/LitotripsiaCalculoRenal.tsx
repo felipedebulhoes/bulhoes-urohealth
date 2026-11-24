@@ -16,6 +16,8 @@ const config: AreaLandingPageConfig = {
   medicalCondition: "Litíase Urinária (Cálculo Renal e Ureteral)",
   heroBadge: "Endourologia Avançada · Ureteroscopia Flexível e Laser",
   heroTitle: "Cálculos Renais e Litotripsia a Laser",
+  answerSummary:
+    "A litotripsia a laser (ureteroscopia flexível) quebra o cálculo do rim ou do ureter com um laser levado por dentro das vias urinárias, sem cortes na pele. Observar, usar remédio, fazer laser ou outra técnica depende do tamanho e da posição do cálculo e dos sintomas, avaliados com tomografia. O urologista Dr. Felipe de Bulhões (CRM-SP 202291, RQE 146538) faz a avaliação em São Paulo (Av. Paulista e Pinheiros) e em Campinas.",
   heroSubtitleHtml: (
     <>
       Tratamento minimamente invasivo de{" "}

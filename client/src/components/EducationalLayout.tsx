@@ -20,6 +20,7 @@ import { CTAButtonWithAnimation } from "@/components/CTAButtonWithAnimation";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { foldEducationalSections } from "@/components/foldEducationalSections";
 import InlineConsultCTA from "@/components/InlineConsultCTA";
+import AnswerSummary from "@/components/AnswerSummary";
 
 interface EducationalLayoutProps {
   title: string;
@@ -29,6 +30,8 @@ interface EducationalLayoutProps {
   metaTitle?: string;
   metaDescription?: string;
   medicalCondition?: string;
+  /** Resumo direto (2 ou 3 frases) mostrado logo abaixo da descrição. */
+  answerSummary?: string;
   children: React.ReactNode;
 }
 
@@ -40,6 +43,7 @@ export default function EducationalLayout({
   metaTitle,
   metaDescription,
   medicalCondition,
+  answerSummary,
   children,
 }: EducationalLayoutProps) {
   const [currentPath] = useLocation();
@@ -142,6 +146,7 @@ export default function EducationalLayout({
               {title}
             </h1>
             <p className="text-white/60 text-lg leading-relaxed">{description}</p>
+            {answerSummary && <AnswerSummary text={answerSummary} className="mt-5" />}
             <div className="mt-7 flex items-center gap-3 border-t border-white/12 pt-5">
               <img
                 src="/manus-storage/instagram_profile_bc867e99_9d4bb2af.webp"

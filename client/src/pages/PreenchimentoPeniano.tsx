@@ -40,6 +40,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { FaviconInjector } from "@/components/FaviconInjector";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
+import AnswerSummary from "@/components/AnswerSummary";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -493,6 +494,11 @@ export default function PreenchimentoPeniano() {
                   <strong className="text-white font-semibold">São Paulo</strong> e{" "}
                   <strong className="text-white font-semibold">Campinas</strong>.
                 </p>
+
+                <AnswerSummary
+                  className="mb-7"
+                  text="O preenchimento peniano com ácido hialurônico aumenta a circunferência do pênis com injeções feitas em consultório, com anestesia local, sem cortes, em cerca de 30 a 45 minutos. O efeito é temporário, porque o corpo reabsorve o gel aos poucos, e pode ser desfeito com hialuronidase; a pausa sexual depois do procedimento é de 4 semanas. O urologista Dr. Felipe de Bulhões (CRM-SP 202291, RQE 146538) avalia cada caso em consulta em São Paulo (Av. Paulista e Pinheiros) e em Campinas."
+                />
 
                 {/* Destaques rápidos */}
                 <div className="grid sm:grid-cols-3 gap-3 mb-8">

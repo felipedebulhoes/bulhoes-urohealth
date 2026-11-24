@@ -93,6 +93,18 @@ describe("links curtos de saída", () => {
     );
   });
 
+  it("redireciona /avaliar/doctoralia ao formulário de opinião do perfil", async () => {
+    const response = await fetch(`${baseUrl}/avaliar/doctoralia?utm_source=feegow&utm_medium=sms`, {
+      redirect: "manual",
+    });
+
+    expect(response.status).toBe(302);
+    expect(response.headers.get("location")).toBe(
+      "https://www.doctoralia.com.br/adicionar-opiniao/felipe-de-bulhoes"
+    );
+    expect(logs[0]).toMatchObject({ path: "/avaliar/doctoralia", utm_source: "feegow" });
+  });
+
   it("não aceita destino informado pelo visitante", async () => {
     const response = await fetch(`${baseUrl}/instagram?next=https://exemplo.com`, { redirect: "manual" });
 

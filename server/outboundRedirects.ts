@@ -30,6 +30,8 @@ export const outboundRedirects: Record<string, string> = {
     "https://search.google.com/local/writereview?placeid=ChIJe7OX8KZZzpQRFd2o_S6x7oM",
   "/avaliar/pinheiros":
     "https://search.google.com/local/writereview?placeid=ChIJ0Qew-nZXzpQRHtNRJkjD4jg",
+  // Formulário de opinião do perfil Doctoralia (fonte mais citada pelas IAs).
+  "/avaliar/doctoralia": "https://www.doctoralia.com.br/adicionar-opiniao/felipe-de-bulhoes",
 };
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"] as const;

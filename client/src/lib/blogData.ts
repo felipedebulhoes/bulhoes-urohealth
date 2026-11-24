@@ -179,7 +179,7 @@ O urologista pode e deve ser consultado já na adolescência para:
 - **Torção testicular** — educação sobre sinais de alerta (emergência urológica)
 - **Orientação sexual** — dúvidas sobre desenvolvimento, ejaculação e saúde sexual
 
-> **Referência:** A EAU Paediatric Urology Guidelines (2025) recomenda acompanhamento urológico para varicocele em adolescentes com alteração do volume testicular, e a SBU orienta avaliação urológica na puberdade para rastreamento de condições congênitas.
+> **Referência:** A EAU Paediatric Urology Guidelines (2026) recomenda acompanhar a varicocele do adolescente e indicar cirurgia quando o testículo do lado afetado fica persistentemente menor, e a SBU orienta avaliação urológica na puberdade para rastreamento de condições congênitas.
 
 ### Adulto jovem (18-35 anos)
 Fase frequentemente negligenciada, mas com demandas urológicas importantes:
@@ -204,7 +204,7 @@ Período em que muitas condições começam a se manifestar:
 - **Rastreamento de câncer de próstata** — início conforme fatores de risco
 - **Cálculos renais recorrentes** — estudo metabólico e prevenção
 
-> **Referência:** A EAU Guidelines on Male Hypogonadism (2025) destaca que a deficiência de testosterona afeta 2-6% dos homens entre 40-79 anos e está associada a aumento do risco cardiovascular, diabetes tipo 2 e osteoporose.
+> **Referência:** A EAU Guidelines on Sexual and Reproductive Health (2026) aponta hipogonadismo sintomático em 2,1-5,7% dos homens entre 40-79 anos, associado a maior risco cardiovascular e de diabetes tipo 2 e, nos casos graves, a osteoporose.
 
 ### Maturidade (55+ anos)
 Fase que exige acompanhamento mais frequente:
@@ -369,7 +369,7 @@ A taxa de recorrência é de **50% em 5-10 anos** sem medidas preventivas. A pre
 5. **Citrato** — suco de limão/laranja natural aumenta o citrato urinário (protetor)
 6. **Estudo metabólico** — exames de urina de 24h para identificar fatores de risco específicos
 
-> **Referência:** EAU Guidelines on Urolithiasis (2025) recomendam estudo metabólico para todos os pacientes com cálculos recorrentes ou de alto risco.
+> **Referência:** EAU Guidelines on Urolithiasis (2026) recomendam estudo metabólico para todos os pacientes com cálculos recorrentes ou de alto risco.
 
 ---
 
@@ -422,7 +422,7 @@ Qualquer dor persistente, inchaço ou nódulo testicular deve ser avaliado com u
 
 A dificuldade de obter ou manter uma ereção não é apenas um problema sexual — pode ser o **primeiro sinal de doença cardiovascular**, antecedendo um infarto em 3-5 anos. Também pode indicar diabetes, hipogonadismo ou problemas neurológicos. Tem tratamento eficaz em mais de 80% dos casos.
 
-> **Referência:** A EAU Guidelines on Sexual and Reproductive Health (2025) destaca que a disfunção erétil é um fator de risco cardiovascular independente.
+> **Referência:** A EAU Guidelines on Sexual and Reproductive Health (2026) destaca que a disfunção erétil está associada de forma independente à doença cardiovascular.
 
 ### 6. Dor lombar intensa e súbita
 
@@ -633,10 +633,10 @@ A consulta urológica é indicada em diversas situações, não apenas quando h�
 
 ### Rastreamento e prevenção
 
-- **A partir dos 50 anos** (ou 45 anos com fatores de risco): rastreamento de câncer de próstata com PSA e toque retal, conforme recomendação da **EAU Guidelines 2025** e da **SBU**
+- **A partir dos 50 anos** (ou 45 anos com fatores de risco): rastreamento de câncer de próstata com PSA e toque retal, conforme recomendação da **EAU Guidelines 2026** e da **SBU**
 - **Histórico familiar** de câncer de próstata, renal ou de bexiga
 - **Homens negros**: maior incidência de câncer de próstata (1,7x maior segundo o INCA)
-- **Portadores de mutações BRCA2**: rastreamento a partir dos 40 anos (EAU 2025)
+- **Portadores de mutações BRCA2**: rastreamento a partir dos 40 anos (EAU 2026)
 
 ### Sintomas urinários
 
@@ -930,7 +930,7 @@ Se você está considerando a vasectomia, agende uma consulta para discutir toda
 ### Referências
 
 1. AUA Vasectomy Guideline, 2026. American Urological Association.
-2. EAU Guidelines on Male Contraception, 2025. European Association of Urology.
+2. Dohle GR, et al. European Association of Urology Guidelines on Vasectomy. Eur Urol. 2012;61(1):159-163.
 3. Sharlip ID, et al. Vasectomy: AUA Guideline. J Urol. 2012;188(6 Suppl):2482-2491.
 4. Cook LA, et al. Scalpel versus no-scalpel incision for vasectomy. Cochrane Database Syst Rev. 2014;3:CD004112.
 5. Sociedade Brasileira de Urologia (SBU) — Diretrizes sobre Vasectomia, 2023.
@@ -962,18 +962,18 @@ O cirurgião controla os braços robóticos através de joysticks e pedais, com 
 
 ### 1. Prostatectomia Radical Robótica (RARP)
 
-O procedimento robótico mais realizado no mundo. Indicado para o **câncer de próstata localizado**, a RARP remove toda a próstata e vesículas seminais por via minimamente invasiva. Segundo as **EAU Guidelines 2025**, a RARP oferece:
+O procedimento robótico mais realizado no mundo. Indicado para o **câncer de próstata localizado**, a RARP remove toda a próstata e vesículas seminais por via minimamente invasiva. Segundo as **EAU Guidelines 2026**, a RARP está associada a menor sangramento e internação mais curta, com resultados oncológicos semelhantes aos da cirurgia aberta. Em séries publicadas, observa-se:
 
 - **Menor sangramento** — média de 150ml vs. 900ml na cirurgia aberta
 - **Menor tempo de internação** — 1-2 dias vs. 5-7 dias
 - **Recuperação mais rápida** — retorno às atividades em 2-3 semanas
-- **Melhores resultados funcionais** — preservação da continência urinária e função erétil
+- **Recuperação funcional** — recuperação mais precoce da continência em parte dos estudos
 
 O estudo **LAPPRO** (Lancet, 2024) com 4.003 pacientes demonstrou que a RARP apresenta taxa de continência de **95% em 12 meses** e preservação da ereção em **70-80%** dos pacientes com preservação nervosa bilateral.
 
 ### 2. Nefrectomia Parcial Robótica (RAPN)
 
-Para **tumores renais**, a nefrectomia parcial robótica remove apenas o tumor, preservando o máximo de tecido renal saudável. As EAU Guidelines 2025 recomendam a nefrectomia parcial como padrão para tumores T1 (até 7cm), e a via robótica facilita a sutura renal com precisão, reduzindo o tempo de isquemia quente.
+Para **tumores renais**, a nefrectomia parcial robótica remove apenas o tumor, preservando o máximo de tecido renal saudável. As EAU Guidelines 2026 recomendam a nefrectomia parcial como padrão para tumores T1 (até 7cm), e a via robótica facilita a sutura renal com precisão, reduzindo o tempo de isquemia quente em relação à laparoscopia.
 
 ### 3. Cistectomia Radical Robótica (RARC)
 
@@ -1051,8 +1051,8 @@ Se você precisa de uma avaliação urológica ou foi indicado para cirurgia, ag
 
 **Referências:**
 
-1. EAU Guidelines on Prostate Cancer, 2025. European Association of Urology.
-2. EAU Guidelines on Renal Cell Carcinoma, 2025. European Association of Urology.
+1. EAU Guidelines on Prostate Cancer, 2026. European Association of Urology.
+2. EAU Guidelines on Renal Cell Carcinoma, 2026. European Association of Urology.
 3. Catto JWF, et al. RAZOR Trial: Robot-assisted vs open radical cystectomy. Lancet. 2018;391(10139):2525-2536.
 4. Nyberg M, et al. LAPPRO Trial: Functional outcomes after RARP. Lancet. 2024.
 5. Ficarra V, et al. Systematic review of RARP outcomes. Eur Urol. 2012;62(3):405-417.
@@ -1065,7 +1065,7 @@ Se você precisa de uma avaliação urológica ou foi indicado para cirurgia, ag
     slug: "incontinencia-urinaria-pos-prostatectomia",
     title: "Incontinência Urinária Pós-Prostatectomia: Causas, Recuperação e Tratamentos Atuais",
     excerpt:
-      "A incontinência urinária após a prostatectomia radical é uma preocupação comum entre pacientes com câncer de próstata. Entenda por que ocorre, qual a evolução esperada e quais tratamentos estão disponíveis segundo as guidelines EAU 2025 e AUA 2024.",
+      "A incontinência urinária após a prostatectomia radical é uma preocupação comum entre pacientes com câncer de próstata. Entenda por que ocorre, qual a evolução esperada e quais tratamentos estão disponíveis segundo as guidelines EAU 2026 e AUA 2024.",
     coverImage:
       "https://d2xsxph8kpxj0f.cloudfront.net/310419663028714945/a5L5opXZE55bTrHskCyAFy/blog-incontinencia-pos-prostatectomia-KjcAV6cZhjVNVnCoLtrhUq.webp",
     category: "Pós-Operatório",
@@ -1075,7 +1075,7 @@ Se você precisa de uma avaliação urológica ou foi indicado para cirurgia, ag
     content: `
 A **prostatectomia radical** — cirurgia de remoção completa da próstata — é o tratamento padrão-ouro para o câncer de próstata localizado em pacientes com expectativa de vida superior a 10 anos. Apesar dos avanços da técnica cirúrgica, especialmente com a **cirurgia robótica (RARP)**, a incontinência urinária pós-operatória continua sendo uma das principais preocupações dos pacientes.
 
-A boa notícia é que, na grande maioria dos casos, a incontinência é **temporária** e apresenta melhora progressiva ao longo dos primeiros 12 meses. Este artigo explica por que ela ocorre, qual a evolução esperada e quais tratamentos estão disponíveis — tudo baseado nas **EAU Guidelines 2025** e **AUA/SUFU Guidelines 2024**.
+A boa notícia é que, na grande maioria dos casos, a incontinência é **temporária** e apresenta melhora progressiva ao longo dos primeiros 12 meses. Este artigo explica por que ela ocorre, qual a evolução esperada e quais tratamentos estão disponíveis — tudo baseado nas **EAU Guidelines 2026** e **AUA/SUFU Guidelines 2024**.
 
 ---
 
@@ -1095,7 +1095,7 @@ Os fatores que influenciam a recuperação da continência incluem:
 | **Função urinária prévia** | Sintomas urinários pré-existentes (HPB) podem piorar o prognóstico |
 | **Exercícios de Kegel pré-operatórios** | Fisioterapia pélvica pré-cirúrgica pode acelerar a recuperação |
 
-Segundo as **EAU Guidelines 2025**, a incontinência de esforço (perda ao tossir, espirrar ou fazer esforço) é o tipo mais comum após a prostatectomia, representando cerca de **95% dos casos** de incontinência pós-operatória.
+Segundo as **EAU Guidelines 2026**, a incontinência de esforço (perda ao tossir, espirrar ou fazer esforço) é o tipo mais comum após a prostatectomia.
 
 ---
 
@@ -1116,7 +1116,7 @@ A recuperação da continência segue um padrão progressivo e previsível na ma
 
 O estudo **LAPPRO** (Lancet, 2024), com 4.003 pacientes, demonstrou que a RARP apresentou taxa de continência de **95% em 12 meses**, definida como uso de nenhum ou no máximo um absorvente de segurança por dia. O estudo randomizado de **Yaxley et al.** (Lancet, 2016) confirmou resultados semelhantes entre RARP e cirurgia aberta em 24 meses, embora a recuperação precoce (3-6 meses) seja mais rápida com a via robótica.
 
-> **Definição de continência (EAU 2025):** Uso de zero absorventes ou, no máximo, um absorvente de segurança por dia ("safety pad"), sem perda funcional significativa.
+> **Continência nos estudos (EAU 2026):** nos estudos citados pela EAU, a "continência social" é medida pelo uso de nenhum ou, no máximo, um absorvente por dia ("safety pad").
 
 ---
 
@@ -1135,7 +1135,7 @@ A meta-análise de **Ficarra et al.** (European Urology, 2012) demonstrou que a 
 
 ## Tratamento conservador: exercícios de Kegel e fisioterapia pélvica
 
-A **fisioterapia do assoalho pélvico** (exercícios de Kegel) é a primeira linha de tratamento para a incontinência pós-prostatectomia, recomendada com **nível de evidência 1b** pelas EAU Guidelines 2025.
+A **fisioterapia do assoalho pélvico** (exercícios de Kegel) é recomendada pelas EAU Guidelines 2026 para acelerar a recuperação da continência após a prostatectomia (**recomendação fraca**).
 
 ### Como fazer os exercícios de Kegel
 
@@ -1167,7 +1167,7 @@ Em pacientes com dificuldade para identificar a musculatura pélvica, técnicas 
 
 Embora não existam medicamentos específicos aprovados para incontinência de esforço masculina, algumas opções podem ser consideradas em casos selecionados:
 
-- **Duloxetina (off-label):** inibidor da recaptação de serotonina e noradrenalina que aumenta o tônus do esfíncter uretral. As EAU Guidelines 2025 mencionam evidência limitada, com recomendação fraca
+- **Duloxetina (off-label):** inibidor da recaptação de serotonina e noradrenalina que aumenta o tônus do esfíncter uretral. As EAU Guidelines 2026 mencionam evidência limitada, com recomendação fraca
 - **Anticolinérgicos/mirabegron:** indicados quando há componente de urgência associado (bexiga hiperativa) — não para incontinência de esforço pura
 
 ---
@@ -1192,7 +1192,7 @@ Indicado para incontinência de esforço **leve a moderada** (perda de 100-400ml
 
 ### Esfíncter urinário artificial (AMS 800)
 
-Considerado o **padrão-ouro** para incontinência de esforço **moderada a grave** (perda >400ml em pad test de 24h) pelas EAU Guidelines 2025.
+Considerado o **tratamento padrão** para incontinência de esforço **moderada a grave** pelas EAU Guidelines 2026.
 
 | Característica | Detalhes |
 |---|---|
@@ -1204,7 +1204,7 @@ Considerado o **padrão-ouro** para incontinência de esforço **moderada a grav
 | **Durabilidade** | Média de 7-10 anos antes de necessitar revisão |
 | **Complicações** | Infecção (3-5%), erosão uretral (5-10%), falha mecânica (10-15% em 10 anos) |
 
-> **Recomendação EAU 2025:** O esfíncter urinário artificial (AUS) é recomendado como tratamento de primeira linha para incontinência de esforço masculina moderada a grave persistente após prostatectomia radical (Grau de Recomendação: Forte).
+> **Recomendação EAU 2026:** oferecer o esfíncter urinário artificial (AUS) a homens com incontinência de esforço moderada a grave (recomendação forte), em centros com experiência.
 
 ---
 
@@ -1247,7 +1247,7 @@ A escolha da **técnica cirúrgica** tem impacto direto na recuperação da cont
 Na grande maioria dos casos, não. Cerca de 90-95% dos pacientes recuperam a continência em 12 meses. Apenas 5-10% apresentam incontinência persistente que pode necessitar de tratamento cirúrgico.
 
 ### Os exercícios de Kegel realmente funcionam?
-Sim. A fisioterapia do assoalho pélvico é recomendada com nível de evidência 1b pelas EAU Guidelines 2025. Pacientes que realizam exercícios supervisionados recuperam a continência mais rapidamente.
+Sim. A fisioterapia do assoalho pélvico é recomendada pelas EAU Guidelines 2026 para acelerar a recuperação da continência (recomendação fraca). Pacientes que realizam exercícios supervisionados recuperam a continência mais rapidamente; o benefício após 12 meses é incerto.
 
 ### Qual a diferença entre sling masculino e esfíncter artificial?
 O sling é indicado para incontinência leve a moderada e é menos invasivo. O esfíncter artificial (AMS 800) é o padrão-ouro para incontinência moderada a grave, com taxas de sucesso de 79-90%, mas é um dispositivo mecânico que pode necessitar revisão após 7-10 anos.
@@ -1460,7 +1460,7 @@ Além do rastreamento de rotina, procure avaliação urológica se apresentar:
     content: `
 A **Hiperplasia Prostática Benigna (HPB)** é o crescimento não-canceroso da próstata que ocorre naturalmente com o envelhecimento. Estima-se que **mais de 50% dos homens acima de 60 anos** e até **90% dos homens acima de 80 anos** apresentem algum grau de HPB. Quando esse crescimento causa obstrução ao fluxo urinário, surgem os chamados **Sintomas do Trato Urinário Inferior (LUTS)**, que podem impactar significativamente a qualidade de vida.
 
-Este artigo apresenta um panorama completo e atualizado das opções de tratamento para HPB — desde medidas comportamentais e medicamentos até as técnicas cirúrgicas mais modernas disponíveis em 2026, baseado nas **EAU Guidelines 2025** e na **AUA Guideline Amendment 2023**.
+Este artigo apresenta um panorama completo e atualizado das opções de tratamento para HPB — desde medidas comportamentais e medicamentos até as técnicas cirúrgicas mais modernas disponíveis em 2026, baseado nas **EAU Guidelines 2026** e na **AUA Guideline Amendment 2023**.
 
 ---
 
@@ -1550,7 +1550,7 @@ A **RTU-P** é o procedimento de referência ("padrão-ouro" histórico) para pr
 
 ### Enucleação endoscópica (EEP)
 
-A **enucleação endoscópica da próstata** é hoje considerada o **procedimento de referência para próstatas de qualquer tamanho** pelas EAU Guidelines 2025. Consiste em separar os lobos adenomatosos da cápsula prostática (como "descascar uma laranja") e depois morcelar o tecido na bexiga.
+A **enucleação endoscópica da próstata** é recomendada pelas EAU Guidelines 2026 como alternativa à RTU e à cirurgia aberta, **sem limite de tamanho prostático**. Consiste em separar os lobos adenomatosos da cápsula prostática (como "descascar uma laranja") e depois morcelar o tecido na bexiga.
 
 | Técnica | Fonte de Energia | Particularidades |
 |---|---|---|

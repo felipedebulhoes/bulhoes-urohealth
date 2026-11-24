@@ -2,7 +2,7 @@ import { trackDoctoraliaClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Cirurgia Robótica em Urologia — Guia Completo
- * Referências: EAU Guidelines 2025, AUA 2024/2025, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines 2026, AUA 2024/2025, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import {
@@ -50,7 +50,7 @@ const fadeUp = {
 
 const cirurgiaRoboticaFAQs = [
   { question: "O robô opera sozinho?", answer: "Não. O robô é um instrumento controlado integralmente pelo cirurgião. Cada movimento dos braços robóticos é comandado em tempo real pelo médico, que opera sentado no console com visão 3D. O robô não toma decisões — ele amplifica a precisão e a destreza do cirurgião." },
-  { question: "A cirurgia robótica é mais segura que a cirurgia aberta?", answer: "Sim, as evidências mostram que a cirurgia robótica apresenta menores taxas de complicações, menor sangramento e recuperação mais rápida. Na prostatectomia radical, por exemplo, a taxa de complicações Clavien II é de 3,9% na robótica vs 17,5% na aberta (EAU 2025)." },
+  { question: "A cirurgia robótica é mais segura que a cirurgia aberta?", answer: "Sim, as evidências mostram que a cirurgia robótica apresenta menores taxas de complicações, menor sangramento e recuperação mais rápida. Na prostatectomia radical, por exemplo, a taxa de complicações Clavien II é de 3,9% na robótica vs 17,5% na aberta (EAU 2026)." },
   { question: "Qual o tempo de duração de uma cirurgia robótica?", answer: "Depende do procedimento. Uma prostatectomia radical robótica dura em média 2-3 horas. Uma nefrectomia parcial robótica, 2-4 horas. O tempo operatório é comparável ou ligeiramente maior que a cirurgia aberta, mas com benefícios significativos na recuperação." },
   { question: "Quanto tempo de internação após cirurgia robótica?", answer: "Na maioria dos procedimentos, a internação é de 1-2 dias (vs 5-7 dias na cirurgia aberta). Em alguns casos selecionados, o paciente pode receber alta no mesmo dia." },
   { question: "A cirurgia robótica deixa cicatriz?", answer: "As incisões são muito pequenas (8-12mm), resultando em cicatrizes mínimas que se tornam praticamente imperceptíveis com o tempo. Geralmente são 5-6 pequenas incisões no abdome." },
@@ -64,10 +64,10 @@ export default function CirurgiaRobotica() {
     <EducationalLayout
       title="Cirurgia Robótica em Urologia"
       subtitle="Tecnologia de Ponta"
-      description="Guia completo sobre cirurgia robótica aplicada à urologia: como funciona, indicações, vantagens, principais procedimentos, recuperação e resultados baseados em evidências das diretrizes da EAU 2025 e AUA."
+      description="Guia completo sobre cirurgia robótica aplicada à urologia: como funciona, indicações, vantagens, principais procedimentos, recuperação e resultados baseados em evidências das diretrizes da EAU 2026 e AUA."
       accentColor="#6366F1"
       metaTitle="Cirurgia Robótica em Urologia: Guia Completo | Dr. Felipe de Bulhões"
-      metaDescription="Saiba tudo sobre cirurgia robótica em urologia: prostatectomia, nefrectomia parcial, cistectomia. Vantagens, recuperação e resultados. Baseado nas guidelines EAU 2025."
+      metaDescription="Saiba tudo sobre cirurgia robótica em urologia: prostatectomia, nefrectomia parcial, cistectomia. Vantagens, recuperação e resultados. Baseado nas guidelines EAU 2026."
     >
       <FAQSchema questions={cirurgiaRoboticaFAQs} />
 
@@ -77,7 +77,7 @@ export default function CirurgiaRobotica() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-indigo-50 to-violet-50 border-l-4 border-[#6366F1] p-6 rounded-r-lg mb-10">
               <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
-                A <strong>cirurgia robótica</strong> representa uma das maiores revoluções da cirurgia moderna. Na urologia, o sistema robótico permite ao cirurgião operar com <strong>precisão milimétrica, visão tridimensional ampliada em até 10 vezes</strong> e movimentos articulados que superam a capacidade da mão humana. Segundo as <strong>diretrizes da European Association of Urology (EAU 2025)</strong>, a abordagem robótica é uma opção estabelecida para os principais procedimentos urológicos, com resultados funcionais e oncológicos comparáveis ou superiores às técnicas convencionais.
+                A <strong>cirurgia robótica</strong> representa uma das maiores revoluções da cirurgia moderna. Na urologia, o sistema robótico permite ao cirurgião operar com <strong>precisão milimétrica, visão tridimensional ampliada em até 10 vezes</strong> e movimentos articulados que superam a capacidade da mão humana. Segundo as <strong>diretrizes da European Association of Urology (EAU 2026)</strong>, a abordagem robótica é uma opção estabelecida para os principais procedimentos urológicos, com resultados funcionais e oncológicos comparáveis ou superiores às técnicas convencionais.
               </p>
             </div>
           </motion.div>
@@ -141,7 +141,7 @@ export default function CirurgiaRobotica() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="mb-14">
             <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Vantagens da Cirurgia Robótica</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
-              As vantagens da cirurgia robótica em relação à cirurgia aberta convencional são bem documentadas na literatura. Segundo meta-análises de ensaios clínicos randomizados citados nas <strong>diretrizes da EAU 2025</strong>, os principais benefícios incluem:
+              As vantagens da cirurgia robótica em relação à cirurgia aberta convencional são bem documentadas na literatura. Segundo meta-análises de ensaios clínicos randomizados citados nas <strong>diretrizes da EAU 2026</strong>, os principais benefícios incluem:
             </p>
             <div className="grid md:grid-cols-2 gap-5">
               {[
@@ -161,13 +161,13 @@ export default function CirurgiaRobotica() {
                   icon: Minimize2,
                   title: "Incisões menores",
                   desc: "Pequenas incisões de 8-12mm em vez de cortes de 15-20cm da cirurgia aberta, resultando em menor dor, melhor estética e recuperação mais rápida.",
-                  evidence: "EAU 2025: menor sangramento intraoperatório (p<0.001)",
+                  evidence: "EAU 2026: menor sangramento intraoperatório",
                 },
                 {
                   icon: HeartPulse,
                   title: "Menor sangramento",
                   desc: "Perda sanguínea significativamente menor em comparação à cirurgia aberta, reduzindo a necessidade de transfusões.",
-                  evidence: "RARP vs RRP: Clavien II 3.9% vs 17.5% (EAU 2025)",
+                  evidence: "RARP vs RRP: Clavien II 3.9% vs 17.5% (EAU 2026)",
                 },
                 {
                   icon: TrendingUp,
@@ -198,7 +198,7 @@ export default function CirurgiaRobotica() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="mb-14">
             <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Robótica vs Aberta vs Laparoscópica: Comparação</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
-              A tabela abaixo compara os resultados da <strong>prostatectomia radical</strong> realizada por via robótica (RARP), laparoscópica (LRP) e aberta (RRP), conforme dados compilados nas diretrizes da EAU 2025 (Tabela 6.2.4):
+              A tabela abaixo compara os resultados da <strong>prostatectomia radical</strong> realizada por via robótica (RARP), laparoscópica (LRP) e aberta (RRP), conforme dados compilados nas diretrizes da EAU 2026 (Tabela 6.2.4):
             </p>
             <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-border shadow-sm">
               <table className="w-full text-sm">
@@ -233,7 +233,7 @@ export default function CirurgiaRobotica() {
               </table>
               <div className="p-3 bg-gray-50 dark:bg-card border-t border-gray-200 dark:border-border">
                 <p className="text-xs text-[#64748B] italic text-center">
-                  Fonte: EAU Guidelines 2025 — Tabela 6.2.4 (Prostate Cancer — Treatment)
+                  Fonte: EAU Guidelines 2026 — Tabela 6.2.4 (Prostate Cancer — Treatment)
                 </p>
               </div>
             </div>
@@ -256,13 +256,13 @@ export default function CirurgiaRobotica() {
                     <p className="text-sm text-[#334155] leading-relaxed">
                       <strong>RCT com 327 pacientes (RARP vs RRP):</strong> A continência urinária foi significativamente melhor no grupo robótico em todos os intervalos avaliados — <strong>3 meses: 80% vs 65% (p=0,002)</strong>, 6 meses: 90% vs 82% (p=0,04) e 18 meses: 95% vs 79% (p&lt;0,001).
                     </p>
-                    <p className="text-xs text-[#64748B] mt-2 italic">Fonte: EAU Guidelines 2025 — Prostate Cancer Treatment</p>
+                    <p className="text-xs text-[#64748B] mt-2 italic">Fonte: EAU Guidelines 2026 — Prostate Cancer Treatment</p>
                   </div>
                   <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                     <p className="text-sm text-[#334155] leading-relaxed">
                       <strong>Meta-análise de 5 RCTs (1.205 pacientes, RARP vs LRP):</strong> Melhor continência aos 3 meses (OR 1,81) e 6 meses (OR 1,88) para RARP. Aos 12 meses, sem diferença significativa entre as técnicas.
                     </p>
-                    <p className="text-xs text-[#64748B] mt-2 italic">Fonte: EAU Guidelines 2025</p>
+                    <p className="text-xs text-[#64748B] mt-2 italic">Fonte: EAU Guidelines 2026</p>
                   </div>
                 </div>
               </div>
@@ -276,7 +276,7 @@ export default function CirurgiaRobotica() {
                   <p className="text-sm text-[#334155] leading-relaxed">
                     <strong>Meta-análise de 5 RCTs (RARP vs LRP):</strong> Recuperação da função erétil significativamente melhor em pacientes potentes submetidos à preservação neurovascular — <strong>OR 4,05 (p=0,003)</strong> a favor da robótica. Aos 10 anos, taxas comparáveis, mas com qualidade funcional superior no grupo robótico.
                   </p>
-                  <p className="text-xs text-[#64748B] mt-2 italic">Fonte: EAU Guidelines 2025</p>
+                  <p className="text-xs text-[#64748B] mt-2 italic">Fonte: EAU Guidelines 2026</p>
                 </div>
               </div>
 
@@ -290,13 +290,13 @@ export default function CirurgiaRobotica() {
                     <p className="text-sm text-[#334155] leading-relaxed">
                       <strong>Preservação neurovascular (Nerve-Sparing):</strong> A visão ampliada e a precisão robótica permitem preservação dos feixes neurovasculares com maior acurácia. A técnica <strong>NeuroSAFE</strong> (avaliação intraoperatória de margens) aumentou a taxa de preservação bilateral de 56% para 82%, com melhores escores de função erétil (IIEF-5).
                     </p>
-                    <p className="text-xs text-[#64748B] mt-2 italic">Fonte: NeuroSAFE PROOF Trial — EAU Guidelines 2025</p>
+                    <p className="text-xs text-[#64748B] mt-2 italic">Fonte: NeuroSAFE PROOF Trial — EAU Guidelines 2026</p>
                   </div>
                   <div className="bg-white dark:bg-card rounded-lg p-4 border border-gray-100">
                     <p className="text-sm text-[#334155] leading-relaxed">
                       <strong>Retzius-sparing (rsRARP):</strong> Técnica que preserva o espaço de Retzius, com melhora na recuperação precoce e global da continência. Deve-se considerar que pode haver taxas ligeiramente maiores de margens positivas (OR 0,45, p&lt;0,05), sem diferença na recorrência bioquímica.
                     </p>
-                    <p className="text-xs text-[#64748B] mt-2 italic">Fonte: EAU Guidelines 2025</p>
+                    <p className="text-xs text-[#64748B] mt-2 italic">Fonte: EAU Guidelines 2026</p>
                   </div>
                 </div>
               </div>
@@ -315,7 +315,7 @@ export default function CirurgiaRobotica() {
                   title: "Prostatectomia Radical Robótica (RARP)",
                   subtitle: "Câncer de Próstata",
                   desc: "Remoção completa da próstata e vesículas seminais para tratamento do câncer de próstata localizado e localmente avançado. É o procedimento robótico mais realizado no mundo. A abordagem robótica permite preservação neurovascular com maior precisão, resultando em melhor recuperação da continência e função erétil.",
-                  evidence: "Indicação: câncer de próstata localizado (T1-T2) e localmente avançado selecionado (T3). EAU 2025: resultados oncológicos equivalentes, com vantagens funcionais.",
+                  evidence: "Indicação: câncer de próstata localizado (T1-T2) e localmente avançado selecionado (T3). EAU 2026: resultados oncológicos equivalentes, com vantagens funcionais.",
                   icon: Target,
                   color: "#6366F1",
                 },
@@ -323,7 +323,7 @@ export default function CirurgiaRobotica() {
                   title: "Nefrectomia Parcial Robótica (RAPN)",
                   subtitle: "Tumores Renais",
                   desc: "Remoção apenas do tumor renal, preservando o máximo de tecido renal saudável. A plataforma robótica facilita a reconstrução do parênquima e o controle vascular, especialmente em tumores complexos (RENAL score alto). Indicada para tumores T1 (até 7cm) e selecionados T2.",
-                  evidence: "EAU 2025 (Nível 2b): RAPN associada a menor perda sanguínea e menor internação vs aberta. Resultados oncológicos equivalentes em 5 anos.",
+                  evidence: "EAU 2026 (Nível 2b): RAPN associada a menor perda sanguínea e menor internação vs aberta. Resultados oncológicos equivalentes em 5 anos.",
                   icon: Shield,
                   color: "#059669",
                 },
@@ -355,7 +355,7 @@ export default function CirurgiaRobotica() {
                   title: "Nefrectomia Radical Robótica",
                   subtitle: "Tumores Renais Grandes",
                   desc: "Remoção completa do rim para tumores renais grandes (>7cm) ou quando a nefrectomia parcial não é viável. A abordagem robótica oferece menor sangramento e recuperação mais rápida que a cirurgia aberta.",
-                  evidence: "EAU 2025: não associada a aumento de complicações vs laparoscópica. Menor sangramento vs aberta.",
+                  evidence: "EAU 2026: não associada a aumento de complicações vs laparoscópica. Menor sangramento vs aberta.",
                   icon: Scissors,
                   color: "#0891B2",
                 },
@@ -561,7 +561,7 @@ export default function CirurgiaRobotica() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={9} className="mb-14">
             <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Possíveis Complicações</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
-              Como em qualquer procedimento cirúrgico, a cirurgia robótica pode apresentar complicações, embora as taxas sejam significativamente menores que na cirurgia aberta. As principais complicações, conforme as diretrizes da EAU 2025, incluem:
+              Como em qualquer procedimento cirúrgico, a cirurgia robótica pode apresentar complicações, embora as taxas sejam significativamente menores que na cirurgia aberta. As principais complicações, com base nas diretrizes da EAU 2026 e na literatura, incluem:
             </p>
             <div className="space-y-4">
               <div className="bg-green-50 border border-green-200 rounded-xl p-6">
@@ -595,7 +595,7 @@ export default function CirurgiaRobotica() {
                   {[
                     { name: "Fístula anastomótica", freq: "~1,0% (RARP)" },
                     { name: "Estenose de colo vesical", freq: "~1,0% (RARP)" },
-                    { name: "Linfocele", freq: "~1-3%" },
+                    { name: "Linfocele", freq: "~1-10% (após linfadenectomia)" },
                     { name: "Sangramento requerendo transfusão", freq: "~1-2% (RARP)" },
                   ].map((item, i) => (
                     <div key={i} className="bg-white dark:bg-card rounded-lg p-3 border border-amber-100">
@@ -628,7 +628,7 @@ export default function CirurgiaRobotica() {
             </div>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
               <p className="text-sm text-blue-800">
-                <strong>Nota importante:</strong> A taxa global de complicações graves (Clavien ≥ III) na cirurgia robótica é significativamente menor que na cirurgia aberta. Na prostatectomia radical, por exemplo, a taxa de Clavien II é de apenas 3,9% na robótica vs 17,5% na aberta (EAU 2025, Tabela 6.2.4).
+                <strong>Nota importante:</strong> Na prostatectomia radical, as taxas estimadas de complicações graves (Clavien ≥ III) são menores na robótica do que na cirurgia aberta (IIIa 0,5% vs 1,8%; IIIb 0,9% vs 2,5%) (EAU 2026, Tabela 6.2.4).
               </p>
             </div>
           </motion.div>
@@ -721,7 +721,7 @@ export default function CirurgiaRobotica() {
                 },
                 {
                   q: "A cirurgia robótica é mais segura que a cirurgia aberta?",
-                  a: "Sim, as evidências mostram que a cirurgia robótica apresenta menores taxas de complicações, menor sangramento e recuperação mais rápida. Na prostatectomia radical, por exemplo, a taxa de complicações Clavien II é de 3,9% na robótica vs 17,5% na aberta (EAU 2025).",
+                  a: "Sim, as evidências mostram que a cirurgia robótica apresenta menores taxas de complicações, menor sangramento e recuperação mais rápida. Na prostatectomia radical, por exemplo, a taxa de complicações Clavien II é de 3,9% na robótica vs 17,5% na aberta (EAU 2026).",
                 },
                 {
                   q: "Quanto tempo dura a cirurgia robótica?",
@@ -762,7 +762,7 @@ export default function CirurgiaRobotica() {
               <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
                 <li>1. EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer — Treatment, 2025. European Association of Urology. Tabela 6.2.4.</li>
-                <li>2. EAU Guidelines on Renal Cell Carcinoma — Disease Management, 2025. European Association of Urology. Seção 7.2.2.</li>
+                <li>2. EAU Guidelines on Renal Cell Carcinoma — Disease Management, 2026. European Association of Urology. Seções 7.2.2 e 7.2.3.</li>
                 <li>3. Yaxley JW, et al. A randomised trial of robot-assisted laparoscopic prostatectomy vs open radical retropubic prostatectomy. Eur Urol. 2016;70(6):1028-1035.</li>
                 <li>4. Coughlin GD, et al. Robot-assisted laparoscopic prostatectomy versus open radical retropubic prostatectomy: 24-month outcomes from a randomised controlled study. Lancet Oncol. 2018;19(8):1051-1060.</li>
                 <li>5. Nyberg M, et al. Functional and oncological outcomes of robot-assisted vs laparoscopic radical prostatectomy: meta-analysis of 5 RCTs. BJU Int. 2023.</li>

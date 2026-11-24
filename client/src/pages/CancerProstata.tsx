@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Câncer de Próstata — Diagnóstico, Estadiamento e Tratamento
- * Referências: EAU Guidelines 2025, AUA 2024, INCA 2025, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines 2026, AUA 2024, INCA 2025, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import {
@@ -76,9 +76,9 @@ export default function CancerProstata() {
             </p>
             <div className="space-y-4">
               {[
-                { step: "1", title: "PSA + Toque Retal", desc: "Rastreamento inicial. PSA elevado e/ou toque retal alterado indicam necessidade de investigação. A decisão de rastrear deve ser compartilhada entre médico e paciente.", ref: "EAU 2025 / AUA 2024" },
-                { step: "2", title: "Ressonância Multiparamétrica (mpMRI)", desc: "Exame de imagem que avalia a próstata e classifica lesões pelo sistema PI-RADS (1-5). PI-RADS ≥3 indica necessidade de biópsia. Permite biópsia dirigida à lesão (fusion).", ref: "EAU 2025" },
-                { step: "3", title: "Biópsia de Próstata", desc: "Coleta de fragmentos para análise histológica. Pode ser transretal ou transperineal (preferida pela EAU 2025 por menor risco de sepse). Biópsia por fusão (MRI-targeted) aumenta a detecção de tumores clinicamente significativos.", ref: "EAU 2025 / AUA 2024" },
+                { step: "1", title: "PSA + Toque Retal", desc: "Rastreamento inicial. PSA elevado e/ou toque retal alterado indicam necessidade de investigação. A decisão de rastrear deve ser compartilhada entre médico e paciente.", ref: "EAU 2026 / AUA 2024" },
+                { step: "2", title: "Ressonância Multiparamétrica (mpMRI)", desc: "Exame de imagem que avalia a próstata e classifica lesões pelo sistema PI-RADS (1-5). PI-RADS ≥4 indica biópsia; no PI-RADS 3, a decisão considera a densidade do PSA e a história familiar. Permite biópsia dirigida à lesão (fusion).", ref: "EAU 2026" },
+                { step: "3", title: "Biópsia de Próstata", desc: "Coleta de fragmentos para análise histológica. Pode ser transretal ou transperineal (preferida pela EAU 2026 por menor risco de sepse). Biópsia por fusão (MRI-targeted) aumenta a detecção de tumores clinicamente significativos.", ref: "EAU 2026 / AUA 2024" },
                 { step: "4", title: "Classificação Histológica", desc: "O patologista analisa os fragmentos e classifica pelo sistema de Gleason/ISUP. O grau ISUP (1-5) determina a agressividade do tumor e orienta o tratamento.", ref: "Campbell-Walsh-Wein 13th Ed." },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 items-start">
@@ -126,7 +126,7 @@ export default function CancerProstata() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#64748B] mt-3 italic">Fonte: ISUP 2014 / EAU Guidelines 2025</p>
+            <p className="text-xs text-[#64748B] mt-3 italic">Fonte: ISUP 2014 / EAU Guidelines 2026</p>
           </motion.div>
 
           {/* Tratamento */}
@@ -137,12 +137,12 @@ export default function CancerProstata() {
             </p>
             <div className="space-y-4">
               {[
-                { icon: Shield, title: "Vigilância Ativa", desc: "Para tumores de baixo risco (ISUP 1, PSA <10, T1-T2a). Monitoramento com PSA, toque retal e biópsias periódicas. Evita tratamento desnecessário sem comprometer a cura. Recomendada pela EAU 2025 como opção preferencial para baixo risco.", risk: "Baixo Risco", color: "border-green-200 bg-green-50/30" },
+                { icon: Shield, title: "Vigilância Ativa", desc: "Para tumores de baixo risco (ISUP 1, PSA <10, cT1-T2). Monitoramento com PSA, toque retal e biópsias periódicas. Evita tratamento desnecessário sem comprometer a cura. Recomendada pela EAU 2026 como opção preferencial para baixo risco.", risk: "Baixo Risco", color: "border-green-200 bg-green-50/30" },
                 { icon: Zap, title: "Prostatectomia Radical", desc: "Remoção cirúrgica completa da próstata. Pode ser aberta, laparoscópica ou robótica (da Vinci). A via robótica oferece melhor visualização, menor sangramento e recuperação mais rápida. Indicada para doença localizada com expectativa de vida >10 anos.", risk: "Baixo a Alto Risco", color: "border-blue-200 bg-blue-50/30" },
                 { icon: Target, title: "Radioterapia", desc: "Radioterapia externa (IMRT/VMAT) ou braquiterapia. Pode ser combinada com hormonioterapia em casos de risco intermediário e alto. Resultados oncológicos semelhantes à cirurgia para doença localizada.", risk: "Baixo a Alto Risco", color: "border-purple-200 bg-purple-50/30" },
                 { icon: Pill, title: "Hormonioterapia (ADT)", desc: "Bloqueio androgênico por medicamentos que reduzem a testosterona. Usada em combinação com radioterapia ou como tratamento principal em doença metastática. Pode ser intermitente ou contínua.", risk: "Intermediário a Metastático", color: "border-orange-200 bg-orange-50/30" },
                 { icon: Activity, title: "Terapias Combinadas", desc: "Para doença de alto risco e metastática: combinação de ADT + quimioterapia (docetaxel), ADT + novos agentes hormonais (abiraterona, enzalutamida, apalutamida, darolutamida) ou ADT + radioterapia.", risk: "Alto Risco / Metastático", color: "border-red-200 bg-red-50/30" },
-                { icon: Microscope, title: "Terapias Focais", desc: "HIFU, crioterapia e terapia fotodinâmica. Tratam apenas a área do tumor, preservando tecido saudável. Ainda consideradas experimentais pela EAU 2025, mas com resultados promissores para doença unilateral de risco intermediário.", risk: "Intermediário (selecionados)", color: "border-indigo-200 bg-indigo-50/30" },
+                { icon: Microscope, title: "Terapias Focais", desc: "HIFU, crioterapia e terapia fotodinâmica. Tratam apenas a área do tumor, preservando tecido saudável. Ainda consideradas investigacionais pela EAU 2026, que recomenda seu uso apenas em estudos clínicos ou registros.", risk: "Intermediário (selecionados)", color: "border-indigo-200 bg-indigo-50/30" },
               ].map((item, i) => (
                 <div key={i} className={`rounded-xl p-5 border ${item.color}`}>
                   <div className="flex items-start gap-4">
@@ -173,7 +173,7 @@ export default function CancerProstata() {
                     O tratamento do câncer de próstata deve ser uma <strong>decisão conjunta entre o paciente e o urologista</strong>. Cada opção terapêutica tem benefícios e efeitos colaterais específicos que devem ser discutidos abertamente.
                   </p>
                   <p className="text-[#334155] leading-relaxed">
-                    Fatores como idade, expectativa de vida, comorbidades, preferências pessoais e impacto na qualidade de vida (continência urinária, função sexual) devem ser considerados. A discussão em equipe multidisciplinar (urologista, oncologista, radioterapeuta) é recomendada pela EAU 2025 para casos complexos.
+                    Fatores como idade, expectativa de vida, comorbidades, preferências pessoais e impacto na qualidade de vida (continência urinária, função sexual) devem ser considerados. A decisão compartilhada entre médico e paciente é recomendada pela EAU 2026; em casos complexos, a discussão em equipe multidisciplinar (urologista, oncologista, radioterapeuta) é boa prática.
                   </p>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export default function CancerProstata() {
             <div className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
               <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
-                <li>1. EAU Guidelines on Prostate Cancer, 2025. European Association of Urology.</li>
+                <li>1. EAU Guidelines on Prostate Cancer, 2026. European Association of Urology.</li>
                 <li>2. AUA/ASTRO/SUO Guideline on Clinically Localized Prostate Cancer, 2024.</li>
                 <li>3. INCA — Estimativa de Câncer no Brasil, 2025. Instituto Nacional de Câncer.</li>
                 <li>4. Campbell-Walsh-Wein Urology, 13th Edition — Chapters on Prostate Cancer. Elsevier, 2024.</li>

@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Procedimentos Andrológicos — Postectomia, Vasectomia, Varicocele e HPV
- * Referências: EAU Guidelines 2025, AUA Guidelines 2024, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines 2026, AUA Guidelines 2024, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";

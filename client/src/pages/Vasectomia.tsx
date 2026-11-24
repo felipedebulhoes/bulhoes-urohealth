@@ -1,7 +1,7 @@
 /**
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Vasectomia — Guia Completo
- * Referências: AUA Vasectomy Guideline 2026, EAU Guidelines 2025, Campbell-Walsh-Wein 13th Ed.
+ * Referências: AUA Vasectomy Guideline 2026, EAU Guidelines on Vasectomy 2012, Campbell-Walsh-Wein 13th Ed.
  */
 import { getPageMetadata } from "@shared/pageMetadata";
 import { motion } from "framer-motion";
@@ -63,7 +63,7 @@ export default function Vasectomia() {
     <EducationalLayout
       title="Vasectomia: Guia Completo"
       subtitle="Contracepção Masculina Definitiva"
-      description="Tudo o que você precisa saber sobre a vasectomia: indicações, preparo, como é realizada, pós-operatório, complicações e perguntas frequentes. Informações baseadas no AUA Vasectomy Guideline 2026 e EAU Guidelines 2025."
+      description="Tudo o que você precisa saber sobre a vasectomia: indicações, preparo, como é realizada, pós-operatório, complicações e perguntas frequentes. Informações baseadas no AUA Vasectomy Guideline 2026."
       accentColor="#8D7B6B"
       metaTitle={getPageMetadata("/educativo/vasectomia").title}
       metaDescription={getPageMetadata("/educativo/vasectomia").description}

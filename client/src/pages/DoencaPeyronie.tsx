@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Doença de Peyronie — Curvatura Peniana Adquirida: Diagnóstico e Tratamentos
- * Referências: EAU Guidelines on Sexual and Reproductive Health 2025, AUA Guideline on PD 2015 (amended 2022), Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines on Sexual and Reproductive Health 2026, AUA Guideline on PD 2015 (amended 2022), Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -471,7 +471,7 @@ export default function DoencaPeyronie() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Investigação Diagnóstica</h2>
             <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-              Avaliação sistemática em 4 etapas — EAU Guidelines 2025
+              Avaliação sistemática em 4 etapas — EAU Guidelines 2026
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6">

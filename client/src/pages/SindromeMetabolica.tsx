@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Síndrome Metabólica, Testosterona e Envelhecimento Saudável
- * Referências: EAU 2025, AUA 2024, ACSM Guidelines 2021, Endocrine Society 2018
+ * Referências: EAU 2026, AUA 2024, ACSM Guidelines 2021, Endocrine Society 2018
  */
 import { motion } from "framer-motion";
 import { useEffect } from "react";

@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Hipogonadismo, Reposição de Testosterona e Qualidade de Vida
- * Referências: EAU Guidelines on Male Hypogonadism 2025, AUA Testosterone Deficiency 2024, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines on Sexual and Reproductive Health (Male Hypogonadism) 2026, AUA Testosterone Deficiency 2024, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import { useEffect } from "react";
@@ -135,7 +135,7 @@ export default function Hipogonadismo() {
           <div className="space-y-4">
             {[
               { step: "1", title: "Avaliação Clínica", detail: "Anamnese detalhada dos sintomas (questionário ADAM), exame físico (volume testicular, distribuição de gordura, ginecomastia, pelos). Excluir causas secundárias: depressão, hipotireoidismo, apneia do sono, uso de opioides." },
-              { step: "2", title: "Dosagem Hormonal", detail: "Testosterona total em jejum, pela manhã (8-10h), em duas ocasiões separadas. Se TT entre 200-400 ng/dL: dosar testosterona livre calculada e SHBG. Valores: TT <300 ng/dL ou TL <6,5 ng/dL confirmam deficiência bioquímica (EAU 2025)." },
+              { step: "2", title: "Dosagem Hormonal", detail: "Testosterona total em jejum, pela manhã (8-10h), em duas ocasiões separadas. Se TT próxima do limite: dosar testosterona livre calculada e SHBG. Valores de referência para o diagnóstico bioquímico: TT <350 ng/dL (12 nmol/L) ou TL <6,4 ng/dL (220 pmol/L) pela EAU 2026; a AUA usa TT <300 ng/dL." },
               { step: "3", title: "Diferenciação Etiológica", detail: "LH e FSH: elevados = hipogonadismo primário (testicular). Baixos/normais = hipogonadismo secundário (hipotálamo-hipofisário) → investigar prolactina, RNM de sela túrcica. Cariótipo se suspeita de Klinefelter." },
               { step: "4", title: "Avaliação Pré-TRT", detail: "PSA e toque retal (excluir câncer de próstata). Hematócrito basal. Perfil lipídico e glicemia. Densitometria óssea se indicada. Avaliação cardiovascular. Discussão sobre fertilidade (TRT suprime espermatogênese)." },
             ].map((item, i) => (

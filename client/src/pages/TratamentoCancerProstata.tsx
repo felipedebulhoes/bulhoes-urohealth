@@ -1,7 +1,7 @@
 /**
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Tratamento do Câncer de Próstata — Guia Completo
- * Referências: EAU Guidelines 2025, AUA 2024, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines 2026, AUA 2024, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import {
@@ -54,7 +54,7 @@ const tratamentoCancerProstataFAQs = [
   { question: "A radioterapia causa impotência?", answer: "A disfunção erétil pode ocorrer após radioterapia, mas geralmente de forma mais gradual que após cirurgia. Cerca de 30–50% dos pacientes apresentam algum grau de disfunção erétil após 2–5 anos. A braquiterapia tende a ter menores taxas de DE que a EBRT." },
   { question: "Quanto tempo dura o tratamento com radioterapia?", answer: "Depende do esquema: convencional (8 semanas), hipofracionamento moderado (4–6 semanas) ou SBRT/ultra-hipofracionamento (1–2 semanas, apenas 5–7 sessões). A SBRT é indicada para risco intermediário favorável." },
   { question: "O que é hormonioterapia e quando é usada?", answer: "A terapia de deprivação androgênica (ADT) bloqueia a testosterona, que estimula o crescimento do tumor. É combinada com radioterapia: 4–6 meses para risco intermediário e 2–3 anos para alto risco. Não é usada isoladamente como tratamento curativo." },
-  { question: "Posso fazer tratamento focal (HIFU)?", answer: "As terapias focais (HIFU, crioterapia, PDT) são consideradas investigacionais pela EAU 2025 e devem ser realizadas apenas dentro de ensaios clínicos ou registros. Faltam dados comparativos de longo prazo (> 15 anos) para recomendação de rotina." },
+  { question: "Posso fazer tratamento focal (HIFU)?", answer: "As terapias focais (HIFU, crioterapia, PDT) são consideradas investigacionais pela EAU 2026 e devem ser realizadas apenas dentro de ensaios clínicos ou registros. Faltam dados comparativos de longo prazo (> 15 anos) para recomendação de rotina." },
   { question: "Após a cirurgia, o PSA deve zerar?", answer: "Sim. Após prostatectomia radical, o PSA deve tornar-se indetectável (< 0,1 ng/mL). Qualquer elevação acima de 0,2 ng/mL em duas medidas consecutivas é considerada recorrência bioquímica e deve ser investigada." }
 ];
 
@@ -63,10 +63,10 @@ export default function TratamentoCancerProstata() {
     <EducationalLayout
       title="Tratamento do Câncer de Próstata"
       subtitle="Guia Completo Baseado em Evidências"
-      description="Conheça todas as opções de tratamento do câncer de próstata: vigilância ativa, cirurgia robótica (RARP), radioterapia, hormonioterapia e terapias focais. Informações baseadas nas diretrizes da EAU 2025."
+      description="Conheça todas as opções de tratamento do câncer de próstata: vigilância ativa, cirurgia robótica (RARP), radioterapia, hormonioterapia e terapias focais. Informações baseadas nas diretrizes da EAU 2026."
       accentColor="#8D7B6B"
       metaTitle="Tratamento do Câncer de Próstata: Cirurgia Robótica, Radioterapia e Vigilância Ativa | Dr. Felipe de Bulhões"
-      metaDescription="Guia completo sobre tratamento do câncer de próstata: vigilância ativa, prostatectomia radical robótica (RARP), radioterapia (IMRT, braquiterapia), hormonioterapia e manejo por grupo de risco. Baseado nas EAU Guidelines 2025."
+      metaDescription="Guia completo sobre tratamento do câncer de próstata: vigilância ativa, prostatectomia radical robótica (RARP), radioterapia (IMRT, braquiterapia), hormonioterapia e manejo por grupo de risco. Baseado nas EAU Guidelines 2026."
     >
       <FAQSchema questions={tratamentoCancerProstataFAQs} />
 
@@ -76,7 +76,7 @@ export default function TratamentoCancerProstata() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-[#B87333] p-6 rounded-r-lg mb-10">
               <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
-                O câncer de próstata é o <strong>tumor sólido mais comum no homem</strong> e a segunda causa de morte por câncer no sexo masculino. Felizmente, quando diagnosticado em estágio localizado, as taxas de cura são elevadas. A escolha do tratamento depende do <strong>grupo de risco</strong> (baseado em PSA, Gleason/ISUP e estadiamento), da <strong>expectativa de vida</strong> do paciente e de suas <strong>preferências pessoais</strong>. As diretrizes da <strong>European Association of Urology (EAU 2025)</strong> recomendam uma abordagem individualizada, com decisão compartilhada entre médico e paciente.
+                O câncer de próstata é o <strong>tumor sólido mais comum no homem</strong> e a segunda causa de morte por câncer no sexo masculino. Felizmente, quando diagnosticado em estágio localizado, as taxas de cura são elevadas. A escolha do tratamento depende do <strong>grupo de risco</strong> (baseado em PSA, Gleason/ISUP e estadiamento), da <strong>expectativa de vida</strong> do paciente e de suas <strong>preferências pessoais</strong>. As diretrizes da <strong>European Association of Urology (EAU 2026)</strong> recomendam uma abordagem individualizada, com decisão compartilhada entre médico e paciente.
               </p>
             </div>
 
@@ -121,7 +121,7 @@ export default function TratamentoCancerProstata() {
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <BarChart3 className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Classificação de Risco (EAU 2025)</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Classificação de Risco (EAU 2026)</h2>
             </div>
 
             <p className="text-gray-700 dark:text-foreground mb-6 leading-relaxed">
@@ -143,19 +143,19 @@ export default function TratamentoCancerProstata() {
                     <td className="px-4 py-3 font-medium text-green-800">Baixo Risco</td>
                     <td className="px-4 py-3 text-sm">&lt; 10 ng/mL</td>
                     <td className="px-4 py-3 text-sm">ISUP 1 (Gleason 3+3=6)</td>
-                    <td className="px-4 py-3 text-sm">cT1–cT2a</td>
+                    <td className="px-4 py-3 text-sm">cT1–cT2</td>
                   </tr>
                   <tr className="bg-yellow-50">
                     <td className="px-4 py-3 font-medium text-yellow-800">Risco Intermediário</td>
                     <td className="px-4 py-3 text-sm">10–20 ng/mL</td>
                     <td className="px-4 py-3 text-sm">ISUP 2–3 (Gleason 3+4 ou 4+3)</td>
-                    <td className="px-4 py-3 text-sm">cT2b</td>
+                    <td className="px-4 py-3 text-sm">cT1–cT2</td>
                   </tr>
                   <tr className="bg-orange-50">
                     <td className="px-4 py-3 font-medium text-orange-800">Alto Risco</td>
                     <td className="px-4 py-3 text-sm">&gt; 20 ng/mL</td>
                     <td className="px-4 py-3 text-sm">ISUP 4–5 (Gleason ≥ 4+4=8)</td>
-                    <td className="px-4 py-3 text-sm">cT2c</td>
+                    <td className="px-4 py-3 text-sm">cT1–cT2</td>
                   </tr>
                   <tr className="bg-red-50">
                     <td className="px-4 py-3 font-medium text-red-800">Localmente Avançado</td>
@@ -169,7 +169,7 @@ export default function TratamentoCancerProstata() {
 
             <div className="bg-blue-50 border border-blue-100 rounded-xl p-5">
               <p className="text-sm text-blue-800">
-                <strong>Nota:</strong> A classificação de risco intermediário é subdividida em <strong>favorável</strong> (ISUP 2, &lt; 10% padrão 4, poucos cores positivos) e <strong>desfavorável</strong> (ISUP 3, múltiplos fatores de risco). Essa distinção influencia diretamente a escolha terapêutica (EAU 2025, Section 6.3.2).
+                <strong>Nota:</strong> A classificação de risco intermediário é subdividida em <strong>favorável</strong> (ISUP 2 com PSA &lt; 10, ou ISUP 1 com PSA 10–20) e <strong>desfavorável</strong> (ISUP 2 com PSA 10–20, ou ISUP 3). Essa distinção influencia diretamente a escolha terapêutica (EAU 2026, Tabela 4.3).
               </p>
             </div>
           </motion.div>
@@ -189,12 +189,12 @@ export default function TratamentoCancerProstata() {
 
             <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground mb-8">
               <p>
-                A vigilância ativa (VA) é a <strong>estratégia padrão para câncer de próstata de baixo risco</strong> em pacientes com expectativa de vida superior a 10 anos (EAU 2025, recomendação <strong>Strong</strong>). O objetivo é evitar o sobretratamento — e seus efeitos colaterais — sem comprometer a sobrevida, monitorando rigorosamente o paciente para intervir caso haja progressão da doença.
+                A vigilância ativa (VA) é a <strong>estratégia padrão para câncer de próstata de baixo risco</strong> em pacientes com expectativa de vida superior a 10 anos (EAU 2026, recomendação <strong>Strong</strong>). O objetivo é evitar o sobretratamento — e seus efeitos colaterais — sem comprometer a sobrevida, monitorando rigorosamente o paciente para intervir caso haja progressão da doença.
               </p>
             </div>
 
             <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
-              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Critérios de Inclusão (EAU 2025)</h3>
+              <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Critérios de Inclusão (EAU 2026)</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   { label: "Grau histológico", value: "ISUP Grade Group 1 (Gleason 3+3=6)" },
@@ -314,7 +314,7 @@ export default function TratamentoCancerProstata() {
 
             <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
               <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Vantagens da RARP vs Cirurgia Aberta (RRP)</h3>
-              <p className="text-gray-600 dark:text-muted-foreground text-sm mb-4">Meta-análise de 5 RCTs com 1.205 pacientes (EAU Guidelines 2025, Table 6.2.4):</p>
+              <p className="text-gray-600 dark:text-muted-foreground text-sm mb-4">Dados de ensaios randomizados citados na EAU Guidelines 2026 (seção 6.2.2.f):</p>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse bg-white dark:bg-card rounded-lg overflow-hidden">
                   <thead>
@@ -366,7 +366,7 @@ export default function TratamentoCancerProstata() {
                 </table>
               </div>
               <p className="text-xs text-gray-500 dark:text-muted-foreground mt-3">
-                Fontes: Coughlin et al. Eur Urol 2018; Yaxley et al. Lancet 2016; EAU Guidelines 2025.
+                Fontes: Coughlin et al. Eur Urol 2018; Yaxley et al. Lancet 2016; EAU Guidelines 2026.
               </p>
             </div>
 
@@ -377,7 +377,7 @@ export default function TratamentoCancerProstata() {
                   Preservação Neurovascular
                 </h4>
                 <p className="text-sm text-gray-600 dark:text-muted-foreground">
-                  A técnica <strong>nerve-sparing</strong> (preservação dos feixes neurovasculares) deve ser oferecida quando há baixo risco de doença extracapsular naquele lado (EAU 2025, <strong>Strong</strong>). A visão magnificada 10x do robô Da Vinci permite identificação precisa dos nervos, favorecendo a preservação da função erétil e continência urinária.
+                  A técnica <strong>nerve-sparing</strong> (preservação dos feixes neurovasculares) deve ser oferecida quando há baixo risco de doença extracapsular naquele lado (EAU 2026, <strong>Strong</strong>). A visão magnificada 10x do robô Da Vinci permite identificação precisa dos nervos, favorecendo a preservação da função erétil e continência urinária.
                 </p>
               </div>
               <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-5 shadow-sm">
@@ -386,7 +386,7 @@ export default function TratamentoCancerProstata() {
                   Linfadenectomia (ePLND)
                 </h4>
                 <p className="text-sm text-gray-600 dark:text-muted-foreground">
-                  A linfadenectomia pélvica estendida (ePLND) é recomendada quando o risco de invasão linfonodal é &gt; 5% por nomogramas (EAU 2025, <strong>Strong</strong>). Deve incluir os linfonodos obturadores, ilíacos internos e externos, e pré-sacrais. É fundamental para estadiamento e prognóstico.
+                  Quando a linfadenectomia pélvica é indicada, ela deve ser estendida (ePLND) (EAU 2026, <strong>Strong</strong>). A indicação é individualizada, com nomogramas que podem incluir RM e PSMA PET. Inclui os linfonodos obturadores, ilíacos externos e ilíacos internos. É fundamental para estadiamento e prognóstico.
                 </p>
               </div>
             </div>
@@ -536,7 +536,7 @@ export default function TratamentoCancerProstata() {
               </h3>
               <div className="text-sm text-gray-700 dark:text-foreground space-y-3">
                 <p>
-                  A combinação de radioterapia com terapia de deprivação androgênica (ADT) é superior à radioterapia isolada, conforme demonstrado por múltiplos ensaios clínicos randomizados (EAU 2025, Section 6.2.3.a.4):
+                  A combinação de radioterapia com terapia de deprivação androgênica (ADT) é superior à radioterapia isolada, conforme demonstrado por múltiplos ensaios clínicos randomizados (EAU 2026, Section 6.2.3.a.4):
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-yellow-50 rounded-lg p-4 border border-yellow-100">
@@ -573,7 +573,7 @@ export default function TratamentoCancerProstata() {
               <div className="w-10 h-10 bg-[#B87333] rounded-lg flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Recomendações por Grupo de Risco (EAU 2025)</h2>
+              <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground">Recomendações por Grupo de Risco (EAU 2026)</h2>
             </div>
 
             {/* Baixo Risco */}
@@ -636,15 +636,11 @@ export default function TratamentoCancerProstata() {
                 </div>
                 <div className="flex gap-2 items-start">
                   <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
-                  <span><strong>ePLND:</strong> obrigatória quando RP é realizada (<strong>Strong</strong>)</span>
+                  <span><strong>ePLND:</strong> se a linfadenectomia for feita, deve ser estendida (<strong>Strong</strong>)</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
                   <span><strong>Boost com braquiterapia:</strong> LDR ou HDR boost + EBRT para intensificação de dose</span>
-                </div>
-                <div className="flex gap-2 items-start">
-                  <ShieldAlert className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
-                  <span>Não usar ADT neoadjuvante antes de RP</span>
                 </div>
               </div>
             </div>
@@ -659,7 +655,7 @@ export default function TratamentoCancerProstata() {
                 </div>
                 <div className="flex gap-2 items-start">
                   <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
-                  <span><strong>RP multimodal:</strong> em centros de referência, pacientes selecionados cT3a com baixo volume</span>
+                  <span><strong>RP multimodal:</strong> pacientes selecionados cN0, como parte de tratamento multimodal (<strong>Weak</strong>)</span>
                 </div>
                 <div className="flex gap-2 items-start">
                   <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
@@ -684,7 +680,7 @@ export default function TratamentoCancerProstata() {
 
             <div className="prose prose-lg max-w-none text-gray-700 dark:text-foreground mb-8">
               <p>
-                As terapias focais tratam apenas a área do tumor dentro da próstata, preservando o tecido saudável. Embora promissoras em termos de redução de efeitos colaterais, a EAU 2025 recomenda que sejam utilizadas <strong>apenas dentro de ensaios clínicos ou registros</strong> (recomendação <strong>Strong</strong>), devido à falta de dados comparativos de longo prazo.
+                As terapias focais tratam apenas a área do tumor dentro da próstata, preservando o tecido saudável. Embora promissoras em termos de redução de efeitos colaterais, a EAU 2026 recomenda que sejam utilizadas <strong>apenas dentro de ensaios clínicos ou registros</strong> (recomendação <strong>Strong</strong>), devido à falta de dados comparativos de longo prazo.
               </p>
             </div>
 
@@ -737,7 +733,7 @@ export default function TratamentoCancerProstata() {
 
             <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm mb-8">
               <p className="text-gray-700 dark:text-foreground leading-relaxed mb-4">
-                A EAU 2025 enfatiza que a escolha do tratamento deve ser uma <strong>decisão compartilhada</strong> entre médico e paciente, considerando não apenas as características do tumor, mas também os valores, preferências e expectativas do paciente em relação à qualidade de vida.
+                A EAU 2026 enfatiza que a escolha do tratamento deve ser uma <strong>decisão compartilhada</strong> entre médico e paciente, considerando não apenas as características do tumor, mas também os valores, preferências e expectativas do paciente em relação à qualidade de vida.
               </p>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-amber-50 rounded-lg p-4 text-center">
@@ -844,7 +840,7 @@ export default function TratamentoCancerProstata() {
                 },
                 {
                   q: "Posso fazer tratamento focal (HIFU)?",
-                  a: "As terapias focais (HIFU, crioterapia, PDT) são consideradas investigacionais pela EAU 2025 e devem ser realizadas apenas dentro de ensaios clínicos ou registros. Faltam dados comparativos de longo prazo (> 15 anos) para recomendação de rotina.",
+                  a: "As terapias focais (HIFU, crioterapia, PDT) são consideradas investigacionais pela EAU 2026 e devem ser realizadas apenas dentro de ensaios clínicos ou registros. Faltam dados comparativos de longo prazo (> 15 anos) para recomendação de rotina.",
                 },
                 {
                   q: "Após a cirurgia, o PSA deve zerar?",
@@ -870,7 +866,7 @@ export default function TratamentoCancerProstata() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <h2 className="text-2xl font-bold text-[#1C3D5A] dark:text-foreground mb-6">Referências</h2>
             <div className="bg-gray-50 dark:bg-card rounded-xl p-6 space-y-3 text-sm text-gray-600 dark:text-muted-foreground">
-              <p>1. EAU Guidelines on Prostate Cancer 2025. Chapter 6: Treatment. European Association of Urology.</p>
+              <p>1. EAU Guidelines on Prostate Cancer 2026. Chapter 6: Treatment. European Association of Urology.</p>
               <p>2. Hamdy FC, et al. Fifteen-Year Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. N Engl J Med. 2023;388:1547-1558. DOI: 10.1056/NEJMoa2214122</p>
               <p>3. Bill-Axelson A, et al. Radical Prostatectomy or Watchful Waiting in Prostate Cancer — 29-Year Follow-up (SPCG-4). N Engl J Med. 2018;379:2319-2329. DOI: 10.1056/NEJMoa1807801</p>
               <p>4. Wilt TJ, et al. Radical Prostatectomy versus Observation for Localized Prostate Cancer (PIVOT). N Engl J Med. 2017;377:132-142. DOI: 10.1056/NEJMoa1615869</p>

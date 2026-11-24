@@ -369,7 +369,7 @@ export default function CirurgiasMinimamenteInvasivas() {
             </table>
           </div>
           <p className="mt-4 text-[10px] text-[#1C3D5A] dark:text-foreground/40 text-center">
-            Fontes: EAU Guidelines 2025, AUA Guidelines 2025, Einstein/SP, H9J/SP.
+            Fontes: EAU Guidelines 2026, AUA Guidelines 2025, Einstein/SP, H9J/SP.
           </p>
         </div>
       </section>

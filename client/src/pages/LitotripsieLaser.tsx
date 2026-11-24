@@ -2,7 +2,7 @@ import { trackDoctoraliaClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Litotripsia a Laser — Guia Completo
- * Referências: EAU Guidelines on Urolithiasis 2025, AUA Surgical Management of Stones 2024, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines on Urolithiasis 2026, AUA Surgical Management of Stones 2024, Campbell-Walsh-Wein 13th Ed.
  */
 import { getPageMetadata } from "@shared/pageMetadata";
 import { motion } from "framer-motion";
@@ -63,7 +63,7 @@ export default function LitotripsieLaser() {
     <EducationalLayout
       title="Litotripsia a Laser: Guia Completo"
       subtitle="Tratamento de Cálculos Renais e Ureterais"
-      description="Tudo sobre litotripsia a laser para cálculos renais e ureterais: como funciona, indicações, tipos de laser, preparo, pós-operatório e complicações. Baseado nas diretrizes da EAU 2025 e AUA."
+      description="Tudo sobre litotripsia a laser para cálculos renais e ureterais: como funciona, indicações, tipos de laser, preparo, pós-operatório e complicações. Baseado nas diretrizes da EAU 2026 e AUA."
       accentColor="#2563EB"
       metaTitle={getPageMetadata("/educativo/litotripsia-laser").title}
       metaDescription={getPageMetadata("/educativo/litotripsia-laser").description}
@@ -76,7 +76,7 @@ export default function LitotripsieLaser() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-[#2563EB] p-6 rounded-r-lg mb-10">
               <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
-                A <strong>litotripsia a laser</strong> é o método mais moderno e eficaz para o tratamento de cálculos renais e ureterais (pedras nos rins e no ureter). O procedimento é realizado por via endoscópica (ureteroscopia), sem cortes, utilizando uma fibra de laser para fragmentar o cálculo em partículas minúsculas que são eliminadas naturalmente pela urina. Segundo as <strong>diretrizes da European Association of Urology (EAU 2025)</strong>, o laser Holmium:YAG e o Thulium Fiber Laser são as tecnologias recomendadas com grau de evidência forte.
+                A <strong>litotripsia a laser</strong> é o método mais moderno e eficaz para o tratamento de cálculos renais e ureterais (pedras nos rins e no ureter). O procedimento é realizado por via endoscópica (ureteroscopia), sem cortes, utilizando uma fibra de laser para fragmentar o cálculo em partículas minúsculas que são eliminadas naturalmente pela urina. Segundo as <strong>diretrizes da European Association of Urology (EAU 2026)</strong>, o laser Holmium:YAG e o Thulium Fiber Laser são as tecnologias recomendadas com grau de evidência forte.
               </p>
             </div>
           </motion.div>
@@ -114,7 +114,7 @@ export default function LitotripsieLaser() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-[#64748B] mt-3 italic">Recomendação forte — EAU 2025</p>
+                <p className="text-xs text-[#64748B] mt-3 italic">Recomendação forte — EAU 2026</p>
               </div>
               <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
@@ -137,13 +137,13 @@ export default function LitotripsieLaser() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-[#64748B] mt-3 italic">Nível de evidência 2a — EAU 2025</p>
+                <p className="text-xs text-[#64748B] mt-3 italic">Recomendação forte (nível de evidência 2a) — EAU 2026</p>
               </div>
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
               <p className="text-sm text-blue-800">
-                <strong>Recomendação EAU 2025 (Grau Forte):</strong> "Utilizar laser Holmium:YAG (Ho:YAG) ou Thulium Fiber Laser (TFL) para litotripsia durante ureteroscopia flexível." Ambas as tecnologias são igualmente recomendadas, com o TFL apresentando resultados promissores em estudos recentes.
+                <strong>Recomendação EAU 2026 (Grau Forte):</strong> "Utilizar laser Holmium:YAG (Ho:YAG) ou Thulium Fiber Laser (TFL) para litotripsia durante ureteroscopia flexível." Ambas as tecnologias são igualmente recomendadas, com o TFL apresentando resultados promissores em estudos recentes.
               </p>
             </div>
           </motion.div>
@@ -211,7 +211,7 @@ export default function LitotripsieLaser() {
 
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-6">
               <p className="text-sm text-amber-800">
-                <strong>Nota importante (EAU 2025):</strong> O tempo operatório prolongado (acima de 90 minutos) está associado a maior taxa de complicações. O cirurgião deve equilibrar a completude da remoção do cálculo com a segurança do paciente, podendo optar por um segundo procedimento (staged procedure) em casos complexos.
+                <strong>Nota importante (EAU 2026):</strong> O tempo operatório prolongado (acima de 90 minutos) está associado a maior taxa de complicações. O cirurgião deve equilibrar a completude da remoção do cálculo com a segurança do paciente, podendo optar por um segundo procedimento (staged procedure) em casos complexos.
               </p>
             </div>
           </motion.div>
@@ -295,7 +295,7 @@ export default function LitotripsieLaser() {
                 },
                 {
                   title: "Cálculos de polo inferior do rim",
-                  desc: "A EAU 2025 recomenda URS ou PCNL para cálculos de polo inferior mesmo acima de 1 cm, pois a eficácia da LECO é limitada nessa localização devido à dificuldade de eliminação dos fragmentos.",
+                  desc: "A EAU 2026 recomenda URS ou PCNL para cálculos de polo inferior mesmo acima de 1 cm, pois a eficácia da LECO é limitada nessa localização devido à dificuldade de eliminação dos fragmentos.",
                   icon: MapPin,
                 },
                 {
@@ -364,7 +364,7 @@ export default function LitotripsieLaser() {
               </table>
             </div>
             <p className="text-xs text-[#64748B] italic">
-              * PCNL pode ser usada para cálculos ureterais proximais grandes em casos selecionados. Fonte: EAU Guidelines on Urolithiasis 2025.
+              * PCNL pode ser usada para cálculos ureterais proximais grandes em casos selecionados. Fonte: EAU Guidelines on Urolithiasis 2026.
             </p>
           </motion.div>
 
@@ -530,7 +530,7 @@ export default function LitotripsieLaser() {
                   ))}
                 </div>
                 <p className="text-xs text-[#64748B] mt-3 italic">
-                  EAU 2025: α-bloqueadores (como tansulosina) podem reduzir os sintomas do stent e episódios de cólica. Stent com fio (on a string) resulta em menor tempo de permanência e melhores desfechos relatados pelo paciente.
+                  EAU 2026: α-bloqueadores (como tansulosina) podem reduzir os sintomas do stent e episódios de cólica. Stent com fio (on a string) resulta em menor tempo de permanência e melhores desfechos relatados pelo paciente.
                 </p>
               </div>
             </div>
@@ -634,7 +634,7 @@ export default function LitotripsieLaser() {
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
               <p className="text-sm text-blue-800">
-                <strong>Fatores de risco para complicações (EAU 2025):</strong> Perfurações prévias, urocultura pré-operatória positiva, comorbidades, tempo operatório prolongado (&gt; 90 min) e pressão intrarrenal elevada são os principais fatores de risco. A profilaxia antibiótica e o controle do tempo cirúrgico são medidas essenciais para minimizar complicações.
+                <strong>Fatores de risco para complicações (EAU 2026):</strong> Perfurações prévias, urocultura pré-operatória positiva, comorbidades, tempo operatório prolongado (&gt; 90 min) e pressão intrarrenal elevada são os principais fatores de risco. A profilaxia antibiótica e o controle do tempo cirúrgico são medidas essenciais para minimizar complicações.
               </p>
             </div>
           </motion.div>

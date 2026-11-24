@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Cálculos Renais — prevenção, tratamentos minimamente invasivos e cateter duplo J
- * Referências: EAU Guidelines on Urolithiasis 2025, AUA Surgical Management of Stones 2025, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines on Urolithiasis 2026, AUA Surgical Management of Stones 2025, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
@@ -69,7 +69,7 @@ const treatments: Treatment[] = [
     icon: <Flame className="w-6 h-6" />,
     description: "Procedimento endoscópico que utiliza um ureteroscópio flexível ultrafino introduzido pela uretra para acessar o rim e fragmentar cálculos com laser holmium ou thulium. É a técnica mais versátil para cálculos renais de até 20mm e cálculos ureterais de qualquer localização.",
     howItWorks: "Um ureteroscópio flexível (diâmetro ~7.5Fr, ~2.5mm) é introduzido pela uretra, passa pela bexiga e sobe pelo ureter até o rim. Uma fibra de laser holmium (ou thulium) é passada pelo canal de trabalho do aparelho e utilizada para fragmentar o cálculo em pó (técnica 'dusting') ou em fragmentos que são extraídos com basket (cesta). Todo o procedimento é visualizado em tempo real por câmera de alta definição.",
-    indication: "Cálculos renais ≤20mm (primeira linha — EAU 2025). Cálculos ureterais de qualquer localização e tamanho. Alternativa à LECO quando esta falha ou é contraindicada. Pacientes em uso de anticoagulantes. Cálculos em rim transplantado ou anomalias anatômicas.",
+    indication: "Cálculos renais até 20mm (uma das opções de primeira linha, ao lado da LECO — EAU 2026). Cálculos ureterais de qualquer localização e tamanho. Alternativa à LECO quando esta falha ou é contraindicada. Pacientes em uso de anticoagulantes. Cálculos em rim transplantado ou anomalias anatômicas.",
     advantages: [
       "Alta taxa stone-free (>85% para cálculos <20mm)",
       "Trata cálculos em qualquer localização do rim e ureter",
@@ -95,7 +95,7 @@ const treatments: Treatment[] = [
     icon: <Target className="w-6 h-6" />,
     description: "Procedimento endoscópico com ureteroscópio semirrígido para tratamento de cálculos ureterais, especialmente os localizados no ureter médio e distal. Utiliza laser holmium ou pneumático para fragmentação.",
     howItWorks: "Um ureteroscópio semirrígido (mais robusto que o flexível) é introduzido pela uretra e avançado pelo ureter até o nível do cálculo. O cálculo é visualizado diretamente e fragmentado com laser holmium ou litotriptor pneumático. Os fragmentos são extraídos com basket ou eliminados espontaneamente.",
-    indication: "Cálculos ureterais médios e distais (primeira linha — EAU 2025). Cálculos ureterais proximais quando a URS flexível não está disponível. Cálculos impactados no ureter.",
+    indication: "Cálculos do ureter distal (primeira linha acima de 10mm; abaixo de 10mm, opção equivalente à LECO — EAU 2026) e do ureter médio. Cálculos ureterais proximais quando a URS flexível não está disponível. Cálculos impactados no ureter.",
     advantages: [
       "Excelente taxa stone-free para cálculos ureterais distais (>95%)",
       "Instrumento robusto com boa visibilidade",
@@ -119,7 +119,7 @@ const treatments: Treatment[] = [
     icon: <Shield className="w-6 h-6" />,
     description: "Procedimento que acessa o rim através de um pequeno orifício na pele da região lombar para fragmentar e remover cálculos grandes (>20mm), coraliformes ou complexos. É o padrão-ouro para cálculos renais grandes e oferece a maior taxa stone-free em um único procedimento.",
     howItWorks: "Sob anestesia geral, uma punção percutânea é realizada na região lombar guiada por fluoroscopia e/ou ultrassom, criando um acesso direto ao sistema coletor renal. O trajeto é dilatado e um nefroscópio é introduzido. O cálculo é fragmentado com laser, ultrassom ou litotriptor pneumático e os fragmentos são aspirados ou extraídos. Variantes miniaturizadas (mini-NLPC com bainha de 14-20Fr, micro-NLPC com 4.8Fr) reduzem a morbidade para cálculos menores.",
-    indication: "Cálculos renais >20mm (primeira linha — EAU 2025). Cálculos coraliformes (staghorn). Cálculos em divertículo calicinal de difícil acesso. Falha de URS ou LECO. Cálculos de cistina ou brushita (resistentes à LECO).",
+    indication: "Cálculos renais >20mm (primeira linha — EAU 2026). Cálculos coraliformes (staghorn). Cálculos em divertículo calicinal de difícil acesso. Falha de URS ou LECO. Cálculos de cistina ou brushita (resistentes à LECO).",
     advantages: [
       "Maior taxa stone-free em um único procedimento (>90% para cálculos >20mm)",
       "Padrão-ouro para cálculos grandes e coraliformes",
@@ -141,12 +141,12 @@ const treatments: Treatment[] = [
 ];
 
 const preventionTips = [
-  { icon: <GlassWater className="w-5 h-5" />, title: "Hidratação", detail: "Ingerir 2,5 a 3 litros de líquidos por dia para manter débito urinário >2,5L/dia. A urina deve estar sempre clara (cor de palha). A hidratação é a medida isolada mais eficaz na prevenção de recorrência (reduz em ~40%).", source: "EAU Guidelines 2025" },
-  { icon: <Apple className="w-5 h-5" />, title: "Dieta balanceada", detail: "Reduzir sódio (<5g/dia de sal), proteína animal (0,8-1g/kg/dia) e açúcar refinado. Manter ingestão normal de cálcio (1000-1200mg/dia) — NÃO restringir cálcio, pois isso aumenta a absorção intestinal de oxalato. Aumentar frutas, verduras e fibras.", source: "EAU/AUA Guidelines 2025" },
-  { icon: <Sun className="w-5 h-5" />, title: "Citrato", detail: "Aumentar ingestão de citrato (limonada, suco de laranja natural) — o citrato é o principal inibidor da cristalização de cálcio. Em casos refratários, suplementação com citrato de potássio pode ser prescrita.", source: "EAU Guidelines 2025" },
+  { icon: <GlassWater className="w-5 h-5" />, title: "Hidratação", detail: "Ingerir 2,5 a 3 litros de líquidos por dia para manter débito urinário >2,5L/dia. A urina deve estar sempre clara (cor de palha). A hidratação é a medida isolada mais eficaz na prevenção de recorrência.", source: "EAU Guidelines 2026" },
+  { icon: <Apple className="w-5 h-5" />, title: "Dieta balanceada", detail: "Reduzir sódio (<5g/dia de sal), proteína animal (0,8-1g/kg/dia) e açúcar refinado. Manter ingestão normal de cálcio (1000-1200mg/dia) — NÃO restringir cálcio, pois isso aumenta a absorção intestinal de oxalato. Aumentar frutas, verduras e fibras.", source: "EAU Guidelines 2026 / AUA" },
+  { icon: <Sun className="w-5 h-5" />, title: "Citrato", detail: "Aumentar ingestão de citrato (limonada, suco de laranja natural) — o citrato é o principal inibidor da cristalização de cálcio. Em casos refratários, suplementação com citrato de potássio pode ser prescrita.", source: "EAU Guidelines 2026" },
   { icon: <Dumbbell className="w-5 h-5" />, title: "Peso e exercício", detail: "Manter IMC <25. Obesidade e síndrome metabólica aumentam o risco de cálculos de ácido úrico e oxalato de cálcio. Exercício regular moderado reduz o risco.", source: "Campbell-Walsh-Wein 13th Ed." },
-  { icon: <Pill className="w-5 h-5" />, title: "Avaliação metabólica", detail: "Após o primeiro episódio de cálculo, especialmente em pacientes de alto risco ou recorrentes, uma avaliação metabólica completa (urina de 24h, sangue) é essencial para identificar distúrbios como hipercalciúria, hiperuricosúria, hipocitratúria e hiperoxalúria, permitindo tratamento direcionado.", source: "EAU/AUA Guidelines 2025" },
-  { icon: <Stethoscope className="w-5 h-5" />, title: "Acompanhamento", detail: "Cálculos renais têm taxa de recorrência de 50% em 5-10 anos sem prevenção. Com medidas adequadas, essa taxa cai para 10-15%. Acompanhamento com exames de imagem periódicos é fundamental.", source: "EAU Guidelines 2025" },
+  { icon: <Pill className="w-5 h-5" />, title: "Avaliação metabólica", detail: "Após o primeiro cálculo, todos devem fazer análise do cálculo e avaliação metabólica básica (exames de sangue e urina). Em pacientes de alto risco ou recorrentes, a avaliação metabólica completa (urina de 24h) é essencial para identificar distúrbios como hipercalciúria, hiperuricosúria, hipocitratúria e hiperoxalúria, permitindo tratamento direcionado.", source: "EAU Guidelines 2026 / AUA" },
+  { icon: <Stethoscope className="w-5 h-5" />, title: "Acompanhamento", detail: "Cerca de 1 em cada 4 pessoas tem um novo cálculo em até 5 anos após o primeiro episódio, e pouco mais de 10% têm recorrências frequentes. Acompanhamento com exames de imagem periódicos é fundamental.", source: "EAU Guidelines 2026" },
 ];
 
 function TreatmentCard({ treatment, index }: { treatment: Treatment; index: number }) {
@@ -397,8 +397,8 @@ export default function CalculosRenais() {
             {[
               { size: "< 5mm", rec: "Tratamento conservador (expulsivo) — hidratação + alfa-bloqueador. Eliminação espontânea em 68-98% dos casos.", color: "emerald" },
               { size: "5-10mm", rec: "URS (ureteroscopia) ou LECO, dependendo da localização. Alfa-bloqueador como terapia expulsiva pode ser tentado para cálculos ureterais distais de 5-10mm.", color: "blue" },
-              { size: "10-20mm", rec: "URS flexível com laser (primeira linha para cálculos renais). LECO como alternativa para cálculos <15mm de baixa densidade.", color: "amber" },
-              { size: "> 20mm", rec: "NLPC (primeira linha — EAU 2025). URS flexível em dois tempos (staged) como alternativa. LECO não recomendada.", color: "red" },
+              { size: "10-20mm", rec: "LECO ou endourologia (URS flexível ou mini-NLPC), conforme o caso. No polo inferior com fatores desfavoráveis à LECO, a endourologia é a primeira opção (EAU 2026).", color: "amber" },
+              { size: "> 20mm", rec: "NLPC (primeira linha — EAU 2026). URS flexível (pode exigir mais de um tempo) ou LECO como alternativas quando a NLPC não for possível.", color: "red" },
               { size: "Coraliforme", rec: "NLPC (padrão-ouro). Pode necessitar de múltiplos acessos ou combinação com URS flexível (ECIRS — Endoscopic Combined Intrarenal Surgery).", color: "purple" },
             ].map((item, i) => (
               <motion.div

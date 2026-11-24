@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Prótese Peniana — Tipos, Indicação, Cirurgia e Recuperação
- * Referências: EAU Guidelines on Sexual and Reproductive Health 2025, AUA Erectile Dysfunction Guideline 2018, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines on Sexual and Reproductive Health 2026, AUA Erectile Dysfunction Guideline 2018, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -153,7 +153,7 @@ const faqs = [
 ];
 
 const references = [
-  { num: 1, text: "Salonia A et al. EAU Guidelines on Sexual and Reproductive Health — Erectile Dysfunction: Penile Prostheses. European Association of Urology, 2025." },
+  { num: 1, text: "Salonia A et al. EAU Guidelines on Sexual and Reproductive Health — Erectile Dysfunction: Penile Prostheses. European Association of Urology, 2026." },
   { num: 2, text: "Burnett AL et al. Erectile Dysfunction: AUA Guideline. J Urol. 2018;200(3):633-641." },
   { num: 3, text: "Wilson SK et al. Long-term survival of inflatable penile prostheses: single surgical group experience with 2,384 first-time implants spanning two decades. J Sex Med. 2007;4(4 Pt 1):1074-1079." },
   { num: 4, text: "Carson CC et al. Efficacy, safety and patient satisfaction outcomes of the AMS 700CX inflatable penile prosthesis: results of a long-term multicenter study. J Urol. 2000;164(2):376-380." },
@@ -178,7 +178,7 @@ export default function ProtesePeniana() {
     <EducationalLayout
       title="Prótese Peniana"
       subtitle="Tipos, Indicação, Cirurgia e Recuperação"
-      description="Guia sobre a prótese peniana para disfunção erétil: quando é indicada, diferenças entre prótese inflável e maleável, como é a cirurgia, recuperação e riscos. Baseado nas diretrizes EAU 2025 e AUA."
+      description="Guia sobre a prótese peniana para disfunção erétil: quando é indicada, diferenças entre prótese inflável e maleável, como é a cirurgia, recuperação e riscos. Baseado nas diretrizes EAU 2026 e AUA."
       accentColor="#7C3AED"
       answerSummary="A prótese peniana é um implante colocado por cirurgia nos corpos cavernosos para tratar a disfunção erétil quando os remédios e outras opções não funcionam ou não são bem tolerados. Existem modelos infláveis e maleáveis; a escolha é feita em consulta, depois de explicar riscos como infecção e falha mecânica. O urologista Dr. Felipe de Bulhões (CRM-SP 202291, RQE 146538) faz a avaliação em São Paulo (Av. Paulista e Pinheiros) e em Campinas."
       metaTitle="Prótese Peniana em São Paulo e Campinas | Dr. Felipe de Bulhões"
@@ -222,7 +222,7 @@ export default function ProtesePeniana() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Quando a Prótese é Indicada?</h2>
             <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-              Situações em que a prótese peniana costuma ser discutida — EAU 2025 e AUA
+              Situações em que a prótese peniana costuma ser discutida — EAU 2026 e AUA
             </p>
           </motion.div>
           <div className="bg-white dark:bg-card rounded-xl border border-gray-200 dark:border-border p-6 shadow-sm">

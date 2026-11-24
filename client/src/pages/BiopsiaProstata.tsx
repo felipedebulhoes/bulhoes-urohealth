@@ -2,7 +2,7 @@ import { trackDoctoraliaClick } from "@/lib/analytics";
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Biópsia de Próstata — Guia Completo
- * Referências: EAU Guidelines 2025, AUA 2024, SBU, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines 2026, AUA 2024, SBU, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import {
@@ -56,7 +56,7 @@ export default function BiopsiaProstata() {
     <EducationalLayout
       title="Biópsia de Próstata: Guia Completo"
       subtitle="Procedimento Diagnóstico"
-      description="Tudo o que você precisa saber sobre a biópsia de próstata: indicações, preparo, como é realizada, pós-procedimento e possíveis complicações. Informações baseadas nas diretrizes da EAU 2025, AUA e SBU."
+      description="Tudo o que você precisa saber sobre a biópsia de próstata: indicações, preparo, como é realizada, pós-procedimento e possíveis complicações. Informações baseadas nas diretrizes da EAU 2026, AUA e SBU."
       accentColor="#8D7B6B"
       metaTitle="Biópsia de Próstata: Como é Feita, Preparo e Complicações | Dr. Felipe de Bulhões"
       metaDescription="Guia completo sobre biópsia de próstata: indicações, preparo, técnicas (transperineal e transretal), pós-biópsia e complicações. Procedimento realizado no Campinas Day Hospital."
@@ -69,7 +69,7 @@ export default function BiopsiaProstata() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-[#B87333] p-6 rounded-r-lg mb-10">
               <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
-                A biópsia de próstata é o <strong>exame definitivo para o diagnóstico do câncer de próstata</strong>. Consiste na coleta de pequenos fragmentos de tecido prostático para análise microscópica (histopatológica). Segundo as <strong>diretrizes da European Association of Urology (EAU 2025)</strong>, a biópsia deve ser precedida por ressonância magnética multiparamétrica (mpMRI) e realizada preferencialmente pela <strong>via transperineal</strong>, que apresenta menor risco de infecção.
+                A biópsia de próstata é o <strong>exame definitivo para o diagnóstico do câncer de próstata</strong>. Consiste na coleta de pequenos fragmentos de tecido prostático para análise microscópica (histopatológica). Segundo as <strong>diretrizes da European Association of Urology (EAU 2026)</strong>, a biópsia deve ser precedida por ressonância magnética multiparamétrica (mpMRI) e realizada preferencialmente pela <strong>via transperineal</strong>, que apresenta menor risco de infecção.
               </p>
             </div>
           </motion.div>
@@ -100,7 +100,7 @@ export default function BiopsiaProstata() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-[#64748B] mt-3 italic">Fonte: EAU Guidelines 2025</p>
+                <p className="text-xs text-[#64748B] mt-3 italic">Fonte: EAU Guidelines 2026</p>
               </div>
               <div className="bg-white dark:bg-card border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 bg-[#B87333]/10 rounded-lg flex items-center justify-center mb-4">
@@ -118,12 +118,12 @@ export default function BiopsiaProstata() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-[#64748B] mt-3 italic">Fonte: EAU Guidelines 2025 — PRECISION Trial</p>
+                <p className="text-xs text-[#64748B] mt-3 italic">Fonte: EAU Guidelines 2026 — PRECISION Trial</p>
               </div>
             </div>
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-6">
               <p className="text-sm text-amber-800">
-                <strong>Recomendação atual (EAU 2025):</strong> A combinação de biópsia sistemática + biópsia dirigida (quando há lesão na RM) é o padrão-ouro, pois a biópsia dirigida isolada pode perder até 16% dos cânceres clinicamente significativos (ISUP GG ≥ 2).
+                <strong>Recomendação atual (EAU 2026):</strong> com RM positiva (PI-RADS ≥ 4), biópsia dirigida com amostragem perilesional (ao redor da lesão). Omitir a biópsia sistemática em quem nunca fez biópsia deixaria de detectar cerca de 16% dos cânceres clinicamente significativos (ISUP GG ≥ 2).
               </p>
             </div>
           </motion.div>
@@ -176,7 +176,7 @@ export default function BiopsiaProstata() {
             </div>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
               <p className="text-sm text-blue-800">
-                <strong>Fluxo diagnóstico recomendado (EAU 2025):</strong> PSA + Toque Retal → Ressonância Magnética Multiparamétrica → Biópsia (se PI-RADS ≥ 3 ou alta suspeita clínica). A RM antes da biópsia é o padrão atual e permite evitar biópsias desnecessárias em até 28% dos casos.
+                <strong>Fluxo diagnóstico recomendado (EAU 2026):</strong> PSA + Toque Retal → Ressonância Magnética Multiparamétrica → Biópsia (se PI-RADS ≥ 4, ou PI-RADS 3 quando a densidade do PSA for ≥ 0,10 ou houver história familiar, ou alta suspeita clínica). A RM antes da biópsia é o padrão atual e permite evitar cerca de 30% das biópsias.
               </p>
             </div>
           </motion.div>
@@ -207,7 +207,7 @@ export default function BiopsiaProstata() {
                 {
                   step: "3",
                   title: "Antibioticoprofilaxia",
-                  desc: "Para biópsia transretal: antibiótico profilático é obrigatório (geralmente fluoroquinolona ou antibiótico direcionado por cultura retal). Para biópsia transperineal: a profilaxia antibiótica pode ser omitida em muitos protocolos, conforme recomendação da EAU 2025.",
+                  desc: "Para biópsia transretal: antibiótico profilático é obrigatório, de preferência guiado por cultura retal (ou associação de duas classes). Para biópsia transperineal: a profilaxia antibiótica pode ser omitida em quem não tem fatores de risco para infecção, conforme recomendação da EAU 2026.",
                 },
                 {
                   step: "4",
@@ -255,7 +255,7 @@ export default function BiopsiaProstata() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4} className="mb-14">
             <h2 className="text-2xl lg:text-3xl text-[#1C3D5A] dark:text-foreground font-serif mb-6">Como é Realizada a Biópsia?</h2>
             <p className="text-[#334155] leading-relaxed mb-6">
-              A biópsia de próstata pode ser realizada por duas vias de acesso: <strong>transperineal</strong> (pela pele do períneo, entre o escroto e o ânus) ou <strong>transretal</strong> (através do reto). A via transperineal é atualmente preferida pela EAU 2025 devido ao menor risco de infecção.
+              A biópsia de próstata pode ser realizada por duas vias de acesso: <strong>transperineal</strong> (pela pele do períneo, entre o escroto e o ânus) ou <strong>transretal</strong> (através do reto). A via transperineal é atualmente preferida pela EAU 2026 devido ao menor risco de infecção.
             </p>
 
             {/* Comparação das vias */}
@@ -273,7 +273,7 @@ export default function BiopsiaProstata() {
                 { feat: "Dor durante o procedimento", tp: "Moderada (maior)", tr: "Leve a moderada" },
                 { feat: "Acesso a tumores anteriores", tp: "Melhor", tr: "Limitado" },
                 { feat: "Preparo intestinal", tp: "Geralmente não necessário", tr: "Recomendado" },
-                { feat: "Recomendação EAU 2025", tp: "Preferida ✓", tr: "Alternativa" },
+                { feat: "Recomendação EAU 2026", tp: "Preferida ✓", tr: "Alternativa" },
               ].map((row, i) => (
                 <div key={i} className={`grid grid-cols-3 text-sm ${i % 2 === 0 ? "bg-gray-50 dark:bg-card" : "bg-white"}`}>
                   <div className="p-4 font-medium text-[#1C3D5A] dark:text-foreground">{row.feat}</div>
@@ -283,7 +283,7 @@ export default function BiopsiaProstata() {
               ))}
               <div className="p-3 bg-gray-50 dark:bg-card border-t border-gray-200 dark:border-border">
                 <p className="text-xs text-[#64748B] italic text-center">
-                  Fonte: EAU Guidelines 2025 — Meta-análise de 13 estudos com 4.516 pacientes (LE 1a)
+                  Fonte: EAU Guidelines 2026 — Meta-análise de 13 estudos com 4.516 pacientes (LE 1a)
                 </p>
               </div>
             </div>
@@ -427,7 +427,7 @@ export default function BiopsiaProstata() {
                 },
                 {
                   title: "Infecção",
-                  desc: "Infecção urinária pode ocorrer em 2-6% dos casos na via transretal. Sepse (infecção grave) ocorre em 0,9% na via transretal e apenas 0,1% na via transperineal (EAU 2025, meta-análise com 162.577 pacientes). A via transperineal reduziu significativamente esse risco.",
+                  desc: "Infecção urinária pode ocorrer em 2-6% dos casos na via transretal. Sepse (infecção grave) ocorre em 0,9% na via transretal e apenas 0,1% na via transperineal (EAU 2026, meta-análise com 162.577 pacientes). A via transperineal reduziu significativamente esse risco.",
                   severity: "Incomum — potencialmente grave",
                   color: "red",
                 },
@@ -515,7 +515,7 @@ export default function BiopsiaProstata() {
               ))}
               <div className="p-3 bg-gray-50 dark:bg-card border-t border-gray-200 dark:border-border">
                 <p className="text-xs text-[#64748B] italic text-center">
-                  Fonte: ISUP 2014 / WHO Classification 2022 — EAU Guidelines 2025
+                  Fonte: ISUP 2014 / WHO Classification 2022 — EAU Guidelines 2026
                 </p>
               </div>
             </div>

@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Tratamentos para HPB — comparação completa de técnicas
- * Referências: EAU Guidelines 2025, AUA Guidelines 2025, Campbell-Walsh-Wein 12th Ed.
+ * Referências: EAU Guidelines 2026, AUA Guidelines 2025, Campbell-Walsh-Wein 12th Ed.
  */
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
@@ -61,7 +61,7 @@ const treatments: Treatment[] = [
       "Não trata a obstrução mecânica — apenas alivia sintomas",
     ],
     preservesEjaculation: "parcial",
-    evidenceLevel: "Recomendação forte — EAU/AUA 2025",
+    evidenceLevel: "Recomendação forte — EAU 2026 / AUA 2025",
   },
   /* ── CIRÚRGICO TRADICIONAL: RTU MONOPOLAR ── */
   {
@@ -93,7 +93,7 @@ const treatments: Treatment[] = [
       "Taxa de retratamento de 5-10% em 10 anos",
     ],
     preservesEjaculation: false,
-    evidenceLevel: "Recomendação forte — EAU/AUA 2025",
+    evidenceLevel: "Recomendação forte — EAU 2026 / AUA 2025",
   },
   /* ── CIRÚRGICO TRADICIONAL: RTU BIPOLAR ── */
   {
@@ -125,7 +125,7 @@ const treatments: Treatment[] = [
       "Curva de aprendizado semelhante à monopolar",
     ],
     preservesEjaculation: false,
-    evidenceLevel: "Recomendação forte — EAU 2025 (preferida sobre monopolar)",
+    evidenceLevel: "Recomendação forte — EAU 2026 (mesma eficácia da monopolar, com perfil de segurança perioperatória mais favorável)",
   },
   /* ── LASER: HoLEP ── */
   {
@@ -135,15 +135,15 @@ const treatments: Treatment[] = [
     type: "cirurgico-laser",
     icon: <Flame className="w-6 h-6" />,
     description:
-      "Considerada o padrão-ouro moderno pela EAU 2025 para o tratamento cirúrgico da HPB. É o único tratamento cirúrgico independente do tamanho da próstata. O laser holmium enuclea (descasca) todo o adenoma prostático da cápsula cirúrgica, simulando a cirurgia aberta por via endoscópica. Resultados duráveis com menor sangramento e menor taxa de retratamento.",
+      "Recomendada pela EAU 2026 (recomendação forte) como alternativa à RTU e à cirurgia aberta, sem limite de tamanho prostático nas diretrizes, assim como as outras técnicas de enucleação. O laser holmium enuclea (descasca) todo o adenoma prostático da cápsula cirúrgica, simulando a cirurgia aberta por via endoscópica. Resultados duráveis com menor sangramento e menor taxa de retratamento.",
     howItWorks:
       "O laser holmium (comprimento de onda 2.140nm) é utilizado para separar o adenoma prostático da cápsula cirúrgica por enucleação — o tecido é 'descascado' em lobos inteiros e empurrado para dentro da bexiga. Em seguida, um morcelador fragmenta o tecido dentro da bexiga para remoção por aspiração. Todo o tecido é recuperado para análise anatomopatológica.",
-    prostateSize: "Qualquer tamanho (único sem limite — EAU 2025)",
+    prostateSize: "Qualquer tamanho (sem limite nas diretrizes EAU 2026)",
     anesthesia: "Raquianestesia ou geral",
     recovery: "1 a 3 semanas",
     hospitalization: "1 a 2 dias (cateter geralmente 24h)",
     advantages: [
-      "Único tratamento independente do tamanho prostático (EAU 2025)",
+      "Sem limite de tamanho prostático (EAU 2026)",
       "Padrão-ouro moderno — enucleação completa do adenoma",
       "Menor sangramento — seguro em pacientes anticoagulados",
       "Menor tempo de cateter (geralmente 24 horas)",
@@ -158,7 +158,7 @@ const treatments: Treatment[] = [
       "Disponibilidade ainda limitada em alguns centros no Brasil",
     ],
     preservesEjaculation: false,
-    evidenceLevel: "Recomendação forte — EAU 2025 (padrão-ouro moderno)",
+    evidenceLevel: "Recomendação forte — EAU 2026",
   },
   /* ── LASER: ThuLEP ── */
   {
@@ -190,7 +190,7 @@ const treatments: Treatment[] = [
       "Dados de longo prazo (>10 anos) ainda menores que HoLEP",
     ],
     preservesEjaculation: false,
-    evidenceLevel: "Recomendação forte — EAU 2025 (equivalente ao HoLEP)",
+    evidenceLevel: "Recomendação fraca — EAU 2026 (eficácia semelhante ao HoLEP)",
   },
   /* ── LASER: Green Light ── */
   {
@@ -221,7 +221,7 @@ const treatments: Treatment[] = [
       "Limitada a próstatas moderadas na técnica de vaporização pura",
     ],
     preservesEjaculation: false,
-    evidenceLevel: "Recomendação condicional — EAU/AUA 2025",
+    evidenceLevel: "Recomendação forte — EAU 2026 (30-80 ml)",
   },
   /* ── MIST: Aquablation ── */
   {
@@ -234,7 +234,7 @@ const treatments: Treatment[] = [
       "Técnica guiada por ultrassom transretal em tempo real e executada por braço robótico. Utiliza jato d'água de alta pressão para remover o tecido prostático com precisão milimétrica. Destaca-se pela padronização do procedimento (independe da habilidade manual na fase de ablação) e pela possibilidade de preservação da ejaculação.",
     howItWorks:
       "O ultrassom transretal mapeia a anatomia prostática em 3D. O cirurgião define a área de ressecção em um software, delimitando as zonas a serem tratadas e as que devem ser preservadas. O braço robótico executa a ablação com jato d'água pressurizado (salina). Após a ablação, é realizada hemostasia com balão de tração ou eletrocautério.",
-    prostateSize: "30 a 150 ml",
+    prostateSize: "30 a 80 ml (EAU 2026)",
     anesthesia: "Geral",
     recovery: "2 a 4 semanas",
     hospitalization: "1 a 2 dias",
@@ -253,7 +253,7 @@ const treatments: Treatment[] = [
       "Sem tecido para análise anatomopatológica",
     ],
     preservesEjaculation: "parcial",
-    evidenceLevel: "Recomendação condicional — EAU/AUA 2025",
+    evidenceLevel: "Recomendação forte — EAU 2026 (30-80 ml)",
   },
   /* ── MIST: Rezum ── */
   {
@@ -286,7 +286,7 @@ const treatments: Treatment[] = [
       "Sintomas irritativos transitórios significativos nas primeiras semanas",
     ],
     preservesEjaculation: true,
-    evidenceLevel: "Recomendação condicional — AUA 2025 | Mencionado EAU 2025",
+    evidenceLevel: "Recomendação condicional — AUA 2025 · Em investigação, sem recomendação — EAU 2026",
   },
   /* ── MIST: UroLift ── */
   {
@@ -319,7 +319,7 @@ const treatments: Treatment[] = [
       "Melhora do IPSS inferior à RTU e enucleação",
     ],
     preservesEjaculation: true,
-    evidenceLevel: "Recomendação condicional — AUA 2025",
+    evidenceLevel: "Recomendação condicional — AUA 2025 · Recomendação forte — EAU 2026 (<70 ml, sem lobo mediano)",
   },
   /* ── ENUCLEAÇÃO: BipolEP ── */
   {
@@ -351,7 +351,7 @@ const treatments: Treatment[] = [
       "Dados de longo prazo (>10 anos) ainda em acúmulo",
     ],
     preservesEjaculation: false,
-    evidenceLevel: "Recomendação forte — EAU 2026 (equivalente ao HoLEP/ThuLEP)",
+    evidenceLevel: "Recomendação fraca — EAU 2026 (alternativa à RTU)",
   },
   /* ── ENUCLEAÇÃO: DiLEP ── */
   {
@@ -382,7 +382,7 @@ const treatments: Treatment[] = [
       "Dados de longo prazo limitados",
     ],
     preservesEjaculation: false,
-    evidenceLevel: "Recomendação condicional — EAU 2026 (evidência em crescimento)",
+    evidenceLevel: "Sem recomendação — EAU 2026 (evidência insuficiente)",
   },
   /* ── RESSECÇÃO: TUIP ── */
   {
@@ -413,7 +413,7 @@ const treatments: Treatment[] = [
       "Taxa de retratamento superior à RTU (15-20% em 10 anos)",
     ],
     preservesEjaculation: "parcial",
-    evidenceLevel: "Recomendação condicional — EAU 2026 (próstatas <30ml)",
+    evidenceLevel: "Recomendação forte — EAU 2026 (próstatas <30ml)",
   },
   /* ── VAPORIZAÇÃO: TUVis ── */
   {
@@ -505,7 +505,7 @@ const treatments: Treatment[] = [
       "Disponibilidade muito restrita",
     ],
     preservesEjaculation: true,
-    evidenceLevel: "Recomendação condicional — EAU 2026 (dados limitados)",
+    evidenceLevel: "Em investigação, sem recomendação — EAU 2026",
   },
   /* ── NÃO-ABLATIVA: PAE ── */
   {
@@ -539,7 +539,7 @@ const treatments: Treatment[] = [
       "Sem tecido para análise anatomopatológica",
     ],
     preservesEjaculation: true,
-    evidenceLevel: "NÃO recomendada — EAU 2026 (apenas em contexto de pesquisa)",
+    evidenceLevel: "Recomendação fraca — EAU 2026 (ainda em investigação; resultados inferiores à RTU)",
   },
   /* ── ABERTA/ROBÓTICA ── */
   {
@@ -572,7 +572,7 @@ const treatments: Treatment[] = [
       "Robótica: custo elevado e disponibilidade limitada",
     ],
     preservesEjaculation: false,
-    evidenceLevel: "Recomendação condicional — EAU/AUA 2025 (quando laser indisponível)",
+    evidenceLevel: "Recomendação forte — EAU 2026 para a aberta (>80 ml, sem enucleação endoscópica disponível); robótica sem recomendação formal",
   },
 ];
 
@@ -738,7 +738,7 @@ export default function TratamentosHPB() {
               O tratamento é escalonado: inicia-se com <strong>medidas comportamentais e medicamentos</strong>, progredindo para <strong>procedimentos minimamente invasivos (MISTs)</strong> ou <strong>cirurgias</strong> quando o tratamento clínico falha ou há complicações. A escolha depende da intensidade dos sintomas, do tamanho da próstata, das complicações associadas e das prioridades do paciente — especialmente em relação à <strong>preservação da função sexual</strong>.
             </p>
             <p>
-              Abaixo, apresentamos <strong>todas as opções disponíveis</strong>, organizadas por categoria, com base nas diretrizes mais atualizadas da <strong>European Association of Urology (EAU 2025)</strong>, <strong>American Urological Association (AUA 2025)</strong> e do <strong>Campbell-Walsh-Wein Urology (12ª edição)</strong>.
+              Abaixo, apresentamos <strong>todas as opções disponíveis</strong>, organizadas por categoria, com base nas diretrizes mais atualizadas da <strong>European Association of Urology (EAU 2026)</strong>, <strong>American Urological Association (AUA 2025)</strong> e do <strong>Campbell-Walsh-Wein Urology (12ª edição)</strong>.
             </p>
           </div>
         </div>

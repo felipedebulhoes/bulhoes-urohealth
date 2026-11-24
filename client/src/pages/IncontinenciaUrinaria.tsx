@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Incontinência Urinária Masculina — Causas, Diagnóstico e Tratamentos
- * Referências: AUA/GURS/SUFU Guideline on IPT 2024, EAU Guidelines on Male LUTS 2025, Campbell-Walsh-Wein 13th Ed.
+ * Referências: AUA/GURS/SUFU Guideline on IPT 2024, EAU Guidelines on Male LUTS 2026, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -84,7 +84,7 @@ const conservativeTreatments = [
     name: "Modificações Comportamentais",
     icon: Clock,
     description: "Ajustes no estilo de vida e hábitos miccionais que podem reduzir significativamente os episódios de perda urinária.",
-    evidence: "Recomendação Forte — EAU Guidelines 2025",
+    evidence: "Recomendação Forte — EAU Guidelines 2026 (treinamento vesical como complemento; mudanças de hábito com evidência limitada)",
     details: [
       "Micção programada a cada 2-3 horas (treinamento vesical)",
       "Redução de cafeína e álcool, que irritam a bexiga",
@@ -232,10 +232,10 @@ export default function IncontinenciaUrinaria() {
     <EducationalLayout
       title="Incontinência Urinária Masculina"
       subtitle="Causas, Diagnóstico e Tratamentos Baseados em Evidências"
-      description="Guia completo sobre incontinência urinária masculina: tipos, classificação de gravidade, exercícios do assoalho pélvico, sling masculino e esfíncter urinário artificial. Baseado nas guidelines AUA 2024 e EAU 2025."
+      description="Guia completo sobre incontinência urinária masculina: tipos, classificação de gravidade, exercícios do assoalho pélvico, sling masculino e esfíncter urinário artificial. Baseado nas guidelines AUA 2024 e EAU 2026."
       accentColor="#8D7B6B"
       metaTitle="Incontinência Urinária Masculina: Tratamentos | Dr. Felipe de Bulhões"
-      metaDescription="Guia completo sobre incontinência urinária masculina pós-prostatectomia. Exercícios de Kegel, sling masculino, esfíncter artificial. AUA 2024 + EAU 2025. Urologista em Campinas e São Paulo."
+      metaDescription="Guia completo sobre incontinência urinária masculina pós-prostatectomia. Exercícios de Kegel, sling masculino, esfíncter artificial. AUA 2024 + EAU 2026. Urologista em Campinas e São Paulo."
     >
       <FAQSchema questions={faqs.map(item => ({ question: item.q, answer: item.a }))} />
 

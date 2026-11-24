@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Urodinâmica — O Que É, Como Funciona e Quando É Indicada
- * Referências: EAU Guidelines 2025, AUA, SBU, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines 2026, AUA, SBU, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import {
@@ -43,7 +43,7 @@ export default function Urodinamica() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-indigo-50 to-blue-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mb-10">
               <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
-                O <strong>estudo urodinâmico</strong> é o exame padrão-ouro para avaliar o funcionamento do trato urinário inferior — bexiga e uretra. Ele mede como a bexiga armazena e esvazia a urina, identificando com precisão a causa de sintomas como incontinência, jato fraco, urgência miccional e retenção urinária. Segundo a <strong>EAU Guidelines 2025</strong>, a urodinâmica é fundamental antes de procedimentos cirúrgicos para disfunções miccionais, garantindo o diagnóstico correto e o melhor planejamento terapêutico.
+                O <strong>estudo urodinâmico</strong> é o exame padrão-ouro para avaliar o funcionamento do trato urinário inferior — bexiga e uretra. Ele mede como a bexiga armazena e esvazia a urina, identificando com precisão a causa de sintomas como incontinência, jato fraco, urgência miccional e retenção urinária. Segundo a <strong>EAU Guidelines 2026</strong>, a urodinâmica é indicada antes de procedimentos invasivos em situações específicas, e não de rotina para todos, ajudando a confirmar o diagnóstico e a planejar o tratamento.
               </p>
             </div>
           </motion.div>
@@ -79,7 +79,7 @@ export default function Urodinamica() {
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { title: "Antes de cirurgia para HPB", desc: "Fundamental para confirmar obstrução infravesical e descartar hipocontratilidade detrusora, especialmente em homens com sintomas atípicos ou próstatas pequenas (EAU 2025)." },
+                { title: "Antes de cirurgia para HPB", desc: "Indicada em casos selecionados para confirmar obstrução infravesical e descartar hipocontratilidade detrusora: falha de tratamento invasivo prévio, volume urinado menor que 150 ml, fluxo máximo acima de 10 ml/s, idade acima de 80 ou abaixo de 50 anos (EAU 2026)." },
                 { title: "Incontinência urinária", desc: "Diferencia incontinência de esforço, urgência e mista. Essencial antes de cirurgias como sling masculino ou esfíncter artificial." },
                 { title: "Bexiga neurogênica", desc: "Pacientes com lesão medular, esclerose múltipla, Parkinson ou AVC. Avalia risco de dano renal por altas pressões vesicais." },
                 { title: "Falha de tratamento prévio", desc: "Quando medicamentos para LUTS/HPB não funcionam ou quando há recidiva de sintomas após cirurgia prostática." },
@@ -196,8 +196,8 @@ export default function Urodinamica() {
             <div className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
               <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
-                <li>1. EAU Guidelines on Non-neurogenic Male LUTS, 2025. European Association of Urology.</li>
-                <li>2. EAU Guidelines on Neuro-Urology, 2025. European Association of Urology.</li>
+                <li>1. EAU Guidelines on Non-neurogenic Male LUTS, 2026. European Association of Urology.</li>
+                <li>2. EAU Guidelines on Neuro-Urology, 2026. European Association of Urology.</li>
                 <li>3. AUA/SUFU Guideline on Adult Urodynamics, 2024. American Urological Association.</li>
                 <li>4. Campbell-Walsh-Wein Urology, 13th Edition — Chapter: Urodynamic and Video-Urodynamic Evaluation. Elsevier, 2024.</li>
                 <li>5. Abrams P, et al. The standardisation of terminology in lower urinary tract function. Neurourol Urodyn. 2002;21(2):167-178.</li>

@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Hiperplasia Prostática Benigna (HPB) — Guia para o Paciente
- * Linguagem acessível para leigos, com conteúdo baseado em EAU 2025, AUA 2023 e Campbell 13ª ed.
+ * Linguagem acessível para leigos, com conteúdo baseado em EAU 2026, AUA 2023 e Campbell 13ª ed.
  */
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -196,7 +196,7 @@ export default function HiperplasiaProstática() {
       description="Entenda o que é o aumento benigno da próstata, quais são os sintomas, como é feito o diagnóstico e quais são as opções de tratamento disponíveis."
       accentColor="#8D7B6B"
       metaTitle="Próstata Aumentada (HPB) — O Que É, Sintomas e Tratamento | Dr. Felipe de Bulhões"
-      metaDescription="Guia completo sobre Hiperplasia Prostática Benigna (HPB) para pacientes: o que é, sintomas, diagnóstico, medicamentos e cirurgias. Linguagem acessível, baseado em evidências (EAU 2025, AUA 2023)."
+      metaDescription="Guia completo sobre Hiperplasia Prostática Benigna (HPB) para pacientes: o que é, sintomas, diagnóstico, medicamentos e cirurgias. Linguagem acessível, baseado em evidências (EAU 2026, AUA 2023)."
       medicalCondition="Hiperplasia Prostática Benigna"
     >
       <FAQSchema questions={perguntasFrequentes.map(p => ({ question: p.pergunta, answer: p.resposta }))} />

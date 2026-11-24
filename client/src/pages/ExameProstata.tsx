@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Página: Exame de Próstata — Tudo o que Você Precisa Saber
- * Referências: EAU Guidelines 2025, AUA 2024, SBU, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines 2026, AUA 2024, SBU, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import {
@@ -42,7 +42,7 @@ export default function ExameProstata() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
             <div className="bg-gradient-to-r from-amber-50 to-blue-50 border-l-4 border-[#B87333] p-6 rounded-r-lg mb-10">
               <p className="text-[#1C3D5A] dark:text-foreground leading-relaxed">
-                O exame de próstata é um dos procedimentos mais importantes para a saúde do homem, mas também um dos mais cercados de mitos e tabus. Segundo a <strong>Sociedade Brasileira de Urologia (SBU)</strong>, o rastreamento deve começar aos <strong>50 anos</strong> para a população geral e aos <strong>45 anos</strong> para homens com fatores de risco (histórico familiar, raça negra). A <strong>European Association of Urology (EAU 2025)</strong> recomenda uma abordagem baseada em risco, iniciando com PSA basal a partir dos 50 anos.
+                O exame de próstata é um dos procedimentos mais importantes para a saúde do homem, mas também um dos mais cercados de mitos e tabus. Segundo a <strong>Sociedade Brasileira de Urologia (SBU)</strong>, o rastreamento deve começar aos <strong>50 anos</strong> para a população geral e aos <strong>45 anos</strong> para homens com fatores de risco (histórico familiar, raça negra). A <strong>European Association of Urology (EAU 2026)</strong> recomenda uma abordagem baseada em risco, iniciando com PSA a partir dos 50 anos (45 com história familiar ou ascendência africana; 40 em portadores de mutação BRCA2).
               </p>
             </div>
           </motion.div>
@@ -110,7 +110,7 @@ export default function ExameProstata() {
                 {
                   org: "EAU (European Association of Urology)",
                   rec: "Abordagem baseada em risco com PSA basal a partir dos 50 anos (ou 45 anos com fatores de risco). Intervalo de rastreamento adaptado ao nível de PSA basal.",
-                  ref: "EAU Guidelines on Prostate Cancer 2025",
+                  ref: "EAU Guidelines on Prostate Cancer 2026",
                 },
                 {
                   org: "AUA (American Urological Association)",
@@ -213,7 +213,7 @@ export default function ExameProstata() {
                 { myth: "O toque retal é muito doloroso", truth: "O exame dura 10-15 segundos e causa apenas leve desconforto. A grande maioria dos pacientes relata que o procedimento é muito mais simples do que imaginavam.", isMyth: true },
                 { myth: "O PSA sozinho é suficiente para diagnosticar câncer", truth: "O PSA é um marcador de triagem, não de diagnóstico. Valores elevados indicam necessidade de investigação adicional, mas não confirmam câncer. O diagnóstico definitivo requer biópsia.", isMyth: true },
                 { myth: "Homens jovens não precisam se preocupar com a próstata", truth: "Embora o câncer seja mais comum após os 50, condições como prostatite e dor pélvica podem afetar homens de qualquer idade. Além disso, o rastreamento precoce em grupos de risco é fundamental.", isMyth: true },
-                { myth: "O toque retal pode ser substituído apenas pelo PSA", truth: "Ambos os exames são complementares. Cerca de 15-25% dos cânceres de próstata ocorrem com PSA normal (EAU 2025). O toque retal pode detectar tumores que o PSA não identifica.", isMyth: true },
+                { myth: "O toque retal pode ser substituído apenas pelo PSA", truth: "Ambos os exames são complementares. Cerca de 18% dos cânceres de próstata são detectados apenas pelo toque retal alterado, independentemente do PSA (EAU 2026). O toque retal pode detectar tumores que o PSA não identifica.", isMyth: true },
                 { myth: "O diagnóstico precoce salva vidas", truth: "Quando detectado em estágio inicial, o câncer de próstata tem taxa de sobrevida em 5 anos superior a 99% (AUA 2024). O rastreamento adequado é a chave para o diagnóstico precoce.", isMyth: false },
               ].map((item, i) => (
                 <div key={i} className={`rounded-xl p-5 border ${item.isMyth ? "bg-red-50/50 border-red-100" : "bg-green-50/50 border-green-100"}`}>
@@ -239,7 +239,7 @@ export default function ExameProstata() {
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { title: "Ressonância Multiparamétrica (mpMRI)", desc: "Exame de imagem que avalia a próstata em detalhes, classificando lesões pelo sistema PI-RADS (1 a 5). Fundamental antes da biópsia para guiar a coleta de fragmentos.", ref: "EAU Guidelines 2025" },
+                { title: "Ressonância Multiparamétrica (mpMRI)", desc: "Exame de imagem que avalia a próstata em detalhes, classificando lesões pelo sistema PI-RADS (1 a 5). Fundamental antes da biópsia para guiar a coleta de fragmentos.", ref: "EAU Guidelines 2026" },
                 { title: "Biópsia de Próstata", desc: "Coleta de fragmentos da próstata para análise histológica. Pode ser feita por via transretal ou transperineal (preferida atualmente por menor risco de infecção).", ref: "AUA/EAU Guidelines" },
                 { title: "PHI (Prostate Health Index)", desc: "Exame de sangue que combina PSA total, PSA livre e p2PSA para melhor estratificação de risco, reduzindo biópsias desnecessárias.", ref: "NCCN Guidelines 2024" },
                 { title: "Ultrassonografia Prostática", desc: "Avalia o tamanho da próstata e pode auxiliar no diagnóstico de HPB. Geralmente realizada por via transretal ou suprapúbica.", ref: "Campbell-Walsh-Wein 13th Ed." },
@@ -261,7 +261,7 @@ export default function ExameProstata() {
             <div className="bg-gray-50 dark:bg-card rounded-xl p-6 border border-gray-100">
               <h3 className="text-lg font-bold text-[#1C3D5A] dark:text-foreground mb-4">Referências</h3>
               <ol className="space-y-2 text-sm text-[#64748B]">
-                <li>1. EAU Guidelines on Prostate Cancer, 2025. European Association of Urology.</li>
+                <li>1. EAU Guidelines on Prostate Cancer, 2026. European Association of Urology.</li>
                 <li>2. AUA/ASTRO/SUO Guideline on Clinically Localized Prostate Cancer, 2024. American Urological Association.</li>
                 <li>3. Nota Oficial SBU — Rastreamento do Câncer de Próstata, 2023. Sociedade Brasileira de Urologia.</li>
                 <li>4. Campbell-Walsh-Wein Urology, 13th Edition. Elsevier, 2024.</li>

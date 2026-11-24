@@ -2,7 +2,7 @@ import { trackDoctoraliaClick } from "@/lib/analytics";
 /**
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Infertilidade Masculina — Causas, Diagnóstico e Tratamentos
- * Referências: EAU Guidelines on Male Infertility 2025, AUA/ASRM Male Infertility Guideline 2024, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines on Sexual and Reproductive Health (Male Infertility) 2026, AUA/ASRM Male Infertility Guideline 2024, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -70,42 +70,42 @@ const diagnosticWorkup = [
     title: "História Clínica Detalhada",
     icon: Stethoscope,
     description: "Tempo de infertilidade, frequência sexual, história de criptorquidia, infecções, cirurgias, medicações (especialmente testosterona e anabolizantes), exposições ocupacionais e hábitos de vida.",
-    evidence: "Recomendação Forte — EAU 2025 / AUA 2024",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024",
   },
   {
     step: 2,
     title: "Espermograma (Análise Seminal)",
     icon: Microscope,
     description: "Exame fundamental. Deve ser realizado após 2-7 dias de abstinência. Se alterado, repetir em 4-6 semanas. Avalia volume, concentração, motilidade, morfologia e vitalidade.",
-    evidence: "Recomendação Forte — EAU 2025 / AUA 2024 / OMS 2021",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024 / OMS 2021",
   },
   {
     step: 3,
     title: "Dosagens Hormonais",
     icon: FlaskConical,
     description: "FSH, LH, testosterona total (matinal). Prolactina e estradiol se indicados. FSH elevado sugere falência testicular; FSH baixo sugere causa pré-testicular.",
-    evidence: "Recomendação Forte — EAU 2025",
+    evidence: "Recomendação Forte — EAU 2026",
   },
   {
     step: 4,
     title: "Exame Físico Urológico",
     icon: Search,
     description: "Avaliação do volume testicular (orquidômetro de Prader), palpação dos vasos deferentes, pesquisa de varicocele (manobra de Valsalva), avaliação de caracteres sexuais secundários.",
-    evidence: "Recomendação Forte — EAU 2025 / AUA 2024",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024",
   },
   {
     step: 5,
     title: "Ultrassonografia Escrotal",
     icon: Zap,
     description: "Avaliação do parênquima testicular, pesquisa de varicocele subclínica, massas testiculares, cistos epididimários e obstruções. Complementa o exame físico.",
-    evidence: "Recomendação Condicional — EAU 2025",
+    evidence: "Recomendação Fraca — EAU 2026",
   },
   {
     step: 6,
     title: "Testes Genéticos",
     icon: Dna,
     description: "Cariótipo (azoospermia ou oligozoospermia grave < 5 milhões/mL), microdeleções do Y (AZFa/b/c), pesquisa de mutações CFTR (CAVD). Essenciais antes de técnicas de reprodução assistida.",
-    evidence: "Recomendação Forte — EAU 2025 / AUA 2024",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024",
   },
 ];
 
@@ -124,9 +124,9 @@ const treatments = [
     name: "Correção de Varicocele",
     icon: Wrench,
     category: "Cirúrgico",
-    indication: "Varicocele clínica + parâmetros seminais alterados + infertilidade do casal",
+    indication: "Varicocele clínica + parâmetros seminais alterados + infertilidade do casal sem outra causa, com parceira com boa reserva ovariana",
     description: "A varicocelectomia (microcirúrgica subinguinal é o padrão-ouro) melhora os parâmetros seminais em 60-80% dos casos e resulta em gravidez espontânea em 30-50% dos casais.",
-    evidence: "Recomendação Forte (Grau A) — EAU 2025 / AUA 2024",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024",
     details: [
       "Técnica microcirúrgica subinguinal: menor taxa de recidiva (< 1%) e hidrocele (< 1%)",
       "Melhora da concentração, motilidade e morfologia espermática",
@@ -141,7 +141,7 @@ const treatments = [
     category: "Clínico",
     indication: "Hipogonadismo hipogonadotrófico, uso prévio de testosterona/anabolizantes",
     description: "Gonadotrofinas (hCG + FSH recombinante) para estimular a espermatogênese em homens com deficiência gonadotrófica. Clomifeno e letrozol como alternativas off-label.",
-    evidence: "Recomendação Forte para hipogonadismo hipogonadotrófico — EAU 2025",
+    evidence: "Recomendação Forte para hipogonadismo hipogonadotrófico — EAU 2026",
     details: [
       "hCG 1.500-3.000 UI 2-3x/semana ± FSH 75-150 UI 3x/semana",
       "Tempo para resposta: 6-12 meses (pode levar até 24 meses)",
@@ -156,7 +156,7 @@ const treatments = [
     category: "Cirúrgico",
     indication: "Desejo de fertilidade após vasectomia prévia",
     description: "Vasovasostomia (reconexão dos vasos deferentes) ou vasoepididimostomia (conexão do vaso ao epidídimo). Sucesso depende do intervalo desde a vasectomia.",
-    evidence: "Recomendação Forte — EAU 2025 / AUA 2024",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024",
     details: [
       "Vasovasostomia microcirúrgica: patência 75-99%, gravidez 30-75%",
       "Intervalo < 3 anos: melhores resultados (patência > 95%)",
@@ -171,7 +171,7 @@ const treatments = [
     category: "Cirúrgico",
     indication: "Azoospermia obstrutiva ou não-obstrutiva quando reprodução assistida é planejada",
     description: "Técnicas para obter espermatozoides diretamente do testículo ou epidídimo para uso em ICSI (injeção intracitoplasmática de espermatozoides).",
-    evidence: "Recomendação Forte — EAU 2025 / AUA 2024",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024",
     details: [
       "TESA (aspiração testicular): procedimento simples, ambulatorial",
       "TESE (extração testicular): biópsia aberta, maior volume de tecido",
@@ -186,7 +186,7 @@ const treatments = [
     category: "Reprodução Assistida",
     indication: "Falha do tratamento clínico/cirúrgico, fator feminino associado, azoospermia não-obstrutiva",
     description: "Fertilização in vitro (FIV) com injeção intracitoplasmática de espermatozoides (ICSI) é o tratamento de última linha, com altas taxas de sucesso mesmo com poucos espermatozoides.",
-    evidence: "Recomendação Forte — EAU 2025 / AUA 2024",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024",
     details: [
       "ICSI: necessário apenas 1 espermatozoide por óvulo",
       "Taxa de gravidez por ciclo: 30-50% (depende da idade da parceira)",
@@ -201,13 +201,13 @@ const treatments = [
     category: "Conservador",
     indication: "Todos os pacientes — medidas adjuvantes ao tratamento principal",
     description: "Fatores modificáveis que impactam a qualidade seminal: obesidade, tabagismo, álcool, calor escrotal, estresse e exposições ambientais.",
-    evidence: "Recomendação Condicional (Grau C) — EAU 2025",
+    evidence: "Recomendação Forte (orientar sobre obesidade, sedentarismo, tabagismo e álcool) — EAU 2026",
     details: [
       "Perda de peso: IMC > 30 associado a oligozoospermia e hipogonadismo",
       "Cessar tabagismo: reduz estresse oxidativo e fragmentação de DNA espermático",
       "Limitar álcool: consumo excessivo reduz testosterona e qualidade seminal",
       "Evitar calor escrotal: saunas, banhos quentes, laptop no colo, roupas apertadas",
-      "Suplementação antioxidante: evidência limitada, mas pode ser considerada (vitamina C, E, zinco, selênio, coenzima Q10)",
+      "Suplementação antioxidante: a EAU 2026 não recomenda o uso de rotina na infertilidade sem causa definida (evidência insuficiente)",
     ],
   },
 ];
@@ -236,7 +236,7 @@ const faqs = [
   },
   {
     q: "É possível ter filhos após quimioterapia?",
-    a: "Depende do tipo e dose do quimioterápico. Agentes alquilantes (ciclofosfamida, clorambucil) são os mais gonadotóxicos. A criopreservação de sêmen ANTES do tratamento é fortemente recomendada (EAU 2025, Recomendação Forte). Após o tratamento, a recuperação da espermatogênese pode levar 1-5 anos. Se não houver recuperação, micro-TESE pode encontrar espermatozoides em alguns casos.",
+    a: "Depende do tipo e dose do quimioterápico. Agentes alquilantes (ciclofosfamida, clorambucil) são os mais gonadotóxicos. A criopreservação de sêmen ANTES do tratamento é fortemente recomendada (EAU 2026, Recomendação Forte). Após o tratamento, a recuperação da espermatogênese pode levar 1-5 anos. Se não houver recuperação, micro-TESE pode encontrar espermatozoides em alguns casos.",
   },
   {
     q: "Qual a diferença entre azoospermia obstrutiva e não-obstrutiva?",
@@ -244,11 +244,11 @@ const faqs = [
   },
   {
     q: "Suplementos e vitaminas melhoram a fertilidade masculina?",
-    a: "A evidência é limitada, mas alguns estudos sugerem benefício modesto. Antioxidantes como vitamina C, vitamina E, zinco, selênio, coenzima Q10 e L-carnitina podem reduzir o estresse oxidativo espermático. A EAU 2025 classifica como Recomendação Fraca (Grau C). Não devem substituir o tratamento da causa base (varicocele, hipogonadismo), mas podem ser usados como terapia adjuvante.",
+    a: "A evidência é limitada. Antioxidantes como vitamina C, vitamina E, zinco, selênio, coenzima Q10 e L-carnitina foram estudados para reduzir o estresse oxidativo espermático, mas a EAU 2026 recomenda não usá-los de rotina na infertilidade sem causa definida (Recomendação Fraca), por falta de evidência de benefício. Não substituem o tratamento da causa base (varicocele, hipogonadismo); o uso deve ser discutido individualmente com o médico.",
   },
   {
     q: "A idade do homem afeta a fertilidade?",
-    a: "Sim, embora de forma menos drástica que na mulher. Após os 40 anos, há declínio progressivo do volume seminal, motilidade e morfologia. A fragmentação do DNA espermático aumenta com a idade. Homens mais velhos têm maior risco de mutações de novo nos espermatozoides, o que pode afetar a saúde da prole. A EAU 2025 recomenda considerar a idade paterna no aconselhamento reprodutivo.",
+    a: "Sim, embora de forma menos drástica que na mulher. Após os 40 anos, há declínio progressivo do volume seminal, motilidade e morfologia. A fragmentação do DNA espermático aumenta com a idade. Homens mais velhos têm maior risco de mutações de novo nos espermatozoides, o que pode afetar a saúde da prole. A EAU 2026 aponta a idade paterna avançada como fator de risco adicional para infertilidade masculina.",
   },
   {
     q: "Quando devo procurar um urologista especialista em fertilidade?",
@@ -289,10 +289,10 @@ export default function InfertilidadeMasculina() {
     <EducationalLayout
       title="Infertilidade Masculina"
       subtitle="Causas, Diagnóstico e Tratamentos Baseados em Evidências"
-      description="Guia completo sobre infertilidade masculina: espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. Baseado nas guidelines EAU 2025 e AUA/ASRM 2024."
+      description="Guia completo sobre infertilidade masculina: espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. Baseado nas guidelines EAU 2026 e AUA/ASRM 2024."
       accentColor="#8D7B6B"
       metaTitle="Infertilidade Masculina: Causas e Tratamentos | Dr. Felipe de Bulhões"
-      metaDescription="Guia completo sobre infertilidade masculina: espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. EAU 2025 + AUA 2024. Urologista em Campinas e São Paulo."
+      metaDescription="Guia completo sobre infertilidade masculina: espermograma, varicocele, azoospermia, terapia hormonal, micro-TESE e reprodução assistida. EAU 2026 + AUA 2024. Urologista em Campinas e São Paulo."
     >
       <FAQSchema questions={faqs.map(item => ({ question: item.q, answer: item.a }))} />
 
@@ -407,7 +407,7 @@ export default function InfertilidadeMasculina() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Causas da Infertilidade Masculina</h2>
             <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-              Classificadas por localização anatômica — Baseado em EAU 2025 e Campbell-Walsh-Wein 13th Ed.
+              Classificadas por localização anatômica — Baseado em EAU 2026 e Campbell-Walsh-Wein 13th Ed.
             </p>
           </motion.div>
           <div className="space-y-6">
@@ -460,7 +460,7 @@ export default function InfertilidadeMasculina() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Investigação Diagnóstica</h2>
             <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-              Abordagem sistemática recomendada pelas guidelines EAU 2025 e AUA/ASRM 2024
+              Abordagem sistemática recomendada pelas guidelines EAU 2026 e AUA/ASRM 2024
             </p>
           </motion.div>
           <div className="space-y-4">
@@ -673,7 +673,7 @@ export default function InfertilidadeMasculina() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-foreground mb-3 text-center">Perguntas Frequentes</h2>
             <p className="text-gray-600 dark:text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-              Respostas baseadas nas guidelines EAU 2025 e AUA/ASRM 2024
+              Respostas baseadas nas guidelines EAU 2026 e AUA/ASRM 2024
             </p>
           </motion.div>
           <div className="space-y-3">

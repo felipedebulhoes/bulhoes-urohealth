@@ -348,7 +348,7 @@ const config: AreaLandingPageConfig = {
     guideLinkLabel: "Ler guia educativo completo sobre Vasectomia",
     items: [
       "American Urological Association (AUA) Vasectomy Guideline — No-Scalpel Technique & Occlusion Methods.",
-      "European Association of Urology (EAU) Guidelines on Sexual and Reproductive Health, 2025.",
+      "Dohle GR, et al. European Association of Urology Guidelines on Vasectomy. Eur Urol. 2012;61(1):159-163.",
       "Yang F, et al. Review of Vasectomy Complications and Safety Concerns. World J Mens Health, 2021;39(3):406-418. DOI: 10.5534/wjmh.200073.",
       "Lei Federal nº 14.443/2022 — Planejamento Familiar e Esterilização Voluntária no Brasil.",
     ],

@@ -2,7 +2,7 @@ import { trackDoctoraliaClick } from "@/lib/analytics";
 /**
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Varicocele — Causas, Diagnóstico e Tratamento
- * Referências: EAU Guidelines on Sexual and Reproductive Health 2025, AUA/ASRM Male Infertility Guideline 2024, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines on Sexual and Reproductive Health 2026, AUA/ASRM Male Infertility Guideline 2024, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -62,35 +62,35 @@ const diagnosticSteps = [
     title: "Exame Físico",
     icon: Stethoscope,
     description: "Realizado com o paciente em pé. Palpação do cordão espermático em repouso e durante manobra de Valsalva. Avaliação do volume testicular com orquidômetro de Prader.",
-    evidence: "Recomendação Forte — EAU 2025",
+    evidence: "Recomendação Forte — EAU 2026",
   },
   {
     step: 2,
     title: "Espermograma",
     icon: Microscope,
     description: "Análise seminal com 2-7 dias de abstinência. Avalia concentração, motilidade, morfologia e vitalidade espermática. Se alterado, repetir em 4-6 semanas para confirmação.",
-    evidence: "Recomendação Forte — EAU 2025 / AUA 2024",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024",
   },
   {
     step: 3,
     title: "Ultrassonografia Escrotal com Doppler",
     icon: Waves,
     description: "Confirma o diagnóstico, mede o diâmetro das veias (> 3mm é sugestivo), avalia refluxo venoso durante Valsalva e permite medir o volume testicular com precisão.",
-    evidence: "Recomendação Forte — EAU 2025",
+    evidence: "Recomendação Fraca em adultos; Forte em adolescentes — EAU 2026",
   },
   {
     step: 4,
     title: "Avaliação Hormonal",
     icon: FlaskConical,
     description: "Dosagem de FSH, LH, testosterona total e livre. Importante para avaliar a função testicular endócrina, especialmente em pacientes com suspeita de hipogonadismo associado.",
-    evidence: "Recomendação Forte — EAU 2025 / AUA 2024",
+    evidence: "Recomendação Forte — EAU 2026 / AUA 2024",
   },
   {
     step: 5,
     title: "Fragmentação do DNA Espermático (SDF)",
     icon: Dna,
     description: "Teste complementar que avalia a integridade do DNA dos espermatozoides. A varicocele está associada a aumento da SDF, e a correção pode reduzir significativamente esses níveis.",
-    evidence: "Nível de Evidência 2a — EAU 2025",
+    evidence: "Recomendação Fraca (considerar a correção quando a fragmentação está elevada) — EAU 2026",
   },
 ];
 
@@ -203,7 +203,7 @@ const indications = [
 ];
 
 const references = [
-  { num: 1, text: "EAU Guidelines on Sexual and Reproductive Health: 2025 Update on Male Infertility. Eur Urol. 2025;87:601-616." },
+  { num: 1, text: "Minhas S, et al. European Association of Urology Guidelines on Male Sexual and Reproductive Health: 2025 Update on Male Infertility. Eur Urol. 2025;87(5):601-616. doi:10.1016/j.eururo.2025.02.026. Capítulo mantido sem alterações na edição 2026." },
   { num: 2, text: "Schlegel PN, et al. Diagnosis and Treatment of Infertility in Men: AUA/ASRM Guideline Part I. J Urol. 2021;205(1):36-43." },
   { num: 3, text: "Schlegel PN, et al. Diagnosis and Treatment of Infertility in Men: AUA/ASRM Guideline Part II. Fertil Steril. 2021;115(1):62-69." },
   { num: 4, text: "Kim DK, et al. Recent Guidelines and Perspectives for Varicocele. World J Mens Health. 2025;43(1):1-14." },
@@ -238,7 +238,7 @@ const faqItems = [
   },
   {
     question: "Adolescentes devem operar varicocele?",
-    answer: "Segundo as EAU Guidelines 2025, a cirurgia em adolescentes é indicada quando há varicocele associada a testículo ipsilateral persistentemente menor (diferença de volume > 2 mL ou > 20%), confirmada em duas avaliações com intervalo de 6 meses. A maioria dos adolescentes com varicocele não terá problemas de fertilidade no futuro, portanto há risco de sobretratamento.",
+    answer: "Segundo as Diretrizes de Urologia Pediátrica da EAU 2026, a cirurgia em adolescentes é indicada quando há varicocele associada a testículo ipsilateral persistentemente menor (diferença de volume > 2 mL ou > 20%), confirmada em duas avaliações com intervalo de 6 meses. A maioria dos adolescentes com varicocele não terá problemas de fertilidade no futuro, portanto há risco de sobretratamento.",
   },
 ];
 
@@ -263,10 +263,10 @@ export default function Varicocele() {
     <EducationalLayout
       title="Varicocele"
       subtitle="Causas, Diagnóstico e Tratamento"
-      description="Entenda o que é varicocele, como é diagnosticada, quando o tratamento é indicado e quais são as técnicas cirúrgicas disponíveis. Baseado nas EAU Guidelines 2025 e AUA/ASRM 2024."
+      description="Entenda o que é varicocele, como é diagnosticada, quando o tratamento é indicado e quais são as técnicas cirúrgicas disponíveis. Baseado nas EAU Guidelines 2026 e AUA/ASRM 2024."
       accentColor="#8D7B6B"
       metaTitle="Varicocele: Causas, Diagnóstico e Tratamento | Dr. Felipe de Bulhões"
-      metaDescription="Tudo sobre varicocele: o que é, sintomas, classificação, diagnóstico e tratamento cirúrgico. Varicocelectomia microcirúrgica é o padrão-ouro. Baseado nas EAU Guidelines 2025."
+      metaDescription="Tudo sobre varicocele: o que é, sintomas, classificação, diagnóstico e tratamento cirúrgico. Varicocelectomia microcirúrgica é o padrão-ouro. Baseado nas EAU Guidelines 2026."
     >
       <FAQSchema questions={faqItems} />
 
@@ -638,7 +638,7 @@ export default function Varicocele() {
                 </tbody>
               </table>
             </div>
-            <p className="text-sm text-gray-500 dark:text-muted-foreground mt-4 text-center">Fonte: EAU Guidelines 2025, Tabela 11.3</p>
+            <p className="text-sm text-gray-500 dark:text-muted-foreground mt-4 text-center">Fonte: EAU Guidelines 2026, Tabela 11.3</p>
           </motion.div>
         </div>
       </section>

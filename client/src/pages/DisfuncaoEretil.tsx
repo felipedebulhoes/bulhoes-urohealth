@@ -1,7 +1,7 @@
 /*
  * Design: Clinical Precision — Swiss Medical Design
  * Page: Disfunção Erétil — Causas, Diagnóstico e Tratamentos
- * Referências: EAU Guidelines on Sexual and Reproductive Health 2025, AUA ED Guideline 2024, Campbell-Walsh-Wein 13th Ed.
+ * Referências: EAU Guidelines on Sexual and Reproductive Health 2026, AUA ED Guideline 2024, Campbell-Walsh-Wein 13th Ed.
  */
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -214,7 +214,7 @@ export default function DisfuncaoEretil() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { number: "52%", label: "dos homens 40-70 anos afetados", source: "MMAS" },
-              { number: "3-5 anos", label: "antes de evento cardiovascular", source: "EAU 2025" },
+              { number: "Sinal precoce", label: "de doença cardiovascular", source: "EAU 2026" },
               { number: ">80%", label: "têm causa orgânica", source: "Campbell 13th" },
               { number: "95%", label: "respondem a algum tratamento", source: "AUA 2024" },
             ].map((s, i) => (

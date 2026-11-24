@@ -144,7 +144,7 @@ export default function InfeccaoUrinaria() {
                 <h3 className="font-bold text-[#1C3D5A] dark:text-foreground mb-3">Antibioticoterapia</h3>
                 <ul className="space-y-2">
                   {[
-                    "Cistite: 7 dias; infecção com febre: 5 a 10 dias, conforme avaliação médica",
+                    "Cistite: 7 dias; infecção com febre no homem: em geral 14 dias (7 dias é inferior a 14 nesse caso), conforme avaliação médica",
                     "A escolha do antibiótico é médica e considera a sensibilidade da bactéria",
                     "Ajuste conforme resultado da urocultura com antibiograma",
                     "Em prostatite aguda: antibiótico por 2-4 semanas com boa penetração prostática",

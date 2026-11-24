@@ -180,7 +180,7 @@ export default function ProtesePeniana() {
       subtitle="Tipos, Indicação, Cirurgia e Recuperação"
       description="Guia sobre a prótese peniana para disfunção erétil: quando é indicada, diferenças entre prótese inflável e maleável, como é a cirurgia, recuperação e riscos. Baseado nas diretrizes EAU 2025 e AUA."
       accentColor="#7C3AED"
-      metaTitle="Prótese Peniana Inflável e Maleável | Dr. Felipe de Bulhões"
+      metaTitle="Prótese Peniana em São Paulo e Campinas | Dr. Felipe de Bulhões"
       metaDescription="Prótese peniana para disfunção erétil: indicação, tipos inflável e maleável, cirurgia, recuperação e riscos. Urologista em São Paulo e Campinas."
     >
       <FAQSchema questions={faqs.map(item => ({ question: item.q, answer: item.a }))} />
@@ -205,8 +205,10 @@ export default function ProtesePeniana() {
                 mas cada caso precisa de avaliação individual e nenhum resultado pode ser garantido.
               </p>
               <p>
-                A avaliação é feita em consulta com o urologista Dr. Felipe de Bulhões, em São Paulo (Av. Paulista e
-                Pinheiros) e em Campinas.
+                A avaliação é feita em consulta particular com o urologista Dr. Felipe de Bulhões (CRM-SP 202291,
+                RQE 146538) em São Paulo, na Av. Paulista, 1048, 18º andar (Clinovi Paulista), e na Av. Rebouças,
+                2636, em Pinheiros (Clinovi Pinheiros), e em Campinas, no Campinas Day Hospital (Av. Benjamin
+                Constant, 1991, Cambuí). Também há teleconsulta para a primeira conversa.
               </p>
             </div>
           </motion.div>

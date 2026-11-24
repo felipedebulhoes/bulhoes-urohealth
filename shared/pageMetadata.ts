@@ -338,7 +338,7 @@ const SEARCH_SNIPPETS: Record<string, Pick<PageMetadata, "title" | "description"
       "Curvatura peniana adquirida: fases da doença, tratamento clínico, plicatura, enxerto e prótese. Guia do urologista Dr. Felipe de Bulhões.",
   },
   "/educativo/protese-peniana": {
-    title: "Prótese peniana inflável e maleável: indicação e cirurgia",
+    title: "Prótese peniana em São Paulo e Campinas: inflável ou maleável",
     description:
       "Quando a prótese peniana é indicada, diferenças entre inflável e maleável, cirurgia, recuperação e riscos. Guia do urologista Dr. Felipe de Bulhões.",
   },

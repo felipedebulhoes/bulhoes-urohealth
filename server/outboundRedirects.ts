@@ -21,6 +21,10 @@ export const outboundRedirects: Record<string, string> = {
     "https://wa.me/5511981124455?text=Ol%C3%A1%21%20Vim%20pelo%20Instagram%20e%20gostaria%20de%20agendar%20uma%20consulta.",
   "/yt":
     "https://wa.me/5511981124455?text=Ol%C3%A1%21%20Vim%20pelo%20YouTube%20e%20gostaria%20de%20agendar%20uma%20consulta.",
+  // Link do guia em PDF "Antes de decidir": a mensagem diz a origem sem
+  // citar o procedimento, e o clique fica registrado no servidor.
+  "/guia":
+    "https://wa.me/5511981124455?text=Ol%C3%A1%21%20Li%20o%20guia%20%22Antes%20de%20decidir%22%20e%20gostaria%20de%20agendar%20uma%20consulta.",
   // Pedido de avaliação no Google enviado aos pacientes após a consulta
   // (mensagem automática do Feegow). Cada link abre a janela de avaliação do
   // perfil da unidade; o link curto cabe no SMS de 160 caracteres.

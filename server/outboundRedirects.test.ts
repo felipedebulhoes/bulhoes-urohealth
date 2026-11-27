@@ -93,6 +93,18 @@ describe("links curtos de saída", () => {
     );
   });
 
+  it("redireciona /guia ao WhatsApp com a mensagem do guia", async () => {
+    const response = await fetch(`${baseUrl}/guia`, { redirect: "manual" });
+
+    expect(response.status).toBe(302);
+    const location = new URL(response.headers.get("location") ?? "");
+    expect(location.origin + location.pathname).toBe("https://wa.me/5511981124455");
+    expect(location.searchParams.get("text")).toBe(
+      'Olá! Li o guia "Antes de decidir" e gostaria de agendar uma consulta.'
+    );
+    expect(logs[0]).toMatchObject({ path: "/guia" });
+  });
+
   it("redireciona /avaliar/doctoralia ao formulário de opinião do perfil", async () => {
     const response = await fetch(`${baseUrl}/avaliar/doctoralia?utm_source=feegow&utm_medium=sms`, {
       redirect: "manual",
